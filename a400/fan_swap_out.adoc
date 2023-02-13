@@ -1,0 +1,49 @@
+---
+permalink: a400/fan-swap-out.html 
+sidebar: sidebar 
+keywords: aff a400, aff, a400, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
+summary: Para cambiar un módulo de ventilador sin interrumpir el servicio, debe realizar una secuencia específica de tareas. 
+---
+= Cambio en caliente de un módulo de ventilador - AFF A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para cambiar un módulo de ventilador sin interrumpir el servicio, debe realizar una secuencia específica de tareas.
+
+
+NOTE: Debe sustituir el módulo de ventilador en un plazo de dos minutos a partir de extraerlo del chasis. El flujo de aire del sistema se interrumpe y el módulo o los módulos del controlador se apagan transcurridos dos minutos para evitar el sobrecalentamiento.
+
+Puede utilizar la animación, la ilustración o los pasos escritos siguientes para intercambiar en caliente un módulo de ventilador.
+
+.Animación - sustituya un ventilador
+video::ae59d53d-7746-402c-bd6b-aad9012efa89[panopto]
+image::../media/drw_A400_Replace_fan.png[drw A400 sustituya el ventilador]
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola y mirando el LED de atención en cada módulo de ventilador.
+. Presione hacia abajo el pestillo de liberación en la palanca de leva del módulo del ventilador y luego gire el asa de leva hacia abajo.
++
+El módulo del ventilador se mueve un poco lejos del chasis.
+
+. Tire del módulo del ventilador hacia fuera del chasis, asegurándose de que lo apoya con la mano libre para que no se balancee del chasis.
++
+
+NOTE: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
+. Apartar el módulo de ventilador.
+. Inserte el módulo de ventilador de sustitución en el chasis alineándolo con la abertura y, a continuación, deslizándolo hacia el chasis.
+. Empuje firmemente el asa de leva del módulo del ventilador de modo que quede asentado completamente en el chasis.
++
+El asa de leva se eleva ligeramente cuando el módulo del ventilador está completamente asentado.
+
+. Gire el asa de leva hasta su posición cerrada, asegurándose de que el pestillo de liberación de la palanca de leva haga clic en la posición bloqueada.
++
+El LED de atención no se debe encender después de que el ventilador esté colocado y haya girado hasta alcanzar la velocidad de funcionamiento.
+
+. Alinee el bisel con los espárragos de bola y, a continuación, empuje suavemente el bisel hacia los espárragos de bola.
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+

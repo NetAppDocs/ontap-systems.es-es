@@ -1,0 +1,166 @@
+---
+permalink: a900/chassis_replace_complete_system_restore_rma.html 
+sidebar: sidebar 
+keywords: aff a900, verify and set HA state, run diagnostics, complete the replacement process 
+summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos y devolver la pieza con errores a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. 
+---
+= Restaurar y verificar la configuración - AFF A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para completar la sustitución del chasis, debe realizar tareas específicas.
+
+
+
+== Paso 1: Verificación y configuración del estado de alta disponibilidad del chasis
+
+[role="lead"]
+Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
+
+. En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado para el chasis no coincide con la configuración del sistema:
++
+.. Establezca el estado de alta disponibilidad para el chasis: `ha-config modify chassis _ha-state_`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+*** ha
+*** no ha
+
+
+
+
+. Confirme que el ajuste ha cambiado: `ha-config show`
+. Si aún no lo ha hecho, puede volver a obtener el resto de su sistema.
+
+
+
+
+== Paso 2: Ejecute un diagnóstico de nivel de sistema
+
+[role="lead"]
+Después de instalar un chasis nuevo, debe ejecutar el diagnóstico de interconexión.
+
+.Antes de empezar
+Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
+
+Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
+
+. Si la controladora que se va a reparar no está en el símbolo del sistema del CARGADOR, siga estos pasos:
++
+.. Seleccione la opción modo de mantenimiento en el menú que se muestra.
+.. Después de que la controladora arranca en modo de mantenimiento, detenga la controladora: `halt`
++
+Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
++
+
+NOTE: Durante el proceso de arranque, puede responder de forma segura `y` para solicitar:
+
+
+
+. Repita el paso anterior en la segunda controladora si está en una configuración de alta disponibilidad.
++
+
+NOTE: Ambas controladoras deben estar en modo de mantenimiento para ejecutar la prueba de interconexión.
+
+. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
++
+Durante el proceso de arranque, puede responder de forma segura `y` A las indicaciones hasta que aparezca el indicador del modo de mantenimiento (*>).
+
+. Habilite las pruebas de diagnóstico de interconexión desde el símbolo del sistema del modo de mantenimiento: `sldiag device modify -dev interconnect -sel enable`
++
+Las pruebas de interconexión están deshabilitadas de forma predeterminada y deben habilitarse para ejecutarse por separado.
+
+. Ejecute la prueba de diagnóstico de interconexión desde el símbolo del sistema del modo de mantenimiento: `sldiag device run -dev interconnect`
++
+Solo debe ejecutar la prueba de interconexión desde una controladora.
+
+. Verifique que no haya problemas de hardware como resultado de la sustitución del chasis: `sldiag device status -dev interconnect -long -state failed`
++
+Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
+
+. Proceda según el resultado del paso anterior.
+
+
+|===
+| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
+
+
+ a| 
+Se completaron sin fallos
+ a| 
+. Borre los registros de estado: `sldiag device clearstatus`
+. Compruebe que se ha borrado el registro: `sldiag device status`
++
+Se muestra la siguiente respuesta predeterminada:
+
++
+[listing]
+----
+SLDIAG: No log messages are present.
+----
+. Salga del modo de mantenimiento en ambas controladoras: `halt`
++
+El sistema muestra el aviso del CARGADOR.
+
++
+
+NOTE: Debe salir del modo de mantenimiento de ambas controladoras antes de continuar.
+
+. Introduzca el siguiente comando en ambas controladoras en el símbolo del sistema del CARGADOR: `bye`
+. Devuelva la controladora a su funcionamiento normal.
+
+
+|===
+|===
+| Si el sistema ejecuta ONTAP... | Realice lo siguiente... 
+
+
+ a| 
+Con dos nodos en el clúster
+ a| 
+Emita los siguientes comandos: `node::> cluster ha modify -configured true``node::> storage failover modify -node node0 -enabled true`
+
+
+
+ a| 
+Con más de dos nodos en el clúster
+ a| 
+Emita este comando:``node::> storage failover modify -node node0 -enabled true``
+
+
+
+ a| 
+En una configuración independiente
+ a| 
+No tiene más pasos en esta tarea en particular. Ha completado el diagnóstico de nivel del sistema.
+
+
+
+ a| 
+Se produjeron algunos fallos en las pruebas
+ a| 
+Determine la causa del problema.
+
+. Salir del modo de mantenimiento: `halt`
+. Realice un apagado correcto y, a continuación, desconecte las fuentes de alimentación.
+. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén correctamente instalados en el sistema de almacenamiento.
+. Vuelva a conectar las fuentes de alimentación y encienda el sistema de almacenamiento.
+. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema. + Si la prueba de diagnóstico del sistema vuelve a fallar, póngase en contacto con link:http://mysupport.netapp.com/["mysupport.netapp.com"^].
+
+
+|===
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+[role="lead"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

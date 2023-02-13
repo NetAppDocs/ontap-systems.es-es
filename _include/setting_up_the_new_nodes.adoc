@@ -1,0 +1,129 @@
+= 
+:allow-uri-read: 
+
+
+Durante el proceso de actualización, es posible mover el almacenamiento, encender el nodo 3 y el nodo 4, arrancar la imagen de software y configurar los nodos. La distribución de puertos físicos entre los nodos originales y los nuevos puede ser diferente. La asignación de los puertos entre los nodos originales y los de reemplazo se debe realizar para identificar un diseño correcto de los puertos y las conexiones.
+
+.Acerca de esta tarea
+Si la versión de ONTAP que se ejecuta en los nuevos nodos es diferente de la versión de los nodos originales, debe haber descargado el archivo <ontap_version>_image.tgz correcto desde el sitio de soporte de NetApp en un directorio accesible desde web (consulte el paso 4). Necesita el archivo <ontap_version>_image.tgz para realizar un arranque desde el sistema.
+
+.Pasos
+. Encienda el nodo 3 y, a continuación, pulse inmediatamente Ctrl-C en el terminal de la consola para acceder al aviso del CARGADOR.
++
+Si los nodos 3 y 4 se encuentran en el mismo chasis, vaya al paso 2. De lo contrario, vaya al paso 3.
+
+. Si los nodos 3 y 4 se encuentran en una configuración de chasis único (con controladoras en el mismo chasis):
++
+.. Conecte una consola de serie al nodo 4.
+.. Encienda el nodo 4, si no está ENCENDIDO, y interrumpa el proceso de arranque pulsando Ctrl-C en el terminal de la consola para acceder al aviso del CARGADOR.
++
+La alimentación debe ESTAR ENCENDIDA si ambas controladoras están en el mismo chasis.
+
++
+Deje el nodo 4 en el símbolo del sistema DEL CARGADOR, vuelva a este procedimiento y repita estos pasos después de instalar el nodo 3.
+
+
+
+. En el símbolo del sistema del CARGADOR, introduzca el siguiente comando: `set-defaults`
+. En el símbolo del sistema del CARGADOR, configure la conexión para reiniciar el sistema para una LIF de gestión:
++
+[cols="1,2"]
+|===
+| Si el direccionamiento IP es... | Realice lo siguiente... 
+
+
+ a| 
+DHCP
+ a| 
+ Configure the automatic connection:
+`ifconfig e0M -auto`
+
+
+
+ a| 
+ Static a| 
+ Configure the manual connection:
+`ifconfig e0M -addr=ip_addr -mask=netmask` `-gw=gateway`
+
+|===
+. En el aviso del CARGADOR, ejecute netboot en el nodo 3:
++
+[cols="1,2"]
+|===
+| Durante... | Realice lo siguiente... 
+
+
+ a| 
+*SISTEMAS DE LAS SERIES FAS2200, FAS2500, FAS3200, FAS6200 Y FAS/AFF8000*
+ a| 
+`+netboot http://web_server_ip/path_to_web-accessible_directory/netboot/kernel+`
+
+
+
+ a| 
+*Todos los demás sistemas*
+ a| 
+`+netboot http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`
+
+|===
++
+El directorio_path_to_the_web-accessible_directory es la ubicación del archivo <ontap_version>_image.tgz descargado.
+
++
+
+NOTE: Si no puede reiniciar el sistema de las nuevas controladoras, póngase en contacto con el soporte técnico.
+
+. En el menú de inicio, seleccione la opción *(7) instale primero el nuevo software* para descargar e instalar la nueva imagen de software en el dispositivo de arranque.
++
+Ignore el siguiente mensaje: "Este procedimiento no es compatible con la actualización no disruptiva en un par de alta disponibilidad". Se aplica a las actualizaciones no disruptivas del software, no a las actualizaciones de controladoras.
+
+. Si se le solicita que continúe el procedimiento, introduzca `y`Y cuando se le solicite el paquete, escriba la dirección URL del archivo de imagen: `+http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`.
++
+Introduzca el nombre de usuario o la contraseña, si procede, o pulse Intro para continuar.
+
+. Introduzca `n` para omitir la recuperación de backup cuando observe un símbolo del sistema similar a lo siguiente:
++
+[listing]
+----
+Do you want to restore the backup configuration now? {y|n}
+----
+. Reinicie introduciendo `y` cuando vea un símbolo del sistema similar a lo siguiente:
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
+. Interrumpa el proceso de reinicio pulsando Ctrl-C para mostrar el menú de arranque cuando el sistema le solicite que lo haga.
+. En el menú de inicio, seleccione *(5) modo de mantenimiento boot* para acceder al modo de mantenimiento.
+. Si es necesario, haga cambios en los puertos FC o CNA del nodo y luego reinicie el nodo en modo de mantenimiento.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["Guía de administración de SAN de ONTAP 9"]
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["Busque la Guía de administración DE SAN para su versión de Data ONTAP 8"]
+
+. Debe verificar que el resultado del comando muestre ha:
++
+[listing]
+----
+*> ha-config show
+   Chassis HA configuration: ha
+   Controller HA configuration: ha
+----
++
+Los sistemas graban en una PROM tanto si se encuentran en un par de alta disponibilidad como en una configuración independiente. El estado debe ser el mismo en todos los componentes del sistema independiente o del par de alta disponibilidad
+
++
+El comando ha-config modify Controller ha configura la alta disponibilidad para la configuración de la controladora. El comando ha-config modify Chassis ha configura la alta disponibilidad para la configuración del chasis.
+
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/home.html["Guía de configuración de alta disponibilidad de ONTAP 9"]
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["Busque la Guía de configuración de alta disponibilidad para su versión de Data ONTAP 8"]
+
+. Salir del modo de mantenimiento: `halt`
++
+El sistema se detiene en el aviso del CARGADOR.
+
+

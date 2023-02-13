@@ -1,0 +1,154 @@
+---
+permalink: ns224/service-replace-rtc-battery.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, replace, fail, real-time, clock, rtc, battery, nondisruptive, power, i/o, replace the real-time clock battery 
+summary: 'Es posible sustituir una batería de reloj \(RTC\) en tiempo real con errores sin interrupciones en una bandeja de unidades NS224 encendida y mientras las operaciones de I/o están en curso.' 
+---
+= Sustituya la batería del reloj en tiempo real - estantes NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede sustituir una batería de reloj de tiempo real con fallos (RTC) sin interrupciones en una bandeja de unidades NS224 encendida y mientras las operaciones de I/o están en curso.
+
+.Antes de empezar
+* El módulo NSM de partners de la bandeja debe estar activo y en funcionamiento y debe cablearse correctamente de manera que su bandeja mantenga la conectividad al quitar el módulo NSM con el FRU fallido (módulo NSM de destino).
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
+
+* Todos los demás componentes del sistema deben funcionar correctamente.
+
+
+.Acerca de esta tarea
+* Permita al menos 70 segundos entre la eliminación y la instalación del módulo de bandeja de NVMe (NSM).
++
+Esto le da tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
+
+* Después de sustituir la batería RTC, volver a instalar el módulo NSM y el módulo arranca, ONTAP actualiza el tiempo de reloj en tiempo real.
+* *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
+
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero mediante el `off` opción.
+
+* Cuando desembale la batería RTC de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la batería RTC fallida.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+* Puede utilizar el siguiente vídeo o los pasos escritos para sustituir una batería RTC.
++
+.Animación: Reemplace una batería RTC en una bandeja de unidades NS224
+video::df7a12f4-8554-4448-a3df-aa86002f2de8[panopto]
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Desconecte el cableado del módulo NSM que contiene la FRU que desea sustituir:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento de los puertos del módulo NSM.
++
+Anote los puertos del módulo NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el módulo NSM, más adelante en este procedimiento.
+
+
+
+. Quite el módulo NSM de la bandeja:
++
+.. Enrolle los dedos de índice a través de los orificios de los dedos de los mecanismos de bloqueo a ambos lados del módulo NSM.
++
+
+NOTE: Si va a extraer el módulo NSM inferior y si el riel inferior obstruye el acceso a los mecanismos de bloqueo, coloque los dedos de índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
+
+.. Con los pulgares, presione y sostenga las lengüetas naranjas en la parte superior de los mecanismos de bloqueo.
++
+Los mecanismos de bloqueo se elevan, borrando los pasadores de cierre de la bandeja.
+
+.. Tire suavemente hasta que el módulo NSM salga de la estantería aproximadamente un tercio, sujete los lados del módulo NSM con ambas manos para sostener su peso y, a continuación, colóquelo sobre una superficie plana y estable.
++
+Cuando comience a tirar, los brazos del mecanismo de bloqueo se extienden desde el módulo NSM y se bloquean en su posición completamente extendida.
+
+
+
+. Afloje el tornillo de palomilla de la cubierta del módulo NSM y abra la cubierta.
++
+La etiqueta FRU de la cubierta del módulo NSM muestra la ubicación de la batería RTC, cerca de la parte frontal del módulo NSM y a la derecha de la fuente de alimentación.
+
+. Identifique físicamente la batería RTC defectuosa.
+. Sustituya la batería RTC:
++
+.. Retire la batería empujándola suavemente hacia fuera del soporte hasta que esté en un ángulo inclinado (inclinado hacia fuera del soporte) y, a continuación, levántela fuera del soporte.
+.. Inserte la batería de repuesto en el soporte en un ángulo inclinado (inclinado lejos del soporte), empújela hasta que quede completamente asentada.
++
+
+NOTE: El lado positivo de la batería, marcado con un signo más, está orientado hacia afuera (lejos del soporte), correspondiente al signo más marcado en la placa del módulo NSM.
+
+
+
+. Cierre la cubierta del módulo NSM y, a continuación, apriete el tornillo de mariposa.
+. Vuelva a insertar el módulo NSM en la bandeja:
++
+.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
+.. Con ambas manos, deslice suavemente el módulo NSM hacia dentro de la bandeja hasta que el peso del módulo NSM sea totalmente compatible con la bandeja.
+.. Inserte el módulo NSM en la bandeja hasta que se detenga (aproximadamente media pulgada de la parte posterior de la bandeja).
++
+Puede colocar los pulgares en las lengüetas naranjas de la parte frontal de cada bucle de dedos (de los brazos del mecanismo de bloqueo) para empujar el módulo NSM.
+
+.. Enrolle los dedos de índice a través de los orificios de los dedos de los mecanismos de bloqueo a ambos lados del módulo NSM.
++
+
+NOTE: Si va a insertar el módulo NSM inferior y si el riel inferior obstruye el acceso a los mecanismos de bloqueo, coloque los dedos de índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
+
+.. Con los pulgares, presione y sostenga las lengüetas naranjas en la parte superior de los mecanismos de bloqueo.
+.. Empuje suavemente hacia adelante para que los pestillos queden sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y, a continuación, siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo NSM debe insertarse por completo en el estante y enrasarse con los bordes del estante.
+
+
+
+. Vuelva a conectar el cableado al módulo NSM:
++
+.. Vuelva a conectar el cableado de almacenamiento a los mismos dos puertos del módulo NSM.
++
+Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
++
+Además, se encienden los dos LED LNK (verde) del puerto del módulo NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+
+
+
+. Verifique que los LED de atención (ámbar) del módulo NSM que contiene la batería RTC fallida y el panel de visualización del operador de la bandeja ya no estén encendidos
++
+Los LED de atención del módulo NSM se apagan después de reiniciar el módulo NSM y ya no detecta un problema de batería RTC. Esto puede tardar entre tres y cinco minutos.
+
+. Verifique que el módulo NSM esté cableado correctamente ejecutando Active IQ Config Advisor.
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
+
+

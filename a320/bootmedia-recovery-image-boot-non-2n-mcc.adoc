@@ -1,0 +1,122 @@
+---
+permalink: a320/bootmedia-recovery-image-boot-non-2n-mcc.html 
+sidebar: sidebar 
+keywords: aff a320, aff, a320, procedure, boot, impair, node, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image 
+summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+---
+= Arranque la imagen de recuperación - AFF A320
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+
+. Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
++
+La imagen se descarga desde la unidad flash USB.
+
+. Cuando se le solicite, introduzca el nombre de la imagen o acepte la imagen predeterminada que se muestra dentro de los corchetes de la pantalla.
+. Restaure el sistema de archivos var:
++
+[cols="1,2"]
+|===
+| Si el sistema tiene... | Realice lo siguiente... 
+
+
+ a| 
+Una conexión de red
+ a| 
+.. Pulse `y` cuando se le solicite que restaure la configuración de copia de seguridad.
+.. Configure el nodo en buen estado como nivel de privilegio avanzado: `set -privilege advanced`
+.. Ejecute el comando restore backup: `system node restore-backup -node local -target-address impaired_node_IP_address`
+.. Devuelva el nodo al nivel de administrador: `set -privilege admin`
+.. Pulse `y` cuando se le solicite que utilice la configuración restaurada.
+.. Pulse `y` cuando se le solicite reiniciar el nodo.
+
+
+
+
+ a| 
+No hay conexión de red
+ a| 
+.. Pulse `n` cuando se le solicite que restaure la configuración de copia de seguridad.
+.. Reinicie el sistema cuando el sistema lo solicite.
+.. Seleccione la opción *Actualizar flash desde la configuración de copia de seguridad* (flash de sincronización) en el menú que se muestra.
++
+Si se le solicita que continúe con la actualización, pulse `*y*`.
+
+
+
+
+
+ a| 
+No hay conexión de red y está en una configuración de IP de MetroCluster
+ a| 
+.. Pulse `n` cuando se le solicite que restaure la configuración de copia de seguridad.
+.. Reinicie el sistema cuando el sistema lo solicite.
+.. Espere a que se conecten las conexiones de almacenamiento iSCSI.
++
+Puede continuar después de ver los siguientes mensajes:
+
++
+[listing]
+----
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+----
+.. Seleccione la opción *Actualizar flash desde la configuración de copia de seguridad* (flash de sincronización) en el menú que se muestra.
++
+Si se le solicita que continúe con la actualización, pulse `*y*`.
+
+
+
+|===
+. Asegurarse de que las variables medioambientales estén establecidas de la manera esperada:
++
+.. Lleve el nodo al aviso DEL CARGADOR.
+.. Compruebe la configuración de la variable de entorno con el `printenv` comando.
+.. Si una variable de entorno no está establecida como se espera, modifíquela con el `setenv _environment_variable_name_ _changed_value_` comando.
+.. Guarde los cambios mediante `savenv` comando.
+
+
+. El siguiente depende de la configuración del sistema:
++
+** Si su sistema tiene configurado el gestor de claves incorporado, NSE o NVE, vaya a. xref:bootmedia-encryption-restore.adoc[Pasos de sustitución de medios posteriores al arranque para OKM, NSE y NVE]
+** Si su sistema no tiene configurado el gestor de claves incorporado, NSE o NVE, complete los pasos en esta sección.
+
+
+. Desde el aviso del CARGADOR, introduzca el `boot_ontap` comando.
++
+[cols="1,2"]
+|===
+| Si ve... | Realice lo siguiente... 
+
+
+ a| 
+La solicitud de inicio de sesión de
+ a| 
+Vaya al siguiente paso.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+.. Inicie sesión en el nodo del partner.
+.. Confirme que el nodo de destino está listo para la devolución con el `storage failover show` comando.
+
+
+|===
+. Conecte el cable de consola al nodo compañero.
+. Vuelva a dar el nodo mediante el `storage failover giveback -fromnode local` comando
+. En el símbolo del sistema del clúster, compruebe las interfaces lógicas con el `net int -is-home false` comando.
++
+Si alguna interfaz se muestra como "falsa", vuelva a revertir dichas interfaces a su puerto de inicio utilizando el `net int revert` comando.
+
+. Mueva el cable de consola al nodo reparado y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+

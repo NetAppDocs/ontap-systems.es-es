@@ -1,0 +1,33 @@
+---
+permalink: a200/bootmedia-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a200, nondisruptive, disruptive, replace the boot media 
+summary: 'El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema \(imagen de arranque\) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.' 
+---
+= Descripción general de la sustitución de medios de arranque: AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.
+
+.Lo que necesitará
+Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.
+
+.Antes de empezar
+* Ambos métodos no disruptivos y disruptivos para sustituir medios de arranque requieren restaurar el sistema de archivos var:
++
+** Para poder realizar sustituciones de forma no disruptiva, el par de alta disponibilidad debe estar conectado a una red para restaurar el sistema de archivos var.
+** Para efectuar un reemplazo disruptivo, no es necesaria una conexión de red para restaurar el sistema de archivos var, pero el proceso requiere dos reinicios.
+
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+

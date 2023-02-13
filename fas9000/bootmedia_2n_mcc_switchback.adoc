@@ -1,0 +1,66 @@
+---
+permalink: fas9000/bootmedia-2n-mcc-switchback.html 
+sidebar: sidebar 
+keywords: fas9000, aff a700, metrocluster, switchback 
+summary: 'Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De esta forma, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento sincronizada en origen \(SVM\) del sitio anteriormente dañado ahora activas y sirviendo datos de los pools de discos locales.' 
+---
+= Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos: AFF A700 y FAS9000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
+
+Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
+
+.Pasos
+. Compruebe que todos los nodos estén en el `enabled` provincia: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Compruebe que la resincronización se haya completado en todas las SVM: `metrocluster vserver show`
+. Compruebe que las migraciones LIF automáticas que realizan las operaciones de reparación se han completado correctamente: `metrocluster check lif show`
+. Lleve a cabo la conmutación de estado mediante el `metrocluster switchback` comando desde cualquier nodo del clúster superviviente.
+. Compruebe que la operación de conmutación de estado ha finalizado: `metrocluster show`
++
+La operación de conmutación de estado ya está en ejecución cuando un clúster está en el `waiting-for-switchback` provincia:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+La operación de conmutación de estado se completa cuando los clústeres están en el `normal` estado:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar el estado de las líneas base en curso utilizando el `metrocluster config-replication resync-status show` comando.
+
+. Restablecer cualquier configuración de SnapMirror o SnapVault.
+

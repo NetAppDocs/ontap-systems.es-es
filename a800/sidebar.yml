@@ -1,0 +1,78 @@
+---
+section: a800
+title: Sistemas A800 de AFF
+url: "/a800/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de A800 de AFF
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/a800/install-setup.html"
+  - title: Pasos rápidos
+    url: "/a800/install-quick-guide.html"
+  - title: Pasos de vídeo
+    url: "/a800/install-videos.html"
+  - title: Pasos detallados
+    url: "/a800/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: Mantenimiento de A800 de AFF
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque AFF A800
+    entries:
+    - title: Descripción general
+      url: "/a800/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/a800/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/a800/bootmedia-shutdown.html"
+    - title: Sustituya la imagen de arranque
+      url: "/a800/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/a800/bootmedia-recovery-image-boot-non-2n-mcc.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/a800/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/a800/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis AFF A800
+    entries:
+    - title: Descripción general
+      url: "/a800/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a800/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/a800/chassis-replace-move-hardware.html"
+    - title: Sustitución completa
+      url: "/a800/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controladora A800 de AFF
+    entries:
+    - title: Descripción general
+      url: "/a800/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a800/controller-replace-shutdown.html"
+    - title: Sustituya el módulo del controlador
+      url: "/a800/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/a800/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/a800/controller-replace-recable-reassign-disks.html"
+    - title: Sustitución completa
+      url: "/a800/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/a800/dimm-replace.html"
+  - title: Unidad
+    url: "/a800/drive-replace.html"
+  - title: Ventilador
+    url: "/a800/fan-replace.html"
+  - title: NVDIMM
+    url: "/a800/nvdimm-replace.html"
+  - title: Batería NVDIMM
+    url: "/a800/nvdimm-battery-replace.html"
+  - title: Tarjeta PCIe
+    url: "/a800/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    url: "/a800/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/a800/rtc-battery-replace.html"

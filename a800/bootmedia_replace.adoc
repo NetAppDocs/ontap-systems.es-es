@@ -1,0 +1,254 @@
+---
+permalink: a800/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff a800, replace the boot media 
+summary: Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque. 
+---
+= Reemplace el soporte de arranque - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm retirada]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillo de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
+
+
+
+
+image::../media/drw_a800_open_air_duct.png[conducto de aire abierto drw a800]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo del conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslizar el conducto de aire hacia los módulos de ventilador
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Girar el conducto de aire hacia los módulos del ventilador
+
+|===
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque.
+
+Necesita un destornillador Phillips para quitar el tornillo que sujeta el soporte del maletero en su lugar.
+
+. Busque el soporte de arranque:
++
+image::../media/drw_a800_boot_media_replace.png[sustitución del soporte de arranque drw a800]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Elevador 3
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Destornillador Phillips número 1
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Tornillo del soporte del maletero
+
+
+
+ a| 
+image:../media/legend_icon_05.png[""]
+ a| 
+Soporte de arranque
+
+|===
+. Extraiga el soporte de arranque del módulo del controlador:
++
+.. Con un destornillador Phillips del número 1, retire el tornillo que sujeta el soporte del maletero y coloque el tornillo a un lado en un lugar seguro.
+.. Sujetando los lados del soporte de arranque, gire suavemente el soporte de arranque hacia arriba, y luego tire del soporte de arranque directamente del zócalo y colóquelo a un lado.
+
+
+. Instale el soporte de arranque de repuesto en el módulo del controlador:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hacia la placa base.
+.. Fije el soporte de arranque a la placa base mediante el tornillo de soporte de arranque.
++
+No apriete en exceso el tornillo o podría dañar el soporte del maletero.
+
+
+
+. Vuelva a instalar la tarjeta vertical en el módulo de la controladora.
+. Cierre el conducto de aire:
++
+.. Gire el conducto de aire hacia abajo.
+.. Deslice el conducto de aire hacia los elevadores hasta que encaje en su sitio.
+
+
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
++
+** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
+
+
+.Pasos
+. Descargue y copie la imagen del servicio adecuada del sitio de soporte de NetApp en la unidad flash USB.
++
+.. Descargue la imagen de servicio en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+
++
+*** arranque
+*** efi
+
+
+.. Copie la carpeta efi en el directorio superior de la unidad flash USB. + la unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que está ejecutando el controlador dañado.
+.. Extraiga la unidad flash USB del ordenador portátil.
+
+
+. Si aún no lo ha hecho, cierre el conducto de aire:
++
+.. Gire el conducto de aire hacia abajo hasta el módulo del controlador.
+.. Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
+.. Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
++
+image::../media/drw_a800_close_air_duct.png[conducto de aire de cierre drw a800]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Elevadores
+
+|===
+
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+. Vuelva a instalar el dispositivo de administración de cables y vuelva a instalar el sistema, según sea necesario.
++
+Al realizar la copia, recuerde volver a instalar los convertidores de medios (SFP o QSFP) si se retiraron.
+
+. Enchufe el cable de alimentación en la fuente de alimentación y vuelva a instalar el retenedor del cable de alimentación.
+. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Empuje suavemente el módulo del controlador hasta que los ganchos de bloqueo del módulo del controlador empiecen a elevarse, empuje firmemente los ganchos de bloqueo para terminar de fijar el módulo del controlador y, a continuación, gire los ganchos de bloqueo a la posición de bloqueo sobre los pasadores del módulo del controlador.
++
+La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
+
+. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+

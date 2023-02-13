@@ -1,0 +1,111 @@
+---
+permalink: fas9000/x91148a-modules-with-open-slots-add.html 
+sidebar: sidebar 
+keywords: aff a700, fas9000, ass, x91148a, module, open, slots, nic, storage 
+summary: Puede añadir un módulo X91148A a una ranura para módulos vacía del sistema como NIC de 100 GbE o módulo de almacenamiento para las bandejas de almacenamiento NS224. 
+---
+= Añada un módulo X91148A en un A700 de AFF con ranuras abiertas: A700 de AFF y FAS9000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede añadir un módulo X91148A a una ranura para módulos vacía del sistema como NIC de 100 GbE o módulo de almacenamiento para las bandejas de almacenamiento NS224.
+
+* El sistema debe ejecutar ONTAP 9.8 y versiones posteriores.
+* Para agregar sin interrupciones el módulo X91148A, debe tomar el controlador de destino, retirar la cubierta de relleno de la ranura de destino, agregar el módulo y, a continuación, retirar el controlador de destino.
+* Debe haber una o más ranuras abiertas disponibles en el sistema.
+* Si hay varias ranuras disponibles, instale el módulo de acuerdo con la matriz de prioridad de ranura para el módulo X91148A en el Hardware Universe.
++
+https://hwu.netapp.com["Hardware Universe de NetApp"]
+
+* Si va a añadir el módulo X91148A como módulo de almacenamiento, debe instalar las ranuras para módulos 3 y/o 7.
+* Si va a añadir el módulo X91148A como NIC de 100 GbE, puede utilizar cualquier ranura abierta. Sin embargo, de forma predeterminada, las ranuras 3 y 7 se establecen como ranuras de almacenamiento. Si desea utilizar esas ranuras como ranuras de red y no agregará bandejas NS224, debe modificar las ranuras para el uso de redes con `storage port modify -node _node name_ -port _port name_ -mode network` comando. Consulte la Hardware Universe para ver otras ranuras que puede utilizar el módulo X91148A para la conexión en red.
++
+https://hwu.netapp.com["Hardware Universe de NetApp"]
+
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+
+== Opción 1: Agregue un módulo X91148A como módulo NIC en un sistema con ranuras abiertas
+
+[role="lead"]
+Para agregar un módulo X91148A como módulo NIC en un sistema con ranuras abiertas, debe seguir la secuencia específica de pasos.
+
+.Pasos
+. Apagado de la controladora A:
++
+.. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
+.. Tome el control del nodo de destino: `storage failover takeover -ofnode _target_node_name_`
++
+La conexión de la consola muestra que el nodo cae al aviso del CARGADOR cuando finaliza la toma de control.
+
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Extraer el obturador de la ranura de destino:
++
+.. Pulse el botón de leva numerado y con letras.
+.. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
+.. Extraer el obturador.
+
+
+. Instale el módulo X91148A:
++
+.. Alinee el módulo X91148A con los bordes de la ranura.
+.. Deslice el módulo X91148A en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse con el pasador de leva de E/S.
+.. Empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
+
+
+. Conecte el módulo a los conmutadores de datos.
+. Reinicie la controladora a: `boot_ontap`
+. Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode _target_node_name_`
+. Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
+. Repita estos pasos para la controladora B.
+
+
+
+
+== Opción 2: Añada un módulo X91148A como módulo de almacenamiento en un sistema con ranuras abiertas
+
+[role="lead"]
+Para agregar un módulo X91148A como módulo de almacenamiento en un sistema con ranuras abiertas, debe seguir la secuencia específica de pasos.
+
+* Este procedimiento supone que las ranuras 3 y/o 7 están abiertas.
+
+
+.Pasos
+. Apague la controladora A:
++
+.. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
+.. Tome el control del nodo de destino: `storage failover takeover -ofnode target_node_name`
++
+La conexión de la consola muestra que el nodo cae al aviso del CARGADOR cuando finaliza la toma de control.
+
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Extraer el obturador de la ranura de destino:
++
+.. Pulse el botón de leva numerado y con letras.
+.. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
+.. Extraer el obturador.
+
+
+. Instale el módulo X91148A en la ranura 3:
++
+.. Alinee el módulo X91148A con los bordes de la ranura.
+.. Deslice el módulo X91148A en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse con el pasador de leva de E/S.
+.. Empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
+.. Si va a instalar un segundo módulo X91148A para su almacenamiento, repita este paso con el módulo de la ranura 7.
+
+
+. Reinicie la controladora a: `boot_ontap`
+. Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode target_node_name`
+. Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
+. Repita estos pasos para la controladora B.
+. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente - bandejas NS224"].
+

@@ -1,0 +1,104 @@
+---
+permalink: fas500f/controller-replace-system-config-restore-and-verify.html 
+sidebar: sidebar 
+keywords: fas500f, restore and verify the system configuration, verify and set the ha state of the controller module, run system-level diagnostics 
+summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
+---
+= Restaure y verifique la configuración del sistema - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario.
+
+
+
+== Paso 1: Configurar y verificar la hora del sistema después de sustituir el controlador
+
+Debe comprobar la hora y la fecha del módulo de la controladora de sustitución en comparación con el módulo de controladora en buen estado de un par de alta disponibilidad o con un servidor de tiempo fiable en una configuración independiente. Si la hora y la fecha no coinciden, debe reiniciarlas en el módulo del controlador de repuesto para evitar posibles interrupciones en los clientes debido a diferencias de tiempo.
+
+.Acerca de esta tarea
+Es importante que aplique los comandos en los pasos de los sistemas correctos:
+
+* El nodo _regrUSTITUCION_ es el nuevo nodo que reemplazó al nodo dañado como parte de este procedimiento.
+* El nodo _heated_ es el compañero de alta disponibilidad del nodo _regrel_.
+
+
+.Pasos
+. Si el nodo _reader_ no está en el aviso del CARGADOR, detenga el sistema en el símbolo del sistema del CARGADOR.
+. En el nodo _Healthy_, compruebe la hora del sistema: `show date`
++
+La fecha y la hora se indican en GMT.
+
+. En el símbolo del SISTEMA del CARGADOR, compruebe la fecha y la hora del nodo _regrel_: `show date`
++
+La fecha y la hora se indican en GMT.
+
+. Si es necesario, establezca la fecha en GMT en el nodo de reemplazo: `set date _mm/dd/yyyy_`
+. Si es necesario, establezca la hora en GMT del nodo de reemplazo: `set time _hh:mm:ss_`
+. En el símbolo del SISTEMA del CARGADOR, confirme la fecha y la hora del nodo _regrel_: `show date`
++
+La fecha y la hora se indican en GMT.
+
+
+
+
+
+== Paso 2: Verificar y establecer el estado de alta disponibilidad del chasis
+
+Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
+
+. En el modo de mantenimiento del nuevo módulo de controlador, compruebe que todos los componentes muestran lo mismo `HA` provincia: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+** ha
+** mcc
+** mccip
+** no ha
+
+
+. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
+. Confirme que el ajuste ha cambiado: `ha-config show`
+
+
+
+
+== Paso 3: Ejecutar el diagnóstico
+
+Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
+
+El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
+
+Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
+
+. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
++
+Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
+. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
+. Seleccione *sistema de prueba* en el menú que aparece.
+. Proceda según el resultado del paso anterior:
++
+** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
+** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
++
+
+NOTE: Durante el proceso de arranque, puede ver los siguientes mensajes:
+
++
+*** Una advertencia de aviso de que el ID del sistema no coincide y que solicita que se anule el ID del sistema.
+*** Una advertencia de que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva. Puede responder con seguridad `y` a estas peticiones.
+
+
+
+
+

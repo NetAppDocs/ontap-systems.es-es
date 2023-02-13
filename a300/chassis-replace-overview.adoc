@@ -1,0 +1,21 @@
+---
+permalink: a300/chassis-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a300, replace the chassis 
+summary: Reemplace un chasis dañado el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Información general sobre la sustitución del chasis: AFF A300
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el chasis, debe mover las fuentes de alimentación, los ventiladores y los módulos de controladora del chasis dañado al nuevo chasis y cambiar el chasis dañado del rack del equipo o del armario del sistema por el nuevo chasis del mismo modelo que el chasis dañado.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Este procedimiento se escribe con la suposición de que va a mover el módulo o los módulos de la controladora al nuevo chasis y que el chasis es un nuevo componente de NetApp.
+* Este procedimiento es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+

@@ -1,0 +1,160 @@
+---
+permalink: ns224/service-replace-drive.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, fail, replace, drive, nondisruptive, i/o, hot-swap, hot-swap a drive 
+summary: Puede sustituir una unidad con error de forma no disruptiva en una bandeja de unidades NS224 que se enciende y mientras la I/o está en curso. 
+---
+= Intercambio en caliente de una unidad: Bandejas NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede sustituir una unidad con error de forma no disruptiva en una bandeja de unidades NS224 que se enciende y mientras la I/o está en curso.
+
+.Antes de empezar
+* La unidad que está instalando debe ser compatible con la bandeja NS224.
++
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
+
+* Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución de SED de la documentación de ONTAP.
++
+Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^]
+
+* Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
+* Compruebe que la unidad que desea quitar tenga error.
++
+Para verificar que la unidad presenta errores, ejecute el `storage disk show -broken` comando. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.
+
++
+
+NOTE: Según el tipo y la capacidad de la unidad, la unidad puede tardar hasta varias horas en aparecer en la lista de unidades con errores.
+
+
+
+.Acerca de esta tarea
+* *Mejor práctica:* la mejor práctica es tener instalada la versión actual del paquete de cualificación de disco (DQP) antes de intercambiar en caliente una unidad.
++
+Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
+
+* *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
+
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
++
+
+NOTE: Las comprobaciones del firmware de la unidad se realizan cada dos minutos.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero mediante el `off` opción.
+
+* Cuando desembale la unidad de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la unidad con error.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+* El siguiente vídeo proporciona una descripción general de las partes de extracción e inserción física del procedimiento de intercambio en caliente de la unidad.
++
+.Animación: Intercambio en caliente de una unidad en una bandeja de unidades NS224
+video::733011a7-e03a-41b0-8723-aa840133bf25[panopto]
++
+.Pasos
+.. Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la asignación automática de unidades si se encuentra habilitada.
++
+
+NOTE: Debe asignar manualmente la propiedad de una unidad si las unidades de la bandeja son propiedad de ambos módulos de controladora en la pareja de alta disponibilidad.
+
++
+
+NOTE: La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.
+
++
+... Compruebe si la asignación automática de unidades está habilitada: `storage disk option show`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+Si la asignación automática de unidades está activada, la salida muestra `on` en la `Auto Assign` (para cada módulo del controlador).
+
+... Si la asignación automática de unidades está habilitada, deshabilítela: `storage disk option modify -node node_name -autoassign off`
++
+Debe deshabilitar la asignación automática de unidades en ambos módulos de la controladora.
+
+
+
+.. Puesta a tierra apropiadamente usted mismo.
+.. Identifique físicamente la unidad con error.
++
+Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y la unidad con error se iluminan.
+
++
+
+NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
+
+.. Quite la unidad con error:
++
+... Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+... Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+
+
+.. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
++
+Esto permite al sistema reconocer que se ha quitado una unidad.
+
+.. Inserte la unidad de reemplazo:
++
+... Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
+... Presione hasta que la unidad se detenga.
+... Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
+
+
+
+.. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
++
+Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
+
+.. Si desea sustituir otra unidad, repita los pasos 3 al paso 7.
+.. Si deshabilitó la asignación automática de unidades en el paso 1, asigne manualmente la propiedad de la unidad y vuelva a habilitar la asignación automática de unidades si es necesario:
++
+... Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
+... Asigne cada unidad: `storage disk assign -disk disk_name -owner owner_name`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+Puede usar el carácter comodín para asignar más de una unidad a la vez.
+
+... Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node node_name -autoassign on`
++
+Debe volver a habilitar la asignación automática de unidades en ambos módulos de la controladora.
+
+
+
+
+
+

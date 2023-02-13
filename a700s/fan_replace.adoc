@@ -1,0 +1,249 @@
+---
+permalink: a700s/fan-replace.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, replace, fan, remove, fail, module, module, replace a fan 
+summary: Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador. 
+---
+= Sustituya un ventilador - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+
+
+
+== Paso 1: Apague el controlador deficiente - AFF A700s
+
+[role="lead"]
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y`.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Extracción del módulo de la controladora - AFF A700s
+
+[role="lead"]
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Desenchufe la fuente de alimentación del módulo del controlador y, a continuación, desconecte el cable de la fuente de alimentación.
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm quitar]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillo de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
++
+image::../media/drw_a700s_open_air_duct.png[conducto de aire abierto drw a700s]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo del conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Elevadores
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Conducto de aire
+
+|===
+
+
+
+
+
+
+== Paso 3: Sustituya el ventilador - AFF A700s
+
+[role="lead"]
+Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola.
+. Retire el módulo del ventilador pinzando las lengüetas de bloqueo del lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.
++
+image::../media/drw_a700s_replace_fan.png[drw a700s, sustituya el ventilador]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo del ventilador
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Módulo de ventilador
+
+|===
+. Alinee los bordes del módulo del ventilador de repuesto con la abertura del módulo del controlador y, a continuación, deslice el módulo del ventilador de repuesto en el módulo del controlador hasta que los pestillos de bloqueo encajen en su lugar.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador - AFF A700s
+
+[role="lead"]
+Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, cierre el conducto de aire:
++
+.. Gire el conducto de aire hacia abajo hasta el módulo del controlador.
+.. Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
+.. Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s cierra el conducto de aire]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslice el émbolo
+
+|===
+
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
+. Complete la reinstalación del módulo del controlador:
++
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+.. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+
+
+. Si el sistema está configurado para admitir conexiones de clúster de 10 GbE y conexiones de datos en NIC de 40 GbE o puertos internos, convierta estos puertos a conexiones de 10 GbE mediante el comando nicadmin convert del modo de mantenimiento.
++
+
+NOTE: Asegúrese de salir del modo de mantenimiento después de completar la conversión.
+
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 4: Devuelva la pieza con el fallo a NetApp - AFF A700s
+
+[role="lead"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

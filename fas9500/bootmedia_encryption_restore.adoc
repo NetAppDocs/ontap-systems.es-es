@@ -1,0 +1,186 @@
+---
+permalink: fas9500/bootmedia_encryption_restore.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Una vez marcadas las variables de entorno, debe completar los pasos específicos de los sistemas que tienen Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) o NetApp Volume Encryption \(NVE\) habilitado.' 
+---
+= Pasos de sustitución de medios posteriores al arranque para OKM, NSE y NVE: FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una vez marcadas las variables de entorno, debe completar los pasos específicos para restaurar la gestión de claves incorporada (OKM), el cifrado de almacenamiento de NetApp (NSE) y el cifrado de volúmenes de NetApp (NVE).
+
+. Determine qué sección debe usar para restaurar sus configuraciones de OKM, NSE o NVE: Si NSE o NVE están habilitados junto con el gestor de claves incorporado debe restaurar la configuración capturada al principio de este procedimiento.
++
+** Si NSE o NVE están habilitados y el gestor de claves incorporado está habilitado, vaya a. <<Restaure NVE o NSE cuando el gestor de claves incorporado está habilitado>>.
+** Si NSE o NVE están habilitados para ONTAP 9.6, vaya a. <<Restaure NSE/NVE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores>>.
+
+
+
+
+
+
+== Restaure NVE o NSE cuando el gestor de claves incorporado está habilitado
+
+. Conecte el cable de consola al nodo de destino.
+. Utilice la `boot_ontap` Comando en el símbolo del sistema del CARGADOR para arrancar el nodo.
+. Compruebe la salida de la consola:
++
+[cols="1,2"]
+|===
+| Si la consola muestra... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Arrancar el nodo en el menú de arranque: `boot_ontap menu`
+
+
+
+ a| 
+Esperando devolución
+ a| 
+.. Introduzca `Ctrl-C` en el prompt de
+.. En el mensaje: ¿Desea detener este nodo en lugar de esperar [y/n]? , introduzca: `y`
+.. En el aviso del CARGADOR, introduzca el `boot_ontap menu` comando.
+
+
+|===
+. En Boot Menu (Menú de inicio), introduzca el comando oculto, `recover_onboard_keymanager`, y conteste `y` en el prompt de.
+. Introduzca la frase de acceso para el administrador de claves incorporado que haya obtenido del cliente al principio de este procedimiento.
+. Cuando se le solicite que introduzca los datos de copia de seguridad, pegue los datos de copia de seguridad que capturó al principio de esta sección, cuando se le solicite. Pegue la salida de `security key-manager backup show` O. `security key-manager onboard show-backup` comando.
++
+
+NOTE: Los datos se emiten desde cualquiera de los dos `security key-manager backup show` o el comando «show-backup» de la gestión de claves de seguridad integrada.
+
++
+Ejemplo de datos de backup:
+
++
+Introduzca los datos de backup:
+
++
+[]
+====
+------------------------------ COMIENCE COPIA DE SEGURIDAD----------------------------------------------------- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAYAYAYAYAYAYAYAYAYAYAYAYAYZYAYAYAYAYAYZYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+------------------------------- BACKUP FINAL---------------------------------------------------------
+
+====
+. En Boot Menu (Menú de inicio), seleccione la opción para el inicio normal.
++
+El sistema arranca esperando la devolución... prompt.
+
+. Mueva el cable de la consola al nodo compañero e inicie sesión como administrador.
+. Confirme que el nodo de destino está listo para la devolución con el `storage failover show` comando.
+. Entorno sólo los agregados del director financiero con la `storage failover giveback -fromnode local -only-cfo-aggregates true` comando.
++
+** Si el comando falla debido a un disco fallido, desactive físicamente el disco que ha fallado, pero deje el disco en la ranura hasta que se reciba un reemplazo.
+** Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo se cierran las sesiones CIFS.
++
+
+NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
+
+** Si el comando falla porque el asociado "no está listo", espere 5 minutos para que los NVRAMS se sincronicen.
+** Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el contenido adecuado para obtener más información.
+
+
+. Una vez que se haya completado la devolución, compruebe el estado de la conmutación al nodo de respaldo y la devolución con el `storage failover show` y comandos show-giveback de conmutación al nodo de respaldo de almacenamiento.
++
+Solo se mostrarán los agregados CFO (agregados raíz y datos en estilo CFO).
+
+. Si ejecuta ONTAP 9.6 o una versión posterior, ejecute la sincronización integrada del gestor de claves de seguridad:
++
+.. Ejecute el `security key-manager onboard sync` y, a continuación, introduzca la frase de acceso cuando se le solicite.
+.. Introduzca el `security key-manager key-query` comando para ver una vista detallada de todas las claves almacenadas en el gestor de claves incorporado y verificar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
++
+
+NOTE: Si la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Póngase en contacto con el servicio de atención al cliente
+
+.. Espere 10 minutos hasta que la clave se sincronice en el clúster.
+
+
+. Mueva el cable de consola al nodo compañero.
+. Vuelva a generar el nodo de destino mediante el `storage failover giveback -fromnode local` comando.
+. Compruebe el estado de devolución, tres minutos después de que haya completado el informe, utilizando la `storage failover show` comando.
++
+Si la devolución no está completa tras 20 minutos, póngase en contacto con el soporte de cliente.
+
+. En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su puerto y nodo de inicio.
++
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+
+. Mueva el cable de consola al nodo de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+
+
+
+
+== Restaure NSE/NVE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores
+
+. Conecte el cable de consola al nodo de destino.
+. Utilice la `boot_ontap` Comando en el símbolo del sistema del CARGADOR para arrancar el nodo.
+. Compruebe la salida de la consola:
++
+[cols="1,2"]
+|===
+| Si la consola muestra... | Realice lo siguiente... 
+
+
+ a| 
+La solicitud de inicio de sesión de
+ a| 
+Vaya al paso 7.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+.. Inicie sesión en el nodo del partner.
+.. Confirme que el nodo de destino está listo para la devolución con el `storage failover show` comando.
+
+
+|===
+. Mueva el cable de consola al nodo asociado y vuelva a proporcionar el almacenamiento del nodo de destino mediante el `storage failover giveback -fromnode local -only-cfo-aggregates true local` comando.
++
+** Si el comando falla debido a un disco fallido, desactive físicamente el disco que ha fallado, pero deje el disco en la ranura hasta que se reciba un reemplazo.
+** Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo cerrar sesiones CIFS.
++
+
+NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
+
+** Si el comando falla porque el partner está "no listo", espere 5 minutos para que los NVMems se sincronicen.
+** Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el contenido adecuado para obtener más información.
+
+
+. Espere 3 minutos y compruebe el estado de la conmutación al nodo de respaldo con el `storage failover show` comando.
+. En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su puerto y nodo de inicio.
++
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+
+. Mueva el cable de consola al nodo de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Utilice la `storage encryption disk show` en el símbolo del sistema clustershell, para revisar el resultado.
+. Utilice la `security key-manager key-query` comando para mostrar las claves de cifrado y autenticación almacenadas en los servidores de gestión de claves.
++
+** Si la `Restored` columna = `yes/true`, ha finalizado y puede continuar con el proceso de sustitución.
+** Si la `Key Manager type` = `external` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, utilice la `security key-manager external restore` Comando para restaurar los ID de claves de las claves de autenticación.
++
+
+NOTE: Si el comando falla, póngase en contacto con el servicio de atención al cliente.
+
+** Si la `Key Manager type` = `onboard` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, utilice la `security key-manager onboard sync` Comando para volver a sincronizar el tipo de gestor de claves.
++
+Utilice la `security key-manager key-query` para comprobar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
+
+
+
+. Conecte el cable de consola al nodo compañero.
+. Vuelva a dar el nodo mediante el `storage failover giveback -fromnode local` comando.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+

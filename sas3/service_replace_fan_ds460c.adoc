@@ -1,0 +1,81 @@
+---
+permalink: sas3/service-replace-fan-ds460c.html 
+sidebar: sidebar 
+keywords: ds460c, drive, shelf, fan, module, cooling, disk, replace, replace a fan module in a ds460c disk shelf 
+summary: Cada bandeja de unidades DS460C incluye dos módulos de ventilador. Si falla un módulo de ventilador, debe reemplazarlo Lo antes posible. para garantizar que la bandeja tenga la refrigeración adecuada. Al quitar el módulo de ventilador con errores, no es necesario apagar la bandeja de discos. 
+---
+= Sustituya un módulo de ventilador en una bandeja de discos DS460C - bandejas con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cada bandeja de unidades DS460C incluye dos módulos de ventilador. Si falla un módulo de ventilador, debe reemplazarlo Lo antes posible. para garantizar que la bandeja tenga la refrigeración adecuada. Al quitar el módulo de ventilador con errores, no es necesario apagar la bandeja de discos.
+
+.Acerca de esta tarea
+Debe asegurarse de extraer y sustituir el módulo del ventilador en un plazo de 30 minutos para evitar que el sistema se sobrecaliente.
+
+.Pasos
+. Póngase protección antiestática.
+. Desembale el nuevo módulo de ventilador y colóquelo en una superficie nivelada cerca de la bandeja.
++
+Guarde todo el material de embalaje para utilizarlo cuando devuelva el ventilador defectuoso.
+
+. Desde la parte posterior de la bandeja de discos, observe los LED de atención para localizar el módulo de ventilador que debe quitar.
++
+Debe sustituir el módulo de ventilador que tiene encendido el LED de atención.
+
++
+image::../media/28_dwg_e2860_de460c_single_fan_canister_with_led_callout.gif[28 dwg e2860 de460c contenedor de ventilador único con anotación de led]
+
++
+|===
+
+
+| Elemento | Nombre DEL LED | Estado | Descripción 
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Atención  a| 
+Ámbar fijo
+ a| 
+El ventilador tiene un fallo
+
+|===
+. Presione la lengüeta naranja para soltar el asa del módulo del ventilador.
++
+image::../media/28_dwg_e2860_de460c_single_fan_canister_with_orange_tab_callout.gif[28 dwg e2860 de460c un único contenedor de ventilador con lengüeta naranja llamada]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Lengüeta que presiona para soltar el asa del módulo de ventilador 
+|===
+. Use el asa del módulo de ventilador para sacar el módulo de ventilador de la bandeja.
++
+image::../media/28_dwg_e2860_de460c_fan_canister_handle_with_callout.gif[28 dwg e2860 de460c empuñadura del canister del ventilador con llamada]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Asa para extraer el módulo del ventilador 
+|===
+. Deslice completamente el módulo del ventilador de repuesto en la bandeja y mueva el asa del módulo del ventilador hacia el lado hasta que encaje con la lengüeta naranja.
+. Compruebe el LED de atención ámbar del nuevo módulo de ventilador.
++
+
+NOTE: Después de sustituir el módulo de ventilador, el LED de atención permanece encendido (ámbar fijo) mientras el firmware comprueba que el módulo de ventilador se ha instalado correctamente. El LED se apaga una vez completado este proceso.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
++
+Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA.
+
+

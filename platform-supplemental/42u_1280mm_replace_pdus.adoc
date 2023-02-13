@@ -1,0 +1,49 @@
+---
+permalink: platform-supplemental/42u-1280mm-replace-pdus.html 
+sidebar: sidebar 
+keywords: replace, fail, PDU, system, cabinet, replace, exist, replace pdu 
+summary: Es posible sustituir una PDU con errores en el armario del sistema o sustituir una PDU existente por otro tipo de PDU. 
+---
+= Reemplace PDU
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible sustituir una PDU con errores en el armario del sistema o sustituir una PDU existente por otro tipo de PDU.
+
+El armario del sistema debe admitir la PDU de repuesto y debe proporcionar alimentación suficiente al equipo instalado.
+
+https://hwu.netapp.com/["hwu.netapp.com"]
+
+. Apague los disyuntores de la PDU de destino y, a continuación, desconecte la PDU antigua de la fuente de alimentación de CA.
+. Conecte a tierra el armario del sistema y, a continuación, desconecte los cables de alimentación de cada uno de los componentes del sistema y de la PDU.
+. Retire primero los tornillos del bastidor de la PDU, tornillo inferior.
++
+
+NOTE: Asegúrese de sostener la PDU con una mano mientras quita el último tornillo de la parte superior de la PDU. Esto evita que la PDU caiga o caiga hacia usted después de quitar el tornillo.
+
+. Retire la PDU antigua del armario del sistema.
++
+Asegúrese de mantener un registro de los tornillos de montaje para que pueda volver a utilizarlos al instalar la PDU de repuesto.
+
+. Retire los soportes de la PDU antigua y, a continuación, instálelos en la parte posterior de la PDU de repuesto.
+. Mientras apoya la PDU de repuesto, alinee la ranura del soporte de montaje de la PDU con los orificios superiores del bastidor en el interior del armario del sistema y, a continuación, fije la PDU al bastidor del armario del sistema usando los tornillos de montaje de la PDU antigua.
+. Fije la parte inferior de la PDU al bastidor del armario del sistema y, a continuación, apriete todos los tornillos de montaje.
+. Compruebe que todos los interruptores de alimentación o disyuntores estén en la posición de apagado.
++
+Si los disyuntores no están en la posición Off, empuje un destornillador pequeño o un clip de papel enderezado en la ranura situada a la derecha de la etiqueta Off para activar el disyuntor y apagar el circuito.
+
+. Conecte los cables de alimentación del sistema en la PDU y conecte cada componente a la salida de la PDU directamente a través del componente.
++
+
+TIP: Una práctica recomendada es distribuir la carga total a través de las ramas de la PDU, haciendo que la carga de cada rama sea lo más igual posible.
+
+. Bloquee el enchufe del cable de alimentación de cada componente en su lugar con la abrazadera de retención del cable encima deslizando el borde curvado de la abrazadera del retenedor del cable sobre el reborde del enchufe.
+. Conecte el cable de alimentación de la PDU a la fuente de alimentación de CA.
+. Encienda los interruptores de alimentación de la PDU o los disyuntores de la PDU.
++
+Para disyuntores de PDU, el botón está encendido cuando está alineado con el bastidor de la PDU.
+
+

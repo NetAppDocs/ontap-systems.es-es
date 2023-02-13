@@ -1,0 +1,134 @@
+---
+permalink: a800/bootmedia-transfer-boot-image.html 
+sidebar: sidebar 
+keywords: aff a800, transfer the boot image to the boot media 
+summary: El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB. 
+---
+= Transfiera la imagen de arranque al medio de arranque - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB.
+
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
++
+** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
++
+.. Descargue y copie la imagen del servicio adecuada del sitio de soporte de NetApp en la unidad flash USB.
++
+... Descargue la imagen de servicio en su espacio de trabajo en su portátil.
+... Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+
++
+**** `boot`
+**** `efi`
+
+
+... Copie el `efi` En el directorio superior de la unidad flash USB.
++
+La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
+
+... Extraiga la unidad flash USB del ordenador portátil.
+
+
+.. Si aún no lo ha hecho, cierre el conducto de aire:
++
+... Gire el conducto de aire hacia abajo hasta el módulo del controlador.
+... Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
+... Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
++
+image::../media/drw_a800_close_air_duct.png[conducto de aire de cierre drw a800]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+
+
+
+ a| 
+Conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+
+
+
+ a| 
+Elevadores
+
+|===
+
+
+.. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+.. Vuelva a instalar el dispositivo de administración de cables y vuelva a instalar el sistema, según sea necesario.
++
+Al realizar la copia, recuerde volver a instalar los convertidores de medios (SFP o QSFP) si se retiraron.
+
+.. Enchufe el cable de alimentación en la fuente de alimentación y vuelva a instalar el retenedor del cable de alimentación.
+.. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+.. Empuje suavemente el módulo del controlador hasta que los ganchos de bloqueo del módulo del controlador empiecen a elevarse, empuje firmemente los ganchos de bloqueo para terminar de fijar el módulo del controlador y, a continuación, gire los ganchos de bloqueo a la posición de bloqueo sobre los pasadores del módulo del controlador.
++
+La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
+
+.. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
++
+Si se pierde este mensaje, pulse Ctrl-C, seleccione la opción de arranque en modo de mantenimiento y, a continuación `halt` La controladora para arrancar en EL CARGADOR.
+
+.. Aunque se conservan las variables de entorno y los bootargs, debe comprobar que todas las variables de entorno de arranque y los bootargs necesarios están correctamente definidos para el tipo de sistema y la configuración mediante el `printenv bootarg name` comando y corrija los errores mediante el `setenv variable-name <value>` comando.
++
+... Compruebe las variables de entorno de arranque:
++
+**** `bootarg.init.boot_clustered`
+**** `partner-sysid`
+**** `bootarg.init.flash_optimized` Para C190 de AFF/AFF A220 (all-flash FAS)
+**** `bootarg.init.san_optimized` Para AFF A220 y la cabina All SAN
+**** `bootarg.init.switchless_cluster.enable`
+
+
+... Si el Administrador de claves externo está activado, compruebe los valores de bootarg que aparecen en la `kenv` Salida de ASUP:
++
+**** `bootarg.storageencryption.support <value>`
+**** `bootarg.keymanager.support <value>`
+**** `kmip.init.interface <value>`
+**** `kmip.init.ipaddr <value>`
+**** `kmip.init.netmask <value>`
+**** `kmip.init.gateway <value>`
+
+
+... Si Onboard Key Manager está habilitado, compruebe los valores de bootarg que se muestran en la `kenv` Salida de ASUP:
++
+**** `bootarg.storageencryption.support <value>`
+**** `bootarg.keymanager.support <value>`
+**** `bootarg.onboard_keymanager <value>`
+
+
+... Guarde las variables de entorno modificadas con el `savenv` comando
+... Confirme los cambios mediante el `printenv _variable-name_` comando.
+
+
+
+
+

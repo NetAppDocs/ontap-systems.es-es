@@ -1,0 +1,81 @@
+= 
+:allow-uri-read: 
+
+
+. Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la unidad de reemplazo de asignación automática de unidades, si se encuentra habilitada
++
+
+NOTE: La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.
+
++
+.. Compruebe si la asignación automática de unidades está habilitada: `storage disk option show`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+Si la asignación automática de unidades está activada, la salida muestra `on` En la columna "'asignación automática'" (para cada módulo de controlador).
+
+.. Si la asignación automática de unidades está habilitada, deshabilítela: `storage disk option modify -node node_name -autoassign off`
++
+Debe deshabilitar la asignación automática de unidades en ambos módulos de la controladora.
+
+
+
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente la unidad con error.
++
+Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y la unidad con error se iluminan.
+
++
+
+NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
+
+. Quite la unidad con error:
++
+.. Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+.. Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+
+
+. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
++
+Esto permite al sistema reconocer que se ha quitado una unidad.
+
+. Inserte la unidad de reemplazo:
++
+.. Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
+.. Presione hasta que la unidad se detenga.
+.. Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
+
+
+
+. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
++
+Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
+
+. Si desea sustituir otra unidad, repita los pasos 3 a 7.
+. Si ha desactivado la asignación de unidades automáticas en el paso 1, asigne manualmente la propiedad de unidades y vuelva a activar la asignación automática de unidades si es necesario.
++
+.. Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
+.. Asigne cada unidad: `storage disk assign -disk disk_name -owner owner_name`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+Puede usar el carácter comodín para asignar más de una unidad a la vez.
+
+.. Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node node_name -autoassign on`
++
+Debe volver a habilitar la asignación automática de unidades en ambos módulos de la controladora.
+
+
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
++
+Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
+
+

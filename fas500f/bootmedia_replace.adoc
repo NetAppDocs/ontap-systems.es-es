@@ -1,0 +1,205 @@
+---
+permalink: fas500f/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: fas500f, replace the boot media 
+summary: Localice el soporte de arranque con errores en el módulo del controlador quitando el conducto de aire del módulo del controlador antes de sustituir el soporte de arranque. 
+---
+= Sustituya el soporte de arranque - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
+
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm retirar la instalación]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Palanca
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
++
+image::../media/drw_a250_open_controller_module_cover.png[cubierta del módulo de controlador abierto drw a250]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Tornillo de apriete manual
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Cubierta del módulo del controlador.
+
+|===
+. Levantar la tapa del conducto de aire.
++
+image::../media/drw_a250_remove_airduct_cover.png[drw a250 retire la cubierta del conducto de aire]
+
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Localice el soporte de arranque con errores en el módulo del controlador quitando el conducto de aire del módulo del controlador antes de sustituir el soporte de arranque.
+
+Necesita un destornillador Phillips magnético número 1 para quitar el tornillo que sujeta el soporte del maletero en su lugar. Debido a las limitaciones de espacio del módulo del controlador, también debe tener un imán para transferir el tornillo a para que no lo suelte.
+
+Puede usar el siguiente vídeo o los pasos tabulados para reemplazar el soporte de arranque:
+
+.Animación: Reemplace el soporte de arranque
+video::7c2cad51-dd95-4b07-a903-ac5b015c1a6d[panopto]
+. Localice y sustituya el soporte de arranque dañado del módulo del controlador.
++
+image::../media/drw_a250_replace_boot_media.png[drw a250 sustituye el soporte de arranque]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Retire el tornillo que fija el soporte de arranque a la placa base en el módulo del controlador.
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Levante el soporte del maletero para extraerlo del módulo del controlador.
+
+|===
++
+.. Con el destornillador magnético número 1, retire el tornillo del soporte del maletero dañado y colóquelo a un lado de forma segura en el imán.
+.. Levante suavemente el soporte del maletero dañado y colóquelo a un lado.
+.. Retire el soporte del maletero de repuesto de la bolsa de transporte antiestática y alinéelo en su sitio en el módulo del controlador.
+.. Con el destornillador magnético número 1, inserte y apriete el tornillo del soporte de arranque.
++
+
+NOTE: No aplique fuerza al apretar el tornillo en el soporte del maletero; puede que lo agriete.
+
+
+
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB.
+
+* Debe tener una unidad flash USB, formateada a MBR/FAT32, con una capacidad mínima de 4 GB
+* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen que corresponda en la sección *Descargas* del sitio de soporte de NetApp
++
+** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
+
+
+.Pasos
+. Descargue y copie la imagen del servicio adecuada del sitio de soporte de NetApp en la unidad flash USB.
+. Descargue la imagen de servicio en su espacio de trabajo en su portátil.
+. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+
++
+** `boot`
+** `efi`
+
+
+. Copie el `efi` En el directorio superior de la unidad flash USB.
++
+La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
+
+. Extraiga la unidad flash USB del ordenador portátil.
+. Si aún no lo ha hecho, instale el conducto de aire.
++
+image::../media/drw_a250_install_airduct_cover.png[instalar la cubierta del conducto de aire drw a250]
+
+. Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.
++
+image::../media/drw_a250_close_controller_module_cover.png[cubierta del módulo del controlador de cierre drw a250]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Cubierta del módulo del controlador
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tornillo de apriete manual
+
+|===
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+. Enchufe el cable de alimentación en la fuente de alimentación y vuelva a instalar el retenedor del cable de alimentación.
+. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Inserte completamente el módulo del controlador en el chasis:
+. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+

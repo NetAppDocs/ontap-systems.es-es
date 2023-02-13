@@ -1,0 +1,255 @@
+---
+permalink: fas500f/mezzanine-replace.html 
+sidebar: sidebar 
+keywords: fas500f, replace or install a mezzanine card 
+summary: Para sustituir una tarjeta intermedia con error, debe retirar los cables y cualquier módulo SFP o QSFP, sustituir la tarjeta, volver a instalar los módulos SFP o QSFP y volver a conectar las tarjetas. Para instalar una nueva tarjeta mezzanine, debe tener los cables adecuados y los módulos SFP o QSFP. 
+---
+= Sustituya o instale una tarjeta intermedia - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una tarjeta intermedia con error, debe retirar los cables y cualquier módulo SFP o QSFP, sustituir la tarjeta, volver a instalar los módulos SFP o QSFP y volver a conectar las tarjetas. Para instalar una nueva tarjeta mezzanine, debe tener los cables adecuados y los módulos SFP o QSFP.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Volviendo al modo SED a no protegido"].
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos  `cluster kernel-service show`) Para el blade SCSI del controlador dañado. La `cluster kernel-service show` comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
+
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm retirar la instalación]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Palanca 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
++
+image::../media/drw_a250_open_controller_module_cover.png[cubierta del módulo de controlador abierto drw a250]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Tornillo de apriete manual 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Cubierta del módulo del controlador.
+
+|===
+
+
+
+
+== Paso 3: Sustituya o instale una tarjeta mezzanine
+
+Para sustituir una tarjeta intermedia, debe extraer la tarjeta defectuosa e instalar la tarjeta de sustitución; para instalar una tarjeta intermedia, debe extraer la placa frontal e instalar la nueva tarjeta.
+
+Puede utilizar el siguiente vídeo o los pasos tabulados para reemplazar una tarjeta mezzanine:
+
+.Animación - reemplace una tarjeta mezzanine
+video::d8e7d4d9-8d28-4be1-809b-ac5b01643676[panopto]
+
+
+=== Opción 1: Sustitución de una tarjeta mezzanine:
+
+. Localice y sustituya la tarjeta intermedia defectuosa en el módulo del controlador.
++
+image::../media/drw_a250_replace_mezz_card.png[drw a250 sustituya la tarjeta mezz]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Retire los tornillos de la cara del módulo del controlador. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Afloje el tornillo del módulo del controlador.
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Extraiga la tarjeta intermedia.
+
+|===
+. Desconecte cualquier cableado asociado con la tarjeta intermedia dañada.
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Retire todos los módulos SFP o QSFP que puedan estar en la tarjeta intermedia dañada y déjela aparte.
+. Con el destornillador magnético número 1, retire los tornillos de la cara del módulo del controlador y déjelos a un lado de forma segura en el imán.
+. Con el destornillador magnético n.o 1, afloje el tornillo de la tarjeta mezzanine dañada.
+. Con el destornillador magnético #1, levante suavemente la tarjeta mezzanine dañada directamente de la toma y déjela a un lado.
+. Retire la tarjeta mezzanine de repuesto de la bolsa de transporte antiestática y alinéela con la cara interior del módulo de controlador.
+. Alinee suavemente la tarjeta intermedia de repuesto en su lugar.
+. Con el destornillador magnético número 1, inserte y apriete los tornillos de la cara del módulo del controlador y de la tarjeta mezzanine.
++
+
+NOTE: No aplique fuerza al apretar el tornillo de la tarjeta mezzanine, ya que puede romperlo.
+
+. Inserte cualquier módulo SFP o QSFP que se haya extraído de la tarjeta mezzanine dañada a la tarjeta mezzanine de reemplazo.
+
+
+
+
+=== Opción 2: Instalar una tarjeta mezzanine:
+
+Si el sistema no dispone de una tarjeta intermedia, debe instalar una nueva.
+
+. Con el destornillador magnético número 1, retire los tornillos de la cara del módulo del controlador y la placa frontal que cubre la ranura de la tarjeta mezzanine y déjelos a un lado de forma segura en el imán.
+. Extraiga la tarjeta mezzanine de la bolsa de transporte antiestática y alinéela con la cara interior del módulo de controlador.
+. Alinee suavemente la tarjeta intermedia en su lugar.
+. Con el destornillador magnético número 1, inserte y apriete los tornillos de la cara del módulo del controlador y de la tarjeta mezzanine.
++
+
+NOTE: No aplique fuerza al apretar el tornillo de la tarjeta mezzanine, ya que puede romperlo.
+
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
+
+Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
+
+. Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.
++
+image::../media/drw_a250_close_controller_module_cover.png[cubierta del módulo del controlador de cierre drw a250]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Cubierta del módulo del controlador 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tornillo de apriete manual
+
+|===
+. Inserte el módulo de la controladora en el chasis
++
+.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
+.. Con ambas manos, alinee y deslice suavemente el módulo del controlador en los brazos del mecanismo de bloqueo hasta que se detenga.
+.. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+.. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+
+
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+. Recuperar el sistema, según sea necesario.
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

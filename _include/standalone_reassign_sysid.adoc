@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+En un sistema independiente, debe reasignar manualmente los discos al ID del sistema de la nueva controladora antes de devolver el sistema a su estado de funcionamiento normal.
+
+.Acerca de esta tarea
+
+NOTE: Este procedimiento se aplica sólo a sistemas que se encuentran en una configuración independiente.
+
+.Pasos
+. Si todavía no lo ha hecho, reinicie el nodo _reboot_, interrumpa el proceso de arranque pulsando Ctrl-C y, a continuación, seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
+. Debe entrar `Y` Cuando se le solicite que anule el ID del sistema debido a una discrepancia de ID del sistema.
+. Ver los ID del sistema: `disk show -a`
+. Debe tomar nota del ID del sistema antiguo, que se muestra como parte de la columna propietario del disco.
++
+En el ejemplo siguiente se muestra el ID anterior del sistema de 118073209:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK      OWNER                  POOL   SERIAL NUMBER  HOME
+--------    -------------          -----  -------------  -------------
+disk_name    system-1  (118073209)  Pool0  J8XJE9LC       system-1  (118073209)
+disk_name    system-1  (118073209)  Pool0  J8Y478RC       system-1  (118073209)
+.
+.
+.
+
+----
+. Reasignar propiedad de disco mediante la información de ID del sistema obtenida del comando Disk show: `disk reassign -s old system ID disk reassign -s 118073209`
+. Compruebe que los discos se han asignado correctamente: `disk show -a`
++
+Los discos que pertenecen al nodo de reemplazo deben mostrar el nuevo ID del sistema. En el siguiente ejemplo, se muestran ahora los discos propiedad del sistema-1 el nuevo ID del sistema, 118065481:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK      OWNER                  POOL   SERIAL NUMBER  HOME
+--------    -------------          -----  -------------  -------------
+disk_name    system-1  (118065481)  Pool0  J8Y0TDZC       system-1  (118065481)
+disk_name    system-1  (118065481)  Pool0  J8Y0TDZC       system-1  (118065481)
+.
+.
+.
+
+----
+. Si el sistema de almacenamiento tiene configurado el cifrado de volúmenes o el almacenamiento, debe restaurar la funcionalidad de cifrado de volúmenes o almacenamiento usando uno de los siguientes procedimientos, en función de si usa la gestión de claves externa o incorporada:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
+
+
+. Arrancar el nodo: `boot_ontap`
+

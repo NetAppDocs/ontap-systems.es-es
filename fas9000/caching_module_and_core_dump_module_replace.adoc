@@ -1,0 +1,379 @@
+---
+permalink: fas9000/caching-module-and-core-dump-module-replace.html 
+sidebar: sidebar 
+keywords: aff a700, fas9000, replace caching module 
+summary: 'Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.' 
+---
+= Sustituya el módulo de almacenamiento en caché o añada/sustituya un módulo de volcado principal: AFF A700 y FAS9000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará. Si AutoSupport no está habilitado, puede localizar el módulo de almacenamiento en caché con fallos mediante el LED de fallo situado en la parte frontal del módulo. También puede añadir o sustituir el módulo de volcado principal X9170A de 1 TB, que es necesario si instala bandejas de unidades NS224 en un sistema A700 de AFF.
+
+.Antes de empezar
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Para obtener instrucciones sobre el intercambio en funcionamiento del módulo de almacenamiento en caché, consulte link:../fas9000/caching-module-hot-swap.html["Intercambio en caliente de un módulo de almacenamiento en caché"].
+* Al quitar, sustituir o añadir módulos de volcado principal o de almacenamiento en caché, debe detenerse el nodo de destino en el CARGADOR.
+* AFF A700 admite el módulo de volcado de memoria de 1 TB, X9170A, que se requiere si va a añadir bandejas de unidades NS224.
+* Los módulos de volcado principales se pueden instalar en las ranuras 6-1 y 6-2. La mejor práctica recomendada es instalar el módulo en la ranura 6-1.
+* El módulo de volcado principal X9170A no se puede intercambiar en caliente.
+
+
+
+
+== Paso 1: Apagar el controlador dañado
+
+[role="lead"]
+Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
+
+[role="tabbed-block"]
+====
+.Opción 1: Mayoría de las configuraciones
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Volviendo al modo SED a no protegido"].
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos  `cluster kernel-service show`) Para el blade SCSI del controlador dañado. La `cluster kernel-service show` comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora está en un MetroCluster de dos nodos
+--
+[role="lead"]
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de la sección "devolver una unidad FIPS o SED a modo sin protección" de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^].
+* Debe dejar las fuentes de alimentación encendidas al final de este procedimiento para proporcionar alimentación a la controladora en buen estado.
+
+
+.Pasos
+. Compruebe el estado de MetroCluster para determinar si el controlador dañado ha cambiado automáticamente al controlador en buen estado: `metrocluster show`
+. En función de si se ha producido una conmutación automática, proceda según la siguiente tabla:
++
+[cols="1,2"]
+|===
+| Si el controlador está dañado... | Realice lo siguiente... 
+
+
+ a| 
+Se ha cambiado automáticamente
+ a| 
+Continúe con el próximo paso.
+
+
+
+ a| 
+No se ha cambiado automáticamente
+ a| 
+Realice una operación de conmutación de sitios planificada desde el controlador en buen estado: `metrocluster switchover`
+
+
+
+ a| 
+No se ha cambiado automáticamente, ha intentado efectuar una conmutación con el `metrocluster switchover` y se vetó la conmutación
+ a| 
+Revise los mensajes de veto y, si es posible, resuelva el problema e inténtelo de nuevo. Si no puede resolver el problema, póngase en contacto con el soporte técnico.
+
+|===
+. Resincronice los agregados de datos ejecutando el `metrocluster heal -phase aggregates` comando del clúster superviviente.
++
+[listing]
+----
+controller_A_1::> metrocluster heal -phase aggregates
+[Job 130] Job succeeded: Heal Aggregates is successful.
+----
++
+Si la curación es vetada, usted tiene la opción de reemitir el `metrocluster heal` con el `-override-vetoes` parámetro. Si utiliza este parámetro opcional, el sistema anula cualquier vetoo suave que impida la operación de reparación.
+
+. Compruebe que se ha completado la operación con el comando MetroCluster operation show.
++
+[listing]
+----
+controller_A_1::> metrocluster operation show
+    Operation: heal-aggregates
+      State: successful
+Start Time: 7/25/2016 18:45:55
+   End Time: 7/25/2016 18:45:56
+     Errors: -
+----
+. Compruebe el estado de los agregados mediante `storage aggregate show` comando.
++
+[listing]
+----
+controller_A_1::> storage aggregate show
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+...
+aggr_b2    227.1GB   227.1GB    0% online       0 mcc1-a2          raid_dp, mirrored, normal...
+----
+. Repare los agregados raíz mediante el `metrocluster heal -phase root-aggregates` comando.
++
+[listing]
+----
+mcc1A::> metrocluster heal -phase root-aggregates
+[Job 137] Job succeeded: Heal Root Aggregates is successful
+----
++
+Si la curación es vetada, usted tiene la opción de reemitir el `metrocluster heal` comando con el parámetro -override-vetoes. Si utiliza este parámetro opcional, el sistema anula cualquier vetoo suave que impida la operación de reparación.
+
+. Compruebe que la operación reparar se ha completado mediante el `metrocluster operation show` comando en el clúster de destino:
++
+[listing]
+----
+
+mcc1A::> metrocluster operation show
+  Operation: heal-root-aggregates
+      State: successful
+ Start Time: 7/29/2016 20:54:41
+   End Time: 7/29/2016 20:54:42
+     Errors: -
+----
+. En el módulo del controlador dañado, desconecte las fuentes de alimentación.
+
+
+--
+====
+
+
+== Paso 2: Sustituya o añada un módulo de almacenamiento en caché
+
+[role="lead"]
+Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) son módulos independientes. Se encuentran en la parte frontal del módulo NVRAM. Para sustituir o añadir un módulo de almacenamiento en caché, búsquelo en la parte posterior del sistema en la ranura 6 y, a continuación, siga la secuencia específica de pasos para reemplazarlo.
+
+.Antes de empezar
+Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
+
+* Debe tener el sistema operativo adecuado para el módulo de almacenamiento en caché que está instalando.
+* Debe admitir la capacidad de almacenamiento en caché.
+* El nodo de destino debe estar en el símbolo del sistema del CARGADOR antes de agregar o sustituir el módulo de almacenamiento en caché.
+* El módulo de almacenamiento en caché de reemplazo debe tener la misma capacidad que el módulo de almacenamiento en caché con fallos, pero puede ser de un proveedor compatible diferente.
+* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice el módulo de almacenamiento en caché que ha fallado, en la ranura 6, mediante el LED de atención ámbar iluminado en la parte frontal del módulo de almacenamiento en caché.
+. Retire el módulo de almacenamiento en caché:
++
+
+NOTE: Si va a agregar otro módulo de almacenamiento en caché al sistema, retire el módulo en blanco y vaya al siguiente paso.
+
++
+image::../media/drw_9000_remove_flashcache.png[drw 9000 retire el flashcache]
+
++
+|===
+
+
+| image:../media/legend_icon_01.png[""] | Botón de liberación naranja. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+| Asa de leva del módulo de almacenamiento en caché. 
+|===
++
+.. Pulse el botón naranja de liberación situado en la parte frontal del módulo de almacenamiento en caché.
++
+
+NOTE: No utilice el pestillo de leva de E/S numerado y con letras para expulsar el módulo de caché. El pestillo de leva de E/S numerado y con letras expulsa todo el módulo NVRAM10 y no el módulo de caché.
+
+.. Gire el identificador de leva hasta que el módulo de almacenamiento en caché comience a deslizarse fuera del módulo NVRAM10.
+.. Tire suavemente del mango de leva hacia usted para retirar el módulo de almacenamiento en caché del módulo NVRAM10.
++
+Asegúrese de admitir el módulo de almacenamiento en caché cuando lo quite del módulo NVRAM10.
+
+
+
+. Instale el módulo de almacenamiento en caché:
++
+.. Alinee los bordes del módulo de almacenamiento en caché con la abertura del módulo NVRAM10.
+.. Empuje suavemente el módulo de almacenamiento en caché en el compartimento hasta que el mango de la leva se acople.
+.. Gire el mango de la leva hasta que encaje en su sitio.
+
+
+
+
+
+
+== Paso 3: Agregar o reemplazar un módulo de volcado principal X9170A
+
+[role="lead"]
+El volcado de memoria caché de 1 TB, X9170A, solo se utiliza en los sistemas A700 de AFF. El módulo de volcado principal no se puede intercambiar en caliente. El módulo de volcado principal normalmente se encuentra en la parte frontal del módulo NVRAM en la ranura 6-1 de la parte posterior del sistema. Para reemplazar o agregar el módulo de volcado principal, localice la ranura 6-1 y, a continuación, siga la secuencia específica de pasos para agregarlo o reemplazarlo.
+
+.Antes de empezar
+* El sistema debe estar ejecutando ONTAP 9.8 o posterior para poder añadir un módulo de volcado principal.
+* El módulo de volcado principal X9170A no se puede intercambiar en caliente.
+* El nodo de destino debe estar en el símbolo del sistema del CARGADOR antes de agregar o sustituir el módulo de volcado de código.
+* Debe haber recibido dos módulos de descarga de núcleo X9170; uno para cada controlador.
+* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si desea sustituir un módulo de volcado de memoria con fallos, localice y retire el módulo:
++
+image::../media/drw_9000_remove_flashcache.png[drw 9000 retire el flashcache]
+
++
+[cols="1,3"]
+|===
+
+
+| image:../media/legend_icon_01.png[""] | Botón de liberación naranja. 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Asa de leva del módulo de descarga del sistema principal.
+
+|===
++
+.. Localice el módulo que ha fallado mediante el LED de atención ámbar de la parte frontal del módulo.
+.. Pulse el botón naranja de liberación situado en la parte frontal del módulo de volcado principal.
++
+
+NOTE: No utilice el pestillo de leva de E/S numerado y con letras para expulsar el módulo de descarga del núcleo. El pestillo de leva de E/S numerado y con letras expulsa todo el módulo NVRAM10 y no el módulo de volcado principal.
+
+.. Gire el controlador de leva hasta que el módulo de volcado principal comience a deslizarse fuera del módulo NVRAM10.
+.. Tire suavemente del mango de leva en dirección recta para extraer el módulo de volcado principal del módulo NVRAM10 y colóquelo aparte.
++
+Asegúrese de que admite el módulo de volcado principal mientras lo quita del módulo NVRAM10.
+
+
+
+. Instale el módulo de volcado principal:
++
+.. Si va a instalar un nuevo módulo de volcado principal, extraiga el módulo en blanco de la ranura 6-1.
+.. Alinee los bordes del módulo de volcado principal con la abertura del módulo NVRAM10.
+.. Empuje suavemente el módulo de descarga principal en el compartimiento hasta que la palanca de leva se acople.
+.. Gire el mango de la leva hasta que encaje en su sitio.
+
+
+
+
+
+
+== Paso 4: Reinicie la controladora después de sustituir FRU
+
+[role="lead"]
+Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
+
+.Paso
+. Para arrancar ONTAP desde el aviso del CARGADOR, introduzca `bye`.
+
+
+
+
+== Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+
+Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
+
+Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
+
+.Pasos
+. Compruebe que todos los nodos estén en el `enabled` provincia: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Compruebe que la resincronización se haya completado en todas las SVM: `metrocluster vserver show`
+. Compruebe que las migraciones LIF automáticas que realizan las operaciones de reparación se han completado correctamente: `metrocluster check lif show`
+. Lleve a cabo la conmutación de estado mediante el `metrocluster switchback` comando desde cualquier nodo del clúster superviviente.
+. Compruebe que la operación de conmutación de estado ha finalizado: `metrocluster show`
++
+La operación de conmutación de estado ya está en ejecución cuando un clúster está en el `waiting-for-switchback` provincia:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+La operación de conmutación de estado se completa cuando los clústeres están en el `normal` estado:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar el estado de las líneas base en curso utilizando el `metrocluster config-replication resync-status show` comando.
+
+. Restablecer cualquier configuración de SnapMirror o SnapVault.
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

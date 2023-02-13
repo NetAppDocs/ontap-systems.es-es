@@ -1,0 +1,206 @@
+---
+permalink: ns224/hot-remove-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, drive, aggregate, ha, pair, serving, data, i/o, hot-remove an ns224 
+summary: 'Puede quitar en caliente una bandeja de unidades NS224 donde se hayan eliminado los agregados de las unidades, en una pareja de alta disponibilidad que esté activa y sirviendo datos \(hay una I/o en curso\).' 
+---
+= Desmonte en caliente una estantería - bandejas NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede quitar en caliente una bandeja de unidades NS224 donde se hayan eliminado los agregados de las unidades, en una pareja de alta disponibilidad que esté activa y sirviendo datos (hay operaciones de I/o en curso).
+
+.Antes de empezar
+* Su par de alta disponibilidad no puede estar en estado de toma de control.
+* Debe haber quitado todos los agregados de las unidades (las unidades deben ser repuestos) de la bandeja que se va a quitar.
++
+
+NOTE: Si se intenta realizar este procedimiento con agregados en la bandeja que se está quitando, se podría conmutar el sistema con una alerta de varios discos.
+
++
+Puede utilizar el `storage aggregate offline -aggregate _aggregate_name_` y, a continuación, el `storage aggregate delete -aggregate _aggregate_name_` comando.
+
+* Si el sistema se suministra en un armario del sistema, necesita un destornillador Phillips para quitar los tornillos que fijan el estante a la parte posterior del armario.
+
+
+.Acerca de esta tarea
+* Si va a quitar en caliente más de una bandeja, debe quitar una bandeja cada vez.
+* *Mejor práctica:* la mejor práctica es eliminar la propiedad de una unidad después de quitar los agregados de las unidades de la bandeja que está quitando.
++
+Al eliminar la información de propiedad de una unidad de repuesto, la unidad se puede integrar correctamente en otro nodo (según sea necesario).
+
++
+El procedimiento para eliminar la propiedad de las unidades se puede encontrar en el contenido de discos y agregados:
+
++
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"^]
+
+
+
+
+NOTE: El procedimiento requiere que se deshabilite la asignación automática de unidades. La asignación automática de unidad se vuelve a habilitar al final de este procedimiento (después de quitar la bandeja en caliente).
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+
+* Después de desconectar una bandeja de puertos no dedicados para roce (en las controladoras, en tarjetas PCIe compatibles con roce, una combinación de ambos o en módulos de I/o), tiene la opción de reconfigurar estos puertos para usarlos en red.
++
+
+NOTE: Si su par de alta disponibilidad está ejecutando una versión de ONTAP 9.6, debe reiniciar las controladoras de una en una. Si su pareja de alta disponibilidad ejecuta ONTAP 9.7 o una versión posterior, no necesita reiniciar las controladoras, a menos que una o ambas controladoras estén en modo de mantenimiento. En este procedimiento se asume que ninguna controladora está en modo de mantenimiento.
+
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Compruebe que las unidades de la bandeja que va a quitar no tienen agregados (son piezas de repuesto) y se elimine la propiedad:
++
+.. Introduzca el siguiente comando para enumerar todas las unidades de la bandeja que se va a quitar: `storage disk show -shelf _shelf_number_`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
+.. Compruebe la salida para verificar que no hay agregados en las unidades.
++
+Las unidades sin agregados tienen un guion en la `Container Name` columna.
+
+.. Compruebe el resultado para verificar que la propiedad se quita de las unidades.
++
+Las unidades sin propiedad tendrán un guion en la `Owner` columna.
+
++
+
+NOTE: Si tiene unidades con errores, se muestran rotas en la `Container Type` columna. (Las unidades con errores no tienen propiedad).
+
++
+El siguiente resultado muestra que las unidades de la bandeja que se está quitando (bandeja 2) están en estado correcto para quitar la bandeja. Los agregados se eliminan en todas las unidades; por lo tanto, se muestra un guion en el `Container Name` para cada unidad. La propiedad también se quita en todas las unidades; por lo tanto, se muestra un guion en el `Owner` para cada unidad.
+
+
+
++
+[listing]
+----
+cluster1::> storage disk show -shelf 2
+
+           Usable           Disk     Container   Container
+Disk         Size Shelf Bay Type     Type        Name       Owner
+-------- -------- ----- --- ------   ----------- ---------- ---------
+...
+2.2.4           -     2   4 SSD-NVM  spare                -         -
+2.2.5           -     2   5 SSD-NVM  spare                -         -
+2.2.6           -     2   6 SSD-NVM  broken               -         -
+2.2.7           -     2   7 SSD-NVM  spare                -         -
+...
+----
+. Localice físicamente la bandeja que desea quitar.
+. Desconecte el cableado de la bandeja que se está quitando:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento (de la bandeja a las controladoras).
+
+
+. Quite físicamente la bandeja del rack o armario.
++
+
+NOTE: Un estante completamente cargado NS224 puede pesar hasta 30.29 kg (66.78 lbs) y requiere que dos personas levanten o usen un elevador hidráulico. Evite quitar los componentes de la bandeja (desde la parte delantera o trasera de la bandeja) para reducir el peso de la bandeja, ya que el peso de la bandeja se equilibrará.
+
++
+
+NOTE: Si el sistema se envió en un armario, primero debe desenroscar los dos tornillos Phillips que fijan el estante a los derechos verticales traseros. Los tornillos se encuentran en las paredes internas de la bandeja del módulo NSM inferior. Debe quitar ambos módulos NSM para acceder a los tornillos.
+
+. Si va a quitar más de una bandeja, repita los pasos 2 a 5.
++
+De lo contrario, vaya al paso siguiente.
+
+. Si deshabilitó la asignación automática de unidades al quitar la propiedad de las unidades, vuelva a habilitarla: `storage disk option modify -autoassign on`
++
+El comando se ejecuta en ambos módulos de la controladora.
+
+. Tiene la opción de cambiar la configuración de los puertos no dedicados para roce para su uso en la red, siguiendo los siguientes subpasos.
++
+De lo contrario, ha finalizado este procedimiento.
+
++
+.. Verifique los nombres de los puertos no dedicados, configurados actualmente para uso del almacenamiento: `storage port show`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+
+NOTE: Los puertos no dedicados configurados para el uso del almacenamiento se muestran en la salida de la siguiente manera: Si el par de alta disponibilidad ejecuta ONTAP 9.8 o una versión posterior, se muestran los puertos no dedicados `storage` en la `Mode` columna. Si su par de alta disponibilidad ejecuta ONTAP 9.7 o 9.6, los puertos no dedicados se muestran `false` en la `Is Dedicated?` columna, también mostrar `enabled` en la `State` columna.
+
+.. Complete el conjunto de pasos aplicables a la versión de ONTAP en la que su par de alta disponibilidad está ejecutando:
++
+[cols="1,2"]
+|===
+| Si su par de alta disponibilidad está ejecutando... | Realice lo siguiente... 
+
+
+ a| 
+ONTAP 9.8 o posterior
+ a| 
+... Vuelva a configurar los puertos no dedicados para el uso de redes en el primer módulo de controladora: `storage port modify -node _node name_ -port _port name_ -mode network`
++
+Debe ejecutar este comando para cada puerto que se está reconfigurando.
+
+... Repita el paso anterior para volver a configurar los puertos del segundo módulo de la controladora.
+... Vaya al subpaso 8c para verificar todos los cambios de puerto.
+
+
+
+
+ a| 
+ONTAP 9.7
+ a| 
+... Vuelva a configurar los puertos no dedicados para el uso de redes en el primer módulo de controladora: `storage port disable -node _node name_ -port _port name_`
++
+Debe ejecutar este comando para cada puerto que se está reconfigurando.
+
+... Repita el paso anterior para volver a configurar los puertos del segundo módulo de la controladora.
+... Vaya al subpaso 8c para verificar todos los cambios de puerto.
+
+
+
+
+ a| 
+Una versión de ONTAP 9.6
+ a| 
+... Vuelva a configurar los puertos compatibles con roce para su uso en redes, en el primer módulo de la controladora: `storage port disable -node _node name_ -port _port name_`
++
+Debe ejecutar este comando para cada puerto que se está reconfigurando.
+
+... Reinicie el módulo de la controladora para que los cambios en el puerto surtan efecto:
++
+`system node reboot -node _node name_ -reason _reason_ for the reboot`
+
++
+
+NOTE: El reinicio debe completarse antes de continuar con el siguiente paso. El reinicio puede demorar hasta 15 minutos.
+
+... Vuelva a configurar los puertos del segundo módulo de controlador repitiendo el primer paso (a).
+... Reinicie la segunda controladora para que los cambios en el puerto surtan efecto. Para ello, repita el segundo paso (b).
+... Vaya al subpaso 8c para verificar todos los cambios de puerto.
+
+
+|===
+.. Compruebe que los puertos no dedicados de ambos módulos de controlador se reconfiguran para su uso en red: `storage port show`
++
+Puede introducir el comando en cualquier módulo de la controladora.
+
++
+Si su par de alta disponibilidad ejecuta ONTAP 9.8 o posterior, se muestran los puertos no dedicados `network` en la `Mode` columna.
+
++
+Si su par de alta disponibilidad ejecuta ONTAP 9.7 o 9.6, los puertos no dedicados se muestran `false` en la `Is Dedicated?` columna, también mostrar `disabled` en la `State` columna.
+
+
+
+

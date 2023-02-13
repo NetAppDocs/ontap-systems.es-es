@@ -1,0 +1,26 @@
+---
+permalink: a700s/bootmedia-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media 
+summary: El medio de arranque principal almacena la imagen de arranque ONTAP que utiliza el sistema cuando arranca. Puede restaurar la imagen del soporte de arranque principal utilizando la imagen ONTAP en el soporte de arranque secundario o, si es necesario, utilizando una unidad flash USB. 
+---
+= Descripción general de la sustitución de medios de arranque: AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El medio de arranque principal almacena la imagen de arranque ONTAP que utiliza el sistema cuando arranca. Puede restaurar la imagen del soporte de arranque principal utilizando la imagen ONTAP en el soporte de arranque secundario o, si es necesario, utilizando una unidad flash USB.
+
+Si el soporte de arranque secundario ha fallado o le falta el archivo image.tgz, debe restaurar el soporte de arranque primario mediante una unidad flash USB. La unidad debe formatearse con FAT32 y debe disponer de la cantidad de almacenamiento adecuada para alojar el archivo image_xxx.tgz.
+
+* El proceso de sustitución restaura el sistema de archivos var desde el soporte de arranque secundario o la unidad flash USB al medio de arranque principal.
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+

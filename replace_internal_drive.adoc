@@ -1,0 +1,41 @@
+---
+permalink: a200/replace_internal_drive.html 
+sidebar: sidebar 
+keywords: AFF A200 
+summary: Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado. 
+---
+= Sustituya la unidad con fallos: AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+
+.Antes de empezar
+* La práctica recomendada es instalar la versión actual del paquete de cualificación de disco (DQP) antes de intercambiar una unidad en funcionamiento.
+* Identifique la unidad de disco que ha fallado ejecutando el `storage disk show -broken` desde la consola del sistema. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.
+* La forma en que se intercambia el disco en caliente depende de cómo se utilice la unidad de disco. Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución de SED en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["Guía completa de cifrado de NetApp para ONTAP 9"]. Estas instrucciones describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
+* La unidad de sustitución debe ser compatible con su plataforma. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"].
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+.Acerca de esta tarea
+El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
+
+Al sustituir varias unidades de disco, debe esperar un minuto entre la eliminación de cada unidad de disco con fallo y la inserción de la unidad de disco de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de cada nuevo disco.
+
+[role="tabbed-block"]
+====
+.Opción 1: Sustituir SSD
+--
+Directiva no resuelta en <stdin> - incluir:../_include/drive_hotswap_sas.adoc[]
+
+--
+.Opción 2: Sustituir HDD
+--
+Directiva no resuelta en <stdin> - incluir:../_include/drive_hotswap_sas.adoc.adoc[]
+
+--
+====

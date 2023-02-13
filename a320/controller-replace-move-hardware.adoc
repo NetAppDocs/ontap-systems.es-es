@@ -1,0 +1,263 @@
+---
+permalink: a320/controller-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: aff a320, move the controller module hardware 
+summary: Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+---
+= Sustituya el hardware del módulo de la controladora - AFF A320
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
+
+Puede utilizar las siguientes imágenes o los pasos escritos para extraer el módulo de la controladora del chasis.
+
+La siguiente imagen muestra cómo retirar los cables y los brazos de gestión de cables del módulo del controlador dañado:
+
+image::../media/drw_a320_controller_cable_unplug_animated_gif.png[cable del controlador drw a320 desenchufe el gif animado]
+
+La siguiente imagen muestra cómo retirar el módulo del controlador dañado del chasis:
+
+image::../media/drw_a320_controller_remove_animated_gif.png[controlador drw a320 retire el gif animado]
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la fuente de alimentación del módulo del controlador de la fuente de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
+. Extraiga el módulo de la controladora del chasis:
++
+.. Inserte el índice en el mecanismo de bloqueo a ambos lados del módulo del controlador.
+.. Presione hacia abajo la lengüeta naranja de la parte superior del mecanismo de bloqueo hasta que se separe el pasador de bloqueo del chasis.
++
+El gancho del mecanismo de bloqueo debe estar casi en vertical y debe estar alejado del pasador del chasis.
+
+.. Tire suavemente del módulo del controlador unas pulgadas hacia usted para que pueda agarrar los lados del módulo del controlador.
+.. Con ambas manos, tire suavemente del módulo del controlador para sacarlo del chasis y configúrelo en una superficie plana y estable.
+
+
+
+
+
+
+== Paso 2: Mueva las fuentes de alimentación
+
+Debe mover la fuente de alimentación del módulo del controlador dañado al módulo del controlador de repuesto cuando sustituya un módulo del controlador.
+
+. Gire el mango de la leva de forma que pueda utilizarse para extraer la fuente de alimentación del módulo del controlador mientras presiona la lengüeta azul de bloqueo.
++
+
+CAUTION: El suministro de alimentación es corto. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.
+
+. Mueva la fuente de alimentación al nuevo módulo de controlador y, a continuación, instálela.
+. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del módulo del controlador y, a continuación, empuje suavemente la fuente de alimentación en el módulo del controlador hasta que la lengüeta de bloqueo encaje en su sitio.
++
+Las fuentes de alimentación sólo se acoplarán correctamente al conector interno y se bloquearán de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la fuente de alimentación hacia el sistema.
+
+
+
+
+
+== Paso 3: Mueva la batería NVDIMM
+
+Para mover la batería NVDIMM del módulo de controlador dañado al módulo de controlador de repuesto, debe realizar una secuencia específica de pasos.
+
+Puede utilizar la siguiente ilustración o los pasos escritos para mover la batería NVDIMM del módulo de controlador defectuoso al módulo de controlador de reemplazo.
+
+image::../media/drw_a320_nvbat_move_animated_gif.png[gif animados de movimiento en nvbat de drw a320]
+
+. Localice la batería NVDIMM en el módulo de la controladora.
+. Localice el enchufe de la batería y apriete el clip en la parte frontal del enchufe de la batería para liberar el enchufe de la toma y, a continuación, desenchufe el cable de la batería de la toma.
+. Sujete la batería, presione LA lengüeta de bloqueo azul marcada Y, a continuación, levante la batería para sacarla del soporte y del módulo del controlador.
+. Mueva la batería al módulo del controlador de repuesto.
+. Alinee el módulo de la batería con la abertura de la batería y, a continuación, empuje suavemente la batería hasta que encaje en su sitio.
++
+
+NOTE: No vuelva a enchufar el cable de la batería a la placa base hasta que se le indique hacerlo.
+
+
+
+
+
+== Paso 4: Mueva el soporte de arranque
+
+Debe localizar el soporte de arranque y, a continuación, seguir las instrucciones para retirarlo del módulo de controlador dañado e insertarlo en el módulo de controlador de sustitución.
+
+Puede utilizar la siguiente ilustración o los pasos escritos para mover el soporte de arranque desde el módulo del controlador dañado al módulo del controlador de reemplazo.
+
+image::../media/drw_a320_boot_media_move_animated_gif.png[los medios de arranque drw a320 mueven el gif animado]
+
+. Abra el conducto de aire y localice el soporte de arranque con la siguiente ilustración o el mapa de FRU en el módulo del controlador:
+. Localice y retire el soporte de arranque del módulo de la controladora:
++
+.. Pulse el botón azul al final del soporte de arranque hasta que el labio del soporte de arranque desaparezca el botón azul.
+.. Gire el soporte del maletero hacia arriba y tire con cuidado del soporte del maletero para sacarlo del zócalo.
+
+
+. Mueva el soporte del maletero al nuevo módulo del controlador, alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Bloquee el soporte de arranque en su sitio:
++
+.. Gire el soporte de arranque hacia abajo hacia la placa base.
+.. Con el botón azul, coloque un dedo en el extremo del soporte de arranque y presione el extremo del soporte de inicio para activar el botón azul de bloqueo.
+.. Mientras presiona el soporte del maletero, levante el botón de bloqueo azul para bloquear el soporte del maletero en su sitio.
+
+
+
+
+
+
+== Paso 5: Mueva los DIMM
+
+Debe localizar los módulos DIMM y, a continuación, moverlos desde el módulo del controlador dañado hasta el módulo del controlador de reemplazo.
+
+Debe tener preparado el nuevo módulo de controlador para poder mover los DIMM directamente desde el módulo de controlador dañado a las ranuras correspondientes del módulo de controlador de reemplazo.
+
+Puede utilizar las siguientes ilustraciones o los pasos escritos para mover los DIMM del módulo de controlador dañado al módulo de controlador de recambio.
+
+image::../media/drw_a320_dimm_move_animated_gif.png[gif animados de drw a320 dimm move]
+
+. Localice los DIMM en el módulo del controlador.
++
+image::../media/drw_a320_dimm_map.png[mapa dimm drw a320]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Conducto de aire 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+** Ranuras DIMM del sistema: 2,4, 7, 9, 13, 15, 18, y 20
+** Ranura NVDIMM: 11
++
+
+NOTE: El NVDIMM tiene un aspecto muy diferente al de los DIMM del sistema.
+
+
+
+|===
+. Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
+. Compruebe que la batería NVDIMM no está conectada al nuevo módulo de controlador.
+. Mueva los DIMM del módulo del controlador dañado al módulo del controlador de sustitución:
++
+
+NOTE: Asegúrese de instalar cada DIMM en la misma ranura que ocupa en el módulo de controlador dañado.
+
++
+.. Extraiga el DIMM de su ranura empujando lentamente las lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+.. Localice la ranura DIMM correspondiente en el módulo de la controladora de reemplazo.
+.. Asegúrese de que las lengüetas del expulsor DIMM del zócalo del DIMM están en posición abierta y, a continuación, inserte el DIMM directamente en el zócalo.
++
+Los módulos DIMM se ajustan firmemente en el zócalo, pero deben entrar fácilmente. Si no es así, realinee el DIMM con el zócalo y vuelva a insertarlo.
+
+.. Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en el zócalo.
+.. Repita estos subpasos para los módulos DIMM restantes.
+
+
+. Conecte la batería NVDIMM a la placa base.
++
+Asegúrese de que el tapón se bloquea en el módulo del controlador.
+
+
+
+
+
+== Paso 6: Mover los elevadores PCIe
+
+Debe mover los elevadores PCIe, con las tarjetas PCIe instaladas en ellos, del módulo de la controladora dañada al módulo de la controladora de reemplazo.
+
+Puede utilizar la siguiente ilustración o los pasos escritos para mover los elevadores PCIe del módulo de la controladora dañada al módulo de la controladora de reemplazo.
+
+image::../media/drw_a320_pci_riser_move_animated_gif.png[gif animados de movimiento de tarjeta vertical pci drw a320]
+
+. Retire la cubierta sobre los elevadores PCIe desenroscando el tornillo de mariposa azul de la cubierta, deslice la cubierta hacia usted, gire la cubierta hacia arriba, levántela fuera del módulo del controlador y, a continuación, déjela a un lado.
+. Retire los elevadores vacíos del módulo del controlador de recambio.
++
+.. Coloque el dedo índice en el orificio situado en el lado izquierdo del módulo de la tarjeta vertical y sujete la tarjeta vertical con el pulgar.
+.. Levante la tarjeta vertical hacia arriba y hacia fuera de la bahía y déjela a un lado.
+.. Repita estos subpasos para la segunda tarjeta vertical.
+
+
+. Mueva los elevadores PCIe del módulo de controladora dañado a los mismos compartimientos de tarjeta vertical del módulo de controladora de reemplazo:
++
+.. Extraiga una tarjeta vertical del módulo de la controladora dañada y muévalos al módulo de la controladora de sustitución.
+.. Baje la tarjeta vertical directamente en el compartimento, de manera que quede cuadrada con la bahía y las patillas de la tarjeta vertical se deslizan en los orificios guía de la parte posterior del compartimento.
+.. Coloque la tarjeta vertical en la toma de la placa base directamente hacia abajo en la toma aplicando presión incluso hacia abajo a lo largo de los bordes de la tarjeta vertical hasta que se asiente.
++
+El elevador debe sentarse suavemente con poca resistencia. Vuelva a colocar la tarjeta vertical en el compartimiento si encuentra una resistencia significativa asentando la tarjeta vertical en la toma.
+
+.. Repita estos subpasos para la segunda tarjeta vertical.
+.. Vuelva a instalar la cubierta sobre los elevadores PCIe.
+
+
+
+
+
+
+== Paso 7: Instale el módulo del controlador
+
+Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.
+
+Puede usar la siguiente ilustración o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.
+
+image::../media/drw_a320_controller_install_animated_gif.png[el controlador drw a320 instala el gif animado]
+
+. Si aún no lo ha hecho, cierre el conducto de aire de la parte posterior del módulo del controlador y vuelva a instalar la cubierta sobre las tarjetas PCIe.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
++
+
+NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Asegúrese de que los brazos del pestillo están bloqueados en la posición extendida.
+.. Con los brazos del pestillo, empuje el módulo del controlador hacia el compartimiento del chasis hasta que se detenga.
+.. Presione y sostenga las lengüetas naranjas en la parte superior del mecanismo de bloqueo.
+.. Empuje suavemente el módulo de la controladora en el compartimento del chasis hasta que quede alineado con los bordes del chasis.
++
+
+NOTE: Los brazos del mecanismo de bloqueo se deslizan en el chasis.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+.. Suelte los pestillos para bloquear el módulo del controlador en su lugar.
+.. Recuperar la fuente de alimentación.
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Interrumpa el proceso de arranque normal pulsando `Ctrl-C`.
+
+
+

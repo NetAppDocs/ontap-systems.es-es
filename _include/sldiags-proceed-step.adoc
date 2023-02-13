@@ -1,0 +1,79 @@
+= 
+:allow-uri-read: 
+
+
+. Proceda según el resultado del paso anterior:
+
+
+[cols="1,3"]
+|===
+| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
+
+
+ a| 
+Se completaron sin fallos
+ a| 
+. Borre los registros de estado: `sldiag device clearstatus`
+. Compruebe que se ha borrado el registro: `sldiag device status`
++
+Se muestra la siguiente respuesta predeterminada:
+
++
+SLDIAG: No hay mensajes de registro.
+
+. Salir del modo de mantenimiento: `halt`
++
+La controladora muestra el aviso del CARGADOR.
+
+. Arranque la controladora desde el símbolo del sistema del CARGADOR: `bye`
+. Devolver a la controladora a su funcionamiento normal:
++
+*Si su controlador está en un par ha*, realice una devolución: `storage failover giveback -ofnode _replacement_node_name_`
+
++
+*Nota:* Si ha desactivado el retorno automático, vuelva a activarlo con el `storage failover modify` comando.
+
++
+*Si su controlador está en una configuración independiente*, continúe con el siguiente paso. No se requiere ninguna acción.
+
++
+Ha completado el diagnóstico de nivel del sistema.
+
+
+
+
+
+ a| 
+Se produjeron algunos fallos en las pruebas
+ a| 
+Determine la causa del problema:
+
+. Salir del modo de mantenimiento: `halt`
++
+Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+. Apague o deje las fuentes de alimentación en función del número de módulos de controladora que haya en el chasis:
++
+** Si tiene dos módulos de controladora en el chasis, deje las fuentes de alimentación encendidas para proporcionar alimentación al otro módulo de controladora.
+** Si tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y desenchúfelas de las fuentes de alimentación.
+
+
+. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
+. Inicie el módulo del controlador que está realizando el mantenimiento, interrumpiendo el arranque pulsando `Ctrl-C` Cuando se le solicite acceder al menú Inicio:
++
+** Si tiene dos módulos de controladora en el chasis, coloque a fondo el módulo de controladora que va a mantener en el chasis.
++
+El módulo del controlador se arranca cuando está completamente asentado.
+
+** Si tiene un módulo de controladora en el chasis, conecte las fuentes de alimentación y, a continuación, enciéndalas.
+
+
+. Seleccione Boot to maintenance mode (Inicio al modo de mantenimiento) en el menú.
+. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
++
+Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema.
+
+
+|===

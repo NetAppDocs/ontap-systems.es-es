@@ -1,0 +1,217 @@
+---
+permalink: a900/pci_cards_and_risers_replace.html 
+sidebar: sidebar 
+keywords:  
+summary: Para reemplazar un módulo de E/S, debe realizar una secuencia específica de tareas. 
+---
+= Sustituya un módulo de E/S - AFF A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para reemplazar un módulo de E/S, debe realizar una secuencia específica de tareas.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+
+== Paso 1: Apague el nodo dañado
+
+[role="lead"]
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al siguiente paso.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+== Paso 2: Sustituya los módulos de E/S.
+
+[role="lead"]
+Para sustituir un módulo de E/S, búsquelo dentro del chasis y siga la secuencia específica de pasos.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte todos los cables asociados al módulo de E/S de destino.
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Extraiga el módulo de I/o de destino del chasis:
++
+.. Pulse el botón de leva numerado y con letras.
++
+El botón de leva se aleja del chasis.
+
+.. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
++
+El módulo de E/S se desacopla del chasis y se mueve aproximadamente 1/2 pulgadas fuera de la ranura de E/S.
+
+.. Extraiga el módulo de E/S del chasis tirando de las lengüetas de tiro de los lados de la cara del módulo.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
++
+.Animación: Desmontaje/montaje del módulo de E/S.
+video::3a5b1f6e-15ec-40b4-bb2a-adf9016af7b6[panopto]
++
+image:../media/drw_a900_remove_PCIe_module.png[""]
+
+
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillo de leva de E/S numerado y con letras
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pestillo de leva de E/S completamente desbloqueado
+
+|===
+. Coloque el módulo de E/S a un lado.
+. Instale el módulo de E/S de repuesto en el chasis deslizando suavemente el módulo de E/S en la ranura hasta que el pestillo de la leva de E/S con letras y numerado comience a acoplarse con el pasador de leva de E/S y, a continuación, empuje el pestillo de leva de E/S hasta que bloquee el módulo en su lugar.
+. Recuperar el módulo de E/S, según sea necesario.
+
+
+
+
+== Paso 3: Reinicie el controlador después de sustituir el módulo de I/O.
+
+[role="lead"]
+Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
+
+
+NOTE: Si el nuevo módulo de E/S no es el mismo modelo que el módulo con errores, primero debe reiniciar el BMC.
+
+.Pasos
+. Reinicie el BMC si el módulo de sustitución no es el mismo modelo que el módulo antiguo:
++
+.. Desde el aviso DEL CARGADOR, cambie al modo de privilegio avanzado: `priv set advanced`
+.. Reinicie el BMC: `sp reboot`
+
+
+. Desde el aviso del CARGADOR, reinicie el nodo: `bye`
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
+. Si el sistema está configurado para admitir conexiones de clúster de 10 GbE y conexiones de datos en NIC de 40 GbE, convierta estos puertos a conexiones de 10 GbE mediante el comando nicadmin convert del modo de mantenimiento. Consulte https://docs.netapp.com/us-en/ontap/networking/convert_40gbe_nic_ports_into_multiple_10gbe_ports_for_10gbe_connectivity.html["Convertir puertos NIC de 40 GbE en varios puertos 10 GbE para la conectividad 10 GbE"^] si quiere más información.
++
+
+NOTE: Asegúrese de salir del modo de mantenimiento después de completar la conversión.
+
+. Devolver al nodo a su funcionamiento normal: `storage failover giveback -ofnode impaired_node_name`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 4: Devuelva la pieza que falló a NetApp
+
+[role="lead"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

@@ -1,0 +1,33 @@
+---
+permalink: a700s/controller-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a700s, prerequisite, replace the controller module 
+summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+---
+= Descripción general de la sustitución del módulo de controladora: AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al controlador _regrel_ de modo que el controlador _regrel_ se arranque en la misma versión de ONTAP que el módulo de controlador antiguo.
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El controlador _drinated_ es el controlador que se va a sustituir.
+** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Siempre debe capturar el resultado de la consola de la controladora en un archivo de texto.
++
+Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+
+

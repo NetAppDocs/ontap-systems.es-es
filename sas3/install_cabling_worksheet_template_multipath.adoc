@@ -1,0 +1,82 @@
+---
+permalink: sas3/install-cabling-worksheet-template-multipath.html 
+sidebar: sidebar 
+keywords: complete, completing, worksheet, template, controller, sas, port, pair, cable, controller, disk, shelves, iom12, module, achieve, multipathed, connectivity, ha, pair, single-controller, configuration, worksheet, connection, controller-to-stack cabling worksheet template for multipathed connectivity 
+summary: Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de los controladores que puede utilizar para conectar los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr una conectividad multivía en una configuración de par de alta disponibilidad o de controlador único. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones multivía para la configuración. 
+---
+= Plantilla de hoja de trabajo para el cableado entre la controladora y la pila para la conectividad multivía: Bandejas con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de los controladores que puede utilizar para conectar los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr una conectividad multivía en una configuración de par de alta disponibilidad o de controlador único. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones multivía para la configuración.
+
+.Antes de empezar
+Si dispone de una plataforma con almacenamiento interno, que incluye la serie FAS2600, AFF A200, FAS2700, AFF A220, y, posteriormente, utilice lo siguiente (estas plataformas utilizan una hoja de cálculo única):
+
+link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"]
+
+.Acerca de esta tarea
+* Este procedimiento y plantilla de hoja de trabajo son aplicables a la conectividad multivía de cableado para una configuración de alta disponibilidad multivía o multivía con una o varias pilas.
++
+Se proporcionan ejemplos de hojas de trabajo completadas para configuraciones de alta disponibilidad multivía y multivía.
+
++
+En la hoja de trabajo se utiliza una configuración con dos HBA SAS de cuatro puertos y dos pilas de bandejas de discos con módulos IOM12/IOM12B.
+
+* La plantilla de hoja de cálculo permite hasta seis pilas; si es necesario, debe agregar más columnas.
+* Si es necesario, puede consultar la link:install-cabling-rules.html["Reglas para el cableado SAS"] para obtener información sobre las configuraciones compatibles, la convención de numeración de las ranuras de la controladora, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de pares de puertos).
+* Si es necesario, después de completar la hoja de cálculo, puede hacer referencia a link:install-cabling-worksheets-how-to-read-multipath.html["Cómo leer una hoja de cálculo para cablear las conexiones entre la controladora y la pila para la conectividad multivía"]
+
+
+image::../media/drw_worksheet_mpha_template.gif[hoja de trabajo drw, plantilla mpha]
+
+.Pasos
+. En los cuadros situados encima de los cuadros grises, enumere todos los puertos SAS A del sistema y, a continuación, todos los puertos SAS C del sistema en secuencia de ranuras (0, 1, 2, 3, etc.).
++
+Por ejemplo: 1a, 2a, 1c, 2c
+
+. En los cuadros grises, enumere todos los puertos SAS B del sistema y, a continuación, todos los puertos SAS D del sistema en secuencia de ranuras (0, 1, 2, 3, etc.).
++
+Por ejemplo: 1b, 2b, 1d, 2d
+
+. En los cuadros que aparecen debajo de los cuadros grises, vuelva a escribir la lista de puertos D y B para que el primer puerto de la lista se mueva al final de la lista.
++
+Por ejemplo: 2b, 1d, 2d, 1b
+
+. Rodee (designe) un par de puertos para cada pila.
++
+Cuando se utilicen todos los pares de puertos para cablear las pilas en el sistema, rodee los pares de puertos en el orden en que están definidos (enumerados) en la hoja de cálculo.
+
++
+Por ejemplo, en una configuración de alta disponibilidad multivía con ocho puertos SAS y cuatro pilas, el par de puertos 1a/2b se cableó a la pila 1, el par de puertos 2a/1d se cableó a la pila 2, el par de puertos 1c/2d se cableó a stack3 y el par de puertos 2c/1b se cableó a la pila 4.
+
++
+image::../media/drw_worksheet_mpha_slots_1_and_2_two_4porthbas_two_stacks.gif[hoja de trabajo drw ranuras mpha 1 y 2 dos paquetes de 4 phtebas]
+
++
+Si no es necesario que todas las parejas de puertos cableen el sistema, omita las parejas de puertos (utilice todos los demás pares de puertos).
+
++
+Por ejemplo, en una configuración de alta disponibilidad multivía con ocho puertos SAS y dos pilas, el par de puertos 1a/2b se cableó para la pila 1 y el par de puertos 1c/2d se cableó para la pila 2. Si se añaden posteriormente dos pilas adicionales, el par de puertos 2a/1d se cableará con la pila 3 y el par de puertos 2c/1b se cableará con la pila 4.
+
++
+
+NOTE: Si tiene más pares de puertos de los que necesita para conectar las pilas en el sistema, la práctica recomendada es omitir los pares de puertos para optimizar los puertos SAS en el sistema. Al optimizar los puertos SAS, optimiza el rendimiento del sistema.
+
++
+image::../media/drw_worksheet_mpha_skipped_template.gif[plantilla omitida de la hoja de trabajo drw mpha]
+
++
+Puede utilizar la hoja de datos completada para cablear el sistema.
+
+. Si tiene una configuración de controladora única (multivía), haga pasar la información de la controladora 2.
++
+image::../media/drw_worksheet_mp_template.gif[plantilla mp de hoja de trabajo drw]
+
++
+Puede utilizar la hoja de datos completada para cablear el sistema.
+
+

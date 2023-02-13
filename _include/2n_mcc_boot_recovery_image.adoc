@@ -1,0 +1,34 @@
+= 
+:allow-uri-read: 
+
+
+Debe arrancar la imagen de ONTAP desde la unidad USB y comprobar las variables de entorno.
+
+Este procedimiento se aplica a los sistemas de una configuración MetroCluster de dos nodos.
+
+.Pasos
+. Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
++
+La imagen se descarga desde la unidad flash USB.
+
+. Cuando se le solicite, introduzca el nombre de la imagen o acepte la imagen predeterminada que se muestra dentro de los corchetes de la pantalla.
+. Después de instalar la imagen, inicie el proceso de restauración:
++
+.. Pulse `n` cuando se le solicite que restaure la configuración de copia de seguridad.
+.. Pulse `y` cuando se le pida que reinicie para empezar a utilizar el software recién instalado.
++
+Debe estar preparado para interrumpir el proceso de arranque cuando se le solicite.
+
+
+
+. Cuando se inicie el sistema, pulse `Ctrl-C` después de ver la `Press Ctrl-C for Boot Menu` Mensaje. Y cuando aparezca el menú Inicio, seleccione la opción 6.
+. Compruebe que las variables de entorno están establecidas de la forma esperada.
++
+.. Lleve el nodo al aviso DEL CARGADOR.
+.. Compruebe la configuración de la variable de entorno con el `printenv` comando.
+.. Si una variable de entorno no está establecida como se espera, modifíquela con el `setenv __environment-variable-name__ __changed-value__` comando.
+.. Guarde los cambios mediante `savenv` comando.
+.. Reiniciar el nodo.
+
+
+

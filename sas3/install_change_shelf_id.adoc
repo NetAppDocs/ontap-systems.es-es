@@ -1,0 +1,90 @@
+---
+permalink: sas3/install-change-shelf-id.html 
+sidebar: sidebar 
+keywords: change, shelf, id, system, ontap, run, hot-add, ontap, controller, module, available, serve, data, unown, spare, offline, aggregate 
+summary: 'Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También es posible cambiar un ID de bandeja cuando ONTAP está activo y en ejecución \(los módulos de controladora están disponibles para servir datos\) y todas las unidades de la bandeja son propiedad de la bandeja, piezas de repuesto o parte de un agregado(s\) apagado.' 
+---
+= Cambiar un ID de bandeja - bandejas con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También puede cambiar un ID de bandeja cuando ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos) y todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
+
+.Antes de empezar
+* Si ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos), debe haber verificado que todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
++
+Es posible verificar el estado de las unidades mediante el `storage disk show -shelf _shelf_number_` comando. El resultado de la columna Container Type debe mostrar el texto de repuesto o roto si es una unidad con error. Además, las columnas Nombre de contenedor y propietario deben tener un guión.
+
+* Puede verificar los ID de bandeja que ya están en uso en el sistema ejecutando Active IQ Config Advisor o mediante el `storage shelf show -fields shelf-id` comando.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+
+
+
+.Acerca de esta tarea
+* Un ID de bandeja válido tiene un valor de 00 a 99.
+* Los ID de bandeja deben ser únicos en una configuración de par de alta disponibilidad o de controladora única.
++
+Si dispone de una plataforma con almacenamiento interno, los ID de bandeja deben ser únicos en toda la bandeja de discos interna y en todas las bandejas de discos conectadas externamente.
+
+* Debe apagar y encender una bandeja para que el ID de bandeja quede registrado.
++
+La cantidad de tiempo que espera antes de volver a encender la alimentación depende del estado de ONTAP, como se describe más adelante en este procedimiento.
+
+
+
+.Pasos
+. Encienda la bandeja de discos si no está encendida todavía.
+. Quite la tapa del extremo izquierdo para localizar el botón cerca de los LED de la bandeja.
+. Para cambiar el primer número de ID de bandeja, pulse y mantenga presionado el botón naranja hasta que el primer número de la pantalla digital parpadee, que puede tardar hasta tres segundos.
++
+[NOTE]
+====
+Si el ID tarda más de tres segundos en parpadear, pulse el botón de nuevo y asegúrese de pulsarlo completamente.
+
+Esto activa el modo de programación del identificador de bandeja de discos.
+
+====
+. Pulse el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
++
+El primer número continúa parpadeando.
+
+. Cambie el segundo número de ID de bandeja. Para ello, mantenga presionado el botón hasta que el segundo número de la pantalla digital parpadee, lo que puede tardar hasta tres segundos.
++
+El primer número de la pantalla digital deja de parpadear.
+
+. Pulse el botón para avanzar el número hasta alcanzar el número deseado de 1 a 9.
++
+El segundo número continúa parpadeando.
+
+. Bloquee el número deseado y salga del modo de programación manteniendo pulsado el botón hasta que el segundo número deje de parpadear, lo que puede tardar hasta tres segundos.
++
+Ambos números de la pantalla digital comienzan a parpadear y el LED de color ámbar en el panel de visualización del operador se encenderá después de unos cinco segundos para avisarle de que el ID de bandeja de discos pendiente todavía no ha entrado en vigor.
+
+. Apague y encienda la bandeja de discos para que el ID de bandeja quede registrado.
++
+Debe apagar ambos interruptores de alimentación, esperar la cantidad de tiempo adecuada y, a continuación, volver a encenderlos para completar el ciclo de encendido y apagado.
+
++
+** Si ONTAP aún no está en ejecución o va a añadir una bandeja (que aún no se ha cableado al sistema), espere al menos 10 segundos.
+** Si ONTAP se está ejecutando (las controladoras están disponibles para servir datos) y todas las unidades de disco de la bandeja son propiedad de la bandeja, repuestos o parte de los agregados desconectados, espere al menos 70 segundos.
++
+Esta vez, ONTAP puede eliminar correctamente la dirección de la bandeja antigua y actualizar la copia de la nueva dirección de la bandeja.
+
+
+
+. Vuelva a colocar la tapa del extremo izquierdo.
+. Repita los pasos del 1 al 9 con cada bandeja de discos adicional.
+. Compruebe que el sistema no tiene ID de bandeja duplicados.
++
+Cuando dos o más bandejas de discos tienen el mismo ID, el sistema asigna a la bandeja de discos duplicada un número de ID suave igual o mayor que 100. Debe cambiar el número de identificación de software (duplicado).
+
++
+.. Ejecute Active IQ Config Advisor para comprobar si hay alertas de ID de bandeja duplicadas o ejecute el `storage shelf show -fields shelf-id` Comando para ver una lista de ID de bandeja que ya se están usando incluidos los ID duplicados.
+.. Si el sistema tiene ID de bandeja duplicados, cambie los ID de bandeja duplicados mediante la repetición de este procedimiento.
+
+
+

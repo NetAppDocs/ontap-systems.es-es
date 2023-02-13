@@ -1,0 +1,37 @@
+---
+permalink: a200/controller-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a200, prerequisite, replace the controller module 
+summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+---
+= Descripción general de la sustitución del módulo de controladora: AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
+
+.Lo que necesitará
+* Todas las bandejas de unidades deben funcionar correctamente.
+* Si su sistema está en un par de alta disponibilidad, el controlador en buen estado debe ser capaz de tomar el controlador que se va a sustituir (denominado en este procedimiento el "'nodo dañado'").
+
+
+.Acerca de esta tarea
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al nodo _regrel_ de modo que el nodo _regrase_ se arranque en la misma versión de ONTAP que el módulo de controlador anterior.
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El nodo _drinated_ es la controladora que se está reemplazando.
+** El nodo _regrsustituya_ es la nueva controladora que está reemplazando a la controladora con deterioro.
+** El nodo _heated_ es la controladora que queda.
+
+
+* Siempre debe capturar el resultado de la consola de la controladora en un archivo de texto.
++
+Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+
+

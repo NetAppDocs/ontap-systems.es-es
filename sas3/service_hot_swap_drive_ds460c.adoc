@@ -1,0 +1,260 @@
+---
+permalink: sas3/service-hot-swap-drive-ds460c.html 
+sidebar: sidebar 
+keywords: hot-swap, fail, disk, drive, ds460c, nondisruptive, replace, system, power, serving, data, i/o, hot-swap a disk drive in a ds460c disk shelf 
+summary: Es posible intercambiar en caliente una unidad de disco con error en una bandeja de discos DS460C. 
+---
+= Unidad de disco a intercambiable en caliente de una bandeja de discos DS460C: Bandejas con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible intercambiar en caliente una unidad de disco con error en una bandeja de discos DS460C.
+
+.Antes de empezar
+* La unidad de disco de reemplazo debe ser compatible con la bandeja de discos DS460C.
++
+https://hwu.netapp.com["Hardware Universe de NetApp"]
+
+* Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
+* La unidad de disco que desea quitar debe tener un error.
++
+Para verificar que la unidad de disco ha fallado, ejecute el `storage disk show -broken` comando. La unidad de disco con errores aparece en la lista de unidades de disco con errores. Si no lo hace, debe esperar y ejecutar el comando de nuevo.
+
++
+
+NOTE: Según el tipo y la capacidad de la unidad de disco, la unidad de disco puede tardar hasta varias horas en aparecer en la lista de unidades de disco con errores.
+
+* Si va a sustituir un disco de cifrado automático (SED), debe seguir las instrucciones para sustituir un SED en la documentación de ONTAP para su versión de ONTAP.
++
+Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
+
++
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"]
+
+
+
+.Acerca de esta tarea
+* Debe tomar medidas para evitar descargas electrostáticas (ESD):
++
+** Mantenga la unidad de disco en la bolsa ESD hasta que esté listo para instalarla.
+** Abra la bolsa ESD a mano o corte la parte superior con unas tijeras.
++
+
+NOTE: No inserte una herramienta o cuchilla metálicas en la bolsa ESD.
+
+** Utilice siempre una muñequera ESD conectada a una superficie sin pintar en el chasis de la caja de almacenamiento.
++
+Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en el chasis de la caja de almacenamiento antes de manejar la unidad de disco.
+
+
+
+* Debe tomar las medidas necesarias para tratar las unidades de disco con cuidado:
++
+** Utilice siempre dos manos al extraer, instalar o transportar una unidad de disco para soportar su peso.
++
+
+NOTE: No coloque las manos en las placas de la unidad de disco expuestas en la parte inferior del portaunidades de disco.
+
+** Debe colocar las unidades de disco en superficies amortiguadas y nunca apilar unidades de disco entre sí.
+** Debe tener cuidado de no golpear las unidades de disco contra otras superficies.
+
+
+* Las unidades de disco deben mantenerse alejadas de los dispositivos magnéticos.
++
+
+NOTE: Los campos magnéticos pueden destruir todos los datos de la unidad de disco y causar daños irreparables en los circuitos de la unidad de disco.
+
+* La práctica recomendada es tener instalada la versión actual del paquete de cualificación de disco (DQP) antes de intercambiar en funcionamiento una unidad de disco.
++
+Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
+
+* La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
++
+Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+
+* El firmware de la unidad de disco se actualiza automáticamente (sin interrupciones) en unidades de disco nuevas con versiones de firmware no actuales.
++
+
+NOTE: Las comprobaciones de firmware de la unidad de disco se realizan cada dos minutos.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja de discos para ayudar a localizar físicamente la bandeja de discos afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada módulo IOM12. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+
+* Si es necesario, puede consultar la sección LED de bandeja de discos de supervisión para obtener información sobre el significado y la ubicación de los LED de bandeja de discos en el panel de visualización del operador y los componentes FRU.
+* La bandeja de unidades DS460C consta de cinco cajones de unidades (cajón de unidades 1 en la parte superior mediante el cajón de unidades 5 en la parte inferior) que cada uno tiene 12 ranuras de unidad.
++
+image::../media/28_dwg_e2860_de460c_front_no_callouts.gif[28 dwg e2860 de460c frontal sin anotaciones]
+
+* En la siguiente ilustración, se muestra el número de las unidades de 0 a 11 en cada cajón de unidades de la bandeja.
++
+image::../media/dwg_trafford_drawer_with_hdds_callouts.gif[cajón dwg trafford con anotaciones a hdd]
+
+
+
+.Pasos
+. Si desea asignar manualmente la propiedad de disco para la unidad de disco de reemplazo, debe deshabilitar la asignación automática de unidades, si está habilitada; de lo contrario, vaya al paso siguiente.
++
+
+NOTE: Es necesario asignar manualmente la propiedad de disco si las unidades de disco de la pila son propiedad de ambas controladoras de una pareja de alta disponibilidad.
+
++
+
+NOTE: La propiedad de disco se asigna manualmente y, a continuación, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.
+
++
+.. Compruebe si la asignación automática de unidades está habilitada:``storage disk option show``
++
+Si tiene un par de alta disponibilidad, puede introducir el comando en la consola de cualquiera de las controladoras.
+
++
+Si la asignación automática de unidades está activada, la salida muestra "'on'" (para cada controlador) en la columna "'asignación automática'".
+
+.. Si la asignación automática de unidad está habilitada, debe deshabilitarla:``storage disk option modify -node _node_name_ -autoassign off``
++
+Debe deshabilitar la asignación automática de unidades en ambas controladoras de una pareja de ha.
+
+
+
+. Puesta a tierra apropiadamente usted mismo.
+. Desembale la nueva unidad de disco y configúrela en una superficie nivelada cerca de la bandeja de discos.
++
+Guarde todos los materiales de embalaje para utilizarlos cuando devuelva la unidad de disco con error.
+
++
+
+NOTE: NetApp requiere que todas las unidades de disco devueltas estén en una bolsa con clasificación ESD.
+
+. Identifique la unidad de disco con error desde el mensaje de advertencia de la consola del sistema y el LED de atención ámbar iluminado en el cajón de la unidad.
++
+Los portadores de unidades SAS de 2.5" y 3.5" no contienen LED. En su lugar, debe revisar los LED de atención de los cajones de unidades para determinar qué unidad tuvo errores.
+
++
+El LED de atención del cajón de la unidad (ámbar) parpadea para que se pueda abrir el cajón de la unidad correcto para identificar qué unidad desea reemplazar.
+
++
+El LED de atención del cajón de la unidad está en el lado frontal izquierdo frente a cada unidad, con un símbolo de advertencia en el asa de la unidad justo detrás del LED.
+
+. Abra el cajón que contiene la unidad con error:
++
+.. Desenganche el cajón de mando tirando de ambas palancas.
+.. Con las palancas extendidas, tire con cuidado del cajón de la unidad hasta que se detenga.
+.. Mire la parte superior del cajón de unidades para encontrar el LED de atención que reside en el cajón delante de cada unidad.
+
+
+. Quite la unidad con error del cajón abierto:
++
+.. Tire suavemente hacia atrás del pestillo de liberación naranja que está delante de la unidad que desea quitar.
++
+image::../media/trafford_drive_rel_button.gif[botón de conducción de trafford]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Pestillo de liberación naranja 
+|===
+.. Abra la palanca de leva y levante ligeramente la transmisión.
+.. Espere 30 segundos.
+.. Utilice el asa de leva para levantar la unidad de la bandeja.
++
+image::../media/92_dwg_de6600_install_or_remove_drive.gif[92 dwg de6600 instalar o quitar la unidad]
+
+.. Coloque la unidad sobre una superficie antiestática y amortiguada lejos de los campos magnéticos.
+
+
+. Inserte la unidad de reemplazo en el cajón:
++
+.. Levante la palanca de leva de la nueva transmisión hasta la posición vertical.
+.. Alinee los dos botones elevados de cada lado del portador de unidades con el espacio correspondiente del canal de la unidad en el cajón de la unidad.
++
+image::../media/28_dwg_e2860_de460c_drive_cru.gif[caja de accionamiento de 28 dwg e2860 de460c]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Botón elevado en el lado derecho del portador de la unidad 
+|===
+.. Baje la unidad en línea recta hacia abajo y, a continuación, gire la palanca de leva hacia abajo hasta que la unidad encaje en su lugar bajo el pestillo de liberación naranja.
+.. Empuje con cuidado el cajón de la unidad de nuevo dentro de la carcasa.
++
+image:../media/2860_dwg_e2860_de460c_gentle_close.gif[""]
+
++
+
+CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el cajón lentamente para evitar que el cajón se arreste y cause daños a la matriz de almacenamiento.
+
+.. Cierre el cajón de mando empujando ambas palancas hacia el centro.
++
+El LED de actividad verde de la unidad reemplazada en la parte frontal del cajón de la unidad se enciende cuando la unidad se inserta correctamente.
+
+
+
+. Si va a sustituir otra unidad de disco, repita los pasos 4 a 7.
+. Compruebe el LED de actividad y el LED de atención de la unidad que reemplazó.
++
+[cols="1,2"]
+|===
+| Estado de LED | Descripción 
+
+
+ a| 
+El LED de actividad está encendido o parpadeando y el LED de atención está apagado
+ a| 
+La unidad nueva funciona correctamente.
+
+
+
+ a| 
+El LED de actividad está apagado
+ a| 
+Es posible que la unidad no se haya instalado correctamente. Retire la unidad, espere 30 segundos y vuelva a instalarla.
+
+
+
+ a| 
+El LED de atención está encendido
+ a| 
+La unidad nueva puede estar defectuosa. Sustitúyalo por otra unidad nueva.
+
+
+NOTE: Cuando se inserta una unidad por primera vez, es posible que el LED de atención esté encendido. Sin embargo, el LED debería apagarse en un minuto.
+
+|===
+. Si deshabilita la asignación automática de propiedad de disco en el paso 1, asigne manualmente la propiedad de disco y vuelva a activar la asignación automática de propiedad de disco si es necesario:
++
+.. Mostrar todos los discos sin propietario:``storage disk show -container-type unassigned``
+.. Asigne cada disco:``storage disk assign -disk _disk_name_ -owner _owner_name_``
++
+Puede utilizar el carácter comodín para asignar más de un disco a la vez.
+
+.. Vuelva a habilitar la asignación automática de propiedad de disco si es necesario:``storage disk option modify -node _node_name_ -autoassign on``
++
+Debe volver a habilitar la asignación automática de propiedad de disco en ambas controladoras en una pareja de ha.
+
+
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
++
+Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
+
+

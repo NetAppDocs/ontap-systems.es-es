@@ -1,0 +1,51 @@
+---
+permalink: a200/bootmedia-shutdown.html 
+sidebar: sidebar 
+keywords: aff a200, shut down the controller 
+summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+---
+= Apague la controladora dañada: AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+
+.Pasos
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado muestra... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode impaired_node_name`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+. Desde el aviso del CARGADOR, introduzca: `printenv` para capturar todas las variables ambientales de arranque. Guarde el resultado en el archivo de registro.
++
+
+NOTE: Es posible que este comando no funcione si el dispositivo de inicio está dañado o no funciona.
+
+

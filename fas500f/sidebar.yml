@@ -1,0 +1,76 @@
+---
+section: fas500f
+title: Sistemas FAS500f
+url: "/fas500f/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración del FAS500f
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/fas500f/install-setup.html"
+  - title: Pasos rápidos
+    url: "/fas500f/install-quick-guide.html"
+  - title: Pasos de vídeo
+    url: "/fas500f/install-videos.html"
+  - title: Pasos detallados
+    url: "/fas500f/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: Mantenimiento del FAS500f
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque FAS500f
+    entries:
+    - title: Descripción general
+      url: "/fas500f/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/fas500f/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el nodo
+      url: "/fas500f/bootmedia-shutdown.html"
+    - title: Sustituya la imagen de arranque
+      url: "/fas500f/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas500f/bootmedia-recovery-image-boot-non-2n-mcc.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/fas500f/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas500f/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis FAS500f
+    entries:
+    - title: Descripción general
+      url: "/fas500f/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas500f/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/fas500f/chassis-replace-move-hardware.html"
+    - title: Sustitución completa
+      url: "/fas500f/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador FAS500f
+    entries:
+    - title: Descripción general
+      url: "/fas500f/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas500f/controller-replace-shutdown.html"
+    - title: Sustituya el módulo del controlador
+      url: "/fas500f/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/fas500f/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/fas500f/controller-replace-recable-reassign-disks.html"
+    - title: Restauración completa del sistema
+      url: "/fas500f/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/fas500f/dimm-replace.html"
+  - title: Unidad
+    url: "/fas500f/drive-replace.html"
+  - title: Ventilador
+    url: "/fas500f/fan-replace.html"
+  - title: Tarjeta mezzanine
+    url: "/fas500f/mezzanine-replace.html"
+  - title: Batería NVMEM
+    url: "/fas500f/nvmem-battery-replace.html"
+  - title: Suministro de alimentación
+    url: "/fas500f/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/fas500f/rtc-battery-replace.html"

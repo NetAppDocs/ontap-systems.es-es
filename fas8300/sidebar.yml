@@ -1,0 +1,85 @@
+---
+section: fas8300
+title: Sistemas FAS8300 y FAS8700
+url: "/fas8300/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de AFF FAS8300 y FAS8700
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/fas8300/install-setup.html"
+  - title: Pasos rápidos
+    url: "/fas8300/install-quick-guide.html"
+  - title: Pasos de vídeo
+    url: "/fas8300/install-videos.html"
+  - title: Pasos detallados
+    url: "/fas8300/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: AFF FAS8300 y FAS8700 mantienen
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: Medios de arranque AFF FAS8300 y FAS8700
+    entries:
+    - title: Descripción general
+      url: "/fas8300/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/fas8300/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/fas8300/bootmedia-impaired-controller-shutdown.html"
+    - title: Sustituya la imagen de arranque
+      url: "/fas8300/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas8300/bootmedia-recovery-image-boot-options.html"
+    - title: Vuelva a cambiar a la configuración de MetroCluster
+      url: "/fas8300/bootmedia-2n-mcc-switchback.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/fas8300/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas8300/bootmedia-complete-rma.html"
+  - title: Módulo de almacenamiento en caché
+    pdf-filename: Módulo de almacenamiento en caché AFF FAS8300 y FAS8700
+    url: "/fas8300/caching-module-replace.html"
+  - title: Chasis
+    pdf-filename: Chasis AFF FAS8300 y FAS8700
+    entries:
+    - title: Descripción general
+      url: "/fas8300/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas8300/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/fas8300/chassis-replace-move-hardware.html"
+    - title: Sustitución completa
+      url: "/fas8300/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Controladora AFF FAS8300 y FAS8700
+    entries:
+    - title: Descripción general
+      url: "/fas8300/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas8300/controller-replace-shutdown.html"
+    - title: Sustituya el módulo del controlador
+      url: "/fas8300/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/fas8300/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/fas8300/controller-replace-recable-reassign-disks.html"
+    - title: Sustitución completa
+      url: "/fas8300/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    pdf-filename: DIMM AFF FAS8300 y FAS8700
+    url: "/fas8300/dimm-replace.html"
+  - title: Ventilador
+    url: "/fas8300/fan-swap-out.html"
+  - title: NVDIMM
+    url: "/fas8300/nvdimm-replace.html"
+  - title: Batería NVDIMM
+    url: "/fas8300/nvdimm-battery-replace.html"
+  - title: PCIe o tarjeta intermedia
+    pdf-filename: Tarjeta intermedia o PCIe FAS8300 y FAS8700 de AFF
+    url: "/fas8300/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    pdf-filename: Fuente de alimentación AFF FAS8300 y FAS8700
+    url: "/fas8300/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    pdf-filename: Batería de reloj en tiempo real AFF FAS8300 y FAS8700
+    url: "/fas8300/rtc-battery-replace.html"

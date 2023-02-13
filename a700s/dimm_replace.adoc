@@ -1,0 +1,291 @@
+---
+permalink: a700s/dimm-replace.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, replace, fimm, controller, module, system, register, increase, increasing, number, correctable, error, correction, code, ecc, failure, system, panic, dimm, shut, down, impair, diagnostic, complete, replacement, process, replace a dimmm, shut down the impaired controller, remove the controller module, replace a dimm, reinstall the controller module and booting the system, run diagnostics, complete the replacement process 
+summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
+---
+= Sustituya un DIMM - AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+[role="lead"]
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir y ser el estado, es necesario corregir el problema antes de apagar la controladora con deterioro.
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^]
+
+.Pasos
+. Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y`.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando se muestra el controlador dañado `Waiting for giveback...`, Pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+[role="lead"]
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Desenchufe la fuente de alimentación del módulo del controlador y, a continuación, desconecte el cable de la fuente de alimentación.
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm quitar]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillo de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
++
+image::../media/drw_a700s_open_air_duct.png[conducto de aire abierto drw a700s]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo del conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Elevadores
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Conducto de aire
+
+|===
+
+
+
+
+
+
+== Paso 3: Sustituya un DIMM
+
+[role="lead"]
+Para sustituir un DIMM, debe localizarlo en el módulo de la controladora mediante el mapa DIMM en el interior del módulo de la controladora y, a continuación, sustitúyalo según la secuencia específica de pasos.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Extraiga la tarjeta vertical correspondiente.
++
+image::../media/drw_a700s_dimm_replace.png[drw a700s dimm sustituir]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Tapa del conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tarjeta vertical 1 y banco DIMM 1-4
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Tarjeta vertical 2 y banco DIMM 5-8 y 9-12
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Tarjeta vertical 3 y DIMM 13-16
+
+|===
++
+** Si va a extraer o mover un DIMM en el banco 1-4, desconecte la batería NVRAM, desbloquee el pestillo de bloqueo de la tarjeta vertical 1 y, a continuación, extraiga la tarjeta vertical.
+** Si va a extraer o mover un módulo DIMM en la bancada 5-8 o 9-12, desbloquee el pestillo de bloqueo de la tarjeta vertical 2 y, a continuación, extraiga la tarjeta vertical.
+** Si va a extraer o mover un DIMM en el banco 13-16, desbloquee el pestillo de bloqueo de la tarjeta vertical 3 y, a continuación, extraiga la tarjeta vertical.
+
+
+. Tenga en cuenta la orientación del módulo DIMM en el zócalo para que pueda insertar el módulo DIMM de repuesto en la orientación adecuada.
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+. Retire el módulo DIMM de repuesto de la bolsa de transporte antiestática, sujete el módulo DIMM por las esquinas y alinéelo con la ranura.
++
+La muesca entre las patillas del DIMM debe alinearse con la lengüeta del zócalo.
+
+. Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.
+. Vuelva a instalar los elevadores que haya extraído del módulo del controlador.
++
+Si ha quitado la tarjeta vertical NVRAM, la tarjeta vertical 1, asegúrese de que conecta la batería NVRAM al módulo de la controladora.
+
+. Cierre el conducto de aire.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
+
+[role="lead"]
+Después de sustituir una FRU en el módulo de la controladora, debe volver a instalar el módulo de la controladora y reiniciarlo.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
+. Complete la reinstalación del módulo del controlador:
++
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+.. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+.. Para interrumpir el proceso de arranque, pulse `Ctrl-C` cuando vea `Press Ctrl-C for Boot Menu`.
+.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
+
+
+
+
+
+
+== Paso 5: Ejecutar el diagnóstico
+
+[role="lead"]
+Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
+
+El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
+
+Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
+
+.Pasos
+. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
++
+Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
+. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
+. Seleccione *memoria de prueba* en el menú que aparece.
+. Proceda según el resultado del paso anterior:
++
+** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
+** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
+
+
+
+
+
+
+== Paso 6:devuelva la pieza con el error a NetApp
+
+[role="lead"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

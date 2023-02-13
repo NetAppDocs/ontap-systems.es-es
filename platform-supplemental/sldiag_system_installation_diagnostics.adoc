@@ -1,0 +1,177 @@
+---
+permalink: platform-supplemental/sldiag-system-installation-diagnostics.html 
+sidebar: sidebar 
+keywords: run, diagnostic, initial, system, installation, identify, version, system-level, diagnostic, support, device, storage, system, successful, hardware, function, properly, run system installation diagnostic 
+summary: Tras la instalación inicial del sistema, se ejecutan diagnósticos para identificar la versión de los diagnósticos de nivel de sistema y los dispositivos compatibles con el sistema de almacenamiento, así como para comprobar que la instalación se ha realizado correctamente y que todo el hardware funciona correctamente. 
+---
+= Ejecutar el diagnóstico de la instalación del sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tras la instalación inicial del sistema, se ejecutan diagnósticos para identificar la versión de los diagnósticos de nivel de sistema y los dispositivos compatibles con el sistema de almacenamiento, así como para comprobar que la instalación se ha realizado correctamente y que todo el hardware funciona correctamente.
+
+El sistema de almacenamiento ya debe ejecutar Data ONTAP.
+
+. En el símbolo del sistema de almacenamiento, cambie al símbolo del sistema del CARGADOR: `halt`
+. Introduzca el siguiente comando en el símbolo del sistema del CARGADOR: `boot_diags`
++
+
+NOTE: Este comando se debe ejecutar desde el símbolo del sistema DEL CARGADOR para que los diagnósticos de nivel del sistema funcionen correctamente. El comando boot_diags inicia controladores especiales diseñados específicamente para diagnósticos de sistema.
+
+. Vea la versión de diagnóstico de nivel de sistema presente en el sistema de almacenamiento introduciendo el siguiente comando: `sldiag version show`
++
+La versión aparece en el formato System Level DiagnosticosX.nn.nn. La X es una referencia alfa y nn.nn son referencias numéricas principales y secundarias, respectivamente.
+
+. Identifique los tipos de dispositivos en la instalación del nuevo sistema para saber qué componentes debe verificar introduciendo el siguiente comando: `sldiag device types`
++
+El sistema de almacenamiento muestra algunos o todos los siguientes dispositivos:
+
++
+** `ata` Es un dispositivo de conexión de tecnología avanzada.
+** `bootmedia` es el dispositivo de arranque del sistema.
+** `cna` Es un adaptador de red convergente que no está conectado a una red o a un dispositivo de almacenamiento.
+** `env` especificaciones medioambientales de la placa base.
+** `fcache` Es el adaptador de Flash Cache, también conocido como "módulo de aceleración del rendimiento 2".
+** `fcal` Es un dispositivo de bucle arbitrado de Fibre Channel que no está conectado a un dispositivo de almacenamiento o a una red de Fibre Channel.
+** `fcvi` Es la interfaz virtual de Fibre Channel no está conectada a una red de Fibre Channel.
+** `interconnect` o. `nvram-ib` es la interfaz de alta disponibilidad.
+** mem es la memoria del sistema.
+** `nic` Es una tarjeta de interfaz de red que no está conectada a una red.
+** `nvram` Es la RAM no volátil.
+** `nvmem` Es un híbrido de NVRAM y memoria del sistema.
+** `sas` Es un dispositivo SCSI con conexión en serie que no está conectado a una bandeja de discos.
+** `serviceproc` Es el procesador de servicio.
+** `storage` Es una interfaz ATA, FC-AL o SAS que tiene una bandeja de discos conectada.
+** `toe` Es un motor de descarga TCP, un tipo de NIC.
+
+
+. Ejecute todas las pruebas de diagnóstico seleccionadas predeterminadas en el sistema de almacenamiento introduciendo el comando siguiente: `sldiag device run`
+. Para ver el estado de la prueba, introduzca el siguiente comando: `sldiag device status`
++
+El sistema de almacenamiento proporciona la siguiente salida mientras se siguen ejecutando las pruebas:
+
++
+[listing]
+----
+There are still test(s) being processed.
+----
++
+Una vez completadas todas las pruebas, aparecerá de forma predeterminada la siguiente respuesta:
+
++
+[listing]
+----
+*> <SLDIAG:_ALL_TESTS_COMPLETED>
+----
+. Compruebe que no haya problemas de hardware en el nuevo sistema de almacenamiento introduciendo el comando siguiente: `sldiag device status -long -state failed`
++
+El siguiente ejemplo muestra cómo se muestra el estado completo de los fallos en una prueba que se ejecuta sin el hardware adecuado:
+
++
+[listing]
+----
+
+*> **sldiag device status -long -state failed**
+
+TEST START ------------------------------------------
+DEVTYPE: nvram_ib
+NAME: external  loopback test
+START DATE: Sat Jan  3 23:10:55 GMT 2009
+
+STATUS: Completed
+ib3a: could not set loopback mode, test failed
+END DATE: Sat Jan  3 23:11:04 GMT 2009
+
+LOOP: 1/1
+TEST END --------------------------------------------
+
+TEST START ------------------------------------------
+DEVTYPE: fcal
+NAME: Fcal Loopback Test
+START DATE: Sat Jan  3 23:10:56 GMT 2009
+
+STATUS: Completed
+Starting test on Fcal Adapter: 0b
+Started gathering adapter info.
+Adapter get adapter info OK
+Adapter fc_data_link_rate: 1Gib
+Adapter name: QLogic 2532
+Adapter firmware rev: 4.5.2
+Adapter hardware rev: 2
+
+Started adapter get WWN string test.
+Adapter get WWN string OK wwn_str: 5:00a:098300:035309
+
+Started adapter interrupt test
+Adapter interrupt test OK
+
+Started adapter reset test.
+Adapter reset OK
+
+Started Adapter Get Connection State Test.
+Connection State: 5
+Loop on FC Adapter 0b is OPEN
+
+Started adapter Retry LIP test
+Adapter Retry LIP OK
+
+ERROR: failed to init adaptor port for IOCTL call
+
+ioctl_status.class_type = 0x1
+
+ioctl_status.subclass = 0x3
+
+ioctl_status.info = 0x0
+ Started INTERNAL LOOPBACK:
+INTERNAL LOOPBACK   OK
+Error Count: 2  Run Time: 70 secs
+>>>>> ERROR, please ensure the port has a shelf or plug.
+END DATE: Sat Jan  3 23:12:07 GMT 2009
+
+LOOP: 1/1
+TEST END --------------------------------------------
+----
++
+[cols="1,2"]
+|===
+| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
+
+
+ a| 
+Se completaron sin fallos
+ a| 
+No hay problemas de hardware y el sistema de almacenamiento vuelve al aviso de.
+
+.. Borre los registros de estado introduciendo el siguiente comando: `sldiag device clearstatus`
+.. Compruebe que se borra el registro introduciendo el siguiente comando: `sldiag device status`
++
+Se muestra la siguiente respuesta predeterminada:
+
++
+[listing]
+----
+SLDIAG: No log messages are present.
+----
+.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
+.. Introduzca el siguiente comando en el símbolo del sistema del cargador para arrancar el sistema de almacenamiento: `boot_ontap`Ha completado el diagnóstico de nivel del sistema.
+
+
+
+
+ a| 
+Se produjeron algunos fallos en las pruebas
+ a| 
+Determine la causa del problema.
+
+.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
+.. Realice un apagado correcto y desconecte las fuentes de alimentación.
+.. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
+.. Vuelva a conectar las fuentes de alimentación y encienda el sistema de almacenamiento.
+.. Repita los pasos del 1 al 7 de _ejecutando diagnósticos_ de instalación del sistema.
+
+
+|===
+

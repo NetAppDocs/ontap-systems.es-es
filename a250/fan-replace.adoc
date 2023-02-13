@@ -1,0 +1,208 @@
+---
+permalink: a250/fan-replace.html 
+sidebar: sidebar 
+keywords: aff a250, replace a fan 
+summary: Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador. 
+---
+= Sustituya un ventilador — AFF a250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Volviendo al modo SED a no protegido"].
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos  `cluster kernel-service show`) Para el blade SCSI del controlador dañado. La `cluster kernel-service show` comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
+
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm retirar la instalación]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+*1*
+| Palanca 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
++
+image::../media/drw_a250_open_controller_module_cover.png[cubierta del módulo de controlador abierto drw a250]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Tornillo de apriete manual 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Cubierta del módulo del controlador
+
+|===
+
+
+
+
+== Paso 3: Sustituir un ventilador
+
+[role="lead"]
+Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+
+Utilice el siguiente vídeo o los pasos tabulados para reemplazar un ventilador:
+
+.Animación - sustituya un ventilador
+video::ccfa6665-2c2b-4571-ae79-ac5b015c19fc[panopto]
+. Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola o ubicando el LED iluminado para el módulo de ventilador en la placa base.
+. Retire el módulo del ventilador pinzando el lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.
++
+image::../media/drw_a250_replace_fan.png[sustituya el ventilador drw a250]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Módulo de ventilador 
+|===
+. Alinee los bordes del módulo del ventilador de repuesto con la abertura del módulo del controlador y, a continuación, deslice el módulo del ventilador de repuesto en el módulo del controlador.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
+
+Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
+
+. Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.
++
+image::../media/drw_a250_close_controller_module_cover.png[cubierta del módulo del controlador de cierre drw a250]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Cubierta del módulo del controlador 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tornillo de apriete manual
+
+|===
+. Inserte el módulo de la controladora en el chasis:
++
+.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
+.. Con ambas manos, alinee y deslice suavemente el módulo del controlador en los brazos del mecanismo de bloqueo hasta que se detenga.
+.. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+.. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+
+
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+. Recuperar el sistema, según sea necesario.
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

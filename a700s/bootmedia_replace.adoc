@@ -1,0 +1,167 @@
+---
+permalink: a700s/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff a700s, aff, a700s, locate, fail, boot, media, controller, module, pcie, led, replace, replace the boot media 
+summary: Debe localizar el medio de arranque con fallos en el módulo de la controladora. Para ello, debe quitar el módulo PCIe medio del módulo de la controladora, localizar el medio de arranque con fallos mediante el LED encendido cerca del medio de arranque y, a continuación, sustituir el medio de arranque. 
+---
+= Sustituya el medio de arranque - AFF A700s
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe quitar el módulo de la controladora del chasis, abrirlo y luego sustituir el soporte de arranque con errores.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+[role="lead"]
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Desenchufe la fuente de alimentación del módulo del controlador y, a continuación, desconecte el cable de la fuente de alimentación.
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a700s_pcm_remove.png[drw a700s pcm quitar]
+
+
+
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillo de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
+
+
+
+
+image::../media/drw_a700s_open_air_duct.png[conducto de aire abierto drw a700s]
+
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo del conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Elevadores
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Conducto de aire
+
+|===
+
+
+== Paso 2: Sustituya el soporte de arranque - AFF A700s
+
+[role="lead"]
+Debe localizar el medio de arranque con fallos en el módulo de la controladora. Para ello, debe retirar el módulo PCIe central del módulo de la controladora, localizar el medio de arranque con fallos y, a continuación, sustituir el soporte de arranque.
+
+Necesita un destornillador Phillips para quitar el tornillo que sujeta el soporte del maletero en su lugar.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Busque el soporte de arranque:
++
+.. Abra el conducto de aire, si es necesario.
+.. Si es necesario, extraiga la tarjeta vertical 2, el módulo PCIe central, desbloqueando el pestillo de bloqueo y extrayendo la tarjeta vertical del módulo de la controladora.
++
+image::../media/drw_a700s_boot_media_replace.png[reemplazo del soporte de arranque drw a700s]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Conducto de aire
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tarjeta «riser» 2 (módulo PCIe medio)
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Tornillo del soporte del maletero
+
+
+
+ a| 
+image:../media/legend_icon_04.png[""]
+ a| 
+Soporte de arranque
+
+|===
+
+
+. Localice el medio de arranque con errores.
+. Extraiga el soporte de arranque del módulo del controlador:
++
+.. Con un destornillador Phillips del número 1, retire el tornillo que sujeta el soporte del maletero y coloque el tornillo a un lado en un lugar seguro.
+.. Sujetando los lados del soporte de arranque, gire suavemente el soporte de arranque hacia arriba, y luego tire del soporte de arranque directamente del zócalo y colóquelo a un lado.
+
+
+. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Gire el soporte de arranque hacia abajo hasta que esté alineado con la placa base.
+. Fije el soporte de la funda en su sitio con el tornillo.
++
+
+NOTE: No apriete demasiado el tornillo. Si lo hace, puede agrietar la placa de circuitos del soporte del maletero.
+
+. Vuelva a instalar la tarjeta vertical en el módulo de la controladora.
+. Cierre el conducto de aire:
++
+.. Gire el conducto de aire hacia abajo.
+.. Deslice el conducto de aire hacia los elevadores hasta que encaje en su sitio.
+
+
+

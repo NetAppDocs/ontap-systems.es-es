@@ -1,0 +1,23 @@
+---
+permalink: a200/chassis-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a200, replace the chassis 
+summary: Reemplace un chasis dañado el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Descripción general de la sustitución del chasis: AFF A200
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el chasis, mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema por el nuevo chasis del mismo modelo que el chasis dañado.
+
+.Lo que necesitará
+Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
+
+.Acerca de esta tarea
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Este procedimiento se escribe con la suposición de que va a mover todas las unidades y módulos o módulos de controladora al nuevo chasis, y que el chasis es un nuevo componente de NetApp.
+* Este procedimiento es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+

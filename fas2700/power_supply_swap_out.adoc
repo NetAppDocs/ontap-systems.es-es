@@ -1,0 +1,70 @@
+---
+permalink: fas2700/power-supply-swap-out.html 
+sidebar: sidebar 
+keywords: fas2700, aff a220, swap, power, supply, turn off, disconnect, remove, old, install, connect, turn on, replacement 
+summary: El intercambio de una fuente de alimentación implica apagar, desconectar y retirar la fuente de alimentación antigua e instalar, conectar y encender la fuente de alimentación de repuesto. 
+---
+= Cambie un sistema de alimentación: AFF A220 y FAS2700
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El intercambio de una fuente de alimentación implica apagar, desconectar y retirar la fuente de alimentación antigua e instalar, conectar y encender la fuente de alimentación de repuesto.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+* Los sistemas de alimentación son redundantes y intercambiables en caliente.
+* Este procedimiento se escribe para sustituir una fuente de alimentación a la vez.
++
+
+NOTE: La refrigeración está integrada con la fuente de alimentación, por lo que debe sustituir la fuente de alimentación en un plazo de dos minutos tras la extracción para evitar el sobrecalentamiento debido a la reducción del flujo de aire. Como el chasis proporciona una configuración de refrigeración compartida para los dos nodos de alta disponibilidad, una demora más de dos minutos apagará todos los módulos de la controladora del chasis. Si ambos módulos de controlador se apagan, asegúrese de insertar ambas fuentes de alimentación, apáguela durante 30 segundos y, a continuación, encienda ambos.
+
+* Las fuentes de alimentación están de alcance automático.
+
+
+.Pasos
+. Identifique la fuente de alimentación que desea reemplazar, basándose en mensajes de error de la consola o a través de los LED de las fuentes de alimentación.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Apague la fuente de alimentación y desconecte los cables de alimentación:
++
+.. Apague el interruptor de alimentación de la fuente de alimentación.
+.. Abra el retenedor del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación.
+
+
+. Apriete el pestillo del mango de la leva de la fuente de alimentación y, a continuación, abra el asa de la leva para liberar completamente la fuente de alimentación del plano medio.
++
+image::../media/drw_2600_psu_repl_animated_gif.png[gif animados drw 2600 psu repl]
+
+. Utilice el asa de leva para extraer la fuente de alimentación del sistema.
++
+
+CAUTION: Al extraer una fuente de alimentación, utilice siempre dos manos para soportar su peso.
+
+. Asegúrese de que el interruptor de encendido/apagado de la nueva fuente de alimentación esté en la posición de apagado.
+. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del chasis del sistema y, a continuación, empuje suavemente la fuente de alimentación hacia el chasis con el asa de leva.
++
+Las fuentes de alimentación están codificadas y sólo se pueden instalar de una manera.
+
++
+
+NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación en el sistema. Puede dañar el conector.
+
+. Cierre el asa de la leva de forma que el pestillo encaje en la posición de bloqueo y la fuente de alimentación esté completamente asentada.
+. Vuelva a conectar el cableado de la fuente de alimentación:
++
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y a la fuente de alimentación.
+.. Fije el cable de alimentación a la fuente de alimentación con el retenedor del cable de alimentación.
+
+
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+. Encienda la fuente de alimentación nueva y, a continuación, compruebe el funcionamiento de los LED de actividad del suministro de alimentación.
++
+Los LED del sistema de alimentación se encienden cuando el suministro de alimentación se conecta.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+

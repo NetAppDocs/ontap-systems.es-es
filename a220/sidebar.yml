@@ -1,0 +1,80 @@
+---
+section: a220
+title: Sistemas AFF A220
+url: "/a220/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de AFF A220
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/fas2700/install-setup.html"
+  - title: Pasos rápidos
+    url: "/fas2700/install-quick-guide.html"
+  - title: 'Vídeos: Pasos'
+    url: "/fas2700/install-videos.html"
+  - title: Pasos detallados
+    url: "/fas2700/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: Mantenimiento de AFF A220
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque para AFF A220
+    entries:
+    - title: Descripción general
+      url: "/fas2700/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/fas2700/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/fas2700/bootmedia-impaired-controller-shutdown.html"
+    - title: Sustituya la imagen de arranque
+      url: "/fas2700/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas2700/bootmedia-recovery-image-boot-non-2n-mcc.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/fas2700/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas2700/bootmedia-complete-rma.html"
+  - title: Módulo de almacenamiento en caché
+    pdf-filename: Módulo de almacenamiento en caché AFF A220
+    url: "/fas2700/caching-module-replace.html"
+  - title: Chasis
+    pdf-filename: AFF A220 y chasis FAS2700
+    entries:
+    - title: Descripción general
+      url: "/fas2700/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas2700/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/fas2700/chassis-replace-move-hardware.html"
+    - title: Restaurar la configuración
+      url: "/fas2700/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Controladora AFF A220
+    entries:
+    - title: Descripción general
+      url: "/fas2700/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas2700/controller-replace-shutdown.html"
+    - title: Sustituya el hardware de la controladora
+      url: "/fas2700/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/fas2700/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/fas2700/controller-replace-recable-reassign-disks.html"
+    - title: Restauración completa del sistema
+      url: "/fas2700/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    pdf-filename: DIMM AFF A220
+    url: "/fas2700/dimm-replace.html"
+  - title: Unidad
+    pdf-filename: Unidad AFF A220
+    url: "/fas2700/drive-replace.html"
+  - title: Batería NVMEM
+    pdf-filename: Batería NVMEM AFF A220 y FAS2700
+    url: "/fas2700/nvmem-nvram-battery-replace.html"
+  - title: Suministro de alimentación
+    pdf-filename: Fuente de alimentación de AFF A220 y FAS2700
+    url: "/fas2700/power-supply-swap-out.html"
+  - title: Batería del reloj en tiempo real
+    pdf-filename: Batería del reloj AFF A220 en tiempo real
+    url: "/fas2700/rtc-battery-replace.html"

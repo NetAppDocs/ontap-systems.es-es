@@ -1,0 +1,90 @@
+---
+permalink: platform-supplemental/sldiag-requirements.html 
+sidebar: sidebar 
+keywords: system-level, diagnostic, test, run, time, system, requirement, system, memory, general, nic, sas, fc-al, cna, interconnect, requirement for running system-level diagnostic 
+summary: Según las pruebas de diagnóstico del sistema que se estén ejecutando, debe tener en cuenta los requisitos de tiempo y hardware del sistema. 
+---
+= Requisitos para ejecutar un diagnóstico del sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Según las pruebas de diagnóstico del sistema que se estén ejecutando, debe tener en cuenta los requisitos de tiempo y hardware del sistema.
+
+Cada tarea documentada presenta ligeras diferencias; utilice el procedimiento recomendado para la tarea.
+
+Se deben cumplir los siguientes requisitos al ejecutar diagnósticos de nivel de sistema; de lo contrario, en el informe de estado aparecen partes de las pruebas con errores y mensajes de error:
+
+
+
+== Requisitos generales
+
+* Cada sistema que se está probando debe estar en una red independiente.
++
+La prueba de interfaz de red asigna direcciones IP estáticas únicas, empezando por 172.25.150.23, a todas las interfaces de red disponibles en un sistema de almacenamiento. Esto provoca que los puertos de interfaz de red de diferentes controladoras de almacenamiento tengan la misma dirección IP asignada. Si todos los sistemas que se están probando están en la misma red, aparecerán mensajes de advertencia duplicados de direcciones ip en las consolas conectadas. Estos mensajes de advertencia no afectan a los resultados de la prueba.
+
+
+
+
+
+== Requisitos de memoria del sistema
+
+* Debe reservar tiempo para realizar pruebas de memoria; cuanto mayor sea la capacidad de memoria del sistema de almacenamiento, más tardará.
+
+
+
+
+== Requisitos de NIC
+
+* Todos los puertos de interfaz de red adyacentes del sistema deben estar conectados para obtener el mejor rendimiento utilizando un cable Ethernet estándar.
++
+Algunos ejemplos de puertos adyacentes son e0a y e0b o e2c y e2d.
+
++
+
+NOTE: Los puertos e0M y e0P no pueden conectarse juntos debido a una conexión de switch interna. En sistemas con puertos e0M y e0P, los emparejamientos más eficientes son e0M con e0a y e0P con e0b.
+
+* Si hay varios puertos de interfaz de red en el sistema, es posible que deba ejecutar la prueba de diagnóstico a nivel del sistema NIC varias veces, lo que limita cada ejecución a no más de dos pares cada vez.
+
+
+
+
+== Requisitos de SAS
+
+* Cuando se ejecutan pruebas de diagnóstico en el nivel del sistema SAS, se deben conectar puertos SAS adyacentes para ofrecer el mejor rendimiento; deben desconectarse de los puertos.
++
+
+NOTE: Las conexiones entre puertos SAS adyacentes ya no son un requisito para los sistemas que ejecutan Data ONTAP 8.2; sin embargo, solo se ejecutará la prueba de bucle invertido interna para sistemas con puertos SAS desconectados.
+
+
+
+
+
+== Requisitos de FC-al
+
+* Al ejecutar las pruebas de diagnóstico de nivel del sistema FC-AL, debe haber capuchas de bucle invertido en las interfaces FC-AL en la placa base o en los adaptadores de expansión para obtener el mejor rendimiento; los demás cables de las redes de almacenamiento o Fibre Channel deben estar desconectados de los puertos.
++
+
+NOTE: Aunque el uso de campanas de bucle invertido en interfaces FC-AL ya no es necesario para sistemas que ejecutan Data ONTAP 8.2, también se reduce el alcance de la cobertura de prueba en la interfaz.
+
+
+
+
+
+== Requisitos de CNA
+
+* El uso de campanas de bucle invertido no es un requisito para ejecutar pruebas de diagnóstico de nivel de sistema CNA.
+
+
+
+
+== Requisitos de interconexión
+
+* Los dos módulos de controlador de plataforma en un sistema de controlador doble deben estar en modo de mantenimiento para que se ejecute la prueba de diagnóstico en el nivel del sistema de interconexión.
++
+
+NOTE: Recibirá un mensaje de advertencia si intenta ejecutar la prueba de diagnóstico a nivel del sistema de interconexión con otras pruebas de diagnóstico a nivel del sistema.
+
+

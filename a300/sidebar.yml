@@ -1,0 +1,76 @@
+---
+section: a300
+title: Sistemas A300 de AFF
+url: "/a300/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de AFF A300
+  entries:
+  - title: Hoja de cálculo de configuración del clúster
+    url: "/a300/install-worksheet-linkout.html"
+  - title: Elija experiencia de instalación y configuración
+    url: "/a300/install-setup.html"
+  - title: Pasos rápidos
+    url: "/a300/install-setup-linkout.html"
+  - title: Pasos de vídeo
+    url: "/a300/install-video-linkout.html"
+- title: Mantener
+  pdf-filename: Mantenimiento de A300 de AFF
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque A300 de AFF
+    entries:
+    - title: Descripción general
+      url: "/a300/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/a300/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/a300/bootmedia-impaired-controller-shutdown.html"
+    - title: Sustituir el soporte de arranque
+      url: "/a300/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/a300/bootmedia-recovery-image-boot-options.html"
+    - title: Vuelva a cambiar la configuración de MetroCluster
+      url: "/a300/bootmedia-2n-mcc-switchback.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/a300/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/a300/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis AFF A300
+    entries:
+    - title: Descripción general
+      url: "/a300/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a300/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/a300/chassis-replace-move-hardware.html"
+    - title: Restaurar la configuración
+      url: "/a300/chassis-replace-complete-system-restore-rma.html"
+  - title: Módulo del controlador
+    pdf-filename: Módulo de controladora A300 de AFF
+    entries:
+    - title: Descripción general
+      url: "/a300/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a300/controller-replace-shutdown.html"
+    - title: Sustituya el módulo del controlador
+      url: "/a300/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/a300/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/a300/controller-replace-recable-reassign-disks.html"
+    - title: Sustitución completa
+      url: "/a300/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/a300/dimm-replace.html"
+  - title: Ventilador
+    url: "/a300/fan-swap-out.html"
+  - title: Batería NVMEM
+    url: "/a300/nvmem-nvram-battery-replace.html"
+  - title: Tarjeta PCIe
+    url: "/a300/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    url: "/a300/power-supply-swap-out.html"
+  - title: Batería del reloj en tiempo real
+    url: "/a300/rtc-battery-replace.html"

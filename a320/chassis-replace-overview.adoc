@@ -1,0 +1,21 @@
+---
+permalink: a320/chassis-replace-overview.html 
+sidebar: sidebar 
+keywords: aff, a320, aff a320, replace, chassis, fan, controller, module, impair, model, shut, down, replacing, remove, move, equipment, rack, diagnostic, complete, replacement, process, replace the chassis, shut down the controllers when replacing a chassis, remove the controller modules, move the fans, replace a chassis from within the equipment rack or system cabinet, install the controller modules, run diagnostics, complete the replacement process 
+summary: Reemplace un chasis dañado el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Descripción general de la sustitución del chasis - AFF A320
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el chasis, debe mover los ventiladores y los módulos de controladora del chasis dañado al nuevo chasis del mismo modelo que el chasis dañado.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Este procedimiento se escribe suponiendo que se mueven los módulos de la controladora al nuevo chasis y que el chasis es un nuevo componente de NetApp.
+* Este procedimiento es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+

@@ -1,0 +1,440 @@
+---
+permalink: a900/dimm_replace.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
+---
+= Sustituya un módulo DIMM - AFF A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+
+.Antes de empezar
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+[role="lead"]
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Volviendo al modo SED a no protegido"].
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos  `cluster kernel-service show`) Para el blade SCSI del controlador dañado. La `cluster kernel-service show` comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+[role="lead"]
+Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.
+. Deslice el botón terra cotta del asa de la leva hacia abajo hasta que se desbloquee.
++
+.Animación: Retire el controlador
+video::256721fd-4c2e-40b3-841a-adf2000df5fa[panopto]
++
+image::../media/drw_a900_remove_PCM.png[drw a900 retire el PCM]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de liberación de la palanca de leva
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mango de leva
+
+|===
+. Gire el asa de leva para que desacople completamente el módulo del controlador del chasis y, a continuación, deslice el módulo del controlador para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el lado de la tapa del módulo del controlador hacia arriba sobre una superficie plana y estable, pulse el botón azul de la cubierta, deslice la cubierta hacia la parte posterior del módulo del controlador y, a continuación, gire la cubierta hacia arriba y levántela fuera del módulo del controlador.
++
+image::../media/drw_a900_PCM_open.png[drw a900 PCM abierto]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de bloqueo de la cubierta del módulo del controlador
+
+|===
+
+
+
+
+== Paso 3: Sustituya los módulos DIMM
+
+[role="lead"]
+Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice los DIMM en el módulo del controlador.
+
+
+image::../media/drw_a900_DIMM_map.png[Mapa DIMM drw a900]
+
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+IMPORTANT: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
++
+.Animación - sustituir DIMM
+video::db161030-298a-4ae4-b902-adf2000e2aa4[panopto]
++
+image::../media/drw_a900_replace_PCM_dimms.png[drw a900 sustituye a los módulos dimm del PCM]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas del expulsor de DIMM
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+DIMM
+
+|===
+. Retire el módulo DIMM de repuesto de la bolsa de transporte antiestática, sujete el módulo DIMM por las esquinas y alinéelo con la ranura.
++
+La muesca entre las patillas del DIMM debe alinearse con la lengüeta del zócalo.
+
+. Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.
+. Cierre la cubierta del módulo del controlador.
+
+
+
+
+== Paso 4: Instale la controladora
+
+[role="lead"]
+Después de instalar los componentes en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema e iniciar el sistema operativo.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
++
+image::../media/drw_a900_PCM_open.png[drw a900 PCM abierto]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de bloqueo de la cubierta del módulo del controlador
+
+|===
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+.Animación: Instalar el controlador
+video::099237f3-d7f2-4749-86e2-adf2000df53c[panopto]
++
+image::../media/drw_a900_remove_PCM.png[drw a900 retire el PCM]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de liberación de la palanca de leva
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mango de leva
+
+|===
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
++
+
+NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+IMPORTANT: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+.. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+.. Para interrumpir el proceso de arranque, pulse `Ctrl-C` Cuando vea Pulse Ctrl-C para el menú de inicio.
+.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
+
+
+
+
+
+
+== Paso 5: Ejecute un diagnóstico de nivel de sistema
+
+[role="lead"]
+Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
+
+Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
+
+Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
+
+. Si la controladora que se va a reparar no está en el símbolo del sistema del CARGADOR, siga estos pasos:
++
+.. Seleccione la opción modo de mantenimiento en el menú que se muestra.
+.. Después de que la controladora arranca en modo de mantenimiento, detenga la controladora: `halt`
++
+Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
++
+
+IMPORTANT: Durante el proceso de arranque, puede responder de forma segura `y` a peticiones.
+
++
+*** Si aparece un aviso y advierte que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva.
+
+
+
+
+. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
++
+Durante el proceso de arranque, puede responder de forma segura `y` A las indicaciones hasta que aparezca el indicador del modo de mantenimiento (*>).
+
+. Ejecutar diagnósticos de la memoria del sistema: `sldiag device run -dev mem`
+. Verifique que no haya problemas de hardware como resultado de la sustitución de los módulos DIMM: `sldiag device status -dev mem -long -state failed`
++
+Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
+
+. Proceda según el resultado del paso anterior:
++
+[cols="1,2"]
+|===
+| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
+
+
+ a| 
+Se completaron sin fallos
+ a| 
+.. Borre los registros de estado: `sldiag device clearstatus`
+.. Compruebe que se ha borrado el registro: `sldiag device status`
++
+Se muestra la siguiente respuesta predeterminada:
+
++
+SLDIAG: No hay mensajes de registro.
+
+.. Salir del modo de mantenimiento: `halt`
++
+La controladora muestra el aviso del CARGADOR.
+
+.. Arranque la controladora desde el símbolo del sistema del CARGADOR: `bye`
+.. Devolver a la controladora a su funcionamiento normal:
+
+
+|===
++
+[cols="1,2"]
+|===
+| Si la controladora se encuentra en... | Realice lo siguiente... 
+
+
+ a| 
+Un par de alta disponibilidad
+ a| 
+Realice un aporte atrás: `storage failover giveback -ofnode replacement_node_name` *Nota:* Si ha desactivado la devolución automática, vuelva a habilitarla con el comando Storage Failover modify.
+
+
+
+ a| 
+Se produjeron algunos fallos en las pruebas
+ a| 
+Determine la causa del problema:
+
+.. Salir del modo de mantenimiento: `halt`
++
+Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+.. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
+.. Inicie el módulo del controlador que está realizando el mantenimiento, interrumpiendo el arranque pulsando `Ctrl-C` Cuando se le solicite acceder al menú Inicio:
++
+*** Si tiene dos módulos de controladora en el chasis, coloque a fondo el módulo de controladora que va a mantener en el chasis.
++
+El módulo del controlador se arranca cuando está completamente asentado.
+
+*** Si tiene un módulo de controladora en el chasis, conecte las fuentes de alimentación y, a continuación, enciéndalas.
+
+
+.. Seleccione Boot to maintenance mode (Inicio al modo de mantenimiento) en el menú.
+.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
++
+Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
+
+.. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema.
+
+
+|===
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+[role="lead"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

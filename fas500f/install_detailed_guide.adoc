@@ -1,0 +1,523 @@
+---
+permalink: fas500f/install-detailed-guide.html 
+sidebar: sidebar 
+keywords: fas500f, detailed installation 
+summary: En esta sección se ofrecen instrucciones detalladas paso a paso para la instalación de un sistema FAS500f. 
+---
+= Pasos detallados - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En esta sección se ofrecen instrucciones detalladas paso a paso para la instalación de un sistema FAS500f.
+
+
+
+== Paso 1: Preparar la instalación
+
+Para instalar el sistema FAS500f, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
+
+Debe tener acceso a link:https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener información acerca de los requisitos del sitio, así como información adicional sobre el sistema configurado. Puede que también desee tener acceso a link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Notas de la versión de ONTAP"^] para obtener más información sobre este sistema.
+
+.Lo que necesita
+Debe proporcionar lo siguiente en el sitio:
+
+* Espacio en rack para el sistema de almacenamiento
+* Destornillador Phillips número 2
+* Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web
+
+
+.Pasos
+. Extraiga el contenido de todas las cajas.
+. Registre el número de serie del sistema de las controladoras.
++
+image::../media/drw_ssn_label.png[etiqueta ssn drw]
+
+. Configure su cuenta:
++
+.. Inicie sesión en su cuenta existente o cree una cuenta.
+.. Registro (link:https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["Registro de productos de NetApp"^]) su sistema.
+
+
+. Descargue e instale link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^] en el portátil.
+. Realice un inventario y anote el número y los tipos de cables recibidos.
++
+En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable que no aparece en la tabla, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para localizar el cable e identificar su uso.
+
+
+
+|===
+
+
+| Tipo de cable... | Número de pieza y longitud | Tipo de conector | Durante... 
+
+
+ a| 
+Cable de 25 GbE
+ a| 
+X66240A-05 (112-00595), 0,5 m;
+
+X66240-2 (112-00573), 2 m
+ a| 
+image:../media/oie_cable100_gbe_qsfp28.png[""]
+ a| 
+La red de interconexión en clúster
+
+
+
+ a| 
+X66240A-2 (112-00598), 2 m;
+
+X66240A-5 (112-00600), 5 m
+ a| 
+SQL Server
+
+
+
+ a| 
+Cable de 100 GbE
+ a| 
+X66211-2 (112-00574), 2 m;
+
+X66211-5 (112-00576), 5 m
+ a| 
+Reducida
+
+
+
+ a| 
+RJ-45 (dependiente del pedido)
+ a| 
+No aplicable
+ a| 
+image:../media/oie_cable_rj45.png[""]
+ a| 
+Red de gestión (BMC y puerto de llave inglesa) y datos Ethernet (e0a y e0b)
+
+
+
+ a| 
+Fibre Channel
+ a| 
+X66250-2 (112-00342) 2 m;
+
+X66250-5 (112-00344) 5 m;
+
+X66250-15 (112-00346) 15 m;
+
+X66250-30 (112-00347) 30m
+ a| 
+image:../media/oie_cable_fc_optical.png[""]
+ a| 
+
+
+
+ a| 
+Cable de consola Micro-USB
+ a| 
+No aplicable
+ a| 
+image:../media/oie_cable_micro_usb.png[""]
+ a| 
+Conexión de consola durante la configuración del software
+
+
+
+ a| 
+Cables de alimentación
+ a| 
+No aplicable
+ a| 
+image:../media/oie_cable_power.png[""]
+ a| 
+Encendido del sistema
+
+|===
+. Revise la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"^] y recopilar la información necesaria que aparece en esa guía.
+
+
+
+
+== Paso 2: Instale el hardware
+
+Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
+
+.Pasos
+. Instale los kits de raíles, según sea necesario.
+. Instale y asegure el sistema siguiendo las instrucciones incluidas con el kit de raíl.
++
+
+NOTE: Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.
+
++
+image::../media/drw_affa250_weight_caution.png[precaución de peso drw affa250]
+
+. Identifique y administre los cables porque este sistema no tiene un dispositivo de administración de cables.
+. Coloque el panel frontal en la parte delantera del sistema.
+
+
+
+
+== Paso 3: Controladores de cables
+
+Se requiere un cableado para el clúster de la plataforma mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster. Existe un cableado opcional para las redes host Fibre Channel o iSCSI o almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cables para una red host y almacenamiento.
+
+
+
+=== Cableado necesario: Conecte las controladoras a un clúster
+
+Conecte los cables de las controladoras a un clúster mediante el método de clúster sin switch de dos nodos o mediante el uso de la red de interconexión de clúster.
+
+
+
+==== Opción 1: Conecte el cable de un clúster sin switch de dos nodos
+
+Los puertos de red de gestión, Fibre Channel y datos o host de los módulos de la controladora se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambos módulos de la controladora.
+
+.Antes de empezar
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+
+Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
+
+image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
+
+
+NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
+
+Utilice la animación o los pasos tabulados para completar el cableado entre los controladores y los conmutadores:
+
+.Animación: Conectar un clúster sin switch de dos nodos
+video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
+[cols="10,90"]
+|===
+| Paso | Ejecute cada controladora 
+
+
+ a| 
+image:../media/oie_legend_icon_1_lg.png[""]
+ a| 
+Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster de 25 GbE
+
+image:../media/oie_cable_sfp_gbe_copper.png[""]:
+
+* e0c a e0c
+* e0d a e0dimage:../media/drw_affa250_tnsc_cabling.png[""]
+
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_dr.png[""]
+ a| 
+Conecte los puertos de llave a los switches de red de gestión con los cables RJ45.
+
+image::../media/drw_affa250_mgmt_cabling.png[cableado de mgmt drw affa250]
+
+
+
+ a| 
+image:../media/oie_legend_icon_attn_symbol.png[""]
+ a| 
+NO enchufe los cables de alimentación en este momento.
+
+|===
+Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
+
+
+
+==== Opción 2: Conectar un clúster de switches
+
+Todos los puertos de las controladoras están conectados a switches; interconexión de clúster, gestión, Fibre Channel y switches de red de datos o host.
+
+.Antes de empezar
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+
+Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
+
+image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
+
+
+NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
+
+Utilice la animación o los pasos tabulados para completar el cableado entre los controladores y los conmutadores:
+
+.Animación - conectar un grupo conmutado
+video::bf6759dc-4cbf-488e-982e-ac68017fbef8[panopto]
+[cols="10,90"]
+|===
+| Paso | Ejecute cada controladora 
+
+
+ a| 
+image:../media/oie_legend_icon_1_lg.png[""]
+ a| 
+Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 25 GbE.
+
+* e0c
+* e0dimage:../media/drw_affa250_switched_clust_cabling.png[""]
+
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_dr.png[""]
+ a| 
+Conecte los puertos de llave a los switches de red de gestión con los cables RJ45.
+
+image::../media/drw_affa250_mgmt_cabling.png[cableado de mgmt drw affa250]
+
+
+
+ a| 
+image::../media/oie_legend_icon_attn_symbol.png[símbolo de atención del icono de leyenda de la oie]
+ a| 
+NO enchufe los cables de alimentación en este momento.
+
+|===
+Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
+
+
+
+=== Cableado opcional: Opciones dependientes de la configuración del cable
+
+Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.
+
+
+
+==== Opción 1: Cable a una red host Fibre Channel
+
+Los puertos Fibre Channel de las controladoras están conectados a switches de red host Fibre Channel.
+
+.Antes de empezar
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+
+Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
+
+image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+
+
+NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
+
+[cols="10,90"]
+|===
+| Paso | Lleve a cabo cada módulo de la controladora 
+
+
+ a| 
+1
+ a| 
+Conecte los puertos 2a a 2d a los switches host FC.
+
+image::../media/drw_affa250_fc_host_cabling.png[cableado de host drw affa250 fc]
+
+
+
+ a| 
+2
+ a| 
+Para realizar otro cableado opcional, elija entre:
+
+* <<Opción 2: Conectar mediante cable a una red de datos o host de 25 GbE>>
+* <<Opción 3: Conecte las controladoras a una bandeja de unidades única>>
+
+
+
+
+ a| 
+3
+ a| 
+Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
+
+|===
+
+
+==== Opción 2: Conectar mediante cable a una red de datos o host de 25 GbE
+
+Los puertos de 25 GbE de las controladoras están conectados a datos de 25 GbE o a switches de red de host.
+
+.Antes de empezar
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+
+Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
+
+image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+
+
+NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
+
+[cols="10,90"]
+|===
+| Paso | Lleve a cabo cada módulo de la controladora 
+
+
+ a| 
+1
+ a| 
+Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.
+
+image::../media/drw_affa250_25gbe_host_cabling.png[cableado de host drw affa250 25gbe]
+
+
+
+ a| 
+2
+ a| 
+Para realizar otro cableado opcional, elija entre:
+
+* <<Opción 1: Cable a una red host Fibre Channel>>
+* <<Opción 3: Conecte las controladoras a una bandeja de unidades única>>
+
+
+
+
+ a| 
+3
+ a| 
+Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
+
+|===
+
+
+==== Opción 3: Conecte las controladoras a una bandeja de unidades única
+
+Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS224.
+
+Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
+
+image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+
+
+NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
+
+Utilice la animación o los pasos tabulados para completar el cableado entre las controladoras y la sola bandeja:
+
+.Animación - conectar los controladores a un solo NS224
+video::3f92e625-a19c-4d10-9028-ac68017fbf57[panopto]
+[cols="10,90"]
+|===
+| Paso | Lleve a cabo cada módulo de la controladora 
+
+
+ a| 
+image:../media/oie_legend_icon_1_mb.png[""]
+ a| 
+Conecte la controladora A a la bandeja: image:../media/drw_affa250_1shelf_cabling_a.png[""]
+
+
+
+ a| 
+image:../media/oie_legend_icon_2_lo.png[""]
+ a| 
+Conecte la controladora B a la bandeja: image:../media/drw_affa250_1shelf_cabling_b.png[""]
+
+|===
+Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
+
+
+
+== Paso 4: Pasos completos para la instalación y la configuración del sistema
+
+Complete la instalación y la configuración del sistema mediante la detección de clústeres que solo tiene una conexión al switch y al portátil, o bien se puede conectar directamente a una controladora del sistema y, a continuación, conectarse al switch de gestión.
+
+
+
+=== Opción 1: Completar la configuración y la instalación del sistema si la detección de red está activada
+
+Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
+
+.Pasos
+. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
+. Asegúrese de que el ordenador portátil tiene activado el descubrimiento de red.
++
+Consulte la ayuda en línea de su portátil para obtener más información.
+
+. Utilice la animación para conectar el portátil al conmutador de administración:
++
+.Animación: Conecte el portátil al conmutador de administración
+video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+. Seleccione un icono de ONTAP que aparece para detectar:
++
+image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]
+
++
+.. Abra el Explorador de archivos.
+.. Haga clic en *Red* en el panel izquierdo.
+.. Haga clic con el botón derecho del ratón y seleccione *Actualizar*.
+.. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
++
+
+NOTE: XXXXX es el número de serie del sistema para el nodo de destino.
+
++
+Se abrirá System Manager.
+
+
+
+. Utilice la configuración guiada de System Manager para configurar el sistema con los datos recogidos en el link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"^].
+. Compruebe el estado del sistema ejecutando Config Advisor.
+. Después de completar la configuración inicial, vaya a la link:https://www.netapp.com/data-management/oncommand-system-documentation/["Recursos de documentación de ONTAP  ONTAP System Manager"^] Página para obtener información sobre cómo configurar las funciones adicionales en ONTAP.
+
+
+
+
+=== Opción 2: Completar la configuración y la instalación del sistema si la detección de red no está habilitada
+
+Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.
+
+.Pasos
+. Conecte y configure el portátil o la consola:
++
+.. Ajuste el puerto de la consola del portátil o de la consola en 115,200 baudios con N-8-1.
++
+
+NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo configurar el puerto de la consola.
+
+.. Conecte el portátil o la consola al conmutador de la subred de administración.
++
+image::../media/drw_console_client_mgmt_subnet_affa250.png[subred de gestión de cliente de consola drw affa250]
+
+.. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
+
+
+. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
+. Asigne una dirección IP de gestión de nodos inicial a uno de los nodos.
++
+[cols="1,2"]
+|===
+| Si la red de gestión tiene DHCP... | Realice lo siguiente... 
+
+
+ a| 
+Configurado
+ a| 
+Registre la dirección IP asignada a las nuevas controladoras.
+
+
+
+ a| 
+No configurado
+ a| 
+.. Abra una sesión de consola mediante PuTTY, un servidor terminal o el equivalente para su entorno.
++
+
+NOTE: Si no sabe cómo configurar PuTTY, compruebe la ayuda en línea del ordenador portátil o de la consola.
+
+.. Introduzca la dirección IP de administración cuando se lo solicite el script.
+
+
+|===
+. Mediante System Manager en el portátil o la consola, configure su clúster:
++
+.. Dirija su navegador a la dirección IP de gestión de nodos.
++
+
+NOTE: El formato de la dirección es +https://x.x.x.x+.
+
+.. Configure el sistema con los datos recogidos en el link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"^].
+
+
+. Compruebe el estado del sistema ejecutando Config Advisor.
+. Después de completar la configuración inicial, vaya a la link:https://www.netapp.com/data-management/oncommand-system-documentation/["Recursos de documentación de ONTAP  ONTAP System Manager"^] Página para obtener información sobre cómo configurar las funciones adicionales en ONTAP.
+

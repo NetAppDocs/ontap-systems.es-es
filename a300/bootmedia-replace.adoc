@@ -1,0 +1,157 @@
+---
+permalink: a300/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: aff a300, replace the boot media 
+summary: Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo. 
+---
+= Reemplace el soporte de arranque - AFF A300
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
++
+image::../media/drw_32xx_cbl_mgmt_arm.png[ARM de gestión cbl drw 32xx]
+
+. Afloje el tornillo de ajuste manual del asa de leva del módulo del controlador.
++
+image::../media/drw_8020_cam_handle_thumbscrew.png[tornillo de apriete manual del mango de leva drw 8020]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Tornillo de apriete manual
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mango de leva
+
+|===
+. Tire del asa de leva hacia abajo y comience a sacar el módulo del controlador del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque - AFF A300
+
+Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice el medio de arranque con la siguiente ilustración o el mapa de FRU en el módulo de la controladora:
++
+image::../media/drw_rxl_boot_media.png[soporte de arranque drw rxl]
+
+. Pulse el botón azul de la carcasa del soporte de arranque para liberar el soporte de arranque de su carcasa y, a continuación, tire suavemente de él hacia fuera del zócalo del soporte de arranque.
++
+
+NOTE: No gire ni tire del soporte de arranque en línea recta, ya que podría dañar la toma o el soporte de arranque.
+
+. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Empuje el soporte del maletero hacia abajo para activar el botón de bloqueo en la carcasa del soporte del maletero.
+. Cierre la cubierta del módulo del controlador.
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. No obstante, debe restaurar el sistema de archivos var durante este procedimiento.
+
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
++
+** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
++
+.. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+.. Vuelva a instalar el dispositivo de administración de cables y vuelva a instalar el sistema, según sea necesario.
++
+Al realizar la copia, recuerde volver a instalar los convertidores de medios (SFP) si se retiraron.
+
+.. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+.. Empuje completamente el módulo del controlador en el sistema, asegurándose de que el mango de la leva borra la unidad flash USB, empuje firmemente el asa de la leva para terminar de colocar el módulo del controlador, empuje el asa de la leva hasta la posición cerrada y, a continuación, apriete el tornillo de mano.
++
+La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
+
+.. Interrumpa el proceso de arranque para que se detenga en el símbolo del SISTEMA DEL CARGADOR pulsando Ctrl-C cuando vea iniciando AUTOBOOT, pulse Ctrl-C para cancelar....
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+.. En el caso de los sistemas con una controladora en el chasis, vuelva a conectar la alimentación y encienda las fuentes de alimentación.
++
+El sistema empieza a arrancar y se detiene en el aviso del CARGADOR.
+
+.. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
++
+*** Si va a configurar DHCP: `ifconfig e0a -auto`
++
+
+NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
+
+*** Si está configurando conexiones manuales: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
++
+**** Filer_addr es la dirección IP del sistema de almacenamiento.
+**** La máscara de red es la máscara de red de la red de gestión conectada al partner de alta disponibilidad.
+**** gateway es la puerta de enlace de la red.
+**** dns_addr es la dirección IP de un servidor de nombres de la red.
+**** dns_Domain es el nombre de dominio del sistema de nombres de dominio (DNS).
++
+Si utiliza este parámetro opcional, no necesita un nombre de dominio completo en la URL del servidor para reiniciar el sistema. Solo necesita el nombre de host del servidor.
+
+
+
+
+
++
+
+NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede entrar `help ifconfig` en el símbolo del sistema del firmware para obtener detalles.
+
+.. Si la controladora está en una MetroCluster con ampliación o conexión a la estructura, debe restaurar la configuración del adaptador de FC:
++
+... Arranque en modo de mantenimiento: `boot_ontap maint`
+... Establezca los puertos MetroCluster como iniciadores: `ucadmin modify -m fc -t _initiator adapter_name_`
+... Detener para volver al modo de mantenimiento: `halt`
+
+
+
+
++
+Los cambios se implementarán al arrancar el sistema.
+
+

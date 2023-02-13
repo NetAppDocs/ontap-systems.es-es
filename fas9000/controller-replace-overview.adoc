@@ -1,0 +1,38 @@
+---
+permalink: fas9000/controller-replace-overview.html 
+sidebar: sidebar 
+keywords: aff a700, fas9000, replace, controller, module, prerequisites, procedure 
+summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+---
+= Descripción general de la sustitución del módulo de controladora: A700 y FAS9000 de AFF
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* Si el sistema es un sistema FlexArray o tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.
+* Si su sistema está en un par de alta disponibilidad, el nodo en buen estado debe ser capaz de tomar el nodo que se va a sustituir (denominado en este procedimiento el «'nodo dañado''').
+* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
++
+Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimiento de sustitución de controladora para un nodo en una configuración MetroCluster de cuatro u ocho nodos es el mismo que el de una pareja de alta disponibilidad. No es necesario realizar pasos específicos de MetroCluster porque el fallo está limitado a un par de alta disponibilidad y pueden utilizarse comandos de recuperación tras fallos del almacenamiento para proporcionar un funcionamiento no disruptivo durante el reemplazo.
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del nodo dañado al nodo _regrel_ de modo que el nodo _regrase_ se arranque en la misma versión de ONTAP que el módulo de controlador anterior.
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El nodo _drinated_ es el nodo que se va a reemplazar.
+** El nodo _regrsustituya_ es el nuevo nodo que está reemplazando al nodo dañado.
+** El nodo _heated_ es el nodo que sobrevive.
+
+
+* Siempre debe capturar el resultado de la consola del nodo en un archivo de texto.
++
+Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+
+

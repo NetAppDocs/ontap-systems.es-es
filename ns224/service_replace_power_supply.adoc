@@ -1,0 +1,85 @@
+---
+permalink: ns224/service-replace-power-supply.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, replace, fail, power, supply, nondisruptive, drive, i/o, progress, hot-swap, hot-swap a power supply 
+summary: Puede sustituir un suministro de alimentación con fallos de forma no disruptiva en una bandeja de unidades NS224 que se encienda y mientras las operaciones de I/o están en curso. 
+---
+= Intercambio en caliente de una fuente de alimentación - bandejas NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede sustituir un suministro de alimentación con fallos de forma no disruptiva en una bandeja de unidades NS224 que se encienda y mientras las operaciones de I/o están en curso.
+
+.Acerca de esta tarea
+* No mezcle fuentes de alimentación con diferentes niveles de eficiencia. Sustituya siempre como por ejemplo.
+* Si va a reemplazar más de un suministro de alimentación, debe hacerlo uno a la vez para que la bandeja mantenga alimentación.
+* *Mejor práctica:* la mejor práctica es reemplazar la fuente de alimentación en dos minutos después de haber sido retirada del módulo NSM.
++
+Si supera los dos minutos, la bandeja sigue funcionando, pero ONTAP envía mensajes a la consola sobre el suministro de alimentación degradado hasta que se reemplace el suministro de alimentación.
+
+* *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
+
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+
+* Cuando desembale la fuente de alimentación de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la fuente de alimentación fallida.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+* Puede utilizar el siguiente vídeo o los pasos escritos para sustituir una fuente de alimentación.
++
+.Animación: Cambie en caliente una fuente de alimentación en una bandeja de unidades NS224
+video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente el suministro de alimentación con errores.
++
+El sistema registra un mensaje de advertencia en la consola del sistema que indica qué fuente de alimentación ha fallado. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja se ilumina y el LED bicolor de la fuente de alimentación fallida se ilumina en rojo.
+
+. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+. Quite la fuente de alimentación que ha fallado:
++
+.. Gire la palanca de leva hasta su posición abierta (horizontal) y, a continuación, sujétela.
+.. Con el pulgar, presione la lengüeta azul para liberar el mecanismo de bloqueo.
+.. Extraiga la fuente de alimentación del módulo NSM mientras utiliza la otra mano para soportar su peso.
+
+
+. Inserte la fuente de alimentación de repuesto:
++
+.. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del módulo NSM.
+.. Empuje suavemente la fuente de alimentación en el módulo NSM hasta que el mecanismo de bloqueo encaje en su lugar.
++
+
+NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
+
+.. Gire la palanca de leva a la posición cerrada.
+
+
+. Conecte el cable de alimentación a la fuente de alimentación y asegure el cable de alimentación con el retenedor del cable de alimentación.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
+

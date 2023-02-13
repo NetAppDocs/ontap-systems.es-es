@@ -1,0 +1,196 @@
+---
+permalink: a900/add_io_module.html 
+sidebar:  
+keywords:  
+summary: Puede agregar un módulo de E/S al sistema, ya sea reemplazando un módulo de E/S existente por un módulo de E/S nuevo en un sistema completamente cargado o agregando un módulo de E/S nuevo en una ranura vacía del chasis. 
+---
+= Agregar un módulo de E/S - AFF A900
+:allow-uri-read: 
+
+
+Puede agregar un módulo de E/S al sistema sustituyendo una NIC o un adaptador de almacenamiento por uno nuevo en un sistema completamente cargado, o agregando un nuevo NIC o adaptador de almacenamiento en una ranura de chasis vacía en el sistema.
+
+.Antes de empezar
+* Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
+* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"] Y utilice el mejor disponible para su módulo de E/S.
+* Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.
+* Asegúrese de que todos los demás componentes funcionan correctamente.
+
+
+
+
+== Opción 1: Agregue el módulo de E/S a un sistema con ranuras abiertas
+
+[role="lead"]
+Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema como NIC o como módulo de almacenamiento para las bandejas de almacenamiento NS224.
+
+. Apagado de la controladora A:
++
+.. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
+.. Retome la controladora objetivo: `storage failover takeover -ofnode target_node_name`
++
+La conexión de la consola muestra que la controladora cae al aviso del CARGADOR cuando se completa el relevo.
+
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Extraer el obturador de la ranura de destino:
++
+.. Pulse el botón de leva numerado y con letras.
+.. Gire el pestillo de la leva hacia abajo hasta que esté en la posición abierta.
+.. Extraer el obturador.
+
+
+. Instale el módulo de E/S:
++
+.. Alinee el módulo de E/S con los bordes de la ranura.
+.. Deslice el módulo de E/S en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse con el pasador de leva de E/S.
+.. Empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
+
+
+. Si el módulo de E/S de repuesto es un NIC, conecte el módulo a los conmutadores de datos.
++
+
+NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
+
+. Reinicie la controladora desde el aviso del CARGADOR: _Bye_
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
+. Recupere la controladora de la otra controladora. `storage failover giveback -ofnode target_node_name`
+. Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
+. Si utiliza las ranuras 3 y/o 7 para las redes, utilice `storage port modify -node __<node name>__ -port __<port name>__ -mode network` comando para convertir la ranura para su uso en la red.
+. Repita estos pasos para la controladora B.
+. Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].
+
+
+
+
+== Opción 2: Añada un módulo de I/o en un sistema sin ranuras abiertas
+
+[role="lead"]
+Debe eliminar uno o varios módulos de almacenamiento o NIC existentes en el sistema para instalar uno o varios módulos de E/S en el sistema completamente cargado.
+
+. Si está:
++
+[cols="1,2"]
+|===
+| Sustituyendo a... | Realice lo siguiente... 
+
+
+ a| 
+Módulo de E/S NIC con el mismo número de puertos
+ a| 
+Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.
+
+
+
+ a| 
+Módulo de E/S NIC con menos puertos
+ a| 
+Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.
+
+
+
+ a| 
+Módulo de E/S de NIC con un módulo de E/S de almacenamiento
+ a| 
+Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"].
+
+|===
+. Apague la controladora A:
++
+.. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
+.. Retome la controladora objetivo: `storage failover takeover -ofnode target_node_name`
++
+La conexión de la consola muestra que la controladora cae al aviso del CARGADOR cuando se completa el relevo.
+
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte cualquier cableado del módulo de E/S de destino.
+. Extraiga el módulo de I/o de destino del chasis:
++
+.. Pulse el botón de leva numerado y con letras.
++
+El botón de leva se aleja del chasis.
+
+.. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
++
+El módulo de E/S se desacopla del chasis y se mueve aproximadamente 1/2 pulgadas fuera de la ranura de E/S.
+
+.. Extraiga el módulo de E/S del chasis tirando de las lengüetas de tiro de los lados de la cara del módulo.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
++
+.Animación: Extracción o sustitución de un módulo de E/S.
+video::3a5b1f6e-15ec-40b4-bb2a-adf9016af7b6[panopto]
++
+image:../media/drw_a900_remove_PCIe_module.png[""]
+
+
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.png[icono de leyenda 01]
+ a| 
+Pestillo de leva de E/S numerado y con letras
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pestillo de leva de E/S completamente desbloqueado
+
+|===
+. Instale el módulo de E/S en la ranura de destino:
++
+.. Alinee el módulo de E/S con los bordes de la ranura.
+.. Deslice el módulo de E/S en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse con el pasador de leva de E/S.
+.. Empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
+
+
+. Repita los pasos de desmontaje e instalación para sustituir los módulos adicionales de la controladora A.
+. Si el módulo de E/S de repuesto es un NIC, conecte el módulo o los módulos a los conmutadores de datos.
+. Reinicie el BMC y a continuación, reinicie el nodo:
++
+.. Desde el aviso DEL CARGADOR, cambie al modo de privilegio avanzado: `priv set advanced`
+.. Reinicie el BMC: `sp reboot`
+
+
+. Desde el aviso del CARGADOR, reinicie el nodo: `bye`
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
+. Recupere la controladora de la otra controladora. `storage failover giveback -ofnode target_node_name`
+. Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
+. Si agregó:
++
+[cols="1,2"]
+|===
+| Si el módulo de E/S es un... | Realice lo siguiente... 
+
+
+ a| 
+Módulo NIC en las ranuras 3 o 7,
+ a| 
+Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mode network` comando para cada puerto.
+
+
+
+ a| 
+Módulo de almacenamiento
+ a| 
+Instale y conecte los cables de las bandejas NS224 según se describe enhttps://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].
+
+|===
+. Repita estos pasos para la controladora B.
+

@@ -1,0 +1,313 @@
+---
+permalink: sas3/hot-remove-shelf.html 
+sidebar: sidebar 
+keywords: hot-remove, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, i/o, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
+summary: 'Puede quitar en caliente una bandeja de discos con módulos IOM12 (sin interrupciones, quite una bandeja de discos de un sistema que está encendido y hay I/o en curso) cuando necesite mover o sustituir la bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.' 
+---
+= Desmonte en caliente una bandeja - estantes con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede quitar en caliente una bandeja de discos con módulos IOM12/IOM12B (retire sin interrupciones una bandeja de discos de un sistema encendido y hay operaciones de I/o en curso) cuando necesite mover o sustituir una bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.
+
+.Antes de empezar
+* El sistema debe ser una configuración de alta disponibilidad multivía, multivía, alta disponibilidad de ruta cuádruple o ruta cuádruple.
++
+Para las plataformas con almacenamiento integrado, como los sistemas AFF A200, AFF A220, serie FAS2600 y FAS2700, el almacenamiento externo debe cablearse como multivía o multivía.
+
++
+
+NOTE: Para un sistema de controladoras únicas FAS2600 de la serie FAS2600 que tiene el almacenamiento externo cableado con conectividad multivía, el sistema es una configuración de rutas mixtas porque el almacenamiento interno utiliza conectividad de ruta única.
+
+* El sistema no puede tener mensajes de error de cableado SAS.
++
+Puede descargar y ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado SAS y las acciones correctivas que debe tomar.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+
+* La configuración de parejas de ALTA DISPONIBILIDAD no puede estar en estado de toma de control.
+* Debe haber quitado todos los agregados de las unidades de disco (las unidades de disco deben ser repuestos) en las bandejas de discos que va a quitar.
++
+
+NOTE: Si se intenta realizar este procedimiento con agregados en la bandeja de discos que se está quitando, se podría conmutar el sistema con una alerta de varios discos.
+
++
+Puede utilizar el `storage aggregate offline -aggregate _aggregate_name_` y, a continuación, el `storage aggregate delete -aggregate _aggregate_name_` comando.
+
+* Si va a quitar una o varias bandejas de discos de una pila, debe haber calculado la distancia para omitir las bandejas de discos que se van a quitar; por lo tanto, si los cables actuales no son lo suficientemente largos, necesitará tener cables más largos disponibles.
+
+
+.Acerca de esta tarea
+* *Mejor práctica:* la mejor práctica es eliminar la propiedad de las unidades de disco después de quitar los agregados de las unidades de disco de las bandejas de discos que va a quitar.
++
+Al eliminar la información de propiedad de una unidad de disco de repuesto, la unidad de disco se puede integrar correctamente en otro nodo (según sea necesario).
+
+
+
+[NOTE]
+====
+El procedimiento para eliminar la propiedad de unidades de disco requiere deshabilitar la asignación automática de propiedad de disco. Al final de este procedimiento, se vuelve a habilitar la asignación automática de propiedad de disco.
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"]
+
+====
+* En el caso de un sistema Clustered ONTAP con más de dos nodos, lo más recomendable es haber reasignado épsilon a un par de alta disponibilidad distinto del que se somete a labores de mantenimiento planificadas.
++
+La reasignación de configuración épsilon minimiza el riesgo de errores imprevistos que afectan a todos los nodos de un sistema Clustered ONTAP. Puede seguir estos pasos para determinar el nodo que contiene épsilon y reasignar épsilon si es necesario:
+
++
+.. Configure el nivel de privilegio en Advanced: `set -privilege advanced`
+.. Determine qué nodo tiene épsilon: `cluster show`
++
+El nodo que muestra épsilon `true` en la `Epsilon` columna. (Los nodos que no muestran épsilon `false`.)
+
+.. Si el nodo de la pareja de alta disponibilidad que está sometido a tareas de mantenimiento muestra `true` (épsilon) y retire épsilon del nodo: `cluster modify -node _node_name_ -epsilon false`
+.. Asigne épsilon a un nodo en otro par de alta disponibilidad: `cluster modify -node _node_name_ -epsilon true`
+.. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
+
+
+* Si va a extraer una bandeja de discos en activo de una pila (pero manteniendo la pila), puede volver a admitir y verificar una ruta por vez (ruta A y, a continuación, ruta B) para omitir la bandeja de discos que va a quitar para mantener siempre la conectividad de ruta única de las controladoras a la pila.
++
+
+NOTE: Si no mantiene la conectividad de una ruta única desde las controladoras hasta la pila al volver a colocar la pila para omitir la bandeja de discos que va a quitar, podría fallar el sistema con una situación de pánico de varios discos.
+
+* *Posible daño en el estante:* Si va a extraer una estantería DS460C y lo está moviendo a una parte diferente del centro de datos o transportándola a otra ubicación, consulte la sección, <<Mueva o transporte las estanterías DS460C>> al final de este procedimiento.
+
+
+.Pasos
+. Compruebe que la configuración del sistema es `Multi-Path HA`, `Multi-Path`, `Quad-path HA`, o. `Quad-path`: `sysconfig`
++
+Ejecute este comando desde el nodo de cualquiera de las controladoras. Es posible que el sistema demore hasta un minuto en completar la detección.
+
++
+La configuración se muestra en la `System Storage Configuration` campo.
+
++
+
+NOTE: En el caso de un sistema de controladora única de la serie FAS2600 que tiene el almacenamiento externo cableado con conectividad multivía, la salida se muestra como `mixed-path` debido a que el almacenamiento interno utiliza conectividad de ruta única.
+
+. Compruebe que las unidades de disco de las bandejas de discos que va a quitar no tienen agregados (son repuestos) y se elimine la propiedad:
++
+.. Introduzca el siguiente comando desde el shell de clúster de cualquiera de las controladoras: `storage disk show -shelf _shelf_number_`
+.. Compruebe la salida para verificar que no hay ningún agregado en las unidades de disco de las bandejas de discos que está quitando.
++
+Las unidades de disco sin agregados tienen un guion en la `Container Name` columna.
+
+.. Compruebe la salida para verificar que la propiedad de las unidades de disco de las bandejas de discos que desea quitar.
++
+Las unidades de disco sin propiedad tienen un guion en el `Owner` columna.
+
++
+
+NOTE: Si unidades de disco con fallos en la bandeja que se va a quitar, se han roto en la `Container Type` columna. (La unidad de disco con errores no tiene propiedad).
+
++
+La siguiente salida muestra que las unidades de disco de la bandeja de discos que se va a quitar (bandeja de discos 3) tienen el estado correcto para quitar la bandeja de discos. Los agregados se eliminan en todas las unidades de disco; por lo tanto, se muestra un guion en la `Container Name` para cada unidad de disco. La propiedad también se quita en todas las unidades de disco; por lo tanto, se muestra un guion en el `Owner` para cada unidad de disco.
+
+
+
++
+[listing]
+----
+cluster::> storage disk show -shelf 3
+
+           Usable           Disk   Container   Container
+Disk         Size Shelf Bay Type   Type        Name       Owner
+-------- -------- ----- --- ------ ----------- ---------- ---------
+...
+1.3.4           -     3   4 SAS    spare                -         -
+1.3.5           -     3   5 SAS    spare                -         -
+1.3.6           -     3   6 SAS    broken               -         -
+1.3.7           -     3   7 SAS    spare                -         -
+...
+----
+. Localice físicamente las bandejas de discos que va a quitar.
++
+Si es necesario, puede encender los LED de ubicación (azul) de la bandeja de discos para ayudar a localizar físicamente la bandeja de discos afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
+
++
+
+NOTE: Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada módulo IOM12. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+
+. Si va a eliminar una pila completa de bandejas de discos, complete los siguientes subpasos; de lo contrario, vaya al siguiente paso:
++
+.. Quite todos los cables SAS de la ruta A (IOM A) y la ruta B (IOM B).
++
+Esto incluye cables de controladora a bandeja y cables de bandeja a bandeja para todas las bandejas de discos en la pila que va a quitar.
+
+.. Vaya al paso 9.
+
+
+. Si va a quitar una o varias bandejas de discos de una pila (pero manteniendo la pila), vuelva a conectar las conexiones de la pila de ruta A (IOM A) para omitir las bandejas de discos que va a quitar completando el conjunto de subpasos correspondiente:
++
+Si va a eliminar más de una bandeja de discos en la pila, complete el conjunto de subpasos correspondiente de una bandeja de discos a la vez.
+
++
+
+NOTE: Espere al menos 10 segundos antes de conectar el puerto. Los conectores de cable SAS están codificados; cuando están orientados correctamente a un puerto SAS, el conector hace clic en su lugar y el LED LNK del puerto SAS de la bandeja de discos se ilumina en verde. En el caso de las bandejas de discos, inserte un conector de cable SAS con la pestaña extraíble orientada hacia abajo (en la parte inferior del conector).
+
++
+[cols="2*"]
+|===
+| Si va a quitar... | Realice lo siguiente... 
+
+
+ a| 
+Una bandeja de discos de cualquiera de los extremos (primero lógico o último bandeja de discos) de una pila
+ a| 
+.. Quite cualquier cableado de bandeja a bandeja de los puertos IOM A en la bandeja de discos que se va a quitar y poner a un lado.
+.. Desconecte cualquier cableado de la controladora a la pila conectado a los puertos IOM A de la bandeja de discos que se va a quitar y enchúfelos en los mismos puertos IOM A de la siguiente bandeja de discos del paquete.
++
+La bandeja de discos «'siguiente» puede encontrarse encima o debajo de la bandeja de discos que va a extraer, en función del extremo de la pila del que vaya a extraer la bandeja de discos.
+
+
+
+
+
+ a| 
+Una bandeja de discos en el medio de la pila a una bandeja De discos en el medio de una pila solo está conectada a otras bandejas de discos, no a ninguna controladora.
+ a| 
+.. Quite todo cableado de bandeja a bandeja de los puertos IOM A 1 y 2 o de los puertos 3 y 4 de la bandeja de discos que va a quitar e IOM A de la siguiente bandeja de discos, y déjelos de forma independiente.
+.. Desconecte el cableado restante de bandeja a bandeja conectado a los puertos IOM A de la bandeja de discos que se va a quitar y enchúfelos en los mismos puertos IOM A de la siguiente bandeja de discos del paquete. La bandeja de discos «'siguiente» puede estar encima o debajo de la bandeja de discos que va a extraer, en función de los puertos IOM A (1 y 2, 3 y 4) de los que haya quitado el cableado.
+
+
+|===
++
+Puede consultar los siguientes ejemplos de cableado al extraer una bandeja de discos de un extremo de una pila o el medio de una pila. Tenga en cuenta lo siguiente acerca de los ejemplos de cableado:
+
++
+** Los módulos IOM12 se organizan en paralelo como en una bandeja de discos DS224C o DS212C; si tiene un DS460C, los módulos IOM12 se organizan por encima de otro.
+** La pila en cada ejemplo se cableado con cableado estándar de bandeja a bandeja, que se utiliza en pilas cableadas con conectividad multivía o de alta disponibilidad.
++
+Puede realizar la conexión directa si la pila se cableó con alta disponibilidad de cuatro rutas o conectividad de cuatro rutas, que utiliza cableado de doble bandeja a bandeja.
+
+** Los ejemplos de cableado muestran la presentación de una de las rutas: Ruta A (IOM A).
++
+Repita la presentación para la ruta B (IOM B).
+
+** El ejemplo de cableado para quitar una bandeja de discos del final de una pila muestra quitar la última bandeja de discos lógica de una pila que se cableó con conectividad de alta disponibilidad multivía.
++
+Puede realizar la presentación si va a eliminar la primera bandeja de discos lógica de una pila o si su pila tiene conectividad multivía.
+
++
+image::../media/drw_hotremove_end.gif[extremo de extracción en caliente drw]
+
++
+image::../media/drw_hotremove_middle.gif[drw hotremove central]
+
+
+
+. Verifique que omitió las bandejas de discos que va a quitar y reestablecer las conexiones de la pila de ruta A (IOM A) correctamente: `storage disk show -port`
++
+Para configuraciones de pares de alta disponibilidad, este comando se ejecuta desde el clustershell de cualquiera de las controladoras. Es posible que el sistema demore hasta un minuto en completar la detección.
+
++
+Las dos primeras líneas de salida muestran unidades de disco con conectividad a través de la ruta A y la ruta B. Las dos últimas líneas de salida muestran unidades de disco con conectividad a través de una ruta única, ruta B.
+
++
+[listing]
+----
+cluster::> storage show disk -port
+
+PRIMARY  PORT SECONDARY      PORT TYPE SHELF BAY
+-------- ---- ---------      ---- ---- ----- ---
+1.20.0   A    node1:6a.20.0  B    SAS  20    0
+1.20.1   A    node1:6a.20.1  B    SAS  20    1
+1.21.0   B    -              -    SAS  21    0
+1.21.1   B    -              -    SAS  21    1
+...
+----
+. El siguiente paso depende del `storage disk show -port` resultado del comando:
++
+[cols="2*"]
+|===
+| Si el resultado muestra... | Realice lo siguiente... 
+
+
+ a| 
+Todas las unidades de disco de la pila se conectan a través de la ruta A y la ruta B, excepto las de las bandejas de discos que se desconectan, que solo están conectadas a través de la ruta B
+ a| 
+Vaya al paso siguiente.
+
+Debe omitir correctamente las bandejas de discos que va a quitar y volver a establecer la ruta A en las unidades De disco restantes de la pila.
+
+
+
+ a| 
+Cualquier otra cosa que no sea la anterior
+ a| 
+Repita los pasos 5 y 6.
+
+Debe corregir el cableado.
+
+|===
+. Complete los siguientes subpasos para las bandejas de discos (en la pila) que va a quitar:
++
+.. Repita del paso 5 al paso 7 para la ruta B.
++
+
+NOTE: Cuando repita el paso 7 y si ha vuelto a presentar la pila correctamente, sólo deberá ver todas las unidades de disco restantes conectadas a través de la ruta A y la ruta B.
+
+.. Repita el paso 1 para confirmar que la configuración del sistema es la misma que antes de quitar una o más bandejas de discos de una pila.
+.. Vaya al paso siguiente.
+
+
+. Si al quitar la propiedad de las unidades de disco (como parte de la preparación de este procedimiento), se deshabilitó la asignación automática de propiedad de disco, vuelva a habilitarla introduciendo el comando siguiente; de lo contrario, vaya al siguiente paso: `storage disk option modify -autoassign on`
++
+Para configuraciones de par de alta disponibilidad, puede ejecutar el comando desde el clustershell de ambas controladoras.
+
+. Apague las bandejas de discos desconectadas y desconecte los cables de alimentación de las bandejas de discos.
+. Quite las bandejas de discos del rack o armario.
++
+Para que una bandeja de discos sea más ligera y fácil de maniobrar, quite las fuentes de alimentación y los módulos de I/o (IOM).
+
++
+En el caso de bandejas de discos DS460C, una bandeja totalmente cargada puede tener una peso de 112 kg (247 lb) aproximadamente y, por lo tanto, debe tener la siguiente precaución al extraer una bandeja de un rack o armario.
+
++
+
+CAUTION: Se recomienda utilizar un elevador mecánico o cuatro personas utilizando las asas de elevación para mover de forma segura una estantería DS460C.
+
++
+El envío DS460C se ha envasado con cuatro asas de elevación desmontables (dos por cada lado). Para utilizar las asas de elevación, las instala insertando las pestañas de las asas en las ranuras del lateral de la bandeja y empujando hacia arriba hasta que encajen en su lugar. A continuación, conforme deslice la bandeja de discos sobre los raíles, separe un conjunto de asas cada vez mediante el pestillo de pulgar. La siguiente ilustración muestra cómo acoplar un asa de elevación.
+
++
+image::../media/drw_ds460c_handles.gif[asas drw ds460c]
+
++
+Si va a mover la bandeja DS460C a una parte diferente del centro de datos o la va a transportar a una ubicación diferente, consulte la sección siguiente, <<Mueva o transporte las estanterías DS460C>>.
+
+
+
+.Mueva o transporte las estanterías DS460C
+[role="lead"]
+Si mueve una bandeja DS460C a una parte diferente del centro de datos o transporta la bandeja a una ubicación diferente, debe quitar las unidades de los cajones de unidades para evitar daños a los cajones de unidades y las unidades.
+
+* Si al instalar bandejas DS460C como parte de la nueva instalación de sistema o de la bandeja de adición activa, se han guardado los materiales de embalaje de unidades, utilice estos para volver a empaquetar las unidades antes de moverlas.
++
+Si no ha guardado los materiales de embalaje, debe colocar las unidades en superficies acolchadas o utilizar un embalaje acolchado alternativo. No coloque nunca unidades entre sí.
+
+* Antes de manejar las unidades, use una muñequera ESD conectada a tierra a una superficie sin pintar en el chasis del gabinete de almacenamiento.
++
+Si no hay una correa de mano disponible, toque una superficie sin pintar en el chasis de la caja de almacenamiento antes de manejar una unidad.
+
+* Se deben tomar las medidas necesarias para tratar las unidades con cuidado:
++
+** Utilice siempre dos manos al extraer, instalar o transportar una unidad para soportar su peso.
++
+
+CAUTION: No coloque las manos en las placas de accionamiento expuestas en la parte inferior del portador de la unidad.
+
+** Tenga cuidado de no golpear los mandos contra otras superficies.
+** Las unidades deben mantenerse alejadas de los dispositivos magnéticos.
++
+
+CAUTION: Los campos magnéticos pueden destruir todos los datos de una unidad y causar daños irreparables en los circuitos de la unidad.
+
+
+
+

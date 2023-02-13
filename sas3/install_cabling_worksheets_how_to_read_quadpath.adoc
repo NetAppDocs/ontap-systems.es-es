@@ -1,0 +1,74 @@
+---
+permalink: sas3/install-cabling-worksheets-how-to-read-quadpath.html 
+sidebar: sidebar 
+keywords: example, guide, read, apply, complete, worksheet, stack, disk, shelves, shelf, iom12, quad-pathed, connectivity, how to read a worksheet to cable controller-to-stack connections for quad-pathed connectivity 
+summary: Puede utilizar este ejemplo como guía para leer y aplicar una hoja de trabajo completada para cablear pilas de bandejas de discos con módulos IOM12/IOM12B para conectividad con cuatro rutas. 
+---
+= Cómo leer una hoja de trabajo para cablear las conexiones de controladora a pila para la conectividad con cuatro rutas: Bandejas con módulos IOM12/IOM12B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar este ejemplo como guía para leer y aplicar una hoja de trabajo completada para cablear pilas de bandejas de discos con módulos IOM12/IOM12B para conectividad con cuatro rutas.
+
+.Acerca de esta tarea
+* Este procedimiento hace referencia al siguiente ejemplo de hoja de datos y cableado para mostrar cómo leer una hoja de datos para cablear las conexiones de la controladora a la pila.
++
+La configuración utilizada en este ejemplo es una configuración de alta disponibilidad de ruta cuádruple con dos HBA SAS de puerto cuádruple en cada controladora y dos pilas de bandejas de discos con módulos IOM12.
+
+* Si tiene una configuración de controladora única, omita los pasos b y d para cableado a una segunda controladora.
+* Si es necesario, puede consultar link:install-cabling-rules.html["Reglas para el cableado SAS"] para obtener información acerca de la convención de numeración de ranuras de controladoras, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de parejas de puertos).
+
+
+image::../media/drw_worksheet_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[hoja de cálculo drw ranuras qpha 1 y 2 dos pithbas dos pilas nau]
+
+image::../media/drw_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw qpha ranuras 1 y 2 de 4 phtebas dos pilas nau]
+
+.Pasos
+. Pareja de puertos de cable 1a/2b en cada controladora a la pila 1:
++
+Este es el cableado multivía para la pila 1.
+
++
+.. Conecte el puerto 1a del controlador 1 a la pila 1, primer puerto IOM a de la bandeja 1.
+.. Conecte el cable de la controladora 2 al puerto 1a a la pila 1, primer puerto IOM B de la bandeja 1.
+.. Conecte el puerto 2b de la controladora 1 a la pila 1, último puerto IOM B 3 de la bandeja.
+.. Conecte el puerto 2b de la controladora 2 a la pila 1, último puerto IOM a de la bandeja 3.
+
+
+. Par de puertos de cable 2a/1d en cada controladora a la pila 1:
++
+Este es el cableado de cuatro rutas para la pila 1. Una vez completado el proceso, la pila 1 dispone de conectividad de cuatro rutas a cada controladora.
+
++
+.. Conecte el cable del controlador 1, puerto 2a a la pila 1, primer puerto IOM A de la bandeja 2.
+.. Conecte el cable del controlador 2, puerto 2a a la pila 1, primer puerto IOM B 2 de la bandeja.
+.. Cablee el puerto 1d del controlador 1 a la pila 1, último puerto IOM B de la bandeja 4.
+.. Conecte el puerto 1d de la controladora 2 a la pila 1, último puerto IOM a de la bandeja 4.
+
+
+. Par de puertos de cable 1c/2d en cada controladora a la pila 2:
++
+Este es el cableado multivía para la pila 2.
+
++
+.. Conecte el cable de la controladora 1 al puerto 1c a la pila 2, primero a el puerto 1 de IOM de la bandeja.
+.. Conecte el cable de la controladora 2 al puerto 1c a la pila 2, el primer puerto 1 de IOM B de la bandeja.
+.. Conecte el cable del controlador 1, puerto 2d a la pila 2, último puerto IOM B 3 de la bandeja.
+.. Conecte el cable del controlador 2, puerto 2d a la pila 2, último puerto IOM a de la bandeja 3.
+
+
+. Pareja de puertos de cable 2c/1b en cada controladora para apilar 2:
++
+Este es el cableado de cuatro rutas para la pila 2. Una vez completado el proceso, la pila 2 dispone de conectividad de cuatro rutas a cada controladora.
+
++
+.. Conecte el cable de la controladora 1 al puerto 2c a la pila 2, primera bandeja IOM a, puerto 2.
+.. Conecte el cable de la controladora 2 al puerto 2c a la pila 2, primera bandeja IOM B, puerto 2.
+.. Conecte el puerto 1b de la controladora 1 a la pila 2, último puerto IOM B 4 de la bandeja.
+.. Conecte el puerto 1b de la controladora 2 a la pila 2, último puerto IOM a de la bandeja 4.
+
+
+

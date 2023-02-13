@@ -1,0 +1,154 @@
+---
+permalink: fas9500/controller_replace_recable_reassign_disks.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Recuperar el sistema - FAS9500
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Continuar con el procedimiento de sustitución presentando las instalaciones de almacenamiento y de red.
+
+
+
+== Paso 1: Recuperar el sistema
+
+Después de ejecutar los diagnósticos, debe recuperar las conexiones de red y de almacenamiento del módulo del controlador.
+
+.Pasos
+. Recuperar el sistema.
+. Compruebe que el cableado sea correcto mediante el https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+.. Descargue e instale Config Advisor.
+.. Introduzca la información del sistema de destino y haga clic en Collect Data.
+.. Haga clic en la ficha cableado y, a continuación, examine la salida. Asegúrese de que se muestren todas las bandejas de discos y todos los discos aparecen en el resultado, corrigiendo los problemas de cableado que encuentre.
+.. Compruebe otro cableado haciendo clic en la ficha correspondiente y, a continuación, examinando el resultado de Config Advisor.
+
+
+
+
+
+NOTE: La información de ID del sistema y de asignación de discos se encuentra en el módulo NVRAM, que se encuentra en un módulo independiente del módulo de la controladora y no se ve afectada por la sustitución del módulo de la controladora.
+
+
+
+== Paso 2: Reasignar discos
+
+Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el nodo _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
+
+Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
+
+. Si el nodo _reader_ está en modo de mantenimiento (mostrando la `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
+. Desde el símbolo del sistema DEL CARGADOR en el nodo _reboot_, arranque el nodo, introduzca `y` Si se le solicita que anule el ID del sistema debido a que el ID del sistema no coincide.``boot_ontap``
+. Espere hasta la `Waiting for giveback...` El mensaje se muestra en la consola del nodo _reassigned_ y, a continuación, en el nodo en buen estado, compruebe que el nuevo ID de sistema asociado se ha asignado automáticamente: Storage Failover show
++
+En el resultado del comando, debería ver un mensaje que indica que el ID del sistema ha cambiado en el nodo dañado, mostrando los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.
+
++
+[listing]
+----
+node1> storage failover show
+                                    Takeover
+Node              Partner           Possible     State Description
+------------      ------------      --------     -------------------------------------
+node1             node2             false        System ID changed on partner (Old:
+                                                  151759755, New: 151759706), In takeover
+node2             node1             -            Waiting for giveback (HA mailboxes)
+----
+. Desde el nodo en buen estado, compruebe que se han guardado los núcleo:
++
+.. Cambie al nivel de privilegio avanzado: `set -privilege advanced`
++
+Usted puede responder `Y` cuando se le solicite que continúe en el modo avanzado. Aparece el símbolo del sistema del modo avanzado (*>).
+
+.. Guarde sus núcleo: `system node run -node _local-node-name_ partner savecore`
+.. Espere a que se complete el comando savecore antes de emitir el retorno.
++
+Puede introducir el siguiente comando para supervisar el progreso del comando savecoore: `system node run -node _local-node-name_ partner savecore -s`
+
+.. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
+
+
+. Si el sistema de almacenamiento tiene configurado el cifrado de volúmenes o el almacenamiento, debe restaurar la funcionalidad de cifrado de volúmenes o almacenamiento usando uno de los siguientes procedimientos, en función de si usa la gestión de claves externa o incorporada:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
+
+
+. Proporcione al nodo:
++
+.. Desde el nodo en buen estado, vuelva a asignar el almacenamiento del nodo sustituido: `storage failover giveback -ofnode _replacement_node_name_`
++
+El nodo _regrsustituya_ recupera su almacenamiento y completa el arranque.
+
++
+Si se le solicita que anule el ID del sistema debido a una falta de coincidencia de ID del sistema, debe introducir `y`.
+
++
+
+NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
+
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["Comandos de devolución manual"^] tema para anular el veto.
+
+.. Una vez que se ha completado el retorno al nodo primario, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: Se muestra la conmutación al nodo de respaldo del almacenamiento
++
+La salida de `storage failover show` El comando no debe incluir el ID del sistema cambiado en el mensaje del partner.
+
+
+
+. Compruebe que los discos se han asignado correctamente: `storage disk show -ownership`
++
+Los discos que pertenecen al nodo _regrel_ deberían mostrar el nuevo ID del sistema. En el ejemplo siguiente, los discos propiedad del nodo 1 ahora muestran el nuevo ID del sistema, 1873775277:
+
++
+[listing]
+----
+node1> storage disk show -ownership
+
+Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
+----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
+1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
+1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+.
+.
+.
+----
+. Si el sistema está en una configuración de MetroCluster, supervise el estado del nodo: `metrocluster node show`
++
+La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada nodo mostrará un estado configurado, con mirroring DR habilitado y un modo normal. La `metrocluster node show -fields node-systemid` El resultado del comando muestra el ID del sistema antiguo hasta que la configuración de MetroCluster vuelve a ser un estado normal.
+
+. Si el nodo está en una configuración MetroCluster, según el estado del MetroCluster, compruebe que el campo ID de inicio de recuperación ante desastres muestra el propietario original del disco si el propietario original es un nodo del sitio de desastres.
++
+Esto es necesario si se cumplen las dos opciones siguientes:
+
++
+** La configuración de MetroCluster está en estado de conmutación.
+** El nodo _regrse_ es el propietario actual de los discos del sitio de recuperación ante desastres.
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"^] tema.
+
+
+
+. Si su sistema está en una configuración MetroCluster, compruebe que cada nodo esté configurado: `metrocluster node show - fields configuration-state`
++
+[listing]
+----
+node1_siteA::> metrocluster node show -fields configuration-state
+
+dr-group-id            cluster node           configuration-state
+-----------            ---------------------- -------------- -------------------
+1 node1_siteA          node1mcc-001           configured
+1 node1_siteA          node1mcc-002           configured
+1 node1_siteB          node1mcc-003           configured
+1 node1_siteB          node1mcc-004           configured
+
+4 entries were displayed.
+----
+. Compruebe que existen volúmenes esperados para cada nodo: `vol show -node node-name`
+. Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde el nodo en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
+
