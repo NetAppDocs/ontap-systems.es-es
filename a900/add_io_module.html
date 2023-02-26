@@ -79,11 +79,17 @@
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/es-es/ontap-systems/js/na-search.js'></script><script src='/es-es/ontap-systems/js/na-pagenav.js'></script><script src='/es-es/ontap-systems/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/es-es/ontap-systems/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/es-es/ontap-systems/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/es-es/ontap-systems/js/na-utility.js'></script> -->
   <script src='/es-es/ontap-systems/js/clouddocs.js'></script>
   <script src='/es-es/ontap-systems/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/es-es/ontap-systems/js/toc.js'></script>
-  <script src='/es-es/ontap-systems/js/customscripts.js'></script><script>
+  <!-- <script src='/es-es/ontap-systems/js/toc.js'></script> -->
+  <!-- <script src='/es-es/ontap-systems/js/customscripts.js'></script> --><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -148,7 +154,7 @@
   <script src='/es-es/ontap-systems/js/FileSaver.min.js'></script>
   <script src='/es-es/ontap-systems/js/jszip-utils.min.js'></script>
   <script src='/es-es/ontap-systems/js/jszip.min.js'></script>
-  <script src='/es-es/ontap-systems/js/pdf-ux.js'></script>
+  <!-- <script src='/es-es/ontap-systems/js/pdf-ux.js'></script> -->
 </head>
 
 
@@ -221,7 +227,7 @@
           <span class="n-property-bar__menu-toggle-text">Menu</span>
           <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
             <title>bars</title>
-            <use xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#bars"></use>
+            <use xlink:href="/es-es/ontap-systems/images/sprite.svg#bars"></use>
           </svg>
         </a>
       </div>
@@ -230,11 +236,11 @@
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/es-es/ontap-systems/images/sprite.svg#netapp-mark"></use>
             </svg>
             <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
               <title>netapp-logo</title>
-              <use xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/es-es/ontap-systems/images/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
         </a>
@@ -260,7 +266,7 @@
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#search"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/ontap-systems/images/sprite.svg#search"></use>
             </svg>
           </button>
         </div>
@@ -274,7 +280,7 @@
       <span class="lang-name">Español</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#globe"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/es-es/ontap-systems/images/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
@@ -9804,7 +9810,7 @@
     <div class="ie-nmt-disclaimer-container">
       <div class="ie-nmt-disclaimer-icon">
         <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#circle-info">
+          <use xlink:href="/es-es/ontap-systems/images/sprite.svg#circle-info">
         </svg>
       </div>
       <div class="ie-nmt-disclaimer-content">
@@ -9821,7 +9827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 20:25:53 +0000">02/20/2023</time>
+    <time datetime="2023-02-26 03:44:20 +0000">02/26/2023</time>
     
   
 
@@ -9834,16 +9840,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Puede agregar un módulo de E/S al sistema sustituyendo una NIC o un adaptador de almacenamiento por uno nuevo en un sistema completamente cargado, o agregando un nuevo NIC o adaptador de almacenamiento en una ranura de chasis vacía en el sistema.</p>
+<p>Puede agregar un módulo de E/S al sistema agregando un nuevo módulo de E/S a un sistema con ranuras vacías o sustituyendo un módulo de E/S por uno nuevo en un sistema completamente cargado.</p>
 </div>
 <div class="ulist">
 <div class="title">Antes de empezar</div>
 <ul>
 <li>
-<p>Compruebe la <a href="https://hwu.netapp.com/">"Hardware Universe de NetApp"</a> Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.</p>
+<p>Compruebe la <a href="https://hwu.netapp.com/" target="_blank" rel="noopener">"Hardware Universe de NetApp"</a> Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.</p>
 </li>
 <li>
-<p>Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en <a href="https://hwu.netapp.com/">"Hardware Universe de NetApp"</a> Y utilice el mejor disponible para su módulo de E/S.</p>
+<p>Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en <a href="https://hwu.netapp.com/" target="_blank" rel="noopener">"Hardware Universe de NetApp"</a> Y utilice el mejor disponible para su módulo de E/S.</p>
 </li>
 <li>
 <p>Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.</p>
@@ -9859,26 +9865,185 @@
 <h2 id="opción-1-agregue-el-módulo-de-es-a-un-sistema-con-ranuras-abiertas">Opción 1: Agregue el módulo de E/S a un sistema con ranuras abiertas</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema como NIC o como módulo de almacenamiento para las bandejas de almacenamiento NS224.</p>
+<p>Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-1-apague-el-nodo-dañado">Paso 1: Apague el nodo dañado</h2>
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Apague o retome el controlador dañado utilizando una de las siguientes opciones.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Opción 1: La mayoría de los sistemas</div>
+<div class="content">
+<div class="paragraph">
+<p>Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.</p>
+</div>
+<div class="paragraph">
+<div class="title">Acerca de esta tarea</div>
+<p>Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Sincronice un nodo con el clúster"</a>.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Pasos</div>
 <ol class="arabic">
 <li>
-<p>Apagado de la controladora A:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Desactivar devolución automática: <code>storage failover modify -node local -auto-giveback false</code></p>
+<p>Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
+<div class="paragraph">
+<p>El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+</div>
 </li>
 <li>
-<p>Retome la controladora objetivo: <code>storage failover takeover -ofnode target_node_name</code></p>
-<div class="paragraph">
-<p>La conexión de la consola muestra que la controladora cae al aviso del CARGADOR cuando se completa el relevo.</p>
+<p>Deshabilite la devolución automática de la consola de la controladora en buen estado: <code>storage failover modify –node local -auto-giveback false</code></p>
+</li>
+<li>
+<p>Lleve la controladora dañada al aviso DEL CARGADOR:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Si el controlador dañado está mostrando&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Realice lo siguiente&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>El aviso del CARGADOR</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vaya al paso siguiente.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Waiting for giveback&#8230;&#8203;</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pulse Ctrl-C y, a continuación, responda <code>y</code> cuando se le solicite.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Retome o detenga el controlador dañado del controlador en buen estado: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
 </div>
+<div class="paragraph">
+<p>Cuando el controlador dañado muestre esperando devolución&#8230;&#8203;, pulse Ctrl-C y, a continuación, responda <code>y</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Opción 2: La controladora se encuentra en un MetroCluster</div>
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Sincronice un nodo con el clúster"</a>.</p>
 </li>
+<li>
+<p>Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (<code>metrocluster node show</code>).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Pasos</div>
+<ol class="arabic">
+<li>
+<p>Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
+<div class="paragraph">
+<p>El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+</div>
+</li>
+<li>
+<p>Deshabilite la devolución automática de la consola de la controladora en buen estado: <code>storage failover modify –node local -auto-giveback false</code></p>
+</li>
+<li>
+<p>Lleve la controladora dañada al aviso DEL CARGADOR:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Si el controlador dañado está mostrando&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Realice lo siguiente&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>El aviso del CARGADOR</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vaya al siguiente paso.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Esperando devolución&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pulse Ctrl-C y, a continuación, responda <code>y</code> cuando se le solicite.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Retome o detenga el controlador dañado del controlador en buen estado: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
+</div>
+<div class="paragraph">
+<p>Cuando el controlador dañado muestre esperando devolución&#8230;&#8203;, pulse Ctrl-C y, a continuación, responda <code>y</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-2-adición-de-módulos-de-io">Paso 2: Adición de módulos de I/O.</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Si usted no está ya conectado a tierra, correctamente tierra usted mismo.</p>
 </li>
@@ -9957,7 +10122,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <p>Repita estos pasos para la controladora B.</p>
 </li>
 <li>
-<p>Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en <a href="https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html">"Adición en caliente de una bandeja de unidades NS224"</a>.</p>
+<p>Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en <a href="https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html" target="_blank" rel="noopener">"Adición en caliente de una bandeja de unidades NS224"</a>.</p>
 </li>
 </ol>
 </div>
@@ -9967,7 +10132,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <h2 id="opción-2-añada-un-módulo-de-io-en-un-sistema-sin-ranuras-abiertas">Opción 2: Añada un módulo de I/o en un sistema sin ranuras abiertas</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Debe eliminar uno o varios módulos de almacenamiento o NIC existentes en el sistema para instalar uno o varios módulos de E/S en el sistema completamente cargado.</p>
+<p>Si el sistema está completamente lleno, puede cambiar un módulo de I/o en una ranura de I/o quitando un módulo de I/o existente y reemplazarlo por un módulo de I/o diferente.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -9998,7 +10163,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <p>Módulo de E/S NIC con menos puertos</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html">"Migrar una LIF"</a> Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.</p>
+<p>Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html" target="_blank" rel="noopener">"Migrar una LIF"</a> Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -10006,28 +10171,191 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <p>Módulo de E/S de NIC con un módulo de E/S de almacenamiento</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html">"Migrar una LIF"</a>.</p>
+<p>Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html" target="_blank" rel="noopener">"Migrar una LIF"</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-1-apague-el-nodo-dañado-2">Paso 1: Apague el nodo dañado</h2>
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Apague o retome el controlador dañado utilizando una de las siguientes opciones.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Opción 1: La mayoría de los sistemas</div>
+<div class="content">
+<div class="paragraph">
+<p>Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.</p>
+</div>
+<div class="paragraph">
+<div class="title">Acerca de esta tarea</div>
+<p>Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Sincronice un nodo con el clúster"</a>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Pasos</div>
+<ol class="arabic">
 <li>
-<p>Apague la controladora A:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Desactivar devolución automática: <code>storage failover modify -node local -auto-giveback false</code></p>
+<p>Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
+<div class="paragraph">
+<p>El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+</div>
 </li>
 <li>
-<p>Retome la controladora objetivo: <code>storage failover takeover -ofnode target_node_name</code></p>
-<div class="paragraph">
-<p>La conexión de la consola muestra que la controladora cae al aviso del CARGADOR cuando se completa el relevo.</p>
+<p>Deshabilite la devolución automática de la consola de la controladora en buen estado: <code>storage failover modify –node local -auto-giveback false</code></p>
+</li>
+<li>
+<p>Lleve la controladora dañada al aviso DEL CARGADOR:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Si el controlador dañado está mostrando&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Realice lo siguiente&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>El aviso del CARGADOR</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vaya al paso siguiente.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Waiting for giveback&#8230;&#8203;</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pulse Ctrl-C y, a continuación, responda <code>y</code> cuando se le solicite.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Retome o detenga el controlador dañado del controlador en buen estado: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
 </div>
+<div class="paragraph">
+<p>Cuando el controlador dañado muestre esperando devolución&#8230;&#8203;, pulse Ctrl-C y, a continuación, responda <code>y</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Opción 2: La controladora se encuentra en un MetroCluster</div>
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte <a href="https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum" target="_blank" rel="noopener">"Sincronice un nodo con el clúster"</a>.</p>
 </li>
+<li>
+<p>Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (<code>metrocluster node show</code>).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Pasos</div>
+<ol class="arabic">
+<li>
+<p>Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: <code>system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh</code></p>
+<div class="paragraph">
+<p>El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: <code>cluster1:*&gt; system node autosupport invoke -node * -type all -message MAINT=2h</code></p>
+</div>
+</li>
+<li>
+<p>Deshabilite la devolución automática de la consola de la controladora en buen estado: <code>storage failover modify –node local -auto-giveback false</code></p>
+</li>
+<li>
+<p>Lleve la controladora dañada al aviso DEL CARGADOR:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Si el controlador dañado está mostrando&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Realice lo siguiente&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>El aviso del CARGADOR</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vaya al siguiente paso.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Esperando devolución&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pulse Ctrl-C y, a continuación, responda <code>y</code> cuando se le solicite.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Retome o detenga el controlador dañado del controlador en buen estado: <code>storage failover takeover -ofnode <em>impaired_node_name</em></code></p>
+</div>
+<div class="paragraph">
+<p>Cuando el controlador dañado muestre esperando devolución&#8230;&#8203;, pulse Ctrl-C y, a continuación, responda <code>y</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-2-sustituya-los-módulos-de-es">Paso 2: Sustituya los módulos de E/S.</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Si usted no está ya conectado a tierra, correctamente tierra usted mismo.</p>
 </li>
@@ -10076,7 +10404,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="../media/legend_icon_01.png" alt="icono de leyenda 01">
+<img src="../media/legend_icon_01.svg" alt="icono de leyenda 01">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -10085,7 +10413,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="../media/legend_icon_02.png" alt=""></span></p>
+<p><span class="image"><img src="../media/legend_icon_02.svg" alt="ancho=20px"></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Pestillo de leva de E/S completamente desbloqueado</p>
@@ -10177,7 +10505,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 <p>Módulo de almacenamiento</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instale y conecte los cables de las bandejas NS224 según se describe enhttps://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].</p>
+<p>Instale y conecte los cables de las bandejas NS224 según se describe enhttps://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"^].</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -10240,7 +10568,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                   <title>blog@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#blog"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#blog"></use>
                 </svg>
               </a>
             </li>
@@ -10251,7 +10579,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
                   <title>community@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#comments"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#comments"></use>
                 </svg>
               </a>
             </li>
@@ -10262,7 +10590,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                   <title>twitter@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#twitter"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#twitter"></use>
                 </svg>
               </a>
             </li>
@@ -10273,7 +10601,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
                   <title>facebook@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#facebook"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#facebook"></use>
                 </svg>
               </a>
             </li>
@@ -10284,7 +10612,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
                   <title>linkedin@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#linkedin"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#linkedin"></use>
                 </svg>
               </a>
             </li>
@@ -10295,7 +10623,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                   <title>youtube@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#youtube"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#youtube"></use>
                 </svg>
               </a>
             </li>
@@ -10306,7 +10634,7 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
                 <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
                   <title>slideshare@</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xlink:href="/es-es/ontap-systems/common/svg/sprite.svg#slideshare"></use>
+                    xlink:href="/es-es/ontap-systems/images/sprite.svg#slideshare"></use>
                 </svg>
               </a>
             </li>
@@ -10330,7 +10658,6 @@ Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
       cookieLaw.euCountry = "US";
       cookieLaw.invoke = function(){return false;}
     </script>
-    <script src='/es-es/ontap-systems/js/www-ntap.js'></script>
     <script src='/es-es/ontap-systems/js/tabbed-blocks.js'></script>
     <script src='/es-es/ontap-systems/js/sidebar.js'></script>
   </body></html>
