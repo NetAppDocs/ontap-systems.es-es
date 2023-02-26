@@ -423,7 +423,7 @@ dr-group-id            cluster node           configuration-state
 == Paso 6: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
 
 [role="lead"]
-Utilice el procedimiento adecuado si tiene activado el cifrado de almacenamiento.
+Si tiene activado el cifrado de almacenamiento, utilice el procedimiento correspondiente.
 
 [role="tabbed-block"]
 ====
@@ -432,11 +432,23 @@ Utilice el procedimiento adecuado si tiene activado el cifrado de almacenamiento
 .Pasos
 . Arrancar el nodo en el menú de arranque.
 . Seleccione la opción 10, `Set onboard key management recovery secrets`.
-. Introduzca la frase de contraseña integrada del gestor de claves para el clúster en el indicador: Aquí se necesita el ejemplo******
-. Introduzca los datos de la clave de backup
+. Introduzca la frase de acceso del gestor de claves incorporado que haya obtenido del cliente.
+. En el símbolo del sistema, pegue los datos de la clave de copia de seguridad de la salida de `security key-manager backup show` O. `security key-manager onboard show-backup` comando.
++
+Ejemplo de datos de backup:
+
++
+------------------------------ COMIENCE COPIA DE SEGURIDAD-----------------------------------------------------
+
++
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAYAYAYAYAYAYAYAYAYAYAYAYAYZYAYAYAYAYAYZYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
++
+------------------------------- BACKUP FINAL---------------------------------------------------------
+
 +
 
-NOTE: El nodo vuelve al menú de arranque después de completar la información de la contraseña.
+NOTE: El nodo vuelve al menú de arranque.
 
 . Seleccione la opción 1, `Normal Boot`
 . Entorno sólo los agregados del director financiero con la `storage failover giveback -fromnode local -only-cfo-aggregates true` comando.
@@ -455,7 +467,7 @@ NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
 +
 Solo se mostrarán los agregados CFO (agregados raíz y datos en estilo CFO).
 
-. Si ejecuta ONTAP 9.6 o una versión posterior, ejecute la sincronización integrada del gestor de claves de seguridad:
+. Ejecute la sincronización integrada de la gestión de claves de seguridad:
 +
 .. Ejecute el `security key-manager onboard sync` y, a continuación, introduzca la frase de acceso cuando se le solicite.
 .. Introduzca el `security key-manager key-query` comando para ver una vista detallada de todas las claves almacenadas en el gestor de claves incorporado y verificar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
@@ -478,6 +490,16 @@ Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su
 
 . Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Restablezca el MSID si se estableció previamente y se capturó al principio de este procedimiento:
++
+.. Asigne una clave de autenticación de datos a una unidad FIPS o SED mediante el `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` comando.
++
+
+NOTE: Puede utilizar el `security key-manager key query -key-type NSE-AK` Comando para ver los ID clave.
+
+.. Compruebe que las claves de autenticación se han asignado mediante el `storage encryption disk show` comando.
+
+
 
 
 --
@@ -485,7 +507,7 @@ Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su
 --
 . Arrancar el nodo en el menú de arranque.
 . Seleccione la opción 11, `Configure node for external key management`.
-. Introduzca la información del certificado de administración en los mensajes: Se necesita el ejemplo aquí*****
+. Introduzca la información del certificado de gestión en las solicitudes.
 +
 
 NOTE: El nodo vuelve al menú de arranque después de completar la información del certificado de gestión.
@@ -528,18 +550,20 @@ Utilice la `security key-manager key-query` para comprobar que el `Restored` col
 . Conecte el cable de la consola al controlador asociado.
 . Dé vuelta a la controladora con el comando de recuperación tras fallos del almacenamiento -fromnode local.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Restablezca el MSID si se estableció previamente y se capturó al principio de este procedimiento:
++
+.. Asigne una clave de autenticación de datos a una unidad FIPS o SED mediante el `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` comando.
++
+
+NOTE: Puede utilizar el `security key-manager key query -key-type NSE-AK` Comando para ver los ID clave.
+
+.. Compruebe que las claves de autenticación se han asignado mediante el `storage encryption disk show` comando.
+
+
 
 
 --
 ====
-. Restablezca el MSID de los discos:
-+
-.. Si utiliza la encriptación de almacenamiento integrada, siga el procedimiento descrito en https://docs.netapp.com/us-en/ontap/encryption-at-rest/assign-authentication-keys-seds-onboard-task.html["Asignar una clave de autenticación de datos a una unidad FIPS o SED (gestión de claves incorporada)"^]
-.. I usted está usando keyManager externo, siga el procedimiento en https://docs.netapp.com/us-en/ontap/encryption-at-rest/assign-authentication-keys-seds-external-task.html["Asignar una clave de autenticación de datos a una unidad FIPS o SED (gestión de claves externa)"^]
-
-
-
-
 
 
 == Paso 7: Devuelva la pieza que falló a NetApp

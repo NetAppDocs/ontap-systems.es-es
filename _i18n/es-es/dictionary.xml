@@ -3390,8 +3390,6 @@
   <block id="a31ab93f41516026d249aceb633bccc3" category="doc">Agregar un módulo de E/S - FAS9500</block>
   <block id="e01b6c84aaebe2321eef7b7a933b171f" category="list-text">Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.</block>
   <block id="329fe7c89a525def535e03c6dbc6f98f" category="section-title">Opción 1: Agregue el módulo de E/S a un sistema con ranuras abiertas</block>
-  <block id="133808c24f6fb32a9a2a58ed28150498" category="paragraph">Puede añadir un módulo de I/o a una ranura para módulos vacía del sistema como NIC o módulo de almacenamiento para las bandejas de almacenamiento SAS.</block>
-  <block id="ff231ca484e594004f4ca93ecfa6683e" category="paragraph">La conexión de la consola muestra que el nodo cae al aviso del CARGADOR cuando se completa la toma.</block>
   <block id="c45c3f1f9d099575b7abd851e7ef8b33" category="list-text">Gire el pestillo de la leva hacia abajo hasta que esté en la posición abierta.</block>
   <block id="9a08e35bf8850515585d9bd11e96351b" category="list-text">Instale el módulo de E/S:</block>
   <block id="66efd9c2b6ae55ef5c1ff3be01c1fe65" category="list-text">Alinee el módulo de E/S con los bordes de la ranura.</block>
@@ -3404,7 +3402,6 @@
   <block id="6f8193ca6bfb281db32afbcc9e285f79" category="inline-link">Adición en caliente de una bandeja SAS</block>
   <block id="9856beabcb389225df78cec96e74e365" category="list-text">Si ha instalado un módulo de I/o de almacenamiento, instale y cablee las bandejas SAS, como se describe en<block ref="322cc377ef41f5776a1c64690e12c49b" category="inline-link-rx"></block>.</block>
   <block id="3e0887648c519f4a3c16a1c61b2e8ec3" category="section-title">Opción 2: Añada un módulo de I/o en un sistema sin ranuras abiertas</block>
-  <block id="3a94a10e2dbe887d30ec12c0e2d2170d" category="paragraph">Debe eliminar uno o varios módulos de almacenamiento o NIC existentes en el sistema para instalar uno o varios módulos de E/S en el sistema completamente cargado.</block>
   <block id="cebb0168d5bfd94a91f0da51501ba6b8" category="list-text">Si está:</block>
   <block id="e818b574f8a890f6c21405d9164bb6ef" category="cell">Sustituyendo a...</block>
   <block id="d6737fd4fc838900efec68220d9b62d5" category="paragraph">Módulo de E/S NIC con el mismo número de puertos</block>
@@ -6803,23 +6800,13 @@
   <block id="11cd58ab2810de65be01109093020b63" category="list-text">La controladora de sustitución es el propietario actual de los discos del sitio de recuperación ante desastres.</block>
   <block id="7285c4012d903a86f08da4d4eb643a35" category="paragraph">Consulte<block ref="1c9dcde47ee822b3ac120aae2f296f05" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="209f885dfe9e7d41b82f04b945d68576" category="list-text">Si el cifrado de almacenamiento está activado, debe ********</block>
-  <block id="22afc2cb7855948b6347ad0d5b8816a7" category="paragraph">Utilice el procedimiento adecuado si tiene activado el cifrado de almacenamiento.</block>
   <block id="2c35abfceaabbce6e9a2f24491d249c0" category="open-title">Opción 1: Uso del gestor de claves incorporado</block>
   <block id="86b112e5aa1ced4fbffb09dded147e9f" category="list-text">Arrancar el nodo en el menú de arranque.</block>
   <block id="e07ae2ef2fbd56f8a3ced5a2ab602ded" category="list-text">Seleccione la opción 10,<block ref="cdca34dc3d7defb03d741a65d78de01c" prefix=" " category="inline-code"></block>.</block>
-  <block id="5affab7614cb0938ec2fe16dbf6094bd" category="list-text">Introduzca la frase de contraseña integrada del gestor de claves para el clúster en el indicador: Aquí se necesita el ejemplo******</block>
-  <block id="e1abc7408800fce9a7b34d2d5dca8aee" category="list-text">Introduzca los datos de la clave de backup</block>
-  <block id="99f5c4eee12090497e3ca28e84e49cab" category="admonition">El nodo vuelve al menú de arranque después de completar la información de la contraseña.</block>
   <block id="0a2404583aab34668c1c8004bddabbaa" category="list-text">Seleccione la opción 1,<block ref="e6922a1788401c5ef431db829a2c387b" prefix=" " category="inline-code"></block></block>
   <block id="c566d4828cd295258aa8097a90880602" category="open-title">Opción 2: Uso de External Manager</block>
   <block id="0a05a9975c9259ea331a85366e41d3ce" category="list-text">Seleccione la opción 11,<block ref="0dd518498ab98fe1fd543910856e6153" prefix=" " category="inline-code"></block>.</block>
-  <block id="b0bab47307c92499e81bac9b25dc3e52" category="list-text">Introduzca la información del certificado de administración en los mensajes: Se necesita el ejemplo aquí*****</block>
   <block id="453b94e2cc94c331c590159bf6b2d21e" category="admonition">El nodo vuelve al menú de arranque después de completar la información del certificado de gestión.</block>
-  <block id="6f7b977f442186b3a2cff79208772851" category="list-text">Restablezca el MSID de los discos:</block>
-  <block id="55bbcb479d2d67bc8ad4b8a2598ddd48" category="inline-link">Asignar una clave de autenticación de datos a una unidad FIPS o SED (gestión de claves incorporada)</block>
-  <block id="be8dfb1b8df54a914e06c0a343100004" category="list-text">Si utiliza la encriptación de almacenamiento integrada, siga el procedimiento descrito en<block ref="503b29df34267dc3c3e3b8927894b0ee" category="inline-link-rx"></block></block>
-  <block id="32c3cf2b38ceb59d729e7de2ff67fefc" category="inline-link">Asignar una clave de autenticación de datos a una unidad FIPS o SED (gestión de claves externa)</block>
-  <block id="a785aecc0aa86cd8bf8795e1bc4c3e60" category="list-text">I usted está usando keyManager externo, siga el procedimiento en<block ref="c5282a2eb5b1733e45b98afbe5b54d05" category="inline-link-rx"></block></block>
   <block id="0721343ac8e5e32a5122775fda62e4d0" category="doc">Restaurar y verificar la configuración - AFF A900</block>
   <block id="37ccf93c64c439daba8a7a5a18adf305" category="section-title">Paso 1: Verificación y configuración del estado de alta disponibilidad del chasis</block>
   <block id="c03d9a33e888c8ba0969d655b0bb1791" category="list-text">Devuelva la controladora a su funcionamiento normal.</block>
@@ -6873,16 +6860,9 @@
   <block id="b12c60055be138bf7526b1769365b47e" category="image-alt">drw a900 encendida</block>
   <block id="bb0210ac9561e033fc7d726a6ac134e8" category="paragraph"><block ref="bb0210ac9561e033fc7d726a6ac134e8" category="inline-link-rx"></block></block>
   <block id="a164244a6913c60772e9b9fbbbc17a4a" category="doc">Agregar un módulo de E/S - AFF A900</block>
-  <block id="12f686a2d13fd4b93c3ef7fbc915cdcd" category="paragraph">Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema como NIC o como módulo de almacenamiento para las bandejas de almacenamiento NS224.</block>
-  <block id="e7e0acd4a94a610862553a655c0372a3" category="list-text">Retome la controladora objetivo:<block ref="f6af6f0f6b5049f82a62be536b4ed9c4" prefix=" " category="inline-code"></block></block>
-  <block id="0a7ae7a43062cf45861e620d40d10ab9" category="paragraph">La conexión de la consola muestra que la controladora cae al aviso del CARGADOR cuando se completa el relevo.</block>
   <block id="ff307501f6507919aa7c2196b367a42d" category="list-text">Recupere la controladora de la otra controladora.<block ref="49c908925c3b8a3554612823f81c8964" prefix=" " category="inline-code"></block></block>
-  <block id="2d881a27ee894664c2e7cc8d1795b104" category="list-text">Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en<block ref="8b1d41e5fd14f554e8b3490e0dfd47ae" category="inline-link-rx"></block>.</block>
-  <block id="92fa459a77121184c537af9ee2b58dff" category="paragraph">Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte<block ref="85291e79b86f275650bb0fb4e90a39e9" category="inline-link-rx"></block> Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.</block>
-  <block id="2640f01f139d87de119d4e0ddc369433" category="paragraph">Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en<block ref="85291e79b86f275650bb0fb4e90a39e9" category="inline-link-rx"></block>.</block>
   <block id="8e110de01e4c53b1e817eb263890c2c7" category="video-title">Animación: Extracción o sustitución de un módulo de E/S.</block>
   <block id="af7e67afbae0d677789152f59d9ac82d" category="list-text">Si el módulo de E/S de repuesto es un NIC, conecte el módulo o los módulos a los conmutadores de datos.</block>
-  <block id="907b4c195a2387f3ef35df10e9b1a0eb" category="paragraph">Instale y conecte los cables de las bandejas NS224 según se describe en<block ref="71b38ceec90716734f26b1c06463d904" category="inline-link-rx"></block>.</block>
   <block id="d35fd8965949830b92555b33686beb19" category="doc">Cambie una fuente de alimentación - AFF A900</block>
   <block id="eec41346a265cfb88abb54f51ec33fe7" category="summary">La documentación del sistema AFF A900 permite instalar, configurar y mantener el sistema.</block>
   <block id="b35a00e75330322eefd710713ca83b02" category="doc">Sistemas AFF A900</block>
@@ -7392,4 +7372,29 @@
   <block id="c5a520bea2989fd52c3041960b69fed4" category="sidebar">DIMM FAS2700</block>
   <block id="f69188f77ddf41c996359e3104869fb3" category="sidebar">Unidad FAS2700</block>
   <block id="abf01648d47e7b2a7ff0a2d4727b1bb3" category="sidebar">Batería del reloj de FAS2700 en tiempo real</block>
+  <block id="192e7ded6d54e3ac04596dc33b9c67cf" category="paragraph">Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema.</block>
+  <block id="741ade379895992f2a574e8e60de1571" category="section-title">Paso 2: Adición de módulos de I/O.</block>
+  <block id="31ac56c0f673cbef254563f6a8a32626" category="paragraph">Si el sistema está completamente lleno, puede cambiar un módulo de I/o en una ranura de I/o quitando un módulo de I/o existente y reemplazarlo por un módulo de I/o diferente.</block>
+  <block id="ed4dc030dff8dfc29b5cd17aafe4c26e" category="paragraph">== Paso 2: Sustituya los módulos de E/S.</block>
+  <block id="abd172307b56cb5c0bccb5323a67b886" category="paragraph">== Paso 3: Reinicie el controlador después de sustituir el módulo de E/S.</block>
+  <block id="fd25e96fa9d35ae62fb86caa243d8698" category="paragraph">== Paso 4: Devolver la pieza que ha fallado a NetApp</block>
+  <block id="74458273e576f4b2da617a6e0e209a5f" category="paragraph">Si tiene activado el cifrado de almacenamiento, utilice el procedimiento correspondiente.</block>
+  <block id="23620cc2fa7491aefb480afbef75dac2" category="list-text">Introduzca la frase de acceso del gestor de claves incorporado que haya obtenido del cliente.</block>
+  <block id="15247f97704eb964c60d179c321c1370" category="list-text">En el símbolo del sistema, pegue los datos de la clave de copia de seguridad de la salida de<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> O.<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="8726b2ef66dc0e734b269a3191597e11" category="paragraph">------------------------------ COMIENCE COPIA DE SEGURIDAD-----------------------------------------------------</block>
+  <block id="328f6eaec3741c1d0f9558d6c40c1da4" category="paragraph">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAYAYAYAYAYAYAYAYAYAYAYAYAYZYAYAYAYAYAYZYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</block>
+  <block id="26eef74dee0269079c9b6b002eeddb34" category="admonition">El nodo vuelve al menú de arranque.</block>
+  <block id="1e4d7cab6ce42bcab6973efa42fc0b2c" category="list-text">Ejecute la sincronización integrada de la gestión de claves de seguridad:</block>
+  <block id="377fca3965b001b9bcc8843e1b287fe7" category="list-text">Restablezca el MSID si se estableció previamente y se capturó al principio de este procedimiento:</block>
+  <block id="a967d40ef247a202e5f1ce7a9626a0ca" category="list-text">Asigne una clave de autenticación de datos a una unidad FIPS o SED mediante el<block ref="8fc59e93e98503b6d1b1230269b06192" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="551eb7af7cdc6ae3394d506bd47a783d" category="admonition">Puede utilizar el<block ref="eb3cf23f0c9c60ca759ddca34bbfbf56" prefix=" " category="inline-code"></block> Comando para ver los ID clave.</block>
+  <block id="6f44d6d36af2c0294f4e53a2e6947b94" category="list-text">Compruebe que las claves de autenticación se han asignado mediante el<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="960bc5d7d199e0e148cd3dd0e517250d" category="list-text">Introduzca la información del certificado de gestión en las solicitudes.</block>
+  <block id="037baf09c7ddcc7c38f81e7dbe35fa87" category="paragraph">Puede agregar un módulo de E/S al sistema agregando un nuevo módulo de E/S a un sistema con ranuras vacías o sustituyendo un módulo de E/S por uno nuevo en un sistema completamente cargado.</block>
+  <block id="55f1569cdcfb82612fcf293f23db4f6f" category="list-text">Compruebe la<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.</block>
+  <block id="6e4968851f4373ab9764e16cffb39389" category="list-text">Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Y utilice el mejor disponible para su módulo de E/S.</block>
+  <block id="849384ba6480c0ea1f0194c179b1dad2" category="list-text">Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en<block ref="a84558faf7b836b9db418a291f2462b5" category="inline-link-rx"></block>.</block>
+  <block id="3aa5c10c865ad075f0b3003697aa0a31" category="inline-image-macro">ancho=20px</block>
+  <block id="5574e785cb3feaf25b9cde927c042bd5" category="paragraph"><block ref="5574e785cb3feaf25b9cde927c042bd5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="314032c5f76e6fcf7f32085e64ca9fd1" category="paragraph">Instale y conecte los cables de las bandejas NS224 según se describe en<block ref="120b604fa0c5a5c9d522c8314c790770" category="inline-link-rx"></block>.</block>
 </blocks>
