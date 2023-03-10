@@ -9827,7 +9827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 20:25:53 +0000">02/20/2023</time>
+    <time datetime="2023-03-10 20:12:26 +0000">03/10/2023</time>
     
   
 
@@ -9877,13 +9877,22 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Borre los datos del módulo de almacenamiento en caché: <code>system controller flash-cache secure-erase run</code></p>
+<p>Borre los datos del módulo de almacenamiento en caché: <code>system controller flash-cache secure-erase run -node <em>node name</em> localhost -device-id <em>device_number</em></code></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-systems/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Ejecute el <code>system controller flash-cache show</code> Comando si no conoce el identificador de dispositivo de flashcache.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>Compruebe que los datos se han borrado del módulo de almacenamiento en caché: <code>system controller flash-cache secure-erase show -node node_name</code></p>
-<div class="paragraph">
-<p>El resultado debería mostrar el estado del módulo de almacenamiento en caché como borrado.</p>
-</div>
+<p>Compruebe que los datos se han borrado del módulo de almacenamiento en caché: <code>system controller flash-cache secure-erase show</code></p>
 </li>
 </ol>
 </div>
