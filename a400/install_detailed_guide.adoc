@@ -197,7 +197,7 @@ image::../media/drw_a320_cable_management_arms.png[brazos de gestión de cables 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
-NOTE: Si las etiquetas de los puertos de la tarjeta no son visibles, compruebe la orientación de instalación de la tarjeta (el conector hembra PCIe está en el lado izquierdo de la ranura de la tarjeta en el A400 y FAS8300/8700) y, a continuación, busque la tarjeta y, a continuación, busque la tarjeta, por número de pieza, en el https://hwu.netapp.com["Hardware Universe de NetApp"^] para un gráfico del bisel que muestra las etiquetas de puerto. El número de referencia de la tarjeta se puede encontrar mediante la `sysconfig -a` o en la lista de embalaje del sistema.
+NOTE: Si las etiquetas de puerto de la tarjeta no son visibles, compruebe la orientación de instalación de la tarjeta (el conector hembra PCIe está en el lado izquierdo de la ranura de tarjeta en el A400 y FAS8300/8700) y, a continuación, busque la tarjeta, por número de pieza, en el https://hwu.netapp.com["Hardware Universe de NetApp"^] para un gráfico del bisel que muestra las etiquetas de puerto. El número de referencia de la tarjeta se puede encontrar mediante la `sysconfig -a` o en la lista de embalaje del sistema.
 
 
 NOTE: Si va a cablear una configuración IP de MetroCluster, los puertos e0a/e0b están disponibles para alojar LIF de datos (normalmente en el espacio IP predeterminado).

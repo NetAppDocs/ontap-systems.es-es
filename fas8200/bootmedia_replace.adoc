@@ -93,6 +93,10 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. No obstante, debe restaurar el sistema de archivos var durante este procedimiento.
 
 * Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
++
+
+NOTE: El archivo tar.gz se debe colocar en una partición con formato FAT32 que tenga un mínimo de 4 GB. Aunque las particiones FAT32 pueden ser de hasta 2 TB, las herramientas integradas de Windows (por ejemplo, DiskPart) no pueden formatear particiones FAT32 de más de 32 GB.
+
 * Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
 +
 ** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.

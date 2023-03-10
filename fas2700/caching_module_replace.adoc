@@ -33,11 +33,12 @@ Tal vez desee borrar el contenido del módulo de almacenamiento en caché antes 
 .Pasos
 . Aunque los datos del módulo de almacenamiento en caché están cifrados, es posible que desee borrar los datos del módulo de almacenamiento en caché dañado y verificar que el módulo de almacenamiento en caché no tiene datos:
 +
-.. Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run`
-.. Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show -node node_name`
+.. Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
 +
-El resultado debería mostrar el estado del módulo de almacenamiento en caché como borrado.
 
+NOTE: Ejecute el `system controller flash-cache show` Comando si no conoce el identificador de dispositivo de flashcache.
+
+.. Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show`
 
 
 . Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`

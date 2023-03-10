@@ -16,11 +16,14 @@ Debe sustituir el módulo de almacenamiento en caché en el módulo de la contro
 Tal vez desee borrar el contenido del módulo de almacenamiento en caché antes de reemplazarlo.
 
 * Aunque los datos del módulo de almacenamiento en caché están cifrados, es posible que desee borrar los datos del módulo de almacenamiento en caché dañado y verificar que el módulo de almacenamiento en caché no tiene datos:
-* Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run`
-* Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show -node node_name`
++
+** Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
++
 
+NOTE: Ejecute el `system controller flash-cache show` Comando si no conoce el identificador de dispositivo de flashcache.
 
-El resultado debería mostrar el estado del módulo de almacenamiento en caché como borrado.
+** Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show`
+
 
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
