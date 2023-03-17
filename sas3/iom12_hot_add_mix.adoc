@@ -30,10 +30,13 @@ Puede verificar el soporte utilizando uno de los siguientes métodos:
 +
 ** Introduzca el ``run local sysconfig`` en el símbolo del sistema de administrador de cualquier controladora.
 +
-Si el campo compatibilidad con pilas mixtas SAS2/SAS3 no aparece en la salida o tiene un valor none, el sistema no admite pilas mixtas.
+Si el campo compatibilidad con pilas mixtas SAS2/SAS3 no aparece en la salida o tiene el valor "none", el sistema no admite pilas mixtas.
 
 +
-Si aparece algo más en el campo Soporte de pila mixta SAS2/SAS3, como todos o conectados a puente, el sistema sí admite pilas mixtas.
+Si aparece "All" en el campo compatibilidad con pilas mixtas SAS2/SAS3, el sistema admite pilas mixtas.
+
++
+Si aparece el campo compatibilidad con pilas mixtas SAS2/SAS3, el sistema solo admite pilas mixtas si las bandejas de almacenamiento se conectan a través de un ATTO FiberBridge.
 
 ** Vaya a Hardware Universe y desplácese hasta la información de la plataforma.
 +
