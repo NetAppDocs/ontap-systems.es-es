@@ -21,7 +21,6 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir y ser el estado, es necesario corregir el problema antes de apagar la controladora con deterioro.
@@ -65,7 +64,6 @@ Cuando se muestra el controlador dañado `Waiting for giveback...`, Pulse Ctrl-C
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -143,7 +141,6 @@ Conducto de aire
 
 == Paso 3: Sustituya un DIMM
 
-[role="lead"]
 Para sustituir un DIMM, debe localizarlo en el módulo de la controladora mediante el mapa DIMM en el interior del módulo de la controladora y, a continuación, sustitúyalo según la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -219,7 +216,6 @@ Si ha quitado la tarjeta vertical NVRAM, la tarjeta vertical 1, asegúrese de qu
 
 == Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
 
-[role="lead"]
 Después de sustituir una FRU en el módulo de la controladora, debe volver a instalar el módulo de la controladora y reiniciarlo.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
@@ -260,7 +256,6 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 == Paso 5: Ejecutar el diagnóstico
 
-[role="lead"]
 Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
 
 El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
@@ -287,5 +282,4 @@ Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símb
 
 == Paso 6:devuelva la pieza con el error a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

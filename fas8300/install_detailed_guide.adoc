@@ -17,7 +17,6 @@ Esta guía ofrece instrucciones detalladas paso a paso para la instalación de u
 
 == Paso 1: Preparar la instalación
 
-[role="lead"]
 Para instalar el sistema, necesita crear una cuenta, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
 Es necesario tener acceso a Hardware Universe para obtener información sobre los requisitos del sitio, así como información adicional sobre el sistema configurado. También es posible que desee tener acceso a las notas de la versión de ONTAP para obtener más información sobre este sistema.
@@ -166,7 +165,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 == Paso 2: Instale el hardware
 
-[role="lead"]
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
 
 .Pasos
@@ -190,7 +188,6 @@ image::../media/drw_a320_cable_management_arms.png[brazos de gestión de cables 
 
 == Paso 3: Conecte los controladores a la red
 
-[role="lead"]
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
@@ -200,7 +197,6 @@ NOTE: Si las etiquetas de los puertos de la tarjeta no son visibles, compruebe l
 
 === Opción 1: Conecte el cable de un clúster sin switch de dos nodos
 
-[role="lead"]
 Los puertos de datos opcionales, las tarjetas NIC opcionales y los puertos de gestión de los módulos de la controladora se conectan a los switches. Los puertos de alta disponibilidad e interconexión de clúster se cablean en ambos módulos de controladoras.
 
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
@@ -229,7 +225,6 @@ image::../media/drw_fas8300_TNSC_network_cabling.png[Cableado de red drw fas8300
 
 === Opción 2: Conectar un clúster de switches
 
-[role="lead"]
 Los puertos de datos opcionales, las tarjetas NIC opcionales, las tarjetas mezzanine y los puertos de gestión de los módulos de controladora están conectados a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
 
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
@@ -262,7 +257,6 @@ image::../media/drw_fas8300_switched_network_cabling.png[cableado de red conmuta
 
 === Opción 1: Conecte las controladoras a las bandejas de unidades SAS
 
-[role="lead"]
 Debe cablear cada controladora a los módulos de IOM en ambas bandejas de unidades SAS.
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La ficha de cable para DS224-C está inactiva.
@@ -287,14 +281,12 @@ image::../media/drw_fas8300_three-ds224c_shelves.png[drw fas8300 tres bandejas d
 
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
-[role="lead"]
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
 === Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada
 
-[role="lead"]
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
 
 .Pasos
@@ -357,7 +349,6 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descar
 
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
-[role="lead"]
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.
 
 .Pasos

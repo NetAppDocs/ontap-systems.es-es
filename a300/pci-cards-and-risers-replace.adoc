@@ -21,14 +21,12 @@ Para reemplazar una tarjeta PCIe, debe realizar una secuencia específica de tar
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,7 +82,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Abra el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -224,7 +220,6 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya una tarjeta PCIe
 
-[role="lead"]
 Para sustituir una tarjeta PCIe, búsquela dentro de la controladora y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -264,7 +259,6 @@ NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el 
 
 == Paso 4: Vuelva a instalar el controlador
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -349,7 +343,6 @@ Continúe con el próximo paso. El procedimiento de conmutación de estado del M
 
 == Paso 5 (solo MetroCluster de dos nodos): Agregado de conmutación
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -408,5 +401,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 6: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

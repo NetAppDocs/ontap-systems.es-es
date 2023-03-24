@@ -41,7 +41,6 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 
 == Opción 1: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.5 y versiones anteriores
 
-[role="lead"]
 Antes de apagar la controladora dañada, debe comprobar si el sistema tiene habilitado el cifrado de volúmenes de NetApp (NVE) o el cifrado de almacenamiento de NetApp (NSE). Si es así, debe comprobar la configuración.
 
 .Pasos
@@ -176,7 +175,6 @@ NOTE: Asegúrese de que la información de OKM se guarda en su archivo de regist
 
 == Opción 2: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores
 
-[role="lead"]
 Antes de apagar la controladora dañada, debe verificar si el sistema tiene habilitado el cifrado de volúmenes de NetApp (NVE) o el cifrado de almacenamiento de NetApp (NSE). Si es así, debe comprobar la configuración.
 
 . Verifique si el cifrado de volúmenes está en uso para cualquier volumen del clúster: `volume show -is-encrypted true`

@@ -20,21 +20,21 @@ Debido a que el ID del sistema se deriva del módulo NVRAM, si se reemplaza el m
 
 .Antes de empezar
 * Todas las bandejas de discos deben funcionar correctamente.
-* Si su sistema está en un par de alta disponibilidad, el nodo del partner debe poder tomar el control del nodo asociado con el módulo NVRAM que se va a reemplazar.
+* Si su sistema está en un par de alta disponibilidad, la controladora del partner debe poder sustituir la controladora asociada con el módulo NVRAM.
 * Este procedimiento usa la siguiente terminología:
 +
-** El nodo dañado es el nodo en el que realiza tareas de mantenimiento.
-** El nodo correcto es el compañero de alta disponibilidad del nodo dañado.
+** El controlador dañado es el controlador en el que realiza el mantenimiento.
+** El controlador sano es el compañero de alta disponibilidad del controlador dañado.
 
 
-* Este procedimiento incluye pasos para reasignar discos de manera automática o manual al módulo de controladora asociado al nuevo módulo NVRAM. Debe reasignar los discos cuando se le indique en el procedimiento. Si se completa la reasignación del disco antes de la devolución, pueden producirse problemas.
+* Este procedimiento incluye los pasos para volver a asignar automáticamente discos al módulo de la controladora asociado al nuevo módulo NVRAM. Debe reasignar los discos cuando se le indique en el procedimiento. Si se completa la reasignación del disco antes de la devolución, pueden producirse problemas.
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 * No puede cambiar ningún disco o bandeja de discos como parte de este procedimiento.
 
 
 
 
-== Paso 1: Apague el nodo dañado
+== Paso 1: Apague el controlador dañado
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -82,14 +82,14 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Sustituya el módulo NVRAM
 
-Para sustituir el módulo NVRAM, búsquelo en la ranura 6 del chasis y siga la secuencia específica de pasos.
+Para sustituir el módulo NVRAM, localizarlo en la ranura 6 del chasis y seguir la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Quite el módulo NVRAM de destino del chasis:
 +
-.. Pulse el botón de leva numerado y con letras.
+.. Presione el pestillo de leva numerado y con letras.
 +
-El botón de leva se aleja del chasis.
+El pestillo de la leva se aleja del chasis.
 
 .. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
 +
@@ -163,9 +163,9 @@ Para sustituir los DIMM de NVRAM en el módulo NVRAM, debe extraer el módulo NV
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Quite el módulo NVRAM de destino del chasis:
 +
-.. Pulse el botón de leva numerado y con letras.
+.. Presione el pestillo de leva numerado y con letras.
 +
-El botón de leva se aleja del chasis.
+El pestillo de la leva se aleja del chasis.
 
 .. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
 +
@@ -242,60 +242,28 @@ Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
 
 
 
-== Paso 5: Verifique y configure el estado de alta disponibilidad del módulo de la controladora
+== Paso 5: Reasignar discos
 
-Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
-
-. En el modo de mantenimiento del módulo del controlador de repuesto, compruebe que todos los componentes muestran lo mismo `HA` provincia: `ha-config show`
-+
-[cols="1,2"]
-|===
-| Si el sistema está en... | El estado de alta disponibilidad de todos los componentes debería ser... 
+[role="lead"]
+Deberá confirmar el cambio de ID del sistema cuando arranque la controladora de reemplazo y, a continuación, compruebe que se ha implementado el cambio.
 
 
- a| 
-Un par de alta disponibilidad
- a| 
-ha
+NOTE: Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
 
 
-
- a| 
-Una configuración FC de MetroCluster con cuatro nodos o más
- a| 
-mcc
-
-
-
- a| 
-Una configuración de IP de MetroCluster
- a| 
-mccip
-
-|===
-. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller _ha-state_`
-. Si el estado del sistema mostrado del chasis no coincide con la configuración del sistema, defina el `HA` estado para el chasis: `ha-config modify chassis _ha-state_`
-
-
-
-
-== Paso 6: Reasignar discos
-
-Deberá confirmar el cambio de ID del sistema cuando arranque el nodo de reemplazo y, a continuación, compruebe que se ha implementado el cambio.
-
-Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
+CAUTION: La reasignación de discos solo es necesaria cuando se sustituye el módulo NVRAM.
 
 .Pasos
-. Si el nodo de reemplazo está en modo de mantenimiento (se muestra el `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
-. Desde el símbolo del sistema DEL CARGADOR en el nodo de reemplazo, arranque el nodo, introduciendo `y` Si se le solicita que anule el ID del sistema debido a que el ID del sistema no coincide.
-. Espere hasta la `Waiting for giveback...` El mensaje se muestra en la consola del nodo de repuesto y, a continuación, en el nodo en buen estado, compruebe que el nuevo ID de sistema del partner se ha asignado automáticamente: `storage failover show`
+. Si la controladora de reemplazo se encuentra en modo de mantenimiento (se muestra la `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
+. Desde el aviso DEL CARGADOR en la controladora de reemplazo, arranque la controladora e introduzca y si se le solicita que anule el ID del sistema debido a un error de coincidencia de ID del sistema.
+. Espere hasta que la devolución esté a la espera... El mensaje se muestra en la consola del controlador con el módulo de sustitución y, a continuación, en el controlador en buen estado, compruebe que el nuevo ID del sistema asociado se ha asignado automáticamente: `storage failover show`
 +
-En el resultado del comando, debería ver un mensaje que indica que el ID del sistema ha cambiado en el nodo dañado, mostrando los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.
+En el resultado del comando, debería ver un mensaje donde se indica que el ID del sistema ha cambiado en la controladora dañada, con lo que se muestran los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.
 
 +
 [listing]
 ----
-node1> `storage failover show`
+node1:> storage failover show
                                     Takeover
 Node              Partner           Possible     State Description
 ------------      ------------      --------     -------------------------------------
@@ -303,25 +271,11 @@ node1             node2             false        System ID changed on partner (O
                                                   151759755, New: 151759706), In takeover
 node2             node1             -            Waiting for giveback (HA mailboxes)
 ----
-. Desde el nodo en buen estado, compruebe que se han guardado los núcleo:
+. Devolver la controladora:
 +
-.. Cambie al nivel de privilegio avanzado: `set -privilege advanced`
+.. Desde la controladora en buen estado, proporcione almacenamiento a la controladora que sustituyó: `storage failover giveback -ofnode replacement_node_name`
 +
-Usted puede responder `Y` cuando se le solicite que continúe en el modo avanzado. Aparece el símbolo del sistema del modo avanzado (*>).
-
-.. Guarde sus núcleo: `system node run -node local-node-name partner savecore`
-.. Espere a que el `savecore` comando que se debe completar antes de emitir la devolución.
-+
-Puede introducir el siguiente comando para supervisar el progreso del `savecore` comando: `system node run -node local-node-name partner savecore -s`
-
-.. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
-
-
-. Proporcione al nodo:
-+
-.. Desde el nodo en buen estado, vuelva a asignar el almacenamiento del nodo sustituido: `storage failover giveback -ofnode replacement_node_name`
-+
-El nodo de sustitución recupera su almacenamiento y completa el arranque.
+La controladora de reemplazo recupera su almacenamiento y completa el arranque.
 
 +
 Si se le solicita que anule el ID del sistema debido a una falta de coincidencia de ID del sistema, debe introducir `y`.
@@ -335,44 +289,44 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/hig
 
 .. Una vez finalizada la devolución, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: `storage failover show`
 +
-El resultado del comando Storage Failover show no debe incluir el ID del sistema cambiado en el mensaje del partner.
+La salida de `storage failover show` El comando no debe incluir el ID del sistema cambiado en el mensaje del partner.
 
 
 
 . Compruebe que los discos se han asignado correctamente: `storage disk show -ownership`
 +
-Los discos que pertenecen al nodo de reemplazo deben mostrar el nuevo ID del sistema. En el ejemplo siguiente, los discos propiedad del nodo 1 ahora muestran el nuevo ID del sistema, 1873775277:
+Los discos que pertenecen al controlador de sustitución deben mostrar el nuevo ID del sistema. En el ejemplo siguiente, los discos propiedad del nodo 1 ahora muestran el nuevo ID del sistema, 151759706:
 
 +
 [listing]
 ----
-node1> `storage disk show -ownership`
+node1:> storage disk show -ownership
 
 Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  Pool
 ----- ------    ----- ------ -------- -------    -------    -------  ---------  ---
-1.0.0  aggr0_1  node1 node1  -        1873775277 1873775277  -       1873775277 Pool0
-1.0.1  aggr0_1  node1 node1           1873775277 1873775277  -       1873775277 Pool0
+1.0.0  aggr0_1  node1 node1  -        151759706  151759706  -       151759706 Pool0
+1.0.1  aggr0_1  node1 node1           151759706  151759706  -       151759706 Pool0
 .
 .
 .
 ----
-. Si el sistema está en una configuración de MetroCluster, supervise el estado del nodo: `metrocluster node show`
+. Si el sistema está en una configuración MetroCluster, supervise el estado de la controladora: `metrocluster node show`
 +
-La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada nodo mostrará un estado configurado, con mirroring DR habilitado y un modo normal. La `metrocluster node show -fields node-systemid` El resultado del comando muestra el ID del sistema antiguo hasta que la configuración de MetroCluster vuelve a ser un estado normal.
+La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada controladora mostrará un estado configurado, con mirroring de DR habilitado y un modo normal. La `metrocluster node show -fields node-systemid` El resultado del comando muestra el ID del sistema antiguo hasta que la configuración de MetroCluster vuelve a ser un estado normal.
 
-. Si el nodo está en una configuración MetroCluster, según el estado del MetroCluster, compruebe que el campo ID de inicio de recuperación ante desastres muestra el propietario original del disco si el propietario original es un nodo del sitio de desastres.
+. Si la controladora está en una configuración MetroCluster, según el estado del MetroCluster, compruebe que el campo ID de inicio de recuperación ante desastres muestra el propietario original del disco si el propietario original es una controladora del sitio de recuperación ante desastres.
 +
 Esto es necesario si se cumplen las dos opciones siguientes:
 
 +
 ** La configuración de MetroCluster está en estado de conmutación.
-** El nodo de sustitución es el propietario actual de los discos del sitio de recuperación ante desastres.
+** La controladora de sustitución es el propietario actual de los discos del sitio de recuperación ante desastres.
 +
-Consulte https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"^] si quiere más información.
+Consulte https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"] si quiere más información.
 
 
 
-. Si su sistema está en una configuración MetroCluster, compruebe que cada nodo esté configurado: `metrocluster node show - fields configuration-state`
+. Si su sistema está en una configuración MetroCluster, compruebe que cada controladora está configurada: `metrocluster node show - fields configuration-state`
 +
 [listing]
 ----
@@ -387,31 +341,160 @@ dr-group-id            cluster node           configuration-state
 
 4 entries were displayed.
 ----
-. Compruebe que existen volúmenes esperados para cada nodo: `vol show -node node-name`
-. Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde el nodo en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
+. Compruebe que los volúmenes esperados estén presentes para cada controladora: `vol show -node node-name`
+. Si el cifrado del almacenamiento está habilitado, debe restaurar la funcionalidad.
+. Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde la controladora en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
 
 
 
 
-== Paso 7: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
+== Paso 6: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
 
-Para los sistemas de almacenamiento que haya configurado previamente para usar almacenamiento o cifrado de volúmenes, debe realizar pasos adicionales para ofrecer funcionalidad de cifrado ininterrumpido. Puede omitir esta tarea en sistemas de almacenamiento que no tengan el cifrado de volúmenes o almacenamiento habilitado.
+[role="lead"]
+Si tiene activado el cifrado de almacenamiento, utilice el procedimiento correspondiente.
 
-
-NOTE: Este paso no es necesario al sustituir un DIMM.
-
+[role="tabbed-block"]
+====
+.Opción 1: Uso del gestor de claves incorporado
+--
 .Pasos
-. Siga uno de estos procedimientos, en función de si utiliza la gestión de claves externa o incorporada:
+. Inicie el controlador en el menú de inicio.
+. Seleccione la opción 10, `Set onboard key management recovery secrets`.
+. Introduzca la frase de acceso del gestor de claves incorporado que haya obtenido del cliente.
+. En el símbolo del sistema, pegue los datos de la clave de copia de seguridad de la salida de `security key-manager backup show` O. `security key-manager onboard show-backup` comando.
 +
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
+Ejemplo de datos de backup:
+
++
+------------------------------ COMIENCE COPIA DE SEGURIDAD-----------------------------------------------------
+
++
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAYAYAYAYAYAYAYAYAYAYAYAYAYZYAYAYAYAYAYZYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
++
+------------------------------- BACKUP FINAL---------------------------------------------------------
+
++
+
+NOTE: El controlador vuelve al menú de inicio.
+
+. Seleccione la opción 1, `Normal Boot`
+. Entorno sólo los agregados del director financiero con la `storage failover giveback -fromnode local -only-cfo-aggregates true` comando.
++
+** Si el comando falla debido a un disco fallido, desactive físicamente el disco que ha fallado, pero deje el disco en la ranura hasta que se reciba un reemplazo.
+** Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo se cierran las sesiones CIFS.
++
+
+NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
+
+** Si el comando falla porque el asociado "no está listo", espere 5 minutos para que los NVRAMS se sincronicen.
+** Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el contenido adecuado para obtener más información.
 
 
-. Restablezca el MSID de SED
+. Una vez que se haya completado la devolución, compruebe el estado de la conmutación al nodo de respaldo y la devolución con el `storage failover show` y.. `storage failover show-giveback` comandos.
++
+Solo se mostrarán los agregados CFO (agregados raíz y datos en estilo CFO).
+
+. Ejecute la sincronización integrada de la gestión de claves de seguridad:
++
+.. Ejecute el `security key-manager onboard sync` y, a continuación, introduzca la frase de acceso cuando se le solicite.
+.. Introduzca el `security key-manager key-query` comando para ver una vista detallada de todas las claves almacenadas en el gestor de claves incorporado y verificar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
++
+
+NOTE: Si la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Póngase en contacto con el servicio de atención al cliente
+
+.. Espere 10 minutos hasta que la clave se sincronice en el clúster.
+
+
+. Mueva el cable de la consola al controlador correspondiente.
+. Proporcione a la controladora objetivo mediante el `storage failover giveback -fromnode local` comando.
+. Compruebe el estado de devolución, tres minutos después de que haya completado el informe, utilizando la `storage failover show` comando.
++
+Si la devolución no está completa tras 20 minutos, póngase en contacto con el soporte de cliente.
+
+. En el símbolo del sistema clustershell, introduzca el comando net int show -is-home false para enumerar las interfaces lógicas que no están en su controlador y puerto de casa.
++
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto principal utilizando el comando net int revert.
+
+. Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Restablezca el MSID si se estableció previamente y se capturó al principio de este procedimiento:
++
+.. Asigne una clave de autenticación de datos a una unidad FIPS o SED mediante el `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` comando.
++
+
+NOTE: Puede utilizar el `security key-manager key query -key-type NSE-AK` Comando para ver los ID clave.
+
+.. Compruebe que las claves de autenticación se han asignado mediante el `storage encryption disk show` comando.
 
 
 
 
-== Paso 8: Devuelva la pieza que falló a NetApp
+--
+.Opción 2: Uso de External Manager
+--
+. Inicie el controlador en el menú de inicio.
+. Seleccione la opción 11, `Configure node for external key management`.
+. Introduzca la información del certificado de gestión en las solicitudes.
++
 
+NOTE: La controladora vuelve al menú de arranque después de completar la información del certificado de gestión.
+
+. Seleccione la opción 1, `Normal Boot`
+. Mueva el cable de la consola a la controladora del partner y rebase el almacenamiento de la controladora de destino mediante el comando local de recuperación tras fallos del almacenamiento -fromnode -only-cfo-agents true local.
++
+** Si el comando falla debido a un disco fallido, desactive físicamente el disco que ha fallado, pero deje el disco en la ranura hasta que se reciba un reemplazo.
+** Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo cerrar sesiones CIFS.
++
+
+NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
+
+** Si el comando falla porque el partner está "no listo", espere 5 minutos para que los NVMems se sincronicen.
+** Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el contenido adecuado para obtener más información.
+
+
+. Espere 3 minutos y compruebe el estado de la conmutación al respaldo con el comando Storage Failover show.
+. En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su controladora y puerto de inicio.
++
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+
+. Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Utilice la `storage encryption disk show` en el símbolo del sistema clustershell, para revisar el resultado.
+. Utilice la `security key-manager key-query` comando para mostrar las claves de cifrado y autenticación almacenadas en los servidores de gestión de claves.
++
+** Si la `Restored` columna = `yes/true`, ha finalizado y puede continuar con el proceso de sustitución.
+** Si la `Key Manager type` = `external` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Utilice el comando de restauración externa del administrador de claves de seguridad para restaurar los identificadores de claves de las claves de autenticación.
++
+
+NOTE: Si el comando falla, póngase en contacto con el servicio de atención al cliente.
+
+** Si la `Key Manager type` = `onboard` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Utilice el comando Security Key Manager Onboard SYNC para volver a sincronizar el tipo de Key Manager.
++
+Utilice la `security key-manager key-query` para comprobar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
+
+
+
+. Conecte el cable de la consola al controlador asociado.
+. Dé vuelta a la controladora con el comando de recuperación tras fallos del almacenamiento -fromnode local.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Restablezca el MSID si se estableció previamente y se capturó al principio de este procedimiento:
++
+.. Asigne una clave de autenticación de datos a una unidad FIPS o SED mediante el `storage encryption disk modify -disk _disk_ID_ -data-key-id _key_ID_` comando.
++
+
+NOTE: Puede utilizar el `security key-manager key query -key-type NSE-AK` Comando para ver los ID clave.
+
+.. Compruebe que las claves de autenticación se han asignado mediante el `storage encryption disk show` comando.
+
+
+
+
+--
+====
+
+
+== Paso 7: Devuelva la pieza que falló a NetApp
+
+[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

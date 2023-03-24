@@ -27,7 +27,6 @@ https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 == Opción 1: Agregue un módulo X91148A como módulo NIC en un sistema sin ranuras abiertas
 
-[role="lead"]
 Debe quitar uno o más módulos NIC o de almacenamiento existentes en su sistema para instalar uno o más módulos NIC X91148A en su sistema completamente lleno.
 
 .Pasos
@@ -99,7 +98,6 @@ Pestillo de leva de E/S completamente desbloqueado
 
 == Opción 2: Adición de un módulo X91148A como módulo de almacenamiento en un sistema sin ranuras abiertas
 
-[role="lead"]
 Debe quitar uno o más módulos de almacenamiento o NIC existentes en el sistema para instalar uno o más módulos de almacenamiento X91148A en el sistema completamente lleno.
 
 * Este procedimiento supone que vuelve a instalar el módulo X91148A en las ranuras 3 y/o 7.
@@ -166,5 +164,5 @@ Pestillo de leva de E/S completamente desbloqueado
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode _target_node_name_`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Repita estos pasos para la controladora B.
-. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-ds-nvme-hotadd/GUID-B215753F-F3E6-4FA0-A1E1-B9390B19AD94.html["Adición en caliente de una bandeja de unidades NS224"].
+. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].
 

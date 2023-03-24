@@ -17,7 +17,6 @@ Puede añadir en caliente una bandeja de unidades NS224 después de que su par d
 
 == Requisitos de una adición activa
 
-[role="lead"]
 Su par de alta disponibilidad debe cumplir determinados requisitos antes de añadir en caliente una bandeja de unidades NS224.
 
 * El modelo y la versión de su plataforma de ONTAP deben ser compatibles con las bandejas NS224 y las unidades que se añaden en caliente.
@@ -74,7 +73,6 @@ Para cambiar el ID de la bandeja, utilice el clip de papel o el bolígrafo para 
 
 == Consideraciones para una adición en caliente
 
-[role="lead"]
 Antes de añadir en caliente una bandeja de unidades NS224, debe familiarizarse con las prácticas recomendadas y los aspectos de este procedimiento.
 
 * Si tiene un par de alta disponibilidad de ASA que admite bandejas NS224, puede utilizar este procedimiento.
@@ -119,7 +117,6 @@ NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
 
 == Prepare una adición activa
 
-[role="lead"]
 Debe completar las tareas de preparación aplicables a su par de alta disponibilidad antes de añadir en caliente una bandeja de unidades NS224.
 
 
@@ -373,7 +370,6 @@ Debe deshabilitar la asignación automática de unidades en ambos módulos de la
 
 == Instale una bandeja de unidades para añadir datos en caliente
 
-[role="lead"]
 La instalación de una bandeja de unidades nueva NS224 implica la instalación de la bandeja en un rack o armario, la conexión de los cables de alimentación (que enciende automáticamente la bandeja) y luego la configuración del ID de bandeja.
 
 .Antes de empezar
@@ -441,7 +437,6 @@ Cuando se restablece la alimentación a las fuentes de alimentación, sus LED bi
 
 == Conecte mediante cable una bandeja de unidades para una función de adición de activo
 
-[role="lead"]
 Conecte los cables de cada bandeja de unidades NS224 se añadirá en caliente de modo que cada bandeja tenga dos conexiones a cada módulo de controladora en el par de alta disponibilidad. En función del número de bandejas que se añadan en caliente y el modelo de plataforma, se utilizarán puertos compatibles con roce en las controladoras, en tarjetas PCIe compatibles con roce, una combinación de ambos o en módulos de I/o compatibles con roce.
 
 
@@ -564,7 +559,6 @@ De lo contrario, ha finalizado este procedimiento.
 
 === Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad FAS500f o AFF A250
 
-[role="lead"]
 Cuando se necesite almacenamiento adicional, puede añadir en caliente una bandeja de unidades NS224 a un par de alta disponibilidad FAS500f o AFF A250.
 
 .Antes de empezar
@@ -966,7 +960,6 @@ De lo contrario, ha finalizado este procedimiento.
 
 == Complete el hot-add
 
-[role="lead"]
 Si deshabilitó la asignación automática de unidades como parte de la preparación para la bandeja de unidades NS224 con adición de activos, debe asignar manualmente la propiedad de la unidad y, luego, volver a habilitar la asignación automática de unidades si es necesario.
 
 .Antes de empezar

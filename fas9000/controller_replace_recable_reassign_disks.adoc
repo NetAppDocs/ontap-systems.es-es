@@ -17,7 +17,6 @@ Continúe con el procedimiento de sustitución presentando el almacenamiento y c
 
 == Paso 1: Recuperar el sistema
 
-[role="lead"]
 Después de ejecutar los diagnósticos, debe recuperar las conexiones de red y de almacenamiento del módulo del controlador.
 
 .Pasos
@@ -36,10 +35,8 @@ Después de ejecutar los diagnósticos, debe recuperar las conexiones de red y d
 
 == Paso 2: Reasignar discos
 
-[role="lead"]
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el nodo _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
 
-[role="lead"]
 Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
 
 . Si el nodo _reader_ está en modo de mantenimiento (mostrando la `*>` Salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`

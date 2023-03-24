@@ -20,14 +20,12 @@ Debe sustituir el módulo de almacenamiento en caché en el módulo de la contro
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de estas tareas
@@ -85,7 +83,6 @@ Retome o detenga el controlador dañado: `storage failover takeover -ofnode _imp
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -184,7 +181,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 Puede utilizar la animación, la ilustración o los pasos escritos siguientes para quitar el módulo del controlador del chasis.
@@ -216,7 +212,6 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya un módulo de almacenamiento en caché
 
-[role="lead"]
 Para sustituir un módulo de almacenamiento en caché, denominado Flash Cache en la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos. Consulte el mapa de FRU en el módulo de la controladora para conocer la ubicación de Flash Cache.
 
 Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
@@ -276,7 +271,6 @@ El extremo del módulo de almacenamiento en caché se queda alejado de la pesta�
 
 == Paso 4: Instale el módulo del controlador
 
-[role="lead"]
 Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
@@ -328,7 +322,6 @@ Si el sistema se detiene en el menú de inicio, seleccione la opción para arran
 
 == Paso 5: Ejecutar el diagnóstico
 
-[role="lead"]
 Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
 
 El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
@@ -356,7 +349,6 @@ Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símb
 
 == Paso 6: Restaure el módulo del controlador para que funcione después de ejecutar los diagnósticos
 
-[role="lead"]
 Después de completar los diagnósticos, debe recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a activar la devolución automática.
 
 .Pasos
@@ -372,7 +364,6 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 == Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -431,5 +422,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 8: Complete el proceso de reemplazo
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

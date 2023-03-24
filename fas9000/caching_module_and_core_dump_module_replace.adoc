@@ -26,7 +26,6 @@ Debe sustituir el módulo de almacenamiento en caché en el módulo de la contro
 
 == Paso 1: Apagar el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
@@ -88,7 +87,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -187,7 +185,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Sustituya o añada un módulo de almacenamiento en caché
 
-[role="lead"]
 Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) son módulos independientes. Se encuentran en la parte frontal del módulo NVRAM. Para sustituir o añadir un módulo de almacenamiento en caché, búsquelo en la parte posterior del sistema en la ranura 6 y, a continuación, siga la secuencia específica de pasos para reemplazarlo.
 
 .Antes de empezar
@@ -248,7 +245,6 @@ Asegúrese de admitir el módulo de almacenamiento en caché cuando lo quite del
 
 == Paso 3: Agregar o reemplazar un módulo de volcado principal X9170A
 
-[role="lead"]
 El volcado de memoria caché de 1 TB, X9170A, solo se utiliza en los sistemas A700 de AFF. El módulo de volcado principal no se puede intercambiar en caliente. El módulo de volcado principal normalmente se encuentra en la parte frontal del módulo NVRAM en la ranura 6-1 de la parte posterior del sistema. Para reemplazar o agregar el módulo de volcado principal, localice la ranura 6-1 y, a continuación, siga la secuencia específica de pasos para agregarlo o reemplazarlo.
 
 .Antes de empezar
@@ -307,7 +303,6 @@ Asegúrese de que admite el módulo de volcado principal mientras lo quita del m
 
 == Paso 4: Reinicie la controladora después de sustituir FRU
 
-[role="lead"]
 Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
 
 .Paso

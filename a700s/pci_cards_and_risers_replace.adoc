@@ -21,7 +21,6 @@ Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas de 
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
@@ -67,7 +66,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -145,7 +143,6 @@ Conducto de aire
 
 == Paso 3: Sustituya una tarjeta PCIe
 
-[role="lead"]
 Para sustituir una tarjeta PCIe, debe retirar el cableado y todos los SFP de los puertos de las tarjetas PCIe de la tarjeta vertical de destino, retire la tarjeta vertical del módulo de la controladora, extraiga y reemplace la tarjeta PCIe, vuelva a instalar la tarjeta vertical y vuelva a retirarla.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -228,7 +225,6 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 == Paso 4: Vuelva a instalar el módulo del controlador
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -300,5 +296,4 @@ NOTE: Asegúrese de salir del modo de mantenimiento después de completar la con
 
 == Paso 5: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

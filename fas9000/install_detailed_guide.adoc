@@ -17,7 +17,6 @@ Esta guía ofrece instrucciones detalladas paso a paso para la instalación de u
 
 == Paso 1: Preparar la instalación
 
-[role="lead"]
 Para instalar el sistema, debe crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
 .Antes de empezar
@@ -181,7 +180,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 == Paso 2: Instale el hardware
 
-[role="lead"]
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
 
 .Pasos
@@ -210,14 +208,12 @@ image::../media/drw_9000_cable_management_arms.png[brazos de gestión de cables 
 
 == Paso 3: Conecte los controladores a la red
 
-[role="lead"]
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
 
 === Opción 1: Clúster sin switches de dos nodos
 
-[role="lead"]
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
 
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
@@ -245,7 +241,6 @@ image::../media/drw_9000_TNSC_composite_cabling.png[Cableado compuesto drw 9000 
 
 === Opción 2: Clúster de switches
 
-[role="lead"]
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
 
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
@@ -273,14 +268,12 @@ image:../media/drw_9000_switched_cluster_cabling.png[""]
 
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
-[role="lead"]
 Puede cablear el nuevo sistema a las bandejas DS212C, DS224C o NS224, según sea un sistema AFF o FAS.
 
 
 
 === Opción 1: Conecte los cables de las controladoras a las bandejas de unidades DS212C o DS224C
 
-[role="lead"]
 Se deben cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades DS212C o DS224C.
 
 Los cables se insertan en la bandeja de unidades con las pestañas tirar hacia abajo, mientras que el otro extremo del cable se inserta en los módulos de almacenamiento de la controladora con las pestañas hacia arriba.
@@ -320,7 +313,7 @@ image:../media/SAS_storage_ONTAP_9.8_and_later.png[""]
 NOTE: Si posee más de un paquete de bandeja de unidades, consulte _Guía de instalación y cableado_ para el tipo de bandeja de unidades.
 
 +
-link:..https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Instalación y cableado de las bandejas para una instalación nueva del sistema - bandejas con módulos IOM12"]
+https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Instalación y cableado de las bandejas para una instalación nueva del sistema - bandejas con módulos IOM12"]
 
 +
 image:../media/Cable_shelves_new_system_IOM12_shelves.png[""]
@@ -332,7 +325,6 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png[""]
 
 === Opción 2: Conecte las controladoras a una única bandeja de unidades NS224 en sistemas A700 de AFF y ASA AFF A700 que solo ejecuten ONTAP 9.8 y versiones posteriores
 
-[role="lead"]
 Debe conectar cada controladora a los módulos NSM de la bandeja de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
 
 * Esta tarea se aplica solo a A700 de AFF y A700 de ASA AFF que ejecuten ONTAP 9.8 o posterior.
@@ -368,7 +360,6 @@ image::../media/single_NS224_shelf.png[Una única bandeja NS224]
 
 === Opción 3: Conecte los cables de las controladoras a dos bandejas de unidades NS224 en sistemas A700 de AFF y A700 de ASA AFF que ejecuten solo ONTAP 9.8 y versiones posteriores
 
-[role="lead"]
 Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
 
 * Esta tarea se aplica solo a A700 de AFF y A700 de ASA AFF que ejecuten ONTAP 9.8 o posterior.
@@ -404,14 +395,12 @@ image::../media/two_NS224_shelves.png[Dos bandejas NS224]
 
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
-[role="lead"]
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
 === Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada
 
-[role="lead"]
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
 
 .Pasos
@@ -485,7 +474,6 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descar
 
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
-[role="lead"]
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.
 
 .Pasos

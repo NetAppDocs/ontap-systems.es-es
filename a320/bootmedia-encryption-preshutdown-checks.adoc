@@ -39,7 +39,6 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 
 == Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y posterior
 
-[role="lead"]
 Antes de apagar la controladora dañada, debe verificar si el sistema tiene habilitado el cifrado de volúmenes de NetApp (NVE) o el cifrado de almacenamiento de NetApp (NSE). Si es así, debe comprobar la configuración.
 
 . Verifique si el cifrado de volúmenes está en uso para cualquier volumen del clúster: `volume show -is-encrypted true`

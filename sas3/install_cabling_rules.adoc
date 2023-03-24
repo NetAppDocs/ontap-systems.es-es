@@ -32,7 +32,6 @@ Debe evitar desviarse de las reglas; las desviaciones pueden reducir la confiabi
 
 == Reglas de configuración
 
-[role="lead"]
 Las bandejas de discos con módulos IOM12 son compatibles con los tipos específicos de configuraciones de parejas de alta disponibilidad y de controladoras individuales.
 
 
@@ -59,7 +58,6 @@ Dado que el almacenamiento interno utiliza la conectividad de ruta única, ONTAP
 
 == Reglas de numeración de las ranuras de la controladora
 
-[role="lead"]
 Con el fin de aplicar reglas de cableado en todos los pares de alta disponibilidad y las configuraciones de controladora única compatibles, se utiliza una convención para la numeración de ranuras de la controladora.
 
 * Para todos los pares de alta disponibilidad y las configuraciones de controladora única, se aplica lo siguiente:
@@ -84,7 +82,6 @@ image::../media/slot0_rules.png[reglas de slot0]
 
 == Reglas de conexión entre bandejas
 
-[role="lead"]
 Cuando dispone de más de una bandeja de discos en una pila de bandejas de discos, se conectan entre sí por cada dominio SAS (IOM A e IOM B) mediante el cableado correspondiente de bandeja a bandeja. El uso del cableado de «estándar» o «doble ancho» depende de la configuración que tenga.
 
 
@@ -121,7 +118,6 @@ image::../media/drw_shelf_to_shelf_double_wide.gif[bandeja drw a estante doble a
 
 == Reglas de conexión de la controladora a la pila
 
-[role="lead"]
 Puede conectar correctamente las conexiones SAS de cada controladora a cada pila en un par de alta disponibilidad o en una configuración de controladora individual entendiendo que las bandejas de discos SAS utilizan propiedad de disco basada en software y de qué manera los puertos de controladora A/C y B/D están conectados a pilas. cómo se organizan los puertos A/C y B/D de las controladoras en pares de puertos y cómo las plataformas con almacenamiento interno disponen de sus puertos de controladora conectados a pilas.
 
 
@@ -280,7 +276,6 @@ image::../media/drw_fas2600_mpha_domain_example.png[ejemplo de dominio drw fas26
 
 == Reglas de cable óptico SAS HD Mini-SAS
 
-[role="lead"]
 Puede utilizar cables ópticos SAS HD Mini-SAS - cables de cable óptico activo multimodo (AOC) con conectores HD Mini-SAS-a-mini-SAS y cables de conexión multimodo (OM4) con conectores HD-a-LC Mini-SAS - para lograr conectividad SAS de larga distancia para determinadas configuraciones que tienen bandejas de discos con módulos IOM12.
 
 * Su plataforma y versión de ONTAP deben ser compatibles con el uso de cables ópticos SAS HD Mini-SAS: Cables ópticos activos multimodo (AOC) con conectores HD HD a mini-SAS Mini-SAS y cables de conexión multimodo (OM4) con conectores HD a LC Mini-SAS.

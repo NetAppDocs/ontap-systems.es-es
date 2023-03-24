@@ -19,7 +19,6 @@ Todos los demás componentes del sistema deben funcionar correctamente; si no es
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -77,7 +76,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo de controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 .Pasos
@@ -102,7 +100,6 @@ image::../media/drw_2240_x_opening_cam_latch.png[pestillo de leva de apertura dr
 
 == Paso 3: Sustituya la batería de NVMEM
 
-[role="lead"]
 Para sustituir la batería de NVMEM en su sistema, debe quitar la batería de NVMEM con error del sistema y sustituirla por una nueva batería de NVMEM.
 
 .Pasos
@@ -145,7 +142,6 @@ image::../media/drw_2600_nvmem_batt_repl_animated_gif.png[gif animados drw 2600 
 
 == Paso 4: Vuelva a instalar el módulo del controlador
 
-[role="lead"]
 Después de sustituir los componentes del módulo del controlador, vuelva a instalarlo en el chasis.
 
 .Pasos
@@ -217,7 +213,6 @@ NOTE: Si se pierde el aviso y el módulo de la controladora arranca en ONTAP, in
 
 == Paso 5: Ejecute un diagnóstico de nivel de sistema
 
-[role="lead"]
 Después de instalar una batería de NVMEM nueva, debería ejecutar el diagnóstico.
 
 Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
@@ -354,7 +349,6 @@ Después de emitir el comando, espere hasta que el sistema se detenga en el sím
 
 == Paso 6: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -413,5 +407,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 7: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

@@ -6,8 +6,11 @@ summary: Puede agregar un módulo de E/S al sistema, ya sea reemplazando un mód
 ---
 = Agregar un módulo de E/S - AFF A900
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
+[role="lead"]
 Puede agregar un módulo de E/S al sistema agregando un nuevo módulo de E/S a un sistema con ranuras vacías o sustituyendo un módulo de E/S por uno nuevo en un sistema completamente cargado.
 
 .Antes de empezar
@@ -21,14 +24,12 @@ Puede agregar un módulo de E/S al sistema agregando un nuevo módulo de E/S a u
 
 == Opción 1: Agregue el módulo de E/S a un sistema con ranuras abiertas
 
-[role="lead"]
 Puede agregar un módulo de E/S a una ranura de módulo vacía del sistema.
 
 
 
 == Paso 1: Apague el nodo dañado
 
-[role="lead"]
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
 
 [role="tabbed-block"]
@@ -168,7 +169,6 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 
 == Opción 2: Añada un módulo de I/o en un sistema sin ranuras abiertas
 
-[role="lead"]
 Si el sistema está completamente lleno, puede cambiar un módulo de I/o en una ranura de I/o quitando un módulo de I/o existente y reemplazarlo por un módulo de I/o diferente.
 
 . Si está:
@@ -204,7 +204,6 @@ Utilice System Manager para migrar de forma permanente las LIF a distintos puert
 
 == Paso 1: Apague el nodo dañado
 
-[role="lead"]
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
 
 [role="tabbed-block"]
@@ -359,13 +358,7 @@ Pestillo de leva de E/S completamente desbloqueado
 
 . Repita los pasos de desmontaje e instalación para sustituir los módulos adicionales de la controladora A.
 . Si el módulo de E/S de repuesto es un NIC, conecte el módulo o los módulos a los conmutadores de datos.
-. Reinicie el BMC y a continuación, reinicie el nodo:
-+
-.. Desde el aviso DEL CARGADOR, cambie al modo de privilegio avanzado: `priv set advanced`
-.. Reinicie el BMC: `sp reboot`
-
-
-. Desde el aviso del CARGADOR, reinicie el nodo: `bye`
+. Reiniciar el nodo.
 +
 
 NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.

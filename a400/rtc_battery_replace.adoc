@@ -21,14 +21,12 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,7 +82,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 Puede utilizar las siguientes animaciones, ilustraciones o los pasos escritos para quitar el módulo de la controladora del chasis.
@@ -214,14 +210,13 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya la batería RTC
 
-[role="lead"]
 Debe localizar la batería RTC dentro del módulo del controlador y seguir la secuencia específica de pasos. Consulte el mapa de FRU situado dentro del módulo del controlador para conocer la ubicación de la batería RTC.
 
 Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir la batería RTC.
 
 .Animación: Sustituya la batería RTC
 video::80fe7a9b-de6f-46e0-a18b-aadb0157263d[panopto]
-image::../media/drw_A400_rtc-batt.png[Batería rtc drw A400]
+image::../media/drw_A400_rtc-batt_IEOPS-1003.svg[drw A400 rtc batt IEPOPS 1003]
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Abra el conducto de aire:
@@ -250,7 +245,6 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 == Paso 4: Vuelva a instalar el módulo del controlador y ajuste la fecha y hora después de la sustitución de la batería RTC
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
@@ -309,7 +303,6 @@ NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para
 
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -368,5 +361,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 6: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

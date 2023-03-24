@@ -32,7 +32,6 @@ Para sustituir una tarjeta NVRAM fallida, debe extraer la tarjeta vertical NVRAM
 == Paso 1: Apague el controlador dañado
 
 .Pasos
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
@@ -85,7 +84,6 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["Guía co
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -164,7 +162,6 @@ Conducto de aire
 
 == Paso 3: Extraiga la tarjeta NVRAM
 
-[role="lead"]
 La sustitución de la NVRAM consiste en extraer la tarjeta vertical NVRAM, la tarjeta vertical NVRAM 1, del módulo de la controladora, desconectar la batería NVRAM de la tarjeta NVRAM, extraer la tarjeta NVRAM que ha fallado e instalar la tarjeta NVRAM de repuesto y, a continuación, volver a instalar la tarjeta vertical NVRAM en el módulo de la controladora.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -256,7 +253,6 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 == Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
 
-[role="lead"]
 Después de sustituir una FRU en el módulo de la controladora, debe volver a instalar el módulo de la controladora y reiniciarlo.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
@@ -297,7 +293,6 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 == Paso 5: Verifique el cambio de ID del sistema en un sistema de alta disponibilidad
 
-[role="lead"]
 Debe confirmar el cambio de ID del sistema al arrancar el controlador _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
 
 Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
@@ -380,7 +375,6 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 
 == Paso 6: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
 
-[role="lead"]
 Para los sistemas de almacenamiento que haya configurado previamente para usar almacenamiento o cifrado de volúmenes, debe realizar pasos adicionales para ofrecer funcionalidad de cifrado ininterrumpido. Puede omitir esta tarea en sistemas de almacenamiento que no tengan el cifrado de volúmenes o almacenamiento habilitado.
 
 
@@ -400,5 +394,4 @@ NOTE: Este paso no es necesario al sustituir un DIMM.
 
 == Paso 7: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

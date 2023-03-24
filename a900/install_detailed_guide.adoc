@@ -20,7 +20,6 @@ Este artículo ofrece instrucciones detalladas paso a paso para la instalación 
 Para instalar el sistema, debe crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
 .Antes de empezar
-[role="lead"]
 Debe tener acceso a https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información acerca de los requisitos del sitio así como información adicional sobre el sistema configurado.
 
 Puede que también desee tener acceso a http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Notas de la versión de ONTAP 9"^] Para su versión de ONTAP para obtener más información sobre este sistema.
@@ -171,7 +170,6 @@ Encendido del sistema
 
 == Paso 2: Instale el hardware
 
-[role="lead"]
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
 
 . Instale los kits de raíles, según sea necesario.
@@ -198,14 +196,12 @@ image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[Controlador drw
 
 == Paso 3: Conecte los controladores a la red
 
-[role="lead"]
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
 
 === Opción 1: Clúster sin switches de dos nodos
 
-[role="lead"]
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
 
 .Antes de empezar
@@ -286,7 +282,6 @@ image:../media/oie_cable_sfp_gbe_copper.png[""]
 
 === Opción 2: Clúster de switches
 
-[role="lead"]
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
 
 .Antes de empezar
@@ -371,7 +366,6 @@ image:../media/oie_cable_sfp_gbe_copper.png[""]
 
 === Opción 1: Conecte las controladoras a una única bandeja de unidades NS224 en AFF A900
 
-[role="lead"]
 Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS224 de un sistema AFF A900.
 
 .Antes de empezar
@@ -436,7 +430,6 @@ Cable de 100 GbE
 
 === Opción 2: Conecte los controladores a dos bandejas de unidades NS224 en AFF A900
 
-[role="lead"]
 Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224.
 
 .Antes de empezar
@@ -503,14 +496,12 @@ Cable de 100 GbE
 
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
-[role="lead"]
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
 === Opción 1: Si la detección de red está activada
 
-[role="lead"]
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
 
 . Use la animación o el dibujo siguientes para establecer uno o varios ID de bandeja de unidades:
@@ -621,7 +612,6 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descar
 
 === Opción 2: Si la detección de red no está activada
 
-[role="lead"]
 Si no está utilizando un portátil o consola basados en Windows o Mac o si no está activado la detección automática, debe completar la configuración y la configuración con esta tarea.
 
 . Conecte y configure el portátil o la consola:
@@ -633,7 +623,7 @@ NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo
 
 .. Conecte el cable de consola al portátil o a la consola mediante el cable de consola incluido con el sistema y, a continuación, conecte el portátil al conmutador de administración de la subred de administración.
 +
-image::../media/drw_9000_cable_console_switch_controller_IEOPS-953.svg[controlador IEPOPS 953 de conmutador de consola de cable drw 9000]
+image::../media/drw_A900_cable_console_switch_controller_IEOPS-953.svg[controlador IEPOPS 953 del conmutador de consola de cable drw A900]
 
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 

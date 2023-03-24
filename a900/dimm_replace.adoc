@@ -22,7 +22,6 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
 
 [role="tabbed-block"]
@@ -136,7 +135,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -191,7 +189,6 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 == Paso 3: Sustituya los módulos DIMM
 
-[role="lead"]
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -249,7 +246,6 @@ IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alin
 
 == Paso 4: Instale la controladora
 
-[role="lead"]
 Después de instalar los componentes en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema e iniciar el sistema operativo.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
@@ -329,7 +325,6 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 == Paso 5: Ejecute un diagnóstico de nivel de sistema
 
-[role="lead"]
 Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
 
 Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
@@ -436,5 +431,4 @@ Después de emitir el comando, espere hasta que el sistema se detenga en el sím
 
 == Paso 6: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

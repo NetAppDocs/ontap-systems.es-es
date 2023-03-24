@@ -21,14 +21,12 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,7 +82,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 .Pasos
@@ -236,7 +232,6 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 == Paso 3: Sustituya la batería RTC
 
-[role="lead"]
 Para sustituir la batería RTC, debe localizar la batería defectuosa en el módulo del controlador, extraerla del soporte y, a continuación, instalar la batería de repuesto en el soporte.
 
 .Pasos
@@ -279,7 +274,6 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 == Paso 4: Vuelva a instalar el módulo del controlador y establezca la fecha y hora
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 
 .Pasos

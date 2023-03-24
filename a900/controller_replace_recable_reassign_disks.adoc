@@ -38,10 +38,8 @@ NOTE: La información de ID del sistema y de asignación de discos se encuentra 
 
 == Paso 2: Reasignar discos
 
-[role="lead"]
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el controlador _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
 
-[role="lead"]
 Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
 
 . Si el controlador _reader_ está en modo de mantenimiento (mostrando la `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`

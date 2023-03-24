@@ -77,7 +77,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -113,7 +112,6 @@ El gancho del mecanismo de bloqueo debe estar casi en vertical y debe estar alej
 
 == Paso 3: Sustituya una tarjeta PCIe
 
-[role="lead"]
 Debe extraer la tarjeta «riser» PCIe que contiene la tarjeta PCIe que ha fallado del módulo de la controladora, extraer la tarjeta «PCIe que ha fallado» de la tarjeta «riser», instalar la tarjeta PCIe de sustitución en la tarjeta «riser» y volver a instalar la tarjeta «riser» en el módulo de la controladora.
 
 image::../media/drw_a320_pci_card_replace_animated_gif.png[la tarjeta pci drw a320 sustituye al gif animado]
@@ -149,7 +147,6 @@ image::../media/drw_a320_pci_card_replace_animated_gif.png[la tarjeta pci drw a3
 
 == Sep 4: Instale el módulo del controlador
 
-[role="lead"]
 Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
 
 . Si aún no lo ha hecho, cierre el conducto de aire de la parte posterior del módulo del controlador y vuelva a instalar la cubierta sobre las tarjetas PCIe.
@@ -191,7 +188,6 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 == Paso 5: Restaure el módulo de la controladora a su funcionamiento
 
-[role="lead"]
 Después de completar los diagnósticos, debe recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a activar la devolución automática.
 
 . Recuperar el sistema, según sea necesario.
@@ -206,5 +202,4 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 == Paso 6: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

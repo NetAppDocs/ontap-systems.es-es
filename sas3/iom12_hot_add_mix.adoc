@@ -17,7 +17,6 @@ Cuando se necesita almacenamiento adicional, se pueden añadir en caliente bande
 
 == Requisitos de una adición activa
 
-[role="lead"]
 La configuración (sistema) de par de alta disponibilidad, de controladora única o ampliación de MetroCluster debe satisfacer ciertos requisitos antes de añadir en caliente bandejas IOM12/IOM12B a una pila de bandejas IOM6.
 
 
@@ -86,7 +85,6 @@ Las bandejas IOM12 utilizan conectores HD mini-SAS. Las bandejas IOM6 utilizan c
 
 == Requisitos para una adición activa en configuraciones de MetroCluster con conexión a puente
 
-[role="lead"]
 Si va a añadir en caliente bandejas IOM12/IOM12B a una pila de bandejas IOM6 que se adjunta con un par de puentes ATTO FibreBridge en una configuración MetroCluster, el sistema debe satisfacer ciertos requisitos.
 
 * Si los puertos SAS de puente están disponibles en la configuración actual, debe añadir las bandejas IOM12 como una pila aparte.
@@ -138,7 +136,6 @@ Las bandejas IOM12/IOM12B utilizan conectores HD Mini-SAS. Las bandejas IOM6 uti
 
 == Consideraciones para una adición en caliente
 
-[role="lead"]
 Debe familiarizarse con los aspectos y las prácticas recomendadas de este procedimiento antes de añadir en caliente las bandejas IOM12/IOM12B a una pila de estantes IOM6.
 
 
@@ -226,7 +223,6 @@ NOTE: Las instrucciones de migración proporcionan los requisitos del sistema pa
 
 == Prepare la asignación manual de la propiedad de una unidad para una adición de activo
 
-[role="lead"]
 Si va a asignar manualmente la propiedad de una unidad para las bandejas IOM12 que va a añadir en caliente, debe deshabilitar la asignación automática de unidades si está habilitada.
 
 .Antes de empezar
@@ -257,7 +253,6 @@ Si tiene una pareja de alta disponibilidad o una configuración MetroCluster de 
 
 == Instale las bandejas para una adición activa
 
-[role="lead"]
 Para cada bandeja que se añade en caliente, debe instalar la bandeja en un rack, conectar los cables de alimentación, encender la bandeja y configurar el ID de bandeja.
 
 . Instale el kit de montaje en rack (para instalaciones de rack de dos o cuatro parantes) que se incluye con la bandeja de discos mediante el folleto de instalación incluido con el kit.
@@ -395,7 +390,6 @@ Debe apagar ambos switches de alimentación, esperar 10 segundos y volver a ence
 
 == Realice las bandejas de cables para añadir datos en caliente
 
-[role="lead"]
 La forma en que se conecte la conexión de una bandeja IOM12/IOM12B a una pila de bandejas IOM6 depende de si la bandeja IOM12 es la bandeja IOM12/IOM12B inicial, lo que significa que no hay ninguna otra bandeja IOM12 en la pila, O si se trata de una bandeja IOM12/IOM12B adicional a una pila mixta existente, lo que significa que ya hay una o varias bandejas IOM12/IOM12B en la pila. También depende de si la pila tiene alta disponibilidad multivía, alta disponibilidad multivía, de ruta única o conectividad de ruta única.
 
 .Antes de empezar
@@ -651,7 +645,6 @@ NOTE: Todas las configuraciones de MetroCluster requieren asignación de unidade
 
 == Complete el hot-add
 
-[role="lead"]
 Si se deshabilitó la asignación automática de unidades como parte de la preparación para añadir en caliente las bandejas IOM12/IOM12B a la pila de bandejas IOM6, debe asignar manualmente la propiedad de la unidad y, a continuación, volver a habilitar la asignación automática de unidades si es necesario.
 
 .Antes de empezar

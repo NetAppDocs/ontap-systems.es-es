@@ -17,7 +17,6 @@ Para completar la sustitución del chasis, debe realizar tareas específicas.
 
 == Paso 1: Verificación y configuración del estado de alta disponibilidad del chasis
 
-[role="lead"]
 Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
 
 . En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
@@ -45,7 +44,6 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 == Paso 2: Ejecute un diagnóstico de nivel de sistema
 
-[role="lead"]
 Después de instalar un chasis nuevo, debe ejecutar el diagnóstico de interconexión.
 
 .Antes de empezar
@@ -162,5 +160,4 @@ Determine la causa del problema.
 
 == Paso 3: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

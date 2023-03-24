@@ -17,7 +17,6 @@ Para sustituir el hardware del módulo de la controladora, debe retirar la contr
 
 == Paso 1: Extraiga el módulo del controlador
 
-[role="lead"]
 Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
 
 Asegúrese de etiquetar los cables para saber de dónde proceden.
@@ -84,7 +83,6 @@ image::../media/drw_a250_remove_airduct_cover.png[drw a250 retire la cubierta de
 
 == Paso 2: Mueva la fuente de alimentación
 
-[role="lead"]
 Debe mover la fuente de alimentación del módulo del controlador dañado al módulo del controlador de repuesto cuando sustituya un módulo del controlador.
 
 . Desconecte la fuente de alimentación.
@@ -132,7 +130,6 @@ CAUTION: Para evitar dañar el conector interno, no ejerza demasiada fuerza al d
 
 == Paso 3: Mueva los ventiladores
 
-[role="lead"]
 Debe mover los ventiladores del módulo de la controladora dañada al módulo de sustitución cuando sustituya un módulo de la controladora con fallos.
 
 . Retire el módulo del ventilador pinzando el lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.
@@ -156,7 +153,6 @@ image:../media/legend_icon_01.png[""]
 
 == Paso 4: Mueva el soporte de arranque
 
-[role="lead"]
 Hay un dispositivo multimedia de arranque en el AFF A250 bajo el conducto de aire del módulo del controlador. Debe moverlo del módulo del controlador defectuoso al módulo del controlador de repuesto.
 
 Necesita un destornillador Phillips magnético número 1 para quitar el tornillo que sujeta el soporte del maletero en su lugar. Debido a las limitaciones de espacio dentro del módulo del controlador, también debe tener un imán para transferir el tornillo a para que no se pierda.
@@ -197,7 +193,6 @@ NOTE: No aplique fuerza al apretar el tornillo en el soporte del maletero; puede
 
 == Paso 5: Mueva los DIMM
 
-[role="lead"]
 Para mover los módulos DIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.
 
 image::../media/drw_a250_dimm_replace.png[sustituir dimm drw a250]
@@ -223,7 +218,6 @@ Los módulos DIMM se ajustan firmemente al zócalo. Si no es así, vuelva a inse
 
 == Paso 6: Mover una tarjeta mezzanine
 
-[role="lead"]
 Para mover una tarjeta mezzanine, debe quitar el cableado y cualquier QSFP e SFP de los puertos, mover la tarjeta mezzanine a la controladora de reemplazo, reinstalar cualquier QSFP y SFP en los puertos y cablear los puertos.
 
 . Localice y mueva las tarjetas mezzanine del módulo de la controladora afectada.
@@ -277,7 +271,6 @@ NOTE: No aplique fuerza al apretar el tornillo de la tarjeta mezzanine, ya que p
 
 == Paso 7: Mueva la batería NV
 
-[role="lead"]
 Al sustituir el módulo del controlador, debe mover la batería NV del módulo del controlador dañado al módulo del controlador de reemplazo.
 
 . Localice y mueva la batería de NVMEM desde el módulo de la controladora con deficiencias al módulo de la controladora de reemplazo.
@@ -326,7 +319,6 @@ Levante la batería para extraerla del soporte y del módulo del controlador.
 
 == Paso 8: Instale el módulo del controlador
 
-[role="lead"]
 Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.
 
 Puede utilizar las siguientes ilustraciones o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.

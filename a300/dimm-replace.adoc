@@ -21,14 +21,12 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,7 +82,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Abra el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -224,7 +220,6 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya los módulos DIMM
 
-[role="lead"]
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -314,7 +309,6 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 == Paso 4: Vuelva a instalar el controlador
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo en un estado en el que pueda ejecutar las pruebas de diagnóstico en el componente sustituido.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -350,7 +344,6 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 == Paso 5: Ejecute un diagnóstico de nivel de sistema
 
-[role="lead"]
 Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
 
 Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
@@ -480,7 +473,6 @@ Después de emitir el comando, espere hasta que el sistema se detenga en el sím
 
 == Paso 6 (solo MetroCluster de dos nodos): Devolver agregados de switches
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -539,5 +531,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 7: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

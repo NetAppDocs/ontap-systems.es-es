@@ -21,14 +21,12 @@ Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cual
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,7 +82,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -183,7 +180,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 Puede utilizar las siguientes animaciones, ilustraciones o los pasos escritos para quitar el módulo de la controladora del chasis.
@@ -214,14 +210,13 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya una tarjeta PCIe
 
-[role="lead"]
 Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.
 
 Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir una tarjeta PCIe.
 
 .Animación - reemplace una tarjeta PCIe
 video::84339f87-321c-400e-985e-aae10182cd24[panopto]
-image:../media/drw_A400_Replace-PCIe-cards.png[""]
+image:../media/drw_A400_Replace-PCIe-cards_IEOPS-1008.svg["anchura=500 px"]
 
 . Extraiga la tarjeta vertical que contiene la tarjeta que desea sustituir:
 +
@@ -263,14 +258,13 @@ NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el 
 
 == Paso 4: Sustituya la tarjeta intermedia
 
-[role="lead"]
 La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras 4 y 5). Debe extraer esa tarjeta vertical para acceder a la tarjeta intermedia, sustituir la tarjeta intermedia y volver a instalar la tarjeta vertical número 3. Consulte el mapa de FRU en el módulo de la controladora para obtener más información.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la tarjeta mezzanine.
 
 .Animación - reemplace la tarjeta mezzanine
 video::4e00f5b1-8ca5-4cd6-9881-aadb01578e52[panopto]
-image::../media/drw_A400_Replace-mezz-card.png[drw A400 reemplace la tarjeta mezz]
+image::../media/drw_A400_Replace-mezz-card_IEOPS-1006.svg[drw A400 reemplace la tarjeta mezz IEPOPS 1006]
 
 . Extraiga la tarjeta vertical número 3 (ranuras 4 y 5):
 +
@@ -304,7 +298,6 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 
 == Paso 5: Instale el módulo del controlador
 
-[role="lead"]
 Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
@@ -355,7 +348,6 @@ NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para
 
 == Paso 6: Restaure el módulo de la controladora a su funcionamiento
 
-[role="lead"]
 Para restaurar el controlador, debe poder recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a habilitar la devolución automática.
 
 . Recuperar el sistema, según sea necesario.
@@ -370,7 +362,6 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 == Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -429,5 +420,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 8: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

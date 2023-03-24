@@ -21,7 +21,6 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -78,7 +77,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo de controlador
 
-[role="lead"]
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -105,7 +103,6 @@ image::../media/drw_2600_opening_pcm_cover.png[drw 2600 apertura de la cubierta 
 
 == Paso 3: Sustituya la batería RTC
 
-[role="lead"]
 Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -128,7 +125,6 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 == Paso 4: Vuelva a instalar el módulo del controlador y establezca la fecha y hora después de sustituir la batería RTC
 
-[role="lead"]
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 
 . Si aún no lo ha hecho, cierre la cubierta del conducto de aire o del módulo del controlador.
@@ -172,7 +168,6 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -231,5 +226,4 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 == Paso 6: Devuelva la pieza que falló a NetApp
 
-[role="lead"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.
