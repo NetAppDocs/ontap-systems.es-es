@@ -8,30 +8,34 @@ indexpage:
   tiles:
   - title: Manos a la obra
     links:
-    - title: Notas de la versión de ONTAP
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
     - title: Novedades
       url: "/whats-new.html"
+    - title: Inicio rápido
+      url: "/get-up-and-run.html"
+    - title: Especificaciones técnicas de almacenamiento AFF y FAS
+      url: https://www.netapp.com/data-storage/disk-shelves-storage-media/
+    - title: Notas de la versión de ONTAP
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
   - title: Sistemas AFF
     links:
     - title: C190 de AFF
       url: "/c190/index.html"
-    - title: AFF A200
-      url: "/a200/index.html"
+    - title: AFF C250
+      url: "/c250/index.html"
+    - title: AFF C400
+      url: "/c400/index.html"
+    - title: AFF C800
+      url: "/c800/index.html"
+    - title: AFF A150
+      url: "/a150/index.html"
     - title: AFF A220
-      url: "/fas2700/index.html"
+      url: "/a220/index.html"
     - title: AFF A250
       url: "/a250/index.html"
-    - title: AFF A300
-      url: "/a300/index.html"
-    - title: AFF A320
-      url: "/a320/index.html"
     - title: AFF A400
       url: "/a400/index.html"
     - title: A700 de AFF
-      url: "/fas9000/index.html"
-    - title: A700s de AFF
-      url: "/a700s/index.html"
+      url: "/a700/index.html"
     - title: A800 de AFF
       url: "/a800/index.html"
     - title: AFF A900
@@ -40,12 +44,6 @@ indexpage:
     links:
     - title: FAS500f
       url: "/fas500f/index.html"
-    - title: FAS2600
-      url: "/fas2600/index.html"
-    - title: FAS2700
-      url: "/fas2700/index.html"
-    - title: FAS8200
-      url: "/fas8200/index.html"
     - title: FAS8300
       url: "/fas8300/index.html"
     - title: FAS8700
@@ -54,49 +52,51 @@ indexpage:
       url: "/fas9000/index.html"
     - title: FAS9500
       url: "/fas9500/index.html"
-  - title: Bandejas de unidades
+  - title: Sistemas de fin de disponibilidad
     links:
-    - title: NS224
-      url: "/ns224/index.html"
-    - title: SAS con IOM12
-      url: "/sas3/index.html"
-  - title: Switches de clúster y almacenamiento
+    - title: AFF A200
+      url: "/a200/index.html"
+    - title: AFF A300
+      url: "/a300/index.html"
+    - title: AFF A320
+      url: "/a320/index.html"
+    - title: A700s de AFF
+      url: "/a700s/index.html"
+    - title: FAS2600
+      url: "/fas2600/index.html"
+    - title: FAS2700
+      url: "/fas2700/index.html"
+    - title: FAS8200
+      url: "/fas8200/index.html"
+  - title: Switches compatibles
     links:
     - title: BES-53248 compatible con Broadcom
       url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/configure-new-switch-overview.html
-    - title: Cisco 3132Q-V
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/install-overview-cisco-3132qv.html
-    - title: Cisco 3232C
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3232c/install-overview-cisco-3232c.html
     - title: Cisco 9336C-FX2
       url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html
     - title: Cisco 9336-FX2 en configuraciones compartidas
       url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html
-    - title: Cisco 92300YC
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/92300-overview.html
-    - title: CN1610 de NetApp
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-netapp-cn1610/install-overview-cn1610.html
     - title: NVIDIA SN2100
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/sn2100-overview.html
-    - title: Otros modelos de switch
-      url: https://docs.netapp.com/us-en/ontap-systems-switches/other/switch-linkout.html
-  - title: Renovación de plataformas
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/configure-overview-sn2100-storage.html
+    - title: Switches de fin de disponibilidad
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/overview-eod.html
+  - title: Documentos de ONTAP relacionados
     links:
-    - title: Actualice para la mayoría de sistemas
+    - title: Actualización de plataforma (en la mayoría de los sistemas)
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/index.html
-    - title: Actualice para sistemas en una configuración MetroCluster
+    - title: Actualización de plataforma (MetroCluster config)
       url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
-  - title: Más recursos
-    links:
-    - title: Documentación de ONTAP
+    - title: Documentos de software de ONTAP
       url: https://docs.netapp.com/us-en/ontap/index.html
-    - title: Hardware Universe de NetApp
-      url: https://hwu.netapp.com/
-    - title: Asesor digital de Active IQ de NetApp
+    - title: Documentos de Digital Advisor
       url: https://docs.netapp.com/us-en/active-iq/index.html
-    - title: Active IQ Config Advisor de NetApp
-      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+  - title: Herramientas y soporte
+    links:
     - title: Matriz de interoperabilidad de NetApp
       url: https://mysupport.netapp.com/matrix/#welcome
-    - title: Comunidad de NetApp
-      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins
+    - title: Hardware Universe de NetApp
+      url: https://hwu.netapp.com/
+    - title: Base de conocimientos de NetApp
+      url: https://kb.netapp.com/
+    - title: Active IQ (se requiere inicio de sesión)
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor

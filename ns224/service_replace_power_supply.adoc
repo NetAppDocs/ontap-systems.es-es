@@ -14,25 +14,16 @@ summary: Puede sustituir un suministro de alimentación con fallos de forma no d
 Puede sustituir un suministro de alimentación con fallos de forma no disruptiva en una bandeja de unidades NS224 que se encienda y mientras las operaciones de I/o están en curso.
 
 .Acerca de esta tarea
-* No mezcle fuentes de alimentación con diferentes niveles de eficiencia. Sustituya siempre como por ejemplo.
+* No mezcle fuentes de alimentación con diferentes niveles de eficiencia o con diferentes tipos de entrada.
++
+Sustituya siempre como por ejemplo.
+
 * Si va a reemplazar más de un suministro de alimentación, debe hacerlo uno a la vez para que la bandeja mantenga alimentación.
 * *Mejor práctica:* la mejor práctica es reemplazar la fuente de alimentación en dos minutos después de haber sido retirada del módulo NSM.
 +
 Si supera los dos minutos, la bandeja sigue funcionando, pero ONTAP envía mensajes a la consola sobre el suministro de alimentación degradado hasta que se reemplace el suministro de alimentación.
 
-* *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
-
-+
-[NOTE]
-====
-No revierte el firmware a una versión que no admite la bandeja y sus componentes.
-
-====
+* No revierte el firmware a una versión que no admite la bandeja y sus componentes.
 * Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
@@ -44,12 +35,18 @@ Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del 
 +
 Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
 
-* Puede utilizar el siguiente vídeo o los pasos escritos para sustituir una fuente de alimentación.
-+
+
+
+Utilice el procedimiento adecuado para su tipo de PSU: CA o CC.
+
+[role="tabbed-block"]
+====
+.Opción 1: Sustituya una fuente de alimentación de CA
+--
+Para sustituir una fuente de alimentación de CA, puede ver la animación o completar los pasos siguientes.
+
 .Animación: Cambie en caliente una fuente de alimentación en una bandeja de unidades NS224
 video::5794da63-99aa-425a-825f-aa86002f154d[panopto]
-
-
 .Pasos
 . Puesta a tierra apropiadamente usted mismo.
 . Identifique físicamente el suministro de alimentación con errores.
@@ -60,9 +57,9 @@ El sistema registra un mensaje de advertencia en la consola del sistema que indi
 +
 Las fuentes de alimentación no tienen un switch de alimentación.
 
-. Quite la fuente de alimentación que ha fallado:
+. Retire la fuente de alimentación:
 +
-.. Gire la palanca de leva hasta su posición abierta (horizontal) y, a continuación, sujétela.
+.. Gire el asa hacia arriba, a su posición horizontal y, a continuación, sujételo.
 .. Con el pulgar, presione la lengüeta azul para liberar el mecanismo de bloqueo.
 .. Extraiga la fuente de alimentación del módulo NSM mientras utiliza la otra mano para soportar su peso.
 
@@ -75,7 +72,7 @@ Las fuentes de alimentación no tienen un switch de alimentación.
 
 NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
 
-.. Gire la palanca de leva a la posición cerrada.
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
 
 
 . Conecte el cable de alimentación a la fuente de alimentación y asegure el cable de alimentación con el retenedor del cable de alimentación.
@@ -83,3 +80,96 @@ NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
 Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
 
 
+
+--
+.Opción 2: Sustituya una fuente de alimentación de CC
+--
+Para sustituir una fuente de alimentación de CC, lleve a cabo los siguientes pasos.
+
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente el suministro de alimentación con errores.
++
+El sistema registra un mensaje de advertencia en la consola del sistema que indica qué fuente de alimentación ha fallado. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja se ilumina y el LED bicolor de la fuente de alimentación fallida se ilumina en rojo.
+
+. Desconecte la fuente de alimentación:
++
+La ilustración y la tabla del siguiente paso muestran los dos tornillos de mariposa (elemento #1) y el conector del cable de alimentación D-SUB DC (elemento #2).
+
++
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación.
+.. Desenchufe el conector del cable de alimentación de la fuente de alimentación y colóquelo a un lado.
+
+
+. Retire la fuente de alimentación:
++
+.. Gire el asa hacia arriba, a su posición horizontal y, a continuación, sujételo.
+.. Con el pulgar, presione la lengüeta azul para liberar el mecanismo de bloqueo.
+.. Extraiga la fuente de alimentación del módulo NSM mientras utiliza la otra mano para soportar su peso.
++
+
+NOTE: El suministro de alimentación es corto. Utilice siempre dos manos para apoyarlo al retirarlo del módulo NSM para que no se balancee libremente del módulo NSM y le hile.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[drw dcpsu Remove sustituye al IEPOPS genérico 788]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["anchura=10px"]
+ a| 
+Tornillos de mariposa
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["anchura=10px"]
+ a| 
+Conector del cable de alimentación de CC D-SUB
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["anchura=10px"]
+ a| 
+Asa de la fuente de alimentación
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["anchura=10px"]
+ a| 
+Lengüeta azul de bloqueo de la fuente de alimentación
+
+|===
+
+
+. Inserte la fuente de alimentación de repuesto:
++
+.. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del módulo NSM.
+.. Empuje suavemente la fuente de alimentación en el módulo NSM hasta que el mecanismo de bloqueo encaje en su lugar.
++
+Una fuente de alimentación debe acoplarse correctamente con el conector interno y el mecanismo de bloqueo. Repita este paso si cree que la fuente de alimentación no está correctamente asentada.
+
++
+
+NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
+
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
+
+
+. Vuelva a conectar el cable de alimentación D-SUB DC:
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
++
+.. Enchufe el conector del cable de alimentación a la fuente de alimentación.
+.. Apriete los dos tornillos para fijar el conector del cable de alimentación a la fuente de alimentación.
+
+
+
+
+--
+====

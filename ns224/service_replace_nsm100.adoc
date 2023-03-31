@@ -58,7 +58,7 @@ Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del 
 +
 Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
 
-* Puede utilizar el siguiente vídeo o los pasos escritos para reemplazar un módulo NSM.
+* Puede utilizar la siguiente animación o los pasos escritos para reemplazar un módulo NSM.
 +
 .Animación: Reemplace un módulo NSM en una bandeja de unidades NS224
 video::f57693b3-b164-4014-a827-aa86002f4b34[panopto]
@@ -72,7 +72,7 @@ El sistema registra un mensaje de advertencia a la consola del sistema que indic
 
 . Desconecte el cableado del módulo NSM afectado:
 +
-.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufe el cable de alimentación de la fuente de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación si se trata de una fuente de alimentación de CA, o desenroscando los dos tornillos de los pulgares si se trata de una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.
 +
 Las fuentes de alimentación no tienen un switch de alimentación.
 
@@ -105,7 +105,7 @@ Cuando comience a tirar, los brazos del mecanismo de bloqueo se extienden desde 
 
 NOTE: La etiqueta FRU de la cubierta del módulo NSM muestra la ubicación de los módulos DIMM y ventiladores.
 
-. Mueva los DIMM del módulo NSM alterado al módulo NSM de repuesto.
+. Mueva los DIMM del módulo NSM alterado al módulo NSM de repuesto:
 +
 .. Tenga en cuenta la orientación de los módulos DIMM en las ranuras para que pueda insertar los módulos DIMM en el módulo NSM de repuesto con la misma orientación.
 .. Extraiga un módulo DIMM de su ranura empujando lentamente las lengüetas expulsoras de ambos extremos de la ranura DIMM y, a continuación, levante el módulo DIMM para extraerlo de la ranura.
@@ -124,7 +124,7 @@ Cuando se inserta correctamente, el DIMM debe entrar fácilmente pero ajustarse 
 .. Repita los subpasos 7a 7d para los módulos DIMM restantes.
 
 
-. Mueva los ventiladores del módulo NSM afectado al módulo NSM de repuesto.
+. Mueva los ventiladores del módulo NSM afectado al módulo NSM de repuesto:
 +
 .. Sujete firmemente un ventilador de los laterales, donde están situados los puntos táctiles azules y, a continuación, levántelo verticalmente para desconectarlo de la toma.
 +
@@ -135,9 +135,9 @@ Es posible que tenga que golpear suavemente el ventilador hacia adelante y hacia
 
 
 . Cierre la cubierta de cada módulo NSM y, a continuación, apriete cada tornillo.
-. Mueva la fuente de alimentación del módulo NSM afectado al módulo NSM de repuesto.
+. Mueva la fuente de alimentación del módulo NSM afectado al módulo NSM de repuesto:
 +
-.. Gire la palanca de leva hasta su posición abierta (horizontal) y, a continuación, sujétela.
+.. Gire el asa hacia arriba, a su posición horizontal y, a continuación, sujételo.
 .. Con el pulgar, presione la lengüeta azul para liberar el mecanismo de bloqueo.
 .. Extraiga la fuente de alimentación del módulo NSM mientras utiliza la otra mano para soportar su peso.
 .. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del módulo NSM de repuesto.
@@ -146,7 +146,7 @@ Es posible que tenga que golpear suavemente el ventilador hacia adelante y hacia
 
 NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
 
-.. Gire la palanca de leva a la posición cerrada.
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
 
 
 . Inserte el módulo NSM de repuesto en la bandeja:
@@ -176,7 +176,7 @@ El módulo NSM debe insertarse por completo en el estante y enrasarse con los bo
 +
 Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
 
-.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación.
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación si es una fuente de alimentación de CA, o apriete los dos tornillos de palomilla si es una fuente de alimentación de CC.
 +
 Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
 

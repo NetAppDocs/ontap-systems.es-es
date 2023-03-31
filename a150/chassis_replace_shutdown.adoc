@@ -1,0 +1,123 @@
+---
+permalink: a150/chassis-replace-shutdown.html 
+sidebar: sidebar 
+keywords: aff a150, a150, aff, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Para sustituir el chasis, debe apagar las controladoras. 
+---
+= Apague los controladores - AFF A150
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+
+
+
+== Opción 1: Mayoría de las configuraciones
+
+[role="lead"]
+Debe apagar la controladora o la controladora del chasis antes de moverlos al nuevo chasis.
+
+.Acerca de esta tarea
+* Si tiene un clúster con más de dos controladoras, debe estar quórum. Si el clúster no está en quórum o si se muestra una controladora en buen estado `false` para la elegibilidad y la salud, debe corregir el problema antes de apagar el controlador dañado; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+
+
+.Pasos
+. Si su sistema tiene dos módulos de controladora, desactive el par de alta disponibilidad.
++
+[cols="1,2"]
+|===
+| Si su sistema utiliza Clustered ONTAP con... | Realice lo siguiente... 
+
+
+ a| 
+Dos controladoras en el clúster
+ a| 
+`cluster ha modify -configured false`
+
+`storage failover modify -node node0 -enabled false`
+
+
+
+ a| 
+Más de dos controladoras en el clúster
+ a| 
+`storage failover modify -node node0 -enabled false`
+
+|===
+. Detenga el controlador, pulse `y` cuando se le pida que confirme la detención: `system node halt -node _node_name_`
++
+El mensaje de confirmación tiene el aspecto siguiente:
+
++
+[listing]
+----
+Warning: This operation will cause controller "node-name" to be marked as unhealthy. Unhealthy nodes do not participate in quorum voting. If the controller goes out of service and one more controller goes out of service there will be a data serving failure for the entire cluster. This will cause a client disruption. Use "cluster show" to verify cluster state. If possible bring other nodes online to improve the resiliency of this cluster.
+
+Do you want to continue? {y|n}:
+----
++
+
+NOTE: Debe realizar un apagado correcto del sistema antes de sustituir el chasis para evitar perder datos no escritos en la memoria no volátil (NVMEM/NVRAM). Dependiendo del sistema, si el LED de NVMEM/NVRAM parpadea, hay contenido en el NVMEM/NVRAM que no se ha guardado en el disco. Es necesario reiniciar la controladora y comenzar desde el principio de este procedimiento. Si se repite los intentos para apagar correctamente la controladora, tenga en cuenta que se podrían perder datos que no se han guardado en el disco.
+
+. Cuando sea aplicable, detenga la segunda controladora para evitar un posible mensaje de error de quórum en una configuración de par de alta disponibilidad: `system node halt -node _second_node_name_ -ignore-quorum-warnings true -skip-lif-migration-before-shutdown true`
++
+Responda `y` cuando se le solicite.
+
+
+
+
+
+== Opción 2: La controladora está en una configuración MetroCluster
+
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+

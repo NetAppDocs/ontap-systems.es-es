@@ -1,0 +1,139 @@
+---
+permalink: c250/chassis-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: aff c250, move hardware components, replace the chassis 
+summary: Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Sustituya la tornillería AFF C250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado.
+
+
+
+== Paso 1: Extraiga los módulos de la controladora
+
+Para sustituir el chasis, debe quitar los módulos de la controladora del chasis antiguo.
+
+Utilice el siguiente vídeo o los pasos tabulados para reemplazar el chasis; asume la extracción y sustitución del bisel:
+
+.Animación - sustituya el chasis
+video::1f859217-fede-491a-896e-ac5b015c1a36[panopto]
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[drw a250 pcm retirar la instalación]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Palanca 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Coloque el módulo de la controladora en un lugar seguro y repita estos pasos con el otro módulo de la controladora del chasis.
+
+
+
+
+== Paso 2: Mueva unidades al nuevo chasis
+
+Es necesario mover las unidades desde la apertura de cada bahía en el chasis antiguo hasta la misma abertura de bahía en el nuevo chasis.
+
+. Retire con cuidado el bisel de la parte delantera del sistema.
+. Quite las unidades:
++
+.. Pulse el botón de liberación situado en la parte superior de la cara del soporte debajo de los LED.
+.. Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad del plano medio y, a continuación, deslice suavemente la unidad para extraerla del chasis.
++
+La transmisión debe desconectarse del chasis, lo que le permitirá deslizarse sin el chasis.
+
++
+
+NOTE: Al extraer una unidad, utilice siempre dos manos para sostener su peso.
+
++
+
+NOTE: Las unidades son frágiles. Manipularlos lo menos posible para evitar que se dañen.
+
+
+
+. Alinee la unidad del chasis antiguo con la misma abertura de la bahía en el nuevo chasis.
+. Empuje suavemente la unidad dentro del chasis hasta que llegue.
++
+La palanca de leva se acopla y comienza a girar hacia arriba.
+
+. Empuje con firmeza la unidad hasta que llegue al chasis y, a continuación, bloquee el mango de la leva empujándolo hacia arriba y contra el soporte de la unidad.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la parte delantera del portador de accionamiento. Hace clic cuando es seguro.
+
+. Repita el proceso para las unidades restantes del sistema.
+
+
+
+
+== Paso 3: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
+
+Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+
+. Quite los tornillos de los puntos de montaje del chasis.
+. Con dos personas, deslice el chasis antiguo fuera de los rieles del rack en un armario del sistema o rack del equipo y, a continuación, colóquelo aparte.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Con dos personas, instale el chasis de reemplazo en el rack o armario del sistema de equipamiento guiando el chasis hacia los rieles para rack en un armario del sistema o rack del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 4: Instale los módulos del controlador
+
+Después de instalar los módulos de la controladora en el nuevo chasis, debe arrancar a un estado en el que pueda ejecutar la prueba de diagnóstico.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
+. Enchufe los cables de alimentación en las fuentes de alimentación y vuelva a instalar los retenes del cable de alimentación.
+. Inserte el módulo de la controladora en el chasis:
++
+.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
+.. Con ambas manos, alinee y deslice suavemente el módulo del controlador en los brazos del mecanismo de bloqueo hasta que se detenga.
+.. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+.. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+
+
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+. Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
+
