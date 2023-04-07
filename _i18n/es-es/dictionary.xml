@@ -593,8 +593,6 @@
   <block id="ab580dd61655d242c5e7898b10207e71" category="paragraph">Al sustituir varias unidades de disco, debe esperar un minuto entre la eliminación de cada unidad de disco con fallo y la inserción de la unidad de disco de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de cada nuevo disco.</block>
   <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="paragraph-title">Procedimiento</block>
   <block id="dd48f304652176299be75f07f2b6523a" category="paragraph">Sustituya la unidad con error seleccionando la opción adecuada a las unidades que admite su plataforma.</block>
-  <block id="db0773b2c2e76f55090ea4c745896508" category="inline-link">_Sustituir vídeo_ de la unidad que ha fallado</block>
-  <block id="b007859cf50f8648510a8f673ecab515" category="paragraph">También puede elegir ver el<block ref="d09508f83c89674ee44a13af41e2f512" category="inline-link-rx"></block> que muestra información general del procedimiento de reemplazo de unidad integrada.</block>
   <block id="b2503ad254a75d9be517466a531e8187" category="open-title">Opción 1: Sustituir SSD</block>
   <block id="349535790ff32da6089571ee962b5909" category="list-text">Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la unidad de reemplazo de asignación automática de unidades, si se encuentra habilitada</block>
   <block id="9b6925a7601fc7c5515a98f2e73c64cb" category="admonition">La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.</block>
@@ -2100,7 +2098,6 @@
   <block id="83df237f35401e5686540721c993131c" category="list-text">El controlador _regrse_ es el propietario actual de los discos del sitio de recuperación ante desastres.</block>
   <block id="ce6027c9ce6b680c0adbb4a4d26235ed" category="list-text">Si su sistema está en una configuración MetroCluster, compruebe que cada controladora está configurada:<block ref="be437ba53b60f2b2ffd3b5125a8be145" prefix=" " category="inline-code"></block></block>
   <block id="e5fb91f466e4f9bded3cae7f56b2a15e" category="list-text">Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde la controladora en buen estado:<block ref="4f538b2a4fb102a33c9c1d3cf53f9787" prefix=" " category="inline-code"></block></block>
-  <block id="fd6e0dc56bc08d5a210f50e7388d932f" category="doc">Documentación del sistema A220</block>
   <block id="21ee2e5e51f0485744f531669814fed3" category="summary">Puede utilizar estos enlaces para otros modelos de switch.</block>
   <block id="0052efad5d260a806d52bfcfe640936f" category="doc">Interruptores</block>
   <block id="bd397018360b37f0581b599a75518e00" category="paragraph">Puede usar estos enlaces para buscar documentación del switch.</block>
@@ -3212,8 +3209,6 @@
   <block id="2ab60626c3ca1f306ba2c65e1e8f5d49" category="paragraph">En el siguiente vídeo se muestra la configuración de software integral para sistemas que ejecutan ONTAP 9.6 y versiones posteriores.</block>
   <block id="f3ca7c7565b074fbf5e12ffb59930d2f" category="doc">Devuelva la pieza que ha fallado a NetApp - FAS9500</block>
   <block id="f2c155633ff38e4e2d070e9d244a9074" category="doc">Mueva y reemplace el hardware - FAS9500</block>
-  <block id="a30a15e944afabde046385685fec252c" category="paragraph">Para sustituir el chasis, debe quitar los componentes del chasis antiguo e instalarlos en el chasis de reemplazo.</block>
-  <block id="55c99fae85fce446adbb5ceb895cf55e" category="paragraph">Para quitar las fuentes de alimentación cuando se reemplaza un chasis, se debe apagar, desconectar y luego quitar las cuatro fuentes de alimentación de la parte posterior del chasis antiguo.</block>
   <block id="12ccb6284dde6c218f4afb3d3857d96e" category="list-text">Mantenga pulsado el botón terracota del asa de la fuente de alimentación y, a continuación, extraiga la fuente de alimentación del chasis.</block>
   <block id="262047271a9f0ac7ba69952e78e4ced1" category="video-title">Animación: Extraiga/instale la PSU</block>
   <block id="9494be0e4fc0cc7bf5a561ba23cc37dd" category="image-alt">drw 9500 retire la instalación del módulo PSU</block>
@@ -3221,19 +3216,13 @@
   <block id="b598514d43d2a37ba4d4454196b07253" category="inline-image-macro">anchura=20</block>
   <block id="e96cf2879e64ebff07df1eef426e915f" category="paragraph"><block ref="e96cf2879e64ebff07df1eef426e915f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="72f8e032e3cfe23ff2d5b260d669bf04" category="paragraph"><block ref="72f8e032e3cfe23ff2d5b260d669bf04" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="21f8e15996afff8db254da85ba3f4ea7" category="paragraph">Para eliminar módulos de I/o del chasis antiguo, incluidos los módulos de NVRAM, siga la secuencia específica de pasos. No tiene que quitar el módulo Flash Cache, si está presente, del módulo NVRAM al moverlo a un nuevo chasis.</block>
-  <block id="63ee7e61fbd30f44f9b9df101a63a845" category="paragraph">Quite los dos módulos de alimentación de la controladora de etapa de la parte frontal del chasis antiguo.</block>
   <block id="6acd2520bad86e2719b0a66d04f59f28" category="list-text">Presione el botón de bloqueo de terracota en el asa del módulo y, a continuación, deslice el módulo DCPM fuera del chasis.</block>
   <block id="1738e7d625dcae031916a2d329f6a6b1" category="video-title">Animación: Retirar/instalar DCPM</block>
   <block id="450c055f11dd33524e41f3c84160e631" category="image-alt">drw 9500 retire la batería NV</block>
   <block id="dd70305ea5f8fef426dbcb35b56b5a51" category="paragraph">Botón de bloqueo de terra cotta del módulo DCPM</block>
-  <block id="1d8e1f6692aa85c8d94c39dda8015fdb" category="paragraph">Una vez instalado el nuevo chasis en el rack o armario, mueva el módulo LED USB desde la parte frontal del chasis antiguo hasta el nuevo chasis.</block>
   <block id="cae2fd913220da36fb401366df2ed0b8" category="video-title">Animación: Desmontaje/montaje del módulo USB</block>
   <block id="6b058f6aab05ab39cfb929fd3a13e5ad" category="paragraph">Expulse el módulo.</block>
   <block id="fdbcf566dc8794b2a2c635f286edfa2b" category="paragraph">Deslícelo para sacarlo del chasis.</block>
-  <block id="2adab982ea2c53caec320e625667e439" category="list-text">Localice el módulo LED USB en la parte frontal del chasis antiguo, directamente bajo los módulos DCPM.</block>
-  <block id="6e7d5178a758393b97e367ca3da27d68" category="list-text">Cuando cada nodo inicie el arranque, pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Para interrumpir el proceso de arranque cuando aparezca el mensaje Pulse Ctrl-C para Boot Menu (Menú de inicio).</block>
-  <block id="02c98171b36d44757b42c6b5c5d2acb9" category="paragraph">Responda<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Cuando ve el símbolo del sistema de para arrancar en modo de mantenimiento</block>
   <block id="859c951ebab21901f2fd6183c53339d5" category="summary">Para intercambiar en caliente un módulo de alimentación de controlador de separación \(DCPM\), que contiene la batería NVRAM11, debe localizar el módulo DCPM con error, eliminarlo del chasis e instalar el módulo DCPM de repuesto.</block>
   <block id="821b1e6be57f410ab68ac2071fc04df4" category="doc">Sustituya el módulo de alimentación de control de separación que contiene la batería NVRAM11 - FAS9500</block>
   <block id="8ea19d634d233a26f4f650bd2e2b467c" category="paragraph">Para intercambiar en caliente un módulo de alimentación de controlador de separación (DCPM), que contiene la batería NVRAM11, debe localizar el módulo DCPM con fallos, extraerlo del chasis e instalar el módulo DCPM de repuesto.</block>
@@ -6699,7 +6688,6 @@
   <block id="ba60b428b4c093e111c8f00b60fc4a80" category="image-alt">drw a900 retire la instalación del módulo de la fuente de alimentación</block>
   <block id="ba076cc47bbe54dead2d30165db372b5" category="image-alt">drw a900 retire la batería NV</block>
   <block id="9c0cca32aafcf28a513162ba96089a15" category="video-title">Animación: Retire/instale USB</block>
-  <block id="cf261a4e73438cb00bd1e7a2fef7257c" category="list-text">A medida que cada controlador inicia el arranque, pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Para interrumpir el proceso de arranque cuando aparezca el mensaje Pulse Ctrl-C para Boot Menu (Menú de inicio).</block>
   <block id="68908cbb53a7b71659933af600697a19" category="summary">Para intercambiar en caliente un módulo de alimentación de controlador de etapa \(DCPM\), que contiene la batería NVRAM11, debe localizar el módulo DCPM fallido, extraerlo del chasis e instalar el módulo DCPM de repuesto.</block>
   <block id="d04f6248062fc9d16de8588d61c28d1e" category="doc">Sustituya el módulo de alimentación de control de separación que contiene la batería NVRAM11 - AFF A900</block>
   <block id="43ae4ee714a69574b12c2b05c54410b5" category="list-text">Presione el botón de liberación terracota en el asa del módulo y, a continuación, deslice el módulo DCPM fuera del chasis.</block>
@@ -7376,7 +7364,6 @@
   <block id="af41b619bf9d50ddae2454efc001e4dd" category="paragraph">El resultado debería mostrar el estado del módulo de almacenamiento en caché como borrado.</block>
   <block id="376b1cae869bbe8ab1cce68fdb30b696" category="inline-link-macro">Reemplace los DIMM</block>
   <block id="91e13f2779cb51174165fa30eaba7e5b" category="list-text">Volver a. <block ref="cf268cc4bc5a73daf7348170b397c07d" category="inline-link-macro-rx"></block> De este procedimiento para volver a comprobar el LED de NVMEM.</block>
-  <block id="e23872c7fd1b170c488a2c5244bc263e" category="doc">Documentación del sistema A150</block>
   <block id="1a9ae2b5eb296d614bebfdc33f389268" category="doc">Compruebe las claves de cifrado integradas: AFF A150</block>
   <block id="3bf6a2921f0e655ea4d2b6b2851e02df" category="doc">Recuperar el sistema y reasignar discos - AFF A150</block>
   <block id="91b91feeb88498e7be1c10bbbb6db4c2" category="inline-link-macro">Comprobar el cambio de ID del sistema en un sistema de alta disponibilidad</block>
@@ -7418,7 +7405,6 @@
   <block id="5ba23cc00c6685a0d9b231590e5ee1c0" category="paragraph">Para bandejas de unidades NS224, los ID de bandeja están preconfigurados en 00 y 01. Si desea cambiar los ID de la bandeja, utilice el extremo enderezado de un clip de papel o el lápiz de punto de bola con punta estrecha para acceder al botón de ID de la bandeja situado detrás de la placa frontal.</block>
   <block id="688ed49ee5cf1b7f7ef70935870d42d8" category="summary">La documentación del sistema AFF C250 le permite instalar, configurar y mantener el sistema.</block>
   <block id="c2deffcaea49ccd174c7da17d80e1edf" category="doc">Documentación del sistema AFF C250</block>
-  <block id="68234c72c82d88dc22b60a4f8925c19a" category="doc">Sustitución de la unidad SSD - AFF C250</block>
   <block id="a4829fef0cfb953ea3181e31db648a62" category="paragraph">Puede sustituir una unidad SSD con errores sin interrupciones mientras hay operaciones de I/o en curso.</block>
   <block id="d7b7b72f7a0bd85854375ed25ad54137" category="admonition">La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.</block>
   <block id="f6551f88d88dddb684035802224a0336" category="doc">Apague el controlador AFF C250</block>
@@ -7716,7 +7702,6 @@
   <block id="96575ba10e2fbb7c8295e344411ca2d1" category="doc">Sustituya un DIMM - AFF C800</block>
   <block id="0251caa15dc8d2cbd1cfcc6d72965b59" category="summary">La documentación del sistema AFF C800 le permite instalar, configurar y mantener el sistema.</block>
   <block id="9683970b55904c77ccb71ba2bd90666f" category="doc">Documentación del sistema AFF C800</block>
-  <block id="b048da3eaccc3591e9c1d6b08af1a750" category="doc">Sustituya la unidad SSD: AFF C800</block>
   <block id="592fdd085a6d32be5ca82d8cf41fd57d" category="doc">Compruebe las claves de cifrado integradas: AFF C800</block>
   <block id="053f6b40fe6bb9b0a6dde49c0f76dc01" category="doc">Recuperar el sistema y reasignar discos - AFF C800</block>
   <block id="1085be18597d7d6c96ecba68a211bd73" category="doc">Sustituya una tarjeta PCIe AFF C800</block>
@@ -7786,4 +7771,37 @@
   <block id="36c69c49c18ae2fa7dce0347a69f0065" category="sidebar">Soporte de arranque AFF C800</block>
   <block id="81e825abffe43a736d6c9dc55fd84da2" category="sidebar">Chasis AFF C800</block>
   <block id="c164f067875d1a9aa792717f22c79b98" category="sidebar">Módulo de controlador AFF C800</block>
+  <block id="0a73484fb1b3edef8bbbf67f873dec2a" category="paragraph">Para sustituir el chasis, debe quitar los componentes del chasis dañado e instalarlos en el chasis de reemplazo.</block>
+  <block id="c41b6afef3be0625148760974efbe53b" category="paragraph">Quitar las fuentes de alimentación al reemplazar un chasis implica apagar, desconectar y luego quitar las cuatro fuentes de alimentación de la parte trasera del chasis dañado.</block>
+  <block id="f29cd4bb20b414e068c19ba637ce5223" category="paragraph">Para sustituir el chasis, debe retirar el módulo o los módulos del controlador del chasis dañado.</block>
+  <block id="d29be88ad14bfa795c9cb4b5e8e71620" category="paragraph">Para quitar módulos I/O del chasis deficiente, incluidos los módulos NVRAM, siga la secuencia de pasos específica. No tiene que quitar el módulo FlashCache, si está presente, del módulo NVRAM al moverlo a un chasis de reemplazo.</block>
+  <block id="70796c97dce9e8bc0ec4d548fad4c33c" category="list-text">Repita el paso anterior para los módulos de E/S restantes en el chasis dañado.</block>
+  <block id="7dcb58280c958448c619b7845f19a872" category="paragraph">Retire los dos módulos de alimentación del controlador de separación de etapas de la parte delantera del chasis dañado.</block>
+  <block id="bd87961e02bb318277afd71851d575b3" category="section-title">Paso 6: Retire el módulo led USB</block>
+  <block id="cc5d26d79e1692ae91756085b4c1675a" category="paragraph">Extraiga los módulos LED USB.</block>
+  <block id="4b4ddff45477c23b33a8313eeba376e8" category="list-text">Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de las bahías de la fuente de alimentación.</block>
+  <block id="90228675f9bb2f32a23b3c76a9187e07" category="list-text">Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo fuera del chasis dañado.</block>
+  <block id="bacfa9c94d1c1eae1fb55199be616b3d" category="section-title">Paso 7: Reemplace un chasis desde el bastidor de equipo o el armario del sistema</block>
+  <block id="2bc629fe1fa0756ba85648b1b075475e" category="list-text">Con la ayuda de dos o tres personas, deslice el chasis dañado fuera de los rieles del bastidor en un gabinete del sistema o soportes _L_ en un bastidor de equipo, y luego déjelo a un lado.</block>
+  <block id="1cff1ec8bb5f01806ddb910dceecf767" category="list-text">Fije la parte delantera del chasis al bastidor del equipo o al armario del sistema con los tornillos que ha retirado del chasis dañado.</block>
+  <block id="979104406ee03d12a7689ad931f5410b" category="list-text">Si va a usar los soportes de gestión de cables, quite esos soportes del chasis dañado y luego instálelos en el chasis de reemplazo.</block>
+  <block id="b9179a26176765e84f442a338275974c" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM/FlashCache desde el chasis dañado, siga la secuencia de pasos específica.</block>
+  <block id="8a063f47876606fb88039df27bbfad1f" category="paragraph">Debe tener instalado el chasis para poder instalar los módulos de I/O en las ranuras correspondientes del chasis de reemplazo.</block>
+  <block id="62d3b0199402c94809d4bbaf872df5c3" category="admonition">Si el chasis deficiente tiene paneles de I/O vacíos, muévalos al chasis de reemplazo en este momento.</block>
+  <block id="dc844fd8ca4280150d42e7895f0e653c" category="list-text">Asegúrese de que los balancines de las fuentes de alimentación estén en la posición de apagado.</block>
+  <block id="88c1c1e7e0b97d9299ec57ba96dda64f" category="section-title">Paso 12 Instale los módulos led USB</block>
+  <block id="42bf593239b1d9f984d9473a72a5ad0c" category="paragraph">Instale los módulos LED USB en el chasis de repuesto.</block>
+  <block id="b38f7c9ed48d1cadfbd357776bcf9e09" category="section-title">Paso 13: Instale el controlador</block>
+  <block id="1811d556efb31524fdf575ec0c8b9b6e" category="paragraph">Después de instalar el módulo del controlador y cualquier otro componente en el chasis de reemplazo, ejecútelo en un estado donde pueda ejecutar la prueba de diagnóstico de interconexión.</block>
+  <block id="c24ca3412a6dae4a658543695619f65a" category="list-text">Repita los pasos anteriores para instalar la segunda controladora en el chasis de reemplazo.</block>
+  <block id="e1c82a0b92bea9d8ce8c8d14a1992cd8" category="list-text">Arranque cada controladora.</block>
+  <block id="7765edbf8893ad208b9932e53c6d932a" category="doc">Sustituya la unidad SSD: AFF C800</block>
+  <block id="8b516ca5434f765000f11032059de011" category="section-title">Paso 6 Retire el módulo LED USB</block>
+  <block id="284d8ab33b7a1bc5797091f74643b163" category="section-title">Paso 7: Instale el módulo led USB en el chasis de reemplazo</block>
+  <block id="b91630a08c2bbd38ab4fcccfc43288bc" category="paragraph">Una vez instalado el chasis de repuesto en el rack o armario, instale el módulo LED USB desde la parte delantera del chasis dañado al chasis de repuesto.</block>
+  <block id="d87777306e62f6ae23e04dd3919ca898" category="list-text">Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de los módulos DCPM.</block>
+  <block id="632bcda28821b8191cdaaa396c4b3e22" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM del chasis dañado, siga la secuencia de pasos específica.</block>
+  <block id="bcf7de048a0b400d784ce2434b8beffe" category="doc">Sustituya la unidad SSD: AFF C250</block>
+  <block id="9c7a64854bf794e3fdb5cf355e7f1647" category="doc">Documentación del sistema AFF A150</block>
+  <block id="31d91f8342285d4227c3ee9c296c770a" category="doc">Documentación del sistema AFF A220</block>
 </blocks>

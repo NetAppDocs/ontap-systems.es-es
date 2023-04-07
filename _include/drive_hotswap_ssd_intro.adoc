@@ -3,7 +3,7 @@
 
 
 [role="lead"]
-Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso. El procedimiento para sustituir un SSD está destinado a unidades sin discos giratorios, y el procedimiento para sustituir un HDD está destinado a unidades giratorias.
+Puede sustituir una unidad SSD con errores sin interrupciones mientras hay operaciones de I/o en curso.
 
 Cuando falla una unidad, la plataforma registra un mensaje de advertencia en la consola del sistema que indica qué unidad ha fallado. Además, tanto el LED de fallo del panel de visualización del operador como el LED de fallo de la unidad averiada se iluminan.
 
@@ -15,7 +15,7 @@ La unidad con error se muestra en la lista de unidades con errores. Si no lo hac
 
 +
 
-NOTE: Según el tipo y la capacidad de la unidad, la unidad puede tardar hasta varias horas en aparecer en la lista de unidades con errores.
+NOTE: La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.
 
 * Determine si la autenticación SED está habilitada.
 +
@@ -29,6 +29,3 @@ La forma en que reemplace el disco depende de cómo se utilice la unidad de disc
 El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
 
 Al sustituir varias unidades de disco, debe esperar un minuto entre la eliminación de cada unidad de disco con fallo y la inserción de la unidad de disco de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de cada nuevo disco.
-
-.Procedimiento
-Sustituya la unidad con error seleccionando la opción adecuada a las unidades que admite su plataforma.

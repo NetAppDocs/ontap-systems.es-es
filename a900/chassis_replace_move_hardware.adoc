@@ -13,13 +13,13 @@ summary: Todos los demás componentes del sistema deben funcionar correctamente;
 == Mueva y sustituya la tornillería - AFF A900
 
 [role="lead"]
-Para sustituir el chasis, debe quitar los componentes del chasis antiguo e instalarlos en el chasis de reemplazo.
+Para sustituir el chasis, debe quitar los componentes del chasis dañado e instalarlos en el chasis de reemplazo.
 
 
 
 == Paso 1: Extraiga las fuentes de alimentación
 
-Para quitar las fuentes de alimentación cuando se reemplaza un chasis, se debe apagar, desconectar y luego quitar las cuatro fuentes de alimentación de la parte posterior del chasis antiguo.
+Quitar las fuentes de alimentación al reemplazar un chasis implica apagar, desconectar y luego quitar las cuatro fuentes de alimentación de la parte trasera del chasis dañado.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Apague la fuente de alimentación y desconecte los cables de alimentación:
@@ -99,7 +99,7 @@ Deslice el ventilador hacia dentro o hacia fuera del chasis
 
 == Paso 3: Extraiga el módulo del controlador
 
-Para sustituir el chasis, debe extraer el módulo o los módulos de la controladora del chasis antiguo.
+Para sustituir el chasis, debe retirar el módulo o los módulos del controlador del chasis dañado.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.
@@ -139,7 +139,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 4: Extraiga los módulos de E/S.
 
-Para eliminar módulos de I/o del chasis antiguo, incluidos los módulos de NVRAM, siga la secuencia específica de pasos. No tiene que quitar el módulo Flash Cache, si está presente, del módulo NVRAM al moverlo a un nuevo chasis.
+Para quitar módulos I/O del chasis deficiente, incluidos los módulos NVRAM, siga la secuencia de pasos específica. No tiene que quitar el módulo FlashCache, si está presente, del módulo NVRAM al moverlo a un chasis de reemplazo.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desconecte todos los cables asociados al módulo de E/S de destino.
@@ -187,14 +187,14 @@ Pestillo de leva de E/S completamente desbloqueado
 
 |===
 . Coloque el módulo de E/S a un lado.
-. Repita el paso anterior para los módulos de I/o restantes del chasis antiguo.
+. Repita el paso anterior para los módulos de E/S restantes en el chasis dañado.
 
 
 
 
 == Paso 5: Extraiga el módulo de alimentación del controlador de etapas
 
-Quite los dos módulos de alimentación de la controladora de etapa de la parte frontal del chasis antiguo.
+Retire los dos módulos de alimentación del controlador de separación de etapas de la parte delantera del chasis dañado.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Presione el botón de bloqueo de terracota en el asa del módulo y, a continuación, deslice el módulo DCPM fuera del chasis.
@@ -220,30 +220,9 @@ Botón de bloqueo de terra cotta del módulo DCPM
 
 
 
-== Paso 6: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
+== Paso 6 Retire el módulo LED USB
 
-Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
-
-. Quite los tornillos de los puntos de montaje del chasis.
-+
-
-NOTE: Si el sistema está en un armario del sistema, es posible que tenga que extraer el soporte de amarre trasero.
-
-. Con la ayuda de dos o tres personas, deslice el chasis antiguo fuera de los rieles del bastidor en un armario del sistema o soportes _L_ en un bastidor del equipo y, a continuación, colóquelo a un lado.
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Con dos o tres personas, instale el chasis de repuesto en el bastidor del equipo o el armario del sistema guiando el chasis en los rieles del bastidor en un armario del sistema o los soportes _L_ en un bastidor del equipo.
-. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
-. Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
-. Fije la parte posterior del chasis al bastidor del equipo o al armario del sistema.
-. Si va a usar los soportes de gestión de cables, retire los del chasis antiguo y, a continuación, instálelos en el chasis de reemplazo.
-. Si todavía no lo ha hecho, instale el panel frontal.
-
-
-
-
-== Paso 7: Mueva el módulo LED USB al nuevo chasis
-
-Una vez instalado el nuevo chasis en el rack o armario, mueva el módulo LED USB desde la parte frontal del chasis antiguo hasta el nuevo chasis.
+Extraiga los módulos LED USB.
 
 .Animación: Retire/instale USB
 video::eb715462-cc20-454f-bcf9-adf9016af84e[panopto]
@@ -266,8 +245,61 @@ image:../media/legend_icon_02.png[""]
 Deslícelo para sacarlo del chasis.
 
 |===
-. Localice el módulo LED USB en la parte frontal del chasis antiguo, directamente bajo los módulos DCPM.
-. Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo para sacarlo del chasis antiguo.
+. Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de las bahías de la fuente de alimentación.
+. Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo fuera del chasis dañado.
+. Alinee los bordes del módulo con el compartimento LED USB situado en la parte inferior frontal del chasis de repuesto y empuje suavemente el módulo hasta que encaje en su sitio.
+
+
+
+
+== Paso 7: Reemplace un chasis desde el bastidor de equipo o el armario del sistema
+
+Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+
+. Quite los tornillos de los puntos de montaje del chasis.
++
+
+NOTE: Si el sistema está en un armario del sistema, es posible que tenga que extraer el soporte de amarre trasero.
+
+. Con la ayuda de dos o tres personas, deslice el chasis dañado fuera de los rieles del bastidor en un gabinete del sistema o soportes _L_ en un bastidor de equipo, y luego déjelo a un lado.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Con dos o tres personas, instale el chasis de repuesto en el bastidor del equipo o el armario del sistema guiando el chasis en los rieles del bastidor en un armario del sistema o los soportes _L_ en un bastidor del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte delantera del chasis al bastidor del equipo o al armario del sistema con los tornillos que ha retirado del chasis dañado.
+. Fije la parte posterior del chasis al bastidor del equipo o al armario del sistema.
+. Si va a usar los soportes de gestión de cables, quite esos soportes del chasis dañado y luego instálelos en el chasis de reemplazo.
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 7: Instale el módulo led USB en el chasis de reemplazo
+
+Una vez instalado el chasis de repuesto en el rack o armario, instale el módulo LED USB desde la parte delantera del chasis dañado al chasis de repuesto.
+
+.Animación: Retire/instale USB
+video::eb715462-cc20-454f-bcf9-adf9016af84e[panopto]
+image::../media/drw_a900_remove_replace_LED_mod.png[drw a900 retire el módulo LED mod]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Expulse el módulo.
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslícelo para sacarlo del chasis.
+
+|===
+. Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de los módulos DCPM.
+. Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo fuera del chasis dañado.
 . Alinee los bordes del módulo con el compartimento LED USB situado en la parte inferior frontal del chasis de repuesto y empuje suavemente el módulo hasta que encaje en su sitio.
 
 
@@ -305,9 +337,9 @@ Cuando se inserta en un sistema activo, el LED de atención ámbar parpadea cuat
 
 == Paso 10: Instalar módulos de E/S.
 
-Para instalar módulos de E/S, incluidos los módulos NVRAM/Flash Cache del chasis antiguo, siga la secuencia específica de pasos.
+Para instalar módulos I/O, incluidos los módulos NVRAM del chasis dañado, siga la secuencia de pasos específica.
 
-Debe tener el chasis instalado de modo que pueda instalar los módulos de I/o en las ranuras correspondientes del nuevo chasis.
+Debe tener instalado el chasis para poder instalar los módulos de I/O en las ranuras correspondientes del chasis de reemplazo.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Después de instalar el chasis de repuesto en el bastidor o armario, instale los módulos de E/S en sus ranuras correspondientes del chasis de reemplazo deslizando suavemente el módulo de E/S en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse, Y, a continuación, empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
@@ -315,7 +347,7 @@ Debe tener el chasis instalado de modo que pueda instalar los módulos de I/o en
 . Repita el paso anterior para los módulos de E/S restantes que haya reservado.
 +
 
-NOTE: Si el chasis antiguo tiene paneles de E/S vacíos, muévalos al chasis de repuesto en este momento.
+NOTE: Si el chasis deficiente tiene paneles de I/O vacíos, muévalos al chasis de reemplazo en este momento.
 
 
 
@@ -326,6 +358,7 @@ NOTE: Si el chasis antiguo tiene paneles de E/S vacíos, muévalos al chasis de 
 La instalación de las fuentes de alimentación cuando se reemplaza un chasis implica la instalación de las fuentes de alimentación en el chasis de reemplazo y la conexión a la fuente de alimentación.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Asegúrese de que los balancines de las fuentes de alimentación estén en la posición de apagado.
 . Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del chasis del sistema y, a continuación, empuje suavemente la fuente de alimentación hacia el chasis hasta que encaje en su sitio.
 +
 Las fuentes de alimentación están codificadas y sólo se pueden instalar de una manera.
@@ -344,18 +377,29 @@ IMPORTANT: Conecte sólo el cable de alimentación a la fuente de alimentación.
 
 
 
-== Paso 12: Instale la controladora
+== Paso 12 Instale los módulos led USB
 
-Tras instalar el módulo de controlador y cualquier otro componente en el nuevo chasis, arranque en un estado en el que pueda ejecutar la prueba de diagnóstico de interconexión.
+Instale los módulos LED USB en el chasis de repuesto.
+
+. Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de las bahías de la fuente de alimentación.
+. Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo fuera del chasis dañado.
+. Alinee los bordes del módulo con el compartimento LED USB situado en la parte inferior frontal del chasis de repuesto y empuje suavemente el módulo hasta que encaje en su sitio.
+
+
+
+
+== Paso 13: Instale el controlador
+
+Después de instalar el módulo del controlador y cualquier otro componente en el chasis de reemplazo, ejecútelo en un estado donde pueda ejecutar la prueba de diagnóstico de interconexión.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Conecte las fuentes de alimentación a distintas fuentes de alimentación y, a continuación, enciéndalas.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
 . Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
-. Conecte las fuentes de alimentación a distintas fuentes de alimentación y, a continuación, enciéndalas.
 . Con el asa de leva en la posición abierta, deslice el módulo del controlador en el chasis y empuje firmemente el módulo del controlador hasta que alcance el plano medio y esté totalmente asentado y, a continuación, cierre el asa de leva hasta que encaje en la posición de bloqueo.
 +
 
@@ -364,18 +408,6 @@ IMPORTANT: No ejerza una fuerza excesiva al deslizar el módulo del controlador 
 +
 El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
-. Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
-. Arranque cada controladora en modo de mantenimiento:
-+
-.. A medida que cada controlador inicia el arranque, pulse `Ctrl-C` Para interrumpir el proceso de arranque cuando aparezca el mensaje Pulse Ctrl-C para Boot Menu (Menú de inicio).
-+
-
-NOTE: Si se pierde el aviso y los módulos de la controladora se inician en ONTAP, introduzca `halt`, Y luego en el aviso del CARGADOR entrar `boot_ontap`, pulse `Ctrl-C` cuando se le solicite y repita este paso.
-
-+
-Responda `y` Cuando ve el símbolo del sistema de para arrancar en modo de mantenimiento
-
-.. En el menú de inicio, seleccione la opción modo de mantenimiento.
-
-
+. Repita los pasos anteriores para instalar la segunda controladora en el chasis de reemplazo.
+. Arranque cada controladora.
 
