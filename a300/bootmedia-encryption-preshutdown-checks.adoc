@@ -59,7 +59,7 @@ Si algún volumen aparece en la salida, NVE se configura y debe verificar la con
 
 
 
-=== Verifique la configuración de NVE
+== Verifique la configuración de NVE
 
 .Pasos
 . Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager query`
@@ -114,7 +114,7 @@ NOTE: Introduzca la clave de acceso de gestión de claves incorporada del client
 
 
 
-=== Verifique la configuración de NSE
+== Verifique la configuración de NSE
 
 .Pasos
 . Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager query`
@@ -192,9 +192,9 @@ Si algún volumen aparece en la salida, NVE se configura y debe verificar la con
 
 
 
-=== Verifique la configuración de NVE
+== Verifique la configuración de NVE
 
-. Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager key-query`
+. Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager key query`
 +
 
 NOTE: Después de la versión ONTAP 9.6, es posible que tenga otros tipos de gestor de claves. Los tipos son `KMIP`, `AKV`, y. `GCP`. El proceso de confirmación de estos tipos es el mismo que el de confirmación `external` o. `onboard` tipos de gestor de claves.
@@ -224,7 +224,7 @@ Si el comando falla, póngase en contacto con el soporte de NetApp.
 +
 http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
-.. Compruebe que el `Restored` la columna es igual `yes` para todas las claves de autenticación: `security key-manager key-query`
+.. Compruebe que el `Restored` la columna es igual `yes` para todas las claves de autenticación: `security key-manager key query`
 .. Apague el controlador dañado.
 
 
@@ -235,7 +235,7 @@ http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
 NOTE: Introduzca la clave de acceso de gestión de claves incorporada del cliente en el símbolo del sistema de. Si no se puede proporcionar la clave de acceso, comuníquese con el soporte de NetApp. http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
-.. Compruebe el `Restored` la columna muestra `yes` para todas las claves de autenticación: `security key-manager key-query`
+.. Compruebe el `Restored` la columna muestra `yes` para todas las claves de autenticación: `security key-manager key query`
 .. Compruebe que el `Key Manager` el tipo muestra `onboard`, Y a continuación, realice una copia de seguridad manual de la información de OKM.
 .. Vaya al modo de privilegios avanzado e introduzca `y` cuando se le solicite continuar: `set -priv advanced`
 .. Introduzca el comando para mostrar la información de backup para la gestión de claves: `security key-manager onboard show-backup`
@@ -248,9 +248,9 @@ NOTE: Introduzca la clave de acceso de gestión de claves incorporada del client
 
 
 
-=== Verifique la configuración de NSE
+== Verifique la configuración de NSE
 
-. Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager key-query -key-type NSE-AK`
+. Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves: `security key-manager key query -key-type NSE-AK`
 +
 
 NOTE: Después de la versión ONTAP 9.6, es posible que tenga otros tipos de gestor de claves. Los tipos son `KMIP`, `AKV`, y. `GCP`. El proceso de confirmación de estos tipos es el mismo que el de confirmación `external` o. `onboard` tipos de gestor de claves.
@@ -273,14 +273,14 @@ NOTE: Después de la versión ONTAP 9.6, es posible que tenga otros tipos de ges
 
 . Si la `Key Manager` aparece el tipo `external` y la `Restored` columna muestra cualquier otra cosa que no sea `yes`:
 +
-.. Introduzca el comando SYNC del gestor de claves de seguridad incorporado: `security key-manager external sync`
+.. Restaure las claves de autenticación de gestión de claves externas a todos los nodos del clúster: `security key-manager external restore`
 +
 Si el comando falla, póngase en contacto con el soporte de NetApp.
 
 +
 http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
-.. Compruebe que el `Restored` la columna es igual `yes` para todas las claves de autenticación: `security key-manager key-query`
+.. Compruebe que el `Restored` la columna es igual `yes` para todas las claves de autenticación: `security key-manager key query`
 .. Puede apagar el controlador de forma segura.
 
 
@@ -293,7 +293,7 @@ Introduzca la clave de acceso de gestión de claves incorporada del cliente en e
 +
 http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
-.. Compruebe el `Restored` la columna muestra `yes` para todas las claves de autenticación: `security key-manager key-query`
+.. Compruebe el `Restored` la columna muestra `yes` para todas las claves de autenticación: `security key-manager key query`
 .. Compruebe que el `Key Manager` el tipo muestra `onboard`, Y a continuación, realice una copia de seguridad manual de la información de OKM.
 .. Vaya al modo de privilegios avanzado e introduzca `y` cuando se le solicite continuar: `set -priv advanced`
 .. Introduzca el comando para mostrar la información de backup para la gestión de claves: `security key-manager onboard show-backup`
