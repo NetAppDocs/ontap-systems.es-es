@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+Después de reemplazar el chasis, encienda los componentes del clúster en el siguiente orden:
+
+* Encienda el interruptor
+* Encienda las bandejas de unidades
+* Encienda las controladoras
+
+
+.Pasos
+. Encienda el interruptor:
++
+.. Vuelva a conectar cada cable de alimentación de la PDU a la PSU.
+.. Gire cada switch oscilante de la PSU a la posición de ENCENDIDO (si corresponde).
+.. Espere a que el interruptor se encienda.
+.. Compruebe si hay alguna luz de fallo en el interruptor (tanto delantero como trasero).
+.. Conéctese al switch a través de la dirección IP de administración.
+.. Confirme el estado del switch (consulte la documentación del proveedor de switches para obtener más detalles).
+.. Repita el procedimiento para cada interruptor hasta que todos los interruptores estén encendidos y en buen estado.
+
+
+. Encienda las bandejas de unidades:
++
+.. Vuelva a conectar cada cable de alimentación de la PDU a la PSU.
+.. Gire cada switch oscilante de la PSU a la posición de ENCENDIDO (si corresponde).
+.. Espere a que se enciendan todas las bandejas de discos y que se aceleren las unidades.
+.. Asegúrese de que todos los ID de bandeja sean los valores esperados.
+.. Compruebe si hay luces de fallo en la bandeja de discos (delantera y trasera) que no existían antes del apagado.
+
+
+. Encienda las controladoras:
++
+.. Vuelva a conectar cada cable de alimentación de la PDU a la PSU.
+.. Gire cada switch oscilante de la PSU a la posición de ENCENDIDO (si corresponde). Los pares de ALTA DISPONIBILIDAD que no están en el mismo chasis deben encenderse de forma simultánea.
+.. Espere que se enciendan las controladoras del chasis.
+.. Compruebe si hay luces de fallo en el chasis y en las controladoras (tanto delanteras como traseras).
+.. Repita esto en cada controladora/chasis hasta que todos estén encendidos.
+.. Conéctese a la dirección IP de SP o BMC de los nodos a través de SSH. Use este comando para obtener la dirección IP antes de apagarse:
++
+`system service-processor show -node * -fields address`
+
+.. Realizar comprobaciones de estado del sistema adicionales:
++
+... Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"]
+... Ejecución https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"]
+... Compruebe el estado del sistema como se describe en https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"]
+
+
+.. Generar una tarea de mantenimiento Finalizar mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+.. Asegúrese de que la devolución de control automática está activa:
++
+`storage failover modify -node local -auto-giveback true`
+
+
+
+

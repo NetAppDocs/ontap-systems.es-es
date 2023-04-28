@@ -18,58 +18,68 @@ Apague o retome el controlador dañado siguiendo el procedimiento adecuado para 
 == Opción 1: Mayoría de las configuraciones
 
 [role="lead"]
-Debe apagar la controladora o la controladora del chasis antes de moverlos al nuevo chasis.
+Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos"^].
 
-.Acerca de esta tarea
-* Si tiene un clúster con más de dos controladoras, debe estar quórum. Si el clúster no está en quórum o si se muestra una controladora en buen estado `false` para la elegibilidad y la salud, debe corregir el problema antes de apagar el controlador dañado; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
-* Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
-+
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+.Antes de empezar
+Necesita:
 
+* Credenciales de administrador local para ONTAP.
+* Clave de acceso para todo el clúster de gestión de claves incorporada de NetApp (OKM) si se usa cifrado de almacenamiento.
+* Acceso a SP/BMC para cada controladora.
+* Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.
+* Suspender trabajos de backup externo.
+* Herramientas y equipos necesarios para la sustitución.
+
+
+
+NOTE: Si el sistema es un StorageGRID de NetApp o ONTAP S3 que se utiliza como nivel de cloud de FabricPool, consulte la https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Apague y encienda sin problemas su Guía de resolución del sistema de almacenamiento"] después de realizar este procedimiento.
+
+
+NOTE: Si se utilizan LUN de cabina FlexArray, siga la documentación de cabina de almacenamiento específica del proveedor para el procedimiento de apagado que se debe ejecutar en esos sistemas después de realizar este procedimiento.
+
+
+NOTE: Si utiliza SSD, consulte https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Impacto: Crítico) Mejores prácticas para las SSD: Evite el riesgo de un fallo de unidad y de pérdida de datos si se apaga durante más de dos meses"]
+
+Como práctica recomendada antes del cierre, debe:
+
+* Realizar adicionales https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["comprobaciones de estado del sistema"].
+* Actualice ONTAP a una versión recomendada para el sistema.
+* Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"]. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.
 
 
 .Pasos
-. Si su sistema tiene dos módulos de controladora, desactive el par de alta disponibilidad.
+. Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.
+. Desactive AutoSupport e indique cuánto tiempo espera que el sistema esté fuera de línea:
 +
-[cols="1,2"]
-|===
-| Si su sistema utiliza Clustered ONTAP con... | Realice lo siguiente... 
+`system node autosupport invoke -node * -type all -messages "MAINT=8h Power Maintenance"`
 
-
- a| 
-Dos controladoras en el clúster
- a| 
-`cluster ha modify -configured false`
-
-`storage failover modify -node node0 -enabled false`
-
-
-
- a| 
-Más de dos controladoras en el clúster
- a| 
-`storage failover modify -node node0 -enabled false`
-
-|===
-. Detenga el controlador, pulse `y` cuando se le pida que confirme la detención: `system node halt -node _node_name_`
+. Identifique la dirección del SP/BMC de todos los nodos:
 +
-El mensaje de confirmación tiene el aspecto siguiente:
+`system service-processor show -node * -fields address`
+
+. Salga del shell de cluster: `exit`
+. Inicie sesión en SP/BMC sobre SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior.
++
+Si está usando una consola o portátil, inicie sesión en la controladora con las mismas credenciales de administrador de clúster.
 
 +
-[listing]
-----
-Warning: This operation will cause controller "node-name" to be marked as unhealthy. Unhealthy nodes do not participate in quorum voting. If the controller goes out of service and one more controller goes out of service there will be a data serving failure for the entire cluster. This will cause a client disruption. Use "cluster show" to verify cluster state. If possible bring other nodes online to improve the resiliency of this cluster.
 
-Do you want to continue? {y|n}:
-----
+NOTE: Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar el progreso.
+
+. Detenga todos los nodos del cluster:
++
+`system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
+
 +
 
-NOTE: Debe realizar un apagado correcto del sistema antes de sustituir el chasis para evitar perder datos no escritos en la memoria no volátil (NVMEM/NVRAM). Dependiendo del sistema, si el LED de NVMEM/NVRAM parpadea, hay contenido en el NVMEM/NVRAM que no se ha guardado en el disco. Es necesario reiniciar la controladora y comenzar desde el principio de este procedimiento. Si se repite los intentos para apagar correctamente la controladora, tenga en cuenta que se podrían perder datos que no se han guardado en el disco.
+NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: `system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
-. Cuando sea aplicable, detenga la segunda controladora para evitar un posible mensaje de error de quórum en una configuración de par de alta disponibilidad: `system node halt -node _second_node_name_ -ignore-quorum-warnings true -skip-lif-migration-before-shutdown true`
-+
-Responda `y` cuando se le solicite.
-
+. Introduzca *y* para cada controlador en el clúster cuando lo vea `_Warning: Are you sure you want to halt node "cluster name-controller number"?
+{y|n}:_`
+. Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.
+. Apague cada fuente de alimentación o desconéctela si no hay ningún interruptor de encendido/apagado de la fuente de alimentación.
+. Desconecte el cable de alimentación de cada fuente de alimentación.
+. Verifique que todas las controladoras, las bandejas de unidades y los switches asociados con el clúster estén apagados.
 
 
 

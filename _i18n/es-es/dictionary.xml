@@ -309,19 +309,6 @@
   <block id="50c37789175e52f0eff7f1b127fff4c3" category="paragraph">Instrucciones paso a paso de vídeo.</block>
   <block id="596bcca65aca56bacb3df39265f83dfb" category="summary">Para sustituir el chasis, debe apagar las controladoras.</block>
   <block id="7406636825b302f07932b3580dc3aa5b" category="doc">Apague las controladoras AFF A200</block>
-  <block id="b5d03ef67a171c85bf4bd311e2fd75df" category="paragraph">Debe apagar la controladora o la controladora del chasis antes de moverlos al nuevo chasis.</block>
-  <block id="1c0138111ac00fdce24dc38ffd9859d5" category="list-text">Si tiene un clúster con más de dos controladoras, debe estar quórum. Si el clúster no está en quórum o si se muestra una controladora en buen estado<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> para la elegibilidad y la salud, debe corregir el problema antes de apagar el controlador dañado; consulte <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
-  <block id="880c0610027a11af7086ae7e380e12e5" category="list-text">Si su sistema tiene dos módulos de controladora, desactive el par de alta disponibilidad.</block>
-  <block id="d426a3f5c9c0e3362f4ed536e7643c03" category="cell">Si su sistema utiliza Clustered ONTAP con...</block>
-  <block id="93ff4b8a35c5f08ad3e97fdc9983948e" category="paragraph">Dos controladoras en el clúster</block>
-  <block id="d875f9fec183da794cd6d6245ef00d1d" category="paragraph"><block ref="272f3c49a4ec1753c70013d06165277b" prefix="" category="inline-code"></block></block>
-  <block id="b2aa61dcee4d7b77fcd001973469ddde" category="paragraph"><block ref="2ad2df2fff9b45582f1f35a1de091886" prefix="" category="inline-code"></block></block>
-  <block id="a0540c64b7001eb9739a6eed390808ac" category="paragraph">Más de dos controladoras en el clúster</block>
-  <block id="853a8c6f8383ee1dc5f3826af9ff6797" category="list-text">Detenga el controlador, pulse<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le pida que confirme la detención:<block ref="e1f5c50429478cf8a201f7a77cce9c92" prefix=" " category="inline-code"></block></block>
-  <block id="481250f3e8ec41b0e994305d8fc52b4a" category="paragraph">El mensaje de confirmación tiene el aspecto siguiente:</block>
-  <block id="253a50052b60be1951a606aa7c311ba2" category="admonition">Debe realizar un apagado correcto del sistema antes de sustituir el chasis para evitar perder datos no escritos en la memoria no volátil (NVMEM/NVRAM). Dependiendo del sistema, si el LED de NVMEM/NVRAM parpadea, hay contenido en el NVMEM/NVRAM que no se ha guardado en el disco. Es necesario reiniciar la controladora y comenzar desde el principio de este procedimiento. Si se repite los intentos para apagar correctamente la controladora, tenga en cuenta que se podrían perder datos que no se han guardado en el disco.</block>
-  <block id="8373aa3aac3c8f18564812bfcb55615a" category="list-text">Cuando sea aplicable, detenga la segunda controladora para evitar un posible mensaje de error de quórum en una configuración de par de alta disponibilidad:<block ref="0ecd86b0d64cff2c7cc14bffb8f97491" prefix=" " category="inline-code"></block></block>
-  <block id="7da65b5a10b69b45b490009ac07696ff" category="paragraph">Responda<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite.</block>
   <block id="0f9b7af429c6f61cb54f2dc7fb47b9a6" category="summary">Para restaurar el funcionamiento completo del sistema, debe restaurar la configuración del cifrado de almacenamiento de NetApp (si es necesario), instalar licencias para la nueva controladora y devolver la pieza con error a NetApp, como se describe en las instrucciones de RMA que se incluyen en el kit. Póngase en contacto con el soporte técnico en<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>, 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.</block>
   <block id="e7cc374705291915b44392edac6d4956" category="doc">Restauración completa del sistema: AFF A200</block>
   <block id="03a45c592eebddeaf80cccbc66213075" category="paragraph">Para restaurar el funcionamiento completo del sistema, debe restaurar la configuración del cifrado de almacenamiento de NetApp (si es necesario), instalar licencias para la nueva controladora y devolver la pieza con error a NetApp, como se describe en las instrucciones de RMA que se incluyen en el kit.</block>
@@ -6612,7 +6599,6 @@
   <block id="6df4950fb076868b0e9a60e4ef9e05db" category="list-text">Gire el enganche 180 grados y, a continuación, fíjelo al armario del sistema en posición vertical.</block>
   <block id="1e0b37d2bee8e34c12fabdc96d1c7b25" category="summary">Puede sustituir una unidad con error en su plataforma de forma no disruptiva eligiendo el procedimiento adecuado para las unidades que es compatible con su plataforma. El procedimiento para intercambiar en funcionamiento una unidad SSD está destinado a unidades sin discos giratorios y el procedimiento para intercambiar en funcionamiento una unidad HDD se indica para unidades en funcionamiento.</block>
   <block id="4f0051637a20ec6776e183298f86f2f5" category="doc">Procedimiento que se debe utilizar</block>
-  <block id="9cc3abf99d341ddf4468a9377444f16d" category="doc">Apague el controlador dañado - AFF A900</block>
   <block id="6551c0f6e6caf0566c6eae152ecd7b38" category="doc">Sustituya el soporte del maletero - AFF A900</block>
   <block id="3d583022c2a0e3f44141400e25a3113d" category="list-text"><block ref="3d583022c2a0e3f44141400e25a3113d" category="inline-link-macro-rx"></block></block>
   <block id="e95c782f97493fda4a0794b55f88c5be" category="list-text"><block ref="e95c782f97493fda4a0794b55f88c5be" category="inline-link-macro-rx"></block></block>
@@ -7416,11 +7402,7 @@
   <block id="5ab526c2d8a23c39c3d68b1080ca3e89" category="doc">Guía detallada - AFF C400</block>
   <block id="ed1fe7521861c492832064f3b6daca68" category="paragraph">Cable de 100 GbE (QSFP28)</block>
   <block id="e0cc8c545401fc3b34281140c54756c7" category="admonition">Si las etiquetas de los puertos de la tarjeta no son visibles, puede identificar los puertos consultando la orientación de instalación de la tarjeta (en el caso de C400, el conector hembra PCIe se encuentra en el lado izquierdo de la ranura para tarjeta) y, a continuación, buscar la tarjeta según el número de pieza en Hardware Universe de NetApp, en la que se muestra un gráfico del bisel con las etiquetas de puerto. Puede encontrar el número de pieza de la tarjeta mediante el comando sysconfig -a o en la lista de empaquetado del sistema.</block>
-  <block id="80a7f396e1bc3ed796a9313a0aa75443" category="image-alt">Cableado de red drw c400 TNSC</block>
-  <block id="a905d4a42dacfc07296e02d609b47cb0" category="image-alt">cableado de red conmutada drw c400</block>
   <block id="670ce436320fc9008e2880db983e27d2" category="paragraph">Las siguientes opciones le muestran cómo conectar una o dos bandejas de unidades NS224 al sistema.</block>
-  <block id="66587f1aa86b9e296b1d1dd43ca73e3e" category="image-alt">drw c400 una bandeja ns224</block>
-  <block id="0b9e9bf3097ae366abf0d35474fb4b1f" category="image-alt">drw c400 dos bandejas ns224</block>
   <block id="eca713323e6fa9782ebae60357fc0453" category="doc">Sustituya un NVDIMM - AFF C400</block>
   <block id="719e61ffcf0d96924351db01f7e50603" category="doc">Vídeos - AFF C400</block>
   <block id="51e4f59a1aaa143b8d5c910f0a77328e" category="video-title">Animación: Instrucciones de instalación y configuración del AFF C400</block>
@@ -7804,4 +7786,80 @@
   <block id="66ba60034a525a69b1b5cf4344529c25" category="paragraph">Para quitar módulos I/O del chasis deficiente, incluidos los módulos NVRAM, siga la secuencia de pasos específica.</block>
   <block id="76558becedd79e95bf3921d5f08baeb6" category="list-text">Localice el módulo LED USB en la parte frontal del chasis deteriorado, directamente debajo de las bahías DCPM.</block>
   <block id="ac6201b7b810f81cfaef54d4d8fe63d5" category="list-text">Atornillador TORQ para tornillos del armario del sistema</block>
+  <block id="d581cc3762a48b4da22069bdeae81b8f" category="inline-link">Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos</block>
+  <block id="3f7ee1fb6cfdfd18c49f8e060fa8f9c9" category="paragraph">Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte<block ref="681b47fbe1cebc545a75e77efd420ec0" category="inline-link-rx"></block>.</block>
+  <block id="36ee27bc3fc7c617977b35534609c979" category="paragraph">Necesita:</block>
+  <block id="68d685ddbaa25f1a411d5e93d6f91913" category="list-text">Credenciales de administrador local para ONTAP.</block>
+  <block id="ac1036c822296c33d140ef7ba7cd246d" category="list-text">Clave de acceso para todo el clúster de gestión de claves incorporada de NetApp (OKM) si se usa cifrado de almacenamiento.</block>
+  <block id="93e6bf3fa29a7ebd2a4bb235a54deb94" category="list-text">Acceso a SP/BMC para cada controladora.</block>
+  <block id="d6562c849f41b9038124f0c304aed030" category="list-text">Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.</block>
+  <block id="d61b46d9cd719b77efb76269147aa377" category="list-text">Suspender trabajos de backup externo.</block>
+  <block id="527f18fb3f8ac4bca4ae01901a2c9317" category="list-text">Herramientas y equipos necesarios para la sustitución.</block>
+  <block id="3b6fc5695f8237510131da824ce788d0" category="inline-link">Apague y encienda sin problemas su Guía de resolución del sistema de almacenamiento</block>
+  <block id="03f7958d5b1fc7636429e97368e2f97f" category="admonition">Si el sistema es un StorageGRID de NetApp o ONTAP S3 que se utiliza como nivel de cloud de FabricPool, consulte la<block ref="6db187057e0b0e01589d1a1a7f510469" category="inline-link-rx"></block> después de realizar este procedimiento.</block>
+  <block id="ec965df16952820cbea39156c0dfe2f0" category="admonition">Si se utilizan LUN de cabina FlexArray, siga la documentación de cabina de almacenamiento específica del proveedor para el procedimiento de apagado que se debe ejecutar en esos sistemas después de realizar este procedimiento.</block>
+  <block id="ad8a5006901db5ea8481166a34f27929" category="inline-link">SU490: (Impacto: Crítico) Mejores prácticas para las SSD: Evite el riesgo de un fallo de unidad y de pérdida de datos si se apaga durante más de dos meses</block>
+  <block id="7d140f8b4464f9a8684a7943df8e74d9" category="admonition">Si utiliza SSD, consulte<block ref="13eec713a6c81535d5709aa561195b7a" category="inline-link-rx"></block></block>
+  <block id="356bf392971487f892daba5338258571" category="paragraph">Como práctica recomendada antes del cierre, debe:</block>
+  <block id="2ee5edc561a6167cf2d57a64ee655bef" category="inline-link">comprobaciones de estado del sistema</block>
+  <block id="7023017d0098f741d6569842ee62b922" category="list-text">Realizar adicionales<block ref="9ace058273de133e6accbea83a7d278a" category="inline-link-rx"></block>.</block>
+  <block id="f40b8507b340a958be200bec6d3758a0" category="list-text">Actualice ONTAP a una versión recomendada para el sistema.</block>
+  <block id="9f4d2068e7b3d206efc0252b3da597a5" category="inline-link">Alertas de estado y riesgos de Active IQ</block>
+  <block id="c5df4dcae9a001142a36959487445ff6" category="list-text">Resuelva cualquier<block ref="31b25beca26cb366eeb0665e3c0d7cbf" category="inline-link-rx"></block>. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.</block>
+  <block id="3923b7d5100131c85be2160c8b680704" category="list-text">Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.</block>
+  <block id="d9e8189e14354652821e1f0f10f12dfe" category="list-text">Desactive AutoSupport e indique cuánto tiempo espera que el sistema esté fuera de línea:</block>
+  <block id="ff3faabe8aca2ae4a92cf7dec5b62b8f" category="paragraph"><block ref="14fb036c43dbcde966a639d33554da5c" prefix="" category="inline-code"></block></block>
+  <block id="ac2a6618449930e8abeb32fd078d7716" category="list-text">Identifique la dirección del SP/BMC de todos los nodos:</block>
+  <block id="0d16db60da2c01b63ef84ee8d616c2fb" category="paragraph"><block ref="b206d268f79aeaa7c4f1e44684d2f080" prefix="" category="inline-code"></block></block>
+  <block id="a0fd5b31be719aeb26e2fc9c6991da9f" category="list-text">Salga del shell de cluster:<block ref="f24f62eeb789199b9b2e467df3b1876b" prefix=" " category="inline-code"></block></block>
+  <block id="cf814f480a03329076e1d0cf2f71d7e3" category="list-text">Inicie sesión en SP/BMC sobre SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior.</block>
+  <block id="aed4c23042b5f25dad252449f4ddcc59" category="paragraph">Si está usando una consola o portátil, inicie sesión en la controladora con las mismas credenciales de administrador de clúster.</block>
+  <block id="a3dcd96fdc725fa51c4161c8a03146ab" category="admonition">Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar el progreso.</block>
+  <block id="e2cba6e644aeaf95f80f688b880746da" category="list-text">Detenga todos los nodos del cluster:</block>
+  <block id="02e0d9b5c39d838c007bfad7b6e34196" category="paragraph"><block ref="b89a38fd8ae1ad809e5b3560be211bfa" prefix="" category="inline-code"></block>.</block>
+  <block id="aba2c36fe67a0528d4417c7e5c4da8a1" category="admonition">Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync:<block ref="03e2e719454253f2db864fa560da7899" prefix=" " category="inline-code"></block></block>
+  <block id="3171aeb3fa199cec60349b4529cc0178" category="list-text">Introduzca *y* para cada controlador en el clúster cuando lo vea<block ref="25cae4cb08eccf660db87cfb99a959d7" prefix=" " category="inline-code"></block></block>
+  <block id="a39c8c38e51a42fcfaac22367dd19064" category="list-text">Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.</block>
+  <block id="461bb1724a0adc2c975edfdd4b4923a1" category="list-text">Apague cada fuente de alimentación o desconéctela si no hay ningún interruptor de encendido/apagado de la fuente de alimentación.</block>
+  <block id="e3dc6cc26ed03ba51ee4327edde1e1fc" category="list-text">Desconecte el cable de alimentación de cada fuente de alimentación.</block>
+  <block id="0042f27885e192c9ea879dde4ac34445" category="list-text">Verifique que todas las controladoras, las bandejas de unidades y los switches asociados con el clúster estén apagados.</block>
+  <block id="3f80193798fcbb08cbe99cbe0a3aff95" category="paragraph">Después de reemplazar el chasis, encienda los componentes del clúster en el siguiente orden:</block>
+  <block id="f9604921fe40d48421b9ae74e9a50059" category="list-text">Encienda el interruptor</block>
+  <block id="85ee83d55e3fb9b20f9f17b7fb773ca0" category="list-text">Encienda las bandejas de unidades</block>
+  <block id="d692ae791953fc513c9f3fd94d866964" category="list-text">Encienda las controladoras</block>
+  <block id="6d0114cd2de3e017d8d76d6b9f2191fc" category="list-text">Encienda el interruptor:</block>
+  <block id="fe12fd40092a74cc86c0db3006d72880" category="list-text">Vuelva a conectar cada cable de alimentación de la PDU a la PSU.</block>
+  <block id="d79f0458e922251555ddc7baa3538dbc" category="list-text">Gire cada switch oscilante de la PSU a la posición de ENCENDIDO (si corresponde).</block>
+  <block id="420a1ffc592934afa358803642255547" category="list-text">Espere a que el interruptor se encienda.</block>
+  <block id="67935e6f17c778c98c8e80fce8e29a9f" category="list-text">Compruebe si hay alguna luz de fallo en el interruptor (tanto delantero como trasero).</block>
+  <block id="978a8732c5cda53a8b4a3de35d2184fd" category="list-text">Conéctese al switch a través de la dirección IP de administración.</block>
+  <block id="c72d57bd067b2b477426ef13c9c81629" category="list-text">Confirme el estado del switch (consulte la documentación del proveedor de switches para obtener más detalles).</block>
+  <block id="fc5b4d6235b015336cafcedc54683d5d" category="list-text">Repita el procedimiento para cada interruptor hasta que todos los interruptores estén encendidos y en buen estado.</block>
+  <block id="874c11301500ddf99db8a26ccc161200" category="list-text">Encienda las bandejas de unidades:</block>
+  <block id="6309302d98e4a634b65821ffb59dcafc" category="list-text">Espere a que se enciendan todas las bandejas de discos y que se aceleren las unidades.</block>
+  <block id="453fd8a2e005a3688cb57a1715403eb8" category="list-text">Asegúrese de que todos los ID de bandeja sean los valores esperados.</block>
+  <block id="43efaf94ccfd1b8ff73ede9310aa0726" category="list-text">Compruebe si hay luces de fallo en la bandeja de discos (delantera y trasera) que no existían antes del apagado.</block>
+  <block id="9a14737750e117b254a09e3e342bf4d4" category="list-text">Encienda las controladoras:</block>
+  <block id="1526ecbd5f3186fd0391bcab851746a6" category="list-text">Gire cada switch oscilante de la PSU a la posición de ENCENDIDO (si corresponde). Los pares de ALTA DISPONIBILIDAD que no están en el mismo chasis deben encenderse de forma simultánea.</block>
+  <block id="4ac3730c7728ff9f397c9c9c30e61398" category="list-text">Espere que se enciendan las controladoras del chasis.</block>
+  <block id="2a966b5531ce1a15adff1f9be922268a" category="list-text">Compruebe si hay luces de fallo en el chasis y en las controladoras (tanto delanteras como traseras).</block>
+  <block id="c908a555fb9bda03518faf090d62b55f" category="list-text">Repita esto en cada controladora/chasis hasta que todos estén encendidos.</block>
+  <block id="1ace3ad5235525fbfcabf5c9ed71d2c2" category="list-text">Conéctese a la dirección IP de SP o BMC de los nodos a través de SSH. Use este comando para obtener la dirección IP antes de apagarse:</block>
+  <block id="42bd22c6658be2e7f86763221caaff8d" category="list-text">Realizar comprobaciones de estado del sistema adicionales:</block>
+  <block id="6cae41ec99a87022e2ff84639c1c9bc1" category="list-text">Resuelva cualquier<block ref="31b25beca26cb366eeb0665e3c0d7cbf" category="inline-link-rx"></block></block>
+  <block id="a4e515a78d7900d16a4af3f913b033f7" category="list-text">Ejecución<block ref="48865c7c1d8013246e4e5f705a9105de" category="inline-link-rx"></block></block>
+  <block id="2d7735678080387bf2714cda931af8cf" category="inline-link">Cómo realizar una comprobación del estado de un clúster con un script en ONTAP</block>
+  <block id="b13401e632345d1a1c36a42722a9cdd7" category="list-text">Compruebe el estado del sistema como se describe en<block ref="8441a6aeb4c8951afc9d3ef26143aa41" category="inline-link-rx"></block></block>
+  <block id="36bc7c68ef7de2e917f4a186a4edaa58" category="list-text">Generar una tarea de mantenimiento Finalizar mensaje de AutoSupport:</block>
+  <block id="538f577c4284d097aef57681a2acf728" category="paragraph"><block ref="a0502e9e767995ecf84f499d84740634" prefix="" category="inline-code"></block></block>
+  <block id="c779830d2c1a694320dcf49ae503c75a" category="list-text">Asegúrese de que la devolución de control automática está activa:</block>
+  <block id="3d2d5e9a2a8cef4225a4bd073c2aeefb" category="paragraph"><block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix="" category="inline-code"></block></block>
+  <block id="a095b22aaa929c82c4414b8a51e710af" category="doc">Apague los controladores - AFF A900</block>
+  <block id="736a1f9cdd2dabb4a30feb86e55777ad" category="paragraph">Cable de 25 GbE (SFP28)</block>
+  <block id="bbeb14c0a41e32ab9190d6fef7d7d2de" category="list-text">Use la ilustración para completar el cableado entre las controladoras y los switches:</block>
+  <block id="3f90eae06a0fd4fa951102461bc035a2" category="image-alt">Cableado de red drw C400 TNSC IEOPS 1095</block>
+  <block id="dc70a7fbe1f21380db9b236898b87503" category="image-alt">Cableado de red conmutada drw C400 IEOPS 1096</block>
+  <block id="2a29b6abc01fa919029a6defab91ed09" category="list-text">Utilice la siguiente ilustración para conectar los cables de las controladoras a una única bandeja de unidades.</block>
+  <block id="cf05a1b835cc522d6ff312818c4655b5" category="image-alt">drw C400 ONE ns224 BANDEJA IEOPS 1097</block>
+  <block id="c8bb212781cb1ea1ac1f2bb19672260b" category="image-alt">drw C400 Dos bandejas ns224 IEOPS 1098</block>
 </blocks>
