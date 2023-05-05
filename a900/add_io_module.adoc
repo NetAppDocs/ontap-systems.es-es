@@ -136,7 +136,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Extraer el obturador de la ranura de destino:
 +
-.. Pulse el botón de leva numerado y con letras.
+.. Presione el pestillo de leva numerado y con letras.
 .. Gire el pestillo de la leva hacia abajo hasta que esté en la posición abierta.
 .. Extraer el obturador.
 
@@ -311,9 +311,9 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 . Desconecte cualquier cableado del módulo de E/S de destino.
 . Extraiga el módulo de I/o de destino del chasis:
 +
-.. Pulse el botón de leva numerado y con letras.
+.. Presione el pestillo de leva numerado y con letras.
 +
-El botón de leva se aleja del chasis.
+El pestillo de la leva se aleja del chasis.
 
 .. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
 +
@@ -358,10 +358,20 @@ Pestillo de leva de E/S completamente desbloqueado
 
 . Repita los pasos de desmontaje e instalación para sustituir los módulos adicionales de la controladora A.
 . Si el módulo de E/S de repuesto es un NIC, conecte el módulo o los módulos a los conmutadores de datos.
-. Reiniciar el nodo.
+. Reinicie la controladora desde el aviso del CARGADOR:
++
+.. Compruebe la versión de BMC en el controlador: `system service-processor show`
+.. Actualice el firmware de BMC si es necesario: `system service-processor image update`
+.. Reinicie el nodo: `bye`
 +
 
 NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
++
+
+NOTE: Si se produce un problema durante el reinicio, consulte https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S."]
+
+
 
 . Recupere la controladora de la otra controladora. `storage failover giveback -ofnode target_node_name`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
