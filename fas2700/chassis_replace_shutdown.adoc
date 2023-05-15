@@ -17,7 +17,7 @@ Apague o retome el controlador dañado siguiendo el procedimiento adecuado para 
 
 == Opción 1: Mayoría de las configuraciones
 
-Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos"^].
+Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte https://["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos"^].
 
 .Antes de empezar
 Necesita:
@@ -31,19 +31,19 @@ Necesita:
 
 
 
-NOTE: Si el sistema es un StorageGRID de NetApp o ONTAP S3 que se utiliza como nivel de cloud de FabricPool, consulte la https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Apague y encienda sin problemas su Guía de resolución del sistema de almacenamiento"] después de realizar este procedimiento.
+NOTE: Si el sistema es un StorageGRID de NetApp o ONTAP S3 que se utiliza como nivel de cloud de FabricPool, consulte la https://["Apague y encienda sin problemas su Guía de resolución del sistema de almacenamiento"] después de realizar este procedimiento.
 
 
 NOTE: Si se utilizan LUN de cabina FlexArray, siga la documentación de cabina de almacenamiento específica del proveedor para el procedimiento de apagado que se debe ejecutar en esos sistemas después de realizar este procedimiento.
 
 
-NOTE: Si utiliza SSD, consulte https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Impacto: Crítico) Mejores prácticas para las SSD: Evite el riesgo de un fallo de unidad y de pérdida de datos si se apaga durante más de dos meses"]
+NOTE: Si utiliza SSD, consulte https://["SU490: (Impacto: Crítico) Mejores prácticas para las SSD: Evite el riesgo de un fallo de unidad y de pérdida de datos si se apaga durante más de dos meses"]
 
 Como práctica recomendada antes del cierre, debe:
 
-* Realizar adicionales https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["comprobaciones de estado del sistema"].
+* Realizar adicionales https://["comprobaciones de estado del sistema"].
 * Actualice ONTAP a una versión recomendada para el sistema.
-* Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"]. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.
+* Resuelva cualquier https://["Alertas de estado y riesgos de Active IQ"]. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.
 
 
 .Pasos

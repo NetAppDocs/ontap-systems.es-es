@@ -28,14 +28,14 @@ El sistema debe cumplir ciertos requisitos antes de añadir en caliente bandejas
 
 * El sistema y la versión de ONTAP deben admitir las bandejas de discos que añade en caliente, incluidos los IOM, las unidades de disco y los cables SAS.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://["Hardware Universe de NetApp"]
 
 * El sistema debe tener una cantidad inferior a la cantidad máxima de unidades de disco compatibles y, al menos, la cantidad de bandejas de discos que haya pensado añadir en caliente.
 +
 No es posible superar la cantidad máxima de unidades de disco admitidas por el sistema después de añadir bandejas de discos en activo.
 
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://["Hardware Universe de NetApp"]
 
 * Si va a añadir en caliente una pila de una o varias bandejas de discos (directamente a las controladoras de la plataforma), el sistema debe tener suficientes puertos HBA SAS PCI SAS o integrados, o una combinación de ambos.
 +
@@ -54,7 +54,7 @@ Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han 
 Debe corregir todos los errores de cableado mediante las acciones correctivas proporcionadas por los mensajes de error.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://["Descargas de NetApp: Config Advisor"]
 
 
 
@@ -110,7 +110,7 @@ No puede utilizar este procedimiento para añadir bandejas de discos en activo q
 Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
+https://["Descargas de NetApp: Paquete de cualificación de disco"^]
 
 * La práctica recomendada es ejecutar Config Advisor antes y después de añadir una bandeja de discos en activo.
 +
@@ -123,17 +123,17 @@ Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las ac
 Se necesita acceso a la red para descargar Config Advisor.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://["Descargas de NetApp: Config Advisor"]
 
 * La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
 +
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://["Descargas de NetApp: Firmware de bandeja de discos"]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://["Descargas de NetApp: Firmware de la unidad de disco"]
 
 
 
@@ -451,7 +451,7 @@ Sustituya los cables de uno en uno y asegúrese de esperar al menos 70 segundos 
 
 . Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han cableado correctamente.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://["Descargas de NetApp: Config Advisor"]
 
 +
 Si se genera algún error de cableado SAS, siga las acciones correctivas proporcionadas.

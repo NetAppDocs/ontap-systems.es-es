@@ -16,7 +16,7 @@ Es posible intercambiar en caliente una unidad de disco con error en una bandeja
 .Antes de empezar
 * La unidad de disco de reemplazo debe ser compatible con la bandeja de discos DS460C.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://["Hardware Universe de NetApp"]
 
 * Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
 * La unidad de disco que desea quitar debe tener un error.
@@ -32,7 +32,7 @@ NOTE: Según el tipo y la capacidad de la unidad de disco, la unidad de disco pu
 Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
 
 +
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"]
+https://["Información general del cifrado de NetApp con la interfaz de línea de comandos"]
 
 
 
@@ -72,17 +72,17 @@ NOTE: Los campos magnéticos pueden destruir todos los datos de la unidad de dis
 Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
+https://["Descargas de NetApp: Paquete de cualificación de disco"^]
 
 * La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
 +
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://["Descargas de NetApp: Firmware de bandeja de discos"]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://["Descargas de NetApp: Firmware de la unidad de disco"]
 
 * El firmware de la unidad de disco se actualiza automáticamente (sin interrupciones) en unidades de disco nuevas con versiones de firmware no actuales.
 +
@@ -255,6 +255,6 @@ Debe volver a habilitar la asignación automática de propiedad de disco en amba
 
 . Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
 +
-Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
+Póngase en contacto con el soporte técnico en https://["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
 
 

@@ -18,7 +18,7 @@ Debe eliminar uno o más módulos de almacenamiento o NIC existentes en el siste
 * Si va a añadir el módulo X91148A como adaptador de almacenamiento, debe instalar el módulo en las ranuras 3 y/o 7.
 * Si va a añadir el módulo X91148A como NIC de 100 GbE, puede utilizar cualquier ranura abierta. Sin embargo, de forma predeterminada, las ranuras 3 y 7 se establecen como ranuras de almacenamiento. Si desea utilizar esas ranuras como ranuras de red y no agregará bandejas NS224, debe modificar las ranuras para el uso de redes con `storage port modify -node _node name_ -port _port name_ -mode network` comando para cada puerto. Consulte la Hardware Universe para ver otras ranuras que puede utilizar el módulo X91148A para la conexión en red.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://["Hardware Universe de NetApp"]
 
 * Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
 
@@ -30,7 +30,7 @@ https://hwu.netapp.com["Hardware Universe de NetApp"]
 Debe quitar uno o más módulos NIC o de almacenamiento existentes en su sistema para instalar uno o más módulos NIC X91148A en su sistema completamente lleno.
 
 .Pasos
-. Si va a agregar un módulo X91148A a una ranura que contiene un módulo NIC con el mismo número de puertos que el módulo X91148A, los LIF se migrarán automáticamente cuando se apaga el módulo de controlador. Si el módulo NIC que se va a sustituir tiene más puertos que el módulo X91148A, debe reasignar permanentemente los LIF afectados a un puerto doméstico diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente
+. Si va a agregar un módulo X91148A a una ranura que contiene un módulo NIC con el mismo número de puertos que el módulo X91148A, los LIF se migrarán automáticamente cuando se apaga el módulo de controlador. Si el módulo NIC que se va a sustituir tiene más puertos que el módulo X91148A, debe reasignar permanentemente los LIF afectados a un puerto doméstico diferente. Consulte https://["Migrar una LIF"] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente
 . Apague la controladora A:
 +
 .. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
@@ -104,7 +104,7 @@ Debe quitar uno o más módulos de almacenamiento o NIC existentes en el sistema
 
 
 .Pasos
-. Si va a añadir un módulo X91148A como un módulo de almacenamiento en las ranuras 3 y/o 7 en una ranura que tiene un módulo NIC existente, utilice System Manager para migrar de forma permanente los LIF a distintos puertos domésticos, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"].
+. Si va a añadir un módulo X91148A como un módulo de almacenamiento en las ranuras 3 y/o 7 en una ranura que tiene un módulo NIC existente, utilice System Manager para migrar de forma permanente los LIF a distintos puertos domésticos, como se describe en https://["Migrar una LIF"].
 . Apague la controladora A:
 +
 .. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
@@ -164,5 +164,5 @@ Pestillo de leva de E/S completamente desbloqueado
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode _target_node_name_`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Repita estos pasos para la controladora B.
-. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].
+. Instale y conecte los cables de las bandejas NS224 según se describe en https://["Adición en caliente de una bandeja de unidades NS224"].
 

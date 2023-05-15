@@ -68,7 +68,7 @@ Antes de sustituir un cajón de unidades, debe asegurarse de actualizar IOM12 FW
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://["Descargas de NetApp: Firmware de bandeja de discos"]
 
 . Si la bandeja contiene el agregado raíz de una de las controladoras del par de alta disponibilidad, o si decide detener el par de alta disponibilidad (en lugar de mantener el par de alta disponibilidad en funcionamiento), realice los siguientes subpasos; de lo contrario, vaya al siguiente paso.
 +
@@ -551,9 +551,9 @@ image:../media/legend_icon_01.png[""]
 . Si había detenido la pareja de alta disponibilidad, arranque ONTAP en ambas controladoras; de lo contrario, vaya al siguiente paso.
 . Si había movido datos de la bandeja y eliminado los agregados de datos, ahora puede usar los discos de reserva de la bandeja para crear un agregado o expandirse.
 +
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Flujo de trabajo de creación de agregados"]
+https://["Flujo de trabajo de creación de agregados"]
 
 +
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Flujo de trabajo de ampliación de agregados"]
+https://["Flujo de trabajo de ampliación de agregados"]
 
 
