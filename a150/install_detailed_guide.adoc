@@ -11,31 +11,29 @@ summary: Esta guía ofrece instrucciones detalladas paso a paso para la instalac
 
 
 [role="lead"]
-Esta guía ofrece instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. Utilice esta guía si desea instrucciones de instalación más detalladas.
+Aprenda a instalar su sistema AFF A150.
 
-Si dispone de una configuración MetroCluster, utilice el contenido de instalación de MetroCluster.
-
-https://["Documentación de MetroCluster"^]
+Si tiene una configuración de MetroCluster, utilice https://["Documentación de MetroCluster"^].
 
 
 
 == Paso 1: Preparar la instalación
 
 [role="lead"]
-Para instalar el sistema A150 de AFF, necesita crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
+Para instalar su sistema AFF A150, cree una cuenta en el sitio de soporte de NetApp, registre su sistema y obtenga las claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
-Es necesario tener acceso a Hardware Universe para obtener información sobre los requisitos del sitio, así como información adicional sobre el sistema configurado. También es posible que desee tener acceso a las notas de la versión de ONTAP para obtener más información sobre este sistema.
+.Antes de empezar
+* Asegúrese de tener acceso a. link:https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener información acerca de los requisitos del sitio, así como información adicional sobre el sistema configurado.
+* Asegúrese de tener acceso al link:http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Notas de la versión"^] Para su versión de ONTAP para obtener más información sobre este sistema.
+* Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+* Asegúrese de tener los siguientes elementos en su centro:
++
+** Espacio en rack para el sistema de almacenamiento
+** Destornillador Phillips número 2
+** Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web
+** Un portátil o consola con una conexión RJ-45 y acceso a un explorador Web
 
-https://["Hardware Universe de NetApp"^]
 
-http://["Busque las notas de la versión de ONTAP 9"^]
-
-Debe proporcionar lo siguiente en el sitio:
-
-* Espacio en rack para el sistema de almacenamiento
-* Destornillador Phillips número 2
-* Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web
-* Un portátil o consola con una conexión RJ-45 y acceso a un explorador Web
 
 
 .Pasos
@@ -47,22 +45,13 @@ image::../media/drw_ssn_label.png[etiqueta ssn drw]
 . Configure su cuenta:
 +
 .. Inicie sesión en su cuenta existente o cree una cuenta.
-.. Registre su sistema.
-+
-https://["Registro de productos de NetApp"]
+.. https://["Registre su sistema"].
 
 
-
-. Descargue e instale Config Advisor en su portátil.
-+
-https://["Descargas de NetApp: Config Advisor"]
-
+. Descargue e instale https://["Config Advisor"] en el portátil.
 . Realice un inventario y anote el número y los tipos de cables recibidos.
 +
-En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable no enumerado en la tabla, consulte la Hardware Universe para localizar el cable e identificar su uso.
-
-+
-https://["Hardware Universe de NetApp"]
+En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable que no aparece en la tabla, consulte https://["Hardware Universe de NetApp"] para localizar el cable e identificar su uso.
 
 +
 [cols="1,2,1,2"]
@@ -164,10 +153,7 @@ image:../media/oie_cable_power.png[""]
 Encendido del sistema
 
 |===
-. Descargue y rellene la _Cluster Configuration Worksheet_.
-+
-https://["Hoja de datos para la configuración del clúster"]
-
+. https://["Descargue y complete la Hoja de datos de configuración de clúster"].
 
 
 
@@ -175,7 +161,7 @@ https://["Hoja de datos para la configuración del clúster"]
 == Paso 2: Instale el hardware
 
 [role="lead"]
-Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
+Instale el sistema en un rack de 4 parantes o armario de sistema de NetApp según corresponda.
 
 .Pasos
 . Instale los kits de raíles, según sea necesario.
@@ -199,17 +185,17 @@ image::../media/drw_cable_management_arm_install.png[instalación de ARM de gest
 == Paso 3: Conecte los controladores a la red
 
 [role="lead"]
-Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
+Conecte mediante cable las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster.
 
+La red de gestión, la red de datos de UTA2 GbE, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
 
+[role="tabbed-block"]
+====
+.Opción 1: Clúster sin switches de dos nodos
+--
+Aprenda a conectar en cable un clúster sin switches de dos nodos.
 
-=== Opción 1: Cable de un clúster sin switch de dos nodos, configuración de red unificada
-
-[role="lead"]
-La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
-
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
-
+.Antes de empezar
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
@@ -217,218 +203,66 @@ image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
 
-.Pasos
-. Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:
+.Acerca de esta tarea
+Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
+
+Configuraciones de redes de datos de UTA2 GbE::
 +
+--
 image::../media/drw_2700_tnsc_unified_network_cabling_animated_gif.png[gif animados del cableado de red unificado drw 2700 tnsc]
 
+--
+Configuraciones de red Ethernet::
 +
-[cols="1,3"]
-|===
-| Paso | Ejecute cada controladora 
-
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster:
-
-** e0a a e0a
-** e0b a e0bimage:../media/drw_c190_u_tnsc_clust_cbling.png[""]
-
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Utilice uno de los siguientes tipos de cables para conectar los puertos de datos UTA2 a la red host:
-
-Un host FC
-
-** 0c y 0d
-** *O* 0e y 0f a 10 GbE
-** e0c y e0d
-** *o* e0e y e0f
-
-
-
-NOTE: Puede conectar un par de puertos como CNA y un par de puertos como FC, o puede conectar ambas parejas de puertos como CNA o ambas parejas de puertos como FC.
-
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:
-
-image:../media/drw_c190_u_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-NO enchufe los cables de alimentación en este momento.
-
-|===
-. Para cablear el almacenamiento, consulte link:install_detailed_guide.md#["Cableado de las controladoras a las bandejas de unidades"]
-
-
-
-
-=== Opción 2: Conecte un clúster con switches o una configuración de red unificada
-
-[role="lead"]
-La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.
-
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
-
-Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
-
-image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
-
-
-NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
-
-.Pasos
-. Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:
-+
-image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[gif animados de cableado de red unificada conmutada drw 2700]
-
-+
-[cols="1,3"]
-|===
-| Paso | Lleve a cabo cada módulo de la controladora 
-
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Cable e0a y e0b a los switches de interconexión del clúster con el cable de interconexión del clúster:
-
-image:../media/drw_c190_u_switched_clust_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Utilice uno de los siguientes tipos de cables para conectar los puertos de datos UTA2 a la red host:
-
-Un host FC
-
-** 0c y 0d
-** **o** 0e y 0f
-
-
-Una 10 GbE
-
-** e0c y e0d
-** **o** e0e y e0f
-
-
-
-NOTE: Puede conectar un par de puertos como CNA y un par de puertos como FC, o puede conectar ambas parejas de puertos como CNA o ambas parejas de puertos como FC.
-
-image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:
-
-image:../media/drw_c190_u_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-NO enchufe los cables de alimentación en este momento.
-
-|===
-. Para cablear el almacenamiento, consulte link:install_detailed_guide.md#["Cableado de las controladoras a las bandejas de unidades"]
-
-
-
-
-=== Opción 3: Cable de un clúster sin switch de dos nodos, configuración de red Ethernet
-
-[role="lead"]
-La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
-
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
-
-Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
-
-image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
-
-
-NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
-
-.Pasos
-. Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:
-+
+--
 image::../media/drw_2700_tnsc_ethernet_network_cabling_animated_gif.png[gif animados de cableado de red ethernet drw 2700 tnsc]
 
+--
+
+
+Realice los siguientes pasos en cada módulo del controlador.
+
+.Pasos
+. Conecte los puertos de interconexión de clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
+. Debe realizar una de las siguientes acciones:
 +
-[cols="1,3"]
-|===
-| Paso | Ejecute cada controladora 
+Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para cablear los puertos de datos UTA2 a la red de host.
++
+--
+** Para un host FC, utilice 0C y 0d * o* 0E y 0f.
+** Para un sistema 10GbE, utilice e0c y e0d *o* e0e y e0f.
++
+image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
 
-
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster:
-
-** e0a a e0a
-** e0b a e0bimage:../media/drw_c190_e_tnsc_clust_cbling.png[""]
-
++
+Puede conectar un par de puertos como CNA y un par de puertos como FC, o puede conectar ambas parejas de puertos como CNA o ambas parejas de puertos como FC.
 
 
 
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Utilice el cable RJ45 Cat 6 para conectar los puertos e0c a través de e0f a la red host:
-
+--
+Configuraciones de red Ethernet:: Utilice el cable Cat 6 RJ45 para conectar los puertos e0c a e0f a la red host. en la siguiente ilustración.
++
+--
 image:../media/drw_c190_e_rj45_cbling.png[""]
 
+--
 
 
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:
-
-image:../media/drw_c190_e_mgmt_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-NO enchufe los cables de alimentación en este momento.
-
-|===
-. Para cablear el almacenamiento, consulte link:install_detailed_guide.md#["Cableado de las controladoras a las bandejas de unidades"]
+. Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45.
++
+image:../media/drw_c190_u_mgmt_cbling.png[""]
 
 
 
 
-=== Opción 4: Cableado de un clúster conmutado, configuración de red Ethernet
+IMPORTANT: NO enchufe los cables de alimentación en este momento.
 
-[role="lead"]
-La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.
+--
+.Opción 2: Clúster de switches
+--
+Aprenda a conectar mediante cable un clúster con switches.
 
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
-
+.Antes de empezar
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
@@ -436,65 +270,74 @@ image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
 
-.Pasos
-. Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:
+.Acerca de esta tarea
+Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
+
+Cableado de red unificado::
 +
+--
+image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[gif animados de cableado de red unificada conmutada drw 2700]
+
+--
+Cableado de red Ethernet::
++
+--
 image::../media/drw_2700_switched_ethernet_network_cabling_animated_gif.png[gif animados de cableado de red ethernet conmutado drw 2700]
 
+--
+
+
+Realice los siguientes pasos en cada módulo del controlador.
+
+.Pasos
+. Para cada módulo de controladora, conecte los cables e0a y e0b a los switches de interconexión de clúster con el cable de interconexión de clúster.
 +
-[cols="1,2"]
-|===
-| Paso | Lleve a cabo cada módulo de la controladora 
+image:../media/drw_c190_u_switched_clust_cbling.png[""]
+
+. Debe realizar una de las siguientes acciones:
++
+Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para cablear los puertos de datos UTA2 a la red de host.
++
+--
+** Para un host FC, utilice 0C y 0d **o** 0E y 0f.
+** Para un sistema 10GbE, utilice e0c y e0d **o** e0e y e0f.
++
+image:../media/drw_c190_u_fc_10gbe_cbling.png[""]
+
++
+Puede conectar un par de puertos como CNA y un par de puertos como FC, o puede conectar ambas parejas de puertos como CNA o ambas parejas de puertos como FC.
 
 
- a| 
-image:../media/oie_legend_icon_1_lg.png[""]
- a| 
-Cable e0a y e0b a los switches de interconexión del clúster con el cable de interconexión del clúster:
 
-image:../media/drw_c190_e_switched_clust_cbling.png[""]
-
-
-
- a| 
-image:../media/oie_legend_icon_2_o.png[""]
- a| 
-Utilice el cable RJ45 Cat 6 para conectar los puertos e0c a través de e0f a la red host:
-
+--
+Configuraciones de red Ethernet:: Utilice el cable Cat 6 RJ45 para conectar los puertos e0c a e0f a la red host.
++
+--
 image:../media/drw_c190_e_rj45_cbling.png[""]
 
+--
 
 
- a| 
-image:../media/oie_legend_icon_3_lp.png[""]
- a| 
-Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:
-
-image:../media/drw_c190_e_mgmt_cbling.png[""]
+. Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45.
++
+image:../media/drw_c190_u_mgmt_cbling.png[""]
 
 
 
- a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
- a| 
-NO enchufe los cables de alimentación en este momento.
 
-|===
-. Para cablear el almacenamiento, consulte link:install_detailed_guide.md#["Cableado de las controladoras a las bandejas de unidades"]
+IMPORTANT: NO enchufe los cables de alimentación en este momento.
 
-
+--
+====
 
 
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
-[role="lead"]
-Debe cablear las controladoras a las bandejas con los puertos de almacenamiento internos. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo. Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
+Conecte las controladoras a las bandejas con los puertos de almacenamiento integrados. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo.
 
+.Acerca de esta tarea
+Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
 
-
-=== Opción 1: Conectar el almacenamiento en una pareja de alta disponibilidad con bandejas de unidades externas
-
-[role="lead"]
 Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
@@ -502,25 +345,15 @@ Asegúrese de comprobar que la flecha de la ilustración tenga la orientación c
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
 
 .Pasos
-. Conecte el cable de la pareja de alta disponibilidad con bandejas de unidades externas:
+. Conecte los cables de la pareja de alta disponibilidad con bandejas de unidades externas.
 +
-
-NOTE: En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles.
+En el siguiente ejemplo, se muestra el cableado para las bandejas de unidades DS224C. El cableado es similar al de otras bandejas de unidades compatibles.
 
 +
 image::../media/drw_a150_ha_storage_cabling_IEOPS-1032.svg[drw a150 ha cableado de almacenamiento IEOPS 1032]
 
+. Cablee los puertos de la bandeja a bandeja.
 +
-[cols="1,3"]
-|===
-| Paso | Ejecute cada controladora 
-
-
- a| 
-image:../media/oie_legend_icon_1_lo.png[""]
- a| 
-Cablee los puertos de la bandeja a bandeja.
-
 ** Puerto 3 de IOM a al puerto 1 del IOM A en la bandeja que se encuentra directamente debajo.
 ** Puerto 3 de IOM B al puerto 1 del IOM B en la bandeja directamente inferior.
 +
@@ -528,13 +361,8 @@ image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Cables HD Mini-SAS a
 
 
 
-
-
- a| 
-image:../media/oie_legend_icon_2_mb.png[""]
- a| 
-Conecte cada nodo a IOM A en la pila.
-
+. Conecte cada nodo a IOM A en la pila.
++
 ** Controladora 1 Puerto 0b a IOM a puerto 3 en la última bandeja de unidades de la pila.
 ** Puerto 0a de controladora 2 a puerto IOM a 1 en la primera bandeja de unidades en la pila.
 +
@@ -542,39 +370,27 @@ image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Cables HD Mini-SAS a
 
 
 
-
-
- a| 
-image:../media/oie_legend_icon_3_t.png[""]
- a| 
-Conecte cada nodo a IOM B en la pila
-
+. Conecte cada nodo a IOM B en la pila
++
 ** Controladora 1: Puerto 0a a puerto IOM B 1 en la primera bandeja de unidades en la pila.
 ** Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila.image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png[""] Cables HD Mini-SAS a mini-SAS HD
 
 
-|===
-+
-Si posee más de un paquete de bandeja de unidades, consulte _Guía de instalación y cableado_ para el tipo de bandeja de unidades.
 
-+
-link:../com.netapp.doc.hw-ds-sas3-icg/home.html["Instalación y cableado"]
 
-. Para completar la configuración del sistema, consulte link:install_detailed_guide.md#["Completar la configuración y los ajustes del sistema"]
+Si posee más de una pila de bandeja de unidades, consulte link:../com.netapp.doc.hw-ds-sas3-icg/home.html["Instalación y cableado"] para el tipo de bandeja de unidades.
 
 
 
-
-== Paso 5: Pasos completos para la instalación y la configuración del sistema
+== Paso 5: Complete la configuración del sistema
 
 [role="lead"]
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
-
-
-=== Opción 1: Completar la configuración del sistema si la detección de red está activada
-
-[role="lead"]
+[role="tabbed-block"]
+====
+.Opción 1: Si la detección de red está activada
+--
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
 
 .Pasos
@@ -617,44 +433,29 @@ Se abrirá System Manager.
 
 
 
-. Utilice la configuración guiada de System Manager para configurar el sistema con los datos recogidos en la _Guía de configuración de ONTAP_ de NetApp.
-+
-https://["Guía de configuración de ONTAP"]
-
+. Configure el sistema con los datos recogidos en el https://["Guía de configuración de ONTAP"].
 . Configure su cuenta y descargue Active IQ Config Advisor:
 +
-.. Inicie sesión en su cuenta existente o cree una cuenta.
-+
-https://["Registro de soporte de NetApp"]
-
-.. Registre su sistema.
-+
-https://["Registro de productos de NetApp"]
-
-.. Descargue Active IQ Config Advisor.
-+
-https://["Descargas de NetApp: Config Advisor"]
-
+.. Inicie sesión en su https://["cuenta existente o cuenta create and"].
+.. https://["Regístrese"] su sistema.
+.. Descargue https://["Active IQ Config Advisor"].
 
 
 . Compruebe el estado del sistema ejecutando Config Advisor.
-. Después de completar la configuración inicial, vaya a la https://["Recursos de documentación de ONTAP  ONTAP System Manager"] Página para obtener información sobre cómo configurar las funciones adicionales en ONTAP.
+. Después de completar la configuración inicial, vaya a la https://["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
 
 
-
-
-=== Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
-
-[role="lead"]
+--
+.Opción 2: Si la detección de red no está activada
+--
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.
 
 .Pasos
-. Conecte y configure el portátil o la consola:
+. Conecte el cable y configure su portátil o consola.
 +
 .. Ajuste el puerto de la consola del portátil o de la consola en 115,200 baudios con N-8-1.
 +
-
-NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo configurar el puerto de la consola.
+Consulte la ayuda en línea de su portátil o de la consola para obtener instrucciones sobre cómo configurar el puerto de la consola.
 
 .. Conecte el cable de la consola al portátil o a la consola y conecte el puerto de la consola del controlador mediante el cable de consola incluido con el sistema.
 +
@@ -706,35 +507,26 @@ NOTE: Si no sabe cómo configurar PuTTY, compruebe la ayuda en línea del ordena
 
 
 |===
-. Mediante System Manager en el portátil o la consola, configure su clúster:
+. Mediante System Manager en su portátil o consola, configure el clúster.
 +
 .. Dirija su navegador a la dirección IP de gestión de nodos.
 +
 
 NOTE: El formato de la dirección es https://[].
 
-.. Configure el sistema con los datos recogidos en la _Guía de configuración de ONTAP_ de NetApp.
-+
-https://["Guía de configuración de ONTAP"]
-
+.. Configure el sistema con los datos recogidos en el https://["Guía de configuración de ONTAP"].
 
 
 . Configure su cuenta y descargue Active IQ Config Advisor:
 +
-.. Inicie sesión en su cuenta existente o cree una cuenta.
-+
-https://["Registro de soporte de NetApp"]
-
-.. Registre su sistema.
-+
-https://["Registro de productos de NetApp"]
-
-.. Descargue Active IQ Config Advisor.
-+
-https://["Descargas de NetApp: Config Advisor"]
-
+.. Inicie sesión en su https://["cuenta existente o cuenta create and"].
+.. https://["Regístrese"] su sistema.
+.. Descargue https://["Active IQ Config Advisor"].
 
 
 . Compruebe el estado del sistema ejecutando Config Advisor.
-. Después de completar la configuración inicial, vaya a la https://["Recursos de documentación de ONTAP  ONTAP System Manager"] Página para obtener información sobre cómo configurar las funciones adicionales en ONTAP.
+. Después de completar la configuración inicial, vaya a la https://["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
 
+
+--
+====
