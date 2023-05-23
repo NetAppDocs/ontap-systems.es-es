@@ -285,7 +285,7 @@ Si se le solicita que anule el ID del sistema debido a una falta de coincidencia
 NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
 
 +
-Para obtener más información, consulte https://["Comandos de devolución manual"^] tema para anular el veto.
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["Comandos de devolución manual"^] tema para anular el veto.
 
 .. Una vez finalizada la devolución, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: `storage failover show`
 +
@@ -322,7 +322,7 @@ Esto es necesario si se cumplen las dos opciones siguientes:
 ** La configuración de MetroCluster está en estado de conmutación.
 ** La controladora de sustitución es el propietario actual de los discos del sitio de recuperación ante desastres.
 +
-Consulte https://["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"] si quiere más información.
+Consulte https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"] si quiere más información.
 
 
 
@@ -497,4 +497,4 @@ NOTE: Puede utilizar el `security key-manager key query -key-type NSE-AK` Comand
 == Paso 7: Devuelva la pieza que falló a NetApp
 
 [role="lead"]
-Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://["Retorno de artículo  sustituciones"] para obtener más información.
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

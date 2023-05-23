@@ -39,19 +39,19 @@ Si aparece el campo compatibilidad con pilas mixtas SAS2/SAS3, el sistema solo a
 
 ** Vaya a Hardware Universe y desplácese hasta la información de la plataforma.
 +
-https://["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 
 
 * Si agrega una bandeja a una configuración MetroCluster, la configuración debe satisfacer todos los requisitos en las guías de instalación y configuración de MetroCluster.
 +
-http://["Guía de instalación y configuración de MetroCluster IP"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["Guía de instalación y configuración de MetroCluster IP"]
 
 +
-http://["Guía de instalación y configuración de MetroCluster con ampliación de ONTAP 9"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["Guía de instalación y configuración de MetroCluster con ampliación de ONTAP 9"]
 
 +
-http://["Guía de instalación y configuración de MetroCluster estructural de ONTAP 9"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["Guía de instalación y configuración de MetroCluster estructural de ONTAP 9"]
 
 * La pila de bandejas IOM6, a la que se añade en caliente una bandeja IOM12, debe cablearse con cables de cobre SAS (para todas las conexiones de bandeja a bandeja y de controladora a pila).
 +
@@ -66,14 +66,14 @@ NOTE: Si la pila de bandeja IOM6 está cableada con cualquier cable óptico SAS,
 No puede haber superado el número máximo de unidades admitidas para el sistema después de añadir en caliente bandejas IOM12/IOM12B.
 
 +
-https://["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 * El sistema no puede tener mensajes de error de cableado SAS.
 +
 Debe corregir todos los errores de cableado mediante las acciones correctivas proporcionadas por los mensajes de error.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 * Debe haber pedido y recibido las bandejas IOM12/IOM12B y el número y los tipos adecuados de cables de cobre SAS.
 +
@@ -105,16 +105,16 @@ Si aparece algo más en el campo Soporte de pila mixta SAS2/SAS3, como todos o c
 
 ** Vaya a Hardware Universe y desplácese hasta la información de la plataforma.
 +
-https://["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 
 
 * La configuración debe satisfacer todos los requisitos en las guías de instalación y configuración de MetroCluster.
 +
-https://["Instalación y configuración de una configuración de Stretch MetroCluster"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/index.html["Instalación y configuración de una configuración de Stretch MetroCluster"]
 
 +
-https://["Instalación y configuración de una configuración de MetroCluster estructural"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Instalación y configuración de una configuración de MetroCluster estructural"]
 
 * La pila de bandejas IOM6, a la que se añade en caliente una bandeja IOM12/IOM12B, debe cablearse con cables de cobre SAS (para todas las conexiones de bandeja a bandeja y de controladora a pila).
 +
@@ -176,10 +176,10 @@ NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
 
 * *Mejor práctica:* la mejor práctica es tener versiones actuales del firmware de la bandeja (IOM) y de las unidades en el sistema antes de añadir en caliente una bandeja.
 +
-https://["Descargas de NetApp: Firmware de bandeja de discos"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
 
 +
-https://["Descargas de NetApp: Firmware de la unidad de disco"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
 
 
 
@@ -191,14 +191,14 @@ NOTE: No revierte el firmware a una versión que no admite la bandeja y sus comp
 Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
 
 +
-https://["Descargas de NetApp: Paquete de cualificación de disco"^]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
 
 * *Mejor práctica:* la mejor práctica es ejecutar Active IQ Config Advisor antes y después de añadir en caliente un estante.
 +
 Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se proporciona una Snapshot de la conectividad SAS existente, se comprueban las versiones del firmware de la bandeja (IOM) y se puede verificar un ID de bandeja ya en uso en el sistema. Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se cablean correctamente y que los ID de bandeja son únicos en el sistema.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 * *Mejor práctica:* la mejor práctica es tener ACP en banda (IBACP) funcionando en su sistema.
 +
@@ -209,7 +209,7 @@ Debe migrar a IBACP y eliminar el cableado ACP fuera de banda.
 
 ** Si el sistema no ejecuta IBACP y el sistema cumple los requisitos de IBACP, puede migrar el sistema a IBACP antes de añadir una bandeja IOM12.
 +
-https://["Instrucciones para migrar a IBACP"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["Instrucciones para migrar a IBACP"]
 
 +
 
@@ -369,7 +369,7 @@ Si dispone de un modelo de plataforma con almacenamiento integrado, los ID de ba
 
 . Si es necesario, verifique los ID de bandeja que ya están en uso ejecutando Active IQ Config Advisor.
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 +
 También puede ejecutar el `storage shelf show -fields shelf-id` Comando para ver una lista de los ID de bandeja que ya se están utilizando (y duplicados si están presentes) en el sistema.
@@ -626,7 +626,7 @@ De lo contrario, vaya al paso 4.
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.
 +

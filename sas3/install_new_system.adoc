@@ -71,7 +71,7 @@ La ACP en banda no es compatible con las configuraciones de ruta única de alta 
 Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
 
 +
-https://["Descargas de NetApp: Paquete de cualificación de disco"^]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
 
 * La práctica recomendada es descargar y ejecutar Config Advisor después de una instalación nueva del sistema.
 +
@@ -84,7 +84,7 @@ Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las ac
 Se necesita acceso a la red para descargar Config Advisor.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 
 
@@ -409,7 +409,7 @@ Puede utilizar el carácter comodín para asignar más de un disco a la vez.
 Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 +
 También puede ejecutar el `storage shelf show -fields shelf-id` Comando para ver una lista de los ID de bandeja que ya se están utilizando (y duplicados si están presentes) en el sistema.

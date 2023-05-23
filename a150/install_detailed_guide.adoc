@@ -13,7 +13,7 @@ summary: Esta guía ofrece instrucciones detalladas paso a paso para la instalac
 [role="lead"]
 Aprenda a instalar su sistema AFF A150.
 
-Si tiene una configuración de MetroCluster, utilice https://["Documentación de MetroCluster"^].
+Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentación de MetroCluster"^].
 
 
 
@@ -45,13 +45,13 @@ image::../media/drw_ssn_label.png[etiqueta ssn drw]
 . Configure su cuenta:
 +
 .. Inicie sesión en su cuenta existente o cree una cuenta.
-.. https://["Registre su sistema"].
+.. https://mysupport.netapp.com/eservice/registerSNoAction.do?moduleName=RegisterMyProduct["Registre su sistema"].
 
 
-. Descargue e instale https://["Config Advisor"] en el portátil.
+. Descargue e instale https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Config Advisor"] en el portátil.
 . Realice un inventario y anote el número y los tipos de cables recibidos.
 +
-En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable que no aparece en la tabla, consulte https://["Hardware Universe de NetApp"] para localizar el cable e identificar su uso.
+En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable que no aparece en la tabla, consulte https://hwu.netapp.com["Hardware Universe de NetApp"] para localizar el cable e identificar su uso.
 
 +
 [cols="1,2,1,2"]
@@ -153,7 +153,7 @@ image:../media/oie_cable_power.png[""]
 Encendido del sistema
 
 |===
-. https://["Descargue y complete la Hoja de datos de configuración de clúster"].
+. https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Descargue y complete la Hoja de datos de configuración de clúster"].
 
 
 
@@ -433,16 +433,16 @@ Se abrirá System Manager.
 
 
 
-. Configure el sistema con los datos recogidos en el https://["Guía de configuración de ONTAP"].
+. Configure el sistema con los datos recogidos en el https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"].
 . Configure su cuenta y descargue Active IQ Config Advisor:
 +
-.. Inicie sesión en su https://["cuenta existente o cuenta create and"].
-.. https://["Regístrese"] su sistema.
-.. Descargue https://["Active IQ Config Advisor"].
+.. Inicie sesión en su https://mysupport.netapp.com/site/user/registration["cuenta existente o cuenta create and"].
+.. https://mysupport.netapp.com/site/systems/register["Regístrese"] su sistema.
+.. Descargue https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"].
 
 
 . Compruebe el estado del sistema ejecutando Config Advisor.
-. Después de completar la configuración inicial, vaya a la https://["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
+. Después de completar la configuración inicial, vaya a la https://docs.netapp.com/us-en/ontap-family/["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
 
 
 --
@@ -512,20 +512,20 @@ NOTE: Si no sabe cómo configurar PuTTY, compruebe la ayuda en línea del ordena
 .. Dirija su navegador a la dirección IP de gestión de nodos.
 +
 
-NOTE: El formato de la dirección es https://[].
+NOTE: El formato de la dirección es https://x.x.x.x[].
 
-.. Configure el sistema con los datos recogidos en el https://["Guía de configuración de ONTAP"].
+.. Configure el sistema con los datos recogidos en el https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"].
 
 
 . Configure su cuenta y descargue Active IQ Config Advisor:
 +
-.. Inicie sesión en su https://["cuenta existente o cuenta create and"].
-.. https://["Regístrese"] su sistema.
-.. Descargue https://["Active IQ Config Advisor"].
+.. Inicie sesión en su https://mysupport.netapp.com/site/user/registration["cuenta existente o cuenta create and"].
+.. https://mysupport.netapp.com/site/systems/register["Regístrese"] su sistema.
+.. Descargue https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"].
 
 
 . Compruebe el estado del sistema ejecutando Config Advisor.
-. Después de completar la configuración inicial, vaya a la https://["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
+. Después de completar la configuración inicial, vaya a la https://docs.netapp.com/us-en/ontap-family/["Documentación de ONTAP"] Sitio para obtener información sobre la configuración de características adicionales en ONTAP.
 
 
 --

@@ -18,12 +18,12 @@ Puede añadir un módulo X91148A a una ranura para módulos vacía del sistema c
 * Debe haber una o más ranuras abiertas disponibles en el sistema.
 * Si hay varias ranuras disponibles, instale el módulo de acuerdo con la matriz de prioridad de ranura para el módulo X91148A en el Hardware Universe.
 +
-https://["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 * Si va a añadir el módulo X91148A como módulo de almacenamiento, debe instalar las ranuras para módulos 3 y/o 7.
 * Si va a añadir el módulo X91148A como NIC de 100 GbE, puede utilizar cualquier ranura abierta. Sin embargo, de forma predeterminada, las ranuras 3 y 7 se establecen como ranuras de almacenamiento. Si desea utilizar esas ranuras como ranuras de red y no agregará bandejas NS224, debe modificar las ranuras para el uso de redes con `storage port modify -node _node name_ -port _port name_ -mode network` comando. Consulte la Hardware Universe para ver otras ranuras que puede utilizar el módulo X91148A para la conexión en red.
 +
-https://["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"]
 
 * Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
 
@@ -105,5 +105,5 @@ La conexión de la consola muestra que el nodo cae al aviso del CARGADOR cuando 
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode target_node_name`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Repita estos pasos para la controladora B.
-. Instale y conecte los cables de las bandejas NS224 según se describe en https://["Adición en caliente - bandejas NS224"].
+. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente - bandejas NS224"].
 

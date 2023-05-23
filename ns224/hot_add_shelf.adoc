@@ -21,11 +21,11 @@ Su par de alta disponibilidad debe cumplir determinados requisitos antes de aña
 
 * El modelo y la versión de su plataforma de ONTAP deben ser compatibles con las bandejas NS224 y las unidades que se añaden en caliente.
 +
-https://["Hardware Universe de NetApp"^]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * Debe tener el número y el tipo de cables correctos para conectar la bandeja.
 +
-https://["Hardware Universe de NetApp"^]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * Una pareja de alta disponibilidad debe tener suficientes puertos disponibles compatibles con roce para admitir la cantidad de bandejas que va a añadir en caliente.
 +
@@ -35,7 +35,7 @@ Para cada bandeja que se va a añadir en caliente, se necesitan al menos dos pue
 Si el par de alta disponibilidad no tiene suficientes puertos disponibles para roce y el modelo de plataforma admite el uso de tarjetas PCIe o módulos de I/o compatibles con roce, debe haber instalado las tarjetas adicionales o módulos de I/o en las ranuras de controladora correctas, como lo admite el modelo de plataforma.
 
 +
-https://["Hardware Universe de NetApp"^]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 +
 [NOTE]
@@ -54,14 +54,14 @@ link:../fas9000/caching-module-and-core-dump-module-replace.html["Sustituya el m
 No puede haber superado el número máximo de bandejas compatibles con su pareja de alta disponibilidad después de añadir bandejas en activo.
 
 +
-https://["Hardware Universe de NetApp"^]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * Si añade en caliente una bandeja a una pareja de alta disponibilidad que ya tiene una bandeja NS224, su par de alta disponibilidad no puede tener mensajes de error de cableado de almacenamiento y debe cablearse como alta disponibilidad multivía.
 +
 Puede ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado de almacenamiento y las acciones correctivas que debe tomar.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 * Necesita un clip de papel con un bolígrafo enderezado o con punta estrecha.
 +
@@ -81,21 +81,21 @@ Antes de añadir en caliente una bandeja de unidades NS224, debe familiarizarse 
 Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
 
 +
-https://["Descargas de NetApp: Paquete de cualificación de disco"^]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
 
 * *Mejor práctica:* la mejor práctica es ejecutar Active IQ Config Advisor antes y después de añadir en caliente un estante.
 +
 Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se obtiene un captura de snap de la conectividad Ethernet (ENET) de la bandeja existente, se comprueban las versiones de firmware del módulo de bandeja NVMe (NSM) y se puede verificar un ID de bandeja que ya se está usando en el par de alta disponibilidad. Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 * *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de añadir una bandeja nueva.
 +
-https://["Descargas de NetApp: Firmware de bandeja de discos"^]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
 
 +
-https://["Descargas de NetApp: Firmware de la unidad de disco"^]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
 
 +
 
@@ -350,7 +350,7 @@ Si es necesario, se pueden hacer referencia a las ilustraciones de cableado que 
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 
 
@@ -560,7 +560,7 @@ image::../media/drw_ns224_a900_4shelves.png[drw ns224 a900 4estantes]
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -612,7 +612,7 @@ image::../media/drw_ns224_a250_c250_f500f_1shelf_IEOPS-963.svg[drw ns224 a250 c2
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -713,7 +713,7 @@ image::../media/drw_ns224_a700_2shelves.png[drw ns224 a700 2 estantes]
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -818,7 +818,7 @@ image::../media/drw_ns224_a800_c800_2shelves_IEOPS-966.svg[drw ns224 a800 c800 2
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -909,7 +909,7 @@ image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[drw ns224 a400 2 bandejas 
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -1000,7 +1000,7 @@ image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[drw ns224 c400 2 estantes 
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y volver a habilitar la asignación automática de unidades, si es necesario.
 +
@@ -1052,7 +1052,7 @@ image::../media/drw_ns224_a320_2shelves_direct_attached.png[drw ns224 a320 2 est
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://["Descargas de NetApp: Config Advisor"^]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y volver a habilitar la asignación automática de unidades, si es necesario.
 +

@@ -48,7 +48,7 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 . Encienda las fuentes de alimentación cambiando el interruptor de balancín a *ON* y espere a que los controladores se enciendan por completo.
 . Compruebe si hay alguna luz de fallo en la parte delantera y trasera del chasis y las controladoras después del encendido.
 . Conéctese a la dirección IP de SP o BMC de los nodos a través de SSH. Esta será la misma dirección utilizada para apagar los nodos.
-. Realice comprobaciones de estado adicionales, como se describe en https://["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
+. Realice comprobaciones de estado adicionales, como se describe en https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
 . Vuelva a activar AutoSupport (finalice el mensaje de la ventana de mantenimiento):
 `system node autosupport invoke -node * -type all -message MAINT=end`
 
@@ -58,9 +58,9 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 NOTE: Como práctica recomendada, debe realizar lo siguiente:
 
-* Resuelva cualquier https://["Alertas de estado y riesgos de Active IQ"^] (Active IQ tardará tiempo en procesar los mensajes de AutoSupport posteriores al encendido; se espera un retraso en los resultados)
-* Ejecución https://["Active IQ Config Advisor"^]
-* Compruebe el estado del sistema mediante https://["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
+* Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"^] (Active IQ tardará tiempo en procesar los mensajes de AutoSupport posteriores al encendido; se espera un retraso en los resultados)
+* Ejecución https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]
+* Compruebe el estado del sistema mediante https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
 
 
 ====
@@ -184,4 +184,4 @@ Determine la causa del problema.
 
 == Paso 4: Devuelva la pieza que falló a NetApp
 
-Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://["Retorno de artículo  sustituciones"] para obtener más información.
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

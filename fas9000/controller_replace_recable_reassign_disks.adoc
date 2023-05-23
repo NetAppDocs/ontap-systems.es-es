@@ -21,7 +21,7 @@ Después de ejecutar los diagnósticos, debe recuperar las conexiones de red y d
 
 .Pasos
 . Recuperar el sistema.
-. Compruebe que el cableado sea correcto mediante el https://["Active IQ Config Advisor"].
+. Compruebe que el cableado sea correcto mediante el https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
 +
 .. Descargue e instale Config Advisor.
 .. Introduzca la información del sistema de destino y haga clic en Collect Data.
@@ -72,8 +72,8 @@ Puede introducir el siguiente comando para supervisar el progreso del comando sa
 
 . Si el sistema de almacenamiento tiene configurado el cifrado de volúmenes o el almacenamiento, debe restaurar la funcionalidad de cifrado de volúmenes o almacenamiento usando uno de los siguientes procedimientos, en función de si usa la gestión de claves externa o incorporada:
 +
-** https://["Restaure las claves de cifrado de gestión de claves incorporadas"^]
-** https://["Restaure las claves de cifrado de gestión de claves externas"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
 
 
 . Proporcione al nodo:
@@ -90,7 +90,7 @@ Si se le solicita que anule el ID del sistema debido a una falta de coincidencia
 NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
 
 +
-http://["Busque la Guía de configuración de alta disponibilidad para su versión de ONTAP 9"]
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Busque la Guía de configuración de alta disponibilidad para su versión de ONTAP 9"]
 
 .. Una vez finalizada la devolución, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: `storage failover show`
 +
@@ -127,7 +127,7 @@ Esto es necesario si se cumplen las dos opciones siguientes:
 ** La configuración de MetroCluster está en estado de conmutación.
 ** El nodo _regrse_ es el propietario actual de los discos del sitio de recuperación ante desastres.
 +
-https://["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"]
+https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"]
 
 
 

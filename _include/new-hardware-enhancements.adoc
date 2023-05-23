@@ -6,7 +6,7 @@ Los procedimientos de actualización de hardware se han simplificado en ONTAP 9.
 
 Consulte la siguiente tabla para ver los procedimientos de actualización disponibles. Consulte cada guía para obtener más detalles para determinar si el procedimiento es adecuado.
 
-Para obtener más información sobre procedimientos específicos de MetroCluster, consulte https://["Seleccione un método de actualización o actualización"].
+Para obtener más información sobre procedimientos específicos de MetroCluster, consulte https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["Seleccione un método de actualización o actualización"].
 
 [cols="4*"]
 |===
@@ -16,7 +16,7 @@ Para obtener más información sobre procedimientos específicos de MetroCluster
  a| 
 de 9.8 a 9.0.x
  a| 
-https://["Guía exprés de actualización del hardware de la controladora"] (Moviendo el almacenamiento físico existente)
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Guía exprés de actualización del hardware de la controladora"] (Moviendo el almacenamiento físico existente)
  a| 
 No
  a| 
@@ -25,7 +25,7 @@ No
 
 
  a| 
-https://["Guía exprés de actualización del hardware de la controladora"] (Mover volúmenes a nuevo almacenamiento)
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Guía exprés de actualización del hardware de la controladora"] (Mover volúmenes a nuevo almacenamiento)
  a| 
 Sí
  a| 
@@ -36,7 +36,7 @@ No
  a| 
 9.8
  a| 
-https://["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.8"]
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.8"]
  a| 
 Sí
  a| 
@@ -47,7 +47,7 @@ Sí (FC)
  a| 
 9.8
  a| 
-https://["Utilice la reubicación de agregados para actualizar manualmente el hardware de la controladora que ejecuta ONTAP 9.8 o posterior"]
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["Utilice la reubicación de agregados para actualizar manualmente el hardware de la controladora que ejecuta ONTAP 9.8 o posterior"]
  a| 
 Sí
  a| 
@@ -58,7 +58,7 @@ Sí (FC)
  a| 
 9.7 a 9.5
  a| 
-https://["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.5 a ONTAP 9.7"]
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.5 a ONTAP 9.7"]
  a| 
 Sí
  a| 
@@ -69,7 +69,7 @@ Sí (FC)
  a| 
 9.7 y anteriores
  a| 
-https://["Actualizar controladoras con reubicación de agregados a Actualizar manualmente hardware de controladora que ejecuta ONTAP 9.7 y versiones anteriores"]
+https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["Actualizar controladoras con reubicación de agregados a Actualizar manualmente hardware de controladora que ejecuta ONTAP 9.7 y versiones anteriores"]
  a| 
 Sí
  a| 

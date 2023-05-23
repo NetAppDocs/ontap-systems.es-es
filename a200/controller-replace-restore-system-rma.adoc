@@ -2,7 +2,7 @@
 permalink: a200/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: aff a200, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: 'Para restaurar el funcionamiento completo del sistema, debe restaurar la configuración del cifrado de almacenamiento de NetApp (si es necesario), instalar licencias para la nueva controladora y devolver la pieza con error a NetApp, como se describe en las instrucciones de RMA que se incluyen en el kit. Póngase en contacto con el soporte técnico en https://["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.' 
+summary: 'Para restaurar el funcionamiento completo del sistema, debe restaurar la configuración del cifrado de almacenamiento de NetApp (si es necesario), instalar licencias para la nueva controladora y devolver la pieza con error a NetApp, como se describe en las instrucciones de RMA que se incluyen en el kit. Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.' 
 ---
 = Restauración completa del sistema: AFF A200
 :allow-uri-read: 
@@ -28,7 +28,7 @@ Las claves de licencia deben tener el formato de 28 caracteres.
 Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
 
 .Pasos
-. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
+. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
 +
 
 NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
@@ -56,7 +56,7 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 . Registre el número de serie del sistema con el soporte de NetApp.
 +
 ** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
-** Si AutoSupport no está habilitado, llame al https://["Soporte de NetApp"] para registrar el número de serie.
+** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
 
 
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
@@ -66,4 +66,4 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 
 == Paso 3: Devuelva la pieza que falló a NetApp
 
-Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://["Retorno de artículo  sustituciones"] para obtener más información.
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

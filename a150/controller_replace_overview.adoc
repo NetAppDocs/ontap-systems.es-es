@@ -15,7 +15,7 @@ Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar
 
 * Todas las bandejas de unidades deben funcionar correctamente.
 * Si su sistema está en un par ha, el controlador en buen estado debe ser capaz de tomar el controlador que se va a sustituir (denominado en este procedimiento el "'controlador dañado'").
-* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
+* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
 +
 Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimiento de sustitución de una controladora en una configuración de MetroCluster de cuatro u ocho nodos es el mismo que el de una pareja de alta disponibilidad. No es necesario realizar pasos específicos de MetroCluster porque el fallo está limitado a un par de alta disponibilidad y pueden utilizarse comandos de recuperación tras fallos del almacenamiento para proporcionar un funcionamiento no disruptivo durante el reemplazo.
 

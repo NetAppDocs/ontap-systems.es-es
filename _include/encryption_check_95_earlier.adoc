@@ -37,7 +37,7 @@ Si algún volumen aparece en la salida, NVE se configura y debe verificar la con
 Si el comando falla, póngase en contacto con el soporte de NetApp.
 
 +
-http://["mysupport.netapp.com"]
+http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 .. Compruebe que el `Restored` la columna muestra `yes` para todas las claves de autenticación y que se muestran todos los gestores de claves `available`: `security key-manager query`
 .. Apague el controlador dañado.
@@ -59,7 +59,7 @@ http://["mysupport.netapp.com"]
 *** Ejecute el asistente de configuración Key-Manager: `security key-manager setup -node target/impaired node name`
 +
 
-NOTE: Introduzca la clave de acceso de gestión de claves incorporada del cliente en el símbolo del sistema de. Si no se puede proporcionar la frase de contraseña, póngase en contacto con http://["mysupport.netapp.com"]
+NOTE: Introduzca la clave de acceso de gestión de claves incorporada del cliente en el símbolo del sistema de. Si no se puede proporcionar la frase de contraseña, póngase en contacto con http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 *** Compruebe que el `Restored` la columna muestra `yes` para toda la clave de autenticación: `security key-manager key show -detail`
 *** Vaya al modo de privilegios avanzado e introduzca `y` cuando se le solicite continuar: `set -priv advanced`
@@ -92,7 +92,7 @@ NOTE: Introduzca la clave de acceso de gestión de claves incorporada del client
 Si el comando falla, póngase en contacto con el soporte de NetApp.
 
 +
-http://["mysupport.netapp.com"]
+http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 .. Compruebe que el `Restored` la columna muestra `yes` para todas las claves de autenticación y que se muestran todos los gestores de claves `available`: `security key-manager query`
 .. Apague el controlador dañado.
@@ -114,7 +114,7 @@ http://["mysupport.netapp.com"]
 *** Ejecute el asistente de configuración Key-Manager: `security key-manager setup -node target/impaired node name`
 +
 
-NOTE: Introduzca la frase de contraseña de OKM del cliente en la solicitud. Si no se puede proporcionar la frase de contraseña, póngase en contacto con http://["mysupport.netapp.com"]
+NOTE: Introduzca la frase de contraseña de OKM del cliente en la solicitud. Si no se puede proporcionar la frase de contraseña, póngase en contacto con http://mysupport.netapp.com/["mysupport.netapp.com"]
 
 *** Compruebe que el `Restored` la columna muestra `yes` para todas las claves de autenticación: `security key-manager key show -detail`
 *** Vaya al modo de privilegios avanzado e introduzca `y` cuando se le solicite continuar: `set -priv advanced`

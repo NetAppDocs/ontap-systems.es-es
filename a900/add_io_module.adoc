@@ -14,8 +14,8 @@ summary: Puede agregar un módulo de E/S al sistema, ya sea reemplazando un mód
 Puede agregar un módulo de E/S al sistema agregando un nuevo módulo de E/S a un sistema con ranuras vacías o sustituyendo un módulo de E/S por uno nuevo en un sistema completamente cargado.
 
 .Antes de empezar
-* Compruebe la https://["Hardware Universe de NetApp"^] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
-* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://["Hardware Universe de NetApp"^] Y utilice el mejor disponible para su módulo de E/S.
+* Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"^] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
+* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"^] Y utilice el mejor disponible para su módulo de E/S.
 * Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.
 * Asegúrese de que todos los demás componentes funcionan correctamente.
 
@@ -162,7 +162,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Si utiliza las ranuras 3 y/o 7 para las redes, utilice `storage port modify -node __<node name>__ -port __<port name>__ -mode network` comando para convertir la ranura para su uso en la red.
 . Repita estos pasos para la controladora B.
-. Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en https://["Adición en caliente de una bandeja de unidades NS224"^].
+. Si ha instalado un módulo de E/S de almacenamiento, instale y conecte los cables de las bandejas NS224, como se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"^].
 
 
 
@@ -188,14 +188,14 @@ Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.
  a| 
 Módulo de E/S NIC con menos puertos
  a| 
-Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte https://["Migrar una LIF"^] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.
+Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.
 
 
 
  a| 
 Módulo de E/S de NIC con un módulo de E/S de almacenamiento
  a| 
-Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en https://["Migrar una LIF"^].
+Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^].
 
 |===
 
@@ -369,7 +369,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 
 +
 
-NOTE: Si se produce un problema durante el reinicio, consulte https://["BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S."]
+NOTE: Si se produce un problema durante el reinicio, consulte https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S."]
 
 
 
@@ -392,7 +392,7 @@ Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mod
  a| 
 Módulo de almacenamiento
  a| 
-Instale y conecte los cables de las bandejas NS224 según se describe enhttps://["Adición en caliente de una bandeja de unidades NS224"^].
+Instale y conecte los cables de las bandejas NS224 según se describe enhttps://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"^].
 
 |===
 . Repita estos pasos para la controladora B.

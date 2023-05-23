@@ -27,7 +27,7 @@ NOTE: Para un sistema de controladoras únicas FAS2600 de la serie FAS2600 que t
 Puede descargar y ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado SAS y las acciones correctivas que debe tomar.
 
 +
-https://["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
 
 * La configuración de parejas de ALTA DISPONIBILIDAD no puede estar en estado de toma de control.
 * Debe haber quitado todos los agregados de las unidades de disco (las unidades de disco deben ser repuestos) en las bandejas de discos que va a quitar.
@@ -52,7 +52,7 @@ Al eliminar la información de propiedad de una unidad de disco de repuesto, la 
 ====
 El procedimiento para eliminar la propiedad de unidades de disco requiere deshabilitar la asignación automática de propiedad de disco. Al final de este procedimiento, se vuelve a habilitar la asignación automática de propiedad de disco.
 
-https://["Descripción general de discos y agregados"]
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"]
 
 ====
 * En el caso de un sistema Clustered ONTAP con más de dos nodos, lo más recomendable es haber reasignado épsilon a un par de alta disponibilidad distinto del que se somete a labores de mantenimiento planificadas.
