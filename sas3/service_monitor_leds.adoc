@@ -40,7 +40,7 @@ Una o varias fuentes de alimentación están proporcionando alimentación a la b
 .2+| image:../media/drw_sas_fault_icon.png[""] .2+| Atención  a| 
 Ámbar fijo
  a| 
-Se ha producido un error con la función de una de las más FRU: La bandeja de discos, las unidades de disco, los módulos IOM12 o las fuentes de alimentación.
+Se produjo un error en la función de una de más FRU: La bandeja de discos, las unidades de disco, los módulos IOM12/IOM12B o los suministros de alimentación.
 
 Compruebe los mensajes de eventos para determinar la acción correctiva que se debe realizar.
 
@@ -64,7 +64,7 @@ Azul fijo
  a| 
 El administrador del sistema activó esta función de LED como ayuda para localizar físicamente la bandeja de discos que requería servicio.
 
-El LED de ubicación del panel de visualización del operador y ambos módulos IOM12 se ilumina cuando se activa esta función LED. Los LED de ubicación se apagan automáticamente transcurridos 30 minutos.
+El LED de ubicación del panel de visualización del operador y los dos módulos IOM12/IOM12B se iluminan cuando se activa esta función LED. Los LED de ubicación se apagan automáticamente transcurridos 30 minutos.
 
 |===
 En función del modelo de bandeja de discos, el panel de visualización del operador tiene un aspecto diferente; sin embargo, los tres LED se organizan de la misma manera.
@@ -75,13 +75,13 @@ image::../media/drw_opd.gif[opd drw]
 
 
 
-== LED del módulo IOM12
+== LED de módulos IOM12/IOM12B
 
-Los LED del módulo IOM12 indican si el módulo funciona con normalidad, si está preparado para el tráfico de E/S y si hay algún problema con el hardware.
+Los LED del módulo IOM12/IOM12B indican si el módulo funciona normalmente, si está preparado para el tráfico de E/S y si hay algún problema con el hardware.
 
-La tabla siguiente describe los LED del módulo IOM12 asociados con la función del módulo y la función de cada puerto SAS del módulo.
+En la siguiente tabla se describen los LED de módulo IOM12/IOM12B asociados con la función del módulo y la función de cada puerto SAS del módulo.
 
-El módulo IOM12 se utiliza en bandejas de discos DS460C, DS224C y DS212C.
+El módulo IOM12/IOM12B se utiliza en bandejas de discos DS460C, DS224C y DS212C.
 
 [cols="4*"]
 |===
@@ -95,7 +95,7 @@ Atención
  a| 
 Ámbar fijo
  a| 
-Función del módulo IOM12: Se ha producido un error con el funcionamiento del módulo IOM12.
+Función del módulo IOM12/IOM12B: Se ha producido un error con la función del módulo IOM12/IOM12B.
 
 Función de puerto SAS: Menos de los cuatro carriles SAS han establecido un enlace (con un adaptador o una bandeja de discos).
 
@@ -121,14 +121,18 @@ Ubicación
  a| 
 Azul fijo
  a| 
-El administrador del sistema activó esta función de LED como ayuda para localizar físicamente la bandeja de discos con el módulo IOM12 con fallos.
+El administrador del sistema activó esta función de LED para ayudar a localizar físicamente la bandeja de discos con el módulo IOM12/IOM12B que ha fallado.
 
-El LED de ubicación del panel de visualización del operador y ambos módulos IOM12 se ilumina cuando se activa esta función LED. Los LED de ubicación se apagan automáticamente transcurridos 30 minutos.
+El LED de ubicación del panel de visualización del operador y los dos módulos IOM12/IOM12B se iluminan cuando se activa esta función LED. Los LED de ubicación se apagan automáticamente transcurridos 30 minutos.
 
 |===
 La siguiente ilustración es para un módulo IOM12:
 
 image::../media/drw_iom12.gif[drw iom12]
+
+Los módulos IOM12B se distinguen por una banda azul y una etiqueta "IOM12B":
+
+image::../media/iom12b.png[iom12b]
 
 
 
