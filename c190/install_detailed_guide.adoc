@@ -162,8 +162,33 @@ image::../media/drw_cable_management_arm_install.png[instalación de ARM de gest
 
 Conecte las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión del clúster.
 
-Los puertos de UTA2 GbE, la red de datos Ethernet y los puertos de gestión de los módulos de la controladora están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambos módulos de la controladora.
+En la siguiente tabla se identifica el tipo de cable con el número de llamada y el color del cable en las ilustraciones para el cableado de red de clústeres sin switch de dos nodos y el cableado de red de clústeres conmutados.
 
+[cols="20%,80%"]
+|===
+| Cableado | Tipo de conexión 
+
+
+ a| 
+image::../media/oie_legend_icon_1_lg.svg[leyenda de la oie icono 1 lg]
+ a| 
+Interconexión en clúster
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_o.svg[icono de leyenda de la oie 2 o]
+ a| 
+Las controladoras a los switches de red de datos del host
+
+
+
+ a| 
+image::../media/oie_legend_icon_3_lp.svg[icono de leyenda de la oie 3 lp]
+ a| 
+Las controladoras al switch de red de gestión
+
+|===
 [role="tabbed-block"]
 ====
 .Opción 1: Clúster sin switches de dos nodos
@@ -184,7 +209,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 NOTE: Si se conecta a un switch óptico, inserte el SFP en el puerto de la controladora antes de establecer el cableado al puerto.
 
 .Acerca de esta tarea
-Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
+Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
 
 Configuraciones de redes de datos de UTA2 GbE::
 +
@@ -204,7 +229,7 @@ Realice los siguientes pasos en cada módulo del controlador.
 
 .Pasos
 . Conecte los puertos de interconexión de clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
-. Debe realizar una de las siguientes acciones:
+. Conecte los cables de las controladoras a una red de datos UTA2 o Ethernet.
 +
 Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para conectar los puertos de datos e0c/0C y e0d/0d o e0e/0E y e0f/0f a la red de host.
 +
@@ -248,7 +273,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 NOTE: Si se conecta a un switch óptico, inserte el SFP en el puerto de la controladora antes de establecer el cableado al puerto.
 
 .Acerca de esta tarea
-Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
+Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
 
 Configuraciones de red unificadas::
 +
@@ -271,7 +296,7 @@ Realice los siguientes pasos en cada módulo del controlador.
 +
 image:../media/drw_c190_u_switched_clust_cbling.png[""]
 
-. Debe realizar una de las siguientes acciones:
+. Conecte los cables de las controladoras a una red de datos UTA2 o Ethernet.
 +
 Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para conectar los puertos de datos e0c/0C y e0d/0d o e0e/0E y e0f/0f a la red de host.
 +

@@ -2647,7 +2647,6 @@
   <block id="056ddd83d4b6d6b9c633079e84d79240" category="paragraph">Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo en un estado en el que pueda ejecutar las pruebas de diagnóstico en el componente sustituido.</block>
   <block id="9b4b316e1d27b6bd895f1fd471712c6e" category="paragraph">Continúe con el próximo paso. El procedimiento de conmutación de estado del MetroCluster se lleva a cabo en la siguiente tarea del proceso de sustitución.</block>
   <block id="2e28e3989e39096fb5b13cdfa91ad165" category="paragraph">Continúe con el próximo paso. No se requiere ninguna acción. Ha completado el diagnóstico de nivel del sistema.</block>
-  <block id="36db73d94b30571d5e78b69926c4ee10" category="doc">Vista general del reemplazo del módulo de la controladora: FAS8200</block>
   <block id="4fa4535552a76ba6abb695db42b48161" category="paragraph">Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimiento de sustitución de una controladora en una configuración MetroCluster de cuatro u ocho controladoras es el mismo que el de una pareja de alta disponibilidad. No es necesario realizar pasos específicos de MetroCluster porque el fallo está limitado a un par de alta disponibilidad y pueden utilizarse comandos de recuperación tras fallos del almacenamiento para proporcionar un funcionamiento no disruptivo durante el reemplazo.</block>
   <block id="18286caf45baac43fedf94bfeaff35fa" category="list-text">Todas las tarjetas PCIe que se hayan movido del módulo de controladora antiguo al módulo de controladora nuevo o se hayan añadido del inventario de las instalaciones del cliente existente deben contar con la compatibilidad del módulo de controladora de reemplazo.</block>
   <block id="8f2c083353ba46faa1f5bfb6d1740753" category="doc">Arranque la imagen de recuperación: FAS8200</block>
@@ -7867,7 +7866,6 @@
   <block id="841cf46b69a4b2c782c980b795074554" category="list-text">Asegúrese de tener los siguientes elementos en su centro:</block>
   <block id="85220111cf8764a6d5eefe427de4fbde" category="paragraph">Instale el sistema en un rack de 4 parantes o armario de sistema de NetApp según corresponda.</block>
   <block id="1ccb5aa93b58b2e0cbfd6015e33c6a90" category="paragraph">Conecte las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión del clúster.</block>
-  <block id="22cf31ea4e88d1269c525c08a9c8fdff" category="paragraph">Los puertos de UTA2 GbE, la red de datos Ethernet y los puertos de gestión de los módulos de la controladora están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambos módulos de la controladora.</block>
   <block id="434c44657e12928e06a65124dfb073b0" category="paragraph">Aprenda a conectar en cable un clúster sin switches de dos nodos.</block>
   <block id="f7284f28e338cb3e10e42e8214151229" category="paragraph">Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.</block>
   <block id="48114454330840b73674b4d456819a4e" category="list-text">Configuraciones de redes de datos de UTA2 GbE</block>
@@ -7978,4 +7976,17 @@
   <block id="1ed7e5bc49edc6dcd82d94adaa712607" category="paragraph">Función del módulo IOM12/IOM12B: Se ha producido un error con la función del módulo IOM12/IOM12B.</block>
   <block id="661a269cef9bb91a2f8b4d733118a2eb" category="paragraph">El administrador del sistema activó esta función de LED para ayudar a localizar físicamente la bandeja de discos con el módulo IOM12/IOM12B que ha fallado.</block>
   <block id="a78123fcf223e9fb14720d2a07e2ef85" category="paragraph">La siguiente ilustración es para un módulo IOM12:</block>
+  <block id="ab821717031a58a1a9d01409f017bf49" category="doc">Descripción general de la sustitución del módulo del controlador - FAS8200</block>
+  <block id="925bdd1d7aad5ef53490c52842590538" category="paragraph">En la siguiente tabla se identifica el tipo de cable con el número de llamada y el color del cable en las ilustraciones para el cableado de red de clústeres sin switch de dos nodos y el cableado de red de clústeres conmutados.</block>
+  <block id="d0afed67605524c7117536fe92ce3da8" category="cell">Tipo de conexión</block>
+  <block id="985b78c75a9bb79d8cb44d78a86e22a9" category="image-alt">icono de leyenda de la oie 2 o</block>
+  <block id="73bfdf61f88c1cff337d81f80cb733d7" category="paragraph">Las controladoras a los switches de red de datos del host</block>
+  <block id="2ef47c54a75d2ffe153e57585c5ef8eb" category="image-alt">icono de leyenda de la oie 3 lp</block>
+  <block id="3be4d8a4a3ae9d68dd7ac9118685e99e" category="paragraph">Las controladoras al switch de red de gestión</block>
+  <block id="c00351b5bbad5f2b55b1e523113b08ab" category="paragraph">Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.</block>
+  <block id="70c67999b75c623ee9876e398ee7ebb9" category="list-text">Conecte los cables de las controladoras a una red de datos UTA2 o Ethernet.</block>
+  <block id="4eb04196699d24394da6f4bdb0a6cd76" category="doc">Sustituya la batería del reloj en tiempo real: AFF A220 y FAS2700</block>
+  <block id="3529feb1f15a906788e97c962f5f18b5" category="doc">Sustituya la batería del reloj en tiempo real - AFF A150</block>
+  <block id="74fef60bd66705310b79dcd3e46f4894" category="doc">Sustituya la unidad SSD o la unidad de disco duro - AFF A150</block>
+  <block id="d646909dddf2c419f953113a67e04618" category="doc">Sustituya un módulo DIMM AFF A150</block>
 </blocks>
