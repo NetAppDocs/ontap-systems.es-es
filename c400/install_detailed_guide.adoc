@@ -21,21 +21,23 @@ https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentación de M
 
 == Paso 1: Preparar la instalación
 
-[role="lead"]
 Para instalar el sistema, necesita crear una cuenta, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
 .Antes de empezar
-Es necesario tener acceso a Hardware Universe para obtener información sobre los requisitos del sitio, así como información adicional sobre el sistema configurado. También es posible que desee tener acceso a las notas de la versión de ONTAP para obtener más información sobre este sistema.
-
+* Es necesario tener acceso a Hardware Universe para obtener información sobre los requisitos del sitio, así como información adicional sobre el sistema configurado. También es posible que desee tener acceso a las notas de la versión de ONTAP para obtener más información sobre este sistema.
++
 https://hwu.netapp.com["Hardware Universe de NetApp"]
 
++
 http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Busque las notas de la versión de ONTAP 9"]
 
-Debe proporcionar lo siguiente en el sitio:
+* Debe proporcionar lo siguiente en el sitio:
++
+** Espacio en rack para el sistema de almacenamiento
+** Destornillador Phillips número 2
+** Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web
 
-* Espacio en rack para el sistema de almacenamiento
-* Destornillador Phillips número 2
-* Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web
+
 
 
 .Pasos
@@ -157,7 +159,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 == Paso 2: Instale el hardware
 
-[role="lead"]
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
 
 . Instale los kits de raíles, según sea necesario.
@@ -180,24 +181,23 @@ image::../media/drw_a320_cable_management_arms.png[brazos de gestión de cables 
 
 == Paso 3: Conecte los controladores a la red
 
-[role="lead"]
-Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
+Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante el método de clúster con switches.
+
+.Acerca de esta tarea
+* Si las etiquetas de los puertos de la tarjeta no son visibles, puede identificar los puertos consultando la orientación de instalación de la tarjeta (en el caso de C400, el conector hembra PCIe se encuentra en el lado izquierdo de la ranura para tarjeta) y, a continuación, buscar la tarjeta según el número de pieza en Hardware Universe de NetApp, en la que se muestra un gráfico del bisel con las etiquetas de puerto. Puede encontrar el número de pieza de la tarjeta mediante el comando sysconfig -a o en la lista de empaquetado del sistema.
+* Si va a cablear una configuración IP de MetroCluster, los puertos e0a/e0b están disponibles para alojar LIF de datos (normalmente en el espacio IP predeterminado).
 
 
-NOTE: Si las etiquetas de los puertos de la tarjeta no son visibles, puede identificar los puertos consultando la orientación de instalación de la tarjeta (en el caso de C400, el conector hembra PCIe se encuentra en el lado izquierdo de la ranura para tarjeta) y, a continuación, buscar la tarjeta según el número de pieza en Hardware Universe de NetApp, en la que se muestra un gráfico del bisel con las etiquetas de puerto. Puede encontrar el número de pieza de la tarjeta mediante el comando sysconfig -a o en la lista de empaquetado del sistema.
+[role="tabbed-block"]
+====
+.Opción 1: Conecte el cable de un clúster sin switch de dos nodos
+--
+La interconexión de clúster y los puertos de alta disponibilidad de un módulo de controlador se cablean a su módulo de controladora asociado. Los puertos de datos opcionales, las tarjetas NIC opcionales y los puertos de gestión de los módulos de la controladora se conectan a los switches.
 
-
-NOTE: Si va a cablear una configuración IP de MetroCluster, los puertos e0a/e0b están disponibles para alojar LIF de datos (normalmente en el espacio IP predeterminado).
-
-
-
-=== Opción 1: Conecte el cable de un clúster sin switch de dos nodos
-
-[role="lead"]
-Los puertos de datos opcionales, las tarjetas NIC opcionales y los puertos de gestión de los módulos de la controladora se conectan a los switches. Los puertos de alta disponibilidad e interconexión de clúster se cablean en ambos módulos de controladoras.
-
+.Antes de empezar
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
 
+.Acerca de esta tarea
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas tipo cable están hacia arriba para todos los puertos internos y hacia abajo para las tarjetas de expansión (NIC).
 
 image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
@@ -215,15 +215,15 @@ image::../media/drw_c400_TNSC-networking-cabling_IEOPS-1095.svg[Cableado de red 
 . Vaya a. <<Paso 4: Conecte las controladoras a las bandejas de unidades>> para obtener instrucciones sobre el cableado de la bandeja de unidades.
 
 
+--
+.Opción 2: Conectar un clúster de switches
+--
+La interconexión de clúster del módulo de controladora y los puertos de alta disponibilidad se cablean al clúster/switch de alta disponibilidad. Los puertos de datos opcionales, las tarjetas NIC opcionales, las tarjetas mezzanine y los puertos de gestión están conectados a switches.
 
-
-=== Opción 2: Conectar un clúster de switches
-
-[role="lead"]
-Los puertos de datos opcionales, las tarjetas NIC opcionales, las tarjetas mezzanine y los puertos de gestión de los módulos de controladora están conectados a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
-
+.Antes de empezar
 Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
 
+.Acerca de esta tarea
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas tipo cable están hacia arriba para todos los puertos internos y hacia abajo para las tarjetas de expansión (NIC).
 
 image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
@@ -241,20 +241,21 @@ image::../media/drw_c400_switched_network_cabling_IEOPS-1096.svg[Cableado de red
 . Vaya a. <<Paso 4: Conecte las controladoras a las bandejas de unidades>> para obtener instrucciones sobre el cableado de la bandeja de unidades.
 
 
+--
+====
 
 
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
-[role="lead"]
 Las siguientes opciones le muestran cómo conectar una o dos bandejas de unidades NS224 al sistema.
 
 
 
 === Opción 1: Conecte las controladoras a una bandeja de unidades única
 
-[role="lead"]
 Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS224.
 
+.Acerca de esta tarea
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La lengüeta de extracción del cable para el modelo NS224 está hacia arriba.
 
 image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
@@ -274,9 +275,9 @@ image::../media/drw_c400_one_ns224_shelf_IEOPS-1097.svg[drw C400 ONE ns224 BANDE
 
 === Opción 2: Conecte las controladoras a dos bandejas de unidades
 
-[role="lead"]
 Debe cablear cada controladora a los módulos NSM de ambas bandejas de unidades NS224.
 
+.Acerca de esta tarea
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La lengüeta de extracción del cable para el modelo NS224 está hacia arriba.
 
 image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
@@ -296,14 +297,12 @@ image::../media/drw_c400_two_ns224_shelves_IEOPS-1098.svg[drw C400 Dos bandejas 
 
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
-[role="lead"]
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
 === Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada
 
-[role="lead"]
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
 
 . Use la animación siguiente para encender y establecer los ID de bandeja de una o varias bandejas de unidades:
@@ -318,10 +317,11 @@ video::c500e747-30f8-4763-9065-afbf00008e7f[panopto]
 +
 Consulte la ayuda en línea de su portátil para obtener más información.
 
-. Utilice la siguiente animación para conectar el portátil al conmutador de administración.
-+
-.Animación: Conecte el portátil al conmutador de administración
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+. Conecte el portátil al conmutador de administración.
+
+
+image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para cambiar]
+
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
 image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]
@@ -368,7 +368,6 @@ https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"]
 
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
-[role="lead"]
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.
 
 . Conecte y configure el portátil o la consola:

@@ -11,7 +11,7 @@ summary: Esta guía ofrece instrucciones detalladas paso a paso para la instalac
 
 
 [role="lead"]
-Aprenda a instalar su sistema AFF A150.
+En esta sección se ofrecen instrucciones detalladas paso a paso para instalar un sistema AFF A150.
 
 Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentación de MetroCluster"^].
 
@@ -19,8 +19,7 @@ Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-
 
 == Paso 1: Preparar la instalación
 
-[role="lead"]
-Para instalar su sistema AFF A150, cree una cuenta en el sitio de soporte de NetApp, registre su sistema y obtenga las claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
+Para instalar el sistema AFF A150, debe crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener las claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
 
 .Antes de empezar
 * Asegúrese de tener acceso a. link:https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener información acerca de los requisitos del sitio, así como información adicional sobre el sistema configurado.
@@ -160,8 +159,7 @@ Encendido del sistema
 
 == Paso 2: Instale el hardware
 
-[role="lead"]
-Instale el sistema en un rack de 4 parantes o armario de sistema de NetApp según corresponda.
+Se instala el sistema en un rack de 4 parantes o armario del sistema NetApp según corresponda.
 
 .Pasos
 . Instale los kits de raíles, según sea necesario.
@@ -184,18 +182,43 @@ image::../media/drw_cable_management_arm_install.png[instalación de ARM de gest
 
 == Paso 3: Conecte los controladores a la red
 
-[role="lead"]
-Conecte mediante cable las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster.
+Conecte las controladoras a la red mediante el método de clústeres sin switches de dos nodos o el método de clústeres con switches.
 
-La red de gestión, la red de datos de UTA2 GbE, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
+.Acerca de esta tarea
+En la siguiente tabla se identifica el tipo de cable con el número de llamada y el color del cable en las ilustraciones para el cableado de red de clústeres sin switch de dos nodos y el cableado de red de clústeres conmutados.
 
+[cols="20%,80%"]
+|===
+| Cableado | Tipo de conexión 
+
+
+ a| 
+image::../media/oie_legend_icon_1_lg.svg[leyenda de la oie icono 1 lg]
+ a| 
+Interconexión en clúster
+
+
+
+ a| 
+image::../media/oie_legend_icon_2_o.svg[icono de leyenda de la oie 2 o]
+ a| 
+Las controladoras a los switches de red de datos del host
+
+
+
+ a| 
+image::../media/oie_legend_icon_3_lp.svg[icono de leyenda de la oie 3 lp]
+ a| 
+Las controladoras al switch de red de gestión
+
+|===
 [role="tabbed-block"]
 ====
 .Opción 1: Clúster sin switches de dos nodos
 --
-Aprenda a conectar en cable un clúster sin switches de dos nodos.
+Conecte mediante cable el clúster de dos nodos sin switches.
 
-.Antes de empezar
+.Acerca de esta tarea
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
@@ -203,28 +226,9 @@ image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
 
-.Acerca de esta tarea
-Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
-
-Configuraciones de redes de datos de UTA2 GbE::
-+
---
-image::../media/drw_2700_tnsc_unified_network_cabling_animated_gif.png[gif animados del cableado de red unificado drw 2700 tnsc]
-
---
-Configuraciones de red Ethernet::
-+
---
-image::../media/drw_2700_tnsc_ethernet_network_cabling_animated_gif.png[gif animados de cableado de red ethernet drw 2700 tnsc]
-
---
-
-
-Realice los siguientes pasos en cada módulo del controlador.
-
 .Pasos
 . Conecte los puertos de interconexión de clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster. +image:../media/drw_c190_u_tnsc_clust_cbling.png[""]
-. Debe realizar una de las siguientes acciones:
+. Conecte los cables de las controladoras a una red de datos de UTA2 GbE o a una red Ethernet:
 +
 Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para cablear los puertos de datos UTA2 a la red de host.
 +
@@ -260,9 +264,9 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 --
 .Opción 2: Clúster de switches
 --
-Aprenda a conectar mediante cable un clúster con switches.
+Conecte los cables del clúster con switches.
 
-.Antes de empezar
+.Acerca de esta tarea
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
@@ -270,31 +274,12 @@ image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
 
-.Acerca de esta tarea
-Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host. Consulte las siguientes ilustraciones de cableado cuando realice el cableado entre las controladoras y los switches.
-
-Cableado de red unificado::
-+
---
-image::../media/drw_2700_switched_unified_network_cabling_animated_gif.png[gif animados de cableado de red unificada conmutada drw 2700]
-
---
-Cableado de red Ethernet::
-+
---
-image::../media/drw_2700_switched_ethernet_network_cabling_animated_gif.png[gif animados de cableado de red ethernet conmutado drw 2700]
-
---
-
-
-Realice los siguientes pasos en cada módulo del controlador.
-
 .Pasos
 . Para cada módulo de controladora, conecte los cables e0a y e0b a los switches de interconexión de clúster con el cable de interconexión de clúster.
 +
 image:../media/drw_c190_u_switched_clust_cbling.png[""]
 
-. Debe realizar una de las siguientes acciones:
+. Es posible usar los puertos de red de datos de UTA2 GbE o los puertos de red de datos ethernet para conectar las controladoras a la red host:
 +
 Configuraciones de redes de datos de UTA2 GbE:: Use uno de los siguientes tipos de cables para cablear los puertos de datos UTA2 a la red de host.
 +
@@ -336,13 +321,13 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 Conecte las controladoras a las bandejas con los puertos de almacenamiento integrados. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo.
 
 .Acerca de esta tarea
-Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
-
-Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
-
-Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
-
+* Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
+* Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
+* Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
++
 image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
+
+
 
 .Pasos
 . Conecte los cables de la pareja de alta disponibilidad con bandejas de unidades externas.
@@ -411,10 +396,10 @@ NOTE: El arranque inicial puede tardar hasta ocho minutos.
 +
 Consulte la ayuda en línea de su portátil para obtener más información.
 
-. Utilice la siguiente animación para conectar el portátil al conmutador de administración.
+. Conecte el portátil al conmutador de administración.
 +
-.Animación: Conecte el portátil al conmutador de administración
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para cambiar]
+
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
 image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]

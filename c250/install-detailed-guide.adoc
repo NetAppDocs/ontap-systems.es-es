@@ -364,10 +364,11 @@ El sistema comienza a iniciarse. El arranque inicial puede tardar hasta ocho min
 +
 Consulte la ayuda en línea de su portátil para obtener más información.
 
-. Utilice la animación para conectar el portátil al conmutador de administración:
-+
-.Animación: Conecte el portátil al conmutador de administración
-video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
+. Conecte el portátil al conmutador de gestión:
+
+
+image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para cambiar]
+
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
 image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]
@@ -420,11 +421,11 @@ Si el descubrimiento de red no está activado en el portátil, debe completar la
 
 NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo configurar el puerto de la consola.
 
-.. Conecte el portátil o la consola al conmutador de la subred de administración.
+.. Conecte el portátil o la consola al conmutador de administración.
 +
-image::../media/drw_console_client_mgmt_subnet_affa250.png[subred de gestión de cliente de consola drw affa250]
+image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para cambiar]
 
-.. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
+.. Asigne una dirección TCP/IP al equipo portátil o consola, utilizando una que esté en el switch de administración.
 
 
 . Use la animación siguiente para encender y establecer los ID de bandeja de una o varias bandejas de unidades:
