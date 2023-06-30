@@ -1,8 +1,8 @@
 ---
 permalink: sas3/install-cabling-worksheets-examples-fas2600.html 
 sidebar: sidebar 
-keywords: controller-to-stack, cabling, worksheet, aff, a200, a220, fas2600, fas2700, internal storage 
-summary: Puede utilizar las hojas de datos de cableado completas de controladora a pila y ejemplos de cableado para cablear las plataformas con almacenamiento interno, incluidas la serie FAS2600, AFF A200, serie FAS2700, AFF A220, y después. 
+keywords: controller-to-stack, cabling, worksheet, aff, a200, a220, fas2600, fas2700, fas2800, internal storage 
+summary: Puede utilizar las hojas de cálculo de cableado completas de la controladora a la pila y ejemplos de cableado para cablear plataformas con almacenamiento interno. 
 ---
 = Hojas de trabajo para cableado de controladora a pila y ejemplos de cableado para plataformas con almacenamiento interno: Bandejas con módulos IOM12/IOM12B
 :allow-uri-read: 
@@ -11,15 +11,15 @@ summary: Puede utilizar las hojas de datos de cableado completas de controladora
 
 
 [role="lead"]
-Puede utilizar las hojas de datos de cableado completas de controladora a pila y ejemplos de cableado para cablear las plataformas con almacenamiento interno, incluidas la serie FAS2600, AFF A200, serie FAS2700, AFF A220, y después.
+Puede utilizar las hojas de cálculo de cableado completas de la controladora a la pila y ejemplos de cableado para cablear plataformas con almacenamiento interno.
 
 
 NOTE: Esta información no se aplica a las plataformas FAS25XX.
 
-* Si es necesario, puede consultar link:install-cabling-rules.html["Reglas para el cableado SAS"] para obtener información sobre las configuraciones compatibles, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja.
-* Los ejemplos de cableado muestran cables de controladora a pila como sólidos o discontinuas para distinguir las conexiones de puerto 0b de controladora de las conexiones de puerto 0a de la controladora.
+* Si es necesario, puede consultar link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información sobre las configuraciones compatibles, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja.
+* Los ejemplos de cableado muestran los cables de la controladora a la pila como sólidos o discontinuos para distinguir las conexiones de los puertos 0b/0b1 del controlador de las conexiones de los puertos 0A del controlador.
 +
-image::../media/drw_fas2600_controller_to_stack_cable_type_key.png[controlador drw fas2600 para apilar tipo de cable]
+image::../media/drw_fas2600_controller_to_stack_cable_type_key_IEOPS-947.svg[Controlador drw fas2600 para apilar el tipo de cable clave IEOPS 947]
 
 * Los ejemplos de cableado muestran conexiones de controladora a pila y conexiones de bandeja a bandeja en dos colores diferentes para distinguir la conectividad a través de IOM A (dominio A) e IOM B (dominio B).
 +
@@ -29,13 +29,42 @@ image::../media/drw_fas2600_cable_color_key.png[tecla de color del cable drw fas
 
 
 
+== Plataforma FAS2800 en una configuración de alta disponibilidad multivía sin bandejas externas
+
+El siguiente ejemplo muestra que no es necesario ningún cableado para adquirir conectividad de alta disponibilidad multivía:
+
+image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[drw fas2800 noshelf mpha IEOPS 954]
+
+
+
+== Plataforma FAS2800 en una configuración de alta disponibilidad de tres vías sin bandejas externas
+
+En el siguiente ejemplo de cableado se muestra el cableado necesario entre las dos controladoras para lograr una conectividad de tres rutas:
+
+image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[drw fas2800 noshelf tpha IEOPS 955]
+
+
+
+== Plataforma FAS2800 en una configuración de alta disponibilidad de tres rutas con una pila de varias bandejas
+
+La siguiente hoja de datos y ejemplo de cableado utiliza el par de puertos 0A/0b1:
+
+image::../media/drw_fas2800_worksheet_IEOPS-948.svg[Hoja DE TRABAJO drw fas2800 IEOPS 948]
+
+image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[drw fas2800 incluye bandejas tpha IEOPS 949]
+
+
+
 == Plataformas con almacenamiento interno en una configuración de alta disponibilidad multivía con una pila de varias bandejas
 
 En el siguiente ejemplo de hoja de datos y cableado se utiliza la pareja de puertos 0a/0b:
 
-image::../media/drw_fas2600_mpha_worksheet.png[hoja de trabajo drw fas2600 mpha]
 
-image::../media/drw_fas2600_mpha.png[drw fas2600 mpha]
+NOTE: Esta sección no se aplica a los sistemas FAS2800 o FAS25XX.
+
+image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[drw fas2600 Hoja de trabajo de mpha IEOPS 1255]
+
+image::../media/drw_fas2600_mpha_IEOPS-1256.svg[drw fas2600 mpha IEOPS 1256]
 
 
 

@@ -1,0 +1,191 @@
+---
+permalink: fas2800/pci-cards-and-risers-replace.html 
+sidebar: sidebar 
+keywords: fas2800, fas2800, replace, pcie, mezzanine, card, disconnect, cable, sfp, qsfp, module, fail, mezzanine, shut, down, impair, controller, pcie, switch, aggregate, two-node, metrocluster, complete, replacement, process, replace a pcie or mezzanine card, shut down the impaired controller, remove the controller module, replace a pcie card, replace the mezzanine card, install the controller module, switch back aggregates in a two-node metrocluster configuration, restore the controller module to operation after running diagnostics, complete the replacement process 
+summary: Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cualquier módulo SFP y QSFP de las tarjetas, sustituir el PCIe o la tarjeta intermedia con error y volver a conectar las tarjetas. 
+---
+= Sustituya una tarjeta mezzanine - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sustituya la tarjeta intermedia desconectando los cables y los módulos SFP y QSFP de la tarjeta, sustituya la tarjeta intermedia que haya fallado y, a continuación, vuelva a conectar las tarjetas.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+.Animación: Sustituya la tarjeta mezzanine
+video::a8ec891d-f6f6-4479-9ca2-af47017254ff[panopto]
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y`.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Retire el módulo del controlador del sistema y, a continuación, retire la cubierta del módulo del controlador.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm EXTENSIÓN INSTALAR IEOPS 694]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Cubierta del módulo de controlador abierto drw 2850 IEOPS 695]
+
+
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Botón de liberación de la cubierta del módulo del controlador
+
+|===
+
+
+== Paso 3: Reemplace la tarjeta mezzanine
+
+Vuelva a colocar la tarjeta mezzanine.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire la tarjeta intermedia utilizando la siguiente ilustración o el mapa de FRU del módulo del controlador:
++
+image::../media/drw_2850_replace_HIC_IEOPS-700.svg[drw 2850 Sustituya HIC IEOPS 700]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Cubierta protectora
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[icono de leyenda 02]
+ a| 
+Tarjeta mezzanine PCIe
+
+|===
++
+.. Retire el bisel de la tarjeta mezzanine deslizándolo hacia fuera del módulo del controlador.
+.. Afloje los tornillos de la tarjeta mezzanine y levante la tarjeta mezzanine en línea recta.
++
+
+NOTE: Puede aflojar los tornillos con los dedos o con un destornillador. Si utiliza los dedos, es posible que necesite girar la batería NV hacia arriba para una mejor compra de dedos en el tornillo de apriete manual junto a ella.
+
+
+
+. Vuelva a instalar la tarjeta mezzanine:
++
+.. Alinee la toma del enchufe de la tarjeta mezzanine de repuesto con la toma de la placa base y, a continuación, coloque suavemente la tarjeta en el zócalo.
+.. Apriete los tres tornillos de apriete manual de la tarjeta mezzanine.
+.. Vuelva a instalar el marco de la tarjeta intermedia.
+
+
+. Vuelva a instalar la cubierta del módulo del controlador y bloquéela en su lugar.
+
+
+
+
+== Paso 4: Instale el módulo del controlador
+
+Vuelva a instalar el módulo del controlador.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
+. Gire el módulo del controlador y alinee el extremo con la abertura del chasis.
+. Empuje suavemente el módulo del controlador hasta la mitad del sistema.Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+
+
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Restaure la devolución automática del control mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

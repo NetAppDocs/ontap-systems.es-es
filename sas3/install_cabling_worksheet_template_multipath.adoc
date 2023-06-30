@@ -14,7 +14,7 @@ summary: Al completar la plantilla de hoja de cálculo, puede definir los pares 
 Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de los controladores que puede utilizar para conectar los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr una conectividad multivía en una configuración de par de alta disponibilidad o de controlador único. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones multivía para la configuración.
 
 .Antes de empezar
-Si dispone de una plataforma con almacenamiento interno, que incluye la serie FAS2600, AFF A200, FAS2700, AFF A220, y, posteriormente, utilice lo siguiente (estas plataformas utilizan una hoja de cálculo única):
+Si tiene una plataforma con almacenamiento interno, use la siguiente hoja de trabajo:
 
 link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"]
 
@@ -27,7 +27,7 @@ Se proporcionan ejemplos de hojas de trabajo completadas para configuraciones de
 En la hoja de trabajo se utiliza una configuración con dos HBA SAS de cuatro puertos y dos pilas de bandejas de discos con módulos IOM12/IOM12B.
 
 * La plantilla de hoja de cálculo permite hasta seis pilas; si es necesario, debe agregar más columnas.
-* Si es necesario, puede consultar la link:install-cabling-rules.html["Reglas para el cableado SAS"] para obtener información sobre las configuraciones compatibles, la convención de numeración de las ranuras de la controladora, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de pares de puertos).
+* Si es necesario, puede consultar la link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información sobre las configuraciones compatibles, la convención de numeración de las ranuras de la controladora, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de pares de puertos).
 * Si es necesario, después de completar la hoja de cálculo, puede hacer referencia a link:install-cabling-worksheets-how-to-read-multipath.html["Cómo leer una hoja de cálculo para cablear las conexiones entre la controladora y la pila para la conectividad multivía"]
 
 

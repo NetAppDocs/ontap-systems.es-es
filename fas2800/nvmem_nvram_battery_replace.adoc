@@ -1,0 +1,221 @@
+---
+permalink: fas2800/nvmem-nvram-battery-replace.html 
+sidebar: sidebar 
+keywords: fas2800, replace, nvmem, battery, shut, down, impaired, controller, controller, system, aggregates, metrocluster, configuration, reinstall 
+summary: Para sustituir una batería de NVMEM en el sistema, debe extraer el módulo de la controladora del sistema, abrirlo, sustituir la batería y cerrar y sustituir el módulo de la controladora. 
+---
+= Sustituya la batería de NVMEM - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una batería de NVMEM en el sistema, debe extraer el módulo de la controladora del sistema, abrirlo, sustituir la batería y cerrar y sustituir el módulo de la controladora.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y`.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Retire y abra el módulo del controlador
+
+Retire y abra el módulo del controlador.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm EXTENSIÓN INSTALAR IEOPS 694]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Cubierta del módulo de controlador abierto drw 2850 IEOPS 695]
+
+
+
+
+
+== Paso 3: Sustituya la batería de NVMEM
+
+Quite la batería de NVMEM con errores del sistema y sustitúyala por una nueva batería de NVMEM.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Compruebe el LED de NVMEM:
++
+** Si su sistema está en una configuración de alta disponibilidad, vaya al paso siguiente.
+** Si el sistema está en una configuración independiente, apague correctamente el módulo de la controladora y, a continuación, compruebe el LED de NVRAM identificado con el icono de NV.
++
+image::../media/drw_hw_nvram_icon.svg[icono de drw hw nvram]
+
++
+
+NOTE: El LED de NVRAM parpadea mientras se separa el contenido de la memoria flash cuando se detiene el sistema. Una vez finalizado el destete, el LED se apaga.
+
++
+*** Si se pierde la alimentación sin un apagado correcto, el LED de NVMEM parpadea hasta que se completa el destino y, a continuación, se apaga el LED.
+*** Si el LED está encendido y encendido, los datos no escritos se almacenan en NVMEM.
++
+Esto suele ocurrir durante un apagado no controlado una vez que ONTAP se ha iniciado correctamente.
+
+
+
+
+
+. Localice la batería de NVMEM en el módulo de la controladora.
++
+.Animación: Sustituya la batería NV
+video::592217fb-4868-4294-a559-af4701725598[panopto]
++
+image::../media/drw_2850_replace_nvbattery_IEOPS-715.svg[drw 2850 reemplace nvbattery IEOPS 715]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Pestaña de liberación de la batería
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[icono de leyenda 02]
+ a| 
+Conector de alimentación de la batería
+
+|===
+. Retire la batería con errores del módulo del controlador:
++
+.. Pulse el botón azul del lateral del módulo del controlador.
+.. Deslice la batería hacia arriba hasta que se separe de los soportes de sujeción y, a continuación, extraiga la batería del módulo del controlador.
+.. Desenchufe la batería del módulo del controlador
+
+
+. Extraiga la batería de repuesto de su paquete.
+Instale la batería de repuesto:
++
+.. Vuelva a enchufar la clavija de la batería en la toma del módulo del controlador.
++
+Asegúrese de que el enchufe se bloquea en la toma de la batería de la placa base.
+
+.. Alinee la batería con los soportes de sujeción de la pared lateral de chapa metálica.
+.. Deslice la batería hacia abajo hasta que el pestillo de la batería se acople y haga clic en la abertura de la pared lateral.
+
+
+. Vuelva a instalar la cubierta del módulo del controlador y bloquéela en su lugar.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
+
+Después de sustituir los componentes del módulo del controlador, vuelva a instalarlo en el chasis.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
+. Gire el módulo del controlador y alinee el extremo con la abertura del chasis.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+
+
+. Reinicie el módulo del controlador.
++
+
+NOTE: Durante el proceso de arranque, puede ver los siguientes mensajes:
+
++
+** Una advertencia de aviso de que el ID del sistema no coincide y que solicita que se anule el ID del sistema.
+** Una advertencia de que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva. Puede responder con seguridad `y` a estas peticiones.
+
+
+
+
+
+
+== Paso 5: Restaurar el retorno automático y AutSupport
+
+Restaure la devolución automática del control y el AutoSupport si se han desactivado.
+
+. Restaure la devolución automática del control mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

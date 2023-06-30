@@ -14,9 +14,9 @@ summary: 'Puede quitar en caliente una bandeja de discos con módulos IOM12 (sin
 Puede quitar en caliente una bandeja de discos con módulos IOM12/IOM12B (retire sin interrupciones una bandeja de discos de un sistema encendido y hay operaciones de I/o en curso) cuando necesite mover o sustituir una bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.
 
 .Antes de empezar
-* El sistema debe ser una configuración de alta disponibilidad multivía, multivía, alta disponibilidad de ruta cuádruple o ruta cuádruple.
+* Su sistema debe ser una configuración de alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de cuatro rutas o cuádruples.
 +
-Para las plataformas con almacenamiento integrado, como los sistemas AFF A200, AFF A220, serie FAS2600 y FAS2700, el almacenamiento externo debe cablearse como multivía o multivía.
+En el caso de plataformas con almacenamiento interno, el almacenamiento externo debe cablearse como alta disponibilidad multivía, alta disponibilidad de tres vías o multivía.
 
 +
 
@@ -27,7 +27,7 @@ NOTE: Para un sistema de controladoras únicas FAS2600 de la serie FAS2600 que t
 Puede descargar y ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado SAS y las acciones correctivas que debe tomar.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 * La configuración de parejas de ALTA DISPONIBILIDAD no puede estar en estado de toma de control.
 * Debe haber quitado todos los agregados de las unidades de disco (las unidades de disco deben ser repuestos) en las bandejas de discos que va a quitar.
@@ -52,7 +52,7 @@ Al eliminar la información de propiedad de una unidad de disco de repuesto, la 
 ====
 El procedimiento para eliminar la propiedad de unidades de disco requiere deshabilitar la asignación automática de propiedad de disco. Al final de este procedimiento, se vuelve a habilitar la asignación automática de propiedad de disco.
 
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"]
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"^]
 
 ====
 * En el caso de un sistema Clustered ONTAP con más de dos nodos, lo más recomendable es haber reasignado épsilon a un par de alta disponibilidad distinto del que se somete a labores de mantenimiento planificadas.
@@ -75,13 +75,13 @@ El nodo que muestra épsilon `true` en la `Epsilon` columna. (Los nodos que no m
 
 NOTE: Si no mantiene la conectividad de una ruta única desde las controladoras hasta la pila al volver a colocar la pila para omitir la bandeja de discos que va a quitar, podría fallar el sistema con una situación de pánico de varios discos.
 
-* *Posible daño en el estante:* Si va a extraer una estantería DS460C y lo está moviendo a una parte diferente del centro de datos o transportándola a otra ubicación, consulte la sección, <<Mueva o transporte las estanterías DS460C>> al final de este procedimiento.
+* * Posible daño a la bandeja:* Si está retirando una bandeja DS460C y la está moviendo a una parte diferente del centro de datos o transportándola a una ubicación diferente, consulte la sección “Mover o transportar DS460C estantes” al final de este procedimiento.
 
 
 .Pasos
-. Compruebe que la configuración del sistema es `Multi-Path HA`, `Multi-Path`, `Quad-path HA`, o. `Quad-path`: `sysconfig`
+. Compruebe que la configuración del sistema es `Multi-Path HA`, `tri-path HA`, `Multi-Path`, `Quad-path HA`, o. `Quad-path` ejecutando el `sysconfig` comando desde el infierno de nodos de cualquiera de los controladores.
 +
-Ejecute este comando desde el nodo de cualquiera de las controladoras. Es posible que el sistema demore hasta un minuto en completar la detección.
+Es posible que el sistema demore hasta un minuto en completar la detección.
 
 +
 La configuración se muestra en la `System Storage Configuration` campo.
@@ -180,8 +180,8 @@ Una bandeja de discos en el medio de la pila a una bandeja De discos en el medio
 Puede consultar los siguientes ejemplos de cableado al extraer una bandeja de discos de un extremo de una pila o el medio de una pila. Tenga en cuenta lo siguiente acerca de los ejemplos de cableado:
 
 +
-** Los módulos IOM12 se organizan en paralelo como en una bandeja de discos DS224C o DS212C; si tiene un DS460C, los módulos IOM12 se organizan por encima de otro.
-** La pila en cada ejemplo se cableado con cableado estándar de bandeja a bandeja, que se utiliza en pilas cableadas con conectividad multivía o de alta disponibilidad.
+** Los módulos IOM12/IOM12B están dispuestos en paralelo como en una bandeja de discos DS224C o DS212C; si tiene un DS460C, los módulos IOM12/IOM12B están dispuestos uno sobre el otro.
+** La pila de cada ejemplo se cablea con cableado estándar de bandejas a bandejas, que se utiliza en pilas cableadas con conectividad de alta disponibilidad multivía, alta disponibilidad de tres rutas o multivía.
 +
 Puede realizar la conexión directa si la pila se cableó con alta disponibilidad de cuatro rutas o conectividad de cuatro rutas, que utiliza cableado de doble bandeja a bandeja.
 
@@ -189,7 +189,7 @@ Puede realizar la conexión directa si la pila se cableó con alta disponibilida
 +
 Repita la presentación para la ruta B (IOM B).
 
-** El ejemplo de cableado para quitar una bandeja de discos del final de una pila muestra quitar la última bandeja de discos lógica de una pila que se cableó con conectividad de alta disponibilidad multivía.
+** El ejemplo de cableado para extraer una bandeja de discos del final de una pila demuestra la extracción de la última bandeja de discos lógica de una pila cableada con conectividad HA multivía o HA de tres rutas.
 +
 Puede realizar la presentación si va a eliminar la primera bandeja de discos lógica de una pila o si su pila tiene conectividad multivía.
 
@@ -279,7 +279,7 @@ El envío DS460C se ha envasado con cuatro asas de elevación desmontables (dos 
 image::../media/drw_ds460c_handles.gif[asas drw ds460c]
 
 +
-Si va a mover la bandeja DS460C a una parte diferente del centro de datos o la va a transportar a una ubicación diferente, consulte la sección siguiente, <<Mueva o transporte las estanterías DS460C>>.
+Si va a mover la bandeja DS460C a una parte diferente del centro de datos o transportarla a otra ubicación, consulte la sección «Mover o transportar bandejas DS460C».
 
 
 

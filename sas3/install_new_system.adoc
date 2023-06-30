@@ -53,12 +53,12 @@ Debe definir ID de bandeja para que sean únicos en las configuraciones de par d
 
 * Las bandejas de discos que contienen los agregados raíz pueden identificarse mediante las etiquetas del cuadro de la bandeja de discos y del chasis de la bandeja de discos.
 +
-Las etiquetas muestran el número de pila; por ejemplo, *bucle o pila #: 1* y *bucle o pila #: 2*. Las bandejas de discos que no contienen los agregados raíz solo muestran que el número de serie de la bandeja de discos está en las etiquetas.
+Las etiquetas muestran el número de pila; por ejemplo, *bucle o pila #: 1* y *bucle o pila #: 2*. Las bandejas de discos que no contienen los agregados raíz solo muestran el número de serie de la bandeja de discos en las etiquetas.
 
 * Si en la instalación y configuración del sistema no configura el sistema para que utilice la asignación automática de propiedad de disco, deberá asignar manualmente la propiedad de disco.
-* La ruta de control alternativa (ACP) en banda se habilita automáticamente.
+* La ruta de control alternativa en banda (IBACP) se activa automáticamente.
 +
-La ACP en banda no es compatible con las configuraciones de ruta única de alta disponibilidad o de ruta única.
+IBACP no es compatible con las configuraciones de alta disponibilidad o de ruta única.
 
 
 
@@ -84,7 +84,7 @@ Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las ac
 Se necesita acceso a la red para descargar Config Advisor.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 
 
@@ -242,7 +242,7 @@ NOTE: No encienda las bandejas de discos en este momento.
 Se cablean las conexiones SAS de la bandeja de discos--de la bandeja a la bandeja (según corresponda) y de la controladora a la bandeja- para establecer la conectividad del almacenamiento del sistema.
 
 .Antes de empezar
-Debe haber cumplido los requisitos de <<Requirements for installing and cabling disk shelves with IOM12 modules for a new system installation>> e instalar las bandejas de discos en el rack.
+Debe haber cumplido los requisitos de <<Requisitos para la instalación y cableado de bandejas de discos con módulos IOM12/IOM12B para una instalación de sistemas nueva>> e instalar las bandejas de discos en el rack.
 
 .Acerca de esta tarea
 Después de conectar las bandejas de discos, encender las bandejas, establecer los ID de bandeja y completar la configuración y la configuración del sistema.
@@ -259,7 +259,7 @@ Si desea una explicación detallada y ejemplos del cableado «estándar» de las
 
 
  a| 
-Usted tiene cableado para una configuración de alta disponibilidad multivía, multivía, alta disponibilidad de ruta única o ruta única
+Está realizando el cableado de una configuración de alta disponibilidad multivía, alta disponibilidad multivía, alta disponibilidad de una única vía o única ruta
  a| 
 Conecte mediante cable las conexiones de bandeja a bandeja como conectividad «estándar» (utilizando los puertos IOM 3 y 1):
 
@@ -286,10 +286,10 @@ Conecte el cable de las conexiones de bandeja a bandeja como conectividad «dobl
 +
 .. Revise las hojas de datos de cableado entre la controladora y los ejemplos de cableado para ver si existe una hoja de cálculo completada para la configuración.
 +
-link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre la controladora y la pila, ejemplos de cableado para las plataformas AFF y FAS con almacenamiento incorporado"]
+link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"]
 
 +
-link:install-cabling-worksheets-examples-multipath.html["Hojas de trabajo para el cableado entre la controladora y la pila, ejemplos de cableado para configuraciones de alta disponibilidad multivía comunes"]
+link:install-cabling-worksheets-examples-multipath.html["Hojas de trabajo de cableado de controladora a pila y ejemplos de cableado para configuraciones de alta disponibilidad multivía"]
 
 +
 link:install-worksheets-examples-quadpath.html["Hoja de datos de cableado de controladora a pila y ejemplo de cableado para una configuración de alta disponibilidad de ruta cuádruple con dos HBA SAS de cuatro puertos"]
@@ -409,7 +409,7 @@ Puede utilizar el carácter comodín para asignar más de un disco a la vez.
 Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las acciones correctivas proporcionadas.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 +
 También puede ejecutar el `storage shelf show -fields shelf-id` Comando para ver una lista de los ID de bandeja que ya se están utilizando (y duplicados si están presentes) en el sistema.

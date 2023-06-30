@@ -1,0 +1,83 @@
+---
+section: fas2800
+title: Sistemas FAS2800
+url: "/fas2800/index.html"
+entries:
+- title: Instalar y configurar
+  pdf-filename: FAS2800 Instalación y configuración
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/fas2800/install-setup.html"
+  - title: Pasos rápidos
+    url: "/fas2800/install-quick-guide.html"
+  - title: 'Vídeos: Pasos'
+    url: "/fas2800/install-videos.html"
+  - title: Pasos detallados
+    url: "/fas2800/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: FAS2800 Mantener
+  entries:
+  - title: Soporte de arranque
+    pdf-filename: FAS2800 Medio de arranque
+    entries:
+    - title: Descripción general
+      url: "/fas2800/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/fas2800/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/fas2800/bootmedia-impaired-controller-shutdown.html"
+    - title: Sustituya el soporte de arranque y transfiera la imagen de arranque
+      url: "/fas2800/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas2800/bootmedia-recovery-image-boot-non-2n-mcc.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/fas2800/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas2800/bootmedia-complete-rma.html"
+  - title: Módulo de almacenamiento en caché
+    pdf-filename: FAS2800 Módulo de almacenamiento en caché
+    url: "/fas2800/caching-module-replace.html"
+  - title: Chasis
+    pdf-filename: FAS2800 Chasis
+    entries:
+    - title: Descripción general
+      url: "/fas2800/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas2800/chassis-replace-shutdown.html"
+    - title: Sustituya el hardware
+      url: "/fas2800/chassis-replace-move-hardware.html"
+    - title: Restaurar la configuración
+      url: "/fas2800/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Controlador FAS2800
+    entries:
+    - title: Descripción general
+      url: "/fas2800/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/fas2800/controller-replace-shutdown.html"
+    - title: Sustituya el hardware de la controladora
+      url: "/fas2800/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/fas2800/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/fas2800/controller-replace-recable-reassign-disks.html"
+    - title: Restauración completa del sistema
+      url: "/fas2800/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    pdf-filename: FAS2800 DIMM
+    url: "/fas2800/dimm-replace.html"
+  - title: Unidad
+    pdf-filename: FAS2800 Drive
+    url: "/fas2800/drive-replace.html"
+  - title: Batería NVMEM
+    pdf-filename: Batería NVMEM de FAS2800
+    url: "/fas2800/nvmem-nvram-battery-replace.html"
+  - title: Tarjeta mezzanine
+    pdf-filename: FAS2800 Tarjeta mezzanine
+    url: "/fas2800/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    pdf-filename: FAS2800 Fuente de alimentación
+    url: "/fas2800/power-supply-swap-out.html"
+  - title: Batería del reloj en tiempo real
+    pdf-filename: FAS2800 Batería de reloj en tiempo real
+    url: "/fas2800/rtc-battery-replace.html"

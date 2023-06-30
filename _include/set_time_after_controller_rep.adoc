@@ -13,9 +13,9 @@ Es importante que aplique los comandos en los pasos de los sistemas correctos:
 
 .Pasos
 . Si el nodo _reader_ no está en el aviso del CARGADOR, detenga el sistema en el símbolo del sistema del CARGADOR.
-. En el nodo _Healthy_, compruebe la hora del sistema: `show date`
+. En el nodo _Healthy_, compruebe la hora del sistema: `cluster date show`
 +
-La fecha y la hora se indican en GMT.
+La fecha y la hora se basan en la zona horaria configurada.
 
 . En el símbolo del SISTEMA del CARGADOR, compruebe la fecha y la hora del nodo _regrel_: `show date`
 +
@@ -23,7 +23,7 @@ La fecha y la hora se indican en GMT.
 
 . Si es necesario, establezca la fecha en GMT en el nodo de reemplazo: `set date _mm/dd/yyyy_`
 . Si es necesario, establezca la hora en GMT del nodo de reemplazo: `set time _hh:mm:ss_`
-. En el símbolo del SISTEMA del CARGADOR, confirme la fecha y la hora del nodo _regrel_: `show date`
+. En el símbolo del SISTEMA del CARGADOR, confirme la fecha y la hora del nodo _regrel_: `date`
 +
 La fecha y la hora se indican en GMT.
 

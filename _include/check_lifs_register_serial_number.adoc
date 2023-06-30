@@ -7,7 +7,7 @@ Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se en
 .Pasos
 . Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
 +
-Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert`
+Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert -vserver * -lif *`
 
 . Registre el número de serie del sistema con el soporte de NetApp.
 +
@@ -15,5 +15,6 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 ** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
 
 
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 

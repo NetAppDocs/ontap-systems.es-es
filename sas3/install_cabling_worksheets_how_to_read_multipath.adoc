@@ -14,7 +14,7 @@ summary: Puede utilizar este ejemplo como guía para leer y aplicar una hoja de 
 Puede utilizar este ejemplo como guía para leer y aplicar una hoja de trabajo completada para cablear las conexiones de controladora a pila para las bandejas de discos con módulos IOM12/IOM12B para la conectividad multipathed.
 
 .Antes de empezar
-Si dispone de una plataforma con almacenamiento interno, que incluye la serie FAS2600, AFF A200, FAS2700, AFF A220, y, posteriormente, utilice lo siguiente (estas plataformas utilizan una hoja de cálculo única):
+Si tiene una plataforma con almacenamiento interno, use la siguiente hoja de trabajo:
 
 link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"]
 
@@ -28,7 +28,7 @@ La configuración utilizada en este ejemplo es una configuración de alta dispon
 NOTE: Si tiene más pares de puertos de los que necesita para conectar las pilas en el sistema, la práctica recomendada es omitir los pares de puertos para optimizar los puertos SAS en el sistema. Al optimizar los puertos SAS, optimiza el rendimiento del sistema.
 
 * Si tiene una configuración de controladora única, omita los pasos b y d para cableado a una segunda controladora.
-* Si es necesario, puede consultar link:install-cabling-rules.html["Reglas para el cableado SAS"] para obtener información acerca de la convención de numeración de ranuras de controladoras, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de parejas de puertos).
+* Si es necesario, puede consultar link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información acerca de la convención de numeración de ranuras de controladoras, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de parejas de puertos).
 
 
 Los pares de puertos se cablean con cada par de puertos de la hoja de trabajo: 1a/2b y 1c/2d.

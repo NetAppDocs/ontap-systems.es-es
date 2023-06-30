@@ -28,9 +28,9 @@ Es importante que aplique los comandos en los pasos de los sistemas correctos:
 
 .Pasos
 . Si el nodo _reader_ no está en el aviso del CARGADOR, detenga el sistema en el símbolo del sistema del CARGADOR.
-. En el nodo _Healthy_, compruebe la hora del sistema: `show date`
+. En el nodo _Healthy_, compruebe la hora del sistema: `cluster date show`
 +
-La fecha y la hora se indican en GMT.
+La fecha y la hora se basan en la zona horaria configurada.
 
 . En el símbolo del SISTEMA del CARGADOR, compruebe la fecha y la hora del nodo _regrel_: `show date`
 +
@@ -38,7 +38,7 @@ La fecha y la hora se indican en GMT.
 
 . Si es necesario, establezca la fecha en GMT en el nodo de reemplazo: `set date _mm/dd/yyyy_`
 . Si es necesario, establezca la hora en GMT del nodo de reemplazo: `set time _hh:mm:ss_`
-. En el símbolo del SISTEMA del CARGADOR, confirme la fecha y la hora del nodo _regrel_: `show date`
+. En el símbolo del SISTEMA del CARGADOR, confirme la fecha y la hora del nodo _regrel_: `date`
 +
 La fecha y la hora se indican en GMT.
 
@@ -84,7 +84,7 @@ Todos los comandos de los procedimientos de diagnóstico se emiten desde la cont
 +
 Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
 
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
+. En el aviso del CARGADOR, acceda a los controladores especiales diseñados específicamente para el diagnóstico para funcionar correctamente: `boot_diags`
 . Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
 . Seleccione *sistema de prueba* en el menú que aparece para ejecutar pruebas de diagnóstico.
 . Seleccione la prueba o la serie de pruebas de los distintos submenús.

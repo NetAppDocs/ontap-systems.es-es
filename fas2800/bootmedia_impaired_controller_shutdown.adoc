@@ -1,0 +1,53 @@
+---
+permalink: fas2800/bootmedia-impaired-controller-shutdown.html 
+sidebar: sidebar 
+keywords: fas2800, shut, down, impaired, controller, take, over 
+summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+---
+= Apague el controlador averiado - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Apague o tome el control de la controladora dañada.
+
+Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+
+.Pasos
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado muestra... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a Quitar módulo de controlador.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode impaired_node_name`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+. Desde el aviso del CARGADOR, introduzca: `printenv` para capturar todas las variables ambientales de arranque. Guarde el resultado en el archivo de registro.
++
+
+NOTE: Es posible que este comando no funcione si el dispositivo de inicio está dañado o no funciona.
+
+

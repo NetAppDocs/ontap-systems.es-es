@@ -1,0 +1,161 @@
+---
+permalink: fas2800/chassis-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al chasis de reemplazo, y cambie el chasis dañado del bastidor del equipo o del gabinete del sistema por el chasis de reemplazo del mismo modelo que el chasis dañado. 
+---
+= Mueva y reemplace la tornillería - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al chasis de reemplazo, y cambie el chasis dañado del bastidor del equipo o del gabinete del sistema por el chasis de reemplazo del mismo modelo que el chasis dañado.
+
+
+
+== Paso 1: Mueva una fuente de alimentación
+
+La extracción de una fuente de alimentación al sustituir un chasis implica apagar, desconectar y extraer la fuente de alimentación del chasis dañado e instalarla y conectarla al chasis de reemplazo.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Apague la fuente de alimentación y desconecte los cables de alimentación:
++
+.. Apague el interruptor de alimentación de la fuente de alimentación.
+.. Abra el retenedor del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación.
+
+
+. Apriete el pestillo del mango de la leva de la fuente de alimentación y, a continuación, abra el asa de la leva para liberar completamente la fuente de alimentación del plano medio.
+. Utilice el asa de leva para extraer la fuente de alimentación del sistema.
++
+
+CAUTION: Al extraer una fuente de alimentación, utilice siempre dos manos para soportar su peso.
+
+. Repita los pasos anteriores con todos los suministros de alimentación restantes.
+. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del chasis del sistema y, a continuación, empuje suavemente la fuente de alimentación hacia el chasis con el asa de leva.
++
+Las fuentes de alimentación están codificadas y sólo se pueden instalar de una manera.
+
++
+
+NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación en el sistema. Puede dañar el conector.
+
+. Cierre el asa de la leva de forma que el pestillo encaje en la posición de bloqueo y la fuente de alimentación esté completamente asentada.
+. Vuelva a conectar el cable de alimentación y fíjelo a la fuente de alimentación mediante el mecanismo de bloqueo del cable de alimentación.
++
+
+NOTE: Conecte sólo el cable de alimentación a la fuente de alimentación. No conecte el cable de alimentación a una fuente de alimentación en este momento.
+
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Retire el módulo o los módulos del controlador del chasis dañado.
+
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm EXTENSIÓN INSTALAR IEOPS 694]
+
+. Coloque el módulo del controlador aparte en un lugar seguro.
+. Repita estos pasos para el segundo módulo de controlador del chasis.
+
+
+
+
+== Paso 3: Mueva las unidades al chasis de reemplazo
+
+Mueva las unidades de cada apertura de bahía de unidad en el chasis dañado a la misma apertura de bahía en el chasis de reemplazo.
+
+. Retire con cuidado el bisel de la parte delantera del sistema.
+. Quite las unidades:
++
+.. Pulse el botón de liberación en el lado opuesto de los LED.
+.. Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad del plano medio y, a continuación, deslice suavemente la unidad para extraerla del chasis.
++
+La transmisión debe desconectarse del chasis, lo que le permitirá deslizarse sin el chasis.
+
++
+
+NOTE: Al extraer una unidad, utilice siempre dos manos para sostener su peso.
+
++
+
+NOTE: Las unidades son frágiles. Manipularlos lo menos posible para evitar que se dañen.
+
+
+
+. Alinee la unidad del chasis dañado con la misma apertura de bahía en el chasis de reemplazo.
+. Empuje suavemente la unidad dentro del chasis hasta que llegue.
++
+La palanca de leva se acopla y comienza a girar a la posición cerrada.
+
+. Empuje firmemente la unidad el resto del camino hacia el chasis y, a continuación, bloquee la palanca de leva empujándola contra el soporte de la unidad.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la parte delantera del portador de accionamiento. Haga clic cuando sea seguro.
+
+. Repita el proceso para las unidades restantes del sistema.
+
+
+
+
+== Paso 4: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
+
+Retire el chasis existente del rack de equipos o del armario del sistema e instale el chasis de reemplazo en el rack de equipos o el armario del sistema.
+
+. Quite los tornillos de los puntos de montaje del chasis.
+. Con la ayuda de dos o tres personas, deslice el chasis dañado fuera de los rieles del bastidor en un gabinete del sistema o soportes _L_ en un bastidor de equipo, y luego déjelo a un lado.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Con dos o tres personas, instale el chasis de repuesto en el bastidor del equipo o el armario del sistema guiando el chasis en los rieles del bastidor en un armario del sistema o los soportes _L_ en un bastidor del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte delantera del chasis al bastidor del equipo o al armario del sistema con los tornillos que ha retirado del chasis dañado.
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 5: Instale la controladora
+
+Instale el módulo del controlador y cualquier otro componente en el chasis de reemplazo, arranque el modo de mantenimiento.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
+. Repita los pasos anteriores para la segunda controladora del chasis de reemplazo.
+. Complete la instalación del módulo del controlador:
++
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+.. Repita los pasos anteriores para el segundo módulo de controlador en el chasis de reemplazo.
+
+
+. Conecte las fuentes de alimentación a distintas fuentes de alimentación y, a continuación, enciéndalas.
+. Arranque cada controladora en modo de mantenimiento:
++
+.. A medida que cada controlador inicia el arranque, pulse `Ctrl-C` para interrumpir el proceso de arranque cuando vea el mensaje `Press Ctrl-C for Boot Menu`.
++
+
+NOTE: Si se pierde el aviso y los módulos de la controladora se inician en ONTAP, introduzca `halt`, Y luego en el aviso del CARGADOR entrar `boot_ontap`, pulse `Ctrl-C` cuando se le solicite y repita este paso.
+
+.. En el menú de inicio, seleccione la opción modo de mantenimiento.
+
+
+

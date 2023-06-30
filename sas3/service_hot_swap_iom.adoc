@@ -35,7 +35,7 @@ Los módulos IOM12B se distinguen por una banda azul y una etiqueta "IOM12B":
 +
 image::../media/iom12b.png[iom12b]
 
-* En el caso de configuraciones multivía (alta disponibilidad multivía o multivía) y de cuatro rutas (alta disponibilidad de ruta cuádruple o cuatro rutas), puede cambiar en caliente un IOM de bandeja (sustituya de forma no disruptiva un IOM de bandeja en un sistema encendido y que sirve datos: Las operaciones de I/o están en curso).
+* En el caso de configuraciones multivía (alta disponibilidad o multivía), de alta disponibilidad de tres rutas y de cuatro rutas (alta disponibilidad de cuatro rutas o cuatro rutas), puede intercambiar en caliente un IOM de bandeja (sustituir de forma no disruptiva un IOM de bandeja en un sistema que se enciende y suministra datos: I/O está en curso).
 * Para las configuraciones de alta disponibilidad de ruta única de la serie FAS2600 y la serie FAS2700, debe realizar una operación de toma de control y retorno al nodo primario para sustituir un IOM de bandeja en un sistema encendido y que está sirviendo datos. Las operaciones de I/o están en curso.
 * Para las configuraciones de ruta única de la serie FAS2600, debe detener el sistema para sustituir un IOM de bandeja.
 +
@@ -47,10 +47,10 @@ NOTE: Si intenta intercambiar un IOM de bandeja en caliente en una bandeja de di
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
 
 * El firmware de la bandeja de discos (IOM) se actualiza automáticamente (no disruptivo) en un IOM de bandeja nuevo con una versión de firmware no actual.
 +
@@ -78,7 +78,7 @@ Guarde todos los materiales de paquetes que se usarán cuando se devuelve el IOM
 
 
  a| 
-Alta disponibilidad multivía, multivía, alta disponibilidad de ruta cuádruple o configuración de ruta cuádruple
+Alta disponibilidad multivía, alta disponibilidad multivía, multivía, alta disponibilidad multivía o multivía
  a| 
 Vaya al paso siguiente.
 
@@ -141,7 +141,7 @@ Los conectores de cable SAS están codificados; cuando están orientados correct
 
 
  a| 
-Alta disponibilidad multivía, multivía, alta disponibilidad de ruta cuádruple o configuración de ruta cuádruple
+Alta disponibilidad multivía, alta disponibilidad multivía, multivía, alta disponibilidad multivía o multivía
  a| 
 Vaya al paso siguiente.
 

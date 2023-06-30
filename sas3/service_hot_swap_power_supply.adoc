@@ -32,7 +32,7 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descar
 
 * Si es necesario, puede encender los LED de ubicación (azul) de la bandeja de discos para ayudar a localizar físicamente la bandeja de discos afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
-Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada módulo IOM12. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada IOM de bandeja. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
 
 * Si es necesario, puede consultar la sección LED de bandeja de discos de supervisión para obtener información sobre el significado y la ubicación de los LED de bandeja de discos en el panel de visualización del operador y los componentes FRU.
 

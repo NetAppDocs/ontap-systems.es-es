@@ -111,7 +111,7 @@ Si la devolución no está completa tras 20 minutos, póngase en contacto con el
 
 . En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su controladora y puerto de inicio.
 +
-Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert -vserver Cluster -lif _nodename_` comando.
 
 . Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
@@ -162,7 +162,7 @@ NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
 . Espere 3 minutos y compruebe el estado de la conmutación al nodo de respaldo con el `storage failover show` comando.
 . En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su controladora y puerto de inicio.
 +
-Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert -vserver Cluster -lif _nodename_` comando.
 
 . Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.

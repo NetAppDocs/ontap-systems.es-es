@@ -1,10 +1,10 @@
 ---
 permalink: sas3/install-cabling-rules.html 
 sidebar: sidebar 
-keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b 
+keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b, concepts 
 summary: 'Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de pares de alta disponibilidad y de controladoras individuales (para plataformas compatibles).' 
 ---
-= Reglas para el cableado SAS: Bandejas con módulos IOM12/IOM12B
+= Reglas y conceptos de cableado SAS: Bandejas con módulos IOM12/IOM12B
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: 'Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en c
 Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de par de alta disponibilidad y de controlador único (para plataformas compatibles) aplicando las reglas de cableado SAS: Reglas de configuración, reglas de numeración de ranuras de controladoras, reglas de conexión de bandeja a bandeja, reglas de conexión de controladora a pila y, si procede, reglas de cables ópticos mini-SAS HD.
 
 
-NOTE: Las reglas de cableado SAS respecto a las reglas de numeración de las ranuras de la controladora, las reglas de conexión de bandeja a bandeja y las reglas de conexión de controladora a pila descritas en esta guía son las mismas reglas que se aplican a todas las bandejas de discos SAS, ya tengan módulos IOM12/IOM12B, IOM6 o IOM3. Sin embargo, la información de esta guía es específica de las características exclusivas de las bandejas de discos con módulos IOM12 y su uso en configuraciones compatibles.
+NOTE: Las reglas de cableado SAS respecto a las reglas de numeración de las ranuras de la controladora, las reglas de conexión de bandeja a bandeja y las reglas de conexión de controladora a pila descritas en esta guía son las mismas reglas que se aplican a todas las bandejas de discos SAS, ya tengan módulos IOM12/IOM12B, IOM6 o IOM3. Sin embargo, la información de esta guía es específica de las características únicas de las bandejas de discos con módulos IOM12/IOM12B y su uso en las configuraciones compatibles.
 
 Las reglas de cableado SAS con respecto a las reglas de configuración y las reglas de cable óptico mini-SAS HD SAS descritas en esta guía son específicas de las bandejas de discos con módulos IOM12/IOM12B.
 
@@ -32,20 +32,39 @@ Debe evitar desviarse de las reglas; las desviaciones pueden reducir la confiabi
 
 == Reglas de configuración
 
-Las bandejas de discos con módulos IOM12 son compatibles con los tipos específicos de configuraciones de parejas de alta disponibilidad y de controladoras individuales.
+[role="lead"]
+Las bandejas de discos con módulos IOM12/IOM12B son compatibles con tipos específicos de configuraciones de par de alta disponibilidad y de controladora única.
 
 
 NOTE: Las plataformas FAS25XX no se tratan en este contenido.
 
+[NOTE]
+====
+Para obtener información actualizada sobre las configuraciones de cableado admitidas para el modelo de plataforma, consulte Hardware Universe.
+
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
+
+====
 * Las configuraciones de parejas de ALTA DISPONIBILIDAD deben cablearse como configuraciones de alta disponibilidad multivía o de alta disponibilidad de ruta cuádruple, con las siguientes excepciones:
 +
-** Plataformas con almacenamiento interno, como la serie FAS2600, AFF A200, serie FAS2700, AFF A220, Y versiones posteriores, se pueden conectar mediante cables configuraciones de alta disponibilidad de ruta única para admitir la conectividad con un dispositivo de backup a cinta SAS externo.
-** Plataformas con almacenamiento interno, como la serie FAS2600, AFF A200, serie FAS2700, AFF A220, Y, más adelante, no admiten la conectividad de alta disponibilidad de ruta cuádruple.
+** Las plataformas con almacenamiento interno no admiten la conectividad de alta disponibilidad de cuatro rutas.
+** Un par de alta disponibilidad de FAS2800 se puede cablear como alta disponibilidad de tres vías.
++
+Puede encontrar información sobre la conectividad FAS2800 en la <<Conectividad de alta disponibilidad trirruta>> sección.
+
+** Las plataformas con almacenamiento interno se pueden cablear como configuraciones de alta disponibilidad de ruta única (desde el puerto 0b/0b1 a bandejas externas) para admitir la conectividad con un dispositivo de backup en cinta SAS externo (desde el puerto 0A).
 
 
+
+
+[NOTE]
+====
+Para FAS2800 pares de alta disponibilidad, aunque el cableado a bandejas externas es de alta disponibilidad de ruta única, debido a la conexión interna de cada controladora del puerto 0b a su expansor local (IOM12G) y el puerto 0C al expansor de su compañero, la configuración del par de alta disponibilidad es multivía.
+
+====
 * Las configuraciones de controladora única se deben cableado como configuraciones de multivía o de ruta cuádruple, con las siguientes excepciones:
 +
-** Las configuraciones de controladora única de la serie FAS2600 (con bandejas de discos externas) se pueden cablear como configuraciones de ruta única.
+** Las configuraciones de controladora única de la serie FAS2600 se pueden cablear como configuraciones de ruta única.
 +
 Dado que el almacenamiento interno utiliza la conectividad de ruta única, ONTAP emite advertencias ocasionales en las que se detectan rutas mixtas. Para evitar estas advertencias, puede utilizar la conectividad de una sola ruta a las bandejas de discos externas. Además, puede utilizar conectividad de ruta única cuando se utilice un dispositivo de copia de seguridad en cinta SAS externo.
 
@@ -88,8 +107,10 @@ Cuando dispone de más de una bandeja de discos en una pila de bandejas de disco
 
 === Conectividad estándar entre bandejas
 
-* La conectividad estándar entre bandejas se utiliza en configuraciones de alta disponibilidad multivía, alta disponibilidad multivía, ruta única y ruta única.
-* La conectividad estándar de bandeja a bandeja es lo que se utiliza en las configuraciones de almacenamiento SAS existentes con módulos IOM3 e IOM6: Se necesita una conexión de cable entre las bandejas de discos de cada dominio: El dominio A (IOM A) y el dominio B (IOM B).
+* La conectividad estándar de bandeja a bandeja se utiliza en cualquier pila de bandejas de discos con más de una bandeja de discos.
++
+Se necesita una conexión de cable entre las bandejas de discos en cada dominio: Dominio A (IOM A) y dominio B (IOM B).
+
 * La práctica recomendada es utilizar los puertos IOM 3 y 1 para la conectividad estándar de bandeja a bandeja.
 +
 Desde la primera bandeja lógica hasta la última bandeja lógica de una pila, se debe conectar el puerto IOM 3 al puerto IOM 1 de la siguiente bandeja en el dominio A y, a continuación, en el dominio B.
@@ -238,23 +259,23 @@ link:install-cabling-worksheet-template-quadpath.html["Plantilla de hoja de trab
 
 
 
-=== Reglas de conexión de puertos 0b y 0a para plataformas con almacenamiento interno
+=== Reglas de conexión de puertos 0b/0b1 y 0A de la controladora para plataformas con almacenamiento interno
 
-Plataformas con almacenamiento interno, como la serie FAS2600, AFF A200, serie FAS2700, AFF A220, y, más adelante, tengan un conjunto único de reglas de conexión porque cada controladora debe mantener la misma conectividad de dominio entre el almacenamiento interno (puerto 0b) y la pila. Esto significa que si una controladora se encuentra en la ranura A del chasis (controladora 1), está en el dominio A (IOM A) y, por lo tanto, el puerto 0b debe conectarse a IOM A en la pila. Cuando una controladora se encuentra en la ranura B del chasis (controladora 2), se encuentra en el dominio B (IOM B) y, por lo tanto, el puerto 0b debe conectarse a IOM B en la pila.
+Las plataformas con almacenamiento interno tienen un conjunto único de reglas de conexión, ya que cada controladora debe mantener la misma conectividad de dominio entre el almacenamiento interno (puerto 0b/0b1) y la pila. Esto significa que cuando una controladora se encuentra en la ranura A del chasis (controladora 1), se encuentra en el dominio A (IOM A) y, por lo tanto, el puerto 0b/0b1 debe conectarse a IOM A en la pila. Cuando una controladora se encuentra en la ranura B del chasis (controladora 2), se encuentra en el dominio B (IOM B) y, por lo tanto, el puerto 0b/0b1 debe conectarse al IOM B en la pila.
 
 
 NOTE: Las plataformas FAS25XX no se tratan en este contenido.
 
 
-NOTE: Si no conecta el puerto 0b al dominio correcto (dominios de conexión cruzada), expondrá su sistema a problemas de resiliencia que le impidan realizar procedimientos no disruptivos de forma segura.
+NOTE: Si no conecta el puerto 0b/0b1 al dominio correcto (dominios de conexión cruzada), exponga el sistema a problemas de resistencia que le impidan realizar procedimientos no disruptivos de forma segura.
 
-* Puerto 0b de la controladora (puerto de almacenamiento interno):
+* Puerto 0b/0b1 de la controladora (puerto de almacenamiento interno):
 +
-** El puerto 0b de la controladora 1 siempre se conecta a IOM A (dominio A).
-** El puerto 0b de la controladora 2 siempre se conecta a IOM B (dominio B).
-** El puerto 0b es siempre la ruta principal.
-** El puerto 0b siempre se conecta a la última bandeja de discos lógica de una pila.
-** El puerto 0b siempre conecta con el puerto IOM 3 de la bandeja de discos.
+** El puerto de la controladora 1 0b/0b1 siempre se conecta al IOM A (dominio A).
+** El puerto de la controladora 2 0b/0b1 siempre se conecta al IOM B (dominio B).
+** El puerto 0b/0b1 es siempre la ruta principal.
+** El puerto 0b/0b1 siempre se conecta a la última bandeja de discos lógica de una pila.
+** El puerto 0b/0b1 siempre conecte al puerto IOM 3 de la bandeja de discos.
 
 
 * Puerto 0a de la controladora (puerto HBA interno):
@@ -268,9 +289,37 @@ NOTE: Si no conecta el puerto 0b al dominio correcto (dominios de conexión cruz
 
 
 
-En la siguiente ilustración se destaca la conectividad de dominio de puerto de almacenamiento interno (0b) para una serie FAS2600, AFF A200, serie FAS2700, AFF A220 y una configuración posterior de alta disponibilidad multivía:
+En la siguiente ilustración, se destaca la conectividad de dominio del puerto de almacenamiento interno (0b/0b1) con una pila de bandejas externa:
 
-image::../media/drw_fas2600_mpha_domain_example.png[ejemplo de dominio drw fas2600 mpha]
+image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Ejemplo de dominio drw fas2600 mpha IEOPS 1172]
+
+
+
+=== Conectividad de alta disponibilidad trirruta
+
+La conectividad de alta disponibilidad de triple vía está disponible en pares de alta disponibilidad FAS2800. La conectividad de alta disponibilidad de triple ruta tiene tres rutas entre cada controlador y bandejas internas (IOM12G) y externas:
+
+* La conexión interna de cada controladora del puerto 0b a su IOM12G local y al puerto 0C al IOM12G de su compañero ofrece una conectividad de alta disponibilidad multivía para el par de alta disponibilidad.
+* El cableado de los puertos de almacenamiento externo de cada controladora, 0A y 0b1, proporciona un par de alta disponibilidad de tres rutas.
++
+Los puertos 0A y 0b1 se cablean entre las dos controladoras cuando no hay bandejas externas o se cablean a bandejas externas para lograr conectividad de alta disponibilidad de tres rutas.
+
+
+
+A continuación se muestran las conexiones internas y el cableado externo de la controladora que consigue una conectividad de alta disponibilidad de tres rutas:
+
+image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[drw fas2800 Concept tpha IEOPS 950]
+
+Los puertos SAS externos de FAS2800:
+
+* El puerto 0A procede del HBA interno (como otras plataformas con una bandeja interna).
+* El puerto 0b1 procede de la bandeja interna (como los puertos 0b de otras plataformas con una bandeja interna).
+* No se utiliza el puerto 0b2. Está desactivado. Si un cable está conectado a él, se genera un mensaje de error.
+
+
+image::../media/drw_sas3_ports_on_fas2800_IEOPS-946 (1).svg[drw sas3 puertos en fas2800 IEOPS 946 (1)]
+
+Pueden encontrarse ejemplos de cableado para pares de alta disponibilidad de FAS2800 en la link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"] sección.
 
 
 

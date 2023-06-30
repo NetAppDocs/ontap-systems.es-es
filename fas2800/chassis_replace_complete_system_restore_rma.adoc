@@ -1,0 +1,71 @@
+---
+permalink: fas2800/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos de nivel del sistema, volver a los agregados y devolver la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de la RMA que se suministran con el kit. 
+---
+= Restaurar y verificar la configuración - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Compruebe que el estado de alta disponibilidad del chasis ponga en marcha el sistema y devuelva la pieza fallida a la NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
+
+
+
+== Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+
+Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
+
+. En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado para el chasis no coincide con la configuración del sistema:
++
+.. Establezca el estado de la alta disponibilidad para el chasis en función de la configuración existente del sistema: `ha-config modify chassis _ha-state_`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+*** `ha`
+*** `non-ha`
+
+
+.. Confirme que el ajuste ha cambiado: `ha-config show`
+
+
+. Si aún no lo ha hecho, puede volver a obtener el resto de su sistema.
+. Salir del modo de mantenimiento: `halt`.    Aparece el aviso del CARGADOR.
+. Arranque los módulos del controlador.
+
+
+
+
+== Paso 2: Abra el sistema
+
+. Si no lo ha hecho, vuelva a conectar los cables de alimentación a las PSU.
+. Encienda las fuentes de alimentación cambiando el interruptor de balancín a *ON* y espere a que los controladores se enciendan por completo.
+. Compruebe si hay alguna luz de fallo en la parte delantera y trasera del chasis y las controladoras después del encendido.
+. Conéctese a la dirección IP de SP o BMC de los nodos a través de SSH. Esta será la misma dirección utilizada para apagar los nodos.
+. Realice comprobaciones de estado adicionales, como se describe en https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+
+
+[]
+====
+
+NOTE: Como práctica recomendada, debe realizar lo siguiente:
+
+* Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"^] (Active IQ tardará tiempo en procesar los mensajes de AutoSupport posteriores al encendido; se espera un retraso en los resultados)
+* Ejecución https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]
+* Compruebe el estado del sistema mediante https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
+
+
+====
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

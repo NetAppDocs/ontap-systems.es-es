@@ -39,45 +39,45 @@ Si aparece el campo compatibilidad con pilas mixtas SAS2/SAS3, el sistema solo a
 
 ** Vaya a Hardware Universe y desplácese hasta la información de la plataforma.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 
 
 * Si agrega una bandeja a una configuración MetroCluster, la configuración debe satisfacer todos los requisitos en las guías de instalación y configuración de MetroCluster.
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["Guía de instalación y configuración de MetroCluster IP"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-ip/home.html["Guía de instalación y configuración de MetroCluster IP"^]
 
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["Guía de instalación y configuración de MetroCluster con ampliación de ONTAP 9"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-stretch/home.html["Guía de instalación y configuración de MetroCluster con ampliación de ONTAP 9"^]
 
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["Guía de instalación y configuración de MetroCluster estructural de ONTAP 9"]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["Guía de instalación y configuración de MetroCluster estructural de ONTAP 9"^]
 
-* La pila de bandejas IOM6, a la que se añade en caliente una bandeja IOM12, debe cablearse con cables de cobre SAS (para todas las conexiones de bandeja a bandeja y de controladora a pila).
+* La pila de bandejas IOM6, a la que se añade en caliente una bandeja IOM12/IOM12B, debe cablearse con cables de cobre SAS (para todas las conexiones de bandeja a bandeja y de controladora a pila).
 +
 Los cables ópticos SAS no son compatibles con una pila mixta.
 
 +
 
-NOTE: Si la pila de bandeja IOM6 está cableada con cualquier cable óptico SAS, no se puede añadir en caliente una bandeja IOM12. Póngase en contacto con el representante de ventas de NetApp.
+NOTE: Si la pila de bandeja IOM6 está cableada con cualquier cable óptico SAS, no se puede añadir en caliente una bandeja IOM12/IOM12B. Póngase en contacto con el representante de ventas de NetApp.
 
-* El sistema debe tener una cantidad inferior a la cantidad máxima de unidades admitidas, al menos por la cantidad de unidades compatibles con la instalación en las bandejas IOM12 que va a añadir en caliente.
+* Su sistema debe tener una cantidad inferior a la máxima de unidades admitidas, al menos la cantidad de unidades compatibles que se puedan instalar en las bandejas IOM12/IOM12B que prevé la adición en caliente.
 +
 No puede haber superado el número máximo de unidades admitidas para el sistema después de añadir en caliente bandejas IOM12/IOM12B.
 
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * El sistema no puede tener mensajes de error de cableado SAS.
 +
 Debe corregir todos los errores de cableado mediante las acciones correctivas proporcionadas por los mensajes de error.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 * Debe haber pedido y recibido las bandejas IOM12/IOM12B y el número y los tipos adecuados de cables de cobre SAS.
 +
-Las bandejas IOM12 utilizan conectores HD mini-SAS. Las bandejas IOM6 utilizan conectores QSFP.
+Las bandejas IOM12/IOM12B utilizan conectores HD Mini-SAS. Las bandejas IOM6 utilizan conectores QSFP.
 
 
 
@@ -87,7 +87,7 @@ Las bandejas IOM12 utilizan conectores HD mini-SAS. Las bandejas IOM6 utilizan c
 
 Si va a añadir en caliente bandejas IOM12/IOM12B a una pila de bandejas IOM6 que se adjunta con un par de puentes ATTO FibreBridge en una configuración MetroCluster, el sistema debe satisfacer ciertos requisitos.
 
-* Si los puertos SAS de puente están disponibles en la configuración actual, debe añadir las bandejas IOM12 como una pila aparte.
+* Si hay puertos SAS puente disponibles en la configuración actual, debe añadir las bandejas IOM12/IOM12B como una pila aparte.
 +
 Utilice todos los puertos de puente antes de mezclar los módulos IOM12/IOM12B e IOM6 en una pila.
 
@@ -105,16 +105,16 @@ Si aparece algo más en el campo Soporte de pila mixta SAS2/SAS3, como todos o c
 
 ** Vaya a Hardware Universe y desplácese hasta la información de la plataforma.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 
 
 * La configuración debe satisfacer todos los requisitos en las guías de instalación y configuración de MetroCluster.
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/index.html["Instalación y configuración de una configuración de Stretch MetroCluster"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-stretch/index.html["Instalación y configuración de una configuración de Stretch MetroCluster"^]
 
 +
-https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Instalación y configuración de una configuración de MetroCluster estructural"]
+https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Instalación y configuración de una configuración de MetroCluster estructural"^]
 
 * La pila de bandejas IOM6, a la que se añade en caliente una bandeja IOM12/IOM12B, debe cablearse con cables de cobre SAS (para todas las conexiones de bandeja a bandeja y de controladora a pila).
 +
@@ -154,9 +154,9 @@ Después de descargar el firmware de la bandeja IOM12/IOM12B a las bandejas, com
 No puede utilizar este procedimiento para añadir bandejas de discos en activo que se quitaron en caliente de otra pila en el mismo sistema cuando el sistema esté encendido y sirviendo datos (se está realizando una I/o).
 
 * Puede utilizar este procedimiento para añadir bandejas de discos en activo que se quitaron en caliente dentro del mismo sistema MetroCluster si la bandeja afectada tiene agregados reflejados.
-* Cuando se añaden bandejas en caliente con módulos IOM12 a una pila de bandejas con módulos IOM6, el rendimiento de toda la pila funciona a 6 Gbps (se ejecuta a la velocidad común más baja).
+* Cuando se agregan bandejas con módulos IOM12/IOM12B en caliente a una pila de bandejas con módulos IOM6, el rendimiento de toda la pila funciona a 6 Gbps (se ejecuta a la velocidad común más baja).
 +
-Si las bandejas que añade en caliente son bandejas que se han actualizado desde los módulos IOM3 o IOM6, hasta los módulos IOM12, la pila funciona a 12 Gbps; sin embargo, el plano posterior de la bandeja y las capacidades de disco pueden limitar el rendimiento del disco a 3 Gbps o 6 Gbps.
+Si las bandejas que desea añadir en caliente son bandejas que se han actualizado de los módulos IOM3 o IOM6 a los módulos IOM12/IOM12B, la pila funciona a 12 Gbps; sin embargo, las capacidades de disco y backplane de las bandejas pueden limitar el rendimiento del disco a 3 Gbps o 6 Gbps.
 
 * Después de cablear una bandeja añadida en caliente, ONTAP reconoce la bandeja:
 +
@@ -176,10 +176,10 @@ NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
 
 * *Mejor práctica:* la mejor práctica es tener versiones actuales del firmware de la bandeja (IOM) y de las unidades en el sistema antes de añadir en caliente una bandeja.
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
 
 
 
@@ -198,18 +198,18 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/downloa
 Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se proporciona una Snapshot de la conectividad SAS existente, se comprueban las versiones del firmware de la bandeja (IOM) y se puede verificar un ID de bandeja ya en uso en el sistema. Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se cablean correctamente y que los ID de bandeja son únicos en el sistema.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 * *Mejor práctica:* la mejor práctica es tener ACP en banda (IBACP) funcionando en su sistema.
 +
-** Para los sistemas en los que se está ejecutando IBAP, IBACP se activa automáticamente en las bandejas IOM12 con adición en caliente.
-** Para los sistemas en los que está habilitada una ACP fuera de banda, las funcionalidades de ACP no están disponibles en las bandejas IOM12.
+** En los sistemas donde se ejecuta IBACP, IBACP se habilita automáticamente en las bandejas IOM12/IOM12B añadidas en caliente.
+** En el caso de los sistemas en los que está habilitada la ACP fuera de banda, las funcionalidades ACP no están disponibles en las bandejas IOM12/IOM12B.
 +
 Debe migrar a IBACP y eliminar el cableado ACP fuera de banda.
 
 ** Si el sistema no ejecuta IBACP y el sistema cumple los requisitos de IBACP, puede migrar el sistema a IBACP antes de añadir una bandeja IOM12.
 +
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["Instrucciones para migrar a IBACP"]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["Instrucciones para migrar a IBACP"^]
 
 +
 
@@ -223,7 +223,7 @@ NOTE: Las instrucciones de migración proporcionan los requisitos del sistema pa
 
 == Prepare la asignación manual de la propiedad de una unidad para una adición de activo
 
-Si va a asignar manualmente la propiedad de una unidad para las bandejas IOM12 que va a añadir en caliente, debe deshabilitar la asignación automática de unidades si está habilitada.
+Si desea asignar manualmente la propiedad de unidades para las bandejas IOM12/IOM12B que se añaden en caliente, debe deshabilitar la asignación de unidades automática, si está habilitada.
 
 .Antes de empezar
 Debe haber cumplido los requisitos del sistema.
@@ -360,7 +360,7 @@ CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el
 +
 .. Defina el ID de bandeja para cada bandeja que va a añadir en caliente a un ID único dentro del par de alta disponibilidad o de la configuración de una sola controladora.
 +
-Un ID de bandeja válido tiene un valor de 00 a 99. Se recomienda establecer los ID de bandeja de forma que las bandejas IOM6 utilicen números inferiores (1 - 9) y las bandejas IOM12 utilicen números superiores (10 y superiores).
+Un ID de bandeja válido tiene un valor de 00 a 99. Se recomienda configurar los ID de las bandejas de manera que las bandejas IOM6 utilicen los números más bajos (de 1 a 9) y IOM12/IOM12B utilicen números más altos (10 y superiores).
 
 +
 Si dispone de un modelo de plataforma con almacenamiento integrado, los ID de bandeja deben ser únicos para las bandejas internas y las bandejas conectadas externamente. Se recomienda configurar la bandeja interna en 0. En las configuraciones IP de MetroCluster, solo se aplican los nombres de las bandejas externas y, por lo tanto, no es necesario que los nombres de las bandejas sean únicos.
@@ -369,7 +369,7 @@ Si dispone de un modelo de plataforma con almacenamiento integrado, los ID de ba
 
 . Si es necesario, verifique los ID de bandeja que ya están en uso ejecutando Active IQ Config Advisor.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 +
 También puede ejecutar el `storage shelf show -fields shelf-id` Comando para ver una lista de los ID de bandeja que ya se están utilizando (y duplicados si están presentes) en el sistema.
@@ -390,7 +390,7 @@ Debe apagar ambos switches de alimentación, esperar 10 segundos y volver a ence
 
 == Realice las bandejas de cables para añadir datos en caliente
 
-La forma en que se conecte la conexión de una bandeja IOM12/IOM12B a una pila de bandejas IOM6 depende de si la bandeja IOM12 es la bandeja IOM12/IOM12B inicial, lo que significa que no hay ninguna otra bandeja IOM12 en la pila, O si se trata de una bandeja IOM12/IOM12B adicional a una pila mixta existente, lo que significa que ya hay una o varias bandejas IOM12/IOM12B en la pila. También depende de si la pila tiene alta disponibilidad multivía, alta disponibilidad multivía, de ruta única o conectividad de ruta única.
+La forma en que conecta la conexión de una bandeja IOM12/IOM12B a una pila de bandejas IOM6 depende de si la bandeja IOM12/IOM12B es la bandeja IOM12/IOM12B inicial, lo que significa que no existe ninguna otra bandeja IOM12/IOM12B en la pila, O si se trata de una bandeja IOM12/IOM12B adicional a una pila mixta existente, lo que significa que ya existe una o varias bandejas IOM12/IOM12B en la pila. Además, depende de si la pila tiene alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de ruta única o conectividad de ruta única.
 
 .Antes de empezar
 * Debe haber cumplido los requisitos del sistema.
@@ -418,12 +418,12 @@ Por ejemplo:
 +
 ** En un par de alta disponibilidad, una transición de velocidad única dentro de una pila que tiene dos bandejas IOM6 y dos bandejas IOM12/IOM12B se describen como:
 +
- Controller <-> IOM6 <-> IOM6 <---> IOM12IOM12B <-> IOM12/IOM12B <-> Controller
-** En un par de alta disponibilidad con almacenamiento IOM12E integrado, se describe una transición de velocidad única dentro de una pila que tiene dos bandejas IOM12 y dos bandejas IOM6:
+ Controller <-> IOM6 <-> IOM6 <---> IOM12/IOM12B <-> IOM12/IOM12B <-> Controller
+** En un par de alta disponibilidad con almacenamiento interno (IOM12E/IOM12G), una transición de una única velocidad dentro de una pila que tiene dos bandejas IOM12/IOM12B y dos bandejas IOM6 se muestra como:
 +
- IOM12E 0b <-> IOM12/IOM12B <-> IOM12/IOM12B <---> IOM6 <-> IOM6 <-> IOM12E 0a
+ IOM12E 0b/IOM12G 0b1 <-> IOM12/IOM12B <-> IOM12/IOM12B <---> IOM6 <-> IOM6 <-> IOM12E 0a/IOM12G 0a
 +
-El puerto 0b de almacenamiento integrado es el puerto del almacenamiento interno (expansor) y debido a que se conecta a la bandeja IOM12/IOM12B añadida en caliente (la última bandeja de la pila), el grupo de bandejas IOM12/IOM12B se mantiene Unido y se mantiene una transición única a través de la pila y el almacenamiento IOM12E incorporado.
+El puerto de almacenamiento interno 0b/0b1 es el puerto del almacenamiento interno (expansor) y como se conecta a la bandeja IOM12/IOM12B con alta actividad (la última bandeja de la pila), el grupo de bandejas IOM12/IOM12B se mantiene unido y se mantiene una única transición a través de la pila y el almacenamiento IOM12E/IOM12G interno.
 
 
 
@@ -443,7 +443,7 @@ En el caso de las bandejas, inserte un conector de cable SAS con la pestaña ext
 
 * Se puede consultar la siguiente ilustración para el cableado de bandejas IOM12/IOM12B a una pila de bandeja IOM6 en una configuración que no utilice puentes FC a SAS.
 +
-Esta ilustración es específica de una pila con conectividad de alta disponibilidad multivía; sin embargo, el concepto de cableado se puede aplicar a pilas con configuraciones de alta disponibilidad multivía, de ruta única, conectividad de ruta única y MetroCluster de ampliación.
+Esta ilustración es específica de una pila con conectividad de alta disponibilidad multivía; sin embargo, el concepto de cableado se puede aplicar a pilas con configuraciones MetroCluster de alta disponibilidad multivía, trirruta, alta disponibilidad de ruta única, conectividad de ruta única y ampliación.
 
 +
 image::../media/drw_sas2_sas3_mixed_stack.png[pila mixta drw sas2 sas3]
@@ -454,7 +454,7 @@ image::../media/drw_sas2_sas3_mixed_stack.png[pila mixta drw sas2 sas3]
 .Pasos
 . Identifique físicamente la última bandeja lógica de la pila.
 +
-Dependiendo del modelo de plataforma y de la conectividad de la pila (alta disponibilidad multivía, alta disponibilidad de ruta única o ruta única), la última bandeja lógica es la bandeja que tiene conexiones de controladora a pila de los puertos SAS B y D de la controladora. O bien, es la bandeja que no tiene conexión a ninguna controladora (debido a que la conectividad de controladora a pila es a la parte superior lógica de la pila a través de los puertos SAS de la controladora A y C).
+En función de su modelo de plataforma y de la conectividad de pila (alta disponibilidad multivía, alta disponibilidad de tres vías, multivía, alta disponibilidad de ruta única o ruta única), La última bandeja lógica es la bandeja que tiene conexiones de controladora a pila desde los puertos SAS de la controladora B y D, o es la bandeja que no tiene conexiones a ninguna controladora (ya que la conectividad de controladora a pila es al extremo lógico de la pila, a través de los puertos SAS de la controladora A y C).
 
 . Si la bandeja IOM12/IOM12B que está agregando en caliente es la bandeja inicial IOM12/IOM12B que se está agregando a la pila IOM6, lo que significa que no hay ninguna otra bandeja IOM12/IOM12B en la pila IOM6, complete los subpasos aplicables.
 +
@@ -471,7 +471,7 @@ De lo contrario, vaya al paso 3.
 
 
  a| 
-Alta disponibilidad multivía o multivía, o alta disponibilidad de ruta única con conectividad de controladora a la última bandeja lógica (incluidas configuraciones de MetroCluster con ampliación)
+Alta disponibilidad multivía, alta disponibilidad de tres vías, multivía o alta disponibilidad de ruta única con conectividad de controladora a la última bandeja lógica (incluidas las configuraciones de MetroCluster extendidas)
  a| 
 .. Desconecte el cable de la controladora a la pila del último puerto de círculo de IOM a de la bandeja IOM6, a la controladora o al puente.
 +
@@ -494,7 +494,7 @@ Utilice un cable HD Mini-SAS de cobre SAS a Mini-SAS HD.
 +
 De lo contrario, vaya al siguiente subpaso.
 
-.. Restablezca la conexión de controladora a pila. Para ello, cablee el mismo puerto en la controladora o puente (en el subpaso a) con el nuevo puerto 3 IOM a de bandeja IOM12.
+.. Vuelva a establecer la conexión de controladora a pila cableando el mismo puerto en la controladora o puente (en el subpaso a) en el nuevo puerto 3 IOM A de bandeja de IOM12/IOM12B.
 +
 Utilice un cable HD QSFP a Mini-SAS de cobre SAS o un cable HD a Mini-SAS Mini-SAS, según sea apropiado para el tipo de puerto del controlador.
 
@@ -519,7 +519,7 @@ Coloque el cable a un lado. Ya no es necesario.
 +
 De lo contrario, vaya al subpaso e.
 
-.. Conecte la conexión de bandeja a bandeja entre el último puerto de círculo de IOM a de la bandeja IOM6 (desde el subpaso a) hasta el nuevo puerto 1 IOM a de la bandeja IOM12.
+.. Conecte el cable de la conexión de bandeja a bandeja entre el último puerto circular IOM a de la bandeja IOM6 (desde el subpaso a) al nuevo puerto 1 de la bandeja IOM12/IOM12B IOM a.
 +
 Utilice un cable HD QSFP a Mini-SAS de cobre SAS.
 
@@ -531,7 +531,7 @@ Utilice un cable HD Mini-SAS de cobre SAS a Mini-SAS HD.
 De lo contrario, vaya al siguiente subpaso.
 
 .. Repita los subpasos b y c para cablear las conexiones de bandeja a bandeja para el IOM B.
-.. Restablezca la conexión de puente a pila inferior mediante el cableado del mismo puerto en el puente (en el subpaso a) al nuevo puerto a 3 de la bandeja IOM12 IOM.
+.. Vuelva a establecer la conexión de puente a pila inferior cableando el mismo puerto en el puente (en el subpaso a) al nuevo puerto 3 IOM A de la última bandeja de IOM12/IOM12B.
 +
 Utilice un cable HD QSFP a Mini-SAS de cobre SAS o un cable HD a Mini-SAS Mini-SAS, según sea apropiado para el tipo de puerto del controlador.
 
@@ -567,7 +567,7 @@ NOTE: Asegúrese de esperar al menos 70 segundos entre desconectar un cable y vo
 
 
  a| 
-Alta disponibilidad multivía o multivía, o alta disponibilidad de ruta única con conectividad de controladora a la última bandeja lógica, o conectividad conectada a puente en una configuración MetroCluster
+Alta disponibilidad multivía, alta disponibilidad multivía, multivía o de única ruta con conectividad de controladora a la última bandeja lógica o conectividad conectada a puente en una configuración MetroCluster
  a| 
 .. Mueva el cable de la controladora a la pila desde el último puerto a IOM 3 de la bandeja IOM12/IOM12B al mismo puerto en la última bandeja IOM12/IOM12B.
 .. Si va a añadir en caliente una bandeja IOM12/IOM12B, conecte la conexión de bandeja a bandeja entre el puerto a 3 de la última bandeja IOM12/IOM12B de la bandeja IOM a al nuevo puerto 1 de la última bandeja IOM12/IOM12B de IOM A.
@@ -626,7 +626,7 @@ De lo contrario, vaya al paso 4.
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 . Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.
 +

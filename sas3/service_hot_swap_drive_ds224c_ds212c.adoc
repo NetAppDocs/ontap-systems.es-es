@@ -16,7 +16,7 @@ Se puede intercambiar en caliente una unidad de disco con fallos en una bandeja 
 .Antes de empezar
 * La bandeja de discos DS212C o DS212C deben admitir la unidad de discos que está instalando.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
 * La unidad de disco que desea quitar debe tener un error.
@@ -32,7 +32,7 @@ NOTE: Según el tipo y la capacidad de la unidad de disco, la unidad de disco pu
 Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
 
 +
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"]
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^]
 
 
 
@@ -79,10 +79,10 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/downloa
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
 
 * El firmware de la unidad de disco se actualiza automáticamente (sin interrupciones) en unidades de disco nuevas con versiones de firmware no actuales.
 +
@@ -91,7 +91,7 @@ NOTE: Las comprobaciones de firmware de la unidad de disco se realizan cada dos 
 
 * Si es necesario, puede encender los LED de ubicación (azul) de la bandeja de discos para ayudar a localizar físicamente la bandeja de discos afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
-Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada módulo IOM12. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada IOM de bandeja. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
 
 * Si es necesario, puede consultar la sección LED de bandeja de discos de supervisión para obtener información sobre el significado y la ubicación de los LED de bandeja de discos en el panel de visualización del operador y los componentes FRU.
 

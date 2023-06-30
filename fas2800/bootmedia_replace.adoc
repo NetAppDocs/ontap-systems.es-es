@@ -1,0 +1,194 @@
+---
+permalink: fas2800/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: fas2800, replace, boot, media, controller, module, fru map 
+summary: Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo. 
+---
+= Sustituya el soporte de arranque - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+[role="lead"]
+Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm EXTENSIÓN INSTALAR IEOPS 694]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Cubierta del módulo de controlador abierto drw 2850 IEOPS 695]
+
+
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Botón de liberación de la cubierta del módulo del controlador
+
+|===
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Localice el medio de arranque en el módulo del controlador, que se encuentra debajo de la tarjeta intermedia y siga las instrucciones para reemplazarlo.
+
+.Animación: Reemplace el soporte de arranque
+video::10a29a01-a86e-451c-b05a-af4701726f57[panopto]
+image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["anchura = 500"]
+
+[cols="1,3"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Lengüeta de bloqueo del soporte de arranque
+
+|===
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire la tarjeta intermedia utilizando la siguiente ilustración o el mapa de FRU del módulo del controlador:
++
+.. Retire el bisel de la tarjeta mezzanine deslizándolo hacia fuera del módulo del controlador.
+.. Afloje los tornillos de la tarjeta mezzanine.
++
+
+NOTE: Puede aflojar los tornillos con los dedos o con un destornillador. Si utiliza los dedos, es posible que necesite girar la batería NV hacia arriba para una mejor compra de dedos en el tornillo de apriete manual junto a ella.
+
+.. Levante la tarjeta mezzanine en línea recta.
+
+
+. Sustituya el soporte de arranque:
++
+.. Pulse el botón azul de la carcasa del soporte de arranque para liberar el soporte de arranque de su carcasa, gire el soporte de arranque hacia arriba y, a continuación, tire suavemente de él para extraerlo de la toma del soporte de arranque.
++
+
+NOTE: No gire ni tire del soporte de arranque en línea recta, ya que podría dañar la toma o el soporte de arranque.
+
+.. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+Compruebe el soporte de arranque para asegurarse de que está bien asentado y completamente en la toma y, si es necesario, retire el soporte de arranque y vuelva a colocarlo en la toma.
+.. Pulse el botón azul de bloqueo, gire el soporte de arranque completamente hacia abajo y, a continuación, suelte el botón de bloqueo para bloquear el soporte de arranque en su lugar.
+
+
+. Vuelva a instalar la tarjeta mezzanine:
++
+.. Alinee la toma de la placa base con la toma de la tarjeta mezzanine y, a continuación, coloque suavemente la tarjeta en la toma.
+.. Apriete los tres tornillos de apriete manual de la tarjeta mezzanine.
+.. Vuelva a instalar el marco de la tarjeta intermedia.
+
+
+. Vuelva a instalar la cubierta del módulo del controlador y bloquéela en su lugar.
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+Instale la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en él. Debe restaurar el sistema de archivos var durante este procedimiento.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada a MBR/FAT32, con una capacidad de al menos 4GB.
+* Debe tener una conexión de red.
+
+
+.Pasos
+. Descargue la versión de imagen adecuada de ONTAP en la unidad flash USB formateada:
++
+.. Uso https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_determine_if_the_running_ONTAP_version_supports_NetApp_Volume_Encryption_(NVE)["Cómo determinar si la versión de ONTAP en ejecución es compatible con el cifrado de volúmenes de NetApp (NVE)"^] para determinar si se admite actualmente el cifrado de volúmenes.
++
+*** Si el clúster es compatible con NVE, descargue la imagen con NetApp Volume Encryption.
+*** Si NVE no es compatible con el clúster, descargue la imagen sin el cifrado de volúmenes de NetApp.
+Consulte https://kb.netapp.com/onprem/ontap/os/Which_ONTAP_image_should_I_download%3F_With_or_without_Volume_Encryption%3F["¿Qué imagen de ONTAP debo descargar? ¿Con o sin cifrado de volumen?"^] para obtener más detalles.
+
+
+
+
+. Descomprima la imagen descargada.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+
++
+** `boot`
+** `efi`
++
+... Copie el `efi` En el directorio superior de la unidad flash USB.
++
+La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
+
+... Extraiga la unidad flash USB del ordenador portátil.
+
+
+
+
+. Instale el módulo del controlador:
++
+.. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+.. Vuelva a conectar el módulo del controlador.
++
+Al realizar la copia, recuerde volver a instalar los convertidores de medios (SFP) si se retiraron.
+
+
+
+. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Empuje completamente el módulo del controlador en el sistema, asegurándose de que el mango de la leva borra la unidad flash USB, empuje firmemente el asa de la leva para terminar de colocar el módulo del controlador, empuje el asa de la leva hasta la posición cerrada y, a continuación, apriete el tornillo de mano.
++
+La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
+
+. Interrumpa el proceso de arranque para que se detenga en el símbolo del SISTEMA DEL CARGADOR pulsando Ctrl-C cuando vea iniciando AUTOBOOT, pulse Ctrl-C para cancelar....
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+. En el caso de los sistemas con una controladora en el chasis, vuelva a conectar la alimentación y encienda las fuentes de alimentación.
++
+El sistema empieza a arrancar y se detiene en el aviso del CARGADOR.
+
+. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
++
+** Si va a configurar DHCP: `ifconfig e0a -auto`
++
+
+NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
+
+** Si está configurando conexiones manuales: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
++
+*** Filer_addr es la dirección IP del sistema de almacenamiento.
+*** La máscara de red es la máscara de red de la red de gestión conectada al partner de alta disponibilidad.
+*** gateway es la puerta de enlace de la red.
+*** dns_addr es la dirección IP de un servidor de nombres de la red.
+*** dns_Domain es el nombre de dominio del sistema de nombres de dominio (DNS).
++
+Si utiliza este parámetro opcional, no necesita un nombre de dominio completo en la URL del servidor para reiniciar el sistema. Solo necesita el nombre de host del servidor.
+
+
+
+
+
++
+
+NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede entrar `help ifconfig` en el símbolo del sistema del firmware para obtener detalles.
+
+

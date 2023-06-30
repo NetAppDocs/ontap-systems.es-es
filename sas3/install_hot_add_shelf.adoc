@@ -28,14 +28,14 @@ El sistema debe cumplir ciertos requisitos antes de añadir en caliente bandejas
 
 * El sistema y la versión de ONTAP deben admitir las bandejas de discos que añade en caliente, incluidos los IOM, las unidades de disco y los cables SAS.
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * El sistema debe tener una cantidad inferior a la cantidad máxima de unidades de disco compatibles y, al menos, la cantidad de bandejas de discos que haya pensado añadir en caliente.
 +
 No es posible superar la cantidad máxima de unidades de disco admitidas por el sistema después de añadir bandejas de discos en activo.
 
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"]
+https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
 * Si va a añadir en caliente una pila de una o varias bandejas de discos (directamente a las controladoras de la plataforma), el sistema debe tener suficientes puertos HBA SAS PCI SAS o integrados, o una combinación de ambos.
 +
@@ -54,7 +54,7 @@ Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han 
 Debe corregir todos los errores de cableado mediante las acciones correctivas proporcionadas por los mensajes de error.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 
 
@@ -84,13 +84,6 @@ Antes de añadir bandejas de discos en activo, deberá familiarizarse con los as
 Para configuraciones de ruta única y alta disponibilidad, según corresponda a los sistemas AFF A200, AFF A220, serie FAS2600 y FAS2700, debe añadir en caliente bandejas de discos al final de la pila que no tenga conexiones a la controladora.
 
 * Las bandejas de discos con módulos IOM12/IOM12B deben estar en su propia pila única; no se pueden añadir a una pila que tenga bandejas con módulos IOM6 o módulos IOM3.
-+
-Este procedimiento no aborda la mezcla de una pila: Añadir en caliente una bandeja con módulos IOM12/IOM12B a una pila de bandejas con módulos IOM6.
-
-* Un sistema puede tener pilas multivía y de cuatro rutas de bandejas de discos con módulos IOM12/IOM12B.
-+
-Si tiene una pareja de alta disponibilidad, ONTAP muestra la configuración del sistema como `multipath HA`. Si tiene una configuración de controladora única, ONTAP muestra la configuración del sistema como `multipath`.
-
 * En este procedimiento se asume que la configuración utiliza una ACP en banda.
 +
 En el caso de configuraciones que tienen ACP en banda habilitado, ACP en banda se habilita automáticamente en bandejas de discos añadidas de forma activa. En el caso de configuraciones en las que ACP en banda no está habilitado, las bandejas de discos añadidas en activo funcionan sin ninguna funcionalidad ACP.
@@ -123,17 +116,17 @@ Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las ac
 Se necesita acceso a la red para descargar Config Advisor.
 
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 * La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
 +
 Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
 
 
 
@@ -291,7 +284,7 @@ CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el
 Si tiene un modelo de plataforma con una bandeja de discos interna, los ID de bandeja deben ser únicos para las bandejas de discos internas y las bandejas de discos con conexión externa.
 
 +
-Puede utilizar los siguientes subpasos para cambiar ID de bandeja o utilizar instrucciones más detalladas link:install-change-shelf-id.html["Cambiar un ID de bandeja"].
+Puede utilizar los siguientes subpasos para cambiar ID de bandeja o utilizar instrucciones más detalladas link:install-change-shelf-id.html["Cambiar un ID de bandeja"^].
 
 +
 .. Si es necesario, verifique los ID de bandeja que ya están en uso ejecutando Config Advisor.
@@ -316,7 +309,7 @@ El ID de la bandeja parpadea y el LED ámbar del panel de visualización del ope
 
 == Cablee las bandejas de discos con módulos IOM12/IOM12B para una adición en caliente
 
-Conecte los cables de las conexiones SAS, de bandeja a bandeja y de controladora a pila, según corresponda para las bandejas de discos con adición de activo, de modo que tengan conectividad con el sistema.
+Conecta las conexiones SAS (bandeja a bandeja y de controladora a pila) según las bandejas de discos añadidas en caliente de modo que tengan conectividad al sistema.
 
 .Antes de empezar
 Debe haber cumplido los requisitos de link:install-hot-add-shelf.html#requirements-for-hot-adding-disk-shelves-with-iom12iom12b-modules["Requisitos para añadir en caliente bandejas de discos con módulos IOM12"] E instalados, encendidos y establecidos los ID de bandeja de cada bandeja de discos según se indica en link:install-hot-add-shelf.html#install-disk-shelves-with-iom12iom12b-modules-for-a-hot-add["Instale las bandejas de discos con módulos IOM12 para un añadido en caliente"].
@@ -363,7 +356,7 @@ Debe deshabilitar la asignación automática de la propiedad de disco en ambas c
 
 
  a| 
-Está cablear una pila con alta disponibilidad multivía, alta disponibilidad multivía, ruta única o conectividad de ruta única a las controladoras
+Está realizando el cableado de una pila con alta disponibilidad multivía, alta disponibilidad multivía, alta disponibilidad multivía, única vía o conectividad de ruta única a las controladoras
  a| 
 Conecte mediante cable las conexiones de bandeja a bandeja como conectividad «estándar» (utilizando los puertos IOM 3 y 1):
 
@@ -386,10 +379,10 @@ Conecte el cable de las conexiones de bandeja a bandeja como conectividad «dobl
 |===
 .. Revise las hojas de datos de cableado entre la controladora y los ejemplos de cableado para ver si existe una hoja de cálculo completada para la configuración.
 +
-link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre la controladora y la pila, ejemplos de cableado para las plataformas AFF y FAS con almacenamiento incorporado"]
+link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"]
 
 +
-link:install-cabling-worksheets-examples-multipath.html["Hojas de trabajo para el cableado entre la controladora y la pila, ejemplos de cableado para configuraciones de alta disponibilidad multivía comunes"]
+link:install-cabling-worksheets-examples-multipath.html["Hojas de trabajo de cableado de controladora a pila y ejemplos de cableado para configuraciones de alta disponibilidad multivía"]
 
 +
 link:install-worksheets-examples-quadpath.html["Hoja de datos de cableado de controladora a pila y ejemplo de cableado para una configuración de alta disponibilidad de ruta cuádruple con dos HBA SAS de cuatro puertos"]
@@ -405,7 +398,7 @@ link:install-cabling-worksheet-template-quadpath.html["Plantilla de hoja de trab
 .. Compruebe que todos los cables están bien sujetos.
 
 
-. Si va a añadir en caliente una o varias bandejas de discos a un extremo, la primera o la última bandeja de discos lógica, complete los subpasos aplicables a su configuración; de lo contrario, vaya al paso siguiente.
+. Si va a agregar en caliente una o varias bandejas de discos a un final (la primera o la última bandeja de discos lógica) de una pila existente, complete los subpasos correspondientes para la configuración; de lo contrario, vaya al siguiente paso.
 +
 
 NOTE: Asegúrese de esperar al menos 70 segundos entre desconectar un cable y volver a conectarlo, y si va a sustituir un cable por uno más largo.
@@ -417,7 +410,7 @@ NOTE: Asegúrese de esperar al menos 70 segundos entre desconectar un cable y vo
 
 
  a| 
-Añadir en caliente una bandeja de discos al final de una pila con alta disponibilidad multivía, multivía, alta disponibilidad de cuatro rutas o conectividad de cuatro rutas a las controladoras
+Agregar en caliente una bandeja de discos a un extremo de la pila que tiene alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de cuatro rutas o conectividad de cuatro rutas a las controladoras
  a| 
 .. Desconecte todos los cables del IOM A de la bandeja de discos al final de la pila que se encuentren conectados a cualquier controladora; de lo contrario, vaya al subpaso e.
 +
@@ -444,14 +437,14 @@ Estas instrucciones se utilizan para la adición en caliente al final de la pila
 |===
 . Si ha añadido una bandeja de discos con cables ópticos mini-SAS HD a una pila de bandejas de discos conectadas con cables de cobre SAS, sustituya los cables de cobre SAS; de lo contrario, vaya al paso siguiente.
 +
-La pila debe cumplir los requisitos indicados en la <<Requisitos para añadir en caliente bandejas de discos con módulos IOM12>> sección de este procedimiento.
+La pila debe cumplir los requisitos indicados en la <<Requisitos para bandejas de discos con adición en caliente con módulos IOM12/IOM12B>> sección de este procedimiento.
 
 +
 Sustituya los cables de uno en uno y asegúrese de esperar al menos 70 segundos entre la desconexión de un cable y la conexión de uno nuevo.
 
 . Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han cableado correctamente.
 +
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
+https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 +
 Si se genera algún error de cableado SAS, siga las acciones correctivas proporcionadas.
