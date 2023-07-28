@@ -1,7 +1,7 @@
 ---
 permalink: a700s/dimm-replace.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, replace, fimm, controller, module, system, register, increase, increasing, number, correctable, error, correction, code, ecc, failure, system, panic, dimm, shut, down, impair, diagnostic, complete, replacement, process, replace a dimmm, shut down the impaired controller, remove the controller module, replace a dimm, reinstall the controller module and booting the system, run diagnostics, complete the replacement process 
+keywords: aff a700s, aff, a700s, replace, fimm, controller, module, system, register, increase, increasing, number, correctable, error, correction, code, ecc, failure, system, panic, dimm, shut, down, impair, complete, replacement, process, replace a dimmm, shut down the impaired controller, remove the controller module, replace a dimm, reinstall the controller module and booting the system, complete the replacement process 
 summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
 ---
 = Sustituya un DIMM - AFF A700s
@@ -243,43 +243,15 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
-.. Para interrumpir el proceso de arranque, pulse `Ctrl-C` cuando vea `Press Ctrl-C for Boot Menu`.
-.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
 
 
 
 
 
 
-== Paso 5: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-.Pasos
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *memoria de prueba* en el menú que aparece.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6:devuelva la pieza con el error a NetApp
+== Paso 5: Devuelve la pieza fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

@@ -1,7 +1,7 @@
 ---
 permalink: a400/dimm-replace.html 
 sidebar: sidebar 
-keywords: aff a400, aff, a400, replace, dimm, controller, module, system, register, correctable, error, correction, code, ecc, system, panic, shut, down, impair, remove, controller, module, system, diagnostic, module, aggregate, two-node, metrocluster, configuration, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, run diagnostics, restore the controller module to operation after running diagnostics, switch back aggregates in a two-node metrocluster configuration 
+keywords: aff a400, aff, a400, replace, dimm, controller, module, system, register, correctable, error, correction, code, ecc, system, panic, shut, down, impair, remove, controller, module, system, module, aggregate, two-node, metrocluster, configuration, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, restore the controller module to operation, switch back aggregates in a two-node metrocluster configuration 
 summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
 ---
 = Sustituya un DIMM - AFF A400
@@ -256,7 +256,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 == Paso 4: Instale el módulo del controlador
 
-Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
+Después de reemplazar el componente en el módulo de controlador, debe reinstalar el módulo de controlador en el chasis y, a continuación, arrancarlo.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
 
@@ -294,45 +294,15 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
 
 .. En el aviso del CARGADOR, introduzca `bye` Para reiniciar las tarjetas PCIe y otros componentes.
-.. Interrumpa el proceso de arranque y arranque en el símbolo del sistema del CARGADOR pulsando `Ctrl-C`.
-+
-Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
 
 
 
 
 
 
+== Paso 5: Restaure el módulo de la controladora a su funcionamiento
 
-== Paso 5: Ejecutar el diagnóstico
-
-Después de sustituir un DIMM del sistema en el sistema, debe ejecutar pruebas de diagnóstico en ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso del CARGADOR, acceda a los controladores especiales diseñados específicamente para el diagnóstico para funcionar correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *memoria de prueba* en el menú que aparece.
-. Seleccione una opción en el submenú que aparece y ejecute la prueba.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6: Restaure el módulo del controlador para que funcione después de ejecutar los diagnósticos
-
-Después de completar los diagnósticos, debe recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a activar la devolución automática.
+Debe volver a conectar el sistema, devolver el módulo de controladora y, a continuación, volver a habilitar el retorno del control automático.
 
 . Recuperar el sistema, según sea necesario.
 +
@@ -344,7 +314,7 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 
 
-== Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+== Paso 6: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
@@ -402,6 +372,6 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
-== Paso 8: Devuelva la pieza que falló a NetApp
+== Paso 7: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

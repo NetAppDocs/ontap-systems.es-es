@@ -1,0 +1,68 @@
+---
+permalink: a150/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff A150 maintenance, maintenance, repairing a150, repairing aff a150, replace aff a150 components, replace aff a150 components 
+summary: Mantenga el hardware de ASA A150 
+---
+= Mantener el hardware de AFF A150
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para el sistema de almacenamiento AFF A150, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Módulo de almacenamiento en caché
+
+Es necesario sustituir el módulo de almacenamiento en caché de la controladora cuando el sistema registra un único mensaje de AutoSupport (ASUP) que el módulo se ha desconectado.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Unidad
+
+Una unidad es un dispositivo que proporciona medios de almacenamiento físico para datos.
+
+
+
+== Batería NVEM
+
+Se incluye una batería con una controladora y conserva los datos almacenados en caché si falla la alimentación de CA.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería de reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.

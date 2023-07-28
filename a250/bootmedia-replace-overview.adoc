@@ -14,9 +14,9 @@ summary: 'El soporte de arranque almacena un conjunto principal y secundario de 
 El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca.
 
 .Antes de empezar
-Debe tener una unidad flash USB, formateada a MBR/FAT32, con la cantidad de almacenamiento adecuada para contener el `image_xxx.tgz` archivo.
+* Debe tener una unidad flash USB, formateada a MBR/FAT32, con la cantidad de almacenamiento adecuada para contener el `image_xxx.tgz` archivo.
+* También debe copiar el `image_xxx.tgz` Archivo a la unidad flash USB para su uso posterior en este procedimiento.
 
-También debe copiar el `image_xxx.tgz` Archivo a la unidad flash USB para su uso posterior en este procedimiento.
 
 .Acerca de esta tarea
 * Ambos métodos no disruptivos y disruptivos para reemplazar medios de arranque requieren restaurar el `var` sistema de archivos:

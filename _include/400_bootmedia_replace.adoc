@@ -1,0 +1,232 @@
+= Paso 1: Extraiga el módulo del controlador
+:allow-uri-read: 
+
+
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
+
+Puede utilizar la animación, la ilustración o los pasos escritos siguientes para quitar el módulo del controlador del chasis.
+
+.Animación: Extraiga el módulo del controlador
+video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_A400_Remove_controller.png[drw A400 retire el controlador]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pestillos de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslice la controladora para sacarla del chasis
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable.
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Debe localizar los medios de arranque en el módulo de la controladora (consulte el mapa de FRU en el módulo de la controladora) y seguir las instrucciones para su reemplazo.
+
+.Antes de empezar
+Aunque el contenido del soporte de arranque está cifrado, se recomienda borrar el contenido del soporte de arranque antes de reemplazarlo. Para obtener más información, consulte https://mysupport.netapp.com/info/web/ECMP1132988.html["Declaración de volatilidad"] De su sistema en el sitio de soporte de NetApp.
+
+
+NOTE: Debe iniciar sesión en el sitio de soporte de NetApp para mostrar el _Statement of volatile_ de su sistema.
+
+Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir el soporte de arranque.
+
+.Animación: Reemplace el soporte de arranque
+video::e0825a97-c57d-47d7-b87d-aad9012efa12[panopto]
+.Pasos
+. Abra el conducto de aire:
++
+image::../media/drw_A400_open-air-duct.png[Conducto de aire abierto drw A400]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Lengüetas de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslizar el conducto de aire hacia la parte posterior del controlador
+
+
+
+ a| 
+image::../media/legend_icon_03.png[icono de leyenda 03]
+ a| 
+Gire el conducto de aire hacia arriba
+
+|===
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia la parte posterior del módulo del controlador y gírelo hacia arriba hasta su posición completamente abierta.
+
+
+. Localice y retire el soporte de arranque del módulo de la controladora:
++
+image::../media/drw_A400_Replace-boot_media_IEOPS-1007.svg[drw A400 reemplace el soporte de arranque IEOPS 1007]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Pulse el botón azul
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Gire el soporte del maletero hacia arriba y extráigalo del zócalo
+
+|===
++
+.. Pulse el botón azul al final del soporte de arranque hasta que el labio del soporte de arranque desaparezca el botón azul.
+.. Gire el soporte del maletero hacia arriba y tire con cuidado del soporte del maletero para sacarlo del zócalo.
+
+
+. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Bloquee el soporte de arranque en su sitio:
++
+.. Gire el soporte de arranque hacia abajo hacia la placa base.
+.. Con el botón azul, coloque un dedo en el extremo del soporte de arranque y presione el extremo del soporte de inicio para activar el botón azul de bloqueo.
+.. Mientras presiona el soporte del maletero, levante el botón de bloqueo azul para bloquear el soporte del maletero en su sitio.
+
+
+. Cierre el conducto de aire.
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada a MBR/FAT32, con una capacidad mínima de 4 GB
+* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
++
+** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el `var` sistema de archivos.
+
+
+.Pasos
+. Descargue y copie la imagen del servicio adecuada del sitio de soporte de NetApp en la unidad flash USB.
++
+.. Descargue la imagen de servicio en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+
++
+*** `boot`
+*** `efi`
+
+
+.. Copie el `efi` En el directorio superior de la unidad flash USB.
++
+La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
+
+.. Extraiga la unidad flash USB del ordenador portátil.
+
+
+. Si aún no lo ha hecho, cierre el conducto de aire.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+. Vuelva a instalar el dispositivo de administración de cables y vuelva a instalar el sistema, según sea necesario.
++
+Al realizar la copia, recuerde volver a instalar los convertidores de medios (SFP o QSFP) si se retiraron.
+
+. Enchufe el cable de alimentación en la fuente de alimentación y vuelva a instalar el retenedor del cable de alimentación.
+. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Complete la instalación del módulo del controlador:
++
+.. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+.. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+
+
+. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
++
+Si se pierde este mensaje, pulse Ctrl-C, seleccione la opción de arranque en modo de mantenimiento y, a continuación `halt` La controladora para arrancar en EL CARGADOR.
+
+. Si la controladora está en una MetroCluster con ampliación o conexión a la estructura, debe restaurar la configuración del adaptador de FC:
++
+.. Arranque en modo de mantenimiento: `boot_ontap maint`
+.. Establezca los puertos MetroCluster como iniciadores: `ucadmin modify -m fc -t _initiator adapter_name_`
+.. Detener para volver al modo de mantenimiento: `halt`
+
+
++
+Los cambios se implementarán al arrancar el sistema.
+
+

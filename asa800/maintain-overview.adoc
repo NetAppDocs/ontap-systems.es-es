@@ -1,0 +1,80 @@
+---
+permalink: asa800/maintain-overview.html 
+sidebar: sidebar 
+keywords: asa A800 maintenance, maintenance, repairing A800, repairing asa A800, replace asa A800 components, replace asa A800 components 
+summary: Mantenga el hardware de ASA A800 
+---
+= Mantener el hardware de ASA A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para el sistema de almacenamiento ASA A800, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Unidad
+
+Una unidad es un dispositivo que proporciona medios de almacenamiento físico para datos.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== NVDIMM
+
+El NVDIMM (módulo de memoria en línea doble no volátil) gestiona la transferencia de datos desde la memoria volátil al almacenamiento no volátil y mantiene la integridad de los datos en caso de pérdida de alimentación o de apagado del sistema.
+
+
+
+== Batería NVDIMM
+
+Una batería NVDIMM es responsable de mantener la alimentación al módulo NVDIMM.
+
+
+
+== Tarjeta PCIe
+
+Una tarjeta PCIe (interconexión de componentes periféricos express) es una tarjeta de expansión que se conecta a la ranura PCIe de la placa base.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería del reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.

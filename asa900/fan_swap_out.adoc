@@ -1,0 +1,59 @@
+---
+permalink: asa900/fan_swap_out.html 
+sidebar: sidebar 
+keywords:  
+summary: Para cambiar un módulo de ventilador sin interrumpir el servicio, debe realizar una secuencia específica de tareas. 
+---
+= Cambie un ventilador - ASA A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para cambiar un módulo de ventilador sin interrumpir el servicio, debe realizar una secuencia específica de tareas.
+
+
+IMPORTANT: Se recomienda sustituir el suministro de alimentación en un plazo de dos minutos tras retirarlo del chasis. El sistema sigue funcionando, pero ONTAP envía mensajes a la consola acerca del suministro de alimentación degradado hasta que se reemplaza el suministro de alimentación.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola y mirando el LED de atención en cada módulo de ventilador.
+. Pulse el botón terracota del módulo del ventilador y tire del módulo del ventilador para sacarlo del chasis, asegurándose de que lo apoya con la mano libre.
++
+
+IMPORTANT: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
++
+.Animación: Desmontaje/montaje del ventilador
+video::3c3c8d93-b48e-4554-87c8-adf9016af819[panopto]
++
+image::../media/drw_a900_remove_install_fan.png[drw a900 retire el ventilador]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de liberación de Terra cotta
+
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslice el ventilador hacia dentro o hacia fuera del chasis
+
+|===
+. Apartar el módulo de ventilador.
+. Alinee los bordes del módulo del ventilador de repuesto con la abertura del chasis y, a continuación, deslícelo dentro del chasis hasta que encaje en su lugar.
++
+Cuando se inserta en un sistema activo, el LED de atención ámbar parpadea cuatro veces cuando el módulo de ventilador se inserta correctamente en el chasis.
+
+. Alinee el bisel con los espárragos de bola y, a continuación, empuje suavemente el bisel hacia los espárragos de bola.
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+

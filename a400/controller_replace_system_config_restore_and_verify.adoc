@@ -1,7 +1,7 @@
 ---
 permalink: a400/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
-keywords: aff a400, restore and verify the system configuration, verify and set the ha state of the controller module, run system-level diagnostics 
+keywords: aff a400, restore and verify the system configuration, verify and set the ha state of the controller module 
 summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
 ---
 = Restaurar y verificar la configuración del sistema: AFF A400
@@ -68,39 +68,4 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 . Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
 . Confirme que el ajuste ha cambiado: `ha-config show`
-
-
-
-
-== Paso 3: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso del CARGADOR, acceda a los controladores especiales diseñados específicamente para el diagnóstico para funcionar correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba* en el menú que aparece para ejecutar pruebas de diagnóstico.
-. Seleccione la prueba o la serie de pruebas de los distintos submenús.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-+
-
-NOTE: Durante el proceso de arranque, puede ver los siguientes mensajes:
-
-+
-*** Una advertencia de aviso de que el ID del sistema no coincide y que solicita que se anule el ID del sistema.
-*** Una advertencia de que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva. Puede responder con seguridad `y` a estas peticiones.
-
-
-
-
 

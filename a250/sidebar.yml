@@ -1,7 +1,6 @@
 ---
 section: a250
 title: Sistemas AFF A250
-url: "/a250/index.html"
 entries:
 - title: Instalar y configurar
   pdf-filename: Instalación y configuración de AFF A250
@@ -17,6 +16,8 @@ entries:
 - title: Mantener
   pdf-filename: AFF A250 mantener
   entries:
+  - title: Descripción general
+    url: "/a250/maintain-overview.html"
   - title: Soporte de arranque
     pdf-filename: Soporte de arranque AFF A250
     entries:
@@ -41,9 +42,9 @@ entries:
       url: "/a250/chassis-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a250/chassis-replace-shutdown.html"
-    - title: Sustituya el hardware
+    - title: Sustituya el chasis
       url: "/a250/chassis-replace-move-hardware.html"
-    - title: Sustitución completa
+    - title: Reemplazo completo de chasis
       url: "/a250/chassis-replace-complete-system-restore-rma.html"
   - title: Controladora
     pdf-filename: Módulo controlador AFF A250
@@ -52,7 +53,7 @@ entries:
       url: "/a250/controller-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a250/controller-replace-shutdown.html"
-    - title: Sustituya el módulo del controlador
+    - title: Sustituya la controladora
       url: "/a250/controller-replace-move-hardware.html"
     - title: Restaure la configuración del sistema
       url: "/a250/controller-replace-system-config-restore-and-verify.html"

@@ -1,0 +1,12 @@
+= 
+:allow-uri-read: 
+
+
+Para sustituir el chasis, debe mover las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos de la controladora del chasis dañado al nuevo chasis, y cambiar el chasis dañado del bastidor del equipo o del armario del sistema por el nuevo chasis del mismo modelo que el chasis dañado.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Este procedimiento se escribe con la suposición de que va a mover todas las unidades y módulos o módulos de controladora al nuevo chasis, y que el chasis es un nuevo componente de NetApp.
+* Este procedimiento es disruptivo. En el caso de un clúster de dos controladoras, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+

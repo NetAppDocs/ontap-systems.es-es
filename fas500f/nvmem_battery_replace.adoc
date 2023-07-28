@@ -186,7 +186,7 @@ Levante la batería para extraerla del soporte y del módulo del controlador.
 
 == Paso 4: Instale el módulo del controlador
 
-Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
+Después de reemplazar el componente en el módulo de controlador, debe reinstalar el módulo de controlador en el chasis y, a continuación, arrancarlo.
 
 Puede usar la siguiente ilustración o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.
 
@@ -217,7 +217,7 @@ Tornillo de apriete manual
 .. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 
 
@@ -233,32 +233,6 @@ NOTE: Conectará el resto de los cables al módulo del controlador más adelante
 
 
 
-== Paso 5: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-.Pasos
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba* en el menú que aparece para ejecutar pruebas de diagnóstico.
-. Proceda según el resultado del paso anterior:
-+
-** Si el análisis presenta problemas, corrija el problema y vuelva a ejecutar el análisis.
-** Si el análisis no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6: Devuelva la pieza que falló a NetApp
+== Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

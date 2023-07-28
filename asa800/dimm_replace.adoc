@@ -1,0 +1,237 @@
+---
+permalink: asa800/dimm-replace.html 
+sidebar: sidebar 
+keywords: asa a800, replace a dimm 
+summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
+---
+= Sustituya el módulo DIMM ASA A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Vuelva a conectar los cables de las conexiones de red y almacenamiento del módulo del controlador.
+
+.Pasos
+. Recuperar el sistema.
+. Compruebe que el cableado sea correcto mediante el https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Descargue e instale Config Advisor.
+.. Introduzca la información del sistema de destino y haga clic en Collect Data.
+.. Haga clic en la ficha cableado y, a continuación, examine la salida. Asegúrese de que se muestren todas las bandejas de discos y todos los discos aparecen en el resultado, corrigiendo los problemas de cableado que encuentre.
+.. Compruebe otro cableado haciendo clic en la ficha correspondiente y, a continuación, examinando el resultado de Config Advisor.
+
+
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a800_pcm_remove.png[drw a800 pcm retirada]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Pestillo de bloqueo 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
++
+image::../media/drw_a800_open_air_duct.png[conducto de aire abierto drw a800]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Lengüetas de bloqueo del conducto de aire 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslizar el conducto de aire hacia los módulos de ventilador
+
+
+
+ a| 
+image:../media/legend_icon_03.png[""]
+ a| 
+Girar el conducto de aire hacia los módulos del ventilador
+
+|===
+
+
+
+
+
+
+== Paso 3: Sustituya un DIMM
+
+Para sustituir un módulo DIMM, debe localizarlo en el módulo del controlador mediante la etiqueta de mapa DIMM situada en la parte superior del conducto de aire y, a continuación, sustituirlo siguiendo la secuencia específica de pasos.
+
+. Al extraer un DIMM, desbloquee el pestillo de bloqueo de la tarjeta vertical correspondiente y, a continuación, extraiga la tarjeta vertical.
++
+image::../media/drw_a800_dimm_replace.png[sustitución del dimm drw a800]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Tapa del conducto de aire 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Tarjeta vertical 1 y módulo DIMM, banco 1 y 3-6
+
+
+
+ a| 
+Tarjeta vertical 2 y banco DIMM 7-10, 12-13 y 15-18
+ a| 
+Tarjeta vertical 3 y DIMM 19 -22 y 24
+
+|===
++
+*Nota:* las ranuras 2 y 14 se dejan vacías. No intente instalar DIMM en estas ranuras.
+
+. Tenga en cuenta la orientación del módulo DIMM en el zócalo para que pueda insertar el módulo DIMM de repuesto en la orientación adecuada.
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+. Retire el módulo DIMM de repuesto de la bolsa de transporte antiestática, sujete el módulo DIMM por las esquinas y alinéelo con la ranura.
++
+La muesca entre las patillas del DIMM debe alinearse con la lengüeta del zócalo.
+
+. Inserte el módulo DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.
+. Vuelva a instalar los elevadores que haya extraído del módulo del controlador.
+. Cierre el conducto de aire.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
+
+Después de sustituir una FRU en el módulo de la controladora, debe volver a instalar el módulo de la controladora y reiniciarlo.
+
+. Si aún no lo ha hecho, cierre el conducto de aire:
++
+.. Gire el conducto de aire hacia abajo hasta el módulo del controlador.
+.. Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
+.. Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
++
+image::../media/drw_a700s_close_air_duct.png[drw a700s cierra el conducto de aire]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Lengüetas de bloqueo 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Deslice el émbolo
+
+|===
+
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
+. Complete la reinstalación del módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+.. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+
+
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

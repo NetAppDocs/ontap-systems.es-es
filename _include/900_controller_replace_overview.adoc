@@ -1,0 +1,32 @@
+= 
+:allow-uri-read: 
+
+
+Para sustituir el módulo del controlador dañado, debe apagar el controlador dañado, mover los componentes internos al módulo del controlador de recambio, instalar el módulo del controlador de recambio y reiniciar el controlador de recambio.
+
+.Antes de empezar
+Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* Si el sistema es un sistema FlexArray o tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.
+* Si su sistema está en un par ha, el controlador en buen estado debe ser capaz de tomar el controlador que se va a sustituir (denominado en este procedimiento el "'controlador dañado'").
+* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
++
+Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimiento de sustitución de una controladora en una configuración de MetroCluster de cuatro u ocho nodos es el mismo que el de una pareja de alta disponibilidad. No es necesario realizar pasos específicos de MetroCluster porque el fallo está limitado a un par de alta disponibilidad y pueden utilizarse comandos de recuperación tras fallos del almacenamiento para proporcionar un funcionamiento no disruptivo durante el reemplazo.
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al controlador de sustitución de modo que el controlador de sustitución se arranque en la misma versión de ONTAP que el módulo de controlador anterior.
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El controlador dañado es el controlador que se va a sustituir.
+** El controlador de sustitución es el nuevo controlador que está reemplazando al controlador afectado.
+** El controlador sano es el controlador que va a sobrevivir.
+
+
+* Siempre debe capturar el resultado de la consola de la controladora en un archivo de texto.
++
+Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+
+

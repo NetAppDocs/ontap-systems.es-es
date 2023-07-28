@@ -1,0 +1,264 @@
+---
+permalink: a220/caching-module-replace.html 
+sidebar: sidebar 
+keywords: replace, caching, module, aff a220, fas 2700, shut, down, impaired, controller, controller, aggregates, metrocluster, configuration, replace, reinstall 
+summary: 'Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.' 
+---
+= Sustituya el módulo de almacenamiento en caché: AFF A220
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir y ser el estado, es necesario corregir el problema antes de apagar la controladora con deterioro.
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^]
+
+Tal vez desee borrar el contenido del módulo de almacenamiento en caché antes de reemplazarlo.
+
+.Pasos
+. Aunque los datos del módulo de almacenamiento en caché están cifrados, es posible que desee borrar los datos del módulo de almacenamiento en caché dañado y verificar que el módulo de almacenamiento en caché no tiene datos:
++
+.. Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
++
+
+NOTE: Ejecute el `system controller flash-cache show` Comando si no conoce el identificador de dispositivo de flashcache.
+
+.. Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show`
+
+
+. Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado:
+
+** Para un par de alta disponibilidad, tome el control dañado del controlador sano: `storage failover takeover -ofnode _impaired_node_name_`
++
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+** Para un sistema independiente: `system node halt _impaired_node_name_`
+
+
+|===
+. Si el sistema solo tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y, a continuación, desenchufe los cables de alimentación de la controladora dañada de la fuente de alimentación.
+
+
+
+
+== Paso 2: Extraiga el módulo de controlador
+
+Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
++
+image::../media/drw_25xx_cable_management_arm.png[drw 25xx cable management ARM]
+
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2240_x_opening_cam_latch.png[pestillo de leva de apertura drw 2240 x]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta deslizando las pestañas azules para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y abierta.
++
+image::../media/drw_2600_opening_pcm_cover.png[drw 2600 apertura de la cubierta del pcm]
+
+
+
+
+
+== Paso 3: Sustituya un módulo de almacenamiento en caché
+
+Para sustituir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos.
+
+Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
+
+* Debe tener el sistema operativo adecuado para el módulo de almacenamiento en caché que está instalando.
+* Debe admitir la capacidad de almacenamiento en caché.
+* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice el módulo de almacenamiento en caché que se encuentra en la parte posterior del módulo de la controladora y extráigalo.
++
+.. Pulse la pestaña de liberación.
+.. Extraiga el disipador de calor.
+
+
++
+image::../media/drw_2600_fcache_repl_animated_gif.png[gif animado de drw 2600 fcache repl]
+
+. Tire suavemente del módulo de almacenamiento en caché hacia fuera de la carcasa.
+. Alinee los bordes del módulo de almacenamiento en caché con el zócalo del alojamiento y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe que el módulo de almacenamiento en caché está asentado completamente en el zócalo.
++
+Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócalo.
+
+. Vuelva a colocar y empuje el disipador de calor hacia abajo para conectar el botón de bloqueo en la carcasa del módulo de caché.
+. Cierre la cubierta del módulo del controlador, según sea necesario.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
+
+Después de sustituir los componentes del módulo del controlador, vuelva a instalarlo en el chasis.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Complete la reinstalación del módulo del controlador:
++
+[cols="1,2"]
+|===
+| Si el sistema está en... | Realice estos pasos... 
+
+
+ a| 
+Un par de alta disponibilidad
+ a| 
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+
+
+
+
+ a| 
+Una configuración independiente
+ a| 
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+.. Vuelva a conectar los cables de alimentación a las fuentes de alimentación y a las fuentes de alimentación; a continuación, encienda la alimentación para iniciar el proceso de arranque.
+
+
+|===
+
+
+
+
+== Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+
+Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
+
+Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
+
+.Pasos
+. Compruebe que todos los nodos estén en el `enabled` provincia: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Compruebe que la resincronización se haya completado en todas las SVM: `metrocluster vserver show`
+. Compruebe que las migraciones LIF automáticas que realizan las operaciones de reparación se han completado correctamente: `metrocluster check lif show`
+. Lleve a cabo la conmutación de estado mediante el `metrocluster switchback` comando desde cualquier nodo del clúster superviviente.
+. Compruebe que la operación de conmutación de estado ha finalizado: `metrocluster show`
++
+La operación de conmutación de estado ya está en ejecución cuando un clúster está en el `waiting-for-switchback` provincia:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+La operación de conmutación de estado se completa cuando los clústeres están en el `normal` estado:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar el estado de las líneas base en curso utilizando el `metrocluster config-replication resync-status show` comando.
+
+. Restablecer cualquier configuración de SnapMirror o SnapVault.
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

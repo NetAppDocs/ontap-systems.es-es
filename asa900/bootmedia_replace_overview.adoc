@@ -1,0 +1,33 @@
+---
+permalink: asa900/bootmedia_replace_overview.html 
+sidebar: sidebar 
+keywords: ASA A900 
+summary: 'El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema \(imagen de arranque\) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.' 
+---
+= Sustituya el soporte de arranque: ASA A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.
+
+Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz`.
+
+También debe copiar el `image_xxx.tgz` Archivo a la unidad flash USB para su uso posterior en este procedimiento.
+
+* Ambos métodos no disruptivos y disruptivos para reemplazar medios de arranque requieren restaurar el `var` sistema de archivos:
++
+** Para reemplazar de forma no disruptiva, el par de alta disponibilidad no requiere una conexión a una red para restaurar el `var` sistema de archivos. El par de alta disponibilidad de un único chasis tiene una conexión e0S interna, que se utiliza para la transferencia `var` config. entre ellos.
+** Para el reemplazo disruptivo, no es necesaria una conexión de red para restaurar el `var` el sistema de archivos, pero el proceso requiere dos reinicios.
+
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+

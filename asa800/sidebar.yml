@@ -1,0 +1,79 @@
+---
+section: asa800
+title: Sistemas ASA A800
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de ASA A800
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/asa800/install-setup.html"
+  - title: Pasos rápidos
+    url: "/asa800/install-quick-guide.html"
+  - title: Pasos de vídeo
+    url: "/asa800/install-videos.html"
+  - title: Pasos detallados
+    url: "/asa800/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: Mantenimiento de ASA A800
+  entries:
+  - title: Descripción general
+    url: "/asa800/maintain-overview.html"
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque de ASA A800
+    entries:
+    - title: Descripción general
+      url: "/asa800/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/asa800/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/asa800/bootmedia-shutdown.html"
+    - title: Sustituya la imagen de arranque
+      url: "/asa800/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/asa800/bootmedia-recovery-image-boot-non-2n-mcc.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/asa800/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/asa800/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis ASA A800
+    entries:
+    - title: Descripción general
+      url: "/asa800/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/asa800/chassis-replace-shutdown.html"
+    - title: Sustituya el chasis
+      url: "/asa800/chassis-replace-move-hardware.html"
+    - title: Reemplazo completo de chasis
+      url: "/asa800/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador ASA A800
+    entries:
+    - title: Descripción general
+      url: "/asa800/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/asa800/controller-replace-shutdown.html"
+    - title: Sustituya la controladora
+      url: "/asa800/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/asa800/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/asa800/controller-replace-recable-reassign-disks.html"
+    - title: Reemplazo completo de controladoras
+      url: "/asa800/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/asa800/dimm-replace.html"
+  - title: Unidad
+    url: "/asa800/drive-replace.html"
+  - title: Ventilador
+    url: "/asa800/fan-replace.html"
+  - title: NVDIMM
+    url: "/asa800/nvdimm-replace.html"
+  - title: Batería NVDIMM
+    url: "/asa800/nvdimm-battery-replace.html"
+  - title: Tarjeta PCIe
+    url: "/asa800/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    url: "/asa800/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/asa800/rtc-battery-replace.html"

@@ -10,21 +10,19 @@ summary: El reemplazo de una fuente de alimentación implica desconectar la fuen
 :imagesdir: ../media/
 
 
-.Antes de empezar
 [role="lead"]
 Para sustituir una fuente de alimentación (PSU) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de reemplazo y, a continuación, volver a conectarla a la fuente de alimentación.
 
-* Los sistemas de alimentación son redundantes y intercambiables en caliente.
-* Este procedimiento se escribe para sustituir una fuente de alimentación por vez.
-+
+Los sistemas de alimentación son redundantes y intercambiables en caliente.
+
+.Acerca de esta tarea
+Este procedimiento se escribe para sustituir una fuente de alimentación por vez.
+
 
 NOTE: Se recomienda sustituir la fuente de alimentación en un plazo de dos minutos tras retirarla del chasis. El sistema sigue funcionando, pero ONTAP envía mensajes a la consola sobre la PSU degradada hasta que sustituye la PSU.
 
-+
 
 IMPORTANT: No mezcle las PSU con diferentes índices de eficiencia o tipos de entrada diferentes. Sustituya siempre como por ejemplo.
-
-
 
 Utilice el procedimiento adecuado para su tipo de PSU: CA o CC.
 

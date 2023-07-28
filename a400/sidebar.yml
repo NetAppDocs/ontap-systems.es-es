@@ -1,7 +1,6 @@
 ---
 section: a400
 title: Sistemas AFF A400
-url: "/a400/index.html"
 entries:
 - title: Instalar y configurar
   pdf-filename: Instalación y configuración de AFF A400
@@ -17,6 +16,8 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento del AFF A400
   entries:
+  - title: Descripción general
+    url: "/a400/maintain-overview.html"
   - title: Soporte de arranque
     pdf-filename: Soporte de arranque de AFF A400
     entries:
@@ -43,22 +44,22 @@ entries:
       url: "/a400/chassis-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a400/chassis-replace-shutdown.html"
-    - title: Sustituya el hardware
+    - title: Sustituya el chasis
       url: "/a400/chassis-replace-move-hardware.html"
-    - title: Sustitución completa
+    - title: Reemplazo completo de chasis
       url: "/a400/chassis-replace-complete-system-restore-rma.html"
-  - title: Módulo del controlador
+  - title: Controladora
     pdf-filename: Módulo del controlador AFF A400
     entries:
     - title: Descripción general
       url: "/a400/controller-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a400/controller-replace-shutdown.html"
-    - title: Sustituya el módulo del controlador
+    - title: Sustituya la controladora
       url: "/a400/controller-replace-move-hardware.html"
     - title: Restaure la configuración del sistema
       url: "/a400/controller-replace-system-config-restore-and-verify.html"
-    - title: Recuperar el sistema
+    - title: Sistema de recuperación
       url: "/a400/controller-replace-recable-reassign-disks.html"
     - title: Restauración completa del sistema
       url: "/a400/controller-replace-restore-system-rma.html"

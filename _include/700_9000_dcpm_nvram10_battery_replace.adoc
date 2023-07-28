@@ -1,0 +1,62 @@
+= Paso 1: Sustituya el módulo DCPM
+:allow-uri-read: 
+
+
+Para intercambiar en caliente un módulo de alimentación de controlador de etapa (DCPM), que contiene la batería NVRAM10, debe localizar el módulo DCPM con fallos, extraerlo del chasis e instalar el módulo DCPM de repuesto.
+
+Debe tener un módulo DCPM de repuesto en mano antes de extraer el módulo defectuoso del chasis y debe reemplazarse dentro de cinco minutos de su extracción. Una vez que se ha retirado el módulo DCPM del chasis, no hay protección contra el apagado para el módulo de controlador que posee el módulo DCPM, aparte de la conmutación por error al otro módulo de controlador.
+
+
+
+== Paso 1: Sustituya el módulo DCPM
+
+Para sustituir el módulo DCPM en su sistema, debe eliminar el módulo DCPM que ha fallado del sistema y, a continuación, reemplazarlo con un nuevo módulo DCPM.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel de la parte delantera del sistema y colóquelo a un lado.
+. Localice el módulo DCPM que ha fallado en la parte frontal del sistema buscando el LED de atención en el módulo.
++
+El LED será de color ámbar fijo si el módulo está defectuoso.
+
++
+
+NOTE: El módulo DCPM se debe sustituir en el chasis en un plazo de cinco minutos desde la extracción o el controlador asociado se apagará.
+
+. Presione el botón naranja de bloqueo en el asa del módulo y, a continuación, deslice el módulo DCPM para sacarlo del chasis.
++
+image::../media/drw_9000_remove_nv_battery.png[drw 9000 retire la batería nv]
+
++
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+ a| 
+Botón de bloqueo naranja del módulo DCPM
+
+|===
+. Alinee el extremo del módulo DCPM con la abertura del chasis y, a continuación, deslícelo suavemente en el chasis hasta que encaje en su sitio.
++
+
+NOTE: El módulo y la ranura están codificados. No fuerce el módulo en la abertura. Si el módulo no entra fácilmente, vuelva a alinear el módulo y deslícelo dentro del chasis.
+
++
+El LED del módulo DCPM se enciende cuando el módulo está completamente asentado en el chasis.
+
+
+
+
+
+== Paso 2: Deseche las pilas
+
+Debe desechar las pilas de acuerdo con las normativas locales relativas al reciclaje o eliminación de las pilas. Si no puede desechar las pilas correctamente, deberá devolver las pilas a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12475945[]
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

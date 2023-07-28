@@ -191,42 +191,16 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
-.. Interrumpa el proceso de arranque normal pulsando `Ctrl-C`.
 
 
 
 
 
 
-== Paso 5: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *memoria de prueba* en el menú que aparece.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6: Devuelva la pieza que falló a NetApp
+== Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

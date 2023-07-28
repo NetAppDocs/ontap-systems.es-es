@@ -1,7 +1,7 @@
 ---
 permalink: a400/chassis-replace-move-hardware.html 
 sidebar: sidebar 
-keywords: aff a400, aff, a400, component, system, function, properly, contact, technical, support, replace, chassis, shut, down, controller, replacing, remove, module, fan, equipment, rack, cabinet, ha, state, diagnostic, switch, back, aggregate, two-node, metrocluster, configuration, complete, replacement, process, replace the chassis, shut down the controllers when replacing a chassis, remove the controller modules, move the fans, replace a chassis from within the equipment rack or system cabinet, install the controller modules, verify and set the ha state of the chassis, run diagnostics, switch back aggregates in a two-node metrocluster configuration, complete the replacement process 
+keywords: aff a400, aff, a400, component, system, function, properly, contact, technical, support, replace, chassis, shut, down, controller, replacing, remove, module, fan, equipment, rack, cabinet, ha, state, switch, back, aggregate, two-node, metrocluster, configuration, complete, replacement, process, replace the chassis, shut down the controllers when replacing a chassis, remove the controller modules, move the fans, replace a chassis from within the equipment rack or system cabinet, install the controller modules, verify and set the ha state of the chassis, switch back aggregates in a two-node metrocluster configuration, complete the replacement process 
 summary: Mueva los ventiladores, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado. 
 ---
 = Sustituya el hardware - AFF A400
@@ -11,7 +11,7 @@ summary: Mueva los ventiladores, las unidades de disco duro y el módulo o los m
 
 
 [role="lead"]
-Mueva los ventiladores, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado.
+Mueva los ventiladores, las unidades de disco duro y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
 
 
 
@@ -84,7 +84,7 @@ Debe quitar el chasis existente del rack del equipo o armario del sistema antes 
 
 == Paso 4: Instale los módulos del controlador
 
-Después de instalar los módulos de la controladora en el nuevo chasis, debe arrancar a un estado en el que pueda ejecutar la prueba de diagnóstico.
+Después de instalar los módulos del controlador en el nuevo chasis, debe arrancarlo.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
 

@@ -1,8 +1,8 @@
 ---
 permalink: a250/chassis-replace-complete-system-restore-rma.html 
 sidebar: sidebar 
-keywords: aff a250, verify and set HA state, run diagnostics, complete the replacement process 
-summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos y devolver la pieza con errores a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. 
+keywords: aff a250, verify and set HA state,  complete the replacement process 
+summary: Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit. 
 ---
 = Completar el proceso de restauración y sustitución - AFF A250
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar di
 
 
 [role="lead"]
-Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos y devolver la pieza con errores a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
+Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp, tal y como se describe en las instrucciones de RMA que se suministran con el kit.
 
 
 
@@ -45,31 +45,6 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 
 
-== Paso 2: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba* en el menú que aparece.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 3: Devuelva la pieza que falló a NetApp
+== Paso 2: Devuelve la parte fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

@@ -169,7 +169,10 @@ NOTE: Asegúrese de que la tarjeta está completamente asentada en la toma de la
 
 == Paso 3: Mover tarjetas PCIe
 
-Como parte del proceso de sustitución de la controladora, debe extraer los dos módulos de tarjeta vertical PCIe, la tarjeta vertical 2 (la tarjeta vertical media) y la tarjeta vertical 3 (en el extremo derecho) del módulo de controladora afectado, extraer las tarjetas PCIe de los módulos de tarjeta vertical, e instálelas en los mismos módulos de tarjeta vertical del módulo de controladora de sustitución. Una vez que se hayan movido los DIMM al módulo de la controladora de reemplazo, instalará los módulos de la tarjeta vertical.
+Como parte del proceso de reemplazo del controlador, debe quitar ambos módulos de elevador PCIe, Riser 2 (el elevador intermedio) y Riser 3 (elevador en el extremo derecho) del módulo de controlador dañado, quitar las tarjetas PCIe de los módulos elevadores, e instale las tarjetas en los mismos módulos elevadores en el módulo de controlador de reemplazo. Una vez que se hayan movido los DIMM al módulo de la controladora de reemplazo, instalará los módulos de la tarjeta vertical.
+
+
+IMPORTANT: No instale los elevadores del módulo del controlador defectuoso en el módulo del controlador de repuesto.
 
 . Extraiga la tarjeta vertical PCIe del módulo de la controladora:
 +
@@ -222,13 +225,13 @@ Tarjeta vertical 2 (tarjeta vertical media) y tarjetas PCI en las ranuras de la 
 
 
 . Extraiga la tarjeta vertical correspondiente del módulo de la controladora de sustitución.
-. Instale la tarjeta PCIe en la misma ranura de la tarjeta vertical PCIe:
+. Instale la tarjeta PCIe en el elevador desde el controlador de reemplazo y vuelva a instalar el elevador en el controlador de reemplazo:
 +
 .. Alinee la tarjeta con la guía de la tarjeta vertical y la toma de la tarjeta vertical y, a continuación, deslícela directamente en la toma de la tarjeta vertical.
 +
+Asegúrese de que la tarjeta está completamente asentada en la toma de la tarjeta vertical.
 
-NOTE: Asegúrese de que la tarjeta está completamente asentada en la toma de la tarjeta vertical.
-
+.. Vuelva a instalar el elevador en el módulo de controlador de repuesto.
 .. Gire el pestillo de bloqueo hasta que encaje en la posición de bloqueo.
 
 

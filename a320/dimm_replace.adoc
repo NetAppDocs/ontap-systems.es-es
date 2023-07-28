@@ -1,7 +1,7 @@
 ---
 permalink: a320/dimm-replace.html 
 sidebar: sidebar 
-keywords: aff, a320, aff a320, replace, dimm, controller, module, system, register, increase, increasing, number, correctable, error, correction, code, ecc, failure, system, panic, shut, down, impair, system, install, diagnostic, complete, process, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, run diagnostics, complete the replacement process 
+keywords: aff, a320, aff a320, replace, dimm, controller, module, system, register, increase, increasing, number, correctable, error, correction, code, ecc, failure, system, panic, shut, down, impair, system, install,  complete, process, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, complete the replacement process 
 summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
 ---
 = Reemplace un DIMM - AFF A320
@@ -163,7 +163,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 == Paso 4: Instale el módulo del controlador
 
-Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
+Después de reemplazar el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis.
 
 . Si aún no lo ha hecho, cierre el conducto de aire de la parte posterior del módulo del controlador y vuelva a instalar la cubierta sobre las tarjetas PCIe.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
@@ -195,42 +195,15 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 .. Suelte los pestillos para bloquear el módulo del controlador en su lugar.
 .. Recuperar la fuente de alimentación.
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
-.. Interrumpa el proceso de arranque normal pulsando `Ctrl-C`.
 
 
 
 
 
 
-== Paso 5: Ejecutar el diagnóstico
+== Paso 5: Restaure el módulo de la controladora a su funcionamiento
 
-Después de sustituir un DIMM del sistema en el sistema, debe ejecutar pruebas de diagnóstico en ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node node_name`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba de esfuerzo* en el menú que se muestra.
-. Seleccione una opción en el submenú que aparece y ejecute la prueba.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6: Restaure el módulo del controlador para que funcione después de ejecutar los diagnósticos
-
-Después de completar los diagnósticos, debe recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a activar la devolución automática.
+Debe volver a conectar el sistema, devolver el módulo de controladora y, a continuación, volver a habilitar el retorno del control automático.
 
 . Recuperar el sistema, según sea necesario.
 +
@@ -242,6 +215,6 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 
 
-== Paso 7: Devuelva la pieza que falló a NetApp
+== Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

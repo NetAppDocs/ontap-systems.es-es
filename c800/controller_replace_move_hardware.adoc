@@ -11,7 +11,7 @@ summary: Para sustituir un módulo de controladora, debe extraer la controladora
 
 
 [role="lead"]
-Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+Para sustituir la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de controladora de reemplazo, instalar el módulo de controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
 
 
 
@@ -19,7 +19,11 @@ Para sustituir el hardware del módulo de la controladora, debe retirar la contr
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidad drw a800 asentada IEPOPS 960]
+
+. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
 . Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
 . Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.
@@ -50,11 +54,12 @@ image:../media/legend_icon_02.png[""]
 Pasador de bloqueo
 
 |===
-. Deslice el módulo de la controladora para sacarlo del chasis.
+. Deslice el módulo del controlador para sacarlo del chasis y colóquelo sobre una superficie plana y estable.
 +
-Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis. .
 
-. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
+. Coloque el módulo del controlador sobre una superficie plana y estable.
+. Abra el conducto de aire del módulo del controlador:
 +
 .. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
 .. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
@@ -75,7 +80,9 @@ Lengüetas de bloqueo del conducto de aire
 
  a| 
 image:../media/legend_icon_02.png[""]
-| Deslizar el conducto de aire hacia los módulos de ventilador 
+ a| 
+Deslizar el conducto de aire hacia los módulos de ventilador
+
 
 
  a| 
@@ -272,7 +279,6 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 == Paso 7: Mueva los NVDIMM
 
-[role="lead"]
 Para mover los NVDIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.
 
 . Localice los NVDIMM en el módulo del controlador.
@@ -318,7 +324,7 @@ NOTE: Inspeccione visualmente el NVDIMM para comprobar que está alineado de for
 
 == Paso 8: Mueva el soporte de arranque
 
-Hay un dispositivo multimedia de arranque en el AFF C800. Debe moverlo del controlador dañado e instalarlo en el controlador _regrel_.
+Hay un dispositivo multimedia de arranque en el A800 de AFF. Debe moverlo del controlador dañado e instalarlo en el controlador _regrel_.
 
 El soporte de arranque se encuentra debajo de la tarjeta vertical 3.
 
@@ -462,4 +468,8 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 . Conecte los cables del sistema y los módulos del transceptor al módulo del controlador y vuelva a instalar el dispositivo de administración de cables.
 . Enchufe los cables de alimentación en las fuentes de alimentación y vuelva a instalar los retenes del cable de alimentación.
++
+
+NOTE: Si el sistema dispone de fuentes de alimentación CC, asegúrese de que los tornillos de ajuste manual del cable de la fuente de alimentación están apretados.
+
 

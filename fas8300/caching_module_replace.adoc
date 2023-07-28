@@ -271,7 +271,7 @@ El extremo del módulo de almacenamiento en caché se queda alejado de la pesta�
 
 == Paso 4: Instale el módulo del controlador
 
-Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
+Después de reemplazar el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
 
@@ -301,7 +301,7 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 .. Coloque completamente el módulo del controlador en el chasis girando los pestillos de bloqueo hacia arriba, inclinándolos de manera que borren los pasadores de bloqueo, empuje suavemente el controlador hasta que encaje y, a continuación, baje los pestillos de bloqueo a la posición de bloqueo.
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
 .. Interrumpa el proceso de arranque normal y arranque en EL CARGADOR pulsando `Ctrl-C`.
@@ -310,46 +310,15 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
 
 .. En el aviso del CARGADOR, introduzca `bye` Para reiniciar las tarjetas PCIe y otros componentes.
-.. Interrumpa el proceso de arranque y arranque en el símbolo del sistema del CARGADOR pulsando `Ctrl-C`.
-+
-Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
 
 
 
 
 
 
+== Paso 5: Restaure el módulo de la controladora a su funcionamiento
 
-== Paso 5: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-.Pasos
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node _node_name_`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba de esfuerzo* en el menú que se muestra.
-. Seleccione **NVME M.2 Drive Stress** en el menú que se muestra.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 6: Restaure el módulo del controlador para que funcione después de ejecutar los diagnósticos
-
-Después de completar los diagnósticos, debe recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a activar la devolución automática.
+Debe volver a conectar el sistema, devolver el módulo de controladora y, a continuación, volver a habilitar el retorno del control automático.
 
 .Pasos
 . Recuperar el sistema, según sea necesario.

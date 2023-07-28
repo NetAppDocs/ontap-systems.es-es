@@ -1,0 +1,92 @@
+---
+permalink: a700/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff A700 maintenance, maintenance, repairing A700, repairing aff A700, replace aff A700 components, replace aff A700 components 
+summary: Mantenga el hardware de ASA A700 
+---
+= Mantener el hardware de AFF A700
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para el sistema de almacenamiento AFF A700, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Módulo de almacenamiento en caché
+
+Es necesario sustituir el módulo de almacenamiento en caché de la controladora cuando el sistema registra un único mensaje de AutoSupport (ASUP) que el módulo se ha desconectado.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DCPM
+
+El DCPM (módulo de alimentación del controlador de separación) contiene la batería NVRAM11.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== Módulo de I/O.
+
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+== LED USB
+
+El módulo USB LED proporciona conectividad a los puertos de la consola y al estado del sistema.
+
+
+
+== NVRAM
+
+El módulo NVRAM (memoria de acceso aleatorio no volátil) permite a la controladora conservar datos durante ciclos de encendido y apagado o reinicios del sistema.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería del reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+
+
+== Módulo X91148A
+
+El módulo X91148A es un módulo de E/S que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.

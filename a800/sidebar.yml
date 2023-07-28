@@ -1,7 +1,6 @@
 ---
 section: a800
 title: Sistemas A800 de AFF
-url: "/a800/index.html"
 entries:
 - title: Instalar y configurar
   pdf-filename: Instalación y configuración de A800 de AFF
@@ -17,6 +16,8 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de A800 de AFF
   entries:
+  - title: Descripción general
+    url: "/a800/maintain-overview.html"
   - title: Soporte de arranque
     pdf-filename: Soporte de arranque AFF A800
     entries:
@@ -41,9 +42,9 @@ entries:
       url: "/a800/chassis-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a800/chassis-replace-shutdown.html"
-    - title: Sustituya el hardware
+    - title: Sustituya el chasis
       url: "/a800/chassis-replace-move-hardware.html"
-    - title: Sustitución completa
+    - title: Reemplazo completo de chasis
       url: "/a800/chassis-replace-complete-system-restore-rma.html"
   - title: Controladora
     pdf-filename: Módulo de controladora A800 de AFF
@@ -52,13 +53,13 @@ entries:
       url: "/a800/controller-replace-overview.html"
     - title: Apague el controlador dañado
       url: "/a800/controller-replace-shutdown.html"
-    - title: Sustituya el módulo del controlador
+    - title: Sustituya la controladora
       url: "/a800/controller-replace-move-hardware.html"
     - title: Restaure la configuración del sistema
       url: "/a800/controller-replace-system-config-restore-and-verify.html"
     - title: Sistema de recuperación
       url: "/a800/controller-replace-recable-reassign-disks.html"
-    - title: Sustitución completa
+    - title: Reemplazo completo de controladoras
       url: "/a800/controller-replace-restore-system-rma.html"
   - title: DIMM
     url: "/a800/dimm-replace.html"

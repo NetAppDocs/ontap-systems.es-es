@@ -1,0 +1,178 @@
+---
+permalink: a700/chassis-replace-shutdown.html 
+sidebar: sidebar 
+keywords: aff a700, fas9000, chassis replacement, shutdown 
+summary: Para sustituir el chasis, debe apagar las controladoras. 
+---
+= Apague los controladores - AFF A700
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el chasis, debe apagar las controladoras.
+
+
+
+== Opción 1: Apague las controladoras
+
+Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos"^].
+
+.Antes de empezar
+Necesita:
+
+* Credenciales de administrador local para ONTAP.
+* Clave de acceso para todo el clúster de gestión de claves incorporada de NetApp (OKM) si se usa cifrado de almacenamiento.
+* Acceso a SP/BMC para cada controladora.
+* Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.
+* Suspender trabajos de backup externo.
+* Herramientas y equipos necesarios para la sustitución.
+
+
+
+NOTE: Si el sistema es un StorageGRID de NetApp o ONTAP S3 que se utiliza como nivel de cloud de FabricPool, consulte la https://kb.netapp.com/onprem/ontap/hardware/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage#["Apague y encienda sin problemas su Guía de resolución del sistema de almacenamiento"] después de realizar este procedimiento.
+
+
+NOTE: Si se utilizan LUN de cabina FlexArray, siga la documentación de cabina de almacenamiento específica del proveedor para el procedimiento de apagado que se debe ejecutar en esos sistemas después de realizar este procedimiento.
+
+
+NOTE: Si utiliza SSD, consulte https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU490["SU490: (Impacto: Crítico) Mejores prácticas para las SSD: Evite el riesgo de un fallo de unidad y de pérdida de datos si se apaga durante más de dos meses"]
+
+Como práctica recomendada antes del cierre, debe:
+
+* Realizar adicionales https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["comprobaciones de estado del sistema"].
+* Actualice ONTAP a una versión recomendada para el sistema.
+* Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"]. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.
+
+
+.Pasos
+. Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.
+. Desactive AutoSupport e indique cuánto tiempo espera que el sistema esté fuera de línea:
++
+`system node autosupport invoke -node * -type all -messages "MAINT=8h Power Maintenance"`
+
+. Identifique la dirección del SP/BMC de todos los nodos:
++
+`system service-processor show -node * -fields address`
+
+. Salga del shell de cluster: `exit`
+. Inicie sesión en SP/BMC sobre SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior.
++
+Si está usando una consola o portátil, inicie sesión en la controladora con las mismas credenciales de administrador de clúster.
+
++
+
+NOTE: Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar el progreso.
+
+. Detenga todos los nodos del cluster:
++
+`system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
+
++
+
+NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: `system node halt -node * -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
+
+. Introduzca *y* para cada controlador en el clúster cuando lo vea `_Warning: Are you sure you want to halt node "cluster name-controller number"?
+{y|n}:_`
+. Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.
+. Apague cada fuente de alimentación o desconéctela si no hay ningún interruptor de encendido/apagado de la fuente de alimentación.
+. Desconecte el cable de alimentación de cada fuente de alimentación.
+. Verifique que todas las controladoras del chasis dañado estén apagadas.
+
+
+
+
+== Opción 2: Apague un nodo en una configuración MetroCluster de dos nodos
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de la sección "devolver una unidad FIPS o SED a modo sin protección" de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^].
+* Debe dejar las fuentes de alimentación encendidas al final de este procedimiento para proporcionar alimentación a la controladora en buen estado.
+
+
+.Pasos
+. Compruebe el estado de MetroCluster para determinar si el controlador dañado ha cambiado automáticamente al controlador en buen estado: `metrocluster show`
+. En función de si se ha producido una conmutación automática, proceda según la siguiente tabla:
++
+[cols="1,2"]
+|===
+| Si el controlador está dañado... | Realice lo siguiente... 
+
+
+ a| 
+Se ha cambiado automáticamente
+ a| 
+Continúe con el próximo paso.
+
+
+
+ a| 
+No se ha cambiado automáticamente
+ a| 
+Realice una operación de conmutación de sitios planificada desde el controlador en buen estado: `metrocluster switchover`
+
+
+
+ a| 
+No se ha cambiado automáticamente, ha intentado efectuar una conmutación con el `metrocluster switchover` y se vetó la conmutación
+ a| 
+Revise los mensajes de veto y, si es posible, resuelva el problema e inténtelo de nuevo. Si no puede resolver el problema, póngase en contacto con el soporte técnico.
+
+|===
+. Resincronice los agregados de datos ejecutando el `metrocluster heal -phase aggregates` comando del clúster superviviente.
++
+[listing]
+----
+controller_A_1::> metrocluster heal -phase aggregates
+[Job 130] Job succeeded: Heal Aggregates is successful.
+----
++
+Si la curación es vetada, usted tiene la opción de reemitir el `metrocluster heal` con el `-override-vetoes` parámetro. Si utiliza este parámetro opcional, el sistema anula cualquier vetoo suave que impida la operación de reparación.
+
+. Compruebe que se ha completado la operación con el comando MetroCluster operation show.
++
+[listing]
+----
+controller_A_1::> metrocluster operation show
+    Operation: heal-aggregates
+      State: successful
+Start Time: 7/25/2016 18:45:55
+   End Time: 7/25/2016 18:45:56
+     Errors: -
+----
+. Compruebe el estado de los agregados mediante `storage aggregate show` comando.
++
+[listing]
+----
+controller_A_1::> storage aggregate show
+Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
+--------- -------- --------- ----- ------- ------ ---------------- ------------
+...
+aggr_b2    227.1GB   227.1GB    0% online       0 mcc1-a2          raid_dp, mirrored, normal...
+----
+. Repare los agregados raíz mediante el `metrocluster heal -phase root-aggregates` comando.
++
+[listing]
+----
+mcc1A::> metrocluster heal -phase root-aggregates
+[Job 137] Job succeeded: Heal Root Aggregates is successful
+----
++
+Si la curación es vetada, usted tiene la opción de reemitir el `metrocluster heal` comando con el parámetro -override-vetoes. Si utiliza este parámetro opcional, el sistema anula cualquier vetoo suave que impida la operación de reparación.
+
+. Compruebe que la operación reparar se ha completado mediante el `metrocluster operation show` comando en el clúster de destino:
++
+[listing]
+----
+
+mcc1A::> metrocluster operation show
+  Operation: heal-root-aggregates
+      State: successful
+ Start Time: 7/29/2016 20:54:41
+   End Time: 7/29/2016 20:54:42
+     Errors: -
+----
+. En el módulo del controlador dañado, desconecte las fuentes de alimentación.
+

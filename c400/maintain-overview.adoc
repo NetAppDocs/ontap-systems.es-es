@@ -1,0 +1,75 @@
+---
+permalink: c400/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff C400 maintenance, maintenance, repairing C400, repairing aff C400, replace aff C400 components, replace aff C400 components 
+summary: Mantenga el hardware de ASA C400 
+---
+= Mantener el hardware de AFF C400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para el sistema de almacenamiento AFF C400, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== Batería NVDIMM
+
+Una batería NVDIMM es responsable de mantener la alimentación al módulo NVDIMM.
+
+
+
+== NVDIMM
+
+ The NVDIMM (non-volatile dual in-line memory module) manages the data transfer from the volatile memory to the non-volatile storage, and maintains data integrity in the event of a power loss or system shutdown.
+
+
+== PCIe o tarjeta mezzanine
+
+Una tarjeta PCIe (interconexión de componentes periféricos express) es una tarjeta de expansión que se conecta a la ranura PCIe de la placa base.
+
+Una tarjeta Mezzanine es una tarjeta de expansión diseñada para ser insertada en una ranura especializada en la placa base.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería de reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.

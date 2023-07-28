@@ -1,0 +1,12 @@
+= 
+:allow-uri-read: 
+
+
+Puede agregar un módulo de E/S al sistema sustituyendo una NIC o un adaptador de almacenamiento por uno nuevo en un sistema completamente cargado, o agregando un nuevo NIC o adaptador de almacenamiento en una ranura de chasis vacía en el sistema.
+
+.Antes de empezar
+* Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
+* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"] Y utilice el mejor disponible para su módulo de E/S.
+* Para agregar sin interrupciones un módulo de I/o, debe tomar el control del controlador de destino, quitar la cubierta de relleno de la ranura en la ranura de destino o extraer un módulo de I/o existente, agregar el módulo de I/o nuevo o de reemplazo y, a continuación, poner el controlador de destino en la posición de devolución.
+* Asegúrese de que todos los demás componentes funcionan correctamente.
+

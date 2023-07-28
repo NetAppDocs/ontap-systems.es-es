@@ -312,123 +312,15 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 IMPORTANT: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
-.. Para interrumpir el proceso de arranque, pulse `Ctrl-C` Cuando vea Pulse Ctrl-C para el menú de inicio.
-.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
 
 
 
 
 
 
-== Paso 5: Ejecute un diagnóstico de nivel de sistema
-
-Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
-
-Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a reparar no está en el símbolo del sistema del CARGADOR, siga estos pasos:
-+
-.. Seleccione la opción modo de mantenimiento en el menú que se muestra.
-.. Después de que la controladora arranca en modo de mantenimiento, detenga la controladora: `halt`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-+
-
-IMPORTANT: Durante el proceso de arranque, puede responder de forma segura `y` a peticiones.
-
-+
-*** Si aparece un aviso y advierte que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva.
-
-
-
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-+
-Durante el proceso de arranque, puede responder de forma segura `y` A las indicaciones hasta que aparezca el indicador del modo de mantenimiento (*>).
-
-. Ejecutar diagnósticos de la memoria del sistema: `sldiag device run -dev mem`
-. Verifique que no haya problemas de hardware como resultado de la sustitución de los módulos DIMM: `sldiag device status -dev mem -long -state failed`
-+
-Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
-
-. Proceda según el resultado del paso anterior:
-+
-[cols="1,2"]
-|===
-| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
-
-
- a| 
-Se completaron sin fallos
- a| 
-.. Borre los registros de estado: `sldiag device clearstatus`
-.. Compruebe que se ha borrado el registro: `sldiag device status`
-+
-Se muestra la siguiente respuesta predeterminada:
-
-+
-SLDIAG: No hay mensajes de registro.
-
-.. Salir del modo de mantenimiento: `halt`
-+
-La controladora muestra el aviso del CARGADOR.
-
-.. Arranque la controladora desde el símbolo del sistema del CARGADOR: `bye`
-.. Devolver a la controladora a su funcionamiento normal:
-
-
-|===
-+
-[cols="1,2"]
-|===
-| Si la controladora se encuentra en... | Realice lo siguiente... 
-
-
- a| 
-Un par de alta disponibilidad
- a| 
-Realice un aporte atrás: `storage failover giveback -ofnode replacement_node_name` *Nota:* Si ha desactivado la devolución automática, vuelva a habilitarla con el comando Storage Failover modify.
-
-
-
- a| 
-Se produjeron algunos fallos en las pruebas
- a| 
-Determine la causa del problema:
-
-.. Salir del modo de mantenimiento: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
-.. Inicie el módulo del controlador que está realizando el mantenimiento, interrumpiendo el arranque pulsando `Ctrl-C` Cuando se le solicite acceder al menú Inicio:
-+
-*** Si tiene dos módulos de controladora en el chasis, coloque a fondo el módulo de controladora que va a mantener en el chasis.
-+
-El módulo del controlador se arranca cuando está completamente asentado.
-
-*** Si tiene un módulo de controladora en el chasis, conecte las fuentes de alimentación y, a continuación, enciéndalas.
-
-
-.. Seleccione Boot to maintenance mode (Inicio al modo de mantenimiento) en el menú.
-.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema.
-
-
-|===
-
-
-
-
-== Paso 6: Devuelva la pieza que falló a NetApp
+== Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

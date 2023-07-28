@@ -1,0 +1,110 @@
+---
+permalink: a220/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: aff a220, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Debe comprobar el estado HA del chasis, conmutar los agregados y devolver la pieza fallida a NetApp, tal y como se describe en las instrucciones de la RMA que se suministran con el kit. 
+---
+= Restaurar y verificar la configuración - AFF A220
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe comprobar el estado HA del chasis, conmutar los agregados y devolver la pieza fallida a NetApp, tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
+
+
+
+== Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+
+Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
+
+. En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado para el chasis no coincide con la configuración del sistema:
++
+.. Establezca el estado de alta disponibilidad para el chasis: `ha-config modify chassis _HA-state_`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+*** `ha`
+*** `mcc`
+*** `mcc-2n`
+*** `mccip`
+*** `non-ha`
+
+
+.. Confirme que el ajuste ha cambiado: `ha-config show`
+
+
+. Si aún no lo ha hecho, puede volver a obtener el resto de su sistema.
+. El siguiente paso depende de la configuración del sistema.
+. Reinicie el sistema.
+
+
+
+
+== Paso 2: Vuelva a conmutar los agregados en una configuración de MetroCluster de dos nodos
+
+Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
+
+Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
+
+.Pasos
+. Compruebe que todos los nodos estén en el `enabled` provincia: `metrocluster node show`
++
+[listing]
+----
+cluster_B::>  metrocluster node show
+
+DR                           Configuration  DR
+Group Cluster Node           State          Mirroring Mode
+----- ------- -------------- -------------- --------- --------------------
+1     cluster_A
+              controller_A_1 configured     enabled   heal roots completed
+      cluster_B
+              controller_B_1 configured     enabled   waiting for switchback recovery
+2 entries were displayed.
+----
+. Compruebe que la resincronización se haya completado en todas las SVM: `metrocluster vserver show`
+. Compruebe que las migraciones LIF automáticas que realizan las operaciones de reparación se han completado correctamente: `metrocluster check lif show`
+. Lleve a cabo la conmutación de estado mediante el `metrocluster switchback` comando desde cualquier nodo del clúster superviviente.
+. Compruebe que la operación de conmutación de estado ha finalizado: `metrocluster show`
++
+La operación de conmutación de estado ya está en ejecución cuando un clúster está en el `waiting-for-switchback` provincia:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured       	switchover
+Remote: cluster_A configured       	waiting-for-switchback
+----
++
+La operación de conmutación de estado se completa cuando los clústeres están en el `normal` estado:
+
++
+[listing]
+----
+cluster_B::> metrocluster show
+Cluster              Configuration State    Mode
+--------------------	------------------- 	---------
+ Local: cluster_B configured      		normal
+Remote: cluster_A configured      		normal
+----
++
+Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar el estado de las líneas base en curso utilizando el `metrocluster config-replication resync-status show` comando.
+
+. Restablecer cualquier configuración de SnapMirror o SnapVault.
+
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

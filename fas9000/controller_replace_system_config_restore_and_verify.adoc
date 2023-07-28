@@ -1,10 +1,10 @@
 ---
 permalink: fas9000/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, verify, ha, state, controller, module, system, diagnostics 
+keywords: aff a700, fas9000, verify, ha, state, controller, module 
 summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
 ---
-= Restaurar y verificar la configuración del sistema: A700 y FAS9000 de AFF
+= Restaurar y verificar la configuración del sistema - FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,7 +15,7 @@ Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento,
 
 
 
-== Paso 1: Configurar y verificar la hora del sistema después de sustituir el controlador
+== Paso 1: Establecer y verificar la hora del sistema
 
 Debe comprobar la hora y la fecha del módulo de la controladora de sustitución en comparación con el módulo de controladora en buen estado de un par de alta disponibilidad o con un servidor de tiempo fiable en una configuración independiente. Si la hora y la fecha no coinciden, debe reiniciarlas en el módulo del controlador de repuesto para evitar posibles interrupciones en los clientes debido a diferencias de tiempo.
 
@@ -46,7 +46,7 @@ La fecha y la hora se indican en GMT.
 
 
 
-== Paso 2: Verifique y configure el estado de alta disponibilidad del módulo de la controladora
+== Paso 2: Verifique y establezca el estado de alta disponibilidad de la controladora
 
 Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
 
@@ -67,200 +67,4 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 
 
-
-
-
-
-== Paso 3: Ejecute un diagnóstico de nivel de sistema
-
-Se deben ejecutar pruebas de diagnóstico completas o centradas en componentes y subsistemas específicos siempre que se sustituya la controladora.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde el nodo en el que se sustituye el componente.
-
-.Pasos
-. Si el nodo que se va a mantener no está en el símbolo del sistema del CARGADOR, reinicie el nodo: `halt`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-+
-Durante el proceso de arranque, puede responder de forma segura `y` A las indicaciones hasta que aparezca el indicador del modo de mantenimiento (*>).
-
-. Mostrar y anotar los dispositivos disponibles en el módulo del controlador: `sldiag device show -dev mb`
-+
-Los puertos y los dispositivos del módulo de controlador mostrados pueden ser uno o varios de los siguientes:
-
-+
-** `bootmedia` es el dispositivo de arranque del sistema.
-** `cna` Es un adaptador de red convergente o una interfaz no conectada a una red o dispositivo de almacenamiento.
-** `fcal` Es un dispositivo de bucle arbitrado de Fibre Channel que no está conectado a una red de Fibre Channel.
-** `env` especificaciones medioambientales de la placa base.
-** `mem` es la memoria del sistema.
-** `nic` es una tarjeta de interfaz de red.
-** `nvram` Es la RAM no volátil.
-** `nvmem` Es un híbrido de NVRAM y memoria del sistema.
-** `sas` Es un dispositivo SCSI con conexión en serie que no está conectado a una bandeja de discos.
-
-
-. Ejecute diagnósticos como se desee.
-+
-[cols="1,2"]
-|===
-| Si desea ejecutar pruebas de diagnóstico en... | Realice lo siguiente... 
-
-
- a| 
-Componentes individuales
- a| 
-.. Borre los registros de estado: `sldiag device clearstatus`
-.. Mostrar las pruebas disponibles para los dispositivos seleccionados: `sldiag device show -dev __dev_name_`
-+
-`dev_name` puede ser cualquiera de los puertos y dispositivos identificados en el paso anterior.
-
-.. Examine la salida y, si procede, seleccione sólo las pruebas que desee ejecutar: `sldiag device modify -dev _dev_name_ -selection only`
-+
-`-selection only` deshabilita todas las demás pruebas que no desea ejecutar para el dispositivo.
-
-.. Ejecute las pruebas seleccionadas: `sldiag device run -dev _dev_name_`
-+
-Una vez finalizada la prueba, se muestra el siguiente mensaje:
-
-+
-[listing]
-----
-*> <SLDIAG:_ALL_TESTS_COMPLETED>
-----
-.. Compruebe que no se ha producido ningún error en las pruebas: `sldiag device status -dev _dev_name_ -long -state failed`
-+
-Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
-
-
-
-
-
- a| 
-Varios componentes al mismo tiempo
- a| 
-.. Revise los dispositivos activados y desactivados de la salida del procedimiento anterior y determine los que desea ejecutar simultáneamente.
-.. Enumere las pruebas individuales del dispositivo: `sldiag device show -dev _dev_name_`
-.. Examine la salida y, si procede, seleccione sólo las pruebas que desee ejecutar: `sldiag device modify -dev _dev_name_ -selection only`
-+
-`-selection only` deshabilita todas las demás pruebas que no desea ejecutar para el dispositivo.
-
-.. Verificar que se han modificado las pruebas: `sldiag device show`
-.. Repita estos subpasos para cada dispositivo que desee ejecutar simultáneamente.
-.. Ejecute diagnósticos en todos los dispositivos: `sldiag device run`
-+
-
-NOTE: No agregue ni modifique las entradas después de iniciar la ejecución de diagnósticos.
-
-+
-Una vez finalizada la prueba, se muestra el siguiente mensaje:
-
-+
-[listing]
-----
-*> <SLDIAG:_ALL_TESTS_COMPLETED>
-----
-.. Compruebe que no hay problemas de hardware en el nodo: `sldiag device status -long -state failed`
-+
-Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
-
-
-
-|===
-. Proceda según el resultado del paso anterior:
-+
-[cols="1,2"]
-|===
-| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
-
-
- a| 
-Se completaron sin fallos
- a| 
-.. Borre los registros de estado: `sldiag device clearstatus`
-.. Compruebe que se ha borrado el registro: `sldiag device status`
-+
-Se muestra la siguiente respuesta predeterminada:
-
-+
-[listing]
-----
-SLDIAG: No log messages are present.
-----
-.. Salir del modo de mantenimiento: `halt`
-+
-El nodo muestra el aviso del CARGADOR.
-
-.. Arrancar el nodo desde el símbolo del sistema DEL CARGADOR: `bye`
-.. Devolver al nodo a su funcionamiento normal:
-
-
-
-
- a| 
-Un par de alta disponibilidad
- a| 
-Realice un aporte atrás: `storage failover giveback -ofnode _replacement_node_name_`
-
-
-NOTE: Si ha desactivado la devolución automática, vuelva a habilitarla con el `storage failover modify` comando.
-
-
-
- a| 
-Una configuración MetroCluster de dos nodos
- a| 
-Continúe con el próximo paso.
-
-El procedimiento de conmutación de estado del MetroCluster se lleva a cabo en la siguiente tarea del proceso de sustitución.
-
-
-
- a| 
-Una configuración independiente
- a| 
-Continúe con el próximo paso.
-
-No se requiere ninguna acción.
-
-Ha completado el diagnóstico de nivel del sistema.
-
-
-
- a| 
-Se produjeron algunos fallos en las pruebas
- a| 
-Determine la causa del problema:
-
-.. Salir del modo de mantenimiento: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Apague o deje las fuentes de alimentación en función del número de módulos de controladora que haya en el chasis:
-+
-*** Si tiene dos módulos de controladora en el chasis, deje las fuentes de alimentación encendidas para proporcionar alimentación al otro módulo de controladora.
-*** Si tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y desenchúfelas de las fuentes de alimentación.
-
-
-.. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
-.. Inicie el módulo del controlador que está realizando el mantenimiento, interrumpiendo el arranque pulsando `Ctrl-C` Cuando se le solicite acceder al menú Inicio:
-+
-*** Si tiene dos módulos de controladora en el chasis, coloque a fondo el módulo de controladora que va a mantener en el chasis.
-+
-El módulo del controlador se arranca cuando está completamente asentado.
-
-*** Si tiene un módulo de controladora en el chasis, conecte las fuentes de alimentación y, a continuación, enciéndalas.
-
-
-.. Seleccione Boot to maintenance mode (Inicio al modo de mantenimiento) en el menú.
-.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema.
-
-
-|===
 

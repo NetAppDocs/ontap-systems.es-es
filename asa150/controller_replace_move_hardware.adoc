@@ -1,0 +1,275 @@
+---
+permalink: asa150/controller-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: asa a150, a150, asa, move the controller module hardware 
+summary: Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+---
+= Sustituya el controlador: ASA A150
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+
+
+
+== Paso 1: Retire el módulo de controlador
+
+Para sustituir el módulo de controlador, primero debe extraer el módulo de controlador antiguo del chasis.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
++
+image::../media/drw_25xx_cable_management_arm.png[drw 25xx cable management ARM]
+
+. Si ha abandonado los módulos SFP en el sistema tras haber quitado los cables, muévalos al nuevo módulo de la controladora.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2240_x_opening_cam_latch.png[pestillo de leva de apertura drw 2240 x]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta deslizando las pestañas azules para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y abierta.
++
+image::../media/drw_2600_opening_pcm_cover.png[drw 2600 apertura de la cubierta del pcm]
+
+
+
+
+
+== Paso 2: Mueva la batería de NVMEM
+
+Para mover la batería de NVMEM del módulo de controladora antiguo al nuevo módulo de controladora, debe realizar una secuencia específica de pasos.
+
+. Compruebe el LED de NVMEM:
++
+** Si su sistema está en una configuración de alta disponibilidad, vaya al paso siguiente.
+** Si el sistema está en una configuración independiente, apague correctamente el módulo de la controladora y, a continuación, compruebe el LED de NVRAM identificado con el icono de NV.
++
+image::../media/drw_hw_nvram_icon.png[icono de drw hw nvram]
+
++
+
+NOTE: El LED de NVRAM parpadea mientras se separa el contenido de la memoria flash cuando se detiene el sistema. Una vez finalizado el destete, el LED se apaga.
+
++
+*** Si se pierde la alimentación sin un apagado correcto, el LED de NVMEM parpadea hasta que se completa el destino y, a continuación, se apaga el LED.
+*** Si el LED está encendido y encendido, los datos no escritos se almacenan en NVMEM.
++
+Esto suele ocurrir durante un apagado no controlado una vez que ONTAP se ha iniciado correctamente.
+
+
+
+
+
+. Localice la batería de NVMEM en el módulo de la controladora.
++
+image::../media/drw_2600_nvmem_battery_move_animated_gif.png[gif animados de movimiento de batería de nvmem drw 2600]
+
+. Localice el enchufe de la batería y apriete el clip en la parte frontal del enchufe de la batería para liberar el enchufe de la toma y, a continuación, desenchufe el cable de la batería de la toma.
+. Sujete la batería, presione LA lengüeta de bloqueo azul marcada Y, a continuación, levante la batería para sacarla del soporte y del módulo del controlador.
+. Mueva la batería al módulo del controlador de repuesto.
+. Enrolle el cable de la batería alrededor del canal del cable en el lateral del soporte de la batería.
+. Coloque la batería alineando los resaltes de las llaves del soporte de la batería con las muescas "'V'" de la pared lateral de chapa metálica.
+. Deslice la batería hacia abajo a lo largo de la pared lateral de chapa metálica hasta que las lengüetas de soporte del gancho lateral de la pared entren en las ranuras de la batería y el pestillo de la batería se acople y haga clic en la abertura de la pared lateral.
+
+
+
+
+== Paso 3: Mueva el soporte de arranque
+
+Debe localizar el soporte de arranque y seguir las instrucciones para quitarlo del módulo de la controladora anterior e insertarlo en el nuevo módulo de la controladora.
+
+. Localice el medio de arranque con la siguiente ilustración o el mapa de FRU en el módulo de la controladora:
++
+image::../media/drw_2600_boot_media_repl_animated_gif.png[drw 2600 boot media repl animated gif]
+
+. Pulse el botón azul de la carcasa del soporte de arranque para liberar el soporte de arranque de su carcasa y, a continuación, tire suavemente de él hacia fuera del zócalo del soporte de arranque.
++
+
+NOTE: No gire ni tire del soporte de arranque en línea recta, ya que podría dañar la toma o el soporte de arranque.
+
+. Mueva el soporte del maletero al nuevo módulo del controlador, alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Empuje el soporte del maletero hacia abajo para activar el botón de bloqueo en la carcasa del soporte del maletero.
+
+
+
+
+== Paso 4: Mueva los DIMM
+
+Para mover los módulos DIMM, debe seguir las instrucciones para ubicarlos y moverlos desde el módulo de controlador antiguo al módulo de controlador de reemplazo.
+
+Debe tener preparado el nuevo módulo de controlador para poder mover los DIMM directamente desde el módulo de controlador dañado a las ranuras correspondientes del módulo de controlador de reemplazo.
+
+. Localice los DIMM en el módulo del controlador.
+. Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
++
+El número y la colocación de los DIMM del sistema depende del modelo del sistema.
+
++
+En la siguiente ilustración se muestra la ubicación de los DIMM del sistema:
+
++
+image::../media/drw_2600_dimms.png[drw 2600 dimm]
+
+. Repita estos pasos para eliminar módulos DIMM adicionales según sea necesario.
+. Verifique que la batería de NVMEM no esté enchufada al nuevo módulo de la controladora.
+. Localice la ranura en la que está instalando el DIMM.
+. Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Repita estos pasos para los módulos DIMM restantes.
+. Localice el enchufe de la batería de NVMEM y, a continuación, apriete el clip de la parte frontal del enchufe del cable de la batería para insertarlo en el zócalo.
++
+Asegúrese de que el tapón se bloquea en el módulo del controlador.
+
+
+
+
+
+== Paso 5: Mueva un módulo de almacenamiento en caché, si está presente
+
+Si el sistema AFF A220 o FAS2700 cuenta con un módulo de almacenamiento en caché, debe mover el módulo de almacenamiento en caché del módulo de la controladora anterior al módulo de la controladora de reemplazo. El módulo de almacenamiento en caché se denomina «M.2 tarjeta PCIe» en la etiqueta del módulo del controlador.
+
+Debe tener el nuevo módulo de controlador preparado para poder mover el módulo de almacenamiento en caché directamente desde el módulo de controlador anterior a la ranura correspondiente en el nuevo. Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+
+. Localice el módulo de almacenamiento en caché que se encuentra en la parte posterior del módulo de la controladora y extráigalo.
++
+.. Pulse la pestaña de liberación.
+.. Extraiga el disipador de calor.
+
+
++
+image::../media/drw_2600_fcache.png[fcache drw 2600]
+
+. Tire suavemente del módulo de almacenamiento en caché hacia fuera de la carcasa.
+. Mueva el módulo de almacenamiento en caché al nuevo módulo de controlador y, a continuación, alinee los bordes del módulo de almacenamiento en caché con la carcasa del zócalo y empújelo suavemente en el zócalo.
+. Compruebe que el módulo de almacenamiento en caché está asentado completamente en el zócalo.
++
+Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócalo.
+
+. Vuelva a colocar y empuje el disipador de calor hacia abajo para conectar el botón de bloqueo en la carcasa del módulo de caché.
+. Cierre la cubierta del módulo del controlador, según sea necesario.
+
+
+
+
+== Paso 6: Instale la controladora
+
+Después de instalar los componentes del módulo de controlador antiguo en el nuevo módulo de controlador, debe instalar el nuevo módulo de controlador en el chasis del sistema e iniciar el sistema operativo.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+
+NOTE: El sistema puede actualizar el firmware del sistema cuando arranca. No cancele este proceso. El procedimiento le obliga a interrumpir el proceso de arranque, que normalmente puede hacer en cualquier momento después de que se le solicite que lo haga. Sin embargo, si el sistema actualiza el firmware del sistema cuando arranca, debe esperar hasta que se haya completado la actualización antes de interrumpir el proceso de arranque.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
++
+
+NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+
+. Complete la reinstalación del módulo del controlador:
++
+[cols="1,2"]
+|===
+| Si el sistema está en... | Realice estos pasos... 
+
+
+ a| 
+Un par de alta disponibilidad
+ a| 
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis, ya que podría dañar los conectores.
+
++
+La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+.. Interrumpir el proceso de arranque *sólo* después de determinar el tiempo correcto:
++
+Debe buscar un mensaje de la consola de actualización automática del firmware. Si aparece el mensaje de actualización, no pulse `Ctrl-C` para interrumpir el proceso de arranque hasta que aparezca un mensaje confirmando que la actualización ha finalizado.
+
++
+Sólo pulse `Ctrl-C` cuando vea el mensaje `Press Ctrl-C for Boot Menu`.
+
++
+
+NOTE: Si se cancela la actualización del firmware, el proceso de arranque sale al símbolo del sistema del CARGADOR. Debe ejecutar el comando update_flash y, a continuación, salir DEL CARGADOR y arrancar en modo de mantenimiento pulsando `Ctrl-C` Cuando vea iniciar AUTOBOOT, pulse Ctrl+C para cancelar.
+
++
+Si se pierde el aviso y el módulo de la controladora arranca en ONTAP, introduzca `halt`, Y luego en el aviso del CARGADOR entrar `boot_ontap`, pulse `Ctrl-C` Cuando se le solicite y luego arranque en modo de mantenimiento.
+
+.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
+
+
+
+
+ a| 
+Una configuración independiente
+ a| 
+.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+.. Vuelva a conectar los cables de alimentación a las fuentes de alimentación y a las fuentes de alimentación; a continuación, encienda la alimentación para iniciar el proceso de arranque.
+.. Interrumpir el proceso de arranque *sólo* después de determinar el tiempo correcto:
++
+Debe buscar un mensaje de la consola de actualización automática del firmware. Si aparece el mensaje de actualización, no pulse `Ctrl-C` para interrumpir el proceso de arranque hasta que aparezca un mensaje confirmando que la actualización ha finalizado.
+
++
+Sólo pulse `Ctrl-C` después de ver la `Press Ctrl-C for Boot Menu` mensaje.
+
++
+
+NOTE: Si se cancela la actualización del firmware, el proceso de arranque sale al símbolo del sistema del CARGADOR. Debe ejecutar el comando update_flash y, a continuación, salir DEL CARGADOR y arrancar en modo de mantenimiento pulsando `Ctrl-C` Cuando vea iniciar AUTOBOOT, pulse Ctrl+C para cancelar.
+
++
+Si se pierde el aviso y el módulo de la controladora arranca en ONTAP, introduzca `halt`, Y luego en el aviso del CARGADOR entrar `boot_ontap`, pulse `Ctrl-C` Cuando se le solicite y luego arranque en modo de mantenimiento.
+
+.. En el menú de inicio, seleccione la opción modo de mantenimiento.
+
+
+|===
++
+*Importante:* durante el proceso de inicio, es posible que vea las siguientes indicaciones:
+
++
+** Una advertencia de aviso de que el ID del sistema no coincide y que solicita que se anule el ID del sistema.
+** Una advertencia de que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva. Puede responder con seguridad `y` a estas peticiones.
+
+
+

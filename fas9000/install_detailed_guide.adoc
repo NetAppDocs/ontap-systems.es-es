@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a700, fas9000, detailed, guide, prepare, install, hardware, two, node, switchless, cluster, cable, controller, ds212c, ds224c, ns224, drive, shelf, complete, system, setup, configuration, network, discovery 
 summary: Esta guía ofrece instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. 
 ---
-= Guía detallada: A700 y FAS9000 de AFF
+= Guía detallada - FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -323,11 +323,11 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png[""]
 
 
 
-=== Opción 2: Conecte las controladoras a una única bandeja de unidades NS224 en sistemas A700 de AFF y ASA AFF A700 que solo ejecuten ONTAP 9.8 y versiones posteriores
+=== Opción 2: Conecte las controladoras a una sola bandeja de unidades NS224 en sistemas ASA AFF A700 que ejecutan ONTAP 9,8 y versiones posteriores
 
 Debe conectar cada controladora a los módulos NSM de la bandeja de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
 
-* Esta tarea se aplica solo a A700 de AFF y A700 de ASA AFF que ejecuten ONTAP 9.8 o posterior.
+* Esta tarea se aplica solo a ASA AFF A700 que ejecuta ONTAP 9,8 o posterior.
 * Los sistemas deben tener al menos un módulo X91148A instalado en las ranuras 3 y/o 7 para cada controlador. La animación o las ilustraciones muestran este módulo instalado en las ranuras 3 y 7.
 * Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
 +
@@ -358,11 +358,11 @@ image::../media/single_NS224_shelf.png[Una única bandeja NS224]
 
 
 
-=== Opción 3: Conecte los cables de las controladoras a dos bandejas de unidades NS224 en sistemas A700 de AFF y A700 de ASA AFF que ejecuten solo ONTAP 9.8 y versiones posteriores
+=== Opción 3: Conecte las controladoras a dos bandejas de unidades NS224 en sistemas ASA AFF A700 que ejecutan ONTAP 9,8 y versiones posteriores solo
 
 Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
 
-* Esta tarea se aplica solo a A700 de AFF y A700 de ASA AFF que ejecuten ONTAP 9.8 o posterior.
+* Esta tarea se aplica solo a ASA AFF A700 que ejecuta ONTAP 9,8 o posterior.
 * Los sistemas deben tener dos módulos X91148A, por controlador, instalados en las ranuras 3 y 7.
 * Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
 +

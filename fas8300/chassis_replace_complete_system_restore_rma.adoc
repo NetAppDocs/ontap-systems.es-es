@@ -2,7 +2,7 @@
 permalink: fas8300/chassis-replace-complete-system-restore-rma.html 
 sidebar: sidebar 
 keywords: fas8300, fas8700, shut, chassis, controller, replace, remove, swap, verify, install, power, supply, metrocluster, aggregates, replacement, process, equipment, rack, ha, state, system 
-summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos y devolver la pieza con errores a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. 
+summary: Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit. 
 ---
 = Completar el proceso de restauración y sustitución - FAS8300 y FAS8700
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Debe verificar el estado de alta disponibilidad del chasis, ejecutar di
 
 
 [role="lead"]
-Debe verificar el estado de alta disponibilidad del chasis, ejecutar diagnósticos y devolver la pieza con errores a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
+Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
 
 
 
@@ -46,34 +46,7 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 
 
-== Paso 2: Ejecutar el diagnóstico
-
-Después de sustituir un componente del sistema, deberá ejecutar pruebas de diagnóstico de ese componente.
-
-El sistema debe estar en el aviso del CARGADOR para iniciar los diagnósticos.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-.Pasos
-. Si la controladora que se va a realizar mantenimiento no se encuentra en el símbolo del sistema del CARGADOR, reinicie la controladora: `system node halt -node _node_name_`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-. Seleccione *Scan System* en el menú que aparece para activar la ejecución de las pruebas de diagnóstico.
-. Seleccione *sistema de prueba* en el menú que aparece para ejecutar pruebas de diagnóstico.
-. Seleccione la prueba o la serie de pruebas de los distintos submenús.
-. Proceda según el resultado del paso anterior:
-+
-** Si la prueba falla, corrija el fallo y vuelva a ejecutar la prueba.
-** Si la prueba no ha informado de ningún fallo, seleccione Reiniciar en el menú para reiniciar el sistema.
-
-
-
-
-
-
-== Paso 3: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+== Paso 2: Vuelva a conmutar los agregados en una configuración de MetroCluster de dos nodos
 
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
@@ -131,6 +104,6 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
-== Paso 4: Complete el proceso de reemplazo
+== Paso 3: Complete el proceso de reemplazo
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

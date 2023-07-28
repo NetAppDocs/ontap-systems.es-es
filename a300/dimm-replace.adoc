@@ -309,7 +309,7 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 == Paso 4: Vuelva a instalar el controlador
 
-Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo en un estado en el que pueda ejecutar las pruebas de diagnóstico en el componente sustituido.
+Después de reemplazar un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
@@ -323,7 +323,7 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 . Complete la reinstalación del módulo del controlador:
 +
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
 
 +
 .. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
@@ -334,144 +334,13 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 .. Apriete el tornillo de mano de la palanca de leva en la parte posterior del módulo del controlador.
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
 .. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
-.. A medida que cada controlador inicia el arranque, pulse `Ctrl-C` para interrumpir el proceso de arranque cuando vea el mensaje `Press Ctrl-C for Boot Menu`.
-.. Seleccione la opción de arrancar en el modo de mantenimiento en el menú que se muestra.
 
 
 
 
 
 
-== Paso 5: Ejecute un diagnóstico de nivel de sistema
-
-Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
-
-Su sistema debe estar en el aviso DEL CARGADOR para iniciar los diagnósticos de nivel de sistema.
-
-Todos los comandos de los procedimientos de diagnóstico se emiten desde la controladora en la que se sustituye el componente.
-
-. Si la controladora que se va a reparar no está en el símbolo del sistema del CARGADOR, siga estos pasos:
-+
-.. Seleccione la opción modo de mantenimiento en el menú que se muestra.
-.. Después de que la controladora arranca en modo de mantenimiento, detenga la controladora: `halt`
-+
-Tras emitir el comando, debe esperar hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-+
-
-NOTE: Durante el proceso de arranque, puede responder de forma segura `y` para solicitar:
-
-+
-*** Una advertencia de aviso que al entrar en modo de mantenimiento en una configuración de alta disponibilidad, debe asegurarse de que la controladora en buen estado permanezca inactiva.
-
-
-
-
-. En el aviso DEL CARGADOR, acceda a los controladores especiales diseñados específicamente para que los diagnósticos del sistema funcionen correctamente: `boot_diags`
-+
-Durante el proceso de arranque, puede responder de forma segura `y` A las indicaciones hasta que aparezca el indicador del modo de mantenimiento (*>).
-
-. Ejecutar diagnósticos de la memoria del sistema: `sldiag device run -dev mem`
-. Verifique que no haya problemas de hardware como resultado de la sustitución de los módulos DIMM: `sldiag device status -dev mem -long -state failed`
-+
-Los diagnósticos de nivel de sistema le devuelven al prompt si no hay errores de prueba o indican el estado completo de los errores resultantes de la prueba del componente.
-
-. Proceda según el resultado del paso anterior:
-+
-[cols="1,2"]
-|===
-| Si el diagnóstico del sistema prueba... | Realice lo siguiente... 
-
-
- a| 
-Se completaron sin fallos
- a| 
-.. Borre los registros de estado: `sldiag device clearstatus`
-.. Compruebe que se ha borrado el registro: `sldiag device status`
-+
-Se muestra la siguiente respuesta predeterminada:
-
-+
-SLDIAG: No hay mensajes de registro.
-
-.. Salir del modo de mantenimiento: `halt`
-+
-La controladora muestra el aviso del CARGADOR.
-
-.. Arranque la controladora desde el símbolo del sistema del CARGADOR: `bye`
-.. Devolver a la controladora a su funcionamiento normal:
-
-
-|===
-+
-[cols="1,2"]
-|===
-| Si la controladora se encuentra en... | Realice lo siguiente... 
-
-
- a| 
-Un par de alta disponibilidad
- a| 
-Realice un aporte atrás: `storage failover giveback -ofnode _replacement_node_name_`
-
-
-NOTE: Si ha deshabilitado la devolución automática, vuelva a habilitarla con el comando Storage Failover modify.
-
-
-
- a| 
-Una configuración MetroCluster de dos nodos
- a| 
-Continúe con el próximo paso. El procedimiento de conmutación de estado del MetroCluster se lleva a cabo en la siguiente tarea del proceso de sustitución.
-
-
-
- a| 
-Una configuración independiente
- a| 
-Continúe con el próximo paso. No se requiere ninguna acción. Ha completado el diagnóstico de nivel del sistema.
-
-
-
- a| 
-Se produjeron algunos fallos en las pruebas
- a| 
-Determine la causa del problema:
-
-.. Salir del modo de mantenimiento: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Apague o deje las fuentes de alimentación en función del número de módulos de controladora que haya en el chasis:
-+
-*** Si tiene dos módulos de controladora en el chasis, deje las fuentes de alimentación encendidas para proporcionar alimentación al otro módulo de controladora.
-*** Si tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y desenchúfelas de las fuentes de alimentación.
-
-
-.. Compruebe que ha observado todos los aspectos identificados a la hora de ejecutar diagnósticos de nivel de sistema, que los cables estén conectados de forma segura y que los componentes de hardware estén instalados correctamente en el sistema de almacenamiento.
-.. Inicie el módulo del controlador que está realizando el mantenimiento, interrumpiendo el arranque pulsando `Ctrl-C` Cuando se le solicite acceder al menú Inicio:
-+
-*** Si tiene dos módulos de controladora en el chasis, coloque a fondo el módulo de controladora que va a mantener en el chasis.
-+
-El módulo del controlador se arranca cuando está completamente asentado.
-
-*** Si tiene un módulo de controladora en el chasis, conecte las fuentes de alimentación y, a continuación, enciéndalas.
-
-
-.. Seleccione Boot to maintenance mode (Inicio al modo de mantenimiento) en el menú.
-.. Para salir del modo de mantenimiento, introduzca el siguiente comando: `halt`
-+
-Después de emitir el comando, espere hasta que el sistema se detenga en el símbolo del sistema del CARGADOR.
-
-.. Vuelva a ejecutar la prueba de diagnóstico de nivel del sistema.
-
-
-|===
-
-
-
-
-== Paso 6 (solo MetroCluster de dos nodos): Devolver agregados de switches
+== Paso 5: (Solo MetroCluster de dos nodos): Vuelva a conmutar los agregados
 
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
@@ -529,6 +398,6 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
-== Paso 7: Devuelva la pieza que falló a NetApp
+== Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

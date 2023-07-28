@@ -1,7 +1,6 @@
 ---
 section: a900
 title: Sistemas AFF A900
-url: "/a900/index.html"
 entries:
 - title: Instalar y configurar
   pdf-filename: Instalación y configuración de AFF A900
@@ -17,25 +16,24 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de AFF A900
   entries:
-  - title: Agregue módulo de E/S.
-    url: "/a900/add_io_module.html"
+  - title: Descripción general
+    url: "/a900/maintain-overview.html"
   - title: Soporte de arranque
     pdf-filename: Soporte de arranque AFF A900
     entries:
     - title: Descripción general
       url: "/a900/bootmedia_replace_overview.html"
-    - title: El apagado previo comprueba las claves de cifrado integradas
+    - title: Compruebe las claves de cifrado incorporadas
       url: "/a900/bootmedia_encryption_preshutdown_checks.html"
     - title: Apague el controlador dañado
       url: "/a900/bootmedia_impaired_controller_shutdown.html"
     - title: Sustituya la imagen de arranque
       url: "/a900/bootmedia_replace.html"
-    - title: Arranque la imagen de recuperación
+    - title: Imagen de recuperación de arranque
       url: "/a900/bootmedia_recovery_image.html"
-    - title: Pasos de sustitución de medios posteriores al arranque para OKM, NSE
-        y NVE
+    - title: Restauración de OKM, NSE y NVE
       url: "/a900/bootmedia_encryption_restore.html"
-    - title: Devuelve la pieza que ha fallado a NetApp
+    - title: Devolución de pieza fallida a NetApp
       url: "/a900/bootmedia_complete_rma.html"
   - title: Chasis
     pdf-filename: Chasis AFF A900
@@ -44,38 +42,42 @@ entries:
       url: "/a900/chassis_replace_overview.html"
     - title: Apague el controlador dañado
       url: "/a900/chassis_replace_shutdown.html"
-    - title: Sustituya el hardware
+    - title: Sustituya el chasis
       url: "/a900/chassis_replace_move_hardware.html"
-    - title: Restaurar y verificar la configuración
+    - title: Restaure y verifique la configuración
       url: "/a900/chassis_replace_complete_system_restore_rma.html"
-  - title: Módulo del controlador
+  - title: Controladora
     pdf-filename: Módulo de controlador AFF A900
     entries:
     - title: Descripción general
       url: "/a900/controller_replace_overview.html"
     - title: Apague el controlador dañado
       url: "/a900/controller_replace_shutdown.html"
-    - title: Sustituya el hardware del módulo del controlador
+    - title: Sustituya la controladora
       url: "/a900/controller_replace.html"
     - title: Restaurar y verificar la configuración del sistema
       url: "/a900/controller_replace_system_config_restore_and_verify.html"
-    - title: Recuperar el sistema
+    - title: Sistema de recuperación
       url: "/a900/controller_replace_recable_reassign_disks.html"
     - title: Restauración completa del sistema
       url: "/a900/controller_replace_complete_system_restoration_rma.html"
   - title: DIMM
     url: "/a900/dimm_replace.html"
-  - title: Módulo de alimentación de control de separación
+  - title: DCPM
     url: "/a900/dcpm_NVRAM11_battery_replace.html"
   - title: Ventilador
     url: "/a900/fan_swap_out.html"
   - title: Módulo de I/O.
-    url: "/a900/pci_cards_and_risers_replace.html"
-  - title: Módulo USB LED
+    entries:
+    - title: Sustituya el módulo de E/S.
+      url: "/a900/pci_cards_and_risers_replace.html"
+    - title: Agregue módulo de E/S.
+      url: "/a900/add_io_module.html"
+  - title: LED USB
     url: "/a900/led_module_replace.html"
-  - title: Módulo NVRAM y/o DIMM de NVRAM
+  - title: NVRAM
     url: "/a900/nvram_module_or_nvram_dimm_replacement.html"
   - title: Suministro de alimentación
     url: "/a900/power_supply_swap_out.html"
-  - title: Batería RTC
+  - title: Batería del reloj en tiempo real
     url: "/a900/rtc_battery_replace.html"

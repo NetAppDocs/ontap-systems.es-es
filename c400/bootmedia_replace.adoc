@@ -17,8 +17,18 @@ Para sustituir el soporte de arranque, debe retirar el módulo del controlador d
 == Paso 1: Extraiga el módulo del controlador
 
 [role="lead"]
+Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
+Puede utilizar la animación, la ilustración o los pasos escritos siguientes para quitar el módulo del controlador del chasis.
+
+.Animación: Extraiga el módulo del controlador
+video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
@@ -48,7 +58,7 @@ Pestillos de bloqueo
  a| 
 image:../media/legend_icon_02.png[""]
  a| 
-La controladora se mueve ligeramente fuera del chasis
+Deslice la controladora para sacarla del chasis
 
 |===
 . Deslice el módulo de la controladora para sacarlo del chasis.
@@ -62,7 +72,6 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 2: Sustituya el soporte de arranque
 
-[role="lead"]
 Debe localizar los medios de arranque en el módulo de la controladora (consulte el mapa de FRU en el módulo de la controladora) y seguir las instrucciones para su reemplazo.
 
 .Antes de empezar
@@ -154,7 +163,6 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 == Paso 3: Transfiera la imagen de arranque al soporte de arranque
 
-[role="lead"]
 El soporte de arranque de repuesto que ha instalado no tiene una imagen de arranque, por lo que debe transferir una imagen de arranque mediante una unidad flash USB.
 
 .Antes de empezar

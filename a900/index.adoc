@@ -1,12 +1,80 @@
 ---
-layout: landing-page 
-sidebar: sidebar 
 permalink: a900/index.html 
-summary: La documentación del sistema AFF A900 permite instalar, configurar y mantener el sistema. 
+sidebar: sidebar 
+keywords: aff A900 maintenance, maintenance, repairing aff A900, repairing aff A900, replace aff A900 components, replace aff A900 components 
+summary: Mantenga el hardware de ASA A900 
 ---
-= Sistemas AFF A900
+= Mantener el hardware de AFF A900
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
+[role="lead"]
+Para el sistema de almacenamiento AFF A900, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== DCPM
+
+El DCPM (módulo de alimentación del controlador de separación) contiene la batería NVRAM11.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== Módulo de I/O.
+
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+== LED USB
+
+El módulo USB LED proporciona conectividad a los puertos de la consola y al estado del sistema.
+
+
+
+== NVRAM
+
+El módulo NVRAM (memoria de acceso aleatorio no volátil) permite a la controladora conservar datos durante ciclos de encendido y apagado o reinicios del sistema.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería del reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.

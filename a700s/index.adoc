@@ -1,13 +1,79 @@
 ---
-layout: landing-page 
-sidebar: sidebar 
 permalink: a700s/index.html 
-summary: La documentación del sistema AFF A700s le permite instalar, configurar y mantener el sistema. 
+sidebar: sidebar 
+keywords: aff A700s maintenance, maintenance, repairing A700s, repairing aff A700s, replace aff A700s components, replace aff A700s components 
+summary: Mantenga el hardware de ASA A700s 
 ---
-= Documentación del sistema AFF A700s
-:hardbreaks:
+= Mantener el hardware de AFF A700s
 :allow-uri-read: 
-:linkattrs: 
-:imagesdir: ./media/
+:icons: font
+:imagesdir: ../media/
 
 
+[role="lead"]
+Para el sistema de almacenamiento AFF A700s, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Unidad
+
+Una unidad es un dispositivo que proporciona medios de almacenamiento físico para datos.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== Batería NVRAM
+
+Una batería de NVRAM es responsable de mantener la alimentación del módulo de NVRAM.
+
+
+
+== NVRAM
+
+ The NVRAM module (Non-Volatile Random Access Memory) allows the controller to retain data across power cycles or system reboots.
+
+
+== Tarjeta PCIe
+
+Una tarjeta PCIe (interconexión de componentes periféricos express) es una tarjeta de expansión que se conecta a la ranura PCIe de la placa base.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
+
+
+
+== Batería del reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.

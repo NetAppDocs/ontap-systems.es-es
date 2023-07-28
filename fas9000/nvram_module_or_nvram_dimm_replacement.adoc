@@ -4,14 +4,18 @@ sidebar: sidebar
 keywords: aff a700, fas9000, replace, nvram, module, dimm, manually, reassign, system, id, ha, system, disk, two, node, restore, storage, volume, encryption, functionality 
 summary: 'El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.' 
 ---
-= Sustituya el módulo NVRAM o los DIMM de NVRAM - AFF A700 y FAS9000
+= Sustituya el módulo NVRAM o los DIMM de NVRAM - FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con fallos, debe eliminarlo del chasis, quitar el módulo Flash Cache o los módulos del módulo NVRAM, mover los DIMM al módulo de reemplazo, volver a instalar el módulo o módulos Flash Cache e instalar el módulo NVRAM de reemplazo en el chasis. Debido a que el ID del sistema se deriva del módulo NVRAM, si se reemplaza el módulo, los discos que pertenecen al sistema se reasignan al nuevo ID del sistema.
+El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.
+
+Para sustituir un módulo NVRAM con fallos, debe eliminarlo del chasis, quitar el módulo Flash Cache o los módulos del módulo NVRAM, mover los DIMM al módulo de reemplazo, volver a instalar el módulo o módulos Flash Cache e instalar el módulo NVRAM de reemplazo en el chasis.
+
+Debido a que el ID del sistema se deriva del módulo NVRAM, si se reemplaza el módulo, los discos que pertenecen al sistema se reasignan al nuevo ID del sistema.
 
 *Antes de empezar*
 

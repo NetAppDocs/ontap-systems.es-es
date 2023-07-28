@@ -1,0 +1,317 @@
+= Paso 1: Extraiga las fuentes de alimentación
+:allow-uri-read: 
+
+
+Mueva los ventiladores, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado.
+
+
+
+== Paso 1: Extraiga las fuentes de alimentación
+
+.Pasos
+Para quitar las fuentes de alimentación cuando se reemplaza un chasis, se debe apagar, desconectar y luego quitar el suministro de alimentación del chasis antiguo.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Apague la fuente de alimentación y desconecte los cables de alimentación:
++
+.. Apague el interruptor de alimentación de la fuente de alimentación.
+.. Abra el retenedor del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación.
+
+
+. Mantenga pulsado el botón naranja del asa de la fuente de alimentación y, a continuación, extraiga la fuente de alimentación del chasis.
++
+
+CAUTION: Al extraer una fuente de alimentación, utilice siempre dos manos para soportar su peso.
+
++
+image::../media/drw_9000_remove_install_psu_module.gif[drw 9000 retire la instalación del módulo psu]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Botón de bloqueo 
+|===
+. Repita los pasos anteriores con todos los suministros de alimentación restantes.
+
+
+
+
+== Paso 2: Extraiga los ventiladores
+
+Para extraer los módulos de ventilador al sustituir el chasis, debe realizar una secuencia específica de tareas.
+
+.Pasos
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Pulse el botón naranja del módulo de ventilador y tire del módulo de ventilador hacia fuera del chasis, asegurándose de que lo apoya con la mano libre.
++
+
+CAUTION: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
++
+image::../media/drw_9000_remove_install_fan.png[drw 9000 retire el ventilador]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Botón de liberación naranja 
+|===
+. Apartar el módulo de ventilador.
+. Repita los pasos anteriores con los módulos de ventilador restantes.
+
+
+
+
+== Paso 3: Extraiga el módulo del controlador
+
+Para sustituir el chasis, debe extraer el módulo o los módulos de la controladora del chasis antiguo.
+
+.Pasos
+. Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.
+. Deslice el botón naranja del asa de la leva hacia abajo hasta que se desbloquee.
++
+image::../media/drw_9000_remove_pcm.png[drw 9000 retire el pcm]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Botón de liberación de la palanca de leva 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Mango de leva
+
+|===
+. Gire el asa de leva para que desacople completamente el módulo del controlador del chasis y, a continuación, deslice el módulo del controlador para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo de la controladora a un lado en un lugar seguro y repita estos pasos si tiene otro módulo de controladora en el chasis.
+
+
+
+
+== Paso 4: Extraiga los módulos de E/S.
+
+.Pasos
+Para eliminar módulos de I/o del chasis antiguo, incluidos los módulos de NVRAM, siga la secuencia específica de pasos. No es necesario quitar el módulo Flash Cache del módulo NVRAM al moverlo a un nuevo chasis.
+
+. Desconecte todos los cables asociados al módulo de E/S de destino.
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Extraiga el módulo de I/o de destino del chasis:
++
+.. Pulse el botón de leva numerado y con letras.
++
+El botón de leva se aleja del chasis.
+
+.. Gire el pestillo de la leva hacia abajo hasta que esté en posición horizontal.
++
+El módulo de E/S se desacopla del chasis y se mueve aproximadamente 1/2 pulgadas fuera de la ranura de E/S.
+
+.. Extraiga el módulo de E/S del chasis tirando de las lengüetas de tiro de los lados de la cara del módulo.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
++
+image::../media/drw_9000_remove_pcie_module.png[drw 9000 retire el módulo pcie]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Pestillo de leva de E/S numerado y con letras 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Pestillo de leva de E/S completamente desbloqueado
+
+|===
+
+
+. Coloque el módulo de E/S a un lado.
+. Repita el paso anterior para los módulos de I/o restantes del chasis antiguo.
+
+
+
+
+== Paso 5: Extraiga el módulo de alimentación del controlador de etapas
+
+.Pasos
+Debe quitar los módulos de alimentación de la controladora despreconfigurar del chasis antiguo para preparar la instalación del chasis de reemplazo.
+
+. Presione el botón naranja de bloqueo en el asa del módulo y, a continuación, deslice el módulo DCPM para sacarlo del chasis.
++
+image::../media/drw_9000_remove_nv_battery.png[drw 9000 retire la batería nv]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png[""]
+| Botón de bloqueo naranja del módulo DCPM 
+|===
+. Coloque el módulo DCPM a un lado en un lugar seguro y repita este paso con el módulo DCPM restante.
+
+
+
+
+== Paso 6: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
+
+.Pasos
+Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+
+. Quite los tornillos de los puntos de montaje del chasis.
++
+
+NOTE: Si el sistema está en un armario del sistema, es posible que tenga que extraer el soporte de amarre trasero.
+
+. Con la ayuda de dos o tres personas, deslice el chasis antiguo fuera de los rieles del bastidor en un armario del sistema o soportes _L_ en un bastidor del equipo y, a continuación, colóquelo a un lado.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Con dos o tres personas, instale el chasis de repuesto en el bastidor del equipo o el armario del sistema guiando el chasis en los rieles del bastidor en un armario del sistema o los soportes _L_ en un bastidor del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
+. Fije la parte posterior del chasis al bastidor del equipo o al armario del sistema.
+. Si va a usar los soportes de gestión de cables, retire los del chasis antiguo y, a continuación, instálelos en el chasis de reemplazo.
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 7: Mueva el módulo LED USB al nuevo chasis
+
+.Pasos
+Una vez instalado el nuevo chasis en el rack o armario, debe mover el módulo LED USB del chasis antiguo al nuevo.
+
+. Localice el módulo LED USB en la parte frontal del chasis antiguo, directamente debajo de los compartimentos de la fuente de alimentación.
+. Pulse el botón de bloqueo negro situado en el lado derecho del módulo para liberar el módulo del chasis y, a continuación, deslícelo para sacarlo del chasis antiguo.
+. Alinee los bordes del módulo con el compartimento LED USB situado en la parte inferior frontal del chasis de repuesto y empuje suavemente el módulo hasta que encaje en su sitio.
+
+
+
+
+== Paso 8: Instale el módulo de alimentación de la controladora desescalonada al sustituir el chasis
+
+.Pasos
+Una vez instalado el chasis de repuesto en el rack o armario del sistema, debe volver a instalar los módulos de alimentación de la controladora de separación de su etapa en él.
+
+. Alinee el extremo del módulo DCPM con la abertura del chasis y, a continuación, deslícelo suavemente en el chasis hasta que encaje en su sitio.
++
+
+NOTE: El módulo y la ranura están codificados. No fuerce el módulo en la abertura. Si el módulo no entra fácilmente, vuelva a alinear el módulo y deslícelo dentro del chasis.
+
+. Repita este paso con el módulo DCPM restante.
+
+
+
+
+== Paso 9: Instale los ventiladores en el chasis
+
+.Pasos
+Para instalar los módulos de ventilador al sustituir el chasis, debe realizar una secuencia específica de tareas.
+
+. Alinee los bordes del módulo del ventilador de repuesto con la abertura del chasis y, a continuación, deslícelo dentro del chasis hasta que encaje en su lugar.
++
+Cuando se inserta en un sistema activo, el LED de atención ámbar parpadea cuatro veces cuando el módulo de ventilador se inserta correctamente en el chasis.
+
+. Repita estos pasos para los módulos de ventilador restantes.
+. Alinee el bisel con los espárragos de bola y, a continuación, empuje suavemente el bisel hacia los espárragos de bola.
+
+
+
+
+== Paso 10: Instalar módulos de E/S.
+
+.Pasos
+Para instalar módulos de E/S, incluidos los módulos NVRAM/Flash Cache del chasis antiguo, siga la secuencia específica de pasos.
+
+Debe tener el chasis instalado de modo que pueda instalar los módulos de I/o en las ranuras correspondientes del nuevo chasis.
+
+. Después de instalar el chasis de repuesto en el bastidor o armario, instale los módulos de E/S en sus ranuras correspondientes del chasis de reemplazo deslizando suavemente el módulo de E/S en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse, Y, a continuación, empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.
+. Recuperar el módulo de E/S, según sea necesario.
+. Repita el paso anterior para los módulos de E/S restantes que haya reservado.
++
+
+NOTE: Si el chasis antiguo tiene paneles de E/S vacíos, muévalos al chasis de repuesto en este momento.
+
+
+
+
+
+== Paso 11: Instale las fuentes de alimentación
+
+.Pasos
+La instalación de las fuentes de alimentación cuando se reemplaza un chasis implica la instalación de las fuentes de alimentación en el chasis de reemplazo y la conexión a la fuente de alimentación.
+
+. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del chasis del sistema y, a continuación, empuje suavemente la fuente de alimentación hacia el chasis hasta que encaje en su sitio.
++
+Las fuentes de alimentación están codificadas y sólo se pueden instalar de una manera.
+
++
+
+NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación en el sistema. Puede dañar el conector.
+
+. Vuelva a conectar el cable de alimentación y fíjelo a la fuente de alimentación mediante el mecanismo de bloqueo del cable de alimentación.
++
+
+NOTE: Conecte sólo el cable de alimentación a la fuente de alimentación. No conecte el cable de alimentación a una fuente de alimentación en este momento.
+
+. Repita los pasos anteriores con todos los suministros de alimentación restantes.
+
+
+
+
+== Paso 12: Instale la controladora
+
+.Pasos
+Después de instalar el módulo del controlador y cualquier otro componente en el nuevo chasis, arranque.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
+. Conecte las fuentes de alimentación a distintas fuentes de alimentación y, a continuación, enciéndalas.
+. Con el asa de leva en la posición abierta, deslice el módulo del controlador en el chasis y empuje firmemente el módulo del controlador hasta que alcance el plano medio y esté totalmente asentado y, a continuación, cierre el asa de leva hasta que encaje en la posición de bloqueo.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis, ya que podría dañar los conectores.
+
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+. Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
+. Arranque cada nodo en el modo de mantenimiento:
++
+.. Cuando cada nodo inicie el arranque, pulse `Ctrl-C` para interrumpir el proceso de arranque cuando vea el mensaje `Press Ctrl-C for Boot Menu`.
++
+
+NOTE: Si se pierde el aviso y los módulos de la controladora se inician en ONTAP, introduzca `halt`, Y luego en el aviso del CARGADOR entrar `boot_ontap`, pulse `Ctrl-C` cuando se le solicite y repita este paso.
+
+.. En el menú de inicio, seleccione la opción modo de mantenimiento.
+
+
+
