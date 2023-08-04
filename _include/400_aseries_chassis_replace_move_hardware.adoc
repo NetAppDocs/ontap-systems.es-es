@@ -1,0 +1,114 @@
+= Paso 1: Extraiga los módulos de la controladora
+:allow-uri-read: 
+
+
+Mueva los ventiladores, las unidades de disco duro y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
+
+
+
+== Paso 1: Extraiga los módulos de la controladora
+
+Para sustituir el chasis, debe quitar los módulos de la controladora del chasis antiguo.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo de la controladora en un lugar seguro y repita estos pasos con el otro módulo de la controladora del chasis.
+
+
+
+
+== Paso 2: Mueva los ventiladores
+
+Para mover los módulos de ventilador al chasis de reemplazo al reemplazar el chasis, debe realizar una secuencia específica de tareas.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Presione hacia abajo el pestillo de liberación en la palanca de leva del módulo del ventilador y luego gire el asa de leva hacia abajo.
++
+El módulo del ventilador se mueve un poco lejos del chasis.
+
+. Tire del módulo del ventilador hacia fuera del chasis, asegurándose de que lo apoya con la mano libre para que no se balancee del chasis.
++
+
+CAUTION: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
+. Apartar el módulo de ventilador.
+. Repita los pasos anteriores con los módulos de ventilador restantes.
+. Inserte el módulo de ventilador en el chasis de repuesto alineándolo con la abertura y, a continuación, deslizándolo en el chasis.
+. Empuje firmemente el asa de leva del módulo del ventilador de modo que quede asentado completamente en el chasis.
++
+El asa de leva se eleva ligeramente cuando el módulo del ventilador está completamente asentado.
+
+. Gire el asa de leva hasta su posición cerrada, asegurándose de que el pestillo de liberación de la palanca de leva haga clic en la posición bloqueada.
+. Repita estos pasos para los módulos de ventilador restantes.
+
+
+
+
+== Paso 3: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
+
+Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+
+. Quite los tornillos de los puntos de montaje del chasis.
+. Con dos personas, deslice el chasis antiguo fuera de los rieles del rack en un armario del sistema o rack del equipo y, a continuación, colóquelo aparte.
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Con dos personas, instale el chasis de reemplazo en el rack o armario del sistema de equipamiento guiando el chasis hacia los rieles para rack en un armario del sistema o rack del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 4: Instale los módulos del controlador
+
+Después de instalar los módulos del controlador en el nuevo chasis, debe arrancarlo.
+
+Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
+. Complete la instalación del módulo del controlador:
++
+.. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
+.. Con los pestillos de bloqueo, empuje firmemente el módulo del controlador en el chasis hasta que los pestillos de bloqueo empiecen a elevarse.
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
+.. Coloque completamente el módulo del controlador en el chasis girando los pestillos de bloqueo hacia arriba, inclinándolos de manera que borren los pasadores de bloqueo, empuje suavemente el controlador hasta que encaje y, a continuación, baje los pestillos de bloqueo a la posición de bloqueo.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+.. Interrumpa el proceso de arranque normal y arranque en EL CARGADOR pulsando `Ctrl-C`.
++
+
+NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
+
+.. En el aviso del CARGADOR, introduzca `bye` Para reiniciar las tarjetas PCIe y otros componentes.
+.. Interrumpa el proceso de arranque y arranque en el símbolo del sistema del CARGADOR pulsando `Ctrl-C`.
++
+Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
+
+
+
+. Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
+

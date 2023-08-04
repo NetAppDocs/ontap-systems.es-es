@@ -1,17 +1,8 @@
----
-permalink: a400/rtc-battery-replace.html 
-sidebar: sidebar 
-keywords: aff a400, aff, a400, replace, real-time, clock, rtc, battery, controller, module, system, service, application, synchronization, function, shut, down, impair, rtc, replacement, switch, back, aggregate, two-node, metrocluster, configuration, complete, process, replace the real-time clock battery, shut down the impaired controller, remove the controller module, replace the rtc battery, reinstall the controller module and setting time/date after rtc battery replacement, switch back aggregates in a two-node MetroCluster configuration, complete the replacement process 
-summary: 'Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.' 
----
-= Sustituya la batería del reloj en tiempo real - AFF A400
+= Paso 1: Apague el controlador dañado
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
-Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.
+Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cualquier módulo SFP y QSFP de las tarjetas, sustituir el PCIe o la tarjeta intermedia con error y volver a conectar las tarjetas.
 
 * Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
 * Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
@@ -21,12 +12,14 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 == Paso 1: Apague el controlador dañado
 
+[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
+[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -82,6 +75,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
+[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -180,6 +174,7 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
+[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -222,57 +217,113 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
-== Paso 3: Sustituya la batería RTC
+== Paso 3: Sustituya una tarjeta PCIe
 
-Debe localizar la batería RTC dentro del módulo del controlador y seguir la secuencia específica de pasos. Consulte el mapa de FRU situado dentro del módulo del controlador para conocer la ubicación de la batería RTC.
+[role="lead"]
+Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.
 
-Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir la batería RTC.
+Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir una tarjeta PCIe.
 
-.Animación: Sustituya la batería RTC
-video::12ea4bc1-75e2-43e7-be91-b0310000fd34[panopto]
-image::../media/drw_c400_rtc_batt_IEOPS-1239.svg[Batería rtc drw C400 IEOPS 1239]
+.Animación - reemplace una tarjeta PCIe
+video::ed42334e-8eb2-48dd-b447-b0300189230f[panopto]
+image:../media/drw_c400_replace_PCIe_cards_IEOPS-1235.svg["anchura=500 px"]
 
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Abra el conducto de aire:
+. Extraiga la tarjeta vertical que contiene la tarjeta que desea sustituir:
 +
-.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
-.. Deslice el conducto de aire hacia la parte posterior del módulo del controlador y gírelo hacia arriba hasta su posición completamente abierta.
-
-
-. Localice, retire y sustituya la batería RTC:
+.. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.
+.. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
+.. Gire el pestillo de bloqueo del elevador en el lado izquierdo del elevador hacia arriba y hacia el conducto de aire.
 +
-.. Mediante el mapa de FRU, localice la batería RTC en el módulo del controlador.
-.. Tire suavemente de la batería para separarla del soporte, gírela del soporte y, a continuación, levántela para sacarla del soporte.
+La tarjeta vertical se eleva ligeramente del módulo del controlador.
+
+.. Levante la tarjeta vertical y déjela a un lado en una superficie plana estable,
+
+
+. Extraiga la tarjeta PCIe de la tarjeta vertical:
++
+.. Gire la tarjeta vertical de forma que pueda acceder a la tarjeta PCIe.
+.. Presione el soporte de bloqueo del lateral de la tarjeta vertical PCIe y gírelo a la posición abierta.
+.. Para elevadores 2 y 3 solamente, gire el panel lateral hacia arriba.
+.. Extraiga la tarjeta PCIe de la tarjeta vertical empujando suavemente el soporte y extráigala del zócalo.
+
+
+. Instale la tarjeta PCIe de repuesto en la tarjeta vertical alineando la tarjeta con la toma, presione la tarjeta en la toma y, a continuación, cierre el panel lateral de la tarjeta vertical, si existe.
++
+Asegúrese de alinear correctamente la tarjeta en la ranura y ejercer una presión uniforme en la tarjeta cuando la asiente en la toma. La tarjeta PCIe debe estar colocada de forma completa y uniforme en la ranura.
+
 +
 
-NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte. La batería está marcada con un signo más y debe colocarse en el soporte correctamente. Un signo más cerca del soporte le indica cómo debe colocarse la batería.
+NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el zócalo de la tarjeta, extraiga la tarjeta superior para que pueda ver el zócalo de la tarjeta, instale la tarjeta y vuelva a instalar la tarjeta que ha extraído de la ranura superior.
 
-.. Retire la batería de repuesto de la bolsa de transporte antiestática.
-.. Observe la polaridad de la batería RTC y, a continuación, insértela en el soporte inclinando la batería en un ángulo y empujando hacia abajo.
-
-
-. Inspeccione visualmente la batería para asegurarse de que está completamente instalada en el soporte y de que la polaridad es correcta.
-. Cierre el conducto de aire.
-
+. Vuelva a instalar la tarjeta vertical:
++
+.. Alinee la tarjeta vertical con los pasadores en el lado de la toma vertical y baje la tarjeta vertical en los pasadores.
+.. Empuje la tarjeta vertical directamente en la toma de la placa base.
+.. Gire el pestillo hacia abajo al mismo nivel que la chapa metálica de la tarjeta vertical.
 
 
 
-== Paso 4: Vuelva a instalar el módulo del controlador y ajuste la fecha y hora después de la sustitución de la batería RTC
 
-Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 
-. Si aún no lo ha hecho, cierre la cubierta del conducto de aire o del módulo del controlador.
+
+== Paso 4: Sustituya la tarjeta intermedia
+
+[role="lead"]
+La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras 4 y 5). Debe extraer esa tarjeta vertical para acceder a la tarjeta intermedia, sustituir la tarjeta intermedia y volver a instalar la tarjeta vertical número 3. Consulte el mapa de FRU en el módulo de la controladora para obtener más información.
+
+Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la tarjeta mezzanine.
+
+.Animación - reemplace la tarjeta mezzanine
+video::e3fd32b6-bdbb-4c53-b666-b030018a5744[panopto]
+image::../media/drw_c400_replace-mezz-card_IEOPS-1236.svg[drw C400 reemplace la tarjeta mezz IEOPS 1236]
+
+. Extraiga la tarjeta vertical número 3 (ranuras 4 y 5):
++
+.. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.
+.. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
+.. Gire el pestillo de bloqueo del elevador en el lado izquierdo del elevador hacia arriba y hacia el conducto de aire.
++
+La tarjeta vertical se eleva ligeramente del módulo del controlador.
+
+.. Levante la tarjeta vertical y déjela a un lado en una superficie plana y estable.
+
+
+. Sustituya la tarjeta mezzanine:
++
+.. Retire cualquier módulo QSFP o SFP de la tarjeta.
+.. Afloje los tornillos de apriete manual de la tarjeta intermedia y levante suavemente la tarjeta directamente de la toma y déjela a un lado.
+.. Alinee la tarjeta mezzanine de repuesto sobre la toma y los pasadores guía y empuje suavemente la tarjeta hacia la toma.
+.. Apriete los tornillos de apriete manual de la tarjeta intermedia.
+
+
+. Vuelva a instalar la tarjeta vertical:
++
+.. Alinee la tarjeta vertical con los pasadores en el lado de la toma vertical y baje la tarjeta vertical en los pasadores.
+.. Empuje la tarjeta vertical directamente en la toma de la placa base.
+.. Gire el pestillo hacia abajo al mismo nivel que la chapa metálica de la tarjeta vertical.
+
+
+
+
+
+
+== Paso 5: Instale el módulo del controlador
+
+Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
+
+. Si aún no lo ha hecho, cierre el conducto de aire.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
-No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
 . Recuperar el sistema, según sea necesario.
 +
 Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
 
-. Si las fuentes de alimentación estaban desenchufadas, enchúfelas de nuevo y vuelva a instalar los retenedores del cable de alimentación.
 . Complete la instalación del módulo del controlador:
 +
+.. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
 .. Con los pestillos de bloqueo, empuje firmemente el módulo de la controladora en el chasis hasta que cumpla con el plano medio y esté completamente asentado.
 +
 Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
@@ -291,25 +342,30 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para arrancar EN EL CARGADOR.
 
+.. En el aviso del CARGADOR, introduzca `bye` Para reiniciar las tarjetas PCIe y otros componentes y dejar que se reinicie la controladora.
 
 
-. Restablezca la hora y la fecha en la controladora:
-+
-.. Compruebe la fecha y la hora en el controlador en buen estado con el `show date` comando.
-.. En el aviso DEL CARGADOR en la controladora de destino, compruebe la hora y la fecha.
-.. Si es necesario, modifique la fecha con el `set date mm/dd/yyyy` comando.
-.. Si es necesario, ajuste la hora en GMT utilizando `set time hh:mm:ss` comando.
-.. Confirme la fecha y la hora en la controladora de destino.
-
-
-. En el aviso del CARGADOR, introduzca `bye` Para reiniciar las tarjetas PCIe y otros componentes y dejar que se reinicie la controladora.
 . Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 
 
 
 
-== Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+== Paso 6: Restaure el módulo de la controladora a su funcionamiento
+
+Para restaurar el controlador, debe poder recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a habilitar la devolución automática.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
 
@@ -367,6 +423,6 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
-== Paso 6: Devuelva la pieza que falló a NetApp
+== Paso 8: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.
