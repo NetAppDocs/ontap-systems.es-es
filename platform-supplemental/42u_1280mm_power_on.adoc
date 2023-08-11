@@ -13,17 +13,28 @@ summary: Debe conectar los componentes del sistema a las PDU, enrutar los cables
 [role="lead"]
 Debe conectar los componentes del sistema a las PDU, enrutar los cables PDU a las fuentes de alimentación de CA, conectarlos a las fuentes de alimentación y encender el sistema.
 
+
+IMPORTANT: Para evitar una interrupción del sistema si falla una PDU, no conecte ambos cables de alimentación de ningún componente a una PDU. Distribuya la carga a través de los PDS conectados a diferentes circuitos, como se muestra en la ilustración.
+
 Debe tener circuitos de alimentación separados disponibles para cada PDU del armario del sistema.
 
-. Conecte el equipo a las PDU y asegúrese de conectar las fuentes de alimentación de cada componente a una PDU en lados opuestos del armario del sistema.
-. Introduzca los cables de alimentación de la PDU a través de una abertura en el armario del sistema.
+. Conecte su equipo a las PDU:
 +
-Utilice una de las siguientes aperturas:
+.. Conecte las fuentes de alimentación del controlador a diferentes PDU conectadas a diferentes fuentes de alimentación.
+.. Conecte las fuentes de alimentación de la bandeja de unidades a PDU diferentes conectadas a diferentes fuentes de alimentación.
+.. Conecte cualquier fuente de alimentación del interruptor a diferentes PDU conectadas a diferentes fuentes de alimentación.
++
+image::../media/cabinet_power_cabling_IEOPS-1320.svg[Cableado de alimentación de armario IEOPS 1320]
 
 +
-** La parte superior del armario del sistema
-** Entre la parte inferior de la puerta trasera y el bastidor del armario del sistema
-** A través de la abertura del suelo y debajo del armario del sistema
+Introduzca los cables de alimentación de la PDU a través de una de las siguientes aberturas del armario del sistema:
+
++
+*** La parte superior del armario del sistema
+*** Entre la parte inferior de la puerta trasera y el bastidor del armario del sistema
+*** A través de la abertura del suelo y debajo del armario del sistema
+
+
 
 
 . Apague los interruptores de alimentación o los disyuntores de las PDU.
