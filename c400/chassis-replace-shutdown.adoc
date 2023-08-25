@@ -17,7 +17,6 @@ Apague o retome el controlador dañado siguiendo el procedimiento adecuado para 
 
 == Opción 1: Apague las controladoras al sustituir un chasis
 
-[role="lead"]
 Este procedimiento es solamente para configuraciones de 2 nodos que no sean de MetroCluster. Si tiene un sistema con más de dos nodos, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de 4 nodos"^].
 
 .Antes de empezar
@@ -86,7 +85,6 @@ NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: 
 
 == Opción 2: Apague una controladora en una configuración MetroCluster de dos nodos
 
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
