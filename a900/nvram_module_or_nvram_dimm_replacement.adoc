@@ -314,10 +314,7 @@ Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
 Deberá confirmar el cambio de ID del sistema cuando arranque la controladora de reemplazo y, a continuación, compruebe que se ha implementado el cambio.
 
 
-NOTE: Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
-
-
-CAUTION: La reasignación de discos solo es necesaria cuando se sustituye el módulo NVRAM.
+CAUTION: La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.
 
 .Pasos
 . Si la controladora de reemplazo se encuentra en modo de mantenimiento (se muestra la `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
@@ -417,6 +414,9 @@ dr-group-id            cluster node           configuration-state
 == Paso 6: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
 
 Si tiene activado el cifrado de almacenamiento, utilice el procedimiento correspondiente.
+
+
+IMPORTANT: Este paso no se aplica al reemplazo de DIMM de NVRAM.
 
 [role="tabbed-block"]
 ====

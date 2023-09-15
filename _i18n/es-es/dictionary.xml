@@ -6062,7 +6062,6 @@
   <block id="bc62fa4bef9a4cd2a983ca01d5a5b1b3" category="paragraph">pestillo de leva completamente desbloqueado</block>
   <block id="58e30dc94cdf372b64dac305fbb57bc0" category="section-title">Paso 5: Reasignar discos</block>
   <block id="75058bf61b1188ee8304798f89ca02bf" category="paragraph">Deberá confirmar el cambio de ID del sistema cuando arranque la controladora de reemplazo y, a continuación, compruebe que se ha implementado el cambio.</block>
-  <block id="7b0ac7dba1c185e5ac66482ca29488da" category="admonition">La reasignación de discos solo es necesaria cuando se sustituye el módulo NVRAM.</block>
   <block id="84bda9f97f27f63cc6fa0c4cac3ddcb4" category="list-text">Si la controladora de reemplazo se encuentra en modo de mantenimiento (se muestra la<block ref="2cf8a3bab83c4d2618c18eeeca9ebc98" prefix=" " category="inline-code"></block> Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block></block>
   <block id="3cea6cd019ee970febca58bfe050e1cb" category="list-text">Desde el aviso DEL CARGADOR en la controladora de reemplazo, arranque la controladora e introduzca y si se le solicita que anule el ID del sistema debido a un error de coincidencia de ID del sistema.</block>
   <block id="40ef2970d7d205d6f0ba4ecddaec7b51" category="list-text">Espere hasta que la devolución esté a la espera... El mensaje se muestra en la consola del controlador con el módulo de sustitución y, a continuación, en el controlador en buen estado, compruebe que el nuevo ID del sistema asociado se ha asignado automáticamente:<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block></block>
@@ -8539,4 +8538,6 @@ En esta sección se proporcionan instrucciones detalladas para la instalación d
   <block id="e598646ba49e0f0b7db709308a38bd0c" category="inline-image-macro">Ilustración que muestra las interconexiones del clúster entre los puertos de la parte posterior de las controladoras</block>
   <block id="d5fe92183ddfd6502c92a350a2928047" category="list-text">e0b a e0b
 <block ref="23c439b7ef31021d610e4d3b988f3cd1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10fbfa6320d8e7c72e731fbd9a6e6c69" category="admonition">La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.</block>
+  <block id="099f7b942e4e89631784891716949599" category="admonition">Este paso no se aplica al reemplazo de DIMM de NVRAM.</block>
 </blocks>

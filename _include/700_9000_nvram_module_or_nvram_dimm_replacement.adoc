@@ -384,7 +384,8 @@ Seleccione una de las siguientes opciones para obtener instrucciones sobre cómo
 .Compruebe el cambio de ID del sistema en un sistema de alta disponibilidad
 Debe confirmar el cambio de ID del sistema al arrancar el nodo _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
 
-Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
+
+CAUTION: La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.
 
 .Pasos
 . Si el nodo de reemplazo está en modo de mantenimiento (se muestra el `*>` Salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
