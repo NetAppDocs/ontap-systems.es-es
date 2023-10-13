@@ -251,6 +251,9 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 
 Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.
 
+
+NOTE: link:https://hwu.netapp.com["Hardware Universe de NetApp"^] La prioridad de ranura para tarjetas de red host (Fibre Channel o 25GbE) es la ranura 2. Sin embargo, si tiene ambas tarjetas, la tarjeta de canal de fibra va en la ranura 2 y la tarjeta de 25GbE va en la ranura 1 (como se muestra en las opciones a continuación). Si dispone de una bandeja externa, la tarjeta de almacenamiento se coloca en la ranura 1, la única ranura compatible para las bandejas.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Cable a red de host de Fibre Channel

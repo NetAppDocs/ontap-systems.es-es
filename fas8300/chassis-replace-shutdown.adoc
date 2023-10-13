@@ -47,7 +47,7 @@ Como práctica recomendada antes del cierre, debe:
 . Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.
 . Desactive AutoSupport e indique cuánto tiempo espera que el sistema esté fuera de línea:
 +
-`system node autosupport invoke -node * -type all -messages "MAINT=8h Power Maintenance"`
+`system node autosupport invoke -node * -type all -message "MAINT=8h Power Maintenance"`
 
 . Identifique la dirección del SP/BMC de todos los nodos:
 +

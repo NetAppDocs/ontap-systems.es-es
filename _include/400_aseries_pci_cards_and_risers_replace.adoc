@@ -12,14 +12,12 @@ Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cual
 
 == Paso 1: Apague el controlador dañado
 
-[role="lead"]
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
 
 [role="tabbed-block"]
 ====
 .Opción 1: Mayoría de las configuraciones
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -75,7 +73,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora está en un MetroCluster de dos nodos
 --
-[role="lead"]
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -174,7 +171,6 @@ mcc1A::> metrocluster operation show
 
 == Paso 2: Extraiga el módulo del controlador
 
-[role="lead"]
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -189,9 +185,10 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
 +
-image::../media/drw_c400_remove_controller_IEOPS-1216.svg[drw C400 EXTIENE EL CONTROLADOR IEOPS 1216]
+image::../media/drw_A400_Remove_controller.png[drw A400 retire el controlador]
 
 +
+[cols="10,90"]
 |===
 
 
@@ -204,9 +201,7 @@ Pestillos de bloqueo
 
  a| 
 image:../media/legend_icon_02.png["Número de llamada 2"]
- a| 
-La controladora se mueve ligeramente fuera del chasis
-
+| La controladora se mueve ligeramente fuera del chasis 
 |===
 . Deslice el módulo de la controladora para sacarlo del chasis.
 +
@@ -219,15 +214,41 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 3: Sustituya una tarjeta PCIe
 
-[role="lead"]
 Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.
 
-Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir una tarjeta PCIe.
+image:../media/drw_A400_Replace-PCIe-cards.png[""]
 
-.Animación - reemplace una tarjeta PCIe
-video::ed42334e-8eb2-48dd-b447-b0300189230f[panopto]
-image:../media/drw_c400_replace_PCIe_cards_IEOPS-1235.svg["anchura=500 px"]
+[cols="10,90"]
+|===
 
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Pestillo de bloqueo de la tarjeta vertical
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+ a| 
+Pestillo de bloqueo de tarjeta PCI
+
+
+
+ a| 
+image:../media/legend_icon_03.png["Número de llamada 3"]
+ a| 
+Placa de bloqueo PCI
+
+
+
+ a| 
+image:../media/legend_icon_04.png["Número de llamada 4"]
+ a| 
+Tarjeta PCI
+
+|===
 . Extraiga la tarjeta vertical que contiene la tarjeta que desea sustituir:
 +
 .. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.
@@ -268,15 +289,36 @@ NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el 
 
 == Paso 4: Sustituya la tarjeta intermedia
 
-[role="lead"]
 La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras 4 y 5). Debe extraer esa tarjeta vertical para acceder a la tarjeta intermedia, sustituir la tarjeta intermedia y volver a instalar la tarjeta vertical número 3. Consulte el mapa de FRU en el módulo de la controladora para obtener más información.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la tarjeta mezzanine.
 
 .Animación - reemplace la tarjeta mezzanine
 video::e3fd32b6-bdbb-4c53-b666-b030018a5744[panopto]
-image::../media/drw_c400_replace-mezz-card_IEOPS-1236.svg[drw C400 reemplace la tarjeta mezz IEOPS 1236]
+image::../media/drw_A400_Replace-mezz-card.png[drw A400 reemplace la tarjeta mezz]
 
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Tarjeta PCI riser
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+ a| 
+Tornillo de apriete manual del elevador
+
+
+
+ a| 
+image:../media/legend_icon_03.png["Número de llamada 3"]
+| Tarjeta elevadora 
+|===
 . Extraiga la tarjeta vertical número 3 (ranuras 4 y 5):
 +
 .. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.

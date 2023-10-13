@@ -173,12 +173,6 @@ mcc1A::> metrocluster operation show
 
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
-Puede utilizar las siguientes animaciones, ilustraciones o los pasos escritos para quitar el módulo de la controladora del chasis.
-
-.Animación: Extraiga el módulo del controlador
-video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
-image::../media/drw_A400_Remove_controller.png[drw A400 retire el controlador]
-
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
 . Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
@@ -190,6 +184,25 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 +
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
+
+
+image::../media/drw_A400_Remove_controller.png[drw A400 retire el controlador]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Pestillos de bloqueo
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+| La controladora se mueve ligeramente fuera del chasis 
+|===
 . Deslice el módulo de la controladora para sacarlo del chasis.
 +
 Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
@@ -203,12 +216,39 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.
 
-Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir una tarjeta PCIe.
+image:../media/drw_A400_Replace-PCIe-cards.png[""]
 
-.Animación - reemplace una tarjeta PCIe
-video::84339f87-321c-400e-985e-aae10182cd24[panopto]
-image:../media/drw_A400_Replace-PCIe-cards_IEOPS-1008.svg["anchura=500 px"]
+[cols="10,90"]
+|===
 
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Pestillo de bloqueo de la tarjeta vertical
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+ a| 
+Pestillo de bloqueo de tarjeta PCI
+
+
+
+ a| 
+image:../media/legend_icon_03.png["Número de llamada 3"]
+ a| 
+Placa de bloqueo PCI
+
+
+
+ a| 
+image:../media/legend_icon_04.png["Número de llamada 4"]
+ a| 
+Tarjeta PCI
+
+|===
 . Extraiga la tarjeta vertical que contiene la tarjeta que desea sustituir:
 +
 .. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.
@@ -254,9 +294,31 @@ La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la tarjeta mezzanine.
 
 .Animación - reemplace la tarjeta mezzanine
-video::4e00f5b1-8ca5-4cd6-9881-aadb01578e52[panopto]
-image::../media/drw_A400_Replace-mezz-card_IEOPS-1006.svg[drw A400 reemplace la tarjeta mezz IEPOPS 1006]
+video::e3fd32b6-bdbb-4c53-b666-b030018a5744[panopto]
+image::../media/drw_A400_Replace-mezz-card.png[drw A400 reemplace la tarjeta mezz]
 
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Tarjeta PCI riser
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+ a| 
+Tornillo de apriete manual del elevador
+
+
+
+ a| 
+image:../media/legend_icon_03.png["Número de llamada 3"]
+| Tarjeta elevadora 
+|===
 . Extraiga la tarjeta vertical número 3 (ranuras 4 y 5):
 +
 .. Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.
@@ -290,12 +352,6 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 == Paso 5: Instale el módulo del controlador
 
 Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
-
-Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.
-
-.Animación: Instale el módulo del controlador
-video::0310fe80-b129-4685-8fef-ab19010e720a[panopto]
-image::../media/drw_A400_Install_controller_source.png[drw A400 instale la fuente del controlador]
 
 . Si aún no lo ha hecho, cierre el conducto de aire.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
