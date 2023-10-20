@@ -1,0 +1,83 @@
+---
+permalink: asa-c400/power-supply-replace.html 
+sidebar: sidebar 
+keywords: asa c400, asa, c400, replace, replacing, power, supply, psu, disconnect, target, psu, unplug, power, cable, removing, remove, replacement, source, replace a power supply 
+summary: 'Para sustituir una fuente de alimentación \(PSU\) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de repuesto y, a continuación, volver a conectar la fuente de alimentación de repuesto.' 
+---
+= Sustitución de una fuente de alimentación: ASA C400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una fuente de alimentación (PSU) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de reemplazo y, a continuación, volver a conectar la fuente de alimentación de reemplazo.
+
+* Los sistemas de alimentación son redundantes y intercambiables en caliente.
+* Este procedimiento se escribe para sustituir una fuente de alimentación a la vez.
++
+
+NOTE: Se recomienda sustituir el suministro de alimentación en un plazo de dos minutos tras retirarlo del chasis. El sistema sigue funcionando, pero ONTAP envía mensajes a la consola acerca del suministro de alimentación degradado hasta que se reemplaza el suministro de alimentación.
+
++
+
+IMPORTANT: No mezcle las PSU con diferentes niveles de eficiencia. Sustituya siempre como por ejemplo.
+
+
+
+Puede utilizar la siguiente ilustración con los pasos escritos para sustituir la fuente de alimentación.
+
+image::../media/drw_A400_psu.png[fuente de alimentación drw A400]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+ a| 
+Lengüeta de bloqueo de PSU
+
+
+
+ a| 
+image:../media/legend_icon_02.png["Número de llamada 2"]
+ a| 
+Retén del cable de alimentación
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación que desea reemplazar, basándose en mensajes de error de la consola o a través de los LED de las fuentes de alimentación.
+. Desconecte la fuente de alimentación:
++
+.. Abra el retenedor del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación.
+
+
+. Retire la fuente de alimentación:
++
+.. Gire el asa de la leva para que pueda utilizarse para extraer la fuente de alimentación del chasis.
+.. Pulse la lengüeta de bloqueo azul para liberar la fuente de alimentación del chasis.
+.. Con ambas manos, extraiga la fuente de alimentación del chasis y, a continuación, déjela a un lado.
+
+
+. Con ambas manos, sujete y alinee los bordes de la fuente de alimentación con la abertura del módulo del controlador y, a continuación, empuje suavemente la fuente de alimentación en el módulo del controlador hasta que la lengüeta de bloqueo encaje en su sitio.
++
+Las fuentes de alimentación sólo se acoplarán correctamente al conector interno y se bloquearán de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la fuente de alimentación hacia el sistema.
+
+. Gire el mango de la leva de forma que quede alineado con la fuente de alimentación.
+. Vuelva a conectar el cableado de la fuente de alimentación:
++
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y a la fuente de alimentación.
+.. Fije el cable de alimentación a la fuente de alimentación con el retenedor del cable de alimentación.
+
+
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+
