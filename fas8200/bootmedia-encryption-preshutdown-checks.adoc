@@ -32,8 +32,8 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 . Compruebe la versión de ONTAP que el sistema está funcionando en el controlador dañado si está activo, o en el controlador asociado si el controlador dañado está inactivo, usando el `version -v` comando:
 +
 ** Si se muestra <lno-DARE> o <1Ono-DARE> en el resultado del comando, el sistema no admite NVE, continúe para apagar la controladora.
-** Si <lno-DARE> no se muestra en el resultado del comando y el sistema ejecuta ONTAP 9.5, vaya a. <<Opción 1: Seleccione NVE o NSE en sistemas que ejecutan ONTAP 9.5 y versiones anteriores>>.
-** Si <lno-DARE> no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9.6 o una versión posterior, vaya a. <<Opción 2: Seleccione NVE o NSE en sistemas que ejecutan ONTAP 9.6 y posterior>>.
+** Si <lno-DARE> no se muestra en el resultado del comando y el sistema ejecuta ONTAP 9.5, vaya a. <<Opción 1: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.5 y versiones anteriores>>.
+** Si <lno-DARE> no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9.6 o una versión posterior, vaya a. <<Opción 2: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores>>.
 
 
 . Si la controladora dañada forma parte de una configuración de alta disponibilidad, deshabilite la recuperación automática de la controladora en buen estado: `storage failover modify -node local -auto-giveback false` o. `storage failover modify -node local -auto-giveback-after-panic false`

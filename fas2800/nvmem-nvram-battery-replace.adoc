@@ -13,7 +13,7 @@ summary: Para sustituir una batería de NVMEM en el sistema, debe extraer el mó
 [role="lead"]
 Para sustituir una batería de NVMEM en el sistema, debe extraer el módulo de la controladora del sistema, abrirlo, sustituir la batería y cerrar y sustituir el módulo de la controladora.
 
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"].
 
 
 
@@ -73,14 +73,26 @@ Retire y abra el módulo del controlador.
 Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
 
 . Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
-. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
+. Apriete el pestillo de la palanca de leva hasta que se suelte, abra el asa de leva completamente para liberar el módulo del controlador del plano medio y, a continuación, con dos manos, tire del módulo del controlador hasta la mitad del chasis.
 +
 image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[drw 2850 pcm EXTENSIÓN INSTALAR IEOPS 694]
 
-. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
-. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
+. Compruebe el LED NVMEM situado en la parte posterior del módulo del controlador.  Busque el icono NV:
 +
-image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Cubierta del módulo de controlador abierto drw 2850 IEOPS 695]
+image::../media/drw_hw_nvram_icon.svg[icono de drw hw nvram]
+
++
+
+NOTE: El LED verde NV de la placa frontal comenzará a parpadear cuando se retire la alimentación del controlador si el sistema se encontraba en estado de espera de devolución o si el sistema no se ha superado o detenido correctamente (datos no confirmados).  Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"]
+
++
+** Si el LED verde de estado de NV comienza a parpadear cuando se extrae el módulo de controlador del chasis:
++
+*** Confirme que la controladora tenía una toma de control correcta por parte del módulo de controladora asociado o que la controladora dañada muestra _Esperando devolución_. Se puede ignorar el LED intermitente y puede finalizar la extracción de la controladora dañada del chasis.
+
+
+** Si el LED de NV verde si está apagado, puede finalizar la retirada de la controladora dañada del chasis.
+
 
 
 
@@ -92,26 +104,11 @@ Quite la batería de NVMEM con errores del sistema y sustitúyala por una nueva 
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Compruebe el LED de NVMEM:
+. Retire el módulo de control del chasis.
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
 +
-** Si su sistema está en una configuración de alta disponibilidad, vaya al paso siguiente.
-** Si el sistema está en una configuración independiente, apague correctamente el módulo de la controladora y, a continuación, compruebe el LED de NVRAM identificado con el icono de NV.
-+
-image::../media/drw_hw_nvram_icon.svg[icono de drw hw nvram]
-
-+
-
-NOTE: El LED de NVRAM parpadea mientras se separa el contenido de la memoria flash cuando se detiene el sistema. Una vez finalizado el destete, el LED se apaga.
-
-+
-*** Si se pierde la alimentación sin un apagado correcto, el LED de NVMEM parpadea hasta que se completa el destino y, a continuación, se apaga el LED.
-*** Si el LED está encendido y encendido, los datos no escritos se almacenan en NVMEM.
-+
-Esto suele ocurrir durante un apagado no controlado una vez que ONTAP se ha iniciado correctamente.
-
-
-
-
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Cubierta del módulo de controlador abierto drw 2850 IEOPS 695]
 
 . Localice la batería de NVMEM en el módulo de la controladora.
 +
