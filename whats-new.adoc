@@ -15,111 +15,6 @@ Obtenga más información sobre las nuevas funciones de los sistemas AFF, ASA y 
 
 
 
-== Nueva compatibilidad con el adaptador
-
-[cols="4*"]
-|===
-| Número de pieza del adaptador | Descripción | Categoría | Comienzo disponible 
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91148A"]
- a| 
-Roce QSFP28 de 100 GbE y 2 puertos
- a| 
-* Reducida
-* Redes
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91122A"]
- a| 
-Roce QSFP28 de 25 GbE para 2 puertos
- a| 
-* Redes
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X9170A"]
- a| 
-Módulo SSD de NVMe (1 TB)
- a| 
-Dispositivo de volcado de memoria
- a| 
-ONTAP 9.8
-
-|===
-
-
-== Nuevo soporte de conmutador
-
-[cols="25h,~,~"]
-|===
-| Interruptores | Descripción | Comienzo disponible 
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200)"]
- a| 
-Admite una infraestructura compartida (clúster, alta disponibilidad y almacenamiento conectado a switches) en la misma pareja de switches Cisco Nexus 9336C-FX2, incluida la compatibilidad con configuraciones de IP de MetroCluster.
- a| 
-ONTAP 9.9.1
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200 y X190210)"]
- a| 
-Compatibilidad con switches de interconexión de clúster Cisco Nexus 9336C-FX2 y switches de almacenamiento para las controladoras AFF/FAS, así como para la conectividad de los datos de interfaz.
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Conmutador Broadcom BES-53248 (X190005 y X190005R)"]
- a| 
-Compatibilidad con el switch de interconexión de clúster Broadcom BES-53248 para controladoras AFF/FAS con puertos de 40 GbE.
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200)"] https://hwu.netapp.com/Switch/Index["Switch Cisco de 32 puertos 100 GbE (X190100 y X190100R)"]
- a| 
-El switch Cisco Nexus 100 GbE se puede utilizar como switch de almacenamiento dedicado para conectar las bandejas de unidades NVMe NS224 a las siguientes plataformas:
-
-* ASA A800/AFF A800 de AFF
-* ASA A700/AFF de AFF
-* AFF A400/AFF ASA A400
-* AFF A320
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/Switch/Index["Conmutador Broadcom BES-53248 (X190005 y X190005R)"]
- a| 
-Compatibilidad con el switch de interconexión de clústeres BES-53248 de Broadcom para controladoras AFF/FAS con puertos de 10 GbE.
- a| 
-ONTAP 9.5P8
-
-|===
-
-
 == Compatibilidad con nuevas plataformas
 
 [cols="2*"]
@@ -128,9 +23,102 @@ ONTAP 9.5P8
 
 
  a| 
-https://hwu.netapp.com/ProductSpecs/Index["FAS9500"]
+https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C250"]
  a| 
-ONTAP 9.10.1P3 y 9.11.1
+ONTAP 9.13.1P1
+
+
+
+ a| 
+https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C400"]
+ a| 
+ONTAP 9.13.1P1
+
+
+
+ a| 
+https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C800"]
+ a| 
+ONTAP 9,13.P11
+
+
+
+ a| 
+https://hwu.netapp.com/ProductSpecs/Index["FAS2820"]
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A150"]
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A250"]
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A400"]
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A900"]
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C250"]
+* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C400"]
+* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C800"]
+
+ a| 
+ONTAP 9.12.1P1
+
+ONTAP 9.13.1 GA y versiones posteriores de ONTAP
+
+[NOTE]
+====
+Estas plataformas no son compatibles con ONTAP 9.13.1 RC1.
+
+====
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A150"]
+
+[NOTE]
+====
+No intente instalar o arrancar el sistema de almacenamiento AFF A150 con una versión no compatible de ONTAP. Si intenta instalar o iniciar el sistema con una versión no compatible de ONTAP, ONTAP lo permitirá (ONTAP no bloqueará el intento). El resultado es que su sistema de almacenamiento A150 de AFF se presentara como un sistema de almacenamiento FAS2750.
+
+==== a| 
+ONTAP 9.13.1 y versiones posteriores de ONTAP
+
+ONTAP 9.12.1P1
+
+ONTAP 9.11.1P8
+
+ONTAP 9.10.1P12
+
+
+
+ a| 
+https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS9500"]
+ a| 
+ONTAP 9.11.1
+
+ONTAP 9.10.1P3
 
 
 
@@ -145,13 +133,6 @@ ONTAP 9.10.1
 https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A250/AFF ASA A250"]
  a| 
 ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/ProductSpecs/Index["FAS2820"]
- a| 
-ONTAP 9.13.1
 
 
 
@@ -219,6 +200,136 @@ ONTAP 9.6
 |===
 
 
+== Nuevo soporte de conmutador
+
+[cols="20,65,15"]
+|===
+| Interruptores | Descripción | Comienzo disponible 
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["SWITCH NVIDIA IP SN2100"]
+ a| 
+El switch de almacenamiento NVIDIA IP SN2100 es compatible con configuraciones IP de MetroCluster que usan las plataformas A900/FAS9500.
+ a| 
+ONTAP 9.12.1
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["SWITCH NVIDIA IP SN2100 (X190006)"]
+ a| 
+El switch de almacenamiento NVIDIA IP SN2100 es compatible con las configuraciones IP de MetroCluster que utilizan las siguientes plataformas:
+
+* FAS500f/AFF A250
+* FAS8300/AFF A400
+* FAS8700
+* FAS9000/AFF A700
+* A800 de AFF
+
+ a| 
+ONTAP 9.10.1P3
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200)"]
+ a| 
+Admite una infraestructura compartida (clúster, alta disponibilidad y almacenamiento conectado a switches) en la misma pareja de switches Cisco Nexus 9336C-FX2, incluida la compatibilidad con configuraciones de IP de MetroCluster.
+ a| 
+ONTAP 9.9.1
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200 y X190210)"]
+ a| 
+Compatibilidad con switches de interconexión de clúster Cisco Nexus 9336C-FX2 y switches de almacenamiento para las controladoras AFF/FAS, así como para la conectividad de los datos de interfaz.
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["Conmutador Broadcom BES-53248 (X190005 y X190005R)"]
+ a| 
+Compatibilidad con el switch de interconexión de clúster Broadcom BES-53248 para controladoras AFF/FAS con puertos de 40 GbE.
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["Switch Cisco de 36 puertos 100 GbE (X190200)"] https://hwu.netapp.com/Switch/Index["Switch Cisco de 32 puertos 100 GbE (X190100 y X190100R)"]
+ a| 
+El switch Cisco Nexus 100 GbE se puede utilizar como switch de almacenamiento dedicado para conectar las bandejas de unidades NVMe NS224 a las siguientes plataformas:
+
+* ASA A800/AFF A800 de AFF
+* ASA A700/AFF de AFF
+* AFF A400/AFF ASA A400
+* AFF A320
+
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+https://hwu.netapp.com/Switch/Index["Conmutador Broadcom BES-53248 (X190005 y X190005R)"]
+ a| 
+Compatibilidad con el switch de interconexión de clústeres BES-53248 de Broadcom para controladoras AFF/FAS con puertos de 10 GbE.
+ a| 
+ONTAP 9.5P8
+
+|===
+
+
+== Nueva compatibilidad con el adaptador
+
+[cols="4*"]
+|===
+| Número de pieza del adaptador | Descripción | Categoría | Comienzo disponible 
+
+
+ a| 
+https://hwu.netapp.com/adapter/index["X91148A"]
+ a| 
+Roce QSFP28 de 100 GbE y 2 puertos
+ a| 
+* Reducida
+* Redes
+* HA/MetroCluster
+
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+https://hwu.netapp.com/adapter/index["X91122A"]
+ a| 
+Roce QSFP28 de 25 GbE para 2 puertos
+ a| 
+* Redes
+* HA/MetroCluster
+
+ a| 
+ONTAP 9.8
+
+
+
+ a| 
+https://hwu.netapp.com/adapter/index["X9170A"]
+ a| 
+Módulo SSD de NVMe (1 TB)
+ a| 
+Dispositivo de volcado de memoria
+ a| 
+ONTAP 9.8
+
+|===
+
+
 == Nueva compatibilidad de bandejas
 
 [cols="2*"]
@@ -268,83 +379,5 @@ ONTAP 9.7P4
 ONTAP 9.6P9
 
 ONTAP 9.5P14
-
-|===
-
-
-== Nuevas mejoras de actualización de hardware
-
-Los procedimientos de actualización de hardware se han simplificado en ONTAP 9.8 con la introducción de la función de colocación automática de puertos. Al actualizar un sistema con ONTAP 9.8, debe utilizar el procedimiento correcto para tener en cuenta la función de ubicación del puerto.
-
-Consulte la siguiente tabla para ver los procedimientos de actualización disponibles. Consulte cada guía para obtener más detalles para determinar si el procedimiento es adecuado.
-
-Para obtener más información sobre procedimientos específicos de MetroCluster, consulte https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["Seleccione un método de actualización o actualización"].
-
-[cols="4*"]
-|===
-| Versión de ONTAP | Ubicación | No disruptivas | Compatible con MetroCluster 
-
-
- a| 
-de 9.8 a 9.0.x
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Guía exprés de actualización del hardware de la controladora"] (Moviendo el almacenamiento físico existente)
- a| 
-No
- a| 
-No
-
-
-
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Guía exprés de actualización del hardware de la controladora"] (Mover volúmenes a nuevo almacenamiento)
- a| 
-Sí
- a| 
-No
-
-
-
- a| 
-9.8
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.8"]
- a| 
-Sí
- a| 
-Sí (FC)
-
-
-
- a| 
-9.8
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["Utilice la reubicación de agregados para actualizar manualmente el hardware de la controladora que ejecuta ONTAP 9.8 o posterior"]
- a| 
-Sí
- a| 
-Sí (FC)
-
-
-
- a| 
-9.7 a 9.5
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["Utilizar comandos «system Controller replace» para actualizar el hardware de la controladora que ejecuta ONTAP 9.5 a ONTAP 9.7"]
- a| 
-Sí
- a| 
-Sí (FC)
-
-
-
- a| 
-9.7 y anteriores
- a| 
-https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["Actualizar controladoras con reubicación de agregados a Actualizar manualmente hardware de controladora que ejecuta ONTAP 9.7 y versiones anteriores"]
- a| 
-Sí
- a| 
-Sí (FC)
 
 |===
