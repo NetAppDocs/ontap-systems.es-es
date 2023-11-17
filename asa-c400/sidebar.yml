@@ -1,0 +1,86 @@
+---
+section: asa-c400
+title: Sistemas ASA C400
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de ASA C400
+  entries:
+  - title: Elija experiencia de instalación y configuración
+    url: "/asa-c400/install-setup.html"
+  - title: Pasos rápidos
+    url: "/asa-c400/install-quick-guide.html"
+  - title: Pasos de vídeo
+    url: "/asa-c400/install-videos.html"
+  - title: Pasos detallados
+    url: "/asa-c400/install-detailed-guide.html"
+- title: Mantener
+  pdf-filename: Mantenimiento de ASA C400
+  entries:
+  - title: Descripción general
+    url: "/asa-c400/maintain-overview.html"
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque de ASA C400
+    entries:
+    - title: Descripción general
+      url: "/asa-c400/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/asa-c400/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/asa-c400/bootmedia-impaired-controller-shutdown.html"
+    - title: Sustituir el soporte de arranque
+      url: "/asa-c400/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/asa-c400/bootmedia-recovery-image-boot-options.html"
+    - title: Vuelva a cambiar a la configuración de MetroCluster
+      url: "/asa-c400/bootmedia-2n-mcc-switchback.html"
+    - title: Restauración de OKM, NSE y NVE
+      url: "/asa-c400/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/asa-c400/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis ASA C400
+    entries:
+    - title: Descripción general
+      url: "/asa-c400/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/asa-c400/chassis-replace-shutdown.html"
+    - title: Sustituya el chasis
+      url: "/asa-c400/chassis-replace-move-hardware.html"
+    - title: Reemplazo completo de chasis
+      url: "/asa-c400/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador ASA C400
+    entries:
+    - title: Descripción general
+      url: "/asa-c400/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/asa-c400/controller-replace-shutdown.html"
+    - title: Sustituya la controladora
+      url: "/asa-c400/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/asa-c400/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/asa-c400/controller-replace-recable-reassign-disks.html"
+    - title: Restauración completa del sistema
+      url: "/asa-c400/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    pdf-filename: DIMM ASA C400
+    url: "/asa-c400/dimm-replace.html"
+  - title: Ventilador
+    pdf-filename: Módulo de ventilador ASA C400
+    url: "/asa-c400/fan-swap-out.html"
+  - title: Batería NVDIMM
+    pdf-filename: Batería ASA C400 NVDIMM
+    url: "/asa-c400/nvdimm-battery-replace.html"
+  - title: NVDIMM
+    pdf-filename: NVDIMM ASA A320
+    url: "/asa-c400/nvdimm-replace.html"
+  - title: PCIe o tarjeta intermedia
+    pdf-filename: Tarjeta mezzanine o PCIe C400 de ASA
+    url: "/asa-c400/pci-cards-and-risers-replace.html"
+  - title: Suministro de alimentación
+    pdf-filename: Fuente de alimentación ASA C400
+    url: "/asa-c400/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    pdf-filename: ASA C400 Batería de reloj en tiempo real
+    url: "/asa-c400/rtc-battery-replace.html"
