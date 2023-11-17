@@ -174,11 +174,11 @@ https://docs.netapp.com/us-en/ontap-systems/platform-supplemental/superrail-inst
 NOTE: Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.
 
 +
-image::../media/drw_asac800_weight_caution.png[drw asac800 peso precaución]
+image::../media/drw_affa800_weight_caution.png[precaución de peso drw affa800]
 
 . Conecte los dispositivos de administración de cables (como se muestra).
 +
-image::../media/drw_asac800_install_cable_mgmt.png[drw asac800 instale la gestión del cable]
+image::../media/drw_affc800_install_cable_mgmt.png[drw affc800 instale la gestión del cable]
 
 . Coloque el panel frontal en la parte delantera del sistema.
 
@@ -228,8 +228,7 @@ image:../media/oie_legend_icon_1_dp.png[""]
 Conecte los cables de los puertos de interconexión de alta disponibilidad:
 
 ** e0b a e0b
-** e1b a e1b
-image:../media/drw_asac800_ha_pair_cabling.png[""]
+** e1b a e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
 
 
 
@@ -240,8 +239,7 @@ image:../media/oie_legend_icon_2_lg.png[""]
 Conecte los puertos de interconexión del clúster:
 
 ** e0a a e0a
-** e1a a e1a
-image:../media/drw_asac800_tnsc_clust_cabling.png[""]
+** e1a a e1aimage:../media/drw_affa800_tnsc_clust_cabling.png[""]
 
 
 
@@ -249,7 +247,7 @@ image:../media/drw_asac800_tnsc_clust_cabling.png[""]
  a| 
 image:../media/oie_legend_icon_3_lp.png[""]
  a| 
-Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_asac800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
+Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_affa800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
 
 
 
@@ -303,8 +301,7 @@ image:../media/oie_legend_icon_1_dp.png[""]
 Conecte los cables de los puertos de interconexión de alta disponibilidad:
 
 ** e0b a e0b
-** e1b a e1b
-image:../media/drw_asac800_ha_pair_cabling.png[""]
+** e1b a e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
 
 
 
@@ -312,17 +309,14 @@ image:../media/drw_asac800_ha_pair_cabling.png[""]
  a| 
 image:../media/oie_legend_icon_2_lg.png[""]
  a| 
-Conecte los puertos de interconexión de clúster a los switches de interconexión de clúster de 100 GbE.
-** e0a
-** e1a
-image:../media/drw_asac800_switched_clust_cabling.png[""]
+Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 100 GbE. ** e0a ** e1aimage:../media/drw_affa800_switched_clust_cabling.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_3_lp.png[""]
  a| 
-Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_asac800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
+Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_affa800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
 
 
 
@@ -373,7 +367,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 1
  a| 
-Conecte los puertos 2a a 2d a los switches host FC.image:../media/drw_asac800_fc_host_cabling.png[""]
+Conecte los puertos 2a a 2d a los switches host FC.image:../media/drw_affa800_fc_host_cabling.png[""]
 
 
 
@@ -418,7 +412,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 1
  a| 
-Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.image:../media/drw_asac800_10gbe_host_cabling.png[""]
+Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.image:../media/drw_affa800_10gbe_host_cabling.png[""]
 
 
 
@@ -465,14 +459,14 @@ video::09dade4f-00bd-4d41-97d7-ab0c0123a0b4[panopto]
  a| 
 image:../media/oie_legend_icon_1_mb.png[""]
  a| 
-Conecte la controladora A a la bandeja:    image:../media/drw_asac800_1shelf_cabling_a.png[""]
+Conecte la controladora A a la bandeja: image:../media/drw_affa800_1shelf_cabling_a.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png[""]
  a| 
-Conecte la controladora B a la bandeja:    image:../media/drw_asac800_1shelf_cabling_b.png[""]
+Conecte la controladora B a la bandeja: image:../media/drw_affa800_1shelf_cabling_b.png[""]
 
 |===
 Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
@@ -503,14 +497,14 @@ video::fe50ac38-9375-4e6b-85af-ab0c0123a0e0[panopto]
  a| 
 image:../media/oie_legend_icon_1_mb.png[""]
  a| 
-Conecte la controladora A a las bandejas:    image:../media/drw_asac800_2shelf_cabling_a.png[""]
+Conecte la controladora A a las bandejas: image:../media/drw_affa800_2shelf_cabling_a.png[""]
 
 
 
  a| 
 image:../media/oie_legend_icon_2_lo.png[""]
  a| 
-Conecte la controladora B a las bandejas:    image:../media/drw_asac800_2shelf_cabling_b.png[""]
+Conecte la controladora B a las bandejas: image:../media/drw_affa800_2shelf_cabling_b.png[""]
 
 |===
 Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
@@ -579,11 +573,11 @@ NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo
 
 .. Conecte el cable de la consola al portátil o a la consola y conecte el puerto de la consola del controlador mediante el cable de consola incluido con el sistema.
 +
-image::../media/drw_console_connect_asac800.png[conexión de la consola drw asac800]
+image::../media/drw_console_connect_affa800.png[conexión de la consola drw del soporte 800]
 
 .. Conecte el portátil o la consola al conmutador de la subred de administración.
 +
-image::../media/drw_client_mgmt_subnet_asac800.png[subred asac800 de gestión del cliente drw]
+image::../media/drw_client_mgmt_subnet_affa800.png[subred de gestión de cliente drw affa800]
 
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 

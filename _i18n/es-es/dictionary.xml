@@ -8558,25 +8558,6 @@ SFP+ (destino/iniciador)</block>
   <block id="4a9663f34d974f62e97bc12e3339b829" category="summary">En esta sección se ofrecen instrucciones detalladas paso a paso para instalar un sistema ASA C800.</block>
   <block id="785cd996138f338b507afb4b1a247f7a" category="doc">Pasos detallados - ASA C800</block>
   <block id="0638f850898c092d5e1fe72b87242595" category="paragraph">Para instalar su sistema ASA C800, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.</block>
-  <block id="9c62e171f059c8600997ae4e0f96ab7d" category="image-alt">drw asac800 peso precaución</block>
-  <block id="d2946c650fd878fb1382f852e7ae21f2" category="image-alt">drw asac800 instale la gestión del cable</block>
-  <block id="8f9611c57f280dcf3707a77790073f5e" category="list-text">e1b a e1b
-<block ref="15891b31f94aa5c1d8d701dc45f31a49" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e2ffd86efabaa66f6caa4720f826af5e" category="list-text">e1a a e1a
-<block ref="a384f044b9ce696d7af96248c96af5c1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1ddae32aa15704bfdbaa2aab1a7d6dfe" category="paragraph">Conecte los puertos de gestión a los switches de red de gestión    <block ref="006022f2d0575aac941d853d15f04b9e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d6f4ba76330aa95c5eaaaf0d9035fea2" category="paragraph">Conecte los puertos de interconexión de clúster a los switches de interconexión de clúster de 100 GbE.
-** e0a
-** e1a
-<block ref="f2a41a3e16faf723b039ff4278135de5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8546314cef10b9e9e364344875d77237" category="paragraph">Conecte los puertos 2a a 2d a los switches host FC.<block ref="4f1b9e5dfcbddf179a4286f1703ef51b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="607da72d58aff35499a7aec17d5e19bb" category="paragraph">Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.<block ref="90048d1fb5dca95cfe62abfa6b205214" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="25f831637542d41012246381c8ca1ec9" category="paragraph">Conecte la controladora A a la bandeja:    <block ref="f81613a889a36c93366a9575275b2581" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="335c41450f222d4ab520fa32b2542214" category="paragraph">Conecte la controladora B a la bandeja:    <block ref="678df8700f02a110e9ca97a297deb31d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="157dc2a3553e3f5202fbc40d49878754" category="paragraph">Conecte la controladora A a las bandejas:    <block ref="118747470262b69831582f8c5b0f6061" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="48d33cbc5ff82c101c057c7286bba92e" category="paragraph">Conecte la controladora B a las bandejas:    <block ref="f09535d2d5af9c437ea1775f9a22dea3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9f9162027a6469a02a5740c7a72369e3" category="image-alt">conexión de la consola drw asac800</block>
-  <block id="6fe0915ad0c3735187132d7dfe2356b4" category="image-alt">subred asac800 de gestión del cliente drw</block>
   <block id="3682f89576a4cb3869bd075b26450b14" category="doc">Inicie la imagen de recuperación - ASA C800</block>
   <block id="1a127c6545345af120647a9618b2e726" category="doc">Vídeos - ASA C800</block>
   <block id="71eb59c59a42227ae8b45d0cfaf6f52f" category="paragraph">Hay dos vídeos: Uno que muestra cómo montar en rack y cablear el sistema y otro que muestra un ejemplo del uso de la configuración guiada de System Manager para realizar la configuración inicial del sistema.</block>
@@ -8717,7 +8698,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e46b8c6d3d358d972a1fe516250dcf5d" category="paragraph">Deslice la controladora hacia el chasis</block>
   <block id="ff0420a1b97d66a283e50773fa71f7ab" category="image-alt">Batería rtc drw C400 IEOPS 1239</block>
   <block id="d1ad021bd9b79ffa9323df56f68e4b22" category="paragraph">La guía rápida proporciona instrucciones gráficas para una instalación típica de su sistema, desde bastidores y cableado hasta la puesta en marcha inicial del sistema. Utilice este procedimiento si está familiarizado con la instalación de sistemas NetApp.</block>
-  <block id="e39f500ad07a270219bd21d82b87b157" category="paragraph">Utilice la <block ref="1ede88745168187a218abc6fed7fade9" category="inline-link-macro-rx"></block>.</block>
   <block id="e7f3c0051e6bc5cbd205f59b35151985" category="inline-image-macro">anchura=500 px</block>
   <block id="8f9d84ce0761e9cbbd0e69dc419011a6" category="paragraph"><block ref="8f9d84ce0761e9cbbd0e69dc419011a6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="80c14517a78070e49e0abac5d7f9ddbf" category="image-alt">drw C400 reemplace la tarjeta mezz IEOPS 1236</block>
@@ -8785,4 +8765,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6d6d899023064067891b54808437adaa" category="sidebar">Sistemas A-Series de ASA</block>
   <block id="be83f0f3d9e7cc4af05991e4976d2134" category="sidebar">Sistemas C-Series de ASA</block>
   <block id="a46d5e85a24eb7f41987dc2fc02df2c1" category="sidebar">La cabina SAN All-Flash (ASA) de NetApp ofrece una experiencia SAN dedicada y simplificada que proporciona una disponibilidad de datos continua para las bases de datos críticas para la misión de su organización y otras cargas de trabajo SAN.</block>
+  <block id="2b624e2e0f95b539d134f321667149d4" category="paragraph">Utilice la <block ref="327880446cd4829fe913aafea7a76fa5" category="inline-link-macro-rx"></block>.</block>
+  <block id="47fb299294c4db99aead2c933a5d0e45" category="image-alt">drw affc800 instale la gestión del cable</block>
 </blocks>
