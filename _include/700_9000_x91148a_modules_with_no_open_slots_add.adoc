@@ -1,4 +1,4 @@
-= Opción 1: Agregue un módulo X91148A como módulo NIC en un sistema sin ranuras abiertas
+= 
 :allow-uri-read: 
 
 
@@ -7,21 +7,18 @@ Debe eliminar uno o más módulos de almacenamiento o NIC existentes en el siste
 * El sistema debe ejecutar ONTAP 9.8 y versiones posteriores.
 * Para agregar sin interrupciones el módulo X91148A, debe tomar el controlador de destino, agregar el módulo y, a continuación, realizar la devolución del controlador de destino.
 * Si va a añadir el módulo X91148A como adaptador de almacenamiento, debe instalar el módulo en las ranuras 3 y/o 7.
-* Si va a añadir el módulo X91148A como NIC de 100 GbE, puede utilizar cualquier ranura abierta. Sin embargo, de forma predeterminada, las ranuras 3 y 7 se establecen como ranuras de almacenamiento. Si desea utilizar esas ranuras como ranuras de red y no agregará bandejas NS224, debe modificar las ranuras para el uso de redes con `storage port modify -node _node name_ -port _port name_ -mode network` comando para cada puerto. Consulte la Hardware Universe para ver otras ranuras que puede utilizar el módulo X91148A para la conexión en red.
-+
-https://hwu.netapp.com["Hardware Universe de NetApp"]
-
+* Si va a añadir el módulo X91148A como NIC de 100 GbE, puede utilizar cualquier ranura abierta. Sin embargo, de forma predeterminada, las ranuras 3 y 7 se establecen como ranuras de almacenamiento. Si desea utilizar esas ranuras como ranuras de red y no agregará bandejas NS224, debe modificar las ranuras para el uso de redes con `storage port modify -node _node name_ -port _port name_ -mode network` comando para cada puerto. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"^] Para otras ranuras que puede utilizar el módulo X91148A para la conexión en red.
 * Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
 
 
-
-
-== Opción 1: Agregue un módulo X91148A como módulo NIC en un sistema sin ranuras abiertas
-
+[role="tabbed-block"]
+====
+--
+.Opción 1: Agregue un módulo X91148A como un módulo NIC
 Debe quitar uno o más módulos NIC o de almacenamiento existentes en su sistema para instalar uno o más módulos NIC X91148A en su sistema completamente lleno.
 
 .Pasos
-. Si va a agregar un módulo X91148A a una ranura que contiene un módulo NIC con el mismo número de puertos que el módulo X91148A, los LIF se migrarán automáticamente cuando se apaga el módulo de controlador. Si el módulo NIC que se va a sustituir tiene más puertos que el módulo X91148A, debe reasignar permanentemente los LIF afectados a un puerto doméstico diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente
+. Si va a agregar un módulo X91148A a una ranura que contiene un módulo NIC con el mismo número de puertos que el módulo X91148A, los LIF se migrarán automáticamente cuando se apaga el módulo de controlador. Si el módulo NIC que se va a sustituir tiene más puertos que el módulo X91148A, debe reasignar permanentemente los LIF afectados a un puerto doméstico diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^] Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente
 . Apague la controladora A:
 +
 .. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
@@ -51,6 +48,7 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 image::../media/drw_9000_remove_pcie_module.png[drw 9000 retire el módulo pcie]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -78,24 +76,27 @@ Pestillo de leva de E/S completamente desbloqueado
 
 . Repita los pasos de desmontaje e instalación para sustituir los módulos adicionales de la controladora A.
 . Conecte el cable del módulo o los módulos a los conmutadores de datos.
-. Reinicie la controladora a: `boot_ontap`
+. Reinicie la controladora A desde el aviso del CARGADOR: `bye`
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode target_node_name`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Si ha agregado el módulo X91148A como módulo NIC en las ranuras 3 o 7, utilice el `storage port modify -node _node name_ -port _port name_ -mode network` comando para cada puerto.
 . Repita estos pasos para la controladora B.
 
 
-
-
-== Opción 2: Adición de un módulo X91148A como módulo de almacenamiento en un sistema sin ranuras abiertas
-
+--
+.Opción 2: Agregar un módulo X91148A como módulo de almacenamiento
+--
 Debe quitar uno o más módulos de almacenamiento o NIC existentes en el sistema para instalar uno o más módulos de almacenamiento X91148A en el sistema completamente lleno.
 
 * Este procedimiento supone que vuelve a instalar el módulo X91148A en las ranuras 3 y/o 7.
 
 
 .Pasos
-. Si va a añadir un módulo X91148A como un módulo de almacenamiento en las ranuras 3 y/o 7 en una ranura que tiene un módulo NIC existente, utilice System Manager para migrar de forma permanente los LIF a distintos puertos domésticos, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"].
+. Si va a añadir un módulo X91148A como un módulo de almacenamiento en las ranuras 3 y/o 7 en una ranura que tiene un módulo NIC existente, utilice System Manager para migrar de forma permanente los LIF a distintos puertos domésticos, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^].
 . Apague la controladora A:
 +
 .. Desactivar devolución automática: `storage failover modify -node local -auto-giveback false`
@@ -125,6 +126,7 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 image::../media/drw_9000_remove_pcie_module.png[drw 9000 retire el módulo pcie]
 
 +
+[cols="1,4"]
 |===
 
 
@@ -151,9 +153,16 @@ Pestillo de leva de E/S completamente desbloqueado
 .. Si va a instalar un segundo módulo X91148A para su almacenamiento, repita los pasos para retirar e instalar el módulo en la ranura 7.
 
 
-. Reinicie la controladora a: `boot_ontap`
+. Reinicie la controladora A desde el aviso del CARGADOR: `bye`
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode _target_node_name_`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Repita estos pasos para la controladora B.
-. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"].
+. Instale y conecte los cables de las bandejas NS224 según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Adición en caliente de una bandeja de unidades NS224"^].
 
+
+--
+====
