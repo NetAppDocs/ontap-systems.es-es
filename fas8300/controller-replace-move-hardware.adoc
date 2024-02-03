@@ -14,6 +14,9 @@ summary: Para sustituir el hardware del módulo de la controladora, debe retirar
 Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
 
 
+NOTE: El módulo del controlador ver2 tiene solo un socket de módulo de caché (ranura 6) en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.
+
+
 
 == Paso 1: Extraiga el módulo del controlador
 
@@ -156,7 +159,10 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 Como parte del proceso de sustitución de la controladora, debe mover los elevadores PCIe y la tarjeta mezzanine del módulo de controladora dañado al módulo de controladora de reemplazo.
 
-Puede utilizar las animaciones e ilustraciones siguientes. O los pasos escritos para mover los elevadores PCIe y la tarjeta intermedia del módulo de la controladora dañada al módulo de la controladora de reemplazo.
+Puede utilizar las siguientes animaciones, ilustraciones, el mapa de PIELES DEL sistema o los pasos escritos para mover los elevadores PCIe y la tarjeta mezzanine del módulo del controlador dañado al módulo del controlador de reemplazo.
+
+
+NOTE: No tiene que quitar las tarjetas PCIe de los elevadores. Transfiera los elevadores, con las tarjetas PCIe aún instaladas, al módulo de controlador de reemplazo.
 
 Movimiento de la tarjeta vertical PCIe 1 y 2 (elevadores izquierdo y medio):
 
@@ -202,6 +208,9 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 == Paso 6: Mover módulos de almacenamiento en caché
 
 Al sustituir un módulo de controlador, debe mover los módulos de almacenamiento en caché de los módulos de controlador con deterioro al módulo de controlador de sustitución.
+
+
+NOTE: El módulo del controlador ver2 sólo tiene un socket de módulo de almacenamiento en caché en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover módulos de almacenamiento en caché al nuevo módulo de controlador.
 

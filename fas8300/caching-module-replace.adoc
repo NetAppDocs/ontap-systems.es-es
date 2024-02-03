@@ -13,6 +13,9 @@ summary: 'Debe sustituir el módulo de almacenamiento en caché en el módulo de
 [role="lead"]
 Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.
 
+
+NOTE: El módulo del controlador ver2 sólo tiene un socket de módulo de almacenamiento en caché en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.
+
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
 
@@ -213,6 +216,9 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 == Paso 3: Sustituya un módulo de almacenamiento en caché
 
 Para sustituir un módulo de almacenamiento en caché, denominado Flash Cache en la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos. Consulte el mapa de FRU en el módulo de la controladora para conocer la ubicación de Flash Cache.
+
+
+NOTE: La ranura 6 solo está disponible en la controladora FAS8300 ver2.
 
 Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
 

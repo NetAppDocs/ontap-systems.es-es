@@ -5129,7 +5129,6 @@
   <block id="8555f8973ccc4539a56ac495380c89d5" category="inline-link">Extracción de los elevadores vacíos del módulo del controlador de recambio</block>
   <block id="d5e62cab20ddc280f38e9a81562855fc" category="paragraph"><block ref="d5e62cab20ddc280f38e9a81562855fc" category="inline-link-rx"></block></block>
   <block id="b8f99a879bdae690f650b2171355b5bb" category="image-alt">retire la tarjeta vertical drw 8300 vacía</block>
-  <block id="ae17f8ad6d4ad0752e9da66715863b23" category="paragraph">Puede utilizar las animaciones e ilustraciones siguientes. O los pasos escritos para mover los elevadores PCIe y la tarjeta intermedia del módulo de la controladora dañada al módulo de la controladora de reemplazo.</block>
   <block id="6976de191bb895bccff42aea7f5ef312" category="section-title">Paso 6: Mover módulos de almacenamiento en caché</block>
   <block id="1e6c27613480cee2fca639b93121fd62" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover módulos de almacenamiento en caché al nuevo módulo de controlador.</block>
   <block id="1d3cf3e64d50da3c959f6c6aefc86da4" category="video-title">Animación: Permite mover los módulos de almacenamiento en caché</block>
@@ -8792,4 +8791,9 @@ SFP+ (destino/iniciador)</block>
   <block id="f0770a756304b05e8fc4f321e0babe43" category="open-title">Opción 2: Agregar un módulo X91148A como módulo de almacenamiento</block>
   <block id="9e41ec46d0af5ba1b01d8b3bde9b4f52" category="list-text">Si va a añadir un módulo X91148A como un módulo de almacenamiento en las ranuras 3 y/o 7 en una ranura que tiene un módulo NIC existente, utilice System Manager para migrar de forma permanente los LIF a distintos puertos domésticos, como se describe en<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block>.</block>
   <block id="c81f78014b983d44adbb454f838c2ae9" category="list-text">Instale y conecte los cables de las bandejas NS224 según se describe en<block ref="a84558faf7b836b9db418a291f2462b5" category="inline-link-rx"></block>.</block>
+  <block id="68439e6a6b3d21f29b1f4c3391b0fc9d" category="admonition">El módulo del controlador ver2 tiene solo un socket de módulo de caché (ranura 6) en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.</block>
+  <block id="c70a0b227334f67f05309732ae67641e" category="paragraph">Puede utilizar las siguientes animaciones, ilustraciones, el mapa de PIELES DEL sistema o los pasos escritos para mover los elevadores PCIe y la tarjeta mezzanine del módulo del controlador dañado al módulo del controlador de reemplazo.</block>
+  <block id="e0b36bb653f20c62f1b87229ea86e61e" category="admonition">No tiene que quitar las tarjetas PCIe de los elevadores. Transfiera los elevadores, con las tarjetas PCIe aún instaladas, al módulo de controlador de reemplazo.</block>
+  <block id="569455efa28fef99f37a55bfd832334e" category="admonition">El módulo del controlador ver2 sólo tiene un socket de módulo de almacenamiento en caché en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.</block>
+  <block id="f30c92bb3a7434fbf14bd27327ab95f7" category="admonition">La ranura 6 solo está disponible en la controladora FAS8300 ver2.</block>
 </blocks>
