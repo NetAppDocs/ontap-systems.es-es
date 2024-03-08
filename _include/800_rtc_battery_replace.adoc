@@ -141,11 +141,13 @@ Girar el conducto de aire hacia los módulos del ventilador
 
 
 
-== Paso 3: Retire los elevadores PCIe
+== Paso 3: Sustituya la batería RTC
 
-Debe quitar uno o varios elevadores PCIe al sustituir componentes de hardware específicos en el módulo de la controladora.
-
-. Extraiga la tarjeta vertical PCIe del módulo de la controladora:
+[role="tabbed-block"]
+====
+.Controladora original
+--
+. Extraiga el elevador PCIe 2 (elevador intermedio) del módulo del controlador:
 +
 .. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
 .. Gire el pestillo de bloqueo de la tarjeta vertical en el lado izquierdo de la tarjeta vertical hacia arriba y hacia los módulos de ventilador.
@@ -173,14 +175,6 @@ Pestillo de bloqueo de la tarjeta vertical 2 (elevador central)
 
 |===
 
-
-
-
-
-
-== Paso 4: Sustituya la batería RTC
-
-Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.
 
 . Localice la batería RTC debajo de la tarjeta vertical 2.
 +
@@ -217,14 +211,6 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 . Retire la batería de repuesto de la bolsa de transporte antiestática.
 . Observe la polaridad de la batería RTC y, a continuación, insértela en el soporte inclinando la batería en un ángulo y empujando hacia abajo.
 . Inspeccione visualmente la batería para asegurarse de que está completamente instalada en el soporte y de que la polaridad es correcta.
-
-
-
-
-== Paso 5: Instalar los elevadores PCIe
-
-Los elevadores PCIe se vuelven a instalar después de sustituir los componentes de hardware en la controladora dañada.
-
 . Instale la tarjeta vertical en el módulo de la controladora:
 +
 .. Alinee el reborde de la tarjeta vertical con la parte inferior de la chapa metálica del módulo del controlador.
@@ -238,9 +224,44 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 
 
+--
+.Controlador ver2
+--
+. Localice la batería del RTC cerca de los módulos DIMM.
++
+image::../media/drw_a800_rtc_battery_replace_v2.png[la batería rtc drw a800 sustituye a la v2]
+
++
+[cols="1,4"]
+|===
 
 
-== Paso 6: Vuelva a instalar el módulo del controlador y ajuste la fecha y hora después de la sustitución de la batería RTC
+ a| 
+image:../media/legend_icon_01.png[""]
+| Conducto de aire 
+
+
+ a| 
+image:../media/legend_icon_02.png[""]
+ a| 
+Batería RTC y carcasa
+
+|===
+. Tire suavemente de la batería para separarla del soporte, gírela del soporte y, a continuación, levántela para sacarla del soporte.
++
+
+NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte. La batería está marcada con un signo más y debe colocarse en el soporte correctamente. Un signo más cerca del soporte le indica cómo debe colocarse la batería.
+
+. Retire la batería de repuesto de la bolsa de transporte antiestática.
+. Observe la polaridad de la batería RTC y, a continuación, insértela en el soporte inclinando la batería en un ángulo y empujando hacia abajo.
+. Inspeccione visualmente la batería para asegurarse de que está completamente instalada en el soporte y de que la polaridad es correcta.
+
+
+--
+====
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
 
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 
@@ -288,6 +309,6 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 
 
-== Paso 7: Devuelva la pieza que falló a NetApp
+== Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.
