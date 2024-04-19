@@ -20,7 +20,6 @@ Si falla, puede sustituir un ventilador por un módulo de ventilador nuevo.
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
-* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Volviendo al modo SED a no protegido"].
 * Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos  `cluster kernel-service show`) Para el blade SCSI del controlador dañado. La `cluster kernel-service show` comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
 +
 Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.

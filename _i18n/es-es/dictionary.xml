@@ -815,8 +815,6 @@
   <block id="10581f2379a6cef29e5326e690ced10e" category="section-title">Devuelve la pieza que ha fallado a NetApp</block>
   <block id="fd0db0c0a8315e064601a11ecc8c2b49" category="doc">Sustituya la batería del reloj en tiempo real</block>
   <block id="c7e602fe7db61b23799d51454d70f0cd" category="open-title">Opción 1: Mayoría de las configuraciones</block>
-  <block id="692418fcc9983296fd6b89b4072b99d2" category="inline-link-macro">Volviendo al modo SED a no protegido</block>
-  <block id="aa641c641cc4509747c629778ceba1e6" category="list-text">Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de <block ref="deeaf76d485e47e462d03c774bc2ca5e" category="inline-link-macro-rx"></block>.</block>
   <block id="dca9d9d34ff973dbf261373e223aa9e4" category="list-text">Si dispone de un sistema SAN, debe haber comprobado los mensajes de eventos <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix="(" category="inline-code"></block>) Para el blade SCSI del controlador dañado. La<block ref="090678c8ba0a25df800d3d4eeaf19522" prefix=" " category="inline-code"></block> comando muestra el nombre del nodo, el estado de quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.</block>
   <block id="d341e954ddede02e8d2c553ecfba224a" category="paragraph">Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.</block>
   <block id="03733c422db2a03d86659ae5a1e923dc" category="paragraph">El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:<block ref="387708b955ccf034fcf9197ad51ba879" prefix=" " category="inline-code"></block></block>
@@ -7141,7 +7139,6 @@
   <block id="eba4465f65ac7360936f8f238b09999c" category="list-text">Cables de red adicionales para conectar el sistema al switch de red y al portátil o consola con un navegador web.</block>
   <block id="c7e4a9edbb9ec3bb0052efd3332763a3" category="section-title">Paso 3: Conecte los cables de las controladoras al clúster</block>
   <block id="089103029c56ad66034dfe6bd70cfdcb" category="paragraph">Use la animación o los pasos tabulados para completar el cableado entre los controladores y los switches. Ejecute los pasos en cada controladora.</block>
-  <block id="38e134ad6d648c53626268f8b6a82510" category="list-text">Conecte mediante cable los puertos de interconexión del clúster e0c a e0c y e0d a E0 con el cable 25GbE de interconexión del clúster<block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
   <block id="5d8d8fe980b572286e75db6ff18d3cbc" category="paragraph"><block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="84e68180cd83b83ca12149fed857f1ac" category="list-text">Conecte los puertos e0c y e0d de interconexión de clúster a los switches de 25 GbE de interconexión de clúster.</block>
   <block id="ee3f9d0ec20204c7d48b52d859e31c4d" category="paragraph"><block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
@@ -7751,7 +7748,6 @@ SFP+ (destino/iniciador)</block>
   <block id="fbc33e94068f7206fe1f29c2cdd767fe" category="paragraph">Una tarjeta Mezzanine es una tarjeta de expansión diseñada para ser insertada en una ranura especializada en la placa base.</block>
   <block id="e8bc49790ccdd5f485eb537cc7b3081d" category="summary">Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.</block>
   <block id="9260991b91fdf449af1f97b5d09a9db6" category="summary">Las bandejas NS224 y SAS están específicamente diseñadas para los sistemas NetApp AFF y FAS con el fin de dar respuesta a las diversas demandas de su negocio y de sus aplicaciones.</block>
-  <block id="0add3a06a3c8079fac5caa294ad21965" category="doc">Bandejas de discos para sistemas AFF y FAS</block>
   <block id="4de4b37af472f8b6bb5aa5b5732538f0" category="summary">Mantenga el hardware de ASA C250</block>
   <block id="80b77aae28ed3360a8b704371f5188e1" category="doc">Mantener el hardware de AFF C250</block>
   <block id="ab253cf54adf6fdbb65cbb0ed70cb2cf" category="paragraph">Para el sistema de almacenamiento AFF C250, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
@@ -8792,4 +8788,8 @@ SFP+ (destino/iniciador)</block>
   <block id="4169d3d04b863ba6044225d783c8511c" category="paragraph">Utilice la <block ref="760faf2edba83a3b2dfe198c423cd5ec" category="inline-link-macro-rx"></block> Si está familiarizado con la instalación de sistemas de NetApp.</block>
   <block id="230fb764922530d0d527b96fb40d15f8" category="paragraph"><block ref="230fb764922530d0d527b96fb40d15f8" category="inline-link-macro-rx"></block></block>
   <block id="9e4682a37df843156979b712e93e942d" category="paragraph"><block ref="9e4682a37df843156979b712e93e942d" category="inline-link-macro-rx"></block></block>
+  <block id="370d65afeef540ea21d331a7da8675ec" category="list-text">Conecte mediante cable los puertos de interconexión de clúster e0c a e0c y e0d a e0d con los cables 25GbE de interconexión del clúster.</block>
+  <block id="45c0f160ca0efa09fc0b198986db5e31" category="image-alt">cableado clust conmutado drw affa250</block>
+  <block id="5407ed45e4a9085a4f72a4611d202d7c" category="sidebar">Las bandejas NS224 y SAS de NetApp ayudan a proporcionar el rendimiento, la resiliencia y la flexibilidad que necesita su transformación digital.</block>
+  <block id="432ba2d883505b11fa27f305c25abca9" category="sidebar">Bandejas de unidades para sistemas de hardware ONTAP</block>
 </blocks>
