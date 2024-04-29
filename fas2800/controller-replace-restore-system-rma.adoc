@@ -44,26 +44,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 
 
-== Paso 2: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
-
-Para los sistemas de almacenamiento que haya configurado previamente para usar almacenamiento o cifrado de volúmenes, debe realizar pasos adicionales para ofrecer funcionalidad de cifrado ininterrumpido. Puede omitir esta tarea en sistemas de almacenamiento que no tengan el cifrado de volúmenes o almacenamiento habilitado.
-
-
-NOTE: Este paso no es necesario al sustituir un DIMM.
-
-.Pasos
-. Siga uno de estos procedimientos, en función de si utiliza la gestión de claves externa o incorporada:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
-
-
-. Restablezca el MSID de SED
-
-
-
-
-== Paso 3: Verifique las LIF y registre el número de serie
+== Paso 2: Verifique las LIF y registre el número de serie
 
 Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se encuentran en sus puertos principales y registrar el número de serie del nodo _reader_ si AutoSupport está habilitado y restablecer la devolución automática.
 
@@ -84,6 +65,6 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 
 
 
-== Paso 4: Devuelva la pieza que falló a NetApp
+== Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

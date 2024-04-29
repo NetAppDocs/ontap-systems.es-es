@@ -90,7 +90,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
-* Si utiliza el cifrado de almacenamiento de NetApp, debe haber restablecido el MSID mediante las instrucciones de la sección "devolver una unidad FIPS o SED a modo sin protección" de link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/return-seds-unprotected-mode-task.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^].
 * Debe dejar las fuentes de alimentación encendidas al final de este procedimiento para proporcionar alimentación a la controladora en buen estado.
 
 
@@ -627,25 +626,6 @@ Debe responder con `y` cuando se le solicite que continúe en el modo avanzado y
 ====
 
 
-== Paso 6: Restaure el almacenamiento y la funcionalidad de cifrado de volúmenes
-
-Para los sistemas de almacenamiento que haya configurado previamente para usar almacenamiento o cifrado de volúmenes, debe realizar pasos adicionales para ofrecer funcionalidad de cifrado ininterrumpido. Puede omitir esta tarea en sistemas de almacenamiento que no tengan el cifrado de volúmenes o almacenamiento habilitado.
-
-
-NOTE: Este paso no es necesario al sustituir un DIMM.
-
-.Pasos
-. Siga uno de estos procedimientos, en función de si utiliza la gestión de claves externa o incorporada:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
-
-
-. Restablezca el MSID de SED
-
-
-
-
-== Paso 7: Devuelva la pieza que falló a NetApp
+== Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.
