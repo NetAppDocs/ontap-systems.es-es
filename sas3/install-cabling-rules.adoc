@@ -90,7 +90,7 @@ Por ejemplo, si los HBA SAS ocuparan las ranuras PCI físicas 3, 5 y 7, se desig
 En este documento, las ranuras y los puertos de ranura se muestran de la siguiente manera:
 
 +
-image::../media/slot0_rules.png[reglas de slot0]
+image::../media/slot0_rules.png[ranura y ranura [convenciones de puerto]
 
 
 
@@ -116,7 +116,7 @@ Desde la primera bandeja lógica hasta la última bandeja lógica de una pila, s
 
 
 
-image::../media/drw_shelf_to_shelf_standard.gif[estante drw a estante estándar]
+image::../media/drw_shelf_to_shelf_standard.gif[conectividad estándar de bandeja a bandeja]
 
 
 
@@ -132,7 +132,7 @@ Desde la primera bandeja lógica hasta la última bandeja lógica de una pila, s
 
 
 
-image::../media/drw_shelf_to_shelf_double_wide.gif[bandeja drw a estante doble ancho]
+image::../media/drw_shelf_to_shelf_double_wide.gif[conectividad de bandeja a bandeja en doble anchura]
 
 
 
@@ -164,7 +164,7 @@ El puerto de IOM 2 solo se utiliza para configuraciones de ruta cuádruple de al
 
 En la siguiente ilustración, se destacan cómo los puertos A y C de la controladora se conectan en una configuración de alta disponibilidad multivía con un HBA de puerto cuádruple y dos pilas de bandejas de discos. Las conexiones a la pila 1 se muestran en azul. Las conexiones a la pila 2 se muestran en naranja.
 
-image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[controlador drw para apilar los puertos de reglas a y c ejemplo]
+image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[Reglas de conexión de puertos A y C de la controladora para plataformas sin almacenamiento interno]
 
 
 
@@ -183,7 +183,7 @@ El puerto IOM 4 solo se utiliza para configuraciones de alta disponibilidad de r
 
 En la siguiente ilustración, se destacan cómo los puertos de la controladora B y D se conectan en una configuración de alta disponibilidad multivía con un HBA de puerto cuádruple y dos pilas de bandejas de discos. Las conexiones a la pila 1 se muestran en azul. Las conexiones a la pila 2 se muestran en naranja.
 
-image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[ejemplo de controlador drw para apilar puertos de reglas b y d]
+image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[Reglas de conexión de puertos B y D de la controladora para plataformas sin almacenamiento interno]
 
 
 
@@ -211,7 +211,7 @@ Por ejemplo: 1b, 2b, 3b, 1d, 2d, 3d
 
 .. Vuelva a escribir la lista de puertos D y B para que el primer puerto de la lista se mueva al final de la lista.
 +
-Por ejemplo: image:../media/drw_gen_sas_cable_step2.png[""]
+Por ejemplo: image:../media/drw_gen_sas_cable_step2.png["Vuelva a escribir la lista de puertos D y B."]
 
 +
 Compensar el orden de las ranuras mediante un equilibrio entre pares de puertos en varias ranuras (ranuras PCI físicas y ranuras integradas) cuando hay más de una ranura de puertos SAS disponible; por lo tanto, evitar que se cablee una pila a un único HBA SAS.
@@ -240,7 +240,7 @@ Por ejemplo, si identificó seis parejas de puertos para el sistema y posee seis
 Por ejemplo, si identificó seis parejas de puertos para el sistema y tenía tres pilas para cablear como multivía, conecte los cables de cada otro par de puertos de la lista:
 
 +
-image::../media/drw_portpair_connection_rules_list_skip.gif[la lista de reglas de conexión de par de puertos drw se omite]
+image::../media/drw_portpair_connection_rules_list_skip.gif[opción para omitir los pares de puertos]
 
 +
 
@@ -290,7 +290,7 @@ NOTE: Si no conecta el puerto 0b/0b1 al dominio correcto (dominios de conexión 
 
 En la siguiente ilustración, se destaca la conectividad de dominio del puerto de almacenamiento interno (0b/0b1) con una pila de bandejas externa:
 
-image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Ejemplo de dominio drw fas2600 mpha IEOPS 1172]
+image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[conectividad de dominio de puerto de almacenamiento interno 0b/0b1]
 
 
 
@@ -307,7 +307,7 @@ Los puertos 0A y 0b1 se cablean entre las dos controladoras cuando no hay bandej
 
 A continuación se muestran las conexiones internas y el cableado externo de la controladora que consigue una conectividad de alta disponibilidad de tres rutas:
 
-image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[drw fas2800 Concept tpha IEOPS 950]
+image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[Conectividad de alta disponibilidad trirruta]
 
 Los puertos SAS externos de FAS2800:
 
@@ -316,7 +316,7 @@ Los puertos SAS externos de FAS2800:
 * No se utiliza el puerto 0b2. Está desactivado. Si un cable está conectado a él, se genera un mensaje de error.
 
 
-image::../media/drw_sas3_ports_on_fas2800_IEOPS-946 (1).svg[drw sas3 puertos en fas2800 IEOPS 946 (1)]
+image::../media/drw-sas3-ports-on-fas2800.svg[puertos drw sas3 en fas2800]
 
 Pueden encontrarse ejemplos de cableado para pares de alta disponibilidad de FAS2800 en la link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"] sección.
 

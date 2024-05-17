@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: eoa-hardware.html 
+keywords: legacy, hardware, end-of-support 
+summary: Obtenga información sobre el hardware heredado que ya no es compatible. 
+---
+= El hardware heredado ya no es compatible
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los siguientes sistemas y switches ya no son compatibles con la versión especificada de ONTAP.
+
+
+
+=== Sistemas AFF y FAS
+
+[cols="2*"]
+|===
+| Sistema | Soporte discontinuado de... 
+
+
+ a| 
+* AFF A200
+* FAS2650
+* FAS2620
+
+ a| 
+ONTAP 9.12.1
+
+
+
+ a| 
+* AFF AFF8020, AFF8040, AFF8060, AFF8080
+* FAS8020 DE FEBRERO DE FAS8040, FAS8060 FAS8080
+* FAS2520, FAS2552, FAS2554
+
+ a| 
+ONTAP 9.9.1
+
+|===
+
+
+=== Interruptores
+
+[cols="2*"]
+|===
+| Conmutador | Soporte discontinuado de... 
+
+
+ a| 
+Switch NetApp CN1610
+| ONTAP 9.13.1 
+
+
+ a| 
+Switches de clúster
+
+* Cisco 5596UP
+* Cisco 5596T
+
+ a| 
+ONTAP 9.11.1
+
+|===
+
+
+=== Información relacionada
+
+* https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Switches Ethernet de Cisco admitidos"]
+* https://mysupport.netapp.com/site/info/netapp-cluster-switch["Switches Ethernet NetApp admitidos"]
+* https://mysupport.netapp.com/info/eoa/df_eoa_category_page.html?category=Platforms["Fin de las plataformas de disponibilidad"]
+
