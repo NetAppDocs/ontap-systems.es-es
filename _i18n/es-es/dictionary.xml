@@ -43,12 +43,10 @@
   <block id="359b2f64ed46d9bc640532f2fd8810c0" category="list-text">Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.</block>
   <block id="73ffa1532dd710d7eb1520cb730fb392" category="paragraph">Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.</block>
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.</block>
-  <block id="cf233c8f355b435b1d8d0eac06c1f98c" category="image-alt">drw 25xx cable management ARM</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.</block>
   <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">pestillo de leva de apertura drw 2240 x</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.</block>
   <block id="99734ded605f0a86173c861064992678" category="list-text">Abra la cubierta deslizando las pestañas azules para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y abierta.</block>
-  <block id="0d1cd9daafc79ae251b7a5fe114375a7" category="image-alt">drw 2600 apertura de la cubierta del pcm</block>
   <block id="c9401da24274c9e8ecd7f5ccb9df6dcd" category="section-title">Paso 3: Sustituya la batería de NVMEM</block>
   <block id="3a06d166e4691c3d19ec6d1b43ab5e47" category="paragraph">Para sustituir la batería de NVMEM en su sistema, debe quitar la batería de NVMEM con error del sistema y sustituirla por una nueva batería de NVMEM.</block>
   <block id="3c6ea2c01213e3cce235755697efaef0" category="list-text">Compruebe el LED de NVMEM:</block>
@@ -60,7 +58,6 @@
   <block id="9452f6d1d428f83bab1f0e5a0924350f" category="list-text">Si el LED está encendido y encendido, los datos no escritos se almacenan en NVMEM.</block>
   <block id="47ef1c836e868d626421de8d71a299e6" category="paragraph">Esto suele ocurrir durante un apagado no controlado una vez que ONTAP se ha iniciado correctamente.</block>
   <block id="b739b134857dab60a93e85c752192f2e" category="list-text">Localice la batería de NVMEM en el módulo de la controladora.</block>
-  <block id="31fd200f667413cd052c85fc2b0d53a1" category="image-alt">gif animados drw 2600 nvmem batt repl</block>
   <block id="8102785ce5a527a51011651cf58773d3" category="list-text">Localice el enchufe de la batería y apriete el clip en la parte frontal del enchufe de la batería para liberar el enchufe de la toma y, a continuación, desenchufe el cable de la batería de la toma.</block>
   <block id="1229e45dcb2b7951712e8e28495e0abe" category="list-text">Extraiga la batería del módulo del controlador y déjela a un lado.</block>
   <block id="0f322cdbcef235dfa9123cd81942ce9b" category="list-text">Extraiga la batería de repuesto de su paquete.</block>
@@ -415,7 +412,6 @@
   <block id="1e64886ac46839735d6278999cd21061" category="list-text">Empuje el soporte del maletero hacia abajo para activar el botón de bloqueo en la carcasa del soporte del maletero.</block>
   <block id="c48e0c55f2428699ac297f77b3512fa6" category="section-title">Paso 3: Mueva la batería de NVMEM</block>
   <block id="a2b9625c2bc8a172f12881371bba8047" category="paragraph">Para mover la batería de NVMEM del módulo de controladora antiguo al nuevo módulo de controladora, debe realizar una secuencia específica de pasos.</block>
-  <block id="64088c2186941bf4f870117c75fd3185" category="image-alt">gif animados de movimiento de batería de nvmem drw 2600</block>
   <block id="0d75945d13c2726bbe988d2cc4dc6254" category="list-text">Sujete la batería, presione LA lengüeta de bloqueo azul marcada Y, a continuación, levante la batería para sacarla del soporte y del módulo del controlador.</block>
   <block id="f32f9406f781996e8d8f51dd5b46fb1f" category="list-text">Mueva la batería al módulo del controlador de repuesto.</block>
   <block id="245c0f035284a53cfe23265503053964" category="section-title">Paso 4: Mueva los DIMM</block>
@@ -427,7 +423,6 @@
   <block id="bc6f68ddb18a2f2b33244b2f8f11420b" category="admonition">Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.</block>
   <block id="19cc15a56d312c0b108cb53b467856b0" category="paragraph">El número y la colocación de los DIMM del sistema depende del modelo del sistema.</block>
   <block id="e5f0d91d63a27f446a79033eff3b041b" category="paragraph">En la siguiente ilustración se muestra la ubicación de los DIMM del sistema:</block>
-  <block id="dce8ed7196aa5b8c52bf829b471ee8b2" category="image-alt">drw 2600 dimm</block>
   <block id="30cf6cba6f16aa09e8e855baf456b12c" category="list-text">Repita estos pasos para eliminar módulos DIMM adicionales según sea necesario.</block>
   <block id="e0d3227927926224ec3c1a434d4f3aa3" category="list-text">Verifique que la batería de NVMEM no esté enchufada al nuevo módulo de la controladora.</block>
   <block id="dcc90ea8bee87c3c59324148ecf01aa4" category="list-text">Localice la ranura en la que está instalando el DIMM.</block>
@@ -561,7 +556,6 @@
   <block id="559d6c27ed3408b0bae6821791181311" category="list-text">Pulse el botón de liberación de la cara de la unidad de disco.</block>
   <block id="634588567e302407f3ac38a5b8f3a5b7" category="paragraph">En función del sistema de almacenamiento, las unidades de disco tienen el botón de liberación situado en la parte superior o a la izquierda de la cara de la unidad de disco.</block>
   <block id="01c18660694535ca4b59c21e0e893461" category="paragraph">Por ejemplo, la siguiente ilustración muestra una unidad de disco con el botón de liberación situado en la parte superior de la cara de la unidad de disco:</block>
-  <block id="9ab2cc930ccadfa1c2d9b8b44b66c57d" category="image-alt">2240 retirada del disco</block>
   <block id="572908986c1b5c1fc8dc618c9ad316ad" category="paragraph">El mango de leva de los muelles de accionamiento de disco se abre parcialmente y la unidad de disco se libera del plano medio.</block>
   <block id="0d8323eada848f2a4fe8cf79e773c078" category="list-text">Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad de disco del plano medio.</block>
   <block id="7dc8175f2f2fc69f2fb815cbd3873bf3" category="image-alt">unidad drw abierta</block>
@@ -706,12 +700,10 @@
   <block id="7fc9c28875c33b71c57dca88d46c06f5" category="list-text">Si el LED de NVMEM no parpadea, no hay contenido en el NVMEM; puede omitir los pasos siguientes y continuar con la siguiente tarea de este procedimiento.</block>
   <block id="1bfb1175d15687b3de74a4e057e796f8" category="list-text">Si el LED de NVMEM está parpadeando, hay datos en el NVMEM y debe desconectar la batería para borrar la memoria:</block>
   <block id="19b417244764fbe330d4b1a03b632913" category="list-text">Localice la batería, presione el clip de la parte frontal del enchufe de la batería para liberar el clip de bloqueo de la toma del enchufe y, a continuación, desenchufe el cable de la batería de la toma.</block>
-  <block id="159b1c0ea96f8dc44e01227e342600c4" category="image-alt">desenchufar la batería de nvmem drw 2600</block>
   <block id="9d80f287709beea4f34371644025d541" category="list-text">Confirme que el LED de NVMEM ya no está encendido.</block>
   <block id="2df619b7d1a08e00bedcc91e7f49e549" category="list-text">Volver a conectar el conector de la batería.</block>
   <block id="170207ac967287c686f238b6880ae540" category="list-text">Vuelva al paso 2 de este procedimiento para volver a comprobar el LED de NVMEM.</block>
   <block id="169525b3af51c8a1a1183325e19e3768" category="list-text">Tenga en cuenta la orientación del módulo DIMM en el zócalo para que pueda insertar el módulo DIMM de repuesto en la orientación adecuada.</block>
-  <block id="1037b1c609239a848832f786d5ffba1b" category="image-alt">gif animado drw 2600 dimm repl</block>
   <block id="780061b11a4f33cc8eecc0c1fd85c471" category="list-text">Retire el módulo DIMM de repuesto de la bolsa de transporte antiestática, sujete el módulo DIMM por las esquinas y alinéelo con la ranura.</block>
   <block id="54c4ac61314c29265db975e7abc3e29f" category="paragraph">La muesca entre las patillas del DIMM debe alinearse con la lengüeta del zócalo.</block>
   <block id="07a1495b75de55dde311b89c9fa4d86b" category="list-text">Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.</block>
@@ -729,13 +721,11 @@
   <block id="e2f9fc0be7a0bec719378633fe5d0324" category="section-title">Paso 1: Extraiga el módulo del controlador</block>
   <block id="d03ce52cbc852de34ed883d28f104af2" category="list-text">Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.</block>
   <block id="c1ed0cd23ea77c49b5611e5929537b3f" category="list-text">Deslice el botón naranja del asa de la leva hacia abajo hasta que se desbloquee.</block>
-  <block id="5981fc794ea7f5a20dc2dbae0768981d" category="image-alt">drw 9000 retire el pcm</block>
   <block id="b05aea0ff1931b3ce07289e5c24c4357" category="paragraph">Botón de liberación de la palanca de leva</block>
   <block id="b733ab833a64f07b84375a26a6af83f0" category="paragraph">Mango de leva</block>
   <block id="1ce9441378e5288a31f9dee89eb4cb1d" category="list-text">Gire el asa de leva para que desacople completamente el módulo del controlador del chasis y, a continuación, deslice el módulo del controlador para sacarlo del chasis.</block>
   <block id="838771143f1029cc3b1ac5c3be2796bc" category="paragraph">Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.</block>
   <block id="7f5137e59b2780e60cc5115a3e706f06" category="list-text">Coloque el lado de la tapa del módulo del controlador hacia arriba sobre una superficie plana y estable, pulse el botón azul de la cubierta, deslice la cubierta hacia la parte posterior del módulo del controlador y, a continuación, gire la cubierta hacia arriba y levántela fuera del módulo del controlador.</block>
-  <block id="4e867f5be074f366dc5d85d44eed34eb" category="image-alt">drw 9000 pcm abierto</block>
   <block id="369a112325c2f8cf50340f6da403d2c3" category="paragraph">Botón de bloqueo de la cubierta del módulo del controlador</block>
   <block id="d2e659a165a5fc9686cffcf720df161a" category="paragraph">Debe localizar el medio de arranque y seguir las instrucciones para quitarlo de la controladora anterior e insertarlo en la nueva controladora.</block>
   <block id="5f1d298de53194255e6ce0c8f30f4bdb" category="list-text">Levante el conducto de aire negro situado en la parte posterior del módulo del controlador y, a continuación, localice el soporte del maletero mediante la siguiente ilustración o el mapa de FRU en el módulo del controlador:</block>
@@ -862,7 +852,6 @@
   <block id="dac273d93724b47a21b755da953f81be" category="paragraph">Se muestra el estado de la ranura NVMe<block ref="006ec0ed628b8a842343b62d6db2dedc" prefix=" " category="inline-code"></block> en la pantalla de salida para el módulo de caché que necesita reemplazar.</block>
   <block id="9cdb076245d84700443d3aee5a21f0ff" category="inline-link">Páginas manuales de comandos</block>
   <block id="d614131c818f5cecd09732e6431d6f96" category="list-text">Retire el módulo de almacenamiento en caché:</block>
-  <block id="e1e044e9b2596ea55ccf2665031de0fc" category="image-alt">drw 9000 retire el flashcache</block>
   <block id="846c76a20561f327d04b080605ad1886" category="paragraph">Botón de liberación naranja.</block>
   <block id="6c970e65de87e21858f8f433fe6199bf" category="paragraph">Asa de leva del módulo de almacenamiento en caché.</block>
   <block id="5da823ff1ce6004b2df61f2050acf611" category="list-text">Pulse el botón naranja de liberación situado en la parte frontal del módulo de almacenamiento en caché.</block>
@@ -932,7 +921,6 @@
   <block id="6f4fc3b08dc3b3f63c83dfcd9c81d17f" category="paragraph">El módulo de E/S se desacopla del chasis y se mueve aproximadamente 1/2 pulgadas fuera de la ranura de E/S.</block>
   <block id="d6169892b964cd0670a4fb5049d61160" category="list-text">Extraiga el módulo de E/S del chasis tirando de las lengüetas de tiro de los lados de la cara del módulo.</block>
   <block id="e9a79f0407fd89b04b8d674513b95d8e" category="paragraph">Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.</block>
-  <block id="2caeb99a93a4b178a27338b7a581ae15" category="image-alt">drw 9000 retire el módulo pcie</block>
   <block id="c6e52defde912721ad3ec5315c5d9664" category="paragraph">Pestillo de leva de E/S numerado y con letras</block>
   <block id="b420c5d091613dc4f6f811eee1e9bceb" category="paragraph">Pestillo de leva de E/S completamente desbloqueado</block>
   <block id="a44a301051bfeed34fcfe0a667ddbb2c" category="list-text">Coloque el módulo de E/S a un lado.</block>
@@ -1198,7 +1186,6 @@
   <block id="6410f0d1620d7d4196d6077993f01436" category="list-text">Realizar una comprobación de MetroCluster:<block ref="c2966f2f3bfc7e81dae5df7c44ce66ea" prefix=" " category="inline-code"></block></block>
   <block id="405d6a60969fe89f9bb73650236f1000" category="list-text">Mostrar los resultados de la comprobación de MetroCluster:<block ref="da68e7539bf844a8366ded5d17b246d7" prefix=" " category="inline-code"></block></block>
   <block id="ab1307f811b8b6743a287b5c52f1de16" category="inline-link">support.netapp.com/NOW/download/tools/config_advisor/</block>
-  <block id="830a33ec408c1e828e76f0b2c6ac23f1" category="list-text">Ejecute Config Advisor. Vaya a la página Config Advisor del sitio de soporte de NetApp en<block ref="7b1e972215239acfe30c5560b88fe407" category="inline-link-rx"></block>.</block>
   <block id="daa9bd595933a6d18135662d2f5e506a" category="paragraph">Después de ejecutar Config Advisor, revise el resultado de la herramienta y siga las recomendaciones del resultado para solucionar los problemas detectados.</block>
   <block id="ab762a0f70f0be63da9e88e925540f7b" category="list-text">Simular una operación de switchover:</block>
   <block id="30d1d0c504ab652e59b6d22a22b4b120" category="list-text">Desde el símbolo del sistema de cualquier nodo, cambie al nivel de privilegio avanzado:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
@@ -1235,13 +1222,11 @@
   <block id="855bbe0db2cfd4d4df6b623ee2db0181" category="paragraph">X6566B-2-R6, (112-00299), 2 m</block>
   <block id="e0edbf2828251c4ea6dfc5a151c7de48" category="paragraph">X6566B-3-R6, 112-00300, 3 m.</block>
   <block id="b6bf359009d41532cb64a105af6838d7" category="paragraph">X6566B-5-R6, 112-00301, 5 m</block>
-  <block id="6b6a40b68f5814cad1750bfff7e3b927" category="paragraph"><block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e838814358c0cb4b687db725dd31f0f2" category="paragraph">Cable de red</block>
   <block id="1a1f27b081cdf16387d1182ba206a8fa" category="paragraph">Cable de red de 40 GbE</block>
   <block id="5f4de3f62e145c32acb1c6657189d8f3" category="paragraph">Interconexión en clúster de 40 GbE</block>
   <block id="4ceb79952a62a23c43fc8ee51b4cdd1d" category="paragraph">X66100-1,112-00542, 1 m.</block>
   <block id="277fe3ab87696be501cc3de1af4bc5de" category="paragraph">X66100-3,112-00543, 3 m.</block>
-  <block id="8cdf95f9edee9fd494121eca54616173" category="paragraph"><block ref="8cdf95f9edee9fd494121eca54616173" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ba6b37223f8d248f12994185cf6f17e0" category="paragraph">Red 40 GbE</block>
   <block id="7a45345aaba8b083284ed87588216234" category="paragraph">Interconexión en clúster</block>
   <block id="fcb0035d540d6920072f0c578c244bc5" category="paragraph">Cable de red de 100 GbE</block>
@@ -1259,18 +1244,15 @@
   <block id="113c5b43783d0048ca249335849a1d63" category="paragraph">Cat 6, RJ-45 (según pedido)</block>
   <block id="2b6cb07b127bb08f592213e99876957c" category="paragraph">Números de referencia X6585-R6 (112-00291), 3m</block>
   <block id="7d0f1ce0ccc29eebb04f6a10e53463ef" category="paragraph">X6562-R6 (112-00196), 5 m</block>
-  <block id="af9561bb1d24f4c26f5879aaf09a1c65" category="paragraph"><block ref="af9561bb1d24f4c26f5879aaf09a1c65" category="inline-image-macro-rx" type="image"></block></block>
   <block id="543e9525464a6a7b9d9364e7bb542f5c" category="paragraph">Red de gestión y datos Ethernet</block>
   <block id="8c4aa541ee911e8d80451ef8cc304806" category="paragraph">Reducida</block>
   <block id="e56caf33249c596984754ab843a4e54e" category="paragraph">X66031A (112-00436), 1 m.</block>
   <block id="9c52caefd1aa3338afe44403ebdd7802" category="paragraph">X66032A (112-00437), 2 m</block>
   <block id="ab1eb0d40068abc277573b15ea33ed24" category="paragraph">X66033A (112-00438), 3 m.</block>
-  <block id="1869c18bf4845d129ab70a2555c3fa58" category="paragraph"><block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2daea530a029187535b9b6d53d920b9d" category="paragraph">Cable de consola Micro-USB</block>
   <block id="e681a3b45989b468533c4b90ee960bf9" category="paragraph">No aplicable</block>
   <block id="6dcfa32e861b657cd137a281916a5188" category="paragraph">Conexión de consola durante la configuración del software en un portátil/consola que no sea Windows o Mac</block>
   <block id="0d39f1b0a5cbdec5ccf74bfa4519fe8c" category="paragraph">Cables de alimentación</block>
-  <block id="ec58e6df26c7cd49356dbb0f54140310" category="paragraph"><block ref="ec58e6df26c7cd49356dbb0f54140310" category="inline-image-macro-rx" type="image"></block></block>
   <block id="63b4031694d3970674e1de7cfbae06ce" category="paragraph">Encendido del sistema</block>
   <block id="02b3dac5d46f2e577325711400925ec7" category="list-text">Consulte la _Guía de saturación de ONTAP de NetApp_ y recopile la información necesaria que aparece en la guía.</block>
   <block id="f98f13be72259cd42dc0ed68589c1bab" category="inline-link">Guía de configuración de ONTAP</block>
@@ -1311,13 +1293,10 @@
   <block id="be80668047ce4354d053ebf7d3bf997a" category="admonition">Los ejemplos utilizan bandejas DS224C. El cableado es similar con otras bandejas de unidades SAS compatibles.</block>
   <block id="87473dc4b1d1c5d45278a2d4f5421bdd" category="list-text">Cableado de bandejas SAS en FAS9000, AFF A700 y ASA AFF A700, ONTAP 9.7 y versiones anteriores:</block>
   <block id="b0a396c09d23a9b88c978e8104270a2c" category="video-title">Animación - almacenamiento SAS por cable - ONTAP 9.7 y anteriores</block>
-  <block id="901fd883a5a0140d652136ffc6042723" category="paragraph"><block ref="901fd883a5a0140d652136ffc6042723" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1843827ef03aba05b85ff9846acb4a4f" category="list-text">Cableado de bandejas SAS en FAS9000, AFF A700 y ASA AFF A700, ONTAP 9.8 y posteriores:</block>
   <block id="30753a1fa10815d6c1474615f6e4763d" category="video-title">Animación - almacenamiento SAS por cable - ONTAP 9.8 y posterior</block>
-  <block id="e2da081ec1f9e5df221849d0bca3449a" category="paragraph"><block ref="e2da081ec1f9e5df221849d0bca3449a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8c2c57baca5559cc6deaa2d149cbcc7e" category="admonition">Si posee más de un paquete de bandeja de unidades, consulte _Guía de instalación y cableado_ para el tipo de bandeja de unidades.</block>
   <block id="dc1949c56b4feff1c4f2d03eb17ee3cb" category="inline-link-macro">Instalación y cableado de las bandejas para una instalación nueva del sistema - bandejas con módulos IOM12</block>
-  <block id="90a326588028ddcde615038a3974e162" category="paragraph"><block ref="90a326588028ddcde615038a3974e162" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f3e065129fb4cb88ba99260c70d8c054" category="list-text">Vaya a. <block ref="53346fef0c147b551f530d05bbad2e41" category="inline-xref-macro-rx"></block> para completar los procesos de instalación y configuración del sistema.</block>
   <block id="51b3003c067a0d5dfcbcfbc5aab0240d" category="section-title">Opción 2: Conecte las controladoras a una única bandeja de unidades NS224 en sistemas A700 de AFF y ASA AFF A700 que solo ejecuten ONTAP 9.8 y versiones posteriores</block>
   <block id="2335e41d88b4562f66436306d6ba0268" category="paragraph">Debe conectar cada controladora a los módulos NSM de la bandeja de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.</block>
@@ -1326,15 +1305,11 @@
   <block id="581d8b893cc4a239df32042db4e658a7" category="list-text">Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.</block>
   <block id="69828b46097bb18230c9ffd2d5659688" category="list-text">Utilice las siguientes animaciones o ilustraciones para conectar los controladores con dos módulos de almacenamiento X91148A a una única bandeja de unidades NS224 o utilice el diagrama para conectar los controladores con un módulo de almacenamiento X91148A a una única bandeja de unidades NS224.</block>
   <block id="e4fe2ba20af64acaf45fc4ff2fdf0009" category="video-title">Animación - conectar un solo estante NS224 - ONTAP 9.8 y posterior</block>
-  <block id="8938c580277fb7fffe7bfaa223b07cc6" category="image-alt">drw ns224 a700 1estantería</block>
-  <block id="4115ca426c5a2991609d061eae0860e1" category="image-alt">Una única bandeja NS224</block>
   <block id="5b469ad683a749737d93981005b005ad" category="section-title">Opción 3: Conecte los cables de las controladoras a dos bandejas de unidades NS224 en sistemas A700 de AFF y A700 de ASA AFF que ejecuten solo ONTAP 9.8 y versiones posteriores</block>
   <block id="14d38bc8dbc01d353e185629d1b8f15a" category="paragraph">Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.</block>
   <block id="b3b5a55eb25abd410b88951b0f879705" category="list-text">Los sistemas deben tener dos módulos X91148A, por controlador, instalados en las ranuras 3 y 7.</block>
   <block id="b36c3275f10fc227783ae634144cbd54" category="list-text">Utilice las siguientes animaciones o ilustraciones para conectar los controladores a dos bandejas de unidades NS224.</block>
   <block id="438bbae9c36667383085b6ae9e94d71f" category="video-title">Animación - cable de dos estantes NS224 - ONTAP 9.8 y posterior</block>
-  <block id="bda29c65071b0b49cc9a79c7f3ba0ceb" category="image-alt">drw ns224 a700 2 estantes</block>
-  <block id="4622525bca20bef319ab7dbd1480f7bb" category="image-alt">Dos bandejas NS224</block>
   <block id="591a460534c5cea6a44feabf56c126fc" category="section-title">Paso 5: Pasos completos para la instalación y la configuración del sistema</block>
   <block id="f5db8a467b7fb8d7cf073d921c784267" category="paragraph">Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.</block>
   <block id="1001f289121bc2aaf60e874b29a86ac9" category="section-title">Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada</block>
@@ -1378,7 +1353,6 @@
   <block id="652ce79e32316dab29518241b6328f56" category="list-text">Ajuste el puerto de la consola del portátil o de la consola en 115,200 baudios con N-8-1.</block>
   <block id="43a2f5067c714d18745f4ff886e4d131" category="admonition">Consulte la ayuda en línea del portátil o de la consola para saber cómo configurar el puerto de la consola.</block>
   <block id="87f3e022170704ccb603a73e613a5c05" category="list-text">Conecte el cable de consola al portátil o a la consola mediante el cable de consola incluido con el sistema y, a continuación, conecte el portátil al conmutador de administración de la subred de administración .</block>
-  <block id="98e0a55b81b9188cead04d30df43a89c" category="image-alt">controlador de conmutador de consola de cable drw 9000</block>
   <block id="9386f36e00ce2b82a21fbdf11cb34484" category="list-text">Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.</block>
   <block id="2d2b36cae5d88031752403b7b340cbd9" category="list-text">Asigne una dirección IP de gestión de nodos inicial a uno de los nodos.</block>
   <block id="2cb29faf213707980883e98cd68af008" category="cell">Si la red de gestión tiene DHCP...</block>
@@ -1442,7 +1416,6 @@
   <block id="6c35991313f21e9038f629e9e809488a" category="admonition">No mezcle las PSU con diferentes niveles de eficiencia. Sustituya siempre como por ejemplo.</block>
   <block id="ef20366d8eeda4ed0725f1a5a164c558" category="paragraph">El LED de alimentación verde se ilumina cuando la fuente de alimentación está completamente insertada en el chasis y el LED de atención ámbar parpadea inicialmente, pero se apaga después de unos momentos.</block>
   <block id="34aec6eeba64b78b33ad52ec1e1cd899" category="summary">La documentación del sistema de almacenamiento le permite instalar, configurar y mantener el sistema.</block>
-  <block id="9858e62153c9fdbd94de20e9842ed9e8" category="doc">Documentación del sistema FAS9000</block>
   <block id="221a009c2c8e027e67f318554e11c21c" category="paragraph"><block ref="221a009c2c8e027e67f318554e11c21c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c8587180911d070686f7467322a07db1" category="list-text">Vuelva a instalar la tapa del módulo del controlador alineando los pasadores de la tapa con las ranuras del soporte de la placa base y, a continuación, deslice la tapa en su lugar.</block>
   <block id="659f7aba5fceb2bf535b6451bc41959c" category="paragraph">Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. Sin embargo, debe restaurar el<block ref="b2145aac704ce76dbe1ac7adac535b23" prefix=" " category="inline-code"></block> sistema de archivos durante este procedimiento.</block>
@@ -1485,7 +1458,6 @@
   <block id="2d651f7d69648fdc916560614dbe381e" category="paragraph">Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.</block>
   <block id="8aa65620b50adcc4dd01255717235b22" category="paragraph">Puede utilizar las siguientes animaciones, ilustraciones o los pasos escritos para quitar el módulo de la controladora del chasis.</block>
   <block id="62370fd38dc5699e9895079d2cfb1fa3" category="video-title">Animación: Extraiga el módulo del controlador</block>
-  <block id="f5016594b8e72f5a97ef9aa0ab2ce820" category="image-alt">drw A400 retire el controlador</block>
   <block id="e73f79c9112f5779897d8c0a650b3b99" category="list-text">Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.</block>
   <block id="5501530668ccd4a98e422eaa9f70f55a" category="list-text">Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.</block>
   <block id="36d204b1be645d0aebb6ca849fa255f4" category="list-text">Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.</block>
@@ -1497,7 +1469,6 @@
   <block id="d07d22679fd595588166f72cbc3fcec6" category="paragraph">El LED NVDIMM parpadea mientras se separa el contenido cuando se detiene el sistema. Una vez finalizado el destete, el LED se apaga.</block>
   <block id="d51d3e7568ea6b575902677aaf5d5ccc" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir la batería NVDIMM.</block>
   <block id="77803fc96df4106eec4ce497c210708c" category="video-title">Animación: Sustituya la batería NVDIMM</block>
-  <block id="9185cd979667bd7126df7c80d3bacf16" category="image-alt">drw A400 nvdimm batt</block>
   <block id="b83b44d067ff2b81649ca1ec4d078840" category="list-text">Abra el conducto de aire:</block>
   <block id="7f17300d94b3ad1307db5cc0a95ca048" category="list-text">Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.</block>
   <block id="3f88f0afc7a9dcaea99ffc820cae4c95" category="list-text">Deslice el conducto de aire hacia la parte posterior del módulo del controlador y gírelo hacia arriba hasta su posición completamente abierta.</block>
@@ -1508,7 +1479,6 @@
   <block id="1ae70fe70bb3c3e97652f8a95985d3ce" category="paragraph">Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.</block>
   <block id="f7594aa9507b35645b3c82938aed0e9a" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para instalar el módulo del controlador en el chasis.</block>
   <block id="864cf8ca3a488042efd8b245b0273cfb" category="video-title">Animación: Instale el módulo del controlador</block>
-  <block id="d0c4c860316d9a931e10e1cbe3418d1b" category="image-alt">drw A400 instale la fuente del controlador</block>
   <block id="efde4f3ca311bf83d86cec48e8ed29bb" category="list-text">Si aún no lo ha hecho, cierre el conducto de aire.</block>
   <block id="4e873bb9bcf661825139a3dd0549c569" category="list-text">Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.</block>
   <block id="f6805e79885366ea71636ffc0c97fcbd" category="list-text">Con los pestillos de bloqueo, empuje firmemente el módulo del controlador en el chasis hasta que los pestillos de bloqueo empiecen a elevarse.</block>
@@ -1545,7 +1515,6 @@
   <block id="fd62f71706b219af05866bd0a2936d3c" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir el NVDIMM.</block>
   <block id="4cdb88b773dbbe796646d321ccc17d79" category="admonition">La animación muestra ranuras vacías para zócalos sin DIMM. Estos zócalos vacíos se rellenan con espacios en blanco.</block>
   <block id="47c008694073bf55896e212a6e34e5c9" category="video-title">Animación - sustituya el NVDIMM</block>
-  <block id="dddaeedd9556d05cf4df1989bab97eb0" category="image-alt">drw A400 sustituya el módulo DIMM NVDIMM</block>
   <block id="47cd398c5a2374103dbd8377631bc325" category="list-text">Abra el conducto de aire y, a continuación, localice el NVDIMM en la ranura 11 del módulo del controlador.</block>
   <block id="dbbfb501b0cd6e084bc9a536cb1e4772" category="admonition">El NVDIMM tiene un aspecto muy diferente al de los DIMM del sistema.</block>
   <block id="25a6b723f7cfda53f61ec55242eba9ce" category="list-text">Extraiga el NVDIMM de su ranura empujando lentamente las dos lengüetas expulsoras NVDIMM de cada lado del NVDIMM y, a continuación, extraiga el NVDIMM de la toma y colóquelo a un lado.</block>
@@ -1562,7 +1531,6 @@
   <block id="f044adaf132925553df56c50232bae8a" category="paragraph">Para sustituir una fuente de alimentación (PSU) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de reemplazo y, a continuación, volver a conectar la fuente de alimentación de reemplazo.</block>
   <block id="54f4c70c653781a776673e986d65e502" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la fuente de alimentación.</block>
   <block id="e7391aa0081cf0bb76d099d43b77df97" category="video-title">Animación: Sustituya una fuente de alimentación</block>
-  <block id="543cc636467d5177d82c2c5dc40fa939" category="image-alt">fuente de alimentación drw A400</block>
   <block id="bdf78208a16277bdf48a7e0c9bfa97a4" category="list-text">Desconecte la fuente de alimentación:</block>
   <block id="0b8bc61409e02494497fb415b526324c" category="list-text">Retire la fuente de alimentación:</block>
   <block id="bd5e4756909c5ec64e5959e1f7d9e160" category="list-text">Gire el asa de la leva para que pueda utilizarse para extraer la fuente de alimentación del chasis.</block>
@@ -1595,7 +1563,6 @@
   <block id="c32ad4a5390f985bde71f85fd8251878" category="paragraph">Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.</block>
   <block id="b1c76afa8183e9e38bbcdc2b07081516" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir una tarjeta PCIe.</block>
   <block id="5823654bd1d2c1d66c7f14b181b09611" category="video-title">Animación - reemplace una tarjeta PCIe</block>
-  <block id="19d561d318b7f8e68cd53bd4b4ce75ae" category="paragraph"><block ref="19d561d318b7f8e68cd53bd4b4ce75ae" category="inline-image-macro-rx" type="image"></block></block>
   <block id="765cdfe024498fe63a6e735a5900aa5e" category="list-text">Extraiga la tarjeta vertical que contiene la tarjeta que desea sustituir:</block>
   <block id="4a1758eb84982eba0ae7e92f4805a0fd" category="list-text">Abra el conducto de aire presionando las lengüetas de bloqueo de los lados del conducto de aire, deslícelo hacia la parte posterior del módulo del controlador y gírelo hasta su posición completamente abierta.</block>
   <block id="c5001055f65b1d0ac2ba105ee25e93fe" category="list-text">Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.</block>
@@ -1618,7 +1585,6 @@
   <block id="d0d8c1208244a56dcbb2146e7f481b69" category="paragraph">La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras 4 y 5). Debe extraer esa tarjeta vertical para acceder a la tarjeta intermedia, sustituir la tarjeta intermedia y volver a instalar la tarjeta vertical número 3. Consulte el mapa de FRU en el módulo de la controladora para obtener más información.</block>
   <block id="7b0bb567223271e2fe30743264b3e7e4" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir la tarjeta mezzanine.</block>
   <block id="f3a3cf7eab7750309059903e1cc7d3c1" category="video-title">Animación - reemplace la tarjeta mezzanine</block>
-  <block id="cfeb91223ab0ffbe58ae834c4189db80" category="image-alt">drw A400 reemplace la tarjeta mezz</block>
   <block id="92110eec090dd64cd9c33fdb9e290990" category="list-text">Extraiga la tarjeta vertical número 3 (ranuras 4 y 5):</block>
   <block id="a593001af98690fbdd208636e77fa31d" category="list-text">Levante la tarjeta vertical y déjela a un lado en una superficie plana y estable.</block>
   <block id="53dc6c1f3f975e8decef52e58bc2aff1" category="list-text">Sustituya la tarjeta mezzanine:</block>
@@ -1632,7 +1598,6 @@
   <block id="2c4c75d1e0e065592eedb5be469928fc" category="doc">Cambio en caliente de un módulo de ventilador - AFF A400</block>
   <block id="f94769a33d4669a6660b7ec2722589ef" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para intercambiar en caliente un módulo de ventilador.</block>
   <block id="b2d4f5c1be5bce39015d3fbcfab82159" category="video-title">Animación - sustituya un ventilador</block>
-  <block id="611a5142dc0f00bc2e5019e968d727a8" category="image-alt">drw A400 sustituya el ventilador</block>
   <block id="6c73a7ebffd4fd597788afebf36629af" category="list-text">Presione hacia abajo el pestillo de liberación en la palanca de leva del módulo del ventilador y luego gire el asa de leva hacia abajo.</block>
   <block id="756b2ac47f3c9e3e06d8495f78d5fd0f" category="paragraph">El módulo del ventilador se mueve un poco lejos del chasis.</block>
   <block id="aaed2b83bdf814fb3ef334600403259b" category="list-text">Tire del módulo del ventilador hacia fuera del chasis, asegurándose de que lo apoya con la mano libre para que no se balancee del chasis.</block>
@@ -1659,7 +1624,6 @@
   <block id="3c96abc43edac8ae6d9684f7b2c979fa" category="list-text">Extraiga el DIMM de su zócalo empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, deslice el DIMM fuera del zócalo.</block>
   <block id="20ea0eb9eebca0280abc5766496bdaed" category="doc">Sustituya el hardware del módulo de la controladora - AFF A400</block>
   <block id="d77f71cbbb3c8057b08d0dfb49aa5664" category="paragraph">Puede utilizar las siguientes ilustraciones o los pasos escritos para extraer el módulo del controlador del chasis.</block>
-  <block id="2010d72cb8663ac4f3960dead61f921e" category="paragraph"><block ref="2010d72cb8663ac4f3960dead61f921e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f4c10aef61f6ce27a93c5212bf85139d" category="list-text">En el módulo del controlador de sustitución, abra el conducto de aire y retire los elevadores vacíos del módulo del controlador mediante la animación, la ilustración o los pasos escritos:</block>
   <block id="63f87aaa5f633e2ee952b199ae093a26" category="video-title">Animación: Retire los elevadores vacíos del módulo del controlador de sustitución</block>
   <block id="d7b31bd33c49d2208df6af8e69383eb1" category="list-text">Gire el pestillo de bloqueo del elevador en el lado izquierdo del elevador 1 hacia arriba y hacia el conducto de aire, levante el elevador y colóquelo a un lado.</block>
@@ -1678,7 +1642,6 @@
   <block id="11c0701315f6ed07c6cf9f964fa86a42" category="paragraph">Debe localizar el soporte de arranque y, a continuación, seguir las instrucciones para retirarlo del módulo de controlador dañado e insertarlo en el módulo de controlador de sustitución.</block>
   <block id="efedd511d0e15af2a88b1af1e665f3f3" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover el soporte de arranque desde el módulo del controlador dañado al módulo del controlador de reemplazo.</block>
   <block id="007f7757d161dc9bdb406ad2beebb4a1" category="video-title">Animación: Mueve el soporte de arranque</block>
-  <block id="956cd238a27c95a8b7705902c6d96082" category="image-alt">drw A400 reemplace el soporte de arranque</block>
   <block id="b7354c4a03a4fa8e4dad4a1e56b737cd" category="list-text">Localice y retire el soporte de arranque del módulo de la controladora:</block>
   <block id="2f803b1fd5ca64429b8057b9d74d5e2b" category="list-text">Pulse el botón azul al final del soporte de arranque hasta que el labio del soporte de arranque desaparezca el botón azul.</block>
   <block id="f765792368b6b0422562839eaae6701b" category="list-text">Gire el soporte del maletero hacia arriba y tire con cuidado del soporte del maletero para sacarlo del zócalo.</block>
@@ -1693,7 +1656,6 @@
   <block id="6b5b8285bd128c60fd64b1a0a3749faa" category="video-title">Animación - mover elevadores PCI 1 y 2</block>
   <block id="2848d68851434f122810489775f0e87c" category="paragraph">Desplazamiento de la tarjeta mezzanine y la tarjeta vertical 3 (tarjeta vertical derecha):</block>
   <block id="6424c2060a19465a5cc6ae95b740fca2" category="video-title">Animación: Mover la tarjeta mezzanine y la tarjeta vertical 3</block>
-  <block id="702848fda50b66572d07fb0de7038e26" category="image-alt">drw A400 sustituya las tarjetas PCIe</block>
   <block id="5b6499849e242c2c6e9287bd480a88a8" category="list-text">Mueva los elevadores PCIe uno y dos del módulo del controlador dañado al módulo del controlador de sustitución:</block>
   <block id="dd822f5f7530d53cb3f2c4610f6dde38" category="list-text">Levante la tarjeta vertical y, a continuación, muérela al módulo de la controladora de reemplazo.</block>
   <block id="7aa69edd25d8792a6fa6a99b956dbcac" category="list-text">Alinee la tarjeta vertical con las patillas del lado de la toma de la tarjeta vertical, baje la tarjeta vertical de los pasadores, empuje la tarjeta vertical directamente hacia la toma de la placa base y, a continuación, gire el pestillo hacia abajo al ras con la chapa metálica de la tarjeta vertical.</block>
@@ -1767,8 +1729,6 @@
   <block id="494eeb741723e2c166dc5864c7da1e64" category="paragraph">Red de gestión</block>
   <block id="c08fa304c8438359d1692f7b6a329b54" category="paragraph">Conexión de consola utilizada durante la configuración del software si el portátil o la consola no admite el descubrimiento de red.</block>
   <block id="6a34534c1e57a69bc063e8a88767c875" category="list-text">Consulte la _Guía de configuración de ONTAP de NetApp_ y recopile la información necesaria que se indica en esta guía.</block>
-  <block id="52d1bab65052dd1925e580b744d7189e" category="image-alt">icono de restricción de elevación drw katana</block>
-  <block id="77fba3b2bed380ff997267e3badf202e" category="image-alt">brazos de gestión de cables drw a320</block>
   <block id="e9e9a6de5e421dfe8a5ccc0b156ecc94" category="admonition">Si las etiquetas de los puertos de la tarjeta no son visibles, compruebe la orientación de instalación de la tarjeta (el conector hembra PCIe está en el lado izquierdo de la ranura de la tarjeta en el A400 y FAS8300/8700) y, a continuación, busque la tarjeta y, a continuación, busque la tarjeta, por número de pieza, en el<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> para un gráfico del bisel que muestra las etiquetas de puerto. El número de referencia de la tarjeta se puede encontrar mediante la<block ref="432345ed72f5509f18312f01d4f08dff" prefix=" " category="inline-code"></block> o en la lista de embalaje del sistema.</block>
   <block id="fc3118913338c7fb342195db815855cb" category="admonition">Si va a cablear una configuración IP de MetroCluster, los puertos e0a/e0b están disponibles para alojar LIF de datos (normalmente en el espacio IP predeterminado).</block>
   <block id="f69d8cf8cac45861ff6e65b70f1318ea" category="section-title">Opción 1: Conecte el cable de un clúster sin switch de dos nodos</block>
@@ -1785,7 +1745,6 @@
   <block id="8e0457ffe2e7bb2af86481f4fd7c6f41" category="paragraph">Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La lengüeta de extracción del cable para el modelo NS224 está hacia arriba.</block>
   <block id="3e2f0478573244aa002f7207cde9b93b" category="list-text">Use la siguiente animación o ilustración para cablear las controladoras a una sola bandeja de unidades.</block>
   <block id="89f7a66402ba80464b2d8b21ad48be2c" category="video-title">Animación: Conectar los controladores a una bandeja de unidades NS224</block>
-  <block id="5a9ec0b35c155370c2df4d190c2eaac1" category="image-alt">drw a400 una bandeja ns224</block>
   <block id="e47141e6c8fccf9bfe115e4e18090b8e" category="section-title">Opción 2: Conecte las controladoras a dos bandejas de unidades</block>
   <block id="a496c0eee37cdb410fb5999f04b37d60" category="paragraph">Debe cablear cada controladora a los módulos NSM de ambas bandejas de unidades NS224.</block>
   <block id="0d41b873813de2203d2c7cc22322899d" category="list-text">Utilice la animación o ilustración siguiente para conectar las controladoras a dos bandejas de unidades.</block>
@@ -1807,7 +1766,6 @@
   <block id="e1868c0f167920cfa89fada6789c58de" category="paragraph">Aunque el contenido del soporte de arranque está cifrado, se recomienda borrar el contenido del soporte de arranque antes de reemplazarlo. Para obtener más información, consulte<block ref="89de74d6a86df9137b0ef3fb03a43036" category="inline-link-rx"></block> De su sistema en el sitio de soporte de NetApp.</block>
   <block id="2328259b44c61e074b53206e40c60845" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para sustituir el soporte de arranque.</block>
   <block id="b8d36439d6c00df9e20f09c8587d8b61" category="video-title">Animación: Reemplace el soporte de arranque</block>
-  <block id="bd5497d186b6e2b7b18e72f13cb6b003" category="image-alt">Conducto de aire abierto drw A400</block>
   <block id="7fd4194660538f843b1d86284f560e49" category="paragraph">Lengüetas de bloqueo</block>
   <block id="3a14f9b352276cdd1419142953354ef1" category="paragraph">Deslizar el conducto de aire hacia la parte posterior del controlador</block>
   <block id="0137a626a9f69d747b4c0d7713d2ea7d" category="image-alt">icono de leyenda 03</block>
@@ -1874,12 +1832,10 @@
   <block id="0bbc1525261c73e0484c79ecb9b38dc6" category="list-text">Desconecte las fuentes de alimentación del módulo del controlador de la fuente.</block>
   <block id="1f9529736c8bd4ae7629be26ea8da34d" category="list-text">Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.</block>
   <block id="edfea1a2881be4e7bcc10dfa9c8b3fc6" category="admonition">Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).</block>
-  <block id="0c7b55bb7aff6e5a8118717e6397155b" category="image-alt">drw a250 pcm retirar la instalación</block>
   <block id="e045615354060a83511b41ee31db4ae9" category="cell">Palanca</block>
   <block id="a76de2660bc401a58fcb77534d4a42e0" category="paragraph">Mecanismo de cierre</block>
   <block id="b73bf21f79f3c289f366daee581bf764" category="list-text">Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.</block>
   <block id="4e292b7ed41b013fd58f6b9317045f27" category="list-text">Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.</block>
-  <block id="0c3e7a55198c30e93146d061467ce889" category="image-alt">cubierta del módulo de controlador abierto drw a250</block>
   <block id="e9deab90a3365474ad3f2beb8e513377" category="cell">Tornillo de apriete manual</block>
   <block id="a395074ef2c712dc5a0417266834035a" category="paragraph">Cubierta del módulo del controlador.</block>
   <block id="860b30584f1b729efd2b58d01580a92c" category="paragraph">Para sustituir la batería de NVMEM, debe extraer la batería con error del módulo de la controladora e instalar la batería de repuesto en el módulo de la controladora.</block>
@@ -1887,7 +1843,6 @@
   <block id="d3e32ec91ef99691796f13e935e89cfe" category="video-title">Animación: Reemplace la batería de NVMEM</block>
   <block id="ddc41bc777fec7e9428d17ad3d7a744f" category="list-text">Localice y sustituya la batería de NVMEM defectuosa en el módulo de la controladora.</block>
   <block id="e3956da4107eb74695f4d1ef3855362f" category="admonition">Se recomienda seguir las instrucciones ilustradas en el orden indicado.</block>
-  <block id="81c13bdfc94c175b0cb0830513c72fa7" category="image-alt">drw a250 sustituye al batt de nvmem</block>
   <block id="bcb72abac7a1b4e5d62301236d2af4ff" category="cell">Apriete la abrazadera de la cara del enchufe de la batería.</block>
   <block id="500f80ee3331803cffc5e2e0bc81d371" category="paragraph">Desconecte el cable de la batería de la toma.</block>
   <block id="d1ad3057377dd4a69559d9ed51d7a401" category="paragraph">Sujete la batería y presione LA lengüeta azul de bloqueo marcada CON LA TECLA.</block>
@@ -1899,7 +1854,6 @@
   <block id="c15d5bd70b2d2916c8a2d8529a1414bb" category="list-text">Presione firmemente la batería para asegurarse de que está bloqueada en su lugar.</block>
   <block id="1ce77f487e28076022ddc7ec80345c1a" category="paragraph">Puede usar la siguiente ilustración o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.</block>
   <block id="d377aa259703e685c1fa1683da0a4acf" category="list-text">Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.</block>
-  <block id="588e0eb84568c656edff37257d660f7a" category="image-alt">cubierta del módulo del controlador de cierre drw a250</block>
   <block id="c11e87f1824ea49a7afd546974221d86" category="cell">Cubierta del módulo del controlador</block>
   <block id="a4cf91a623a9d17d6f40fd2d4eecc503" category="list-text">Inserte el módulo de la controladora en el chasis:</block>
   <block id="6e99f1c5e459e79f40eda2af98ca9507" category="list-text">Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.</block>
@@ -1918,7 +1872,6 @@
   <block id="00e71c1d8c914ec4583e90599632f9f5" category="video-title">Animación - reemplace una tarjeta mezzanine</block>
   <block id="d60b1b5f5dd98f1ef7edf03c0f967cda" category="list-text">Para sustituir una tarjeta intermedia:</block>
   <block id="a6a2cd611042a747ac6311514fa84eed" category="list-text">Localice y sustituya la tarjeta intermedia defectuosa en el módulo del controlador.</block>
-  <block id="d69e481252f8954ecd0bb6e140318056" category="image-alt">drw a250 sustituya la tarjeta mezz</block>
   <block id="1d1d15afbd88f7addf313fcbd144f3f5" category="cell">Retire los tornillos de la cara del módulo del controlador.</block>
   <block id="af50fa410d1487d4dc2b1afd3f6755e5" category="paragraph">Afloje el tornillo del módulo del controlador.</block>
   <block id="1d5e6759e2bef51b7fae2c4ab7ce482f" category="paragraph">Extraiga la tarjeta intermedia.</block>
@@ -1941,7 +1894,6 @@
   <block id="89df533077d1f80c319c0c00d4c58ed1" category="doc">Sustituya la batería del reloj en tiempo real AFF A250</block>
   <block id="cd8fc17dc540949d4a2220442f92f1e4" category="image-alt">icono de leyenda 02</block>
   <block id="7420f9b1d8e8ed836b7ae9c80124f6b8" category="list-text">Levantar la tapa del conducto de aire.</block>
-  <block id="22ecf0c78d63cfad3a4d14bb76e9e473" category="image-alt">drw a250 retire la cubierta del conducto de aire</block>
   <block id="e0f21664596f0c97d1d5a04e2fdf74bc" category="paragraph">Utilice el siguiente vídeo o los pasos tabulados para reemplazar la batería RTC:</block>
   <block id="3bfc0205925c583b173da8aaa6c933a5" category="list-text">Localice la batería RTC entre el disipador térmico y el plano medio y retírela exactamente como se muestra en el gráfico.</block>
   <block id="da00f0981a71582bcc5ed875dab5af5b" category="image-alt">drw a250 retire el batt rtc</block>
@@ -1950,7 +1902,6 @@
   <block id="2a79f92f83e80b8d7c1b1b19435df449" category="paragraph">La batería debe expulsarse.</block>
   <block id="bc953fc580dd3c98e5ac857917f1e839" category="paragraph">Se expulsará la batería.</block>
   <block id="e4ac1bf0fb40fa4b04189d7b631ed1fe" category="list-text">Localice el soporte de la batería RTC entre el disipador térmico y el plano medio e insértelo exactamente como se muestra en el gráfico.</block>
-  <block id="b54f7ad3db2c3b1f5f075be84cb94813" category="image-alt">drw a250 instale rtc batt</block>
   <block id="77b955f90610902ce85885fceef7f34d" category="cell">Con la polaridad positiva hacia arriba, deslice la batería por debajo de la lengüeta de la carcasa de la batería.</block>
   <block id="326f84612308aa43b411fe6225835ced" category="paragraph">Empuje la batería suavemente en su lugar y asegúrese de que la lengüeta la fija a la carcasa.</block>
   <block id="b7d6746b2e02b132eeea59e81cc5d634" category="admonition">Si se la empuja agresivamente, la batería se puede expulsar de nuevo.</block>
@@ -1974,19 +1925,16 @@
   <block id="511831afd7b3843888ba00743f2e205e" category="list-text">Desconecte la fuente de alimentación.</block>
   <block id="1bdc46934af8b9f35655b38de6850eea" category="list-text">Gire el mango de la leva de forma que pueda utilizarse para extraer la fuente de alimentación del módulo del controlador mientras presiona la lengüeta de bloqueo.</block>
   <block id="4526cb831bd4192817bdc8a7d21be70e" category="paragraph">El suministro de alimentación es corto. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.</block>
-  <block id="59b278fa95360efca7786da48e036f4d" category="image-alt">drw a250 sustituya la fuente de alimentación</block>
   <block id="1b2219e72635f17b115bf4b878fa99f2" category="cell">Lengüeta azul de bloqueo de la fuente de alimentación</block>
   <block id="7bdc6bfc27ce2c490464721b4f39c739" category="paragraph">Suministro de alimentación</block>
   <block id="489f4d822f036e8983d65332d7a37f54" category="section-title">Paso 3: Mueva los ventiladores</block>
   <block id="6e84c6f5de78e87ef68b12592b7a3451" category="paragraph">Debe mover los ventiladores del módulo de la controladora dañada al módulo de sustitución cuando sustituya un módulo de la controladora con fallos.</block>
   <block id="67026bb70363d6be097582cad138cb32" category="list-text">Retire el módulo del ventilador pinzando el lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.</block>
-  <block id="14c3fdf178ecaf125c7a03c4cf179c95" category="image-alt">sustituya el ventilador drw a250</block>
   <block id="a93e082238b757e44010c2ad81d1aba6" category="cell">Módulo de ventilador</block>
   <block id="6363c92adb40c2ba77ac54d58c15a070" category="list-text">Mueva el módulo del ventilador al módulo del controlador de repuesto, alinee los bordes del módulo del ventilador con la abertura del módulo del controlador y, a continuación, deslice el módulo del ventilador hacia adentro.</block>
   <block id="631d48b6a978901aa9dd527f9e0c0de1" category="paragraph">Hay un dispositivo multimedia de arranque en el AFF A250 bajo el conducto de aire del módulo del controlador. Debe moverlo del módulo del controlador defectuoso al módulo del controlador de repuesto.</block>
   <block id="24e3ea03dd6cd41feb1c45f7310ac774" category="paragraph">Necesita un destornillador Phillips magnético número 1 para quitar el tornillo que sujeta el soporte del maletero en su lugar. Debido a las limitaciones de espacio dentro del módulo del controlador, también debe tener un imán para transferir el tornillo a para que no se pierda.</block>
   <block id="208327117af481bf4a428ddcd144a3d8" category="list-text">Localice y mueva el soporte del arranque desde el módulo de la controladora dañada hasta el módulo de la controladora de sustitución.</block>
-  <block id="e09e6d2db19a96426f8b4d9fa4401743" category="image-alt">drw a250 sustituye el soporte de arranque</block>
   <block id="378896073d06c35c7666ecc139650bf3" category="cell">Retire el tornillo que fija el soporte de arranque a la placa base en el módulo del controlador dañado.</block>
   <block id="42f1d337fd4fa932f99275b46ae051e9" category="paragraph">Levante el soporte del maletero para extraerlo del módulo del controlador dañado.</block>
   <block id="c0a129ed8a4dffac36687970dd9e76e4" category="list-text">Con el destornillador magnético número 1, retire el tornillo del soporte del maletero y colóquelo a un lado de forma segura en el imán.</block>
@@ -1995,7 +1943,6 @@
   <block id="b87725fc2bdeda91a5fd85aed6e3e365" category="admonition">No aplique fuerza al apretar el tornillo en el soporte del maletero; puede que lo agriete.</block>
   <block id="3a03dd2c91e538d3e67a42cab9b8cce1" category="section-title">Paso 5: Mueva los DIMM</block>
   <block id="981355f252d77b57262594c30633c45b" category="paragraph">Para mover los módulos DIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.</block>
-  <block id="3c2f4d45d9bb9dd0708e7cb1b34f4890" category="image-alt">sustituir dimm drw a250</block>
   <block id="b01ebf76def2c231f4cfd6494e6308b3" category="admonition">Instale cada módulo DIMM en la misma ranura que ocupa en el módulo de controlador dañado.</block>
   <block id="8c4c883dc47946a34b3706d63b8b1efb" category="list-text">Separe lentamente las lengüetas del eyector del DIMM a ambos lados del módulo DIMM y extraiga el módulo DIMM de la ranura.</block>
   <block id="e42df9e550215606cd6d3844a610b540" category="admonition">Sujete el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.</block>
@@ -2021,7 +1968,6 @@
   <block id="d46c38b7dc3878718dd4c84650efa91e" category="section-title">Paso 8: Instale el módulo del controlador</block>
   <block id="255b2c61d579fe79679408ad9b8fd757" category="paragraph">Puede utilizar las siguientes ilustraciones o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.</block>
   <block id="79b7d25a32465f1453599bea780ff825" category="list-text">Si aún no lo ha hecho, instale el conducto de aire.</block>
-  <block id="9e8bc2f3ff00e91084e8d9faacfbbbc7" category="image-alt">instalar la cubierta del conducto de aire drw a250</block>
   <block id="4d3408827df16f2063082b26e489e785" category="summary">Para apagar el módulo del controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador en buen estado siga sirviendo datos del almacenamiento del controlador dañado.</block>
   <block id="d79b377e4ffb63d9f7bc2cd5de1e04de" category="doc">Apague el módulo del controlador dañado AFF A250</block>
   <block id="bc79dc3537b9e69ed2f995a703258726" category="doc">Recuperar el sistema y reasignar discos - AFF A250</block>
@@ -2067,10 +2013,8 @@
   <block id="2a351329d6d1f8e46f32e023c62f5af1" category="paragraph">X66250-5 (112-00344) 5 m;</block>
   <block id="c0c188ddd9214c7abf4833d05538b260" category="paragraph">X66250-15 (112-00346) 15 m;</block>
   <block id="e09cb337f16f3eb0696b405cbc2bce54" category="paragraph">X66250-30 (112-00347) 30m</block>
-  <block id="aa1a174912bdf6af0df4cc4027cdd0f4" category="paragraph"><block ref="aa1a174912bdf6af0df4cc4027cdd0f4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ef46fcdc16d2411ced3c889283ec70f6" category="paragraph">Conexión de consola durante la configuración del software</block>
   <block id="e7d8f45352dfaf66682a4662e11d6c86" category="list-text">Revise la <block ref="571ad76602d16a750ecd1119ab38063c" category="inline-link-macro-rx"></block> y recopilar la información necesaria que aparece en esa guía.</block>
-  <block id="5ea097b6ef5e3828cb8cb8eed645e134" category="image-alt">precaución de peso drw affa250</block>
   <block id="9bd8aa5689228cb2b0d7fa13ff310ec9" category="list-text">Identifique y administre los cables porque este sistema no tiene un dispositivo de administración de cables.</block>
   <block id="9e14ed70bdc7e6d3e7af539c06d65972" category="section-title">Paso 3: Controladores de cables</block>
   <block id="d418137185c0ce2bdea577947a57960c" category="paragraph">Se requiere un cableado para el clúster de la plataforma mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster. Existe un cableado opcional para las redes host Fibre Channel o iSCSI o almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cables para una red host y almacenamiento.</block>
@@ -2081,13 +2025,8 @@
   <block id="f27acca0ae6d65e7323b16e8fd4c8c55" category="paragraph">Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.</block>
   <block id="90497e0cc94d62e215b4a4b6706d7cda" category="paragraph">Utilice la animación o los pasos tabulados para completar el cableado entre los controladores y los conmutadores:</block>
   <block id="3f4a7771ab61ac16b156190d458da251" category="cell">Ejecute cada controladora</block>
-  <block id="e738e65f735fc9089f253b3fe571f559" category="paragraph"><block ref="e738e65f735fc9089f253b3fe571f559" category="inline-image-macro-rx" type="image"></block></block>
   <block id="59fffbd09d1c7158959327a869b9292f" category="list-text">e0c a e0c</block>
-  <block id="de629fe3167cc52423821046b02074e3" category="list-text">e0d a e0d<block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9fe24c609326a57c3fef0ffe189c165b" category="paragraph"><block ref="9fe24c609326a57c3fef0ffe189c165b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0b344445518caeaff89d8726c0ffa65f" category="paragraph">Conecte los puertos de llave a los switches de red de gestión con los cables RJ45.</block>
-  <block id="849bd2bebf087b5cba4fc6e395e04cf4" category="image-alt">cableado de mgmt drw affa250</block>
-  <block id="4357958f190ff6c4c081ade05a73d53e" category="paragraph"><block ref="4357958f190ff6c4c081ade05a73d53e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2cd55300ec4cb3223c5bc06b35b221bc" category="paragraph">NO enchufe los cables de alimentación en este momento.</block>
   <block id="f2371181894421446afe16fe1e5da25b" category="inline-link-macro">Paso 4: Pasos completos para la instalación y la configuración del sistema</block>
   <block id="9bb6dc35b9c3cfb584e92ef6bf229185" category="paragraph">Para completar la configuración del sistema, consulte <block ref="b9ddf35bfac2437b7499c5c6e18fd46e" category="inline-link-macro-rx"></block>.</block>
@@ -2095,7 +2034,6 @@
   <block id="206e3e9f1269c68f454669b328348162" category="video-title">Animación - conectar un grupo conmutado</block>
   <block id="09401fd662d47d1159b97106f3c2c4b4" category="paragraph">Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 25 GbE.</block>
   <block id="96640993dd2592a16c29226daf83b860" category="list-text">e0c</block>
-  <block id="076b1ed5eae37af50f50d5b0e6d87908" category="list-text">e0d<block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="83634456d26d63819e03234dcece6b98" category="section-title">Cableado opcional: Opciones dependientes de la configuración del cable</block>
   <block id="af28ebab5d3a50ec2aa0d0aefd31b178" category="paragraph">Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.</block>
   <block id="97af7274dc94a2eacaad27110ee92a44" category="section-title">Opción 1: Cable a una red host Fibre Channel</block>
@@ -2114,10 +2052,6 @@
   <block id="0e103ad5ee434b2faca19141061cbe51" category="paragraph">Conecte cada controlador a los módulos NSM de la bandeja de unidades NS224.</block>
   <block id="030773f8722b074a51df84aa530f0c3d" category="paragraph">Utilice la animación o los pasos tabulados para completar el cableado entre las controladoras y la sola bandeja:</block>
   <block id="052c4e56b98f7829dc91610f07b00a63" category="video-title">Animación - conectar los controladores a un solo NS224</block>
-  <block id="dcbdf1c0d1b9f68d0faeb146daed7433" category="paragraph"><block ref="dcbdf1c0d1b9f68d0faeb146daed7433" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="941322167ca76688c15d3a6fb3aa998c" category="paragraph">Conecte la controladora A a la bandeja: <block ref="18f599f35e14d88c5e3fb9f75197e3c8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5089e1d089fd198b7fe04eae5c1ed6b8" category="paragraph"><block ref="5089e1d089fd198b7fe04eae5c1ed6b8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a593c53042a73cf10d3fc157f88070a6" category="paragraph">Conecte la controladora B a la bandeja: <block ref="f822d74484a7588f78ead07185e89b82" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca6a767f42962c9e0a0d4a74740024b9" category="paragraph">Complete la instalación y la configuración del sistema mediante la detección de clústeres que solo tiene una conexión al switch y al portátil, o bien se puede conectar directamente a una controladora del sistema y, a continuación, conectarse al switch de gestión.</block>
   <block id="11b77e98d05566e5db1d8a342bd88e64" category="section-title">Opción 1: Completar la configuración y la instalación del sistema si la detección de red está activada</block>
   <block id="e477637685baafe9bbd353f71ef51283" category="paragraph">El sistema comienza a iniciarse. El arranque inicial puede tardar hasta ocho minutos.</block>
@@ -2128,7 +2062,6 @@
   <block id="e6db50cefb25b43305353a6a987f05e3" category="list-text">Después de completar la configuración inicial, vaya a la <block ref="9c0a34143b47aa65068059820284fe99" category="inline-link-macro-rx"></block> Página para obtener información sobre cómo configurar las funciones adicionales en ONTAP.</block>
   <block id="ff07d29ea509a7a995f5989a37c478e6" category="section-title">Opción 2: Completar la configuración y la instalación del sistema si la detección de red no está habilitada</block>
   <block id="831bf3baed03f4e44778e53eeb322aef" category="list-text">Conecte el portátil o la consola al conmutador de la subred de administración.</block>
-  <block id="c80b115a559b6d9bf1acd577eef44159" category="image-alt">subred de gestión de cliente de consola drw affa250</block>
   <block id="aeef38b8f860290dfafd28f807c628f7" category="admonition">El formato de la dirección es +https://x.x.x.x+.</block>
   <block id="abda447c368c0080cdf2af6a77ea3d22" category="list-text">Configure el sistema con los datos recogidos en el <block ref="571ad76602d16a750ecd1119ab38063c" category="inline-link-macro-rx"></block>.</block>
   <block id="a9e112cc517e6c981e497345e5bf1e91" category="doc">Restaurar y verificar la configuración del sistema: AFF A250</block>
@@ -2212,7 +2145,6 @@
   <block id="70307621ba0045acdea9f2a7c113fa13" category="paragraph">Para sustituir los módulos DIMM, es necesario localizarlos dentro del módulo del controlador y seguir la secuencia específica de pasos.</block>
   <block id="0d76ca0117187df0c8275a536ccc39ef" category="doc">Sustituya el hardware del módulo de la controladora - AFF C190</block>
   <block id="ab16b7659f1f3d151837f3f6574edbce" category="paragraph">Para sustituir el módulo de la controladora, debe extraer la controladora con deterioro, mover los componentes de FRU al módulo de la controladora de sustitución, instalar el módulo de la controladora de sustitución en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.</block>
-  <block id="545b9a93e390e8eeaa40a9d0a4152ed7" category="image-alt">drw 2600 boot media repl animated gif</block>
   <block id="b05c18f9546f537e4c3b827dbc9eeeb3" category="list-text">Interrumpir el proceso de arranque *sólo* después de determinar el tiempo correcto:</block>
   <block id="e258cc57dc79df503088fd861585707d" category="paragraph">Debe buscar un mensaje de la consola de actualización automática del firmware. Si aparece el mensaje de actualización, no pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> para interrumpir el proceso de arranque hasta que aparezca un mensaje confirmando que la actualización ha finalizado.</block>
   <block id="33ebea377cad1dfbfc8858828ecec322" category="paragraph">Sólo pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> cuando vea el mensaje<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block>.</block>
@@ -2243,36 +2175,21 @@
   <block id="fea037cb34a319bd3b823395ee5fdd07" category="paragraph">Red host SFP + FC</block>
   <block id="490cb76fd3c75ff8166e251d789f799e" category="paragraph">Host Ethernet y red de gestión</block>
   <block id="9cce7e4c2aef0e645d2e38ae612c4ed8" category="list-text">Descargue y complete el <block ref="cb0390cbe2f3cf678134885ff143b6ba" category="inline-link-macro-rx"></block>.</block>
-  <block id="c0e4edaf8676378054faf4095793fc9a" category="image-alt">drw oie fas2700: precaución en el peso</block>
   <block id="78b39d88cb979ddb300a4cf2c6cdb1be" category="image-alt">instalación de ARM de gestión de cables drw</block>
   <block id="fcca883f68c4e92b98d0f294614cda60" category="admonition">Si se conecta a un switch óptico, inserte el SFP en el puerto de la controladora antes de establecer el cableado al puerto.</block>
   <block id="73da34bccb5db786798534ea5b6eb1d6" category="image-alt">gif animados del cableado de red unificado drw c190 tnsc</block>
   <block id="29232642e257cc5bf9288d51db5b38a1" category="paragraph">Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster:</block>
   <block id="4f6495d505dded911984524478da41af" category="list-text">e0a a e0a</block>
-  <block id="e264767a0a11b7a11be0a5345921827e" category="list-text">e0b a e0b<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="381afd3fb13a052283be8343171ab050" category="paragraph"><block ref="381afd3fb13a052283be8343171ab050" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5defeb12e66d13c969cbb3bb31457701" category="paragraph"><block ref="5defeb12e66d13c969cbb3bb31457701" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c0a9eb11c9962c2eb967f53a4845bf1a" category="paragraph">Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:</block>
-  <block id="f2333c38a5002ab3a3ce6f24b2d22d95" category="paragraph"><block ref="f2333c38a5002ab3a3ce6f24b2d22d95" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d7d7ce9a70c375da7dd9edb7b21a9134" category="image-alt">gif animados de cableado de red unificado conmutado de drw c190</block>
   <block id="81b22135a51aae23b34a49fb4dc95ad2" category="paragraph">Cable e0a y e0b a los switches de interconexión del clúster con el cable de interconexión del clúster:</block>
-  <block id="cdb6f4b16ce28508dd90ea2ebac10c11" category="paragraph"><block ref="cdb6f4b16ce28508dd90ea2ebac10c11" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0df32eef6f99f6d05877f5da86a45063" category="image-alt">gif animados del cableado de red ethernet drw c190 tnsc</block>
   <block id="836e597d16643401627d14a351ba6a9c" category="paragraph">Utilice el cable RJ45 Cat 6 para conectar los puertos e0c a través de e0f a la red host:</block>
-  <block id="97fa7018860cc17c4006609d9662603b" category="paragraph"><block ref="97fa7018860cc17c4006609d9662603b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="98fba69d64d87a6163f05e51141bb98d" category="paragraph"><block ref="98fba69d64d87a6163f05e51141bb98d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ac3d560a40b4d6d28fac097677ecaa8d" category="image-alt">cableado animado de red ethernet conmutada drw c190</block>
-  <block id="3c6b5500a384efa581b62d9c5f18e0b2" category="paragraph"><block ref="3c6b5500a384efa581b62d9c5f18e0b2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="347e1a8985d85eefdfec9853c8769148" category="image-alt">drw enciende los interruptores de alimentación a las psu</block>
   <block id="e54c29276af1d0eb8b609db7484efd71" category="admonition">El arranque inicial puede tardar hasta ocho minutos.</block>
   <block id="c148c3a234659fa32cba3b91e58f84d2" category="admonition">La configuración de puerto predeterminada para los sistemas de configuración unificada es el modo CNA; si se conecta a una red de host de FC, debe modificar los puertos para el modo FC.</block>
   <block id="7260ebf97e775ac420f626e20bb3bf2d" category="list-text">Conecte el cable de la consola al portátil o a la consola y conecte el puerto de la consola del controlador mediante el cable de consola incluido con el sistema.</block>
-  <block id="4362389171d8ddf25be9625250707012" category="image-alt">conexión de la consola drw fas2700 affa200</block>
-  <block id="53b1b44ce765bbf2dbaa0e7ea313a991" category="image-alt">cliente drw para la subred fas2700 affa220</block>
   <block id="b351b18aabb1167eb5b0851a7dfde759" category="doc">Cambie una fuente de alimentación: C190 de AFF</block>
-  <block id="0bc322a4c7df540fa4b8bd8e6252f0cb" category="image-alt">gif animados drw 2600 psu repl</block>
-  <block id="fefd734f0bdff8f12e4dd22d5240abe0" category="summary">La documentación del sistema AFF C190 permite instalar, configurar y mantener el sistema.</block>
-  <block id="69df5da6ba52630e5f329314c7e74f75" category="doc">Documentación del sistema C190 de AFF</block>
   <block id="7182b14422325235a1325aec0997297b" category="summary">Debe localizar el medio de arranque en el módulo de la controladora y, a continuación, seguir las instrucciones para reemplazarlo.</block>
   <block id="cc36390de0e6f5128a70841fe11c7e73" category="doc">Sustituya el medio de arranque - AFF C190</block>
   <block id="0ce2a0e29499223b29490143e42e0e0e" category="list-text">Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen que corresponda en la sección *Descargas* del sitio de soporte de NetApp</block>
@@ -2321,9 +2238,7 @@
   <block id="cd52056b12799b75e95ce3715dbd95d0" category="section-title">Paso 2: Verifique las LIF y registre el número de serie</block>
   <block id="13fa4776dd3902d644b4c8c6e4086d8d" category="doc">Sustituya la batería del reloj en tiempo real FAS8200</block>
   <block id="de2a859c590dc7d6eabe3126531d15fe" category="section-title">Paso 2: Abra el módulo del controlador</block>
-  <block id="541c76494433ada6ce291145a70e9591" category="image-alt">ARM de gestión cbl drw 32xx</block>
   <block id="c65d11e5b8171391c6bacf6aa11b9362" category="list-text">Afloje el tornillo de ajuste manual del asa de leva del módulo del controlador.</block>
-  <block id="2d377eee654631bfa9a2389a7f67bf78" category="image-alt">tornillo de apriete manual del mango de leva drw 8020</block>
   <block id="5521df603e8774a963fa73a2d1d99c29" category="list-text">Tire del asa de leva hacia abajo y comience a sacar el módulo del controlador del chasis.</block>
   <block id="6ffcd61574f4970c28c0b71a5611ad7c" category="section-title">Paso 3: Sustituya la batería RTC</block>
   <block id="12567249cf52e7754ded20b52b9cb150" category="paragraph">Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.</block>
@@ -2331,7 +2246,6 @@
   <block id="48c0f8a69112897bb929b89def26d839" category="paragraph">Apriete el tornillo de mano de la palanca de leva en la parte posterior del módulo del controlador.</block>
   <block id="0a3c10475b565c5c41bceed53441082c" category="doc">Sustituya la batería de NVMEM - FAS8200</block>
   <block id="9a7b6b1d0022a5e02b155899f525484d" category="list-text">Abra el conducto de aire de la CPU y localice la batería NVMEM.</block>
-  <block id="829c126125f54f9dae62f38e31701dc7" category="image-alt">batería nvmem drw rxl</block>
   <block id="cedd5c5d94628e9214df94e87bcbc459" category="cell">Lengüeta de bloqueo de la batería</block>
   <block id="cf486acc42bee94e935f0a77a3c0a137" category="paragraph">Paquete de baterías NVMEM</block>
   <block id="0e3afb2eff968ec339750f42984ace90" category="list-text">Alinee la lengüeta o las pestañas del soporte de la batería con las muescas del lado del módulo del controlador y, a continuación, empuje suavemente hacia abajo la carcasa de la batería hasta que encaje en su sitio.</block>
@@ -2349,7 +2263,6 @@
   <block id="414a13111d71acdb13232c28cd2fb7b4" category="paragraph">Para sustituir una tarjeta PCIe, búsquela dentro de la controladora y siga la secuencia específica de pasos.</block>
   <block id="5e8be98213884705f4f23fefcedf276d" category="list-text">Afloje el tornillo de apriete manual del panel lateral del módulo del controlador.</block>
   <block id="f6f64ae09ccb768e3427b1a4b81f7ab2" category="list-text">Gire el panel lateral para salir del módulo del controlador.</block>
-  <block id="d563b9fb0eacf06da5cd234f55293337" category="image-alt">drw rxl pcie</block>
   <block id="fdf758b3eee65fd6bf1337cf88e410ab" category="cell">Panel lateral</block>
   <block id="d8cb6501b634914cdd3c065dd289ab4c" category="paragraph">Tarjeta PCIe</block>
   <block id="1ad5a6c40c6b27b9363cb6ddf00c8165" category="list-text">Extraiga la tarjeta PCIe del módulo de la controladora y déjela a un lado.</block>
@@ -2364,7 +2277,6 @@
   <block id="1a15b219d2d38ec83e74d12c75a5f388" category="section-title">Paso 5 (solo MetroCluster de dos nodos): Agregado de conmutación</block>
   <block id="8c11f4937de9ae763544c825f88097ae" category="doc">Cambie a un ventilador: FAS8200</block>
   <block id="26f3e4c2d12be621415f2684a8c8d8d2" category="list-text">Presione hacia abajo el pestillo de liberación en la palanca de leva del módulo del ventilador y luego tire de la palanca de leva hacia abajo.</block>
-  <block id="873ff90864f62182ca0ed7a91a266e52" category="image-alt">ventilador drw fas32xx</block>
   <block id="ef8efdc5b2bd1a532f14079abd36e082" category="paragraph">Pestillo de liberación de la palanca de leva</block>
   <block id="8c8c98956870ffea5e2297a73a1972a1" category="paragraph">LED de alerta del módulo de ventilador</block>
   <block id="32519a947e4693e6e8c45472c3da0d02" category="paragraph">El LED del ventilador debe estar verde después de que el ventilador esté asentado y haya girado hasta la velocidad de funcionamiento.</block>
@@ -2387,11 +2299,9 @@
   <block id="ace5062e3323e0454888b1e7005d39e6" category="cell">Pestaña de bloqueo de batería de NVMEM</block>
   <block id="ca72b3cd4b60815c9c0a025e08bf7b80" category="paragraph">Batería NVMEM</block>
   <block id="7304e8e8b413c8df2d53284d43e1c947" category="list-text">Espere unos segundos y vuelva a enchufar la batería a la toma.</block>
-  <block id="2afadaee32bfbcb58fbdc6c77b43ac9a" category="image-alt">drw rxl dimm</block>
   <block id="a42edb5535752c77f564dff66261535b" category="doc">Sustituya el hardware del módulo de la controladora - FAS8200</block>
   <block id="d555d8d5b180690f03f434585c90b8d9" category="section-title">Paso 1: Abra el módulo del controlador</block>
   <block id="57f6abeeecbe08c578cdfb6a3a2675ac" category="section-title">Paso 2: Mueva el dispositivo de arranque</block>
-  <block id="8ccbd61b66565f6f1198c3dcd986738d" category="image-alt">soporte de arranque drw rxl</block>
   <block id="918a2a64830e16cf1c0cb6fd799f730d" category="list-text">Mueva la batería de NVMEM al módulo de controladora de repuesto.</block>
   <block id="67ecdeb79444a8f5073d554e40345bdc" category="section-title">Paso 5: Mover una tarjeta PCIe</block>
   <block id="eb155f2161323c8381ad08d51e74c6ec" category="paragraph">Para mover tarjetas PCIe, búsquelas y moverlas de la controladora antigua a la controladora de reemplazo y siga la secuencia específica de pasos.</block>
@@ -2424,7 +2334,6 @@
   <block id="f8a35054c2c3b7ffbacd941c8bc38831" category="doc">Sustituya el hardware: FAS8200</block>
   <block id="5a05c6605a020e1a2163f79eb10968be" category="section-title">Paso 1: Mueva una fuente de alimentación</block>
   <block id="dcb58cd491b43356462c2529a579197a" category="list-text">Presione hacia abajo el pestillo de liberación del tirador de la leva de la fuente de alimentación y, a continuación, baje el asa de la leva hasta la posición completamente abierta para liberar la fuente de alimentación del plano medio.</block>
-  <block id="54c1f466dcb42475b75e8f202e013885" category="image-alt">fuente de alimentación drw rxl</block>
   <block id="fc55b45cca3fa6be680def2c9c4b821e" category="paragraph">LED de alimentación y fallo</block>
   <block id="b82df982fd2500b5301a3127ef1f47c2" category="paragraph">Mecanismo de bloqueo del cable de alimentación</block>
   <block id="8ba8e854127bccb82d1934c0df2d4a25" category="list-text">Empuje firmemente el asa de la leva de la fuente de alimentación para colocarlo completamente en el chasis y, a continuación, empuje el asa de leva hasta la posición cerrada, asegurándose de que el pestillo de liberación de la palanca de leva encaje en su posición de bloqueo.</block>
@@ -2434,7 +2343,6 @@
   <block id="ad0e39682bcd1cd18eb8f815706bdc7d" category="paragraph">El valor del estado ha puede ser uno de los siguientes: ***<block ref="925cc8d2953eba624b2bfedf91a91613" prefix=" " category="inline-code"></block>***<block ref="f46f944e351f8b92e40c3308318738a3" prefix=" " category="inline-code"></block>***<block ref="76afa3fde08aeab96dca3e3a39dcd27a" prefix=" " category="inline-code"></block>***<block ref="32b858596eeb9351eca27c2906a21da4" prefix=" " category="inline-code"></block>***<block ref="524b78f7770e94479dc70b1b445c5cf3" prefix=" " category="inline-code"></block></block>
   <block id="ebb1194e26e6cc8c6c5c749fda017889" category="paragraph">Salir del modo de mantenimiento:<block ref="4a1bde0ea8bcda2a591f42646813c477" prefix=" " category="inline-code"></block> Aparece el aviso del CARGADOR.</block>
   <block id="d3e14d546bdb099fa06c198263457888" category="doc">Cambie una fuente de alimentación: FAS8200</block>
-  <block id="9d1976464339a2dc5b681ea4cacc276d" category="doc">Documentación del sistema FAS8200</block>
   <block id="e742eb9c2d018e1c3855d10b4906368d" category="doc">Sustituya el medio de arranque - FAS8200</block>
   <block id="70fa93bebd0670b231da3d1406a94a24" category="doc">Recuperar el sistema y reasignar discos - FAS8200</block>
   <block id="db4ac51eac732409ebf4cfe43b3fb873" category="paragraph">Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe utilizar el procedimiento correcto para su configuración.</block>
@@ -2468,9 +2376,7 @@
   <block id="8041c469e6d9bb1d2588be103ea09ab6" category="doc">Sustituya la batería NVDIMM - AFF A320</block>
   <block id="653275a6740924b891457d92a9cbc8ef" category="section-title">Paso 1: Apague el controlador</block>
   <block id="952c945c9a5a59d3bdaefb09fa3c158c" category="list-text">Desconecte la fuente de alimentación del módulo del controlador de la fuente de alimentación.</block>
-  <block id="8b9cda3c71cd6650aa009c7fadfc8b01" category="image-alt">cable del controlador drw a320 desenchufe el gif animado</block>
   <block id="88dd2b76e22f517fcc43991c9f49fc1c" category="list-text">Extraiga el módulo de la controladora del chasis:</block>
-  <block id="58917ff5c68eb6bf1640a45420077a55" category="image-alt">controlador drw a320 retire el gif animado</block>
   <block id="8a309974bafd50317ccd72aa26c07abb" category="list-text">Inserte el índice en el mecanismo de bloqueo a ambos lados del módulo del controlador.</block>
   <block id="4d207179ee5262ab22beb9e4daca95a5" category="list-text">Presione hacia abajo la lengüeta naranja de la parte superior del mecanismo de bloqueo hasta que se separe el pasador de bloqueo del chasis.</block>
   <block id="7965e8ddcdf2a2c7321db103dd6fc83a" category="paragraph">El gancho del mecanismo de bloqueo debe estar casi en vertical y debe estar alejado del pasador del chasis.</block>
@@ -2480,7 +2386,6 @@
   <block id="7a7bd9d285c26c52e7363905c161c15e" category="image-alt">gif animados de movimiento en nvbat de drw a320</block>
   <block id="ddd5abc1f11eb7170e1eeacbd5acc236" category="list-text">Abra el conducto de aire y localice la batería NVDIMM.</block>
   <block id="b5625ff9a6be11130311547598e19f4d" category="list-text">Si aún no lo ha hecho, cierre el conducto de aire de la parte posterior del módulo del controlador y vuelva a instalar la cubierta sobre las tarjetas PCIe.</block>
-  <block id="d7b5f5b1c91c3929a2256a49086d9176" category="image-alt">el controlador drw a320 instala el gif animado</block>
   <block id="5b36ed01bb25ad2202ca2457c5f0fe38" category="list-text">Asegúrese de que los brazos del pestillo están bloqueados en la posición extendida.</block>
   <block id="89dccc3602af6a97fb2acff29ef9995f" category="list-text">Con los brazos del pestillo, empuje el módulo del controlador hacia el compartimiento del chasis hasta que se detenga.</block>
   <block id="03233c10d1cc8cfd29bfca2b6af7b1d1" category="list-text">Presione y sostenga las lengüetas naranjas en la parte superior del mecanismo de bloqueo.</block>
@@ -2648,10 +2553,8 @@
   <block id="4f8f8380e5597e92380de812b879c5d1" category="list-text">e0d a e0d<block ref="5ea5295965a00406899d4b7460801661" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ec377d11568067a729ee6f50dee77c8" category="paragraph">Si va a utilizar los puertos incorporados para una conexión de red de datos, conecte los cables de 100 GbE o 40 GbE a los switches de red de datos adecuados:</block>
   <block id="3c04babfe00a81e06f8982d93dd90179" category="list-text">e0g y e0h<block ref="6fafbcd677ceba87d8c48de1a29a3bf5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="650bb8a7a99ffc6aa5c626a33c48839f" category="paragraph"><block ref="650bb8a7a99ffc6aa5c626a33c48839f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cc74cb2d1e5f9750b5812faaf036676e" category="paragraph">Si está utilizando las tarjetas NIC para las conexiones Ethernet o FC, conecte las tarjetas NIC a los conmutadores correspondientes:</block>
   <block id="becd6fe246f05c450f5f6f1ff59f10ab" category="image-alt">conexiones nic drw a320 paso 3</block>
-  <block id="d1ac48d4410d6102fa54b8b3405a83e5" category="paragraph"><block ref="d1ac48d4410d6102fa54b8b3405a83e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9dfe7ca4d480fd4e10a0954286489a0f" category="paragraph">Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45.</block>
   <block id="5d86a652667b386e0b98042631990c02" category="paragraph"><block ref="5d86a652667b386e0b98042631990c02" category="inline-image-macro-rx" type="image"></block></block>
   <block id="eb9634f2ea796139d7f0aeca3f6ce2d4" category="section-title">Opción 2: Cableado de un clúster de switches</block>
@@ -2688,8 +2591,6 @@
   <block id="9829cc73f1aa57fe4c8f650070116d1b" category="list-text">Desde el nodo en buen estado:<block ref="d3bfc2dd4e9b253edab550e9f4890345" prefix=" " category="inline-code"></block></block>
   <block id="6ccdc0e53e02a4d771ffb485d5c0df6c" category="paragraph">El nodo dañado vuelve a tomar su almacenamiento, termina de arrancarse y, a continuación, se reinicia y el nodo vuelve a tomar el control en buen estado.</block>
   <block id="2f0448dc28af93361e8ab911dc742aa9" category="list-text">Salga del nivel de privilegio avanzado en el nodo en buen estado.</block>
-  <block id="51e518953de4f3b345d4b65e647bdfc5" category="summary">La documentación del sistema AFF A320 le permite instalar, configurar y mantener el sistema.</block>
-  <block id="aa0d733a680f2acafa9b34d28a6d95fd" category="doc">Documentación del sistema AFF A320</block>
   <block id="770d6678fb5416b05c67128a9e4fed01" category="doc">Completar el proceso de restauración y sustitución - AFF A320</block>
   <block id="5d670c53861caee9002db54ba657302f" category="doc">Complete el proceso de sustitución del ventilador - AFF A320</block>
   <block id="7b346c654ccdab10fc593c01f0c7232e" category="doc">Apague el controlador dañado - AFF A320</block>
@@ -2726,7 +2627,6 @@
   <block id="2f338557f8c0be16e8ae51b661b071b1" category="image-alt">soporte intermedio de telecomunicaciones drw 1</block>
   <block id="17bc73815850fd6dc60d586cf707300e" category="section-title">Instale el kit de raíl de montaje empotrado de dos postes</block>
   <block id="ef2cbc76f2fb85efc97170002c910e15" category="image-alt">soporte frontal para telecomunicaciones drw 1</block>
-  <block id="0829d23216964b4cc2a11bb04c4cf143" category="summary">Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM11, solo en la ranura 6 de sistemas FAS900. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
   <block id="fb796745f1b93e7c27af0a928be9d5ae" category="doc">Módulo de almacenamiento en caché de intercambio en caliente: FAS9500</block>
   <block id="e5684d853146c37193094e90fea21bff" category="paragraph">Los módulos Flash Cache de SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM11, en la ranura 6 de sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
   <block id="1360261f3d9e17642c609debfd62b1d6" category="admonition">Si necesita o desea intercambiar en frío el módulo Flash Cache, siga los procedimientos para sustituir un módulo de I/O.</block>
@@ -2981,7 +2881,6 @@
   <block id="450bb6c29a5f5af0fe4d1f8fcfcb4777" category="paragraph">El intercambio de una fuente de alimentación implica apagar, desconectar y extraer la fuente de alimentación e instalar, conectar y encender la fuente de alimentación de reemplazo.</block>
   <block id="3e476a4d56adc74857e9c49cf82980f1" category="list-text">Existen cuatro fuentes de alimentación en el sistema.</block>
   <block id="d35281b877a38ecad54d9ac919c0ff9a" category="list-text">Vuelva a conectar el cable de alimentación a la fuente de alimentación.</block>
-  <block id="20d54df84f7e55d01eb019ccfe3eebef" category="summary">La documentación del sistema FAS9500 le permite instalar, configurar y mantener el sistema.</block>
   <block id="5852e0b4d479d20d783c528e9f8e41fa" category="doc">Sistemas FAS9500</block>
   <block id="737b04c7e695216162d794c71001099a" category="doc">Sustituya el hardware del módulo del controlador - FAS9500</block>
   <block id="a1828edb3cde53f0ba3419e2ebe71f61" category="paragraph">La siguiente animación muestra todo el proceso de movimiento de componentes desde el controlador dañado al controlador de recambio.</block>
@@ -3571,13 +3470,8 @@
   <block id="591619e8839fdfc064f5e99d963dd15b" category="doc">Pasos detallados - FAS500f</block>
   <block id="3b92fecaa3772b0492ba3935a96dedea" category="paragraph">Para instalar el sistema FAS500f, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.</block>
   <block id="3ea38b3923e0e690201e332cebb4b94d" category="paragraph">Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster de 25 GbE</block>
-  <block id="b5bee911f1169a180dca19eacfac565a" category="paragraph"><block ref="6b6a40b68f5814cad1750bfff7e3b927" category="inline-image-macro-rx" type="image"></block>:</block>
-  <block id="17333fa969880e45cf8dc4eb4f554f64" category="image-alt">símbolo de atención del icono de leyenda de la oie</block>
   <block id="91007f6223d7f1e23fa6822f2e16adad" category="paragraph">Conecte los puertos 2a a 2d a los switches host FC.</block>
-  <block id="0da779564ef18632153ddb2bf55a5416" category="image-alt">cableado de host drw affa250 fc</block>
   <block id="277ba6b7a127ec6b40495a0cd012279f" category="paragraph">Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.</block>
-  <block id="eacfd9b01b607ec0ff14339768945edd" category="image-alt">cableado de host drw affa250 25gbe</block>
-  <block id="eccbdb663759dbfcdc939ff1dfb3e3e8" category="doc">Documentación del sistema FAS500f</block>
   <block id="806172d09ec083b134236f39467e6f44" category="doc">Sustituya o instale una tarjeta intermedia - FAS500f</block>
   <block id="5a8806fc27bd2a34806ff3f345c3e780" category="paragraph">Puede utilizar el siguiente vídeo o los pasos tabulados para reemplazar una tarjeta mezzanine:</block>
   <block id="a3bc8d1d2d48e5e2cb6973108ebf0e82" category="section-title">Opción 1: Sustitución de una tarjeta mezzanine:</block>
@@ -3650,9 +3544,7 @@
   <block id="b76fc2fc59e39246fc4ade0b49d20296" category="paragraph">Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada módulo IOM12. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.</block>
   <block id="c1a52b9d76170253895811fb709ccc88" category="list-text">Si es necesario, puede consultar la sección LED de bandeja de discos de supervisión para obtener información sobre el significado y la ubicación de los LED de bandeja de discos en el panel de visualización del operador y los componentes FRU.</block>
   <block id="d4639e1d22aa97da774c8bd77f8fb9a4" category="list-text">La bandeja de unidades DS460C consta de cinco cajones de unidades (cajón de unidades 1 en la parte superior mediante el cajón de unidades 5 en la parte inferior) que cada uno tiene 12 ranuras de unidad.</block>
-  <block id="efdce0991089cb793985d216e3fc1bbc" category="image-alt">28 dwg e2860 de460c frontal sin anotaciones</block>
   <block id="b04a9ecb43c98234e0c97b118b532535" category="list-text">En la siguiente ilustración, se muestra el número de las unidades de 0 a 11 en cada cajón de unidades de la bandeja.</block>
-  <block id="82edbae4acf5762cfee69aaa6facde11" category="image-alt">cajón dwg trafford con anotaciones a hdd</block>
   <block id="378c1cb36c9679c4a6e70da29aed830a" category="list-text">Si desea asignar manualmente la propiedad de disco para la unidad de disco de reemplazo, debe deshabilitar la asignación automática de unidades, si está habilitada; de lo contrario, vaya al paso siguiente.</block>
   <block id="962890e09803ab96b753b04d71dcec05" category="admonition">Es necesario asignar manualmente la propiedad de disco si las unidades de disco de la pila son propiedad de ambas controladoras de una pareja de alta disponibilidad.</block>
   <block id="ca260517eb6e9f5663d45ff96fad9f57" category="admonition">La propiedad de disco se asigna manualmente y, a continuación, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.</block>
@@ -3679,16 +3571,13 @@
   <block id="48cb4c1c5e18eec97fe2c35a66b8047c" category="list-text">Abra la palanca de leva y levante ligeramente la transmisión.</block>
   <block id="764a62532760f655a4934a835eafa280" category="list-text">Espere 30 segundos.</block>
   <block id="9ac98f01c6ecb5cd4bd8bdd44dc99f6e" category="list-text">Utilice el asa de leva para levantar la unidad de la bandeja.</block>
-  <block id="d093bf7d46ae82c8a2944054aedbff98" category="image-alt">92 dwg de6600 instalar o quitar la unidad</block>
   <block id="27f99f15ab3f6c5b5bf7e94d09452f30" category="list-text">Coloque la unidad sobre una superficie antiestática y amortiguada lejos de los campos magnéticos.</block>
   <block id="bf529ce9b4f798afc63d9969df949329" category="list-text">Inserte la unidad de reemplazo en el cajón:</block>
   <block id="d82cedbc037a62d2e2c1e9a97841e4d9" category="list-text">Levante la palanca de leva de la nueva transmisión hasta la posición vertical.</block>
   <block id="fb6f1f4c493441e6a7683a024fb3ec5d" category="list-text">Alinee los dos botones elevados de cada lado del portador de unidades con el espacio correspondiente del canal de la unidad en el cajón de la unidad.</block>
-  <block id="62d5617d611cd37acd571c7b9d62d93e" category="image-alt">caja de accionamiento de 28 dwg e2860 de460c</block>
   <block id="5af00bb5ed30b04ab155e3a408b882b4" category="cell">Botón elevado en el lado derecho del portador de la unidad</block>
   <block id="93f6c5f348acabea66206d901bc5c525" category="list-text">Baje la unidad en línea recta hacia abajo y, a continuación, gire la palanca de leva hacia abajo hasta que la unidad encaje en su lugar bajo el pestillo de liberación naranja.</block>
   <block id="52edf13d95e765d22838d8e275a1fbf1" category="list-text">Empuje con cuidado el cajón de la unidad de nuevo dentro de la carcasa.</block>
-  <block id="d91e5def3f81a334c72e212cac3b95ee" category="paragraph"><block ref="d91e5def3f81a334c72e212cac3b95ee" category="inline-image-macro-rx" type="image"></block></block>
   <block id="07467fb3d31d7b416b75edd346bb5bfe" category="admonition">*Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el cajón lentamente para evitar que el cajón se arreste y cause daños a la matriz de almacenamiento.</block>
   <block id="0afb1c54f30f3813473eb3b220fdfe91" category="list-text">Cierre el cajón de mando empujando ambas palancas hacia el centro.</block>
   <block id="8b4e3dcdc00b4445d079701f61415a87" category="paragraph">El LED de actividad verde de la unidad reemplazada en la parte frontal del cajón de la unidad se enciende cuando la unidad se inserta correctamente.</block>
@@ -3810,7 +3699,6 @@
   <block id="035f36f8cb7a7149476fc3a606085ac7" category="paragraph">Para las bandejas de discos DS460C, aunque las unidades se empaquetan por separado, que hace que la bandeja sea más ligera, una bandeja DS460C vacía sigue pesa aproximadamente 132 lb (60 kg); por lo tanto, tenga la siguiente precaución al mover una bandeja.</block>
   <block id="c04b249a92156b3830dd23c4f0227ad3" category="admonition">Se recomienda utilizar un elevador mecánico o cuatro personas utilizando las asas de elevación para mover de forma segura un estante DS460C vacío.</block>
   <block id="271ccf7899e5bebc4f9e5879e8b4e969" category="paragraph">El envío DS460C se ha envasado con cuatro asas de elevación desmontables (dos por cada lado). Para utilizar las asas de elevación, las instala insertando las pestañas de las asas en las ranuras del lateral de la bandeja y empujando hacia arriba hasta que encajen en su lugar. A continuación, conforme deslice la bandeja de discos sobre los raíles, separe un conjunto de asas cada vez mediante el pestillo de pulgar. La siguiente ilustración muestra cómo acoplar un asa de elevación.</block>
-  <block id="2794022ceac3fcd7a5363d665e5359a5" category="image-alt">asas drw ds460c</block>
   <block id="451345ca48e949ee2fe424e0fc68ce3d" category="list-text">Vuelva a instalar todas las fuentes de alimentación y los IOM que quitó antes de instalar la bandeja de discos en el rack.</block>
   <block id="3a7aa90b7e6e30d4cea14996d05d2cb4" category="list-text">Si va a instalar una bandeja de discos DS460C, instale las unidades en los cajones de unidades; de lo contrario, vaya al siguiente paso.</block>
   <block id="f0d969f7b7ef3f514e1ebe9dd5ba1adf" category="paragraph">Utilice siempre una muñequera ESD conectada a una superficie sin pintar en el chasis de la caja de almacenamiento para evitar descargas estáticas.</block>
@@ -3914,7 +3802,6 @@
   <block id="d69f8bb928c8179d4a1d81a77b9f6a4c" category="list-text">Este procedimiento hace referencia al siguiente ejemplo de hoja de datos y cableado para mostrar cómo leer una hoja de datos para cablear las conexiones de la controladora a la pila.</block>
   <block id="2f40064540d7b13547e7d24b16fd49e7" category="paragraph">La configuración utilizada en este ejemplo es una configuración de alta disponibilidad de ruta cuádruple con dos HBA SAS de puerto cuádruple en cada controladora y dos pilas de bandejas de discos con módulos IOM12.</block>
   <block id="a513cfe8d83ba38ea85b01260a4ffb53" category="list-text">Si tiene una configuración de controladora única, omita los pasos b y d para cableado a una segunda controladora.</block>
-  <block id="1ba62ddf8cca99736a1b554044171b2e" category="image-alt">hoja de cálculo drw ranuras qpha 1 y 2 dos pithbas dos pilas nau</block>
   <block id="bfaf47370d0e0636d466e95dcd0ebeb2" category="image-alt">drw qpha ranuras 1 y 2 de 4 phtebas dos pilas nau</block>
   <block id="270a0442694cb2d6cfb0b5aac8bf618c" category="list-text">Pareja de puertos de cable 1a/2b en cada controladora a la pila 1:</block>
   <block id="480e4f10ac2e8a84a7f6455bf724bff5" category="paragraph">Este es el cableado multivía para la pila 1.</block>
@@ -4311,7 +4198,6 @@
   <block id="8725639f3e244213151f140fc2d3c96a" category="list-text">En la parte posterior de la bandeja de unidades, quite el módulo de ventilador derecho de la siguiente manera:</block>
   <block id="8381a4cbd0b46421f46ed9e6a81a2fa3" category="list-text">Presione la lengüeta naranja para soltar el asa del módulo del ventilador.</block>
   <block id="8d3faf1177c478bfa9146ecd9675659e" category="paragraph">La figura muestra el asa del módulo de ventilador extendido y liberado de la lengüeta naranja de la izquierda.</block>
-  <block id="de3d981545a6d8a0394841c913654bc7" category="image-alt">28 dwg e2860 de460c empuñadura del canister del ventilador con llamada</block>
   <block id="57a9bd14c1349f2598429ab609a75678" category="cell">Asa del módulo del ventilador</block>
   <block id="2a921b818bf0f9a17eeab21f133b15eb" category="list-text">Utilizando la empuñadura, saque el módulo del ventilador de la bandeja de unidades y déjelo a un lado.</block>
   <block id="e6ba190a277f57ecadc541f4456b0308" category="list-text">Determinar manualmente cuál de las cinco cadenas para cables debe desconectarse.</block>
@@ -4632,7 +4518,6 @@
   <block id="263c7d60489662b08bc168e30ef43797" category="paragraph">Guarde todo el material de embalaje para utilizarlo cuando devuelva el ventilador defectuoso.</block>
   <block id="1e3e39e2e6318eead89660ab2de160d9" category="list-text">Desde la parte posterior de la bandeja de discos, observe los LED de atención para localizar el módulo de ventilador que debe quitar.</block>
   <block id="d3ec7e2fd26e47ab7e5f0b12f98df53f" category="paragraph">Debe sustituir el módulo de ventilador que tiene encendido el LED de atención.</block>
-  <block id="1ed4cea40d991f4ddac0f5d7a0187c6a" category="image-alt">28 dwg e2860 de460c contenedor de ventilador único con anotación de led</block>
   <block id="7d74f3b92b19da5e606d737d339a9679" category="cell">Elemento</block>
   <block id="3999567db5b4a29bd6505aaadb3f807e" category="cell">Nombre DEL LED</block>
   <block id="46a2a41cc6e552044816a2d04634545d" category="cell">Estado</block>
@@ -4826,13 +4711,11 @@
   <block id="28746dbce7c4fc8053d035e3b2295bde" category="doc">Sustituya la batería del reloj en tiempo real AFF A700s</block>
   <block id="ea199306c38c35706c03077ded4d9d02" category="paragraph">Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.</block>
   <block id="22969388a58653a9ab4e9f8f503beb09" category="list-text">Desenchufe la fuente de alimentación del módulo del controlador y, a continuación, desconecte el cable de la fuente de alimentación.</block>
-  <block id="5996ae5e0447afd212331572a03c94ea" category="image-alt">drw a700s pcm quitar</block>
   <block id="28f415f726deccd1fbd194cf6d26050d" category="paragraph">Pestillo de bloqueo</block>
   <block id="0f0a79780676cf6ae8f3282e89437c68" category="paragraph">Pasador de bloqueo</block>
   <block id="3df9f71f0d9a072a7166e0d233cad24a" category="list-text">Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:</block>
   <block id="83d690824ebadc71a7a918158b4bb4cf" category="list-text">Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.</block>
   <block id="d487dde166c80d206e555bcad2089ffa" category="list-text">Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.</block>
-  <block id="c825d3306198a3e63edc34a58e1f476c" category="image-alt">conducto de aire abierto drw a700s</block>
   <block id="bf1b040c014a82c7128928f952e50325" category="paragraph">Lengüetas de bloqueo del conducto de aire</block>
   <block id="72188531636fc5815089233196e1ec35" category="paragraph">Elevadores</block>
   <block id="6199e9ac737bb64b5d2e7bfb2a3da5a0" category="image-alt">reemplazo de la batería drw a700s rtc</block>
@@ -4854,7 +4737,6 @@
   <block id="af9622020670ce2b86cd2845b04b00f4" category="list-text">Gire el conducto de aire hacia abajo hasta el módulo del controlador.</block>
   <block id="97be101d543785854ad18ca62a561d32" category="list-text">Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.</block>
   <block id="8bcf9822fb44294b0b3f73b10a473668" category="list-text">Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.</block>
-  <block id="8875897a299dc9a018b6d4466588d015" category="image-alt">drw a700s cierra el conducto de aire</block>
   <block id="7eaa7d8ab118781c7e4223cc8f206b4d" category="paragraph">Deslice el émbolo</block>
   <block id="09b725ec4b513cf16714e69e0bf388eb" category="doc">Descripción general de la sustitución del módulo de controladora: AFF A700s</block>
   <block id="2e7119d7d654a51006d39261079ed460" category="doc">Retire el módulo del controlador AFF A700s</block>
@@ -5138,7 +5020,6 @@
   <block id="507f9f4c8680d2c9a9bcba815a7976e8" category="image-alt">cableado de red conmutada drw fas8300</block>
   <block id="598ec2ec2714b9a699a42898b690e48d" category="section-title">Opción 1: Conecte las controladoras a las bandejas de unidades SAS</block>
   <block id="56cbc310abb53560871f37318fe0636d" category="image-alt">drw fas8300 tres bandejas ds224c</block>
-  <block id="07198f13a474589e15ec90df05d856ff" category="doc">Documentación de los sistemas FAS8300 y FAS8700</block>
   <block id="ba4fadf78396a2db14bc9a4e0f707f9d" category="doc">Sustituya el medio de arranque - FAS8300 y FAS8700</block>
   <block id="4a848babffe3702bffe9efa29dd12c61" category="paragraph">Puede utilizar la animación, ilustraciones o los pasos escritos siguientes para reemplazar el soporte de arranque.</block>
   <block id="fc68b2259a318d9688e92ea62281a6d1" category="video-title">Animación: Reemplace el soporte de arranque</block>
@@ -5353,7 +5234,6 @@
   <block id="86b067a1faa816ad3c0a245cc1e409ad" category="section-title">Paso 5: Mueva el módulo de almacenamiento en caché</block>
   <block id="f5f4db4cbf741ec589cd881a641a1a02" category="paragraph">Para mover un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, búsquelo y muévalos de la controladora antigua a la controladora de sustitución y siga la secuencia específica de pasos.</block>
   <block id="482f9dcd012d730126a9c52d8eac49ab" category="paragraph">Debe tener el nuevo módulo de controlador preparado para poder mover el módulo de almacenamiento en caché directamente desde el módulo de controlador anterior a la ranura correspondiente en el nuevo. Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.</block>
-  <block id="e37270df64cfa143fcbfaedd83a3c109" category="image-alt">fcache drw 2600</block>
   <block id="6bbc48da569bffd650e8c37eb91825ba" category="list-text">Tire suavemente del módulo de almacenamiento en caché hacia fuera de la carcasa.</block>
   <block id="b08b6d72a159368a3b72d6c28c8a2392" category="list-text">Cierre la cubierta del módulo del controlador, según sea necesario.</block>
   <block id="120d4b04cada3ad4213234c2437fb645" category="doc">Consulte las claves de cifrado integradas - FAS2600</block>
@@ -5366,9 +5246,7 @@
   <block id="04a9405b6945cd62aebba48163e7663f" category="doc">Cambie un suministro de alimentación: FAS2600</block>
   <block id="7030094db64cfe33a24436a2528348b6" category="inline-link-macro">Vídeo de reemplazo del suministro de alimentación FAS2600 de AFF</block>
   <block id="e85e66f99bf70a0cd52615d346aa4f9f" category="paragraph"><block ref="e85e66f99bf70a0cd52615d346aa4f9f" category="inline-link-macro-rx"></block></block>
-  <block id="1f747d7a59e4bce713446ceffc970c2d" category="doc">Documentación del sistema FAS2600</block>
   <block id="02b2ef9566494498645accc0aa3742ef" category="doc">Sustituya el medio de arranque - FAS2600</block>
-  <block id="88de6a437c20bc32d754f16685e940b8" category="image-alt">el soporte de arranque drw 2600 mueve el gif aminado</block>
   <block id="36ca3aba3a7a15053f83817ea55948cc" category="doc">Recuperar el sistema y reasignar discos - FAS2600</block>
   <block id="54460a9998b0b0517a52cc21d98c7497" category="paragraph">Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. En un sistema independiente, debe reasignar manualmente el ID a los discos. Debe utilizar el procedimiento correcto para su configuración.</block>
   <block id="0ebf647b3184259131a8c1ffcdea60dc" category="list-text">Desde el símbolo DEL SISTEMA DEL CARGADOR en el controlador _reboot_, arranque el controlador, introduciendo<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> Si se le solicita que anule el ID del sistema debido a una discrepancia de ID del sistema:<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block></block>
@@ -5380,7 +5258,6 @@
   <block id="4571f480b4cb6246b64d91e6cacdf34c" category="list-text">Para un par de alta disponibilidad, tome el control dañado del controlador sano:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block></block>
   <block id="07b824a16e2eac6bafd600bdf983d340" category="list-text">Para un sistema independiente:<block ref="2308db6fcf8117c1cd5dcfc41df419ba" prefix=" " category="inline-code"></block></block>
   <block id="fcb47fab108a0238221cf0b2d24663f3" category="paragraph">Para sustituir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos.</block>
-  <block id="b37236c3c4a90442c4db951305ea57a0" category="image-alt">gif animado de drw 2600 fcache repl</block>
   <block id="c3a9fb901b6e82e19cf5d6be414a5461" category="doc">Apague la controladora afectada: FAS2600</block>
   <block id="64ade082ee5f7cc92e1fcf2264b98814" category="summary">Puede usar estos enlaces para buscar documentación de otros sistemas AFF y FAS.</block>
   <block id="ad451e1c6a6a584f53b88b5c73144db7" category="doc">Otros modelos</block>
@@ -5394,7 +5271,6 @@
   <block id="f474da68fe49004e7ef71b0e2e717c06" category="doc">Restauración completa del sistema - AFF A800</block>
   <block id="2ee0c03cb33be156e12b5b33dbf8e422" category="doc">Sustituya la batería NVDIMM - AFF A800</block>
   <block id="a2a7f6c4d01f5224a71aaaa23dd37c83" category="list-text">Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema del módulo del controlador, manteniendo un seguimiento del lugar en el que se conectaron los cables.</block>
-  <block id="3be32b1e08fc73e5b4d38ae7e8333262" category="image-alt">drw a800 pcm retirada</block>
   <block id="eb8c69a21ff0c4a8461c088e525b55c0" category="list-text">Abra la cubierta del conducto de aire y localice la batería NVDIMM en la tarjeta vertical.</block>
   <block id="66151fb772d064fd39d4562e83cd643e" category="image-alt">sustitución de la batería nvdimm drw a800</block>
   <block id="9c519cb503392d6429ecc30f4aa04158" category="cell">Elevador del conducto de aire</block>
@@ -5408,7 +5284,6 @@
   <block id="df0ede63d2bddc647b3f8cf55d7be4f6" category="paragraph">Asegúrese de que el enchufe se bloquea en la toma.</block>
   <block id="2bb6eb6e274e403747742b20b6b76f1a" category="doc">Sustituya la batería del reloj en tiempo real AFF A800</block>
   <block id="9bcb203190e45fed6ef1d56a224cc2de" category="list-text">Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.</block>
-  <block id="f05cf61d6462bc25cbab09c89f88ff25" category="image-alt">conducto de aire abierto drw a800</block>
   <block id="cdaaae7c9540237628621c761db1e26f" category="paragraph">Deslizar el conducto de aire hacia los módulos de ventilador</block>
   <block id="2ebdec22d5a391965cdb58290055d04c" category="paragraph">Girar el conducto de aire hacia los módulos del ventilador</block>
   <block id="0d7e9cfc68207216c33db900c7febcd1" category="list-text">Gire el pestillo de bloqueo de la tarjeta vertical en el lado izquierdo de la tarjeta vertical hacia arriba y hacia los módulos de ventilador.</block>
@@ -5448,7 +5323,6 @@
   <block id="4762dce14a885434d0d88406f201a65e" category="list-text">Instale la tarjeta PCIe en la misma ranura de la tarjeta vertical:</block>
   <block id="a1228212b1280f9a69b5523ecd1a6854" category="list-text">Alinee la tarjeta con la toma de la tarjeta vertical y, a continuación, deslícela directamente en la toma de la tarjeta vertical.</block>
   <block id="515a9278fa676806936af5610703610f" category="list-text">Para la tarjeta vertical 2 ó 3, cierre el panel lateral.</block>
-  <block id="055ce7154e7ea0261c8667a0d628ee36" category="image-alt">conducto de aire de cierre drw a800</block>
   <block id="b8984f02e6cfd8c017d9d0f4737d0ac7" category="doc">Sustituya el chasis - AFF A800</block>
   <block id="9194957b9ba15b1fae65a0f5a08ad128" category="doc">Sustituya un DIMM - AFF A800</block>
   <block id="0bbcf96a7a6e1bb2c80b14750507eac7" category="list-text">Al extraer un DIMM, desbloquee el pestillo de bloqueo de la tarjeta vertical correspondiente y, a continuación, extraiga la tarjeta vertical.</block>
@@ -5466,7 +5340,6 @@
   <block id="9bc9bee1c7c86ea6e815437b4f02ff6c" category="paragraph">Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis. .</block>
   <block id="1422875ceb77c2edc7c07474b11b3c6f" category="list-text">Abra el conducto de aire del módulo del controlador:</block>
   <block id="56ea39f220f0f9a4e092906ae1b4e2a2" category="paragraph">Debe mover las fuentes de alimentación del módulo del controlador dañado al módulo del controlador de recambio cuando sustituya un módulo de controlador.</block>
-  <block id="79a34d0b71ca1ad3fdbbb6bb3a548146" category="image-alt">drw a800 sustituir el ventilador</block>
   <block id="3526385a16b15ee87aa73e9d27bca396" category="section-title">Paso 4: Mueva la batería NVDIMM</block>
   <block id="d38ed09d0b9f4f8f9a3e205ecbf9bada" category="list-text">Sujete la batería y extraiga la batería del conducto de aire y el módulo controlador.</block>
   <block id="6b877fd7406f9e32e483d9152a8adf11" category="list-text">Mueva la batería al módulo de la controladora de repuesto y, a continuación, instálela en el conducto de aire NVDIMM:</block>
@@ -5514,38 +5387,19 @@
   <block id="9856c39eca48b8716f11fbd7f4e0e610" category="paragraph">X6566B-3-R6 (112-00300), 3 m;</block>
   <block id="fe4dbcab9b910577e5035e97ac068dae" category="paragraph">Gestión</block>
   <block id="1a24d62ae37ede800baaffb6a6a891c2" category="inline-link-macro">Instalación de SuperRail en un rack de cuatro postes</block>
-  <block id="a0c86487fec36ce37cba5bd44aad6322" category="image-alt">precaución de peso drw affa800</block>
-  <block id="820d203fae081b8e985e10f5ba7a6241" category="image-alt">drw affa800 instale la gmt de cables</block>
   <block id="2e3f75d41267a27ec00f8d348665700d" category="paragraph">Los puertos de red de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster y de alta disponibilidad se cablean en ambas controladoras.</block>
-  <block id="f8793589b1deeb1a1641ea1f77deadeb" category="paragraph"><block ref="f8793589b1deeb1a1641ea1f77deadeb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="34cd57c6976f4d17a4a24783a05e9e43" category="paragraph">Conecte los cables de los puertos de interconexión de alta disponibilidad:</block>
   <block id="3b8092245bf9f73ee2eb61bb4346915b" category="list-text">e0b a e0b</block>
-  <block id="7b5e5fd057334f9dbd71f6b577ff7677" category="list-text">e1b a e1b<block ref="bfc87ef803b280fae3edbf21a31c0077" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1f8423b3a1c8ebe55e8111993cede2a3" category="paragraph"><block ref="1f8423b3a1c8ebe55e8111993cede2a3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6baba1e3fa15a886983640e637a762e9" category="paragraph">Conecte los puertos de interconexión del clúster:</block>
-  <block id="9fb25d51d61d61c71697db66aff5e4f9" category="list-text">e1a a e1a<block ref="83b8377d063700297200cb5f90f60dd7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8318f7a477919801182a78d50d64dd67" category="list-text">Para realizar el cableado opcional, consulte:</block>
-  <block id="1cf474ea9658d4a6b7324feffa3967fd" category="list-text"><block ref="c9f609c3e828427f5688ee58753894e5" category="inline-xref-macro-rx"></block></block>
-  <block id="0bb220d44bed0335a5dab4f4a0ed36a4" category="list-text"><block ref="8aad4abef45a2309ab3038b2b3e9ed79" category="inline-xref-macro-rx"></block></block>
-  <block id="0f156d5bceb3a6e3966f04370c598d85" category="list-text"><block ref="0119b77f0ae462187ef1cbf452a5656b" category="inline-xref-macro-rx"></block></block>
-  <block id="f0571b16e45cfcf3e75dcf1e773c291c" category="list-text"><block ref="bdb41f1e9db6683cf1f3c73d0285f818" category="inline-xref-macro-rx"></block></block>
   <block id="f9e35b540e44cb04a6bd15708b14606e" category="paragraph">Los puertos de red de interconexión de clústeres y de gestión de las controladoras están conectados a switches mientras que los puertos de interconexión de alta disponibilidad se cablean en ambas controladoras.</block>
-  <block id="efc9b170c93cc5c3475dff9a11057add" category="paragraph">Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 100 GbE. ** e0a ** e1a<block ref="153c9110464651fb1eae9cc4405e1fba" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f2b3fa371a81e53ad6486e565b845d6e" category="paragraph">Conecte los puertos 2a a 2d a los switches host FC.<block ref="81f0d6877ff05391413cad4fd461fa9d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ed6aa14dcddd8960a96a377341c9d252" category="section-title">Opción 2: Cable a una red de host de 10 GbE</block>
   <block id="7f41e7efae96b1a03620ad35c03b48c9" category="paragraph">Los puertos 10 GbE de las controladoras están conectados a switches de red de host de 10 GbE.</block>
-  <block id="cbafe2caf6dcedc097aead608523640d" category="paragraph">Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.<block ref="d58e771670be1cdb48adcf90823af25d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5fac6017ac5f7a2aad56f49afbe00547" category="paragraph">Utilice la animación o los pasos tabulados para cablear las controladoras a una sola bandeja:</block>
   <block id="837918aaa69464badcf35f3fe9990380" category="video-title">Animación: Conecte con cables las controladoras a una sola bandeja de unidades</block>
-  <block id="80fbd508bddeffc33092c60be0d4f6b0" category="paragraph">Conecte la controladora A a la bandeja: <block ref="5a7e82fa4b93fb16c2c5bc44a8522f5a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e6dd0f6c8da4411248f9566cf343b96a" category="paragraph">Conecte la controladora B a la bandeja: <block ref="cac8a5d3fb17ab489df054a6d41ea9bd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="67f8e001ff11a5ea0b9591fadb082aee" category="section-title">Opción 4: Conecte las controladoras a dos bandejas de unidades</block>
   <block id="752a20127a073c8fcfed6924719fb0ed" category="paragraph">Utilice la animación o los pasos tabulados para cablear las controladoras a dos bandejas de unidades:</block>
   <block id="967cea93964caa083c2f02eb64b559e9" category="video-title">Animación: Conectar los controladores a dos estantes de unidad</block>
-  <block id="d79c126fd4481ac23425d8456f7afe5b" category="paragraph">Conecte la controladora A a las bandejas: <block ref="33e04cf68a3af49b0ee4d01ad0d7ef57" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3054630c0e5edbd6da4f93a401050c21" category="paragraph">Conecte la controladora B a las bandejas: <block ref="4ea96729fae2f1ab6cad14d31d1c7ccf" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="217b7a2dfa322681da15c973e1a5f487" category="image-alt">conexión de la consola drw del soporte 800</block>
-  <block id="6da02acc5640a92145614bae8f8d9a0f" category="image-alt">subred de gestión de cliente drw affa800</block>
   <block id="759e216c6a22313a95c34c198ce8cb0b" category="summary">Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque.</block>
   <block id="34cf3a43d39d8b0acc65bd578d7188da" category="doc">Reemplace el soporte de arranque - AFF A800</block>
   <block id="c77a1ae1297b5c5dbfc50dce06f417ff" category="image-alt">sustitución del soporte de arranque drw a800</block>
@@ -5684,7 +5538,6 @@
   <block id="3d916345d2d4b88d59baeb4da4d032c2" category="paragraph">Las siguientes ilustraciones muestran las vistas superior e inferior del armario del sistema e identifican las aberturas a través de las cuales se pueden ejecutar los paquetes de cables desde la base del centro de datos hasta el armario del sistema. Las ilustraciones también muestran la ubicación de las ruedas del armario del sistema y las patas de nivelación.</block>
   <block id="8b33a6fabc9dc64d006c6243d17ccb18" category="paragraph">PRECAUCIÓN:</block>
   <block id="03e181c9a4ee916b1c6394530dfe5d25" category="paragraph">Para evitar que el armario del sistema caiga por el suelo central de datos, no intente girar el armario del sistema sobre una abertura del suelo que sea más ancha que la abertura de acceso del cable situada en la parte inferior del armario del sistema.</block>
-  <block id="21894d83c731e60180113ee6528b6d88" category="image-alt">dimensiones superiores inferiores de la cabina drw ozeki sys</block>
   <block id="119f03ea1c250f1b97c5928c1d9e5432" category="summary">Después de mover la fuente de alimentación y los componentes al otro lado del armario del sistema y mover las bisagras y el cierre de bloqueo, debe volver a instalar la puerta del armario del sistema y la placa de identificación iluminada y, a continuación, volver a conectar la placa de identificación a la fuente de alimentación.</block>
   <block id="643cfac87180d8379362af941dea318b" category="doc">Vuelva a instalar la puerta y el símbolo iluminado</block>
   <block id="cd7c79424e1d80a931ac6ce8733129b9" category="section-title">Vuelva a instalar la puerta del armario del sistema</block>
@@ -5800,7 +5653,6 @@
   <block id="3536220b5e80ece536e76091bbcde43f" category="doc">Tipos y especificaciones de PDU admitidos</block>
   <block id="345f336ebbb6b879b90d461c9ead417e" category="paragraph">El armario del sistema admite diferentes tipos de unidad de distribución de alimentación (PDU). Las PDU cumplen con NEMA o IEC.</block>
   <block id="fa010c3e95aca618a783f3f5f398a8ba" category="paragraph">La información más actual de las PDU admitidas en el armario del sistema se muestra en Hardware Universe.</block>
-  <block id="f69507967898e382a99df57519e5deaf" category="summary">Información suplementaria</block>
   <block id="c91560a07fdc257781a522b4c00932a2" category="summary">El armario del sistema consta de paneles laterales, puertas delanteras y traseras, un kit opcional de desatornillado, un kit de interconexión opcional, PDU para su equipo y un sistema integrado de gestión de cables.</block>
   <block id="2f40a8c796760d5d6e01e4a8c7e71a04" category="doc">Características del armario del sistema</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Función</block>
@@ -5905,8 +5757,6 @@
   <block id="e95c782f97493fda4a0794b55f88c5be" category="list-text"><block ref="e95c782f97493fda4a0794b55f88c5be" category="inline-link-macro-rx"></block></block>
   <block id="280316afc56c30d6861e875ee64f9d8b" category="list-text"><block ref="280316afc56c30d6861e875ee64f9d8b" category="inline-link-macro-rx"></block></block>
   <block id="b9f8bf80fa7fab32aca8c28430b0b999" category="doc">Sustitución de la batería del reloj en tiempo real - AFF A900</block>
-  <block id="5d6fb494ffd2ad4919bfe7a89dca376f" category="image-alt">drw a900 retire el PCM</block>
-  <block id="12fa42e0a81aa9a47bca5bce92d6ae38" category="image-alt">drw a900 PCM abierto</block>
   <block id="70f590ae3de022f014ffe169e236da55" category="image-alt">drw a900 retire la batería RTC</block>
   <block id="f1eb9bf0f474a83bbe6d11b59f16da8c" category="list-text">Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:<block ref="0bba834c69f94d8942b922666e06c777" prefix=" " category="inline-code"></block></block>
   <block id="eee1a85c64e17c1ca9ed30c1f544d35d" category="doc">Sustituya el módulo del controlador - AFF A900</block>
@@ -5928,10 +5778,8 @@
   <block id="3796dde1eb4771fdc94b7b6dd6b04cbf" category="list-text">Si la<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, Utilice el comando Security Key Manager Onboard SYNC para volver a sincronizar el tipo de Key Manager.</block>
   <block id="6895f6bac75ce22d9b20367054acb577" category="list-text">Dé vuelta a la controladora con el comando de recuperación tras fallos del almacenamiento -fromnode local.</block>
   <block id="2aba05ee9a4093e5315b48903c27d988" category="doc">Sustituya un módulo de E/S - AFF A900</block>
-  <block id="d401d7f8340a560f025bd48c41cf9fd1" category="paragraph"><block ref="d401d7f8340a560f025bd48c41cf9fd1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Si el sistema está configurado para admitir conexiones de clúster de 10 GbE y conexiones de datos en NIC de 40 GbE, convierta estos puertos a conexiones de 10 GbE mediante el comando nicadmin convert del modo de mantenimiento. Consulte<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="13c4db3516e2bb246a5834f3d7814d4f" category="doc">Cambie un ventilador - AFF A900</block>
-  <block id="9a673f4738f255def47cc1d92dbc0cf6" category="image-alt">drw a900 retire el ventilador</block>
   <block id="3c941071b26a1822e1cb4494c2fd71da" category="doc">Apague el controlador dañado - AFF A900</block>
   <block id="e5fcd011be287f0b85815a5d0c8165aa" category="open-title">Mayoría de configuraciones</block>
   <block id="6a925f3765a4dc795f4b5a0732579780" category="open-title">La controladora se encuentra en un MetroCluster</block>
@@ -5939,7 +5787,6 @@
   <block id="fcc9aa8940599a2c3be38723a65e9e21" category="doc">Sustituya un módulo DIMM - AFF A900</block>
   <block id="a2996937d1a0f2d39e753cdc891f28a1" category="image-alt">Mapa DIMM drw a900</block>
   <block id="77b4701113ac545c98576d64b489fa56" category="video-title">Animación - sustituir DIMM</block>
-  <block id="cd9ecdfdf99f4eff04ef39f0689a54be" category="image-alt">drw a900 sustituye a los módulos dimm del PCM</block>
   <block id="ee509c1ffca70e9f258ad73c3116cf37" category="doc">El preapagado comprueba las claves de cifrado integradas - AFF A900</block>
   <block id="097b77e85acb6a3710edc7929eb72d93" category="doc">Inicie la imagen de recuperación - AFF A900</block>
   <block id="bced3f55c14cfa1d16ca32cbbb0b1d97" category="list-text">Configure la controladora dañada al nivel de privilegio avanzado:<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
@@ -6068,7 +5915,6 @@
   <block id="27b080f64d728dcb5d21170ab42a4bb8" category="section-title">Opción 1: Cable de un clúster sin switch de dos nodos, configuración de red unificada</block>
   <block id="a8cb52644fd63b3d401b5a740d7a6af4" category="paragraph">La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.</block>
   <block id="3b698ffd7d1122eeee5457612745ea25" category="list-text">Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:</block>
-  <block id="2097488b7e9b8b78c5446b3395292b52" category="image-alt">gif animados del cableado de red unificado drw 2700 tnsc</block>
   <block id="b3c2f136dfc65b975d23edd14bd5efd6" category="paragraph">Utilice uno de los siguientes tipos de cables para conectar los puertos de datos UTA2 a la red host:</block>
   <block id="3de010ca246e0915dd339c24d8d5e28b" category="paragraph">Un host FC</block>
   <block id="4fd9b26d5ae9474b1fcfcdc6872d0d87" category="list-text">0c y 0d</block>
@@ -6079,40 +5925,29 @@
   <block id="6d4bc3cf86318438b709fd5087158d59" category="section-title">Opción 2: Conecte un clúster con switches o una configuración de red unificada</block>
   <block id="afcfe9ab06da740b8b6db896f79a9ba9" category="paragraph">La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.</block>
   <block id="65dc5db3d1655dcd2f6bb2520a3cbef6" category="list-text">Puede utilizar el gráfico o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches:</block>
-  <block id="73d16383025bb06d3df479450aea8a68" category="image-alt">gif animados de cableado de red unificada conmutada drw 2700</block>
   <block id="0b013a449aa9e2fb582d379b56e1cc6a" category="list-text">**o** 0e y 0f</block>
   <block id="336bb5964548d7fa9953ccd8cf7bfea6" category="paragraph">Una 10 GbE</block>
   <block id="3e942a901e66dc0d43ac0710a31f611c" category="list-text">**o** e0e y e0f</block>
   <block id="e120ae24c5f3d479f881dd54a4a6a4f1" category="section-title">Opción 3: Cable de un clúster sin switch de dos nodos, configuración de red Ethernet</block>
   <block id="79a4975b8f78a863afedab1337e7a142" category="paragraph">La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.</block>
-  <block id="00e617034c3fb1b0698ef30fec708668" category="image-alt">gif animados de cableado de red ethernet drw 2700 tnsc</block>
   <block id="2d4bb42b46d0cffb7d3b74306dfaf645" category="section-title">Opción 4: Cableado de un clúster conmutado, configuración de red Ethernet</block>
   <block id="ec1cec1e423d40a390358261d2f99fa4" category="paragraph">La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.</block>
-  <block id="9e67c381dce7a443f99d338070e65c5f" category="image-alt">gif animados de cableado de red ethernet conmutado drw 2700</block>
   <block id="e6de7ea81eaff65fb7b0b6574edd5f39" category="paragraph">Debe cablear las controladoras a las bandejas con los puertos de almacenamiento internos. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo. Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.</block>
   <block id="43f54a2265fad69a31e2f56b8ec07694" category="section-title">Opción 1: Conectar el almacenamiento en una pareja de alta disponibilidad con bandejas de unidades externas</block>
   <block id="ec6e429ca22f363e17fa8c3ce516c146" category="paragraph">Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.</block>
   <block id="8ab7e2263120080cea820c9dc1549546" category="list-text">Conecte el cable de la pareja de alta disponibilidad con bandejas de unidades externas:</block>
   <block id="97a62b9933b5f2f8ee3abccea9c274f6" category="admonition">En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles.</block>
-  <block id="fbf7c560d2202b7ede4f74efc1bcd515" category="image-alt">gif animados de cableado de almacenamiento drw 2700 ha</block>
-  <block id="3f2eae2d93f0eea6d4a2ab1c770e2797" category="paragraph"><block ref="3f2eae2d93f0eea6d4a2ab1c770e2797" category="inline-image-macro-rx" type="image"></block></block>
   <block id="237232b07c77237fa40b7ebed514668a" category="paragraph">Cablee los puertos de la bandeja a bandeja.</block>
   <block id="7855441953000e9377379c90f290c456" category="list-text">Puerto 3 de IOM a al puerto 1 del IOM A en la bandeja que se encuentra directamente debajo.</block>
   <block id="87aa8b15d874bc2416072d646a31810f" category="list-text">Puerto 3 de IOM B al puerto 1 del IOM B en la bandeja directamente inferior.</block>
-  <block id="27a3af9e579b79ddfe29151922596d53" category="paragraph"><block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block> Cables HD Mini-SAS a mini-SAS HD</block>
-  <block id="a50aeec9921e0390bad38d745f1ad53f" category="paragraph"><block ref="a50aeec9921e0390bad38d745f1ad53f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ebce5301fdee7db58216459dedbddac" category="paragraph">Conecte cada nodo a IOM A en la pila.</block>
   <block id="8e1736a5667ca807d2be49036e98d827" category="list-text">Controladora 1 Puerto 0b a IOM a puerto 3 en la última bandeja de unidades de la pila.</block>
   <block id="2dc1ce09c88aa3d65bff3e266812d266" category="list-text">Puerto 0a de controladora 2 a puerto IOM a 1 en la primera bandeja de unidades en la pila.</block>
-  <block id="63ea7f34346364a7f538a58d8be64928" category="paragraph"><block ref="63ea7f34346364a7f538a58d8be64928" category="inline-image-macro-rx" type="image"></block></block>
   <block id="491ac40caf1751d565e668d868bc0d41" category="paragraph">Conecte cada nodo a IOM B en la pila</block>
   <block id="4b340db6110d657781e4a28d91e76457" category="list-text">Controladora 1: Puerto 0a a puerto IOM B 1 en la primera bandeja de unidades en la pila.</block>
-  <block id="25e9c854cd268404ba760167e55a47b9" category="list-text">Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila.<block ref="1869c18bf4845d129ab70a2555c3fa58" category="inline-image-macro-rx" type="image"></block> Cables HD Mini-SAS a mini-SAS HD</block>
   <block id="ba9a3cf272ff19e49b8066ab84a2b3dc" category="inline-link-macro">Instalación y cableado</block>
   <block id="a83c5e67d745b0c85b815af3214463cd" category="section-title">Opción 1: Completar la configuración del sistema si la detección de red está activada</block>
   <block id="cbd6e530c253bd69eae2efffc8a1d409" category="list-text">Use la animación siguiente para establecer uno o varios ID de bandeja de unidades</block>
-  <block id="2c51278d41ddd5b0a5e4e43d5d054024" category="admonition">El formato de la dirección es<block ref="e3a42c8b12a27a5e78828d7419e57eb0" category="inline-link-rx"></block>.</block>
-  <block id="24b3b18d4ae3c460037fb58156d310c6" category="doc">Documentación del sistema FAS2700</block>
   <block id="ac5b5b75bd82572e4d052c9c0ed18250" category="paragraph">Para completar el procedimiento de sustitución y restaurar el sistema a pleno funcionamiento, debe volver a montar el almacenamiento, confirmar la reasignación del disco, restaurar la configuración de cifrado del almacenamiento de NetApp (si fuera necesario) e instalar licencias para la nueva controladora. Debe completar una serie de tareas antes de restaurar el sistema a pleno funcionamiento.</block>
   <block id="d7fb1a4bddb3db62efbcefc0f8162f42" category="paragraph">Independiente</block>
   <block id="d7f3697202a93edfa9694f456f135d47" category="section-title">Opción 3: Reasignar manualmente el ID del sistema en sistemas de una configuración MetroCluster de dos nodos</block>
@@ -6537,8 +6372,6 @@
   <block id="b9130a693f6e37444632fe71a4b60f7b" category="paragraph">Para instalar el sistema AFF C250, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.</block>
   <block id="3a4e965359d6ad3b670569d4d81a4897" category="list-text">Use la animación siguiente para encender y establecer los ID de bandeja de una o varias bandejas de unidades:</block>
   <block id="5ba23cc00c6685a0d9b231590e5ee1c0" category="paragraph">Para bandejas de unidades NS224, los ID de bandeja están preconfigurados en 00 y 01. Si desea cambiar los ID de la bandeja, utilice el extremo enderezado de un clip de papel o el lápiz de punto de bola con punta estrecha para acceder al botón de ID de la bandeja situado detrás de la placa frontal.</block>
-  <block id="688ed49ee5cf1b7f7ef70935870d42d8" category="summary">La documentación del sistema AFF C250 le permite instalar, configurar y mantener el sistema.</block>
-  <block id="c2deffcaea49ccd174c7da17d80e1edf" category="doc">Documentación del sistema AFF C250</block>
   <block id="a4829fef0cfb953ea3181e31db648a62" category="paragraph">Puede sustituir una unidad SSD con errores sin interrupciones mientras hay operaciones de I/o en curso.</block>
   <block id="d7b7b72f7a0bd85854375ed25ad54137" category="admonition">La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.</block>
   <block id="f6551f88d88dddb684035802224a0336" category="doc">Apague el controlador AFF C250</block>
@@ -6577,8 +6410,6 @@
   <block id="e6423ca3487b9b75d5af512862698175" category="doc">Sustituya el hardware del módulo del controlador - AFF C400</block>
   <block id="5edd30c4cef8fac3bd29e60266f4cb36" category="doc">Apague los controladores - AFF C400</block>
   <block id="5254fce53c38649f011fdb307e35d4b3" category="doc">Sustituya un DIMM - AFF C400</block>
-  <block id="d026008f7eb80e36926da619f0e8aa79" category="summary">La documentación del sistema AFF C400 permite instalar, configurar y mantener el sistema.</block>
-  <block id="e8e2cfacbe6cfb70649bd4e2bb33598e" category="doc">Documentación del sistema AFF C400</block>
   <block id="8db6fdf9679dcdf01a0f39d01d482c0c" category="doc">Compruebe el cifrado incorporado AFF C400</block>
   <block id="454f2d4445f738afc6491f938272785d" category="doc">Recuperar el sistema y reasignar discos - AFF C400</block>
   <block id="7fc305adae8e903c0dc8bff5a49862c9" category="doc">Sustituya una tarjeta intermedia o PCIe AFF C400</block>
@@ -6763,8 +6594,6 @@
   <block id="2a6e70f5ba0bf4b1e8256c095ec0cd1c" category="doc">Sustituya el hardware del módulo de la controladora - AFF C800</block>
   <block id="90571542a9bc3f19e7a4f29fa9556cff" category="doc">Apague las controladoras - AFF C800</block>
   <block id="96575ba10e2fbb7c8295e344411ca2d1" category="doc">Sustituya un DIMM - AFF C800</block>
-  <block id="0251caa15dc8d2cbd1cfcc6d72965b59" category="summary">La documentación del sistema AFF C800 le permite instalar, configurar y mantener el sistema.</block>
-  <block id="9683970b55904c77ccb71ba2bd90666f" category="doc">Documentación del sistema AFF C800</block>
   <block id="592fdd085a6d32be5ca82d8cf41fd57d" category="doc">Compruebe las claves de cifrado integradas: AFF C800</block>
   <block id="053f6b40fe6bb9b0a6dde49c0f76dc01" category="doc">Recuperar el sistema y reasignar discos - AFF C800</block>
   <block id="1085be18597d7d6c96ecba68a211bd73" category="doc">Sustituya una tarjeta PCIe AFF C800</block>
@@ -7002,7 +6831,6 @@
   <block id="48114454330840b73674b4d456819a4e" category="list-text">Configuraciones de redes de datos de UTA2 GbE</block>
   <block id="e6746873d55c9a028bc3eae1ed6cd0db" category="list-text">Configuraciones de red Ethernet</block>
   <block id="f9655777cbdbded95ebaf4fdc1ed1c83" category="paragraph">Realice los siguientes pasos en cada módulo del controlador.</block>
-  <block id="4b7d254b4cff665eba8f89aeb96e16cb" category="list-text">Conecte los puertos de interconexión de clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster. +<block ref="9a0e89c71564aa69ffecf67eb610bc96" category="inline-image-macro-rx" type="image"></block></block>
   <block id="54254076225178d5782bc5158de2ffd3" category="list-text">Use uno de los siguientes tipos de cables para conectar los puertos de datos e0c/0C y e0d/0d o e0e/0E y e0f/0f a la red de host.</block>
   <block id="43083753a8bd4d126f4e9d226b24d42f" category="list-text">Utilice el cable Cat 6 RJ45 para conectar los puertos e0c a e0f a la red host. en la siguiente ilustración.</block>
   <block id="5cb31a934f99a854350d21ffae22067d" category="paragraph">Aprenda a conectar mediante cable un clúster con switches.</block>
@@ -7060,20 +6888,14 @@
   <block id="eba4465f65ac7360936f8f238b09999c" category="list-text">Cables de red adicionales para conectar el sistema al switch de red y al portátil o consola con un navegador web.</block>
   <block id="c7e4a9edbb9ec3bb0052efd3332763a3" category="section-title">Paso 3: Conecte los cables de las controladoras al clúster</block>
   <block id="089103029c56ad66034dfe6bd70cfdcb" category="paragraph">Use la animación o los pasos tabulados para completar el cableado entre los controladores y los switches. Ejecute los pasos en cada controladora.</block>
-  <block id="5d8d8fe980b572286e75db6ff18d3cbc" category="paragraph"><block ref="5d8d8fe980b572286e75db6ff18d3cbc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="84e68180cd83b83ca12149fed857f1ac" category="list-text">Conecte los puertos e0c y e0d de interconexión de clúster a los switches de 25 GbE de interconexión de clúster.</block>
-  <block id="ee3f9d0ec20204c7d48b52d859e31c4d" category="paragraph"><block ref="ee3f9d0ec20204c7d48b52d859e31c4d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="40a8f8b2f4ff5acd74232849a99a8a04" category="section-title">Paso 4: Cable a red host o almacenamiento (opcional)</block>
   <block id="03c1ffcb3fc95b8bfccde9eae4c521cb" category="open-title">Opción 1: Cable a red de host de Fibre Channel</block>
   <block id="57f232cf1846457526a67fb857654097" category="paragraph">Realice el paso en cada módulo del controlador.</block>
-  <block id="8c69ea1e01dd0a307f5cc8e68a746e18" category="paragraph"><block ref="8c69ea1e01dd0a307f5cc8e68a746e18" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d47a33513883c069cdd23a129a70f98" category="paragraph"><block ref="4d47a33513883c069cdd23a129a70f98" category="inline-image-macro-rx" type="image"></block></block>
   <block id="db24b10d7ccee1e6c17be0c81439dce8" category="open-title">Opción 3: Conecte las controladoras a bandeja de unidades única</block>
   <block id="8fb418cbd362c972abff9e15e5bbef81" category="paragraph">Use la animación o los pasos tabulados para completar el cableado entre las controladoras y la bandeja única. Realice los pasos en cada módulo del controlador.</block>
   <block id="26f36b74d2b5930cb4c8a791d8825169" category="list-text">Conecte el cable de la controladora A a la bandeja.</block>
-  <block id="18f599f35e14d88c5e3fb9f75197e3c8" category="paragraph"><block ref="18f599f35e14d88c5e3fb9f75197e3c8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4e9ad1feb0945eeeb8a1d11bf9bf539e" category="list-text">Conecte el cable de la controladora B a la bandeja.</block>
-  <block id="f822d74484a7588f78ead07185e89b82" category="paragraph"><block ref="f822d74484a7588f78ead07185e89b82" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a363ebbaf5776be0c980b7b95cd927d3" category="inline-link">cuenta existente o cree una cuenta</block>
   <block id="50350463d29f0dd6d00e1fbb6e5ee301" category="list-text">Inicie sesión en su<block ref="7d7bd8ac0b1a83207c698de0ebfd0970" category="inline-link-rx"></block>.</block>
   <block id="d8c9578f313af4d30124d95a9a82f55a" category="list-text"><block ref="45857239f243800c6028823fe1bb7167" category="inline-link-macro-rx"></block> su sistema.</block>
@@ -7512,7 +7334,6 @@ SFP+ (destino/iniciador)</block>
   <block id="17eddeb5ca42d640ce98ba7b90523804" category="image-alt">dwr 2800 Encienda el IEOPS 898 de alimentación</block>
   <block id="5725fc4af65adef1b57d4b7c9a365287" category="paragraph">Si la detección de red no está activada en el portátil, complete manualmente la configuración y la configuración.</block>
   <block id="6f196fc99c938b047a2dbbae60694da9" category="image-alt">Portátil drw 2800 para cambiar al controlador IEOPS 1084</block>
-  <block id="1063e487d045f7cd17b5712ab35a43b6" category="doc">FAS2800 Documentación del sistema</block>
   <block id="40ab4deb5c724a3e2d6c8f6d96a94554" category="doc">Apague los controladores - FAS2800</block>
   <block id="5f81816799fe408c4f5d0d2b06be7dd0" category="doc">Guía rápida - FAS2800</block>
   <block id="b0f0e558d3522c3be05dd8c2dd0af1cc" category="inline-link-macro">Instrucciones de instalación y configuración de los sistemas FAS2800</block>
@@ -7759,7 +7580,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b5862dffd2a662580b7e6e08646b8a4e" category="doc">Apague los controladores - AFF A700</block>
   <block id="a4a9da0210f62016e71b1c10b9e4c492" category="doc">Intercambio en caliente de un módulo de alimentación de la controladora (DCPM): AFF A700</block>
   <block id="5b2f7b92c7435bc4b996d69c57391d11" category="doc">Apague el controlador defectuoso: AFF A700</block>
-  <block id="f27a8269e6be203df5f507129c456764" category="doc">Intercambio en caliente de un módulo de almacenamiento en caché: AFF A700</block>
   <block id="cd67f3200bd96874c907fff4c2f87ef0" category="doc">Sustituya el hardware del módulo del controlador: AFF A700</block>
   <block id="c615fd075cbd0c44474042e1097fd7f0" category="doc">Inicie la imagen de recuperación - AFF A700</block>
   <block id="77f4b626bd525dc6753d0c5c459c2958" category="section-title">Opción 1: Inicia la imagen de recuperación en la mayoría de los sistemas</block>
@@ -8549,8 +8369,6 @@ SFP+ (destino/iniciador)</block>
   <block id="5590b96dc59eb91eb51b7b3ea51d3fd8" category="image-alt">drw C400 EXTIENE EL CONTROLADOR IEOPS 1216</block>
   <block id="8a8905b8ba33c894ca2404f3ecc9601d" category="image-alt">drw C400 conducto de aire abierto IEOPS 1215</block>
   <block id="7f3e7059150c562376058a9c62805700" category="image-alt">drw C400 sustituya el soporte de arranque IEOPS 1217</block>
-  <block id="bd017b464f7ccc6f05ea50c47d504548" category="paragraph"><block ref="bd017b464f7ccc6f05ea50c47d504548" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3964bc8d7e8eb5f4ac34dcc2de182743" category="paragraph"><block ref="3964bc8d7e8eb5f4ac34dcc2de182743" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2e983c0397ba596f716adfed1e1f9821" category="image-alt">drw C400 Empty riser retire IEOPS 1225</block>
   <block id="a19c61933f90287162c63ef0a40aa0f0" category="paragraph">Pestillos del elevador</block>
   <block id="6d9502ea6880092a4496782c893e3da2" category="image-alt">fuente de alimentación drw C400 IEOPS 1237</block>
@@ -8607,7 +8425,6 @@ SFP+ (destino/iniciador)</block>
   <block id="5bdb8055b260f02eec19d823c3311a42" category="list-text"><block ref="5bdb8055b260f02eec19d823c3311a42" category="inline-link-rx"></block></block>
   <block id="c68b919518dbc07c3ea6de93e748f2a8" category="list-text"><block ref="c68b919518dbc07c3ea6de93e748f2a8" category="inline-link-rx"></block></block>
   <block id="77072c848f54ead938faeef11b9c0c7f" category="list-text"><block ref="77072c848f54ead938faeef11b9c0c7f" category="inline-link-rx"></block></block>
-  <block id="b5b696403ec1aea418f96649c95377f7" category="list-text"><block ref="b5b696403ec1aea418f96649c95377f7" category="inline-link-rx"></block></block>
   <block id="41bfcd2f6014398965bef92c57ac1de1" category="paragraph">**Sistemas de la serie C de ASA**</block>
   <block id="6505edfb90a2164175a72e5b1e50783a" category="list-text"><block ref="6505edfb90a2164175a72e5b1e50783a" category="inline-link-rx"></block></block>
   <block id="503163f0da3a219668f1526d7486559b" category="list-text"><block ref="503163f0da3a219668f1526d7486559b" category="inline-link-rx"></block></block>
@@ -8681,7 +8498,6 @@ SFP+ (destino/iniciador)</block>
   <block id="230fb764922530d0d527b96fb40d15f8" category="paragraph"><block ref="230fb764922530d0d527b96fb40d15f8" category="inline-link-macro-rx"></block></block>
   <block id="9e4682a37df843156979b712e93e942d" category="paragraph"><block ref="9e4682a37df843156979b712e93e942d" category="inline-link-macro-rx"></block></block>
   <block id="370d65afeef540ea21d331a7da8675ec" category="list-text">Conecte mediante cable los puertos de interconexión de clúster e0c a e0c y e0d a e0d con los cables 25GbE de interconexión del clúster.</block>
-  <block id="45c0f160ca0efa09fc0b198986db5e31" category="image-alt">cableado clust conmutado drw affa250</block>
   <block id="5407ed45e4a9085a4f72a4611d202d7c" category="sidebar">Las bandejas NS224 y SAS de NetApp ayudan a proporcionar el rendimiento, la resiliencia y la flexibilidad que necesita su transformación digital.</block>
   <block id="432ba2d883505b11fa27f305c25abca9" category="sidebar">Bandejas de unidades para sistemas de hardware ONTAP</block>
   <block id="4ab265d37ededf839a389d0b0bedcb7f" category="paragraph">30 cm</block>
@@ -8756,4 +8572,191 @@ SFP+ (destino/iniciador)</block>
   <block id="774c0226814e0f61e839b7a7ba1bf4ee" category="sidebar">MÓDULO DE I/O FAS9500</block>
   <block id="1f07f30ffd2c12b9cf3727d864face5b" category="sidebar">Módulo de I/O AFF A700</block>
   <block id="7c5471ad0d8503f56474b0e9d10bff2a" category="sidebar">Módulo de I/O AFF A900</block>
+  <block id="6a741a9e29ecb23b37045037d60ea43c" category="image-alt">Extracción de un ventilador</block>
+  <block id="99bf6ee6c96eb91a9cabaf654e3f27da" category="image-alt">Movimiento de los DIMM</block>
+  <block id="9a64fff961a3ab499fe6c50ac8db419a" category="inline-image-macro">Conector QSFP28 de 100 GbE</block>
+  <block id="3589992f2b2ea6bba4b18165f47dbe36" category="paragraph"><block ref="3589992f2b2ea6bba4b18165f47dbe36" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e7d617cd83ffff85b1716e3bdf236b13" category="inline-image-macro">Conector de cobre SFP GbE</block>
+  <block id="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="paragraph"><block ref="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="683dcddcc6710a7d671c42be76e2ea15" category="inline-image-macro">Conector de cable RJ-45</block>
+  <block id="a9fb5cff73206f4c5e18ae61d0b8e50f" category="paragraph"><block ref="a9fb5cff73206f4c5e18ae61d0b8e50f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="70f7dea0d750fcdcfe4251acc572c628" category="paragraph"><block ref="70f7dea0d750fcdcfe4251acc572c628" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c4977fb3d530425789813b09fe4a294" category="image-alt">Precaución de elevación para dos personas</block>
+  <block id="b6f08137ef915aeef8b0f7a87febae2a" category="image-alt">Conector de cable con lengüeta en la parte superior</block>
+  <block id="fba6f55e0eedb7bfb55d5ae671432c82" category="image-alt">Conector de cable con lengüeta en la parte inferior</block>
+  <block id="8310c84e951a895da0b0f8647c1eb8d9" category="image-alt">Seleccione un icono de ONTAP</block>
+  <block id="c4e6f16ead2370d5b6f107bb474cb8d8" category="list-text"><block ref="c4e6f16ead2370d5b6f107bb474cb8d8" category="inline-link-rx"></block></block>
+  <block id="efd776be7a583ca294bb1a8ce2c4e66e" category="image-alt">Liberación del módulo del controlador</block>
+  <block id="cc278673be0ce007e60343587ca221b7" category="image-alt">Opoen el conducto de aire</block>
+  <block id="3adccad6709367d60f0645e89c86a994" category="image-alt">Cierre del conducto de aire</block>
+  <block id="025411d9958f9bc8ad2448f521a1ada6" category="image-alt">Quitar una unidad</block>
+  <block id="d88c0d1de0c9fce014f21f630d9adb1a" category="image-alt">Apertura del mecanismo de enclavamiento</block>
+  <block id="813ff1ce3d0de38d3d5b297e098fd16e" category="image-alt">Apertura de la cubierta del módulo del controlador</block>
+  <block id="5c201446503767cfb281ca73fa947b1a" category="image-alt">Extracción de la tarjeta mezzanine</block>
+  <block id="c9679053598c8ad3e66ec7884b143b7f" category="image-alt">Cierre de la cubierta del módulo del controlador</block>
+  <block id="20fa1f64cbfe1c219269ee90549407e6" category="image-alt">Levantando la cubierta del conducto de aire</block>
+  <block id="4e6bb88f4f022c54e39743f60f40ba31" category="image-alt">Sustituya el soporte de arranque</block>
+  <block id="e5e7286177d4c76b9ff887c4772666ab" category="image-alt">Instalación del conducto de aire</block>
+  <block id="a6f6a690661da2c2c5e87ee64236f440" category="image-alt">Quitando la batería de NVMEM</block>
+  <block id="5148471b10aa1b589e344d775506e7f3" category="image-alt">Extracción de la fuente de alimentación</block>
+  <block id="a77933a2d6b40b34ab097c0844d65e8a" category="image-alt">Extracción del módulo del ventilador</block>
+  <block id="569d3e9134d4a0dd550f4fd91dfc5e26" category="image-alt">Sustitución de los DIMM</block>
+  <block id="ec5f6e4f9e23b5f7d32b32b05f071926" category="image-alt">Instalación de la batería RTC</block>
+  <block id="9ad3f211872df73a1b82667ad4c33846" category="inline-image-macro">Cable óptico de canal de fibra de la OIE</block>
+  <block id="f061b4e78310ea86fb738b3e709f7e60" category="paragraph"><block ref="f061b4e78310ea86fb738b3e709f7e60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c46a6fa46f929c6b547c327a032b10f" category="paragraph"><block ref="a1afb0f3e8ab3c3594052bdc55e1ed7f" category="inline-image-macro-rx" type="image"></block>:</block>
+  <block id="b5b1f2ce574bc879ffb797775c8cbc5c" category="inline-image-macro">Cableado de interconexión de clúster en un clúster sin switches de dos nodos</block>
+  <block id="93ddd75580e8ea4f1aa7111fac1d31ce" category="paragraph"><block ref="93ddd75580e8ea4f1aa7111fac1d31ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="385ff03a2251c06929823dd292e11adb" category="image-alt">Cableado de puertos de gestión</block>
+  <block id="9118774078fb5500ecdc7cf9e9fbc4fd" category="inline-image-macro">Cableado de interconexión del clúster</block>
+  <block id="c70e1bb54be72f5abb826ad4d460ecab" category="paragraph"><block ref="c70e1bb54be72f5abb826ad4d460ecab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c5ebee65c5ddb33677b8dc9d6b7cb9d" category="inline-image-macro">Cableado del host de Fibre Channel</block>
+  <block id="79fa782513967e82cd68adb7bbacbe83" category="paragraph"><block ref="79fa782513967e82cd68adb7bbacbe83" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0175e54fdd0be6c9ad0210ee93766fb" category="inline-image-macro">Cableado de 25 GbE</block>
+  <block id="c80d8a360aeca78a73d3c1de3e5f14ab" category="paragraph"><block ref="c80d8a360aeca78a73d3c1de3e5f14ab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="05f04d85747865ee60b26c732b4db800" category="inline-image-macro">Cableado de la controladora A.</block>
+  <block id="d63cb0bb7471d754822a206796e30fe6" category="paragraph"><block ref="d63cb0bb7471d754822a206796e30fe6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="88eff98cb0773830ecbcdbce31a6639f" category="inline-image-macro">Cableado de la controladora B.</block>
+  <block id="58dd78900f778b4b80068307b943d7b3" category="paragraph"><block ref="58dd78900f778b4b80068307b943d7b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4e665d8f69c325f5af5596b624107bf3" category="image-alt">Conectándose a la subred de gestión</block>
+  <block id="a74ca38c9c52717201c2125c3a6f66f6" category="image-alt">Cableado de un par de alta disponibilidad a una bandeja de unidades única</block>
+  <block id="bcb9595341f3bea1634a7fb706e4740d" category="image-alt">Cableado de una pareja de alta disponibilidad a dos bandejas de unidades</block>
+  <block id="4db3185a6b561b0ef622a2fd6bb7ee00" category="image-alt">Insertar o quitar el ARM de gestión de cables</block>
+  <block id="9a692b6dcc3f5843d23fe74a4441450a" category="image-alt">Apertura del pestillo de la palanca de leva</block>
+  <block id="7fdb3a61278778a87931744f9293c985" category="image-alt">Apertura o cierre del módulo del controlador</block>
+  <block id="0b27851a0736b8e577ff90715b8c32ca" category="image-alt">LED NV</block>
+  <block id="99269e39aac078ea95290aed4992f064" category="image-alt">Reemplace la batería de NVMEM</block>
+  <block id="00a173722ba6a6c25c5f0f5812036947" category="image-alt">Ubicación de los DIMM del sistema</block>
+  <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">Apertura de la palanca de leva</block>
+  <block id="c37c47dafebc78840267debda35458f5" category="image-alt">Reemplazar un DIMM</block>
+  <block id="ed1f3672c794d277b346df2c0b57208a" category="image-alt">Conexión de dispositivos de gestión de cables</block>
+  <block id="7ff53c5512085a45fa1535c84012bf20" category="list-text">Conecte los puertos de interconexión de clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster.
+ +
+<block ref="ef4e72ee430f23080f53c94a6fb7577d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2baecd46b5c1b243732c3138f835e3f" category="inline-image-macro">Cableado de red host</block>
+  <block id="2ba25458bee51c7aee46cd7f8b21e235" category="paragraph"><block ref="2ba25458bee51c7aee46cd7f8b21e235" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="228982f8921f07e1151387ebf0b04229" category="paragraph"><block ref="228982f8921f07e1151387ebf0b04229" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a72025ff79b1efa91ca9b092eb92997" category="inline-image-macro">Cableado de Clusterinterconnect</block>
+  <block id="a0e934df593f847fcaa5b1a4a637419d" category="paragraph"><block ref="a0e934df593f847fcaa5b1a4a637419d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f779b0de721ac37a303d9b9169cdb067" category="image-alt">Encendido</block>
+  <block id="776925fc57eed7e10b82310c21dc42b4" category="image-alt">Conectando al puerto de la consola</block>
+  <block id="66f379c14c86776285348d5a4b1f03b1" category="image-alt">Apertura del conducto de aire</block>
+  <block id="e3fec69b68d0ff60c2fc9d9f6a9e9b40" category="image-alt">Extracción del ventilador</block>
+  <block id="381f37fd0c6301b4adcfedecc4eda925" category="image-alt">Precaución de elevación para cuatro personas</block>
+  <block id="3a0eeccdd4e521f45365f2b428095f2d" category="image-alt">Conexión del dispositivo de gestión de cables</block>
+  <block id="a162b305b95f5e831a9b1a7508d3c45e" category="paragraph"><block ref="a162b305b95f5e831a9b1a7508d3c45e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5ef048ab759bf73977c35349ec483eab" category="inline-image-macro">Cableado de par de ALTA disponibilidad</block>
+  <block id="2b1368b4381f3629e96800ab48579d68" category="list-text">e1b a e1b
+<block ref="aa46ce125e154e60d93093e92fe06f34" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c33620740c1e041cd4b18210343809a" category="paragraph"><block ref="2c33620740c1e041cd4b18210343809a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fae04c8c73682a0f5aee781b4ba55e0" category="list-text">e1a a e1a
+<block ref="ce168455f06d894620cf25f3ad7f95ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2d5ce426423eeeead4f35769cd8b1b27" category="inline-image-macro">Paso 3</block>
+  <block id="86cb292aafaa0232cd67561e32ce40eb" category="paragraph"><block ref="86cb292aafaa0232cd67561e32ce40eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="75f728010e80f6e306c8d0419ab6e02f" category="inline-image-macro">Símbolo de atención</block>
+  <block id="a64c1d9519895ea9b4d05af7302a3f5d" category="paragraph"><block ref="a64c1d9519895ea9b4d05af7302a3f5d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9640555fa5bc248b1730cc507ea1862" category="paragraph">Conecte los puertos de interconexión de clúster a los switches de interconexión de clúster de 100 GbE.
+** e0a
+** e1a
+<block ref="03c334f1a71e7086b1987bb740b5b995" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fae734ae73d4d9ca0d2c390bc2bb7c39" category="inline-image-macro">Cableado de red del host Fibre Channel</block>
+  <block id="b2d4d0d6d18aadc5250160804ec5f72c" category="paragraph">Conecte los puertos 2a a 2d a los switches host FC.<block ref="f7469edef6c72cc42131f9dced4b36a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e69c5c6214fe233e92d0ac376a7db30a" category="paragraph">Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.<block ref="54eadf4427f8838bf31ee4b6c63b48ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b59904275b4568b543c595eb7fce7adb" category="paragraph"><block ref="b59904275b4568b543c595eb7fce7adb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c40c0173af959ac36faeb49a2d560c3e" category="inline-image-macro">Cableado de las controladoras a una bandeja única</block>
+  <block id="b31a65b0423c1f79c8dda2ba21aaa12f" category="paragraph">Conecte la controladora A a la bandeja:    <block ref="110df664c75a0c7a5705a4170e654db5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="893281d73b87540ff15404c730a689fd" category="paragraph"><block ref="893281d73b87540ff15404c730a689fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2610840f20b75c11dd08609296a9dd3" category="inline-image-macro">Cableado de la controladora B a una sola bandeja</block>
+  <block id="4a2893ac0df4f1c0cfdae141c2312c98" category="paragraph">Conecte la controladora B a la bandeja:    <block ref="eb21c5b868d7e6aaff675f3a2765c85c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="caeddf182be758b4a13beef4ab311366" category="inline-image-macro">Cableado de la controladora A a dos bandejas</block>
+  <block id="cc8004a5d6e00e6f6ddf3c56646a201d" category="paragraph">Conecte la controladora A a las bandejas:    <block ref="0ff6b5386c4af80a0faa2eedce3801d9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be6dd92e56e589c43e6ecf9ff2fb511d" category="inline-image-macro">Cableado de la controladora B a dos bandejas</block>
+  <block id="96d704bc763b695c9de9168784c7737d" category="paragraph">Conecte la controladora B a las bandejas:    <block ref="a190910980606e8669e301ec6bfe2395" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9293060aa1ce6aba93f2da08c5b9a87a" category="image-alt">Conexión del portátil o la consola para activar la subred de administración</block>
+  <block id="8354ac591d21bc8f487173406cdc0ff9" category="image-alt">Liberando la controladora</block>
+  <block id="537c3d5f16e3ab81ae71572e822e02ae" category="image-alt">Levantando la cubierta del módulo del controlador</block>
+  <block id="dc0a61369ab78188b5040b237202d13a" category="inline-image-macro">Extracción de un módulo PCIe</block>
+  <block id="851adb1cfe0add8b264f80f294e53d6e" category="paragraph"><block ref="851adb1cfe0add8b264f80f294e53d6e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4bed25d7279305fb1486095526c2cbe" category="image-alt">Extracción o instalación del ventilador</block>
+  <block id="793c006966d00d222996468e86da89f4" category="image-alt">Instalación de montaje hasta la mitad en rack Telco</block>
+  <block id="7f615fc773ecf20799d3f2a060bd3afb" category="image-alt">Instalación en rack de Telco</block>
+  <block id="48a4c5d2941af2c3562b0a15dc70a0d8" category="image-alt">Extracción de un DIMM</block>
+  <block id="f6f0bd2e4727e80f2ce638a745f37465" category="image-alt">Eliminación de un módulo de almacenamiento en caché</block>
+  <block id="7b421531117f7a333a0bf6943ea821e6" category="image-alt">Extracción de la batería de RTC</block>
+  <block id="633a92fd671d3ef2ca3005733f0cb806" category="image-alt">Extracción del módulo del controlador</block>
+  <block id="30f12da3c45fbc274058e8468d22ebc9" category="image-alt">Instalar la controladora</block>
+  <block id="4eeb96fa2c55e758f96ef749dc5e9599" category="list-text">Ejecute Config Advisor. Vaya a la página Config Advisor del sitio de soporte de NetApp en<block ref="071c808bef701043fad188702c37998b" category="inline-link-rx"></block>.</block>
+  <block id="7b54852d269e9b037557fbb048cca323" category="image-alt">Extracción del soporte de arranque</block>
+  <block id="50fede2433d772bfdc7aee11d57935dc" category="image-alt">Eliminación del módulo de almacenamiento en caché</block>
+  <block id="602f1652c88951ac750e629819f5360f" category="inline-image-macro">Extracción de las tarjetas PCIe</block>
+  <block id="148d3cda8eafa148ec058e4c32601c3e" category="paragraph"><block ref="148d3cda8eafa148ec058e4c32601c3e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d53fc5f7f17cd7f32066a7718395744" category="image-alt">Localización del soporte de arranque</block>
+  <block id="374900d2cb65aa69562bc3dff6893f0e" category="image-alt">Reemplace el módulo de almacenamiento en caché</block>
+  <block id="1f64ef61e8a4113c46452f69ac2488ed" category="paragraph"><block ref="1f64ef61e8a4113c46452f69ac2488ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1f1e92832e143e090cfa4b652055d540" category="image-alt">Sustitución de la fuente de alimentación</block>
+  <block id="49136ce507af20ea51c62b05ac2b352f" category="image-alt">Extracción de la batería NVDIMM</block>
+  <block id="d461a61dff68fdcb5519b0daf99dcef0" category="inline-image-macro">Conector mini-SAS a mini-SAS</block>
+  <block id="065babb6c425d208f17452adf684f6f8" category="paragraph"><block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="66615867af958c8a291bb063be5c3c2e" category="image-alt">Desmontaje o instalación de los brazos organizadores de cables</block>
+  <block id="62793fbec5f073428ce66f62ff6e5393" category="image-alt">Extracción del dispositivo de gestión de cables</block>
+  <block id="cda77a6b0cdda56cf0b64136e433b225" category="image-alt">Quitar la controladora</block>
+  <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-image-macro">Paso 1</block>
+  <block id="f2e282d746920618067daa3e0c1759f5" category="paragraph"><block ref="f2e282d746920618067daa3e0c1759f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e31ad1284b7618a9c10777ed99b12e64" category="inline-image-macro">Paso 2</block>
+  <block id="34320e5ff47aa671d2b068e83eeb193c" category="paragraph"><block ref="34320e5ff47aa671d2b068e83eeb193c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7284590833f91c27979b6410576141a0" category="paragraph"><block ref="7284590833f91c27979b6410576141a0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7882a4b556b6996eaf604413a9e602d9" category="inline-image-macro">Paso 4</block>
+  <block id="ee32970896d31f879fb413b1b17ef2b9" category="paragraph"><block ref="ee32970896d31f879fb413b1b17ef2b9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2873a4d4f1516534eb25e84b29148dbb" category="image-alt">Cableado de clúster de dos nodos sin switches en una configuración de red unificada</block>
+  <block id="885b26ba98aed4bc9ea9034bad518f2e" category="list-text">e0b a e0b
+<block ref="ef4e72ee430f23080f53c94a6fb7577d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1bf6fc576a87f7441e82621c0d00c1ad" category="image-alt">Cableado de red unificada con lustre conmutado</block>
+  <block id="128d79c536d6f8b71a5a6b5f17b84a92" category="image-alt">Cableado de red de dos nodos sin switches</block>
+  <block id="75f7c508f639a0b8d7bf0b4e45aaff78" category="paragraph"><block ref="75f7c508f639a0b8d7bf0b4e45aaff78" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="59f214803ddf0f1e023203b9b4214536" category="image-alt">Cableado Ethernet conmutado</block>
+  <block id="72ed3c6e755ee2d28ed796389e524a7c" category="paragraph"><block ref="72ed3c6e755ee2d28ed796389e524a7c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f2f34a48a078192264a70e05599fedd" category="image-alt">Cableado de la bandeja en un par de alta disponibilidad</block>
+  <block id="4dda420a3cb9f5f8ef5871e09b0f5007" category="paragraph"><block ref="4dda420a3cb9f5f8ef5871e09b0f5007" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b685fb65d97bbeec5268b45da937ff6a" category="paragraph"><block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block>     Cables HD Mini-SAS a mini-SAS HD</block>
+  <block id="20c5f975de88a185b17029e4f20bff0b" category="paragraph"><block ref="20c5f975de88a185b17029e4f20bff0b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e448f6afe6009059237e178cc26035e" category="paragraph"><block ref="1e448f6afe6009059237e178cc26035e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f88ec5a2698376424f37fdeb5d261d8f" category="list-text">Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila.
+<block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block>     Cables HD Mini-SAS a mini-SAS HD</block>
+  <block id="8127e33aaf3dd71a914a210c8ced78c0" category="image-alt">Hoja de trabajo de cableado para alta disponibilidad de ruta cuádruple</block>
+  <block id="926c0f4c72fca232ba2af81a0b2d2da5" category="image-alt">Instalación de las asas de elevación</block>
+  <block id="34a9b2c74eff15662c1f632211a0b41d" category="image-alt">Numeración de unidades</block>
+  <block id="5b5f1e0efd716ec76021d032e9473f40" category="image-alt">Ubicación de los botones levantados en la unidad</block>
+  <block id="e22a4a2a838c15d0c7cbf6bac179373f" category="inline-image-macro">Cierre suavemente el cajón</block>
+  <block id="e57bb4934e3c0d4cbe8c534709c18cf5" category="paragraph"><block ref="e57bb4934e3c0d4cbe8c534709c18cf5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2bfd4a7dcbb75ccb6df54460bb939dd1" category="image-alt">Vista frontal de la bandeja de unidades</block>
+  <block id="09abe6b31262fc452461b2960cfb7f78" category="image-alt">Manija del módulo del ventilador extendido</block>
+  <block id="fc949a460dbf1dffaa679c2cd992bc0c" category="image-alt">Instalar o quitar una unidad</block>
+  <block id="c91fe339b01bc5c90312725fc1abe9fe" category="image-alt">Ubicación del LED de atención</block>
+  <block id="d78fee28333c5e926857e2cf983849b5" category="inline-image-macro">Cableado de almacenamiento SAS para ONTAP 9,7 y versiones anteriores</block>
+  <block id="69bc043b597bbd2a529b92c5ce7b15a9" category="paragraph"><block ref="69bc043b597bbd2a529b92c5ce7b15a9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e9dee169020ec62435f7ec3637f49d15" category="inline-image-macro">Cableado de almacenamiento SAS para ONTAP 9,8 y posterior</block>
+  <block id="4c9f996c9f936c79376f7f092c69ee17" category="paragraph"><block ref="4c9f996c9f936c79376f7f092c69ee17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c27f1c89f251cb0b90259bf8a621e5e8" category="inline-image-macro">Cableado del sistema de almacenamiento con bandejas SAS</block>
+  <block id="bb242cd36f963ba432ce502a18fb1674" category="paragraph"><block ref="bb242cd36f963ba432ce502a18fb1674" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7b4c59d205fcc35575d2718f564d1010" category="image-alt">Cableado de bandeja única</block>
+  <block id="69be99e5fb3da30dc465ba0430175b3d" category="image-alt">Cableado de bandeja doble</block>
+  <block id="80d146883a1aa36bacaaf3d6c6c5c585" category="image-alt">Cableado de la consola</block>
+  <block id="cd94f8a58c52ff0efd2c72da75a5b0d2" category="image-alt">Cableado de los módulos de la controladora a una bandeja de unidades única</block>
+  <block id="c14bafda5fc1bf439f2f4cfca3341edc" category="list-text">e0d a e0d
+<block ref="93ddd75580e8ea4f1aa7111fac1d31ce" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a932057ff0e2d59052e2fa248c1ae65f" category="paragraph"><block ref="a932057ff0e2d59052e2fa248c1ae65f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="303733abd5903144b11873d493c42f36" category="list-text">e0d
+<block ref="c70e1bb54be72f5abb826ad4d460ecab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e342ccefdad489effa04cf864943b633" category="paragraph">Conecte la controladora A a la bandeja:    <block ref="d63cb0bb7471d754822a206796e30fe6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7125baa982fde1a0522d27380012310" category="paragraph">Conecte la controladora B a la bandeja:    <block ref="58dd78900f778b4b80068307b943d7b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99d094c3a3728a27f2dbd0ea868eaeb0" category="image-alt">Extracción de los brazos organizadores de cables][</block>
+  <block id="ac033649a8809b7bb2cf867adf35c5fa" category="image-alt">Aflojar el tornillo de mariposa para abrir el mango de la leva</block>
+  <block id="5b96ebd2b1f60b90a157fa68e50437a4" category="image-alt">Extracción del soporte de arranque</block>
+  <block id="5cc16253a8aee4b43fffd03ab6bf4dcc" category="image-alt">Extracción o instalación de una tarjeta PCIe</block>
+  <block id="19d09ef846ca4e7e9e07b780168aa7e8" category="image-alt">Quitar una fuente de alimentación</block>
+  <block id="421c376f4d6d54ea975a03a818082d3d" category="image-alt">Sustitución de DIMM</block>
+  <block id="9cb7281bb7eb2acd0ccc0342394f8a2a" category="summary">Los módulos Flash Cache SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte frontal del módulo NVRAM11 en la ranura 6 de solo los sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
+  <block id="be156c2254730ffea327aad8b7574600" category="paragraph">Directiva no resuelta en &lt;stdin&gt; - Include:../_include/700_9000_caching_module_and_core_dump_module_replace.adoc[]</block>
+  <block id="c2aecd7a81767c23b66c3ce771bbf967" category="image-alt">dimensiones superiores inferiores de la cabina drw ozeki sys ieops 1803</block>
+  <block id="98c84c18c84bbdb869a3af52fb92fee5" category="admonition">La profundidad mínima entre los puntos de conexión delanteros y traseros para la instalación de SuperRail es de 24 pulgadas y mientras que la profundidad máxima es de 32 pulgadas.</block>
 </blocks>

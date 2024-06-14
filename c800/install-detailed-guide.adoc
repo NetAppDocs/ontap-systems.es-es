@@ -64,7 +64,7 @@ Cable de 100 GbE
  a| 
 X66211A-05 (112-00595), 0,5 m
  a| 
-image:../media/oie_cable100_gbe_qsfp28.png[""]
+image:../media/oie_cable100_gbe_qsfp28.png["Conector QSFP28 de 100 GbE"]
  a| 
 Interconexión de ALTA DISPONIBILIDAD
 
@@ -115,7 +115,7 @@ RJ-45 (dependiente del pedido)
  a| 
 No aplicable
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["Conector de cable RJ-45"]
  a| 
 Gestión
 
@@ -132,7 +132,7 @@ X66250-15 (112-00346) 15 m;
 
 X66250-30 (112-00347) 30m
  a| 
-image:../media/oie_cable_fc_optical.png[""]
+image:../media/oie_cable_fc_optical.png["Cable óptico de canal de fibra de la OIE"]
  a| 
 
 
@@ -153,7 +153,7 @@ Cables de alimentación
  a| 
 No aplicable
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Cables de alimentación"]
  a| 
 Encendido del sistema
 
@@ -178,11 +178,11 @@ link:../com.netapp.doc.hw-rail-superrail/home.html["Instalación de SuperRail en
 NOTE: Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.
 
 +
-image::../media/drw_affa800_weight_caution.png[precaución de peso drw affa800]
+image::../media/drw_affa800_weight_caution.png[Precaución de elevación para cuatro personas]
 
 . Conecte los dispositivos de administración de cables (como se muestra).
 +
-image::../media/drw_affa800_install_cable_mgmt.png[drw affa800 instale la gmt de cables]
+image::../media/drw_affa800_install_cable_mgmt.png[Conexión del dispositivo de gestión de cables]
 
 . Coloque el panel frontal en la parte delantera del sistema.
 
@@ -210,7 +210,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -227,36 +227,38 @@ video::edc42447-f721-4cbe-b080-ab0c0123a139[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_dp.png[""]
+image:../media/oie_legend_icon_1_dp.png["Número de llamada 1"]
  a| 
 Conecte los cables de los puertos de interconexión de alta disponibilidad:
 
 ** e0b a e0b
-** e1b a e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+** e1b a e1b
+image:../media/drw_affa800_ha_pair_cabling.png["Cableado de par de ALTA disponibilidad"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lg.png[""]
+image:../media/oie_legend_icon_2_lg.png["Número de llamada 2"]
  a| 
 Conecte los puertos de interconexión del clúster:
 
 ** e0a a e0a
-** e1a a e1aimage:../media/drw_affa800_tnsc_clust_cabling.png[""]
+** e1a a e1a
+image:../media/drw_affa800_tnsc_clust_cabling.png["Cableado de interconexión de clúster en un clúster sin switches de dos nodos"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_3_lp.png[""]
+image:../media/oie_legend_icon_3_lp.png["Paso 3"]
  a| 
 Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_affa800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
 
 
 
  a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
+image:../media/oie_legend_icon_attn_symbol.png["Símbolo de atención"]
  a| 
 NO enchufe los cables de alimentación en este momento.
 
@@ -283,7 +285,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -300,32 +302,36 @@ video::49e48140-4c5a-4395-a7d7-ab0c0123a10e[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_dp.png[""]
+image:../media/oie_legend_icon_1_dp.png["Número de llamada 1"]
  a| 
 Conecte los cables de los puertos de interconexión de alta disponibilidad:
 
 ** e0b a e0b
-** e1b a e1bimage:../media/drw_affa800_ha_pair_cabling.png[""]
+** e1b a e1b
+image:../media/drw_affa800_ha_pair_cabling.png["Cableado de par de ALTA disponibilidad"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lg.png[""]
+image:../media/oie_legend_icon_2_lg.png["Número de llamada 2"]
  a| 
-Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 100 GbE. ** e0a ** e1aimage:../media/drw_affa800_switched_clust_cabling.png[""]
+Conecte los puertos de interconexión de clúster a los switches de interconexión de clúster de 100 GbE.
+** e0a
+** e1a
+image:../media/drw_affa800_switched_clust_cabling.png["Cableado de interconexión del clúster"]
 
 
 
  a| 
-image:../media/oie_legend_icon_3_lp.png[""]
+image:../media/oie_legend_icon_3_lp.png["Paso 3"]
  a| 
 Conecte los puertos de gestión a los switches de red de gestión    image:../media/drw_affa800_mgmt_cabling.png["Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema"]
 
 
 
  a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
+image:../media/oie_legend_icon_attn_symbol.png["Símbolo de atención"]
  a| 
 NO enchufe los cables de alimentación en este momento.
 
@@ -358,7 +364,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -371,7 +377,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 1
  a| 
-Conecte los puertos 2a a 2d a los switches host FC.image:../media/drw_affa800_fc_host_cabling.png[""]
+Conecte los puertos 2a a 2d a los switches host FC.image:../media/drw_affa800_fc_host_cabling.png["Cableado de red del host Fibre Channel"]
 
 
 
@@ -403,7 +409,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -416,7 +422,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 1
  a| 
-Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.image:../media/drw_affa800_10gbe_host_cabling.png[""]
+Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.image:../media/drw_affa800_10gbe_host_cabling.png["Cableado de red host"]
 
 
 
@@ -446,7 +452,7 @@ Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS22
 .Antes de empezar
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -461,16 +467,16 @@ video::09dade4f-00bd-4d41-97d7-ab0c0123a0b4[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_mb.png[""]
+image:../media/oie_legend_icon_1_mb.png["Número de llamada 1"]
  a| 
-Conecte la controladora A a la bandeja: image:../media/drw_affa800_1shelf_cabling_a.png[""]
+Conecte la controladora A a la bandeja:    image:../media/drw_affa800_1shelf_cabling_a.png["Cableado de las controladoras a una bandeja única"]
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lo.png[""]
+image:../media/oie_legend_icon_2_lo.png["Número de llamada 2"]
  a| 
-Conecte la controladora B a la bandeja: image:../media/drw_affa800_1shelf_cabling_b.png[""]
+Conecte la controladora B a la bandeja:    image:../media/drw_affa800_1shelf_cabling_b.png["Cableado de la controladora B a una sola bandeja"]
 
 |===
 Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
@@ -484,7 +490,7 @@ Debe cablear cada controladora a los módulos NSM de ambas bandejas de unidades 
 .Antes de empezar
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -499,16 +505,16 @@ video::fe50ac38-9375-4e6b-85af-ab0c0123a0e0[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_mb.png[""]
+image:../media/oie_legend_icon_1_mb.png["Número de llamada 1"]
  a| 
-Conecte la controladora A a las bandejas: image:../media/drw_affa800_2shelf_cabling_a.png[""]
+Conecte la controladora A a las bandejas:    image:../media/drw_affa800_2shelf_cabling_a.png["Cableado de la controladora A a dos bandejas"]
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lo.png[""]
+image:../media/oie_legend_icon_2_lo.png["Número de llamada 2"]
  a| 
-Conecte la controladora B a las bandejas: image:../media/drw_affa800_2shelf_cabling_b.png[""]
+Conecte la controladora B a las bandejas:    image:../media/drw_affa800_2shelf_cabling_b.png["Cableado de la controladora B a dos bandejas"]
 
 |===
 Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
@@ -548,7 +554,7 @@ image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para
 
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
-image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]
+image::../media/drw_autodiscovery_controler_select.png[Seleccione un icono de ONTAP]
 
 +
 .. Abra el Explorador de archivos.
@@ -601,11 +607,11 @@ NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo
 
 .. Conecte el cable de la consola al portátil o a la consola y conecte el puerto de la consola del controlador mediante el cable de consola incluido con el sistema.
 +
-image::../media/drw_console_connect_affa800.png[conexión de la consola drw del soporte 800]
+image::../media/drw_console_connect_affa800.png[Conectando al puerto de la consola]
 
 .. Conecte el portátil o la consola al conmutador de la subred de administración.
 +
-image::../media/drw_client_mgmt_subnet_affa800.png[subred de gestión de cliente drw affa800]
+image::../media/drw_client_mgmt_subnet_affa800.png[Conexión del portátil o la consola para activar la subred de administración]
 
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 

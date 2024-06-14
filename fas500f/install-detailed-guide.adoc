@@ -61,7 +61,7 @@ X66240A-05 (112-00595), 0,5 m;
 
 X66240-2 (112-00573), 2 m
  a| 
-image:../media/oie_cable100_gbe_qsfp28.png[""]
+image:../media/oie_cable100_gbe_qsfp28.png["Conector QSFP28 de 100 GbE"]
  a| 
 La red de interconexión en clúster
 
@@ -92,7 +92,7 @@ RJ-45 (dependiente del pedido)
  a| 
 No aplicable
  a| 
-image:../media/oie_cable_rj45.png[""]
+image:../media/oie_cable_rj45.png["Conector de cable RJ-45"]
  a| 
 Red de gestión (BMC y puerto de llave inglesa) y datos Ethernet (e0a y e0b)
 
@@ -109,7 +109,7 @@ X66250-15 (112-00346) 15 m;
 
 X66250-30 (112-00347) 30m
  a| 
-image:../media/oie_cable_fc_optical.png[""]
+image:../media/oie_cable_fc_optical.png["Cable óptico de canal de fibra de la OIE"]
  a| 
 
 
@@ -130,7 +130,7 @@ Cables de alimentación
  a| 
 No aplicable
  a| 
-image:../media/oie_cable_power.png[""]
+image:../media/oie_cable_power.png["Cables de alimentación"]
  a| 
 Encendido del sistema
 
@@ -152,7 +152,7 @@ Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetAp
 NOTE: Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.
 
 +
-image::../media/drw_affa250_weight_caution.png[precaución de peso drw affa250]
+image::../media/drw_affa250_weight_caution.png[Precaución de elevación para dos personas]
 
 . Identifique y administre los cables porque este sistema no tiene un dispositivo de administración de cables.
 . Coloque el panel frontal en la parte delantera del sistema.
@@ -181,7 +181,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
+image::../media/oie_cable_pull_tab_down.png[Conector de cable con lengüeta en la parte inferior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -196,29 +196,30 @@ video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_lg.png[""]
+image:../media/oie_legend_icon_1_lg.png["Paso 1"]
  a| 
 Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster de 25 GbE
 
-image:../media/oie_cable_sfp_gbe_copper.png[""]:
+image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE"]:
 
 * e0c a e0c
-* e0d a e0dimage:../media/drw_affa250_tnsc_cabling.png[""]
+* e0d a e0d
+image:../media/drw_affa250_tnsc_cabling.png["Cableado de interconexión de clúster en un clúster sin switches de dos nodos"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_dr.png[""]
+image:../media/oie_legend_icon_2_dr.png["Número de llamada 2"]
  a| 
 Conecte los puertos de llave a los switches de red de gestión con los cables RJ45.
 
-image::../media/drw_affa250_mgmt_cabling.png[cableado de mgmt drw affa250]
+image::../media/drw_affa250_mgmt_cabling.png[Cableado de puertos de gestión]
 
 
 
  a| 
-image:../media/oie_legend_icon_attn_symbol.png[""]
+image:../media/oie_legend_icon_attn_symbol.png["Símbolo de atención"]
  a| 
 NO enchufe los cables de alimentación en este momento.
 
@@ -236,7 +237,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_down.png[lengüeta del cable de la oie hacia abajo]
+image::../media/oie_cable_pull_tab_down.png[Conector de cable con lengüeta en la parte inferior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -251,27 +252,28 @@ video::bf6759dc-4cbf-488e-982e-ac68017fbef8[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_lg.png[""]
+image:../media/oie_legend_icon_1_lg.png["Paso 1"]
  a| 
 Conecte los puertos de interconexión del clúster a los switches de interconexión de clúster de 25 GbE.
 
 * e0c
-* e0dimage:../media/drw_affa250_switched_clust_cabling.png[""]
+* e0d
+image:../media/drw_affa250_switched_clust_cabling.png["Cableado de interconexión del clúster"]
 
 
 
 
  a| 
-image:../media/oie_legend_icon_2_dr.png[""]
+image:../media/oie_legend_icon_2_dr.png["Número de llamada 2"]
  a| 
 Conecte los puertos de llave a los switches de red de gestión con los cables RJ45.
 
-image::../media/drw_affa250_mgmt_cabling.png[cableado de mgmt drw affa250]
+image::../media/drw_affa250_mgmt_cabling.png[Cableado de puertos de gestión]
 
 
 
  a| 
-image::../media/oie_legend_icon_attn_symbol.png[símbolo de atención del icono de leyenda de la oie]
+image::../media/oie_legend_icon_attn_symbol.png[Símbolo de atención]
  a| 
 NO enchufe los cables de alimentación en este momento.
 
@@ -295,7 +297,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -310,7 +312,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 Conecte los puertos 2a a 2d a los switches host FC.
 
-image::../media/drw_affa250_fc_host_cabling.png[cableado de host drw affa250 fc]
+image::../media/drw_affa250_fc_host_cabling.png[Cableado del host de Fibre Channel]
 
 
 
@@ -342,7 +344,7 @@ Póngase en contacto con el administrador de red para obtener información sobre
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -357,7 +359,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
  a| 
 Los puertos de cable e4a a e4d a los conmutadores de red host 10GbE.
 
-image::../media/drw_affa250_25gbe_host_cabling.png[cableado de host drw affa250 25gbe]
+image::../media/drw_affa250_25gbe_host_cabling.png[Cableado de 25 GbE]
 
 
 
@@ -386,7 +388,7 @@ Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS22
 
 Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-image::../media/oie_cable_pull_tab_up.png[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -401,16 +403,16 @@ video::3f92e625-a19c-4d10-9028-ac68017fbf57[panopto]
 
 
  a| 
-image:../media/oie_legend_icon_1_mb.png[""]
+image:../media/oie_legend_icon_1_mb.png["Número de llamada 1"]
  a| 
-Conecte la controladora A a la bandeja: image:../media/drw_affa250_1shelf_cabling_a.png[""]
+Conecte la controladora A a la bandeja:    image:../media/drw_affa250_1shelf_cabling_a.png["Cableado de la controladora A."]
 
 
 
  a| 
-image:../media/oie_legend_icon_2_lo.png[""]
+image:../media/oie_legend_icon_2_lo.png["Número de llamada 2"]
  a| 
-Conecte la controladora B a la bandeja: image:../media/drw_affa250_1shelf_cabling_b.png[""]
+Conecte la controladora B a la bandeja:    image:../media/drw_affa250_1shelf_cabling_b.png["Cableado de la controladora B."]
 
 |===
 Para completar la configuración del sistema, consulte link:install-detailed-guide.html#step-4-complete-system-setup-and-configuration["Paso 4: Pasos completos para la instalación y la configuración del sistema"].
@@ -439,7 +441,7 @@ Consulte la ayuda en línea de su portátil para obtener más información.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
-image::../media/drw_autodiscovery_controler_select.png[selección del controlador de detección automática drw]
+image::../media/drw_autodiscovery_controler_select.png[Seleccione un icono de ONTAP]
 
 +
 .. Abra el Explorador de archivos.
@@ -476,7 +478,7 @@ NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo
 
 .. Conecte el portátil o la consola al conmutador de la subred de administración.
 +
-image::../media/drw_console_client_mgmt_subnet_affa250.png[subred de gestión de cliente de consola drw affa250]
+image::../media/drw_console_client_mgmt_subnet_affa250.png[Conectándose a la subred de gestión]
 
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 

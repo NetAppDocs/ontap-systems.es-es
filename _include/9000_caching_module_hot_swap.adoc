@@ -1,16 +1,7 @@
----
-permalink: a700/caching-module-hot-swap.html 
-sidebar: sidebar 
-keywords: aff a700, fas9000, hot swap, replace, FlashCache 
-summary: 'Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM10 solo en la ranura 6 de sistemas FAS9000. A partir de ONTAP 9.4, puede cambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o de un proveedor compatible distinto.' 
----
-= Intercambio en caliente de un módulo de almacenamiento en caché: AFF A700
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
 Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM10 solo en la ranura 6 de sistemas FAS9000. A partir de ONTAP 9.4, puede cambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o de un proveedor compatible distinto.
 
 .Antes de empezar
@@ -76,7 +67,7 @@ NOTE: Consulte https://docs.netapp.com/us-en/ontap-cli-9121/["Páginas manuales 
 
 . Retire el módulo de almacenamiento en caché:
 +
-image::../media/drw_9000_remove_flashcache.png[drw 9000 retire el flashcache]
+image::../media/drw_9000_remove_flashcache.png[Reemplace el módulo de almacenamiento en caché]
 
 +
 |===
