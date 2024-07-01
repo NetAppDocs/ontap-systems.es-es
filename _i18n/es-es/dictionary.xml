@@ -135,7 +135,6 @@
   <block id="3b746021467b635137eb94fcf5c83573" category="section-title">Paso 3: Sustituya la batería RTC</block>
   <block id="f663c131d87c9bf95d21d63d6579dfb8" category="paragraph">Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.</block>
   <block id="65c45f25b11ef516aa4180bd435460a0" category="list-text">Localice la batería RTC.</block>
-  <block id="78cdea792972b347c50369463c3d2407" category="image-alt">batería rtc drw 2600</block>
   <block id="e789dadff6ab02fe418b101bca452d66" category="list-text">Tire suavemente de la batería para separarla del soporte, gírela del soporte y, a continuación, levántela para sacarla del soporte.</block>
   <block id="9e5b0cf96e39c07e340d8e7e3f98141d" category="admonition">Tenga en cuenta la polaridad de la batería mientras la retira del soporte. La batería está marcada con un signo más y debe colocarse en el soporte correctamente. Un signo más cerca del soporte le indica cómo debe colocarse la batería.</block>
   <block id="ea4330063aff847ec18a76ddefbeb737" category="list-text">Retire la batería de repuesto de la bolsa de transporte antiestática.</block>
@@ -1480,7 +1479,6 @@
   <block id="4f4fd54acab309f1a5e65fa28f282bda" category="paragraph">Debe localizar la batería RTC dentro del módulo del controlador y seguir la secuencia específica de pasos. Consulte el mapa de FRU situado dentro del módulo del controlador para conocer la ubicación de la batería RTC.</block>
   <block id="1d865762dc572ea89458b46f1d146cdf" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para sustituir la batería RTC.</block>
   <block id="5e67b9c469093782258f9da50efaaa49" category="video-title">Animación: Sustituya la batería RTC</block>
-  <block id="ec83112a8c30bb826b259d5c77a3c3ca" category="image-alt">Batería rtc drw A400</block>
   <block id="373905f2383b6a7f8d43c02143d4933e" category="list-text">Localice, retire y sustituya la batería RTC:</block>
   <block id="a4d0ae56587a2cd3019212721f46adfa" category="list-text">Mediante el mapa de FRU, localice la batería RTC en el módulo del controlador.</block>
   <block id="78891883edccb7cc97dd58049b3468fd" category="list-text">Cierre el conducto de aire.</block>
@@ -2157,22 +2155,17 @@
   <block id="3fdd87b9e91d1f4dbea3152a3a2b8d0b" category="paragraph">X6566B-3-R6 (112-00300), 3 m.</block>
   <block id="8b6d57e94ef10af41be18d0675f88ca3" category="paragraph">X6566B-5-R6 (112-00301), 5 m</block>
   <block id="ddac2f549f656aa8118a6bcb0bd45703" category="paragraph">X6554-R6 (112-00189), 15 m.</block>
-  <block id="caaa8a847335f7164117894cfe79e731" category="paragraph"><block ref="caaa8a847335f7164117894cfe79e731" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2dbee959c43fd0b0e9eab0968ff31b96" category="image-alt">conector lc de fibra de cable de la oie</block>
   <block id="fea037cb34a319bd3b823395ee5fdd07" category="paragraph">Red host SFP + FC</block>
   <block id="490cb76fd3c75ff8166e251d789f799e" category="paragraph">Host Ethernet y red de gestión</block>
   <block id="9cce7e4c2aef0e645d2e38ae612c4ed8" category="list-text">Descargue y complete el <block ref="cb0390cbe2f3cf678134885ff143b6ba" category="inline-link-macro-rx"></block>.</block>
   <block id="78b39d88cb979ddb300a4cf2c6cdb1be" category="image-alt">instalación de ARM de gestión de cables drw</block>
   <block id="fcca883f68c4e92b98d0f294614cda60" category="admonition">Si se conecta a un switch óptico, inserte el SFP en el puerto de la controladora antes de establecer el cableado al puerto.</block>
-  <block id="73da34bccb5db786798534ea5b6eb1d6" category="image-alt">gif animados del cableado de red unificado drw c190 tnsc</block>
   <block id="29232642e257cc5bf9288d51db5b38a1" category="paragraph">Conecte los puertos de interconexión del clúster entre sí mediante el cable de interconexión del clúster:</block>
   <block id="4f6495d505dded911984524478da41af" category="list-text">e0a a e0a</block>
   <block id="c0a9eb11c9962c2eb967f53a4845bf1a" category="paragraph">Conecte los puertos e0M a los switches de red de gestión mediante los cables RJ45:</block>
-  <block id="d7d7ce9a70c375da7dd9edb7b21a9134" category="image-alt">gif animados de cableado de red unificado conmutado de drw c190</block>
   <block id="81b22135a51aae23b34a49fb4dc95ad2" category="paragraph">Cable e0a y e0b a los switches de interconexión del clúster con el cable de interconexión del clúster:</block>
-  <block id="0df32eef6f99f6d05877f5da86a45063" category="image-alt">gif animados del cableado de red ethernet drw c190 tnsc</block>
   <block id="836e597d16643401627d14a351ba6a9c" category="paragraph">Utilice el cable RJ45 Cat 6 para conectar los puertos e0c a través de e0f a la red host:</block>
-  <block id="ac3d560a40b4d6d28fac097677ecaa8d" category="image-alt">cableado animado de red ethernet conmutada drw c190</block>
   <block id="e54c29276af1d0eb8b609db7484efd71" category="admonition">El arranque inicial puede tardar hasta ocho minutos.</block>
   <block id="c148c3a234659fa32cba3b91e58f84d2" category="admonition">La configuración de puerto predeterminada para los sistemas de configuración unificada es el modo CNA; si se conecta a una red de host de FC, debe modificar los puertos para el modo FC.</block>
   <block id="7260ebf97e775ac420f626e20bb3bf2d" category="list-text">Conecte el cable de la consola al portátil o a la consola y conecte el puerto de la consola del controlador mediante el cable de consola incluido con el sistema.</block>
@@ -2305,7 +2298,6 @@
   <block id="bea349f51fb4fb1a5633e236822fa5b4" category="list-text">Pulse la pestaña de liberación.</block>
   <block id="c9b10c926499cf0c03511222cfe41c81" category="list-text">Extraiga el disipador de calor.</block>
   <block id="72899bf5d7c3e86a01a078b9f3c1b933" category="paragraph">El sistema de almacenamiento viene con dos ranuras disponibles para el módulo de almacenamiento en caché y sólo una ranura está ocupada, de forma predeterminada.</block>
-  <block id="407e11715a937f08e831c6ea7ba60d89" category="image-alt">fcache drw rxl</block>
   <block id="bb9fc9627a5a2fc0453a6abc13985482" category="list-text">Mueva el módulo de almacenamiento en caché al nuevo módulo de controlador y, a continuación, alinee los bordes del módulo de almacenamiento en caché con la carcasa del zócalo y empújelo suavemente en el zócalo.</block>
   <block id="06c9138c9dda8dce357c29f596493704" category="list-text">Compruebe que el módulo de almacenamiento en caché está asentado completamente en el zócalo. Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócalo.</block>
   <block id="048793ffb893f6b4afd5d4d5b5ff23b9" category="list-text">Vuelva a colocar y empuje el disipador de calor hacia abajo para conectar el botón de bloqueo en la carcasa del módulo de caché.</block>
@@ -4685,7 +4677,6 @@
   <block id="d487dde166c80d206e555bcad2089ffa" category="list-text">Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.</block>
   <block id="bf1b040c014a82c7128928f952e50325" category="paragraph">Lengüetas de bloqueo del conducto de aire</block>
   <block id="72188531636fc5815089233196e1ec35" category="paragraph">Elevadores</block>
-  <block id="6199e9ac737bb64b5d2e7bfb2a3da5a0" category="image-alt">reemplazo de la batería drw a700s rtc</block>
   <block id="a7f375a810d73a673cfac8d89305ccac" category="paragraph">Batería RTC y carcasa</block>
   <block id="38681c139b912b74e9f2c478df5e20c0" category="summary">Para sustituir una batería NVRAM en el sistema, debe extraer el módulo del controlador del sistema, extraer la batería, sustituir la batería y, a continuación, volver a instalar el módulo del controlador.</block>
   <block id="ddb14ada2ef97be8ad7f40139160426e" category="doc">Sustituya la batería NVRAM - AFF A700s</block>
@@ -4693,7 +4684,6 @@
   <block id="94a2f43b7e5299d436a356db402524cc" category="section-title">Paso 3: Sustituya la batería NVRAM</block>
   <block id="b6e4e85c37e79abd40b307ddc60db9d3" category="paragraph">Para sustituir la batería de NVRAM, debe quitar la batería de NVRAM con errores del módulo de la controladora e instalar la batería de NVRAM de reemplazo en el módulo de la controladora.</block>
   <block id="50596866677de4b15c95c4f2ac253894" category="list-text">Localice la batería NVRAM en el lado izquierdo del módulo vertical, Riser 1.</block>
-  <block id="cad0b5b8d9a3a648fed2d2cf9843ff68" category="image-alt">reemplazo de la batería drw a700s nvme</block>
   <block id="5a66fe4f16ba9a8ec80a9b48be30d41b" category="paragraph">Enchufe de la batería NVRAM</block>
   <block id="8e50b634b9172df00520f757e65899a2" category="paragraph">Lengüeta azul de bloqueo de la batería NVRAM</block>
   <block id="e4191ffb24cf00ba5d94d1981ea4fb72" category="list-text">Presione la lengüeta de bloqueo azul del soporte de la batería, de modo que el pestillo se suelte del soporte.</block>
@@ -4717,7 +4707,6 @@
   <block id="25e84b8b11804a262c8f96f5c0494341" category="list-text">Gire el pestillo de bloqueo del módulo en el lado izquierdo del elevador hacia arriba y hacia los módulos de ventilador.</block>
   <block id="9b87501921d55169b6d5df97c4ac5eff" category="paragraph">La tarjeta vertical PCIe se eleva ligeramente del módulo de la controladora.</block>
   <block id="2995e2f5de5ab5f7e237aaaca60f083f" category="list-text">Levante la tarjeta vertical PCIe, colóquela hacia arriba hacia los ventiladores de modo que el borde de chapa metálica de la tarjeta vertical salga del borde del módulo de la controladora, extraiga la tarjeta vertical del módulo de la controladora y, a continuación, colóquela en una superficie plana y estable.</block>
-  <block id="8301780f2b7742ba6677d0c2900a7256" category="image-alt">drw a700s pcie sustituir</block>
   <block id="8adcba29860559485059fb792f38322a" category="paragraph">Pestillo de bloqueo de la tarjeta vertical</block>
   <block id="a5a2e7319e6511ec0e394434ba44783a" category="paragraph">Soporte de bloqueo de la tarjeta</block>
   <block id="2bc8b7df71c8cc78b90710217056fad5" category="paragraph">Tarjeta vertical 2 (tarjeta vertical media) y tarjetas PCI en las ranuras de la tarjeta vertical 2 y 3.</block>
@@ -4750,7 +4739,6 @@
   <block id="e160675dcb2bc6ebdb28380884820e26" category="paragraph">Cuando se muestra el controlador dañado<block ref="fd66c964768074eb90f4f1426229bf3e" prefix=" " category="inline-code"></block>, Pulse Ctrl-C y, a continuación, responda<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="3f09782d88b17a1d4d58adb09f8cd8ee" category="paragraph">Para sustituir un DIMM, debe localizarlo en el módulo de la controladora mediante el mapa DIMM en el interior del módulo de la controladora y, a continuación, sustitúyalo según la secuencia específica de pasos.</block>
   <block id="9de291eec146aa309ed46727b945c6d4" category="list-text">Extraiga la tarjeta vertical correspondiente.</block>
-  <block id="36ac39cea070e713b0fb0a0f54db88b7" category="image-alt">drw a700s dimm sustituir</block>
   <block id="a4e4695daf3bcdb3f2c31bf35c0a5950" category="paragraph">Tapa del conducto de aire</block>
   <block id="ce1a3d7dcbc5b34bf0ed36bacde61766" category="paragraph">Tarjeta vertical 1 y banco DIMM 1-4</block>
   <block id="526b2479f6412e63d5f244b19de1b2d9" category="paragraph">Tarjeta vertical 2 y banco DIMM 5-8 y 9-12</block>
@@ -4787,7 +4775,6 @@
   <block id="5cee811338d57ecf44d6f22dca7fcd4b" category="list-text">Gire el pestillo de bloqueo de la tarjeta vertical en el lado izquierdo de la tarjeta vertical hacia arriba y hacia los ventiladores.</block>
   <block id="62b41ad108afe6b4d651d8da18394eea" category="paragraph">La tarjeta vertical NVRAM se eleva ligeramente del módulo de la controladora.</block>
   <block id="d3110f91324e5f8cfcd28600df5ac2d9" category="list-text">Levante la tarjeta vertical NVRAM, levántela hacia los ventiladores de modo que el borde de chapa metálica de la tarjeta vertical salga del borde del módulo de la controladora y levante la tarjeta vertical hacia arriba para extraerla del módulo de la controladora, Y, a continuación, colóquela en una superficie plana y estable para que pueda acceder a la tarjeta NVRAM.</block>
-  <block id="2d0b5667d44ad59ef139c09efe0999d0" category="image-alt">drw a700s nvme reemplazar</block>
   <block id="f3be4d98894ffbfb83050debf5045c14" category="paragraph">Pestillo de bloqueo de la tarjeta vertical 1</block>
   <block id="ae936646ba28c5499caf8ff8a09c1158" category="paragraph">Enchufe del cable de la batería NVRAM que se conecta a la tarjeta NVRAM</block>
   <block id="2466ce84e0b8be725ba14bd0f97ac7cc" category="paragraph">Tarjeta NVRAM</block>
@@ -4810,7 +4797,6 @@
   <block id="d49fe2e5280db996ef1801aa2312cf51" category="list-text">Busque el soporte de arranque:</block>
   <block id="ea47f8c3d75d0ae8c63333493732e287" category="list-text">Abra el conducto de aire, si es necesario.</block>
   <block id="95b0ed2bf52614c4803a52c7bfbc4da6" category="list-text">Si es necesario, extraiga la tarjeta vertical 2, el módulo PCIe central, desbloqueando el pestillo de bloqueo y extrayendo la tarjeta vertical del módulo de la controladora.</block>
-  <block id="c5f3456e0fd8df43b4786bdc636b23b4" category="image-alt">reemplazo del soporte de arranque drw a700s</block>
   <block id="3e4e796f89697f9552e6f9741f53026c" category="paragraph">Tarjeta «riser» 2 (módulo PCIe medio)</block>
   <block id="10cacafa178fdb6b46f50bea9be0d8cf" category="paragraph">Tornillo del soporte del maletero</block>
   <block id="a3d6314a25280e2e38308f58486d3929" category="list-text">Extraiga el soporte de arranque del módulo del controlador:</block>
@@ -4823,7 +4809,6 @@
   <block id="94e65bd9e374f956bd264382aa908f8c" category="paragraph">No apriete en exceso el tornillo o podría dañar el soporte del maletero.</block>
   <block id="db804e965118c7ddc7ce55f19a1af1bc" category="section-title">Paso 5: Mueva los ventiladores</block>
   <block id="913828212c34150e0ba19cde9f31f04f" category="list-text">Retire el módulo del ventilador pinzando las lengüetas de bloqueo del lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.</block>
-  <block id="fe45ee98537552d5aae5b293496a5f0f" category="image-alt">drw a700s, sustituya el ventilador</block>
   <block id="a1502c1dce561f00d4aba662f80c5fa3" category="cell">Lengüetas de bloqueo del ventilador</block>
   <block id="219dba91289309b728804e9ddd5f60be" category="list-text">Mueva el módulo de ventilador al módulo de controlador de repuesto y, a continuación, instale el módulo de ventilador alineando sus bordes con la abertura del módulo de controlador y, a continuación, deslice el módulo de ventilador hacia el módulo de controlador hasta que los pestillos de bloqueo encajen en su lugar.</block>
   <block id="2dc8b6264a38dd08bad002bfa0761258" category="section-title">Paso 6: Mover los DIMM del sistema</block>
@@ -4839,7 +4824,6 @@
   <block id="d74d29cbadd2a2644ab75e283955e9e6" category="paragraph">Para instalar una tarjeta «riser» PCIe, debe seguir una secuencia específica de pasos.</block>
   <block id="139ce749ffad6c982ef3cddf9637b110" category="section-title">Paso 10: Mueva la fuente de alimentación</block>
   <block id="00fa8cc29d7e57d138649204e3e51f5a" category="paragraph">Cuando reemplace un módulo de controlador, debe mover la fuente de alimentación y la fuente de alimentación del módulo de controlador dañado al módulo de controlador de reemplazo.</block>
-  <block id="c27a73d454940b40747d6959d070735e" category="image-alt">drw a700s reemplaza la fuente de alimentación</block>
   <block id="21b899b642982e6355b933dbbe5ae8d0" category="list-text">Retire el panel de relleno de la PSU del módulo del controlador dañado y, a continuación, instálelo en el módulo del controlador de sustitución.</block>
   <block id="fda53941888fba701f57352c8efaee65" category="section-title">Paso 11: Instale el módulo del controlador</block>
   <block id="3da447ebdb632dcafa2eee47ac09d128" category="paragraph">Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y luego arrancar en modo de mantenimiento.</block>
@@ -4958,11 +4942,9 @@
   <block id="406be05f374ba93dabeb2514a008179a" category="doc">Sustituya el hardware del módulo de la controladora - FAS8300 y FAS8700</block>
   <block id="8555f8973ccc4539a56ac495380c89d5" category="inline-link">Extracción de los elevadores vacíos del módulo del controlador de recambio</block>
   <block id="d5e62cab20ddc280f38e9a81562855fc" category="paragraph"><block ref="d5e62cab20ddc280f38e9a81562855fc" category="inline-link-rx"></block></block>
-  <block id="b8f99a879bdae690f650b2171355b5bb" category="image-alt">retire la tarjeta vertical drw 8300 vacía</block>
   <block id="6976de191bb895bccff42aea7f5ef312" category="section-title">Paso 6: Mover módulos de almacenamiento en caché</block>
   <block id="1e6c27613480cee2fca639b93121fd62" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover módulos de almacenamiento en caché al nuevo módulo de controlador.</block>
   <block id="1d3cf3e64d50da3c959f6c6aefc86da4" category="video-title">Animación: Permite mover los módulos de almacenamiento en caché</block>
-  <block id="98e31120864bf3bc3ac05e5585fc2718" category="image-alt">drw A400 reemplace la memoria Flash Cache</block>
   <block id="6ce420982732936565ee6cdc23281310" category="list-text">Mueva los módulos de almacenamiento en caché del módulo de controlador dañado al módulo de controlador de sustitución:</block>
   <block id="37532f61023625948a2dff3e87ad659d" category="list-text">Presione la pestaña azul de liberación situada al final del módulo de caché, gire el módulo hacia arriba y, a continuación, extraiga el módulo del zócalo.</block>
   <block id="d84a3f8a48a291e94be45b2446ab30e1" category="list-text">Mueva el módulo de almacenamiento en caché al mismo socket del módulo de controladora de reemplazo.</block>
@@ -4983,10 +4965,7 @@
   <block id="f406838ab1af1615895d90b4b0439c67" category="doc">Guía detallada: FAS8300 y FAS8700</block>
   <block id="1f583998630e94806bf5b9e059227dd4" category="paragraph"><block ref="1f583998630e94806bf5b9e059227dd4" category="inline-link-rx"></block></block>
   <block id="9b0500b65158795cfc5abb2becae4e80" category="paragraph">En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable que no aparece en la tabla, consulte<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> para localizar el cable e identificar su uso.</block>
-  <block id="0082203fcfff94aab099c16763176076" category="image-alt">Cableado de red drw fas8300 TNSC</block>
-  <block id="507f9f4c8680d2c9a9bcba815a7976e8" category="image-alt">cableado de red conmutada drw fas8300</block>
   <block id="598ec2ec2714b9a699a42898b690e48d" category="section-title">Opción 1: Conecte las controladoras a las bandejas de unidades SAS</block>
-  <block id="56cbc310abb53560871f37318fe0636d" category="image-alt">drw fas8300 tres bandejas ds224c</block>
   <block id="ba4fadf78396a2db14bc9a4e0f707f9d" category="doc">Sustituya el medio de arranque - FAS8300 y FAS8700</block>
   <block id="4a848babffe3702bffe9efa29dd12c61" category="paragraph">Puede utilizar la animación, ilustraciones o los pasos escritos siguientes para reemplazar el soporte de arranque.</block>
   <block id="fc68b2259a318d9688e92ea62281a6d1" category="video-title">Animación: Reemplace el soporte de arranque</block>
@@ -5009,7 +4988,6 @@
   <block id="70edce28424200208b28981e9b221707" category="list-text">Aunque el contenido del módulo de almacenamiento en caché está cifrado, se recomienda borrar el contenido del módulo antes de reemplazarlo. Para obtener más información, consulte<block ref="89de74d6a86df9137b0ef3fb03a43036" category="inline-link-rx"></block> De su sistema en el sitio de soporte de NetApp.</block>
   <block id="bb90eba065615f7ac639d1758ba84812" category="paragraph">Puede utilizar la animación, ilustración o los pasos escritos siguientes para reemplazar un módulo de almacenamiento en caché.</block>
   <block id="dd6deb08e1adc766a156e3146f0b65e7" category="video-title">Animación - reemplace el módulo de caché</block>
-  <block id="540a3a140ba4c7da7729d8bbfbe06861" category="image-alt">drw 8300 reemplace la memoria flash</block>
   <block id="b08a9c5bee019bb00ec5f4f00b59819e" category="list-text">Utilice el mapa FRU del módulo de la controladora para localizar el módulo de almacenamiento en caché con fallos y quitarlo:</block>
   <block id="2ceb6141859316070c657f406135cd1c" category="paragraph">Según la configuración existente, es posible que haya cero, uno o dos módulos de almacenamiento en caché en el módulo de la controladora. Utilice el mapa de FRU dentro del módulo de la controladora para ayudarle a localizar el módulo de almacenamiento en caché.</block>
   <block id="58a5256eec02e1fef80c02b3deffc3f5" category="list-text">Pulse la pestaña azul de liberación.</block>
@@ -8790,4 +8768,36 @@ SFP+ (destino/iniciador)</block>
   <block id="360e760cf4c2611f24bef9936525c878" category="image-alt">Disposición horizontal del portador de la unidad</block>
   <block id="9302993f1cbe0a62b1c08bac8ff42e30" category="image-alt">Indicadores LED de actividad de la unidad</block>
   <block id="6daeeb8640b388bf728f2d3fa2ceac68" category="image-alt">LED de alerta de la unidad</block>
+  <block id="3d01b4425d5fa4915f6e209ff5ebc5fa" category="image-alt">Sustituya la tarjeta NVRAM</block>
+  <block id="1471ac39cb9785883e4f8e0156141768" category="image-alt">Sustituya una tarjeta PCIe</block>
+  <block id="d41ba6049ada491c1bedd4e982b5a12a" category="image-alt">Sustituya un ventilador</block>
+  <block id="732cb0105e10dcf3046c4f8dd9a5a991" category="image-alt">Sustituya la batería NVRAM</block>
+  <block id="ca80c728e158c474fa562e4e6fe53868" category="image-alt">Sustituya la PSU</block>
+  <block id="ba465a4963e9d81b0df00697f6765e53" category="image-alt">Sustituya la batería del RTC</block>
+  <block id="b64d12e71baab796101791fd15a05a3d" category="image-alt">Cableado de clústeres de dos nodos sin switches</block>
+  <block id="9405a4b49345c23900c5d7b5d872d67a" category="image-alt">Cableado de redes de clúster conmutado</block>
+  <block id="2808a423f10e955f0c8304464c9f2414" category="image-alt">Conecte las bandejas NS224 a las controladoras</block>
+  <block id="c0ec9acb24ae98cfebde995d130a61a6" category="image-alt">Conecte el cable de tres bandejas NS224 a las controladoras</block>
+  <block id="92f7f93ee79f5a69c599aa1657e9464d" category="inline-image-macro">Cable de red óptica SFP</block>
+  <block id="2fd2c03db6de3bb625cb5f3d864f2dc0" category="paragraph"><block ref="2fd2c03db6de3bb625cb5f3d864f2dc0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40583e3c9e34e396cefb248dc9173b2d" category="image-alt">Cable LC de red Fibre Channel</block>
+  <block id="c81e616187fdaca7623c438cb82e7556" category="image-alt">Animación de cableado de red unificada de clúster sin switches de dos nodos</block>
+  <block id="44fd0bb5c642a9c9019ef389713404b7" category="image-alt">Animación de cableado de red Eternet de clúster sin switch de dos nodos</block>
+  <block id="ed839f063b04ef2bf205198607e99c45" category="image-alt">Animación de cableado de red unificada de clúster conmutado</block>
+  <block id="9aa93e3b751066980500f1c3a9b9a3ad" category="image-alt">Animación de cableado de red Ethernet de clúster conmutado</block>
+  <block id="a288981c3d3562c19205360c4a1975aa" category="image-alt">Sustituya la batería del RTC</block>
+  <block id="080a22aca65cc690a4adc58019e01c5b" category="image-alt">Extracción de los brazos organizadores de cables</block>
+  <block id="415d68191d2fba8f12396142cd83b078" category="image-alt">Retire o sustituya el módulo de almacenamiento en caché</block>
+  <block id="fc29ed0d741870e4e8c36ca82510cf9a" category="image-alt">Extraiga y rellene el módulo de almacenamiento en caché</block>
+  <block id="6bc6ce8422771329317122532e3badfd" category="image-alt">Retire y sustituya el módulo de almacenamiento en caché</block>
+  <block id="88d9a1b17863a743c5d31333c8bd6c82" category="image-alt">Retire el elevador vacío</block>
+  <block id="8edb2beda5152e63e95d47b37fce7aa7" category="image-alt">Retire la tarjeta mezzanine</block>
+  <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">Diagrama de cableado de clústeres de dos nodos sin switches</block>
+  <block id="2d2cf47916959433721b7cc7d46cdea2" category="image-alt">Diagrama de cableado de la red de clúster conmutado</block>
+  <block id="f9fdbcb98f873b6faf3dd8bc1752740e" category="image-alt">Tres diagrama del cableado de la bandeja DS224C</block>
+  <block id="4af594348d1cc40a4fa6849ea04fd49a" category="image-alt">Etiqueta de precaución del peso de elevación</block>
+  <block id="3f4027780297605ef158a649078063e9" category="image-alt">Conecte los brazos organizadores de cables</block>
+  <block id="e84bd7a7cafaabc7b1743876dcc73c70" category="image-alt">Diagrama de cableado compuesto de cluster de dos nodos sin switches</block>
+  <block id="0372c9caab5ee11faf1ffac3ef3c46fa" category="inline-image-macro">Diagrama de cableado compuesto de cluster conmutado</block>
+  <block id="009e65f17aa2f40deb1c718bea3bf98b" category="paragraph"><block ref="009e65f17aa2f40deb1c718bea3bf98b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
