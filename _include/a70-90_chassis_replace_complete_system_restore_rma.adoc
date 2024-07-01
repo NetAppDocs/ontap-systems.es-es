@@ -1,0 +1,38 @@
+= Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+:allow-uri-read: 
+
+
+Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
+
+
+
+== Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+
+Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
+
+. En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado para el chasis no coincide con la configuración del sistema:
++
+.. Establezca el estado de alta disponibilidad para el chasis: `ha-config modify chassis _HA-state_`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+*** `ha`
+*** `mcc`
+
+
+.. Confirme que el ajuste ha cambiado: `ha-config show`
+
+
+. Si aún no lo ha hecho, puede volver a obtener el resto de su sistema.
+
+
+
+
+== Paso 2: Devuelve la parte fallida a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

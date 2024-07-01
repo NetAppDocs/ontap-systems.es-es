@@ -1,0 +1,86 @@
+---
+permalink: a70-90/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff a70 aff a90 maintenance, maintenance, repairing aff a70 aff a90, repairing a70 aff a90, replace a70 aff a90 components 
+summary: Mantenga el hardware AFF A70, AFF A90 
+---
+= Mantener el hardware de AFF A70 y AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para los sistemas de almacenamiento AFF A70 y AFF A90, se pueden realizar procedimientos de mantenimiento en los siguientes componentes.
+
+
+
+== Soporte de arranque
+
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+
+== Chasis
+
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+== Controladora
+
+Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
+
+
+
+== DIMM
+
+Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
+
+
+
+== Unidad
+
+Una unidad es un dispositivo que proporciona medios de almacenamiento físico para datos.
+
+
+
+== Ventilador
+
+El ventilador enfría el controlador.
+
+
+
+== NVRAM
+
+La NVRAM (memoria de acceso aleatorio no volátil) es un módulo que permite a la controladora proteger y guardar datos en movimiento si el sistema sufre un corte de alimentación. El ID del sistema reside en el módulo de NVRAM. Cuando se sustituye, la controladora asume el nuevo ID del sistema desde el módulo NVRAM de reemplazo.
+
+
+
+== Batería de NV
+
+La batería de NVRAM es responsable de suministrar alimentación al módulo de NVRAM mientras los datos en tránsito se separan a la memoria flash después de una pérdida de alimentación.
+
+
+
+== Módulo de I/O.
+
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+== Suministro de alimentación
+
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.
+
+
+
+== Batería del reloj en tiempo real
+
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+
+
+== Módulo de gestión del sistema
+
+El módulo de gestión del sistema proporciona la interfaz entre el controlador y una consola o portátil para el mantenimiento del controlador o del sistema. El módulo de gestión del sistema contiene el soporte de arranque y almacena el número de serie del sistema (SSN).

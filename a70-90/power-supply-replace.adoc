@@ -1,0 +1,164 @@
+---
+permalink: a70-90/power-supply-replace.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, replace a power supply 
+summary: El reemplazo de una fuente de alimentación implica desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, retirar la fuente de alimentación antigua e instalar la fuente de alimentación de repuesto y, a continuación, volver a conectarla a la fuente de alimentación. 
+---
+= Sustituya una fuente de alimentación: AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una fuente de alimentación (PSU) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de reemplazo y, a continuación, volver a conectarla a la fuente de alimentación.
+
+Los sistemas de alimentación son redundantes y intercambiables en caliente.
+
+.Acerca de esta tarea
+Este procedimiento se escribe para sustituir una fuente de alimentación por vez.
+
+
+IMPORTANT: No mezcle las PSU con diferentes índices de eficiencia o tipos de entrada diferentes. Sustituya siempre como por ejemplo.
+
+Utilice el procedimiento adecuado para su tipo de PSU: CA o CC.
+
+[role="tabbed-block"]
+====
+.Opción 1: Sustituya una fuente de alimentación de CA
+--
+Para sustituir una fuente de alimentación de CA, lleve a cabo los siguientes pasos.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación que desea sustituir, basándose en los mensajes de error de la consola o a través del LED rojo de fallo de la fuente de alimentación.
+. Desconecte la fuente de alimentación:
++
+.. Abra el retenedor del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.
+
+
+. Retire la PSU girando el asa hacia arriba, presione la lengüeta de bloqueo y tire de la PSU para extraerla del módulo de la controladora.
++
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.
+
++
+image::../media/drw_a70-90_psu_remove_replace_ieops-1368.svg[Sustituya la PSU]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+ a| 
+Lengüeta de bloqueo de PSU de terracota
+
+|===
+. Instale la fuente de alimentación de repuesto en el módulo del controlador:
++
+.. Con ambas manos, sujete y alinee los bordes de la PSU de repuesto con la abertura del módulo del controlador.
+.. Empuje con cuidado la PSU hacia el módulo de la controladora hasta que la lengüeta de bloqueo haga clic en su lugar.
++
+Las fuentes de alimentación sólo se acoplarán correctamente al conector interno y se bloquearán de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la fuente de alimentación hacia el sistema.
+
+
+
+. Vuelva a conectar el cableado de la PSU:
++
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación a la fuente de alimentación con el retenedor del cable de alimentación.
+
+
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+
+
+--
+.Opción 2: Sustituya una fuente de alimentación de CC
+--
+Para sustituir una fuente de alimentación de CC, lleve a cabo los siguientes pasos.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación que desea sustituir, basándose en los mensajes de error de la consola o a través del LED rojo de fallo de la fuente de alimentación.
+. Desconecte la fuente de alimentación:
++
+.. Desenrosque el conector del cable D-SUB DC con los tornillos de mariposa del tapón.
+.. Desenchufe el cable de la fuente de alimentación y colóquelo a un lado.
+
+
+. Retire la PSU girando el asa hacia arriba, presione la lengüeta de bloqueo y tire de la PSU para extraerla del módulo de la controladora.
++
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[Retire una fuente de alimentación de CC]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+ a| 
+Tornillos de mariposa
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2,width=30px"]
+ a| 
+Conector del cable de alimentación de CC D-SUB
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["Número de llamada 3,width=30px"]
+ a| 
+Asa de la fuente de alimentación
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["Número de llamada 4,width=30x"]
+ a| 
+Lengüeta azul de bloqueo de la PSU
+
+|===
+. Instale la fuente de alimentación de repuesto en el módulo del controlador:
++
+.. Con ambas manos, sujete y alinee los bordes de la PSU de repuesto con la abertura del módulo del controlador.
+.. Empuje con cuidado la PSU hacia el módulo de la controladora hasta que la lengüeta de bloqueo haga clic en su lugar.
++
+Las fuentes de alimentación sólo se acoplarán correctamente al conector interno y se bloquearán de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la fuente de alimentación hacia el sistema.
+
+
+
+. Vuelva a conectar el cable de alimentación D-SUB DC:
++
+.. Enchufe el conector del cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación a la PSU con los tornillos de ajuste manual.
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+
+
+--
+====

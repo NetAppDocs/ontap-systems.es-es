@@ -1,0 +1,46 @@
+= 
+:allow-uri-read: 
+
+
+Vuelva a instalar el módulo del controlador y reinícielo.
+
+. Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
++
+Debe quedar a ras de la chapa metálica del módulo del controlador.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
+
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
+
+
+. Conecte los cables de alimentación en las fuentes de alimentación.
++
+
+NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
+
++
+El módulo del controlador arranca cuando se restaura la alimentación. Si arranca en el aviso del CARGADOR, reinicie la controladora con `boot_ontap` el comando.
+
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+

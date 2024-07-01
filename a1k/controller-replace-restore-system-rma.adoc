@@ -1,0 +1,35 @@
+---
+permalink: a1k/controller-replace-restore-system-rma.html 
+sidebar: sidebar 
+keywords: aff a1k, how to restore NetApp Storage Encryption, how to complete the replacement process 
+summary: 'Para restaurar el sistema a su funcionamiento completo, debe verificar los LIF, comprobar el estado del clúster y devolver la parte con error a NetApp. Póngase en contacto con el servicio de asistencia técnica en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa) o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de sustitución.' 
+---
+= Restauración completa del sistema - AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para restaurar el sistema a su funcionamiento completo, debe verificar los LIF, comprobar el estado del clúster y devolver la parte con error a NetApp.
+
+
+
+== Paso 1: Verifique las LIF y compruebe el estado del clúster
+
+Antes de devolver el nodo _replacement_ al servicio, debe verificar que las LIF estén en sus puertos principales, comprobar el estado del clúster y restablecer el retorno al nodo primario automático.
+
+.Pasos
+. Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
++
+Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert -vserver * -lif *`
+
+. Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+
+
+
+
+== Paso 2: Devuelve la parte fallida a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"] para obtener más información.

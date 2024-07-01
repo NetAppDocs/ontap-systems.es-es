@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Vuelva a instalar el módulo del controlador y arranque.
+
+. Si aún no lo ha hecho, cierre el conducto de aire.
+. Alinee el extremo del módulo del controlador con la abertura en la carcasa y deslice el módulo del controlador en el chasis con las palancas giradas hacia fuera de la parte delantera del sistema.
+. Una vez que el módulo del controlador le impide deslizarlo más, gire las asas de la leva hacia dentro hasta que queden atrapadas debajo de los ventiladores
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el módulo del controlador en la carcasa para evitar dañar los conectores.
+
++
+El módulo del controlador comienza a arrancar tan pronto como está completamente asentado en la carcasa.
+
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+

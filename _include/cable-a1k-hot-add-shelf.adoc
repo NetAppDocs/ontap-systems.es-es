@@ -1,0 +1,94 @@
+= 
+:allow-uri-read: 
+
+
+Puede agregar en caliente hasta tres bandejas NS224 adicionales (para un total de cuatro bandejas) en una pareja de alta disponibilidad AFF A1K.
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para añadir en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Acerca de esta tarea
+* En este procedimiento se asume que el par de alta disponibilidad tiene al menos una bandeja NS224 existente.
+* Este procedimiento aborda los siguientes escenarios de adición en caliente:
++
+** Adición en caliente de una segunda bandeja a una pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora. (Instaló un segundo módulo de I/O y volvió a buscar la primera bandeja a ambos módulos de I/O o ya tenía la primera bandeja cableada a dos módulos de I/O. Conectará la segunda bandeja mediante cable a módulos de I/O).
+** Adición en caliente de una tercera bandeja a una pareja de alta disponibilidad con tres módulos I/O compatibles con RoCE en cada controladora. (Ha instalado un tercer módulo de I/O y conectará la tercera bandeja únicamente al tercer módulo de I/O).
+** Adición en caliente de una tercera bandeja a una pareja de alta disponibilidad con cuatro módulos de I/O compatibles con RoCE en cada controladora. (Ha instalado un tercer y cuarto módulo de E/S y conectará la tercera bandeja al tercer y cuarto módulo I/O).
+** Adición en caliente de una cuarta bandeja a una pareja de alta disponibilidad con cuatro módulos I/O compatibles con RoCE en cada controladora. (Ha instalado un cuarto módulo de I/O y ha vuelto a buscar la tercera bandeja a los módulos de I/O del tercer y cuarto, o bien ya se ha cableado la tercera bandeja al tercer y cuarto módulo I/O. Conectará mediante cable la cuarta bandeja al tercer y cuarto módulo I/O.
+
+
+
+
+.Pasos
+. Si la bandeja NS224 que está agregando en caliente será la segunda bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.
++
+De lo contrario, vaya al paso siguiente.
+
++
+.. Bandeja de cables NSM de un puerto e0a a a la ranura de controladora A 10 puertos a (e10a).
+.. Cable de la bandeja NSM Del puerto e0b a la ranura de la controladora B, puerto b (e11b) 11.
+.. Puerto e0a de la bandeja de cables NSM B a la ranura de la controladora B, puerto a 10 (e10a).
+.. Cable de la bandeja NSM B del puerto e0b a la ranura de la controladora A 11, puerto b (e11b).
++
+En la siguiente ilustración, se destaca el cableado de la segunda bandeja de la pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora:
+
++
+image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Cableado para AFF A1K con dos bandejas y dos módulos I/O.]
+
+
+
+. Si la bandeja NS224 que desea añadir en caliente será la tercera bandeja NS224 del par de alta disponibilidad con tres módulos de I/O compatibles con RoCE en cada controladora, complete los siguientes pasos secundarios. De lo contrario, vaya al paso siguiente.
++
+.. Conecte el puerto NSM de La bandeja de cables e0a al puerto a de la controladora A en la ranura 9 (e9a).
+.. Conecte el cable del puerto NSM A e0b a la ranura de la controladora B, puerto b (e9b) de 9.
+.. Conecte el puerto NSM B de la bandeja de cables e0a a la ranura de la controladora B, puerto a 9 (e9a).
+.. Cable del puerto e0b NSM B a la ranura de la controladora A 9, puerto b (e9b).
++
+En la siguiente ilustración se destaca el cableado de la tercera bandeja de la pareja de alta disponibilidad con tres módulos I/O compatibles con RoCE en cada controladora:
+
++
+image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Cableado para AFF A1K con tres bandejas y tres módulos de I/O.]
+
+
+
+. Si la bandeja NS224 que desea añadir en caliente será la tercera bandeja NS224 del par de alta disponibilidad con cuatro módulos de I/O compatibles con RoCE en cada controladora, complete los siguientes pasos secundarios. De lo contrario, vaya al paso siguiente.
++
+.. Conecte el puerto NSM de La bandeja de cables e0a al puerto a de la controladora A en la ranura 9 (e9a).
+.. Conecte el cable del puerto NSM A e0b a la ranura de la controladora B, puerto b (e8b) de 8.
+.. Conecte el puerto NSM B de la bandeja de cables e0a a la ranura de la controladora B, puerto a 9 (e9a).
+.. Cable del puerto e0b NSM B a la ranura de la controladora A 8, puerto b (e8b).
++
+En la siguiente ilustración se destaca el cableado de la tercera bandeja de la pareja de alta disponibilidad con cuatro módulos I/O compatibles con RoCE en cada controladora:
+
++
+image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Cableado para AFF A1K con tres bandejas y cuatro módulos de I/O.]
+
+
+
+. Si la bandeja NS224 que desea añadir en caliente será la cuarta bandeja NS224 de la pareja de alta disponibilidad con cuatro módulos de I/O compatibles con RoCE en cada controladora, complete los siguientes pasos secundarios.
++
+.. Conecte el puerto NSM de La bandeja de cables e0a al puerto a de la controladora A en la ranura 8 (e8a).
+.. Conecte el cable del puerto NSM A e0b a la ranura de la controladora B, puerto b (e9b) de 9.
+.. Conecte el puerto NSM B de la bandeja de cables e0a a la ranura de la controladora B, puerto a 8 (e8a).
+.. Cable del puerto e0b NSM B a la ranura de la controladora A 9, puerto b (e9b).
++
+En la siguiente ilustración se destaca el cableado de la cuarta bandeja de la pareja de alta disponibilidad con cuatro módulos I/O compatibles con RoCE en cada controladora:
+
++
+image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Cableado para AFF A1K con cuatro bandejas y cuatro módulos de I/O.]
+
+
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.

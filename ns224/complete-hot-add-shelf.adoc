@@ -1,0 +1,35 @@
+---
+permalink: ns224/complete-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, complete, drive, hot-add an ns224 drive shelf 
+summary: Si deshabilitó la asignación automática de unidades como parte de la preparación para la bandeja de unidades NS224 con adición de activos, debe asignar manualmente la propiedad de la unidad y, luego, volver a habilitar la asignación automática de unidades si es necesario. 
+---
+= Complete las bandejas NS224 para incorporar en caliente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si deshabilitó la asignación automática de unidades como parte de la preparación para la adición de caliente de la bandeja NS224, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.
+
+.Antes de empezar
+Debe haber cableado ya la bandeja según se indica para la pareja de alta disponibilidad. Consulte link:cable-overview-hot-add-shelf.html["Información general sobre el cableado para una incorporación en caliente"].
+
+.Pasos
+. Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
++
+Puede introducir el comando en cualquiera de las controladoras.
+
+. Asigne cada unidad: `storage disk assign -disk _disk_name_ -owner _owner_name_`
++
+Puede introducir el comando en cualquiera de las controladoras.
+
++
+Puede utilizar el carácter comodín para asignar más de una unidad a la vez.
+
+. Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node _node_name_ -autoassign on`
++
+Es necesario volver a habilitar la asignación automática de unidades en ambas controladoras.
+
+

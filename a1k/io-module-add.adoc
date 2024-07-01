@@ -1,0 +1,419 @@
+---
+permalink: a1k/io-module-add.html 
+sidebar: sidebar 
+keywords: aff a1k, add I/O module 
+summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas, extraer los módulos SFP y QSFP de las tarjetas y, a continuación, volver a instalar los módulos SFP y QSFP antes de cablear las tarjetas. 
+---
+= Añada el módulo I/O: AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede añadir un módulo de I/O al sistema de almacenamiento agregando un nuevo módulo de I/O a un sistema de almacenamiento con ranuras vacías o reemplazando un módulo de I/O por uno nuevo en un sistema de almacenamiento completamente lleno.
+
+.Antes de empezar
+* Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"^] para asegurarse de que el nuevo módulo de I/O es compatible con su sistema de almacenamiento y la versión de ONTAP que ejecuta.
+* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"^] Y utilice el mejor disponible para su módulo de E/S.
+* Asegúrese de que todos los demás componentes funcionan correctamente.
+
+
+
+
+== Opción 1: Agregue un módulo de E/S a un sistema de almacenamiento con ranuras vacías
+
+Puede agregar un módulo de E/S a una ranura para módulos vacía del sistema de almacenamiento.
+
+
+
+=== Paso 1: Apague el nodo dañado
+
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+=== Paso 2: Adición de módulos de I/O.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables de las fuentes de alimentación (PSU) del controlador.
++
+
+NOTE: Si el sistema de almacenamiento tiene PSU de CC, desconecte el bloque de cables de alimentación de la PSU.
+
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Retire el módulo de obturación de la ranura de destino del soporte:
++
+
+NOTE: En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.
+
++
+image::../media/drw_a1k_io_remove_replace_ieops-1382.svg[Retire un módulo de E/S AFF A1K]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+| Botón de bloqueo de leva 
+|===
++
+.. Presione el pestillo de leva del módulo de supresión de la ranura de destino.
+.. Gire el pestillo de la leva hacia abajo hasta el tope. Para los módulos horizontales, gire la leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
+
+
+. Instale el módulo de E/S:
++
+.. Alinee el módulo de E/S con los bordes de la abertura de la ranura del compartimento.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el cable al módulo de E/S.
++
+Si el módulo de E/S es una NIC, conecte el módulo a los conmutadores de datos.
+
++
+Si el módulo de I/O es un módulo de almacenamiento, conecte los cables a la bandeja NS224.
+
++
+
+NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
+
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Reinicie la controladora desde el aviso del CARGADOR: _Bye_
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
+. Devuelva la controladora de la controladora asociada: _Storage failover giveback -ofnode target_node_name_
+. Repita estos pasos para la controladora B.
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Añada una bandeja en caliente"^].
+
+
+
+
+== Opción 2: Agregue un módulo de I/O en un sistema de almacenamiento sin ranuras vacías
+
+Puede cambiar un módulo de E/S en una ranura de E/S de un sistema completamente ocupado eliminando un módulo de E/S existente y sustituyéndolo por otro módulo de E/S diferente.
+
+. Si está:
++
+[cols="1,2"]
+|===
+| Sustituyendo a... | Realice lo siguiente... 
+
+
+ a| 
+Módulo de E/S NIC con el mismo número de puertos
+ a| 
+Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.
+
+
+
+ a| 
+Módulo de E/S NIC con menos puertos
+ a| 
+Reasignar permanentemente las LIF seleccionadas a un puerto raíz diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^] para obtener información sobre el uso de System Manager para mover las LIF de forma permanente.
+
+
+
+ a| 
+Módulo de E/S de NIC con un módulo de E/S de almacenamiento
+ a| 
+Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^].
+
+|===
+
+
+
+
+=== Paso 1: Apague el nodo dañado
+
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al siguiente paso.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+=== Paso 2: Reemplace un módulo de E/S.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables PSU de las PSU de la controladora.
++
+
+NOTE: Si el sistema de almacenamiento tiene PSU de CC, desconecte el bloque de cables de alimentación de la PSU.
+
+. Desconecte cualquier cableado del módulo de E/S de destino.
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Extraiga el módulo de I/o de destino del chasis:
++
+
+NOTE: En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.
+
++
+image::../media/drw_a1k_io_remove_replace_ieops-1382.svg[Extraiga el módulo de E/S de AFF A1K]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.png["Número de llamada 1"]
+| Botón de bloqueo de leva 
+|===
++
+.. Pulse el botón de bloqueo de leva.
++
+El pestillo de la leva se aleja del chasis.
+
+.. Gire el pestillo de la leva hacia abajo hasta el tope. Para los módulos horizontales, gire la leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
+
+
+. Instale el módulo de E/S en la ranura de destino del receptáculo:
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el cable al módulo de E/S.
+. Repita los pasos de extracción e instalación para reemplazar módulos adicionales para la controladora.
+. Vuelva a conectar las PSU.
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Reinicie la controladora desde el símbolo del sistema del CARGADOR:_bye_
++
+.. Compruebe la versión de BMC en el controlador: _SYSTEM SERVICE-PROCESSOR show_
+.. Actualice el firmware de BMC si es necesario: _SYSTEM service-processor image update_
+.. Reinicie el nodo: _Bye_
++
+
+NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
++
+
+NOTE: Si se produce un problema durante el reinicio, consulte https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S."]
+
+
+
+. Devuelva la controladora de la controladora asociada: _Storage failover giveback -ofnode target_node_name_
+. Habilite la devolución automática del control si se deshabilitó: _Storage failover modify -node local -auto-giveback true_
+. Si agregó:
++
+[cols="1,2"]
+|===
+| Si el módulo de E/S es un... | Realice lo siguiente... 
+
+
+ a| 
+Módulo de NIC
+ a| 
+Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mode network` comando para cada puerto.
+
+
+
+ a| 
+Módulo de almacenamiento
+ a| 
+Instale y conecte los cables de las bandejas NS224, según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf.html["Añada una bandeja en caliente"^].
+
+|===
+. Repita estos pasos para la controladora B.
+

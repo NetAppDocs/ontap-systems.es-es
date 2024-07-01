@@ -1,0 +1,108 @@
+---
+permalink: a1k/install-complete.html 
+sidebar: sidebar 
+keywords: aff a1k, prepare installation 
+summary: Complete la instalación y la configuración de la plataforma mediante la detección de clústeres con solo una conexión al switch y el portátil, o bien conectándose directamente a una controladora en el sistema de almacenamiento y posteriormente al switch de gestión. 
+---
+= Instalación y configuración completas del sistema de almacenamiento: AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de instalar el hardware, use el software ONTAP para configurar y gestionar el sistema de almacenamiento.
+
+
+
+== Paso 1: Recopilar información del clúster
+
+Si todavía no lo ha hecho, recopile la información que necesitará para configurar el clúster, como el puerto de la interfaz de gestión del clúster y la dirección IP.
+
+Utilice el https://docs.netapp.com/us-en/ontap/software_setup/index.html["hoja de cálculo de configuración del clúster"] para registrar los valores que necesita durante el proceso de configuración del clúster. Si se proporciona un valor predeterminado, puede usar dicho valor, o bien puede introducir el que desee.
+
+
+
+== Paso 2: Detecte la red del clúster
+
+El proceso de detección le permite detectar las controladoras del sistema de almacenamiento en la red.
+
+[role="tabbed-block"]
+====
+.Opción 1: La detección de red está habilitada
+--
+Si tiene habilitada la detección de red en el portátil, puede completar la configuración y configuración de la plataforma mediante la detección automática de clústeres.
+
+.Pasos
+. Conecte su portátil al switch de administración y acceda a los equipos y dispositivos de red.
+. Seleccione un icono de ONTAP que aparece para detectar:
++
+image::../media/drw_autodiscovery_controler_select.svg[Cómo descubrir sus controladores con el Explorador de archivos de Windows]
+
++
+.. Abra el Explorador de archivos.
+.. Haga clic en *Red* en el panel izquierdo.
+.. Haga clic con el botón derecho del ratón y seleccione *Actualizar*.
+.. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
++
+
+NOTE: XXXXX es el número de serie de la plataforma para el nodo de destino.
+
++
+Se abrirá System Manager.
+
+
+
+
+
+--
+.Opción 2: La detección de red no está habilitada
+--
+Si la detección de red no está habilitada en el portátil, complete la configuración mediante el asistente de configuración de clúster de la interfaz de línea de comandos (CLI) de ONTAP.
+
+.Antes de empezar
+Asegúrese de que el portátil está conectado al puerto de la consola serie y de que los controladores están encendidos. Consulte link:install-power-hardware.html#step-2-power-on-the-controllers["Encienda las controladoras"] para obtener instrucciones.
+
+.Pasos
+Asigne una dirección IP de gestión de nodos inicial a uno de los nodos.
+
+[cols="1,2"]
+|===
+| Si la red de gestión tiene DHCP... | Realice lo siguiente... 
+
+
+ a| 
+Configurado
+ a| 
+Registre la dirección IP asignada a las nuevas controladoras.
+
+
+
+ a| 
+No configurado
+ a| 
+. Abra una sesión de consola mediante PuTTY, un servidor terminal o el equivalente para su entorno.
++
+
+NOTE: Si no sabe cómo configurar PuTTY, compruebe la ayuda en línea del ordenador portátil o de la consola.
+
+. Conéctese a la consola del primer nodo.
++
+El nodo arranca y, a continuación, se inicia el Asistente de configuración de clúster en la consola.
+
+. Introduzca la dirección IP de gestión del nodo cuando lo solicite el asistente de configuración de clúster.
+
+
+|===
+--
+====
+
+
+== Paso 3: Configure el clúster
+
+NetApp recomienda usar System Manager para configurar clústeres nuevos. Consulte https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Configure ONTAP en un nuevo clúster con System Manager"] para obtener instrucciones de configuración.
+
+System Manager proporciona un flujo de trabajo sencillo y sencillo para la instalación y la configuración del clúster, incluidas la asignación de una dirección IP de gestión de nodos, la inicialización del clúster, la creación de un nivel local, la configuración de protocolos y el aprovisionamiento inicial de almacenamiento conectado.
+
+
+NOTE: Una vez inicializado el clúster, descargue y ejecute  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] para confirmar la configuración.

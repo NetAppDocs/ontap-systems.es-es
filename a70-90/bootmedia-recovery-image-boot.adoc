@@ -1,0 +1,69 @@
+---
+permalink: a70-90/bootmedia-recovery-image-boot.html 
+sidebar: sidebar 
+keywords: aff a70, aff a90, boot the recovery image 
+summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+---
+= Inicie la imagen de recuperación - AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+
+.Pasos
+. Desde el aviso del CARGADOR, inicie la imagen de recuperación desde la unidad flash USB: _Boot_recovery_
++
+La imagen se descarga desde la unidad flash USB.
+
+. Cuando se le solicite, introduzca el nombre de la imagen o acepte la imagen predeterminada que se muestra dentro de los corchetes de la pantalla.
+. Restaure el sistema de archivos var:
++
+[cols="1,2"]
+|===
+| Si el sistema tiene... | Realice lo siguiente... 
+
+
+ a| 
+Una conexión de red
+ a| 
+.. En el controlador defectuoso, pulse _Y_ cuando vea `Do you want to restore the backup configuration now?`
+.. En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba `/etc/ssh/ssh_host_ecdsa_key`.
+.. En el controlador asociado en buen estado, establezca el controlador deficiente en el nivel de privilegio avanzado: _Set -privilege advanced_.
+.. En la controladora asociada en buen estado, ejecute el comando restore backup: _System node restore-backup -node local -target-address impaired_node_ip_address_.
++
+
+NOTE: Si ve algún mensaje que no sea una restauración correcta, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+.. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administrador: _Set -privilege admin_.
+.. En el controlador afectado, pulse _y_ cuando vea `Was the restore backup procedure successful?`.
+.. En el controlador afectado, pulse _y_ cuando vea `...would you like to use this restored copy now?`.
+.. En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.
+.. Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure gestores de claves"].
+.. Conecte el cable de la consola al controlador asociado.
+.. Devuelva la controladora con el comando _storage failover giveback -fromnode local_.
++
+... Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
+
+
+.. Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.
+
+
+
+
+ a| 
+No hay conexión de red
+ a| 
+Contacto https://support.netapp.com["Soporte de NetApp"].
+
+
+
+ a| 
+No hay conexión de red y está en una configuración de IP de MetroCluster
+ a| 
+Contacto https://support.netapp.com["Soporte de NetApp"].
+
+|===
+

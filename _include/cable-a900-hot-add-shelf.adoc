@@ -1,0 +1,79 @@
+= 
+:allow-uri-read: 
+
+
+Cuando se necesita almacenamiento adicional, puede añadir hasta tres bandejas de unidades NS224 adicionales (con un total de cuatro bandejas) a un par de alta disponibilidad A900 de AFF.
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Acerca de esta tarea
+* En este procedimiento se asume que su par de alta disponibilidad tiene al menos una bandeja NS224 existente y que va a añadir hasta tres bandejas adicionales en caliente.
+* Si su par de alta disponibilidad tiene solo una bandeja NS224 existente, en este procedimiento se asume que la bandeja se cableó en dos módulos I/o de 100 GbE compatibles con roce de cada controladora.
+
+
+.Pasos
+. Si la bandeja NS224 que está agregando en caliente será la segunda bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.
++
+De lo contrario, vaya al paso siguiente.
+
++
+.. Bandeja de cables NSM de un puerto e0a a a la ranura de controladora A 10 puertos a (e10a).
+.. Cable de la bandeja NSM Del puerto e0b a al puerto b de la ranura 2 de la controladora B (e2b).
+.. Puerto e0a de la bandeja de cables NSM B a la ranura de la controladora B, puerto a 10 (e10a).
+.. Cable del puerto e0b NSM B a la ranura 2 de la controladora a, puerto b (e2b).
+
+
++
+En la siguiente ilustración, se muestra el cableado de la segunda bandeja (y la primera bandeja).
+
++
+image::../media/drw_ns224_a900_2shelves.png[Cableado para un AFF A900 con dos bandejas NS224 y dos módulos IO]
+
+. Si la bandeja NS224 que está agregando en caliente será la tercera bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.
++
+De lo contrario, vaya al paso siguiente.
+
++
+.. Conecte El puerto NSM de La bandeja de cables e0a al puerto a de la ranura 1 de la controladora (e1a).
+.. Cable de la bandeja NSM Del puerto e0b a la ranura de la controladora B, puerto b (e11b) 11.
+.. Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B (e1a).
+.. Cable de la bandeja NSM B del puerto e0b a la ranura de la controladora A 11, puerto b (e11b).
++
+En la siguiente ilustración, se muestra el cableado de la tercera bandeja.
+
++
+image::../media/drw_ns224_a900_3shelves.png[Cableado para un AFF A900 con tres bandejas NS224 y cuatro módulos I/O.]
+
+
+
+. Si la bandeja NS224 que está agregando en caliente será la cuarta bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.
++
+De lo contrario, vaya al paso siguiente.
+
++
+.. Conecte el cable de la bandeja NSM de Un puerto e0a a a la ranura de controladora A 11 puerto a (e11a).
+.. Conecte el cable del puerto NSM A e0b a la ranura de la controladora B del puerto b (e1b).
+.. Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B 11 (e11a).
+.. Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1.
++
+En la siguiente ilustración, se muestra el cableado de la cuarta bandeja.
+
++
+image::../media/drw_ns224_a900_4shelves.png[Cableado para un AFF A900 con cuatro bandejas NS224 y cuatro módulos I/O.]
+
+
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.

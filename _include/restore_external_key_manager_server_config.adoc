@@ -1,0 +1,140 @@
+= 
+:allow-uri-read: 
+
+
+Restaure la configuración del gestor de claves externo desde el menú de arranque de ONATP.
+
+.Antes de empezar
+Necesitará la siguiente información para restaurar la configuración del gestor de claves externo (EKM):
+
+* Necesita una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o la siguiente información:
+* La dirección del servidor KMIP.
+* El puerto KMIP.
+* Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.
+* Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo del clúster o la clave de cliente.
+* Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.
+
+
+.Pasos
+. Seleccione la opción 11 en el menú de inicio de ONTAP.
++
+[listing]
+----
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 11
+
+----
+. Cuando se le solicite, confirme que ha recopilado la información necesaria:
++
+.. `Do you have a copy of the /cfcard/kmip/certs/client.crt file? {y/n}` _y_
+.. `Do you have a copy of the /cfcard/kmip/certs/client.key file? {y/n}` _y_
+.. `Do you have a copy of the /cfcard/kmip/certs/CA.pem file? {y/n}` _y_
+.. `Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}` _y_
++
+En su lugar, también puede realizar estas indicaciones:
+
+.. `Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}` _n_
++
+... `Do you know the KMIP server address? {y/n}` _y_
+... `Do you know the KMIP Port? {y/n}` _y_
+
+
+
+
+. Proporcione la información para cada una de estas peticiones de datos:
++
+.. `Enter the client certificate (client.crt) file contents:`
+.. `Enter the client key (client.key) file contents:`
+.. `Enter the KMIP server CA(s) (CA.pem) file contents:`
+.. `Enter the server configuration (servers.cfg) file contents:`
++
+[listing]
+----
+
+Example
+
+Enter the client certificate (client.crt) file contents:
+-----BEGIN CERTIFICATE-----
+MIIDvjCCAqagAwIBAgICN3gwDQYJKoZIhvcNAQELBQAwgY8xCzAJBgNVBAYTAlVT
+MRMwEQYDVQQIEwpDYWxpZm9ybmlhMQwwCgYDVQQHEwNTVkwxDzANBgNVBAoTBk5l
+MSUbQusvzAFs8G3P54GG32iIRvaCFnj2gQpCxciLJ0qB2foiBGx5XVQ/Mtk+rlap
+Pk4ECW/wqSOUXDYtJs1+RB+w0+SHx8mzxpbz3mXF/X/1PC3YOzVNCq5eieek62si
+Fp8=
+-----END CERTIFICATE-----
+
+Enter the client key (client.key) file contents:
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAoU1eajEG6QC2h2Zih0jEaGVtQUexNeoCFwKPoMSePmjDNtrU
+MSB1SlX3VgCuElHk57XPdq6xSbYlbkIb4bAgLztHEmUDOkGmXYAkblQ=
+-----END RSA PRIVATE KEY-----
+
+Enter the KMIP server CA(s) (CA.pem) file contents:
+-----BEGIN CERTIFICATE-----
+MIIEizCCA3OgAwIBAgIBADANBgkqhkiG9w0BAQsFADCBjzELMAkGA1UEBhMCVVMx
+7yaumMQETNrpMfP+nQMd34y4AmseWYGM6qG0z37BRnYU0Wf2qDL61cQ3/jkm7Y94
+EQBKG1NY8dVyjphmYZv+
+-----END CERTIFICATE-----
+
+Enter the IP address for the KMIP server: 10.10.10.10
+Enter the port for the KMIP server [5696]:
+
+System is ready to utilize external key manager(s).
+Trying to recover keys from key servers....
+kmip_init: configuring ports
+Running command '/sbin/ifconfig e0M'
+..
+..
+kmip_init: cmd: ReleaseExtraBSDPort e0M
+​​​​​​
+----
+
+
+. El proceso de recuperación se completará:
++
+[listing]
+----
+
+
+System is ready to utilize external key manager(s).
+Trying to recover keys from key servers....
+[Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [initOpenssl]:460: Performing initialization of OpenSSL
+Successfully recovered keymanager secrets.
+
+----
+. Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
++
+[listing]
+----
+
+***********************************************************************************
+* Select option "(1) Normal Boot." to complete the recovery process.
+*
+***********************************************************************************
+
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 1
+
+----
+

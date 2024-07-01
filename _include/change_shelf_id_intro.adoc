@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+.Antes de empezar
+* Si ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos), debe haber verificado que todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
++
+Es posible verificar el estado de las unidades mediante el `storage disk show -shelf _shelf_number_` comando. Salida en la `Container Type` la columna debe aparecer `spare` o. `broken` si es una unidad con error. Además, el `Container Name` y.. `Owner` las columnas deben tener un guión.
+
+* Necesita un clip de papel con un bolígrafo enderezado o con punta estrecha.
++
+Utilice el clip de papel o el bolígrafo para acceder al botón ID de la bandeja a través del orificio pequeño, a la derecha de los LED, en el panel de visualización del operador (ODP).
+
+
+
+.Acerca de esta tarea
+* Un ID de bandeja válido tiene un valor de 00 a 99.
+* Los ID de bandeja deben ser únicos en cada par de alta disponibilidad.
+* Debe apagar y encender una bandeja (desenchufe ambos cables de alimentación, espere la cantidad de tiempo adecuada y vuelva a enchufarlos) para que el ID de bandeja pueda aplicarse.
++
+La cantidad de tiempo que espera antes de volver a enchufar los cables de alimentación depende del estado de ONTAP, como se describe más adelante en este procedimiento.
+
++
+
+NOTE: Las bandejas NS224 no tienen interruptores de alimentación en las fuentes de alimentación.
+
+

@@ -271,5 +271,5 @@ Utilice la consulta de claves del administrador de claves de seguridad para veri
 . Conecte el cable de la consola al controlador asociado.
 . Respalde la controladora con el `storage failover giveback -fromnode local` comando.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Restaure AutoSupport si se deshabilitó mediante el `system node autosupport invoke -node * -type all -message MAINT=END`
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END`
 

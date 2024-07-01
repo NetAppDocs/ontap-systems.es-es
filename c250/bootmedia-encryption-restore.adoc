@@ -73,7 +73,6 @@ Ejemplo de datos de backup:
 +
 El sistema arranca esperando la devolución... prompt.
 
-. Mueva el cable de la consola a la controladora asociada e inicie sesión como "admin".
 . Confirme que la controladora de destino está lista para la devolución con el `storage failover show` comando.
 . Restauración únicamente de los agregados del director financiero con la `storage failover giveback -fromnode local -only-cfo-aggregates true` comando.
 +

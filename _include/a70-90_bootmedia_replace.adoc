@@ -1,0 +1,147 @@
+= Paso 1: Sustituya el soporte de arranque
+:allow-uri-read: 
+
+
+Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, extraer el soporte de arranque defectuoso, instalar el soporte de arranque de repuesto en el módulo de gestión del sistema y transferir la imagen de arranque a una unidad flash USB.
+
+
+
+== Paso 1: Sustituya el soporte de arranque
+
+El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
+
+image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Gráfico de sustitución de soporte de arranque]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Número de llamada 2]
+ a| 
+Botón de bloqueo del soporte de arranque
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Número de llamada 3]
+ a| 
+Soporte de arranque
+
+|===
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidad drw a800 asentada IEPOPS 960]
+
+. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación tirando del módulo del controlador hacia fuera unas tres pulgadas:
++
+
+NOTE: Si el sistema de almacenamiento tiene suministros de alimentación de CC, desconecte el bloque de cables de alimentación de las unidades de suministro de alimentación (PSU).
+
++
+.. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
+.. Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.
+.. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de que la etiqueta donde se conectaron los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.
+.. Gire la palanca de leva completamente hacia abajo y retire el módulo de gestión del sistema del módulo del controlador.
+.. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque.
+
+
+. Retire el soporte de arranque del módulo de gestión:
++
+.. Pulse el botón de bloqueo azul.
+.. Gire el soporte de arranque hacia arriba, deslícelo para extraerlo de la toma y déjelo a un lado.
+
+
+. Instale el soporte de arranque de repuesto en el módulo de gestión del sistema:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hacia el botón de bloqueo.
+.. Pulse el botón de bloqueo, gire el soporte del maletero completamente hacia abajo y, a continuación, suelte el botón de bloqueo.
+
+
+. Vuelva a instalar el módulo Gestión del sistema:.
++
+.. Gire la bandeja de gestión de cables hasta la posición cerrada.
+.. Vuelva a conectar el módulo Gestión del sistema.
+
+
+
+
+
+
+== Paso 2: Transfiera la imagen de arranque al soporte de arranque
+
+El soporte de arranque de repuesto que ha instalado no tiene una imagen ONTAP, por lo que debe transferir una imagen ONTAP mediante una unidad flash USB.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Debe tener una copia de la misma versión de imagen de ONTAP que se estaba ejecutando la controladora dañada. Puede descargar la imagen adecuada de https://support.netapp.com/downloads["Descargas"] la sección del sitio de soporte de NetApp
++
+** Si NVE es compatible, descargue la imagen con NetApp Volume Encryption, tal y como se indica en el botón de descarga.
+** Si NVE no es compatible, descargue la imagen sin cifrado de volúmenes NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es una pareja de alta disponibilidad, debe tener una conexión de red entre los puertos de gestión de nodos de las controladoras (normalmente las interfaces de e0M GbE).
+
+
+.Pasos
+. Descargue y copie la imagen de servicio adecuada desde el https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a la unidad flash USB.
++
+.. Descargue la imagen del servicio desde el enlace Descargas de la página, en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
+
+
++
+La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutando el controlador dañado.
+
++
+.. Extraiga la unidad flash USB del ordenador portátil.
+
+
+. Inserte la unidad flash USB en la ranura USB del módulo de administración del sistema.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Conecte los cables de alimentación a las fuentes de alimentación y vuelva a instalar el retén del cable de alimentación.
++
+La controladora comienza a arrancar en cuanto se vuelve a conectar la alimentación al sistema.
+
+. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
++
+** Si va a configurar DHCP: `ifconfig e0M -auto`
++
+
+NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
+
+** Si está configurando conexiones manuales: `ifconfig e0M -addr=filer_addr -mask=netmask -gw=gateway`
++
+*** Filer_addr es la dirección IP del sistema de almacenamiento.
+*** La máscara de red es la máscara de red de la red de gestión conectada al partner de alta disponibilidad.
+*** gateway es la puerta de enlace de la red.
+
+
+
+
++
+
+NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede introducir ayuda ifconfig en el símbolo del sistema del firmware para obtener más detalles.
+
+

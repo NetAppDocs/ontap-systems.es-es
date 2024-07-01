@@ -1,0 +1,86 @@
+---
+permalink: ns224/install-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, install, hot-add an ns224 drive shelf 
+summary: Puede añadir en caliente una bandeja de unidades NS224 después de que su par de alta disponibilidad cumpla determinados requisitos y una vez completadas las tareas de preparación aplicables a su pareja de alta disponibilidad. 
+---
+= Instale una bandeja para las bandejas NS224 añadidas en caliente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe instalar una bandeja NS224 en un armario o rack de telecomunicaciones, conectar los cables de alimentación (que enciende automáticamente la bandeja) y definir el ID de bandeja.
+
+.Antes de empezar
+* Asegúrese de tener un clip de papel con un lado enderezado o un bolígrafo de punta estrecha.
++
+Para cambiar el ID de la bandeja, utilice el clip de papel o el bolígrafo para acceder al botón de ID de la bandeja situado detrás del panel de visualización del operador (ODP) para el paso de ID de la bandeja de cambio.
+
+* Comprenda que un estante NS224 completamente cargado puede pesar hasta 30,29 kg (66,78 lb) y requiere que dos personas levanten o utilicen un elevador hidráulico. Evite quitar los componentes de la bandeja (desde la parte delantera o trasera de la bandeja) para reducir el peso de la bandeja, ya que el peso de la bandeja se equilibrará.
+
+
+.Pasos
+. Instale el kit de guías para la bandeja, según sea necesario, siguiendo las instrucciones incluidas con el kit.
++
+
+NOTE: No monte el estante con brida.
+
+. Instale la bandeja:
++
+.. Coloque la parte posterior de la bandeja en los rieles, y luego sostenga la bandeja desde la parte inferior y deslícela en el armario o rack de telecomunicaciones.
++
+Si va a instalar varias bandejas, coloque la primera bandeja directamente encima de las controladoras. Coloque la segunda bandeja directamente debajo de las controladoras. Repita este patrón para todas las bandejas adicionales.
+
+.. Fije la bandeja al armario o al rack Telco con los tornillos de montaje incluidos en el kit.
+
+
+. Conecte la alimentación:
++
+.. Conecte los cables de alimentación a la bandeja y asegúrelos en su lugar.
++
+Si se trata de fuentes de alimentación de CA, fíjelas en su lugar con el retén del cable de alimentación.
+
++
+Si se trata de fuentes de alimentación de CC, fíjelas en su sitio con los dos tornillos de mariposa.
+
+.. Conecte los cables de alimentación a diferentes fuentes de alimentación para mayor resistencia.
++
+Una bandeja se enciende cuando está conectada a una fuente de alimentación; no tiene interruptores de alimentación. Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
+
+
+. Establezca el ID de bandeja en un número único dentro de la pareja de alta disponibilidad:
++
+Para obtener instrucciones más detalladas, consulte link:change-shelf-id.html["Cambiar un ID de bandeja - bandejas NS224"^].
+
++
+.. Retire la tapa del extremo izquierdo y localice el orificio pequeño a la derecha de los LED.
+.. Introduzca el extremo de un clip de papel o una herramienta similar en el orificio pequeño para llegar al botón de ID de la bandeja.
+.. Mantenga pulsado el botón (hasta 15 segundos) hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
++
+Si el ID tarda más de 15 segundos en parpadear, mantenga pulsado el botón de nuevo y asegúrese de pulsarlo completamente.
+
+.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
+.. Repita los subpasos 4c y 4d para establecer el segundo número del ID de la bandeja.
++
+El número puede tardar hasta tres segundos (en lugar de 15 segundos) en parpadear.
+
+.. Mantenga presionado el botón hasta que el segundo número deje de parpadear.
++
+Después de unos cinco segundos, ambos números comienzan a parpadear y el LED ámbar del ODP se ilumina.
+
+.. Apague y encienda la bandeja para que el ID de bandeja quede registrado.
++
+Debe desconectar los dos cables de alimentación de la bandeja, esperar 10 segundos y, a continuación, volver a enchufarlos.
+
++
+Cuando se restablece la alimentación a las fuentes de alimentación, sus LED bicolores se iluminan en verde.
+
+
+
+
+
+.El futuro
+Conecte el cable de la bandeja con conexión en caliente. Vaya a link:cable-overview-hot-add-shelf.html["Información general sobre el cableado para una incorporación en caliente"].

@@ -1,0 +1,70 @@
+---
+permalink: a1k/power-supply-replace.html 
+sidebar: sidebar 
+keywords: aff a1k, replace a power supply 
+summary: El reemplazo de una fuente de alimentación implica desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, retirar la fuente de alimentación antigua e instalar la fuente de alimentación de repuesto y, a continuación, volver a conectarla a la fuente de alimentación. 
+---
+= Sustituya una fuente de alimentación: AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una fuente de alimentación (PSU) es necesario desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, quitar la fuente de alimentación antigua e instalar la fuente de alimentación de reemplazo y, a continuación, volver a conectarla a la fuente de alimentación.
+
+Los sistemas de alimentación son redundantes y intercambiables en caliente.
+
+.Acerca de esta tarea
+Este procedimiento se escribe para sustituir una fuente de alimentación por vez.
+
+
+IMPORTANT: No mezcle las PSU con diferentes niveles de eficiencia. Sustituya siempre como por ejemplo.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación que desea sustituir, basándose en los mensajes de error de la consola o a través del LED rojo de fallo de la fuente de alimentación.
+. Desconecte la PSU abriendo el retén del cable de alimentación y, a continuación, desenchufe el cable de alimentación de la PSU.
+. Retire la PSU girando el asa hacia arriba, presione la lengüeta de bloqueo y tire de la PSU para extraerla del módulo de la controladora.
++
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.
+
++
+image::../media/drw_a1k_psu_remove_replace_ieops-1378.svg[Sustituya la PSU]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+Lengüeta de bloqueo de PSU de terracota
+
+|===
+. Instale la fuente de alimentación de repuesto en el módulo del controlador:
++
+.. Con ambas manos, sujete y alinee los bordes de la PSU de repuesto con la abertura del módulo del controlador.
+.. Empuje con cuidado la PSU hacia el módulo de la controladora hasta que la lengüeta de bloqueo haga clic en su lugar.
++
+Las fuentes de alimentación sólo se acoplarán correctamente al conector interno y se bloquearán de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la fuente de alimentación hacia el sistema.
+
+
+
+. Vuelva a conectar el cableado de la PSU:
++
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación a la fuente de alimentación con el retenedor del cable de alimentación.
+
+
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
+

@@ -1,0 +1,219 @@
+---
+permalink: a1k/controller-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: aff a1k, move the controller module hardware 
+summary: Para sustituir un módulo de controladora, debe extraer la controladora con deterioro, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+---
+= Sustituya el hardware del módulo del controlador: AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir la controladora, debe extraer la controladora deteriorada, mover los componentes FRU al módulo de controladora de reemplazo, instalar el módulo de controladora de reemplazo en el compartimento y, a continuación, arrancar el sistema en modo de mantenimiento.
+
+
+
+== Paso 1 Retire el módulo del controlador
+
+Cuando sustituya el módulo de controlador o sustituya uno de los componentes del módulo de controlador, debe quitar el módulo de controlador del compartimento.
+
+. Compruebe el LED de estado de NVRAM ubicado en la ranura 4/5 del sistema. También hay un LED NVRAM en el panel frontal del módulo de controladora. Busque el icono NV:
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+
+NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
+
++
+** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de controladora y el módulo de la controladora se encuentra en el estado «esperando devolución» o el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
+** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del compartimento y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el controlador se puede retirar del receptáculo).
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. En la parte delantera de la unidad, enganche los dedos en los orificios de las levas de bloqueo, apriete las lengüetas de las palancas de leva y gire suavemente, pero firmemente, ambos pestillos hacia usted al mismo tiempo.
++
+El módulo del controlador se mueve ligeramente fuera del compartimento.
+
++
+image::../media/drw_a1k_pcm_remove_replace_ieops-1375.svg[Gráfico de extracción del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+| Una leva de bloqueo se bloquea 
+|===
+. Deslice el módulo del controlador fuera de la carcasa y colóquelo sobre una superficie plana y estable.
++
+Asegúrese de que apoya la parte inferior del módulo del controlador mientras lo desliza fuera de la carcasa.
+
+
+
+
+
+== Paso 2: Mueva los ventiladores
+
+Debe retirar los cinco módulos de ventilador del módulo de controlador defectuoso al módulo de controlador de repuesto.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Pulse el botón de bloqueo gris del módulo de ventiladores y tire del módulo de ventiladores hacia fuera del chasis, asegurándose de que lo apoya con la mano libre.
++
+
+NOTE: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
++
+image::../media/drw_a1k_fan_remove_replace_ieops-1376.svg[Ventilador quite AFF A1K]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+Botón de bloqueo negro
+
+|===
+. Instale el ventilador en el módulo de controlador de sustitución:
++
+.. Alinee los bordes del alojamiento del ventilador con la abertura en la parte delantera del módulo de controlador de reemplazo.
+.. Deslice suavemente el módulo del ventilador por completo en el módulo del controlador de repuesto hasta que encaje en su sitio.
+
+
+. Repita los pasos anteriores para los módulos de ventilador restantes.
+
+
+
+
+== Paso 3: Mueva la batería de NV
+
+Mueva la batería NV al controlador de reemplazo.
+
+. Abra la cubierta del conducto de aire de la batería NV y localice la batería NV.
++
+image::../media/drw_a1k_remove_replace_nvmembat_ieops-1379.svg[Batería NV RETIRE AFF A1K]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+| Cubierta del conducto de aire de la batería NV 
+
+
+ a| 
+image::../media/legend_icon_02.svg[Número de llamada 2]
+ a| 
+Enchufe de la batería de NV
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Número de llamada 3]
+ a| 
+Paquete de baterías NV
+
+|===
+. Levante la batería para acceder al enchufe de la batería.
+. Apriete el clip de la cara del enchufe de la batería para liberarlo de la toma y, a continuación, desenchufe el cable de la batería de la toma.
+. Levante la batería del conducto de aire y del módulo del controlador.
+. Mueva la batería al módulo de controlador de repuesto y luego instálelo en el conducto de aire de la batería NV:
++
+.. Abra el conducto de aire de la batería NV en el módulo de controlador de reemplazo.
+.. Enchufe la clavija de la batería a la toma y asegúrese de que la clavija se bloquea en su lugar.
+.. Inserte la batería en la ranura y presione firmemente la batería para asegurarse de que está bloqueada en su lugar.
+.. Cierre la cubierta del conducto de aire.
+
+
+
+
+
+
+== Paso 4: Mover los DIMM del sistema
+
+Mueva los módulos DIMM al módulo de controlador de reemplazo.
+
+. Abra el conducto de aire de la placa base y localice los módulos DIMM.
++
+image::../media/drw_a1k_dimms_ieops-1512.svg[DIMM elimina AFF A1K]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+DIMM del sistema
+
+|===
+. Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+. Localice la ranura donde está instalando el módulo DIMM en el módulo de controlador de reemplazo.
+. Inserte el módulo DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.
+. Repita estos pasos para los módulos DIMM restantes. Cierre el conducto de aire de la placa base.
+
+
+
+
+== Paso 5: Instale el módulo del controlador
+
+Vuelva a instalar el módulo del controlador y arranque.
+
+. Si aún no lo ha hecho, cierre el conducto de aire.
+. Alinee el extremo del módulo del controlador con la abertura en la carcasa y deslice el módulo del controlador en el chasis con las palancas giradas hacia fuera de la parte delantera del sistema.
+. Una vez que el módulo del controlador le impide deslizarlo más, gire las asas de la leva hacia dentro hasta que queden atrapadas debajo de los ventiladores
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el módulo del controlador en la carcasa para evitar dañar los conectores.
+
++
+El módulo del controlador comienza a arrancar tan pronto como está completamente asentado en la carcasa.
+
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+

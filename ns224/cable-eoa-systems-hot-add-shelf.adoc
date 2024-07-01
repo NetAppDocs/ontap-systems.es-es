@@ -1,0 +1,179 @@
+---
+permalink: ns224/cable-eoa-systems-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, cable, hot-add an ns224 drive shelf 
+summary: Conecte mediante cable cada bandeja NS224 que esté añadiendo en caliente de modo que cada bandeja tenga dos conexiones a cada controladora del par de alta disponibilidad. 
+---
+= Conecte el cable de la bandeja a los sistemas que hayan llegado al final de su disponibilidad - Bandejas NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Conecte mediante cable cada bandeja NS224 que esté añadiendo en caliente de modo que cada bandeja tenga dos conexiones a cada controladora del par de alta disponibilidad.
+
+.Conecte el cable de la bandeja a AFF A320
+[%collapsible]
+====
+Puede agregar una segunda bandeja en caliente a un par de alta disponibilidad existente si necesita almacenamiento adicional.
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Pasos
+. Conecte el cable de la bandeja a las controladoras.
++
+.. Conecte El cable NSM de Un puerto e0a al puerto e0e de la controladora A.
+.. Conecte el cable NSM del puerto e0b al puerto e0b de la controladora B.
+.. Conecte el cable del puerto e0a NSM B al puerto e0e de la controladora B.
+.. Conecte el cable del puerto e0b a el puerto e0b de la controladora a. + la siguiente ilustración muestra el cableado de la bandeja añadida en activo (bandeja 2):
++
+image::../media/drw_ns224_a320_2shelves_direct_attached.png[Cableado para un AFF A320 con dos bandejas NS224 y tres conjuntos de puertos internos]
+
+
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
+
+====
+.Conecte el cable de la bandeja a AFF A700
+[%collapsible]
+====
+La forma de conectar por cable una bandeja NS224 a un par de alta disponibilidad AFF A700 depende del número de bandejas que añada en caliente y del número de conjuntos de puertos compatibles con RoCE (uno o dos) que se utilizan en las controladoras.
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+* Si va a añadir en caliente la bandeja NS224 inicial (no existe bandeja NS224 en el par de alta disponibilidad), debe instalar un módulo de volcado principal (X9170A, NVMe 1TB SSD) en cada controladora para admitir volcados de memoria (almacenar archivos centrales).
++
+Consulte link:../fas9000/caching-module-and-core-dump-module-replace.html["Sustituya el módulo de almacenamiento en caché o añada/sustituya un módulo de volcado de memoria: A700 y FAS9000 de AFF"^].
+
+
+
+.Pasos
+. Si va a añadir en caliente una bandeja con un conjunto de puertos compatibles con RoCE (un módulo de I/O compatible con RoCE) en cada controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
++
+De lo contrario, vaya al paso siguiente.
+
++
+
+NOTE: En este paso se supone que se instaló el módulo de I/O compatible con RoCE en la ranura 3, en lugar de en la ranura 7, en cada controladora.
+
++
+.. Conecte El cable de la bandeja NSM de Un puerto e0a a a la controladora de una ranura 3 puerto a.
+.. Cable de la bandeja NSM De un puerto e0b a la ranura de la controladora B 3, puerto b.
+.. Conecte el puerto NSM B del puerto e0a al puerto de la ranura de la controladora B 3 a.
+.. Cable de la bandeja NSM B del puerto e0b a la controladora a, ranura 3, puerto b.
++
+En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente usando un módulo I/O compatible con RoCE en cada controladora:
+
++
+image::../media/drw_ns224_a700_1shelf.png[Cableado para un AFF A700 con una bandeja NS224 y un conjunto de puertos de módulo I/O.]
+
+
+
+. Si va a añadir en caliente una o dos bandejas mediante dos conjuntos de puertos compatibles con RoCE (dos módulos de I/O compatibles con RoCE) en cada controladora, complete los subpasos correspondientes.
++
+[cols="1,3"]
+|===
+| Bandejas | Cableado 
+
+
+ a| 
+Bandeja 1
+ a| 
+
+NOTE: Estos subpasos suponen que se está comenzando el cableado por el cableado del puerto de la bandeja e0a al módulo de I/o compatible con roce en la ranura 3, en lugar de la ranura 7.
+
+.. Conecte El cable NSM de Un puerto e0a al 3 puerto a. de La ranura A de la controladora
+.. Conecte el cable NSM de un puerto e0b a la ranura de la controladora B 7, puerto b.
+.. Conecte el cable del puerto NSM B e0a al puerto de la ranura de la controladora B 3 a.
+.. Conecte el puerto e0b NSM B al puerto e0b de la controladora A la ranura 7, puerto b.
+.. Si va a añadir una segunda estantería en caliente, complete los subpasos "Shelf 2"; en caso contrario, vaya al paso 3.
+
+
+
+
+ a| 
+Estante 2
+ a| 
+
+NOTE: Estos subpasos suponen que se está comenzando el cableado por el cableado del puerto de la bandeja e0a al módulo I/o compatible con roce en la ranura 7, en lugar de la ranura 3 (que se correlaciona con los subpasos de cableado de la bandeja 1).
+
+.. Conecte El cable NSM de Un puerto e0a al 7 puerto a. de La ranura A de la controladora
+.. Conecte el cable NSM de un puerto e0b a la ranura de la controladora B 3, puerto b.
+.. Conecte el cable del puerto NSM B e0a al puerto de la ranura de la controladora B 7 a.
+.. Conecte el puerto e0b NSM B al puerto e0b de la controladora A la ranura 3, puerto b.
+.. Vaya al paso 3.
+
+
+|===
++
+En la siguiente ilustración, se muestra el cableado de la primera y segunda bandejas añadidas en caliente:
+
++
+image::../media/drw_ns224_a700_2shelves.png[Cableado para un AFF A700 con dos bandejas NS224 y dos conjuntos de puertos de módulo I/O.]
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
+
+====
+.Conecte los cables de la bandeja a FAS500f
+[%collapsible]
+====
+Cuando necesite almacenamiento adicional, puede agregar en caliente una bandeja NS224 a un par de alta disponibilidad de FAS500f.
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Acerca de esta tarea
+Una vez visto desde la parte posterior del chasis de la plataforma, el puerto para tarjetas compatible con roce de la izquierda es el puerto "a" (e1a) y el puerto de la derecha es el puerto "b" (e1b).
+
+.Pasos
+. Conecte los cables de las conexiones de la bandeja:
++
+.. Conecte El puerto NSM de La bandeja de cables e0a al puerto a de la ranura 1 de la controladora (e1a).
+.. Conecte el cable del puerto NSM A e0b a la ranura de la controladora B del puerto b (e1b).
+.. Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B (e1a).
+.. Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1. + la siguiente ilustración muestra el cableado de las bandejas cuando se completa.
++
+image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Cableado para un AFF A250 o AFF C250 de FAS500f Gb con una bandeja NS224 y un conjunto de puertos]
+
+
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
+
+====

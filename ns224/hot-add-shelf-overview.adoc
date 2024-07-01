@@ -1,0 +1,33 @@
+---
+permalink: ns224/hot-add-shelf-overview.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, overview 
+summary: Para añadir en caliente una bandeja de unidades NS224, una pareja de alta disponibilidad debe cumplir ciertos requisitos. 
+---
+= Flujo de trabajo con adición en caliente: NS224 bandejas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Siga estos pasos del flujo de trabajo para añadir en caliente su bandeja NS224.
+
+.Antes de empezar
+Para añadir en caliente una bandeja NS224, su pareja de alta disponibilidad debe cumplir ciertos requisitos. Revise la link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:prepare-hot-add-shelf.html["Prepárese para añadir en caliente la bandeja"]
+[role="quick-margin-para"]
+Según el modelo de plataforma, es posible que deba instalar tarjetas PCIe o módulos de E/S adicionales compatibles con RoCE, configurar los puertos Ethernet no dedicados compatibles con RoCE para uso de almacenamiento, volver a conectar la bandeja existente entre dos conjuntos de puertos en ranuras diferentes para lograr resiliencia contra error de ranura, y deshabilite la asignación automática de unidades si va a asignar manualmente propiedad de unidades.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:install-hot-add-shelf.html["Instale la bandeja"]
+[role="quick-margin-para"]
+Para instalar la bandeja, instale el kit de rieles para la bandeja y, a continuación, instale y asegure la bandeja en el rack o armario de telecomunicaciones. A continuación, conecte los cables de alimentación para encender la bandeja y asigne un ID de bandeja exclusivo para comprobar que la bandeja sea distinta dentro del par de alta disponibilidad.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:cable-overview-hot-add-shelf.html["Conecte los cables de la bandeja"]
+[role="quick-margin-para"]
+Conecte el cable de la bandeja que va a añadir en caliente para que tenga dos conexiones a cada controladora del par de alta disponibilidad.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:complete-hot-add-shelf.html["Complete su incorporación en caliente"]
+[role="quick-margin-para"]
+Si deshabilitó la asignación automática de unidades como parte de la preparación para la adición en caliente, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.

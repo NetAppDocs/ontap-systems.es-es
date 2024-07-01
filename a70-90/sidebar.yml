@@ -1,0 +1,91 @@
+---
+section: a70-90
+title: Sistemas AFF A70 y AFF A90
+entries:
+- title: Instalar y configurar
+  pdf-filename: Instalación y configuración de AFF A70, AFF A90
+  entries:
+  - title: Instale el flujo de trabajo
+    url: "/a70-90/install-overview.html"
+  - title: Prepare la instalación
+    url: "/a70-90/install-prepare.html"
+  - title: Instale el hardware
+    url: "/a70-90/install-hardware.html"
+  - title: Hardware del cable
+    url: "/a70-90/install-cable.html"
+  - title: Encienda el sistema
+    url: "/a70-90/install-power-hardware.html"
+  - title: Completar la configuración del sistema
+    url: "/a70-90/install-complete.html"
+- title: Mantener
+  pdf-filename: AFF A70, AFF A90 Mantener
+  entries:
+  - title: Descripción general
+    url: "/a70-90/maintain-overview.html"
+  - title: Soporte de arranque
+    pdf-filename: Soporte de arranque AFF A70, AFF A90
+    entries:
+    - title: Descripción general de sustitución de medios de arranque
+      url: "/a70-90/bootmedia-replace-overview.html"
+    - title: Compruebe las claves de cifrado incorporadas
+      url: "/a70-90/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/a70-90/bootmedia-shutdown.html"
+    - title: Sustituir el soporte de arranque
+      url: "/a70-90/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/a70-90/bootmedia-recovery-image-boot.html"
+    - title: Restauración de cifrado
+      url: "/a70-90/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/a70-90/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: Chasis AFF A70, AFF A90
+    entries:
+    - title: Descripción general de sustitución de chasis
+      url: "/a70-90/chassis-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a70-90/chassis-replace-shutdown.html"
+    - title: Sustituya el chasis
+      url: "/a70-90/chassis-replace-move-hardware.html"
+    - title: Reemplazo completo de chasis
+      url: "/a70-90/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador AFF A70, AFF A90
+    entries:
+    - title: Descripción general de la sustitución del módulo del controlador
+      url: "/a70-90/controller-replace-overview.html"
+    - title: Apague el controlador dañado
+      url: "/a70-90/controller-replace-shutdown.html"
+    - title: Sustituya la controladora
+      url: "/a70-90/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/a70-90/controller-replace-system-config-restore-and-verify.html"
+    - title: Sistema de recuperación
+      url: "/a70-90/controller-replace-recable-reassign-disks.html"
+    - title: Reemplazo completo de controladoras
+      url: "/a70-90/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/a70-90/dimm-replace.html"
+  - title: Unidad
+    url: "/a70-90/drive-replace.html"
+  - title: Ventilador
+    url: "/a70-90/fan-swap-out.html"
+  - title: NVRAM
+    url: "/a70-90/nvram-replace.html"
+  - title: Batería NV
+    url: "/a70-90/nvdimm-battery-replace.html"
+  - title: Módulo de I/O.
+    entries:
+    - title: Introducción o sustitución de módulos de E/S.
+      url: "/a70-90/io-module-overview.html"
+    - title: Agregue un módulo de E/S.
+      url: "/a70-90/io-module-add.html"
+    - title: Sustituya un módulo de E/S.
+      url: "/a70-90/io-module-replace.html"
+  - title: Suministro de alimentación
+    url: "/a70-90/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/a70-90/rtc-battery-replace.html"
+  - title: Módulo de gestión del sistema
+    url: "/a70-90/system-management-replace.html"

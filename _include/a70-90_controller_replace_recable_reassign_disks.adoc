@@ -1,0 +1,89 @@
+= Paso 1: Recuperar el sistema
+:allow-uri-read: 
+
+
+Para continuar con el procedimiento de reemplazo, vuelva a cablear el almacenamiento, las conexiones de red y vuelva a devolver la controladora.
+
+
+
+== Paso 1: Recuperar el sistema
+
+Vuelva a conectar los cables de las conexiones de red y almacenamiento del módulo del controlador.
+
+.Pasos
+. Vuelva a conectar el módulo del controlador a las conexiones de red y almacenamiento.
+. Compruebe que el cableado sea correcto mediante el https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
++
+.. Descargue e instale Config Advisor.
+.. Introduzca la información del sistema de destino y haga clic en Collect Data.
+.. Haga clic en la ficha cableado y, a continuación, examine la salida. Asegúrese de que se muestren todas las bandejas de discos y todos los discos aparecen en el resultado, corrigiendo los problemas de cableado que encuentre.
+.. Compruebe otro cableado haciendo clic en la ficha correspondiente y, a continuación, examinando el resultado de Config Advisor.
+
+
+
+
+
+
+== Paso 2: Devuelva el controlador
+
+. Si el sistema de almacenamiento tiene cifrado configurado, debe restaurar la funcionalidad de almacenamiento o cifrado de volúmenes mediante el siguiente procedimiento para reiniciar el sistema:
++
+.. Inicie en el menú y ejecute la opción 10
+.. Introduzca la frase de contraseña y realice una copia de seguridad de los datos y, a continuación, realice un arranque normal. Consulte https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Restore_onboard_key_management_encryption_keys["Restaure las claves de cifrado de gestión de claves incorporadas"].
+.. Realice el retorno al nodo primario solo de CFO
+.. Realice Onboard Sync y verifique que SVM-KEK está establecido en true. Consulte https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Onboard_keymanager_sync_fails_after_motherboard_replacement["Giveback después de que el reemplazo MB falla - la operación fue vetada por keymanager"]
+.. Giveback SFO, (sin fuerza)
+
+
+. Si el sistema no tiene el cifrado configurado, realice el siguiente procedimiento para reiniciar el sistema:
++
+.. Inicie en el menú y ejecute la opción 1.
+.. Devolver la controladora:
+.. Desde la controladora en buen estado, proporcione almacenamiento a la controladora que sustituyó: `storage failover giveback -ofnode _replacement_node_name_`
++
+La controladora _reader_ recupera su almacenamiento y completa el arranque.
+
++
+
+NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
+
++
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Busque el contenido de Configuración de alta disponibilidad para su versión de ONTAP 9"]
+
+.. Una vez finalizada la devolución, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: `storage failover show`
+
+
+. Si el sistema está en una configuración MetroCluster, supervise el estado de la controladora: `metrocluster node show`
++
+La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada controladora mostrará un estado configurado, con mirroring de DR habilitado y un modo normal. La `metrocluster node show -fields node-systemid` El resultado del comando muestra el ID del sistema antiguo hasta que la configuración de MetroCluster vuelve a ser un estado normal.
+
+. Si la controladora está en una configuración MetroCluster, según el estado del MetroCluster, compruebe que el campo ID de inicio de recuperación ante desastres muestra el propietario original del disco si el propietario original es una controladora del sitio de recuperación ante desastres.
++
+Esto es necesario si se cumplen las dos opciones siguientes:
+
++
+** La configuración de MetroCluster está en estado de conmutación.
+** El controlador _regrse_ es el propietario actual de los discos del sitio de recuperación ante desastres.
++
+https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html#disk-ownership-changes-during-ha-takeover-and-metrocluster-switchover-in-a-four-node-metrocluster-configuration["Cambios en la propiedad de disco durante la toma de control de alta disponibilidad y el cambio de MetroCluster en una configuración MetroCluster de cuatro nodos"]
+
+
+
+. Si su sistema está en una configuración MetroCluster, compruebe que cada controladora está configurada: `metrocluster node show - fields configuration-state`
++
+[listing]
+----
+node1_siteA::> metrocluster node show -fields configuration-state
+
+dr-group-id            cluster node           configuration-state
+-----------            ---------------------- -------------- -------------------
+1 node1_siteA          node1mcc-001           configured
+1 node1_siteA          node1mcc-002           configured
+1 node1_siteB          node1mcc-003           configured
+1 node1_siteB          node1mcc-004           configured
+
+4 entries were displayed.
+----
+. Compruebe que los volúmenes esperados estén presentes para cada controladora: `vol show -node node-name`
+. Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde la controladora en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
+

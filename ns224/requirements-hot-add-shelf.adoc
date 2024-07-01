@@ -1,0 +1,60 @@
+---
+permalink: ns224/requirements-hot-add-shelf.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, requirement 
+summary: Para añadir en caliente una bandeja de unidades NS224, una pareja de alta disponibilidad debe cumplir ciertos requisitos. 
+---
+= Requisitos y prácticas recomendadas para una incorporación en caliente: Bandejas NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de añadir en caliente una bandeja, asegúrese de revisar los requisitos y las prácticas recomendadas.
+
+
+
+== Requisitos
+
+Para añadir en caliente una bandeja NS224, su pareja de alta disponibilidad debe cumplir ciertos requisitos.
+
+* *Versión ONTAP compatible*: Su modelo de plataforma y versión de ONTAP deben admitir la bandeja NS224 y las unidades que está agregando en caliente. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"^]
+* *Número de estantes*: Su par de alta disponibilidad debe tener menos que el número máximo de estantes admitidos, por lo menos el número de bandejas que planea agregar en caliente.
++
+No puede haber superado el número máximo de bandejas compatibles con su pareja de alta disponibilidad después de añadir bandejas en activo. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"^].
+
+* * Cableado *:
++
+** Asegúrese de contar con el número y el tipo correctos de cables para conectar la bandeja. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"^].
+** Si añade en caliente una bandeja a una pareja de alta disponibilidad que ya tiene una bandeja NS224, su par de alta disponibilidad no puede tener mensajes de error de cableado de almacenamiento y debe cablearse como alta disponibilidad multivía.
++
+Puede ejecutar  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] para ver todos los mensajes de error de cableado del almacenamiento y las acciones correctivas que se deben realizar.
+
+
+
+
+
+
+
+== Mejores prácticas
+
+Familiarícese con las siguientes prácticas recomendadas antes de agregar en caliente una bandeja NS224.
+
+* * Mejores prácticas:* La mejor práctica es tener la versión actual de la https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Paquete de cualificación de disco"^] instalada antes de agregar en caliente una estantería.
++
+Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
+
+* * Mejores prácticas:* La mejor práctica es ejecutar https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] antes y después de agregar en caliente un estante.
++
+Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se obtiene un captura de snap de la conectividad Ethernet (ENET) de la bandeja existente, se comprueban las versiones de firmware del módulo de bandeja NVMe (NSM) y se puede verificar un ID de bandeja que ya se está usando en el par de alta disponibilidad.
+
++
+Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.
+
+* * Mejores prácticas:* La mejor práctica es tener versiones actuales de https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Firmware del módulo de bandeja NVMe (NSM)"^] y https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["firmware de la unidad"^] en su sistema de almacenamiento antes de agregar una nueva bandeja.
++
+
+NOTE: No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+

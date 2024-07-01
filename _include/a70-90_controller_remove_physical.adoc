@@ -1,0 +1,83 @@
+= 
+:allow-uri-read: 
+
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidad drw a800 asentada IEPOPS 960]
+
+. Compruebe que el LED de estado situado en la ranura 4/5 de la parte posterior del módulo del controlador defectuoso está apagado. Busque el icono de NV.
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+
+NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
+
++
+** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de la controladora y el sistema de almacenamiento se encuentra en estado «esperando devolución», o cuando el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
+** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del chasis y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el módulo del controlador se puede extraer del chasis).
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables de la fuente de alimentación del módulo del controlador de las fuentes de alimentación (PSU) del módulo del controlador.
++
+
+NOTE: Si el sistema tiene alimentación de CC, desconecte el bloque de alimentación de las PSU.
+
+. Desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo del controlador, realizando un seguimiento de dónde se conectaron los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de gestión de cables del módulo del controlador.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Gráfico de extracción del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+| Un pestillo de bloqueo 
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2, ancho=30px"]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo del controlador fuera del chasis y colóquelo sobre una superficie plana y estable.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+

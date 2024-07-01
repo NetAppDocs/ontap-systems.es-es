@@ -1,0 +1,99 @@
+= 
+:allow-uri-read: 
+
+
+. Quite la tapa del extremo izquierdo para localizar el orificio pequeño a la derecha de los LED.
++
+image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie cambio ns224 ID de estante IEOPS 836]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[icono de leyenda 01]
+ a| 
+Tapa final de estante
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[icono de leyenda 02]
+ a| 
+Placa frontal de la bandeja
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[icono de leyenda 03]
+ a| 
+Número de ID de la bandeja
+
+
+
+ a| 
+image::../media/legend_icon_04.svg[icono de leyenda 04]
+ a| 
+Botón de acceso de ID de la bandeja
+
+|===
+. Cambie la primera cantidad de ID de bandeja:
++
+.. Inserte el clip de papel o el bolígrafo en el orificio pequeño.
+.. Mantenga presionado el botón hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
++
+Este número puede tardar hasta 15 segundos en parpadear. De este modo se activa el modo de programación del identificador de bandeja.
+
++
+
+NOTE: Si el ID tarda más de 15 segundos en parpadear, mantenga pulsado el botón de nuevo y asegúrese de pulsarlo completamente.
+
+.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
++
+Cada duración de la prensa y la liberación puede ser de un segundo.
+
++
+El primer número continúa parpadeando.
+
+
+
+. Cambie el segundo número de ID de bandeja:
++
+.. Mantenga presionado el botón hasta que el primer número de la pantalla digital parpadee.
++
+Este número puede tardar hasta tres segundos en parpadear.
+
++
+El primer número de la pantalla digital deja de parpadear.
+
+.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
++
+El segundo número continúa parpadeando.
+
+
+
+. Bloquee el número deseado y salga del modo de programación manteniendo pulsado el botón hasta que el segundo número deje de parpadear.
++
+El número puede tardar hasta tres segundos en dejar de parpadear.
+
++
+Ambos números de la pantalla digital comienzan a parpadear y el LED ámbar del ODP se ilumina después de unos cinco segundos, para avisarle de que el ID de bandeja pendiente aún no ha entrado en vigor.
+
+. Apague y encienda la bandeja para que el ID de bandeja quede registrado.
++
+Debe desconectar el cable de alimentación de ambas fuentes de alimentación de la bandeja, esperar la cantidad de tiempo adecuada y volver a conectarlo a las fuentes de alimentación de la bandeja para completar el ciclo de alimentación.
+
++
+Una fuente de alimentación se enciende en cuanto el cable de alimentación está conectado. Su LED bicolor debería iluminarse en verde.
+
++
+** Si ONTAP aún no está en ejecución o va a añadir una bandeja (que aún no se ha cableado al sistema), espere al menos 10 segundos.
+** Si ONTAP se está ejecutando (las controladoras están disponibles para servir datos) y todas las unidades de la bandeja son propiedad de la bandeja, repuestos o parte de los agregados desconectados, espere al menos 70 segundos.
++
+Esta vez, ONTAP puede eliminar correctamente la dirección de la bandeja antigua y actualizar la copia de la nueva dirección de la bandeja.
+
+
+
+. Vuelva a colocar la tapa del extremo izquierdo.
+

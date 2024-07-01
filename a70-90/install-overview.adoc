@@ -1,0 +1,34 @@
+---
+permalink: a70-90/install-overview.html 
+sidebar: sidebar 
+keywords: Installation, deployment, Install, deploy, Installing, deploying 
+summary: Siga estos pasos de alto nivel para instalar y configurar su sistema de almacenamiento AFF A70 o A90 y ponerlo en marcha como nodo en su sistema ONTAP. 
+---
+= Flujo de trabajo de instalación - AFF A70, AFF A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Siga estos pasos del flujo de trabajo para instalar, configurar e implementar su sistema de almacenamiento AFF A70, AFF A90.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:install-prepare.html["Prepare la instalación"]
+[role="quick-margin-para"]
+Para prepararse para la instalación, debe preparar el sitio, comprobar los requisitos ambientales y eléctricos y asegurarse de que hay suficiente espacio en el bastidor. A continuación, desembale el equipo, compare su contenido con la hoja de embalaje y registre el hardware para acceder a los beneficios de soporte.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:install-hardware.html["Instale el hardware"]
+[role="quick-margin-para"]
+Para instalar el hardware, instale los kits de rieles para la plataforma y las bandejas y, a continuación, instale y asegure la plataforma en el armario o el rack de telecomunicaciones. A continuación, deslice los estantes sobre los rieles. Por último, conecte los dispositivos de gestión de cables a la parte posterior de la plataforma para organizar el enrutamiento de cables.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:install-cable.html["Hardware del cable"]
+[role="quick-margin-para"]
+Para cablear el hardware, primero conecte las controladoras a la red y, a continuación, conecte las controladoras a las bandejas.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:install-power-hardware.html["Encienda el sistema de almacenamiento"]
+[role="quick-margin-para"]
+Para encender el sistema, primero encienda cada bandeja NS224 y asigne un ID de bandeja exclusivo para comprobar que cada bandeja sea distinta dentro de la configuración. A continuación, encienda las controladoras. Por último, utilice el dispositivo de seguridad proporcionado para asegurar los cables de alimentación de cada fuente de alimentación.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:install-complete.html["Completar la configuración del sistema de almacenamiento"]
+[role="quick-margin-para"]
+Para completar la configuración del sistema, acceda a la interfaz basada en web System Manager, señalando el explorador a la dirección IP de la controladora. Un asistente de configuración le ayuda a comenzar a utilizar la configuración de clúster. Como alternativa, también puede usar la interfaz de línea de comandos (CLI).

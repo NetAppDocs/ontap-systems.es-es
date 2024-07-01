@@ -14,6 +14,7 @@ Determine qué sección debe usar para restaurar sus configuraciones de OKM, NSE
 
 == Restaure NVE o NSE cuando el gestor de claves incorporado está habilitado
 
+.Pasos
 . Conecte el cable de consola a la controladora de destino.
 . Utilice el comando boot_ontap en el símbolo del sistema DEL CARGADOR para arrancar la controladora.
 . Compruebe la salida de la consola:
@@ -101,7 +102,7 @@ Si la devolución no está completa tras 20 minutos, póngase en contacto con el
 
 . En el símbolo del sistema clustershell, introduzca el comando net int show -is-home false para enumerar las interfaces lógicas que no están en su controlador y puerto de casa.
 +
-Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto principal utilizando el comando net int revert.
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert -vserver Cluster -lif _nodename_` comando.
 
 . Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
@@ -111,6 +112,7 @@ Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su
 
 == Restaure NSE/NVE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores
 
+.Pasos
 . Conecte el cable de consola a la controladora de destino.
 . Utilice el comando boot_ontap en el símbolo del sistema DEL CARGADOR para arrancar la controladora.
 . Compruebe la salida de la consola:
@@ -150,7 +152,7 @@ NOTE: Los terminación CIFS pueden provocar la pérdida de datos.
 . Espere 3 minutos y compruebe el estado de la conmutación al respaldo con el comando Storage Failover show.
 . En el símbolo del sistema clustershell, introduzca el `net int show -is-home false` comando para mostrar las interfaces lógicas que no están en su controladora y puerto de inicio.
 +
-Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert` comando.
+Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su puerto de inicio mediante el `net int revert -vserver Cluster -lif _nodename_` comando.
 
 . Mueva el cable de la consola a la controladora de destino y ejecute el `version -v` Comando para comprobar las versiones de ONTAP.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
@@ -158,12 +160,12 @@ Si alguna interfaz aparece como `false`, vuelva a revertir estas interfaces a su
 . Utilice la `security key-manager key-query` comando para mostrar las claves de cifrado y autenticación almacenadas en los servidores de gestión de claves.
 +
 ** Si la `Restored` columna = `yes/true`, ha finalizado y puede continuar con el proceso de sustitución.
-** Si la `Key Manager type` = `external` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Utilice el comando de restauración externa del administrador de claves de seguridad para restaurar los identificadores de claves de las claves de autenticación.
+** Si la `Key Manager type` = `external` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, utilice la `security key-manager external restore` Comando para restaurar los ID de claves de las claves de autenticación.
 +
 
 NOTE: Si el comando falla, póngase en contacto con el servicio de atención al cliente.
 
-** Si la `Key Manager type` = `onboard` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, Utilice el comando Security Key Manager Onboard SYNC para volver a sincronizar el tipo de Key Manager.
+** Si la `Key Manager type` = `onboard` y la `Restored` columna = cualquier otra cosa que no sea `yes/true`, utilice la `security key-manager onboard sync` Comando para volver a sincronizar el tipo de gestor de claves.
 +
 Utilice la `security key-manager key-query` para comprobar que el `Restored` columna = `yes/true` para todas las claves de autenticación.
 

@@ -36,7 +36,7 @@ La forma en que reemplace el disco depende de cómo se utilice la unidad de disc
 .Acerca de esta tarea
 El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
 
-Al sustituir varias unidades de disco, debe esperar un minuto entre la eliminación de cada unidad de disco con fallo y la inserción de la unidad de disco de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de cada nuevo disco.
+Al sustituir varias unidades de disco, debe esperar 70 segundos entre la extracción de cada unidad de disco con errores y la inserción de la unidad de disco de reemplazo para que el sistema de almacenamiento pueda reconocer la existencia de cada disco nuevo.
 
 .Pasos
 . Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la unidad de reemplazo de asignación automática de unidades, si se encuentra habilitada
@@ -81,7 +81,7 @@ Esto permite al sistema reconocer que se ha quitado una unidad.
 +
 .. Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
 .. Presione hasta que la unidad se detenga.
-.. Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
+.. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
 +
 Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
 
@@ -98,7 +98,7 @@ Cuando el LED de actividad de la unidad está sólido, significa que la unidad t
 +
 Puede introducir el comando en cualquier módulo de la controladora.
 
-.. Asigne cada unidad: `storage disk assign -disk disk_name -owner owner_name`
+.. Asigne cada unidad: `storage disk assign -disk disk_name -owner node_name`
 +
 Puede introducir el comando en cualquier módulo de la controladora.
 
