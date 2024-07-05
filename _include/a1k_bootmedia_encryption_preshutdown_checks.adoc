@@ -17,7 +17,7 @@ Antes de apagar la controladora deteriorada, debe verificar si el sistema tiene 
 == Verifique la configuración del gestor de claves de seguridad
 
 .Pasos
-. Deserme si Key Manager está activo con el comando _security key-manager keystore show_. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap-cli/security-key-manager-keystore-show.html["Almacén de claves de seguridad gestor de claves mostrar página DEL COMANDO MAN"^]
+. Determine si Key Manager está activo con el comando _security key-manager keystore show_. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap-cli/security-key-manager-keystore-show.html["Almacén de claves de seguridad gestor de claves mostrar página DEL COMANDO MAN"^]
 +
 
 NOTE: Es posible que tenga tipos de gestor de claves adicionales. Los tipos son `KMIP` `AKV`, y `GCP`. El proceso de confirmación de estos tipos es el mismo que el de confirmación `external` o `onboard` el de los tipos de gestor de claves.

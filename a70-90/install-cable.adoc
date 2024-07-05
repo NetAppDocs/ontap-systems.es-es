@@ -47,20 +47,24 @@ Conecte mediante cable las conexiones del clúster sin switch.
 NOTE: El tráfico de interconexión de clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos.
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cable de alta disponibilidad de clúster]
-
+.. Puerto de cable e1a de la controladora A al puerto E1A de la controladora B.
+.. Puerto de cable e7a de la controladora A al puerto E1A de la controladora B.
 +
 * Cables de interconexión Cluster/HA*
 
-+
-image::../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Diagrama de cableado de clústeres de dos nodos sin switches]
 
-. Conecte los puertos del módulo Ethernet a la red host.
-+
-A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
 
-+
-.. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
+
+
+image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cable de alta disponibilidad de clúster]
+
++ image:../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Diagrama de cableado de cluster sin switch de dos nodos, width=500px]
+
++ . Conecte los puertos del módulo Ethernet a la red host.
+
++ Los siguientes son algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
+
+. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
 +
 
 NOTE: Para obtener el rendimiento máximo del sistema para el tráfico de clúster y de alta disponibilidad, es mejor no utilizar puertos e1b y e7b para las conexiones de red de host. Utilice una tarjeta de host independiente para maximizar el rendimiento.
@@ -74,7 +78,7 @@ image::../media/oie_cable_sfp_gbe_copper.svg[100GB Cable Ethernet]
 +
 image::../media/drw_70-90_network_cabling1_ieops-1654.svg[Cable a red Ethernet de 100 Gb]
 
-.. Conecte los cables de los switches de red host de 10/25 GbE.
+. Conecte los cables de los switches de red host de 10/25 GbE.
 +
 *4 puertos, 10/25 GbE Host*
 
@@ -84,9 +88,8 @@ image::../media/oie_cable_sfp_gbe_copper.svg[Cable de 10/25 GB]
 +
 image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Cable a red Ethernet 100GB]
 
-
-
-. Conecte los puertos de gestión de controladoras (llave) a los switches de red de gestión con cables 1000BASE-T RJ-45.
++
+.. Conecte los puertos de gestión de controladoras (llave) a los switches de red de gestión con cables 1000BASE-T RJ-45.
 +
 image::../media/oie_cable_rj45.svg[Cables RJ45]
 
@@ -99,7 +102,9 @@ image::../media/drw_70-90_management_connection_ieops-1656.svg[Conéctese a su r
 
 
 
-IMPORTANT: NO enchufe los cables de alimentación todavía.
+
+
+IMPORTANT: No enchufe los cables de alimentación todavía.
 
 --
 .Opción 2: Cable de clúster conmutado
@@ -170,7 +175,7 @@ image::../media/drw_70-90_management_connection_ieops-1656.svg[Conéctese a su r
 
 
 
-IMPORTANT: NO enchufe los cables de alimentación todavía.
+IMPORTANT: No enchufe los cables de alimentación todavía.
 
 --
 ====

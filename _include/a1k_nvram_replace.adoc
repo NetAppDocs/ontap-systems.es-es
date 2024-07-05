@@ -233,7 +233,7 @@ CAUTION: La reasignación de discos solo se necesita al sustituir el módulo NVR
 
 .Pasos
 . Si la controladora se encuentra en modo de mantenimiento (y se muestra `*>` el aviso), salga del modo de mantenimiento y vaya al símbolo del sistema DEL CARGADOR: _Halt_
-. Desde el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia de ID del sistema.
+. En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.
 . Espere hasta que espere el retorno... El mensaje se muestra en la consola del controlador con el módulo de reemplazo y luego, desde el controlador en buen estado, verifique que el nuevo ID del sistema asociado se haya asignado automáticamente: _Storage failover show_
 +
 En el resultado del comando, debería ver un mensaje donde se indica que el ID del sistema ha cambiado en la controladora dañada, con lo que se muestran los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.
