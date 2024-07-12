@@ -52,19 +52,20 @@ NOTE: El tráfico de interconexión de clúster y el tráfico de alta disponibil
 +
 * Cables de interconexión Cluster/HA*
 
-
-
-
-
++
 image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cable de alta disponibilidad de clúster]
 
-+ image:../media/drw_A1K_tnsc_cluster_cabling_ieops-1648.svg[Diagrama de cableado de cluster sin switch de dos nodos,width=500px]
++
+image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Diagrama de cableado de clústeres de dos nodos sin switches]
 
-+ . Conecte los puertos del módulo Ethernet a la red host.
 
-+ Los siguientes son algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
 
-. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
+. Conecte los puertos del módulo Ethernet a la red host.
++
+A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
+
++
+.. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
 +
 
 NOTE: Para obtener el rendimiento máximo del sistema para el tráfico de clúster y de alta disponibilidad, es mejor no utilizar puertos e1b y e7b para las conexiones de red de host. Utilice una tarjeta de host independiente para maximizar el rendimiento.
@@ -78,7 +79,7 @@ image::../media/oie_cable_sfp_gbe_copper.svg[100GB Cable Ethernet]
 +
 image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Cable a red Ethernet 100GB]
 
-. Conecte los cables de los switches de red host de 10/25 GbE.
+.. Conecte los cables de los switches de red host de 10/25 GbE.
 +
 *Host de 10/25 GbE*
 
@@ -88,8 +89,9 @@ image::../media/oie_cable_sfp_gbe_copper.svg[Cable Ethernet 10/25GB]
 +
 image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Cable a red Ethernet 10/25GB]
 
-+
-.. Conecte los puertos de gestión de controladoras (llave) a los switches de red de gestión con cables 1000BASE-T RJ-45.
+
+
+. Conecte los puertos de gestión de controladoras (llave) a los switches de red de gestión con cables 1000BASE-T RJ-45.
 +
 image::../media/oie_cable_rj45.svg[Cables RJ-45]
 
@@ -98,8 +100,6 @@ image::../media/oie_cable_rj45.svg[Cables RJ-45]
 
 +
 image::../media/drw_a1k_management_connection_ieops-1651.svg[Conéctese a su red de gestión]
-
-
 
 
 

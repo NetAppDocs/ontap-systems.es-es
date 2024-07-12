@@ -1,0 +1,24 @@
+---
+permalink: a1k/bootmedia-replace-requirements.html 
+keywords: aff a1k, replace the boot media 
+summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+---
+= Requisitos y consideraciones: AFF A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos.
+
+* Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz`.
+* Debe copiar `image_xxx.tgz` el archivo en la unidad flash USB para su uso posterior en este procedimiento.
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+

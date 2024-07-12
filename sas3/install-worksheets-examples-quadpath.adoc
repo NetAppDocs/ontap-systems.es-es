@@ -17,18 +17,18 @@ Es posible utilizar la hoja de datos de cableado y el ejemplo de cableado comple
 * Si es necesario, puede consultar link:install-cabling-worksheets-how-to-read-quadpath.html["Cómo leer una hoja de cálculo para cablear las conexiones de controladora a pila para la conectividad con cuatro rutas"].
 * El ejemplo de cableado muestra cables de controladora a pila como sólidos o discontinuas para distinguir las conexiones de los puertos de la controladora A y C de las conexiones de los puertos de la controladora B y D.
 +
-image::../media/drw_controller_to_stack_cable_type_key.gif[controlador drw para apilar tipo de cable]
+image::../media/drw_controller_to_stack_cable_type_key.gif[Clave de tipo de cable para el cableado de la controladora a la pila]
 
 * Los cables de los ejemplos de cableado y sus pares de puertos correspondientes en las hojas de trabajo están codificados con colores para distinguir la conectividad con cada pila del par de alta disponibilidad.
 +
-image::../media/drw_controller_to_stack_cable_color_key_non2600.gif[controlador drw para apilar la clave de color del cable no 2600]
+image::../media/drw_controller_to_stack_cable_color_key_non2600.gif[Clave de color para hojas de cálculo de cableado]
 
 * En el ejemplo de cableado se distinguen visualmente los dos conjuntos de cables multivía necesarios para lograr conectividad de cuatro rutas para cada controladora en cada pila, en una configuración de par de alta disponibilidad o de controladora individual.
 +
 El primer conjunto de cableado multipathed se denomina «multipathed». El segundo conjunto de cables de conexión múltiple se conoce como "'quad-pathed'". El segundo conjunto de cables se conoce como "'quad-pathed'" porque al completar este conjunto de cables se proporciona la conectividad de cuatro rutas.
 
 +
-image::../media/drw_controller_to_stack_quad_pathed_connectivity_key.gif[controlador drw para apilar la clave de conectividad con cuatro pathed]
+image::../media/drw_controller_to_stack_quad_pathed_connectivity_key.gif[Tecla de color para conectividad de ruta cuádruple]
 
 * En el ejemplo de la hoja de datos, se muestran parejas de puertos designadas para el cableado multivía o el cableado de rutas cuádruples en la pila correspondiente.
 +
@@ -44,4 +44,4 @@ En el siguiente ejemplo de hoja de cálculo y cableado se utilizan los pares de 
 
 image::../media/drw_worksheet_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[Hoja de trabajo de cableado para alta disponibilidad de ruta cuádruple]
 
-image::../media/drw_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[drw qpha ranuras 1 y 2 de 4 phtebas dos pilas nau]
+image::../media/drw_qpha_slots_1_and_2_two_4porthbas_two_stacks_nau.gif[Alta disponibilidad Quuad-path con dos HBA SAS de cuatro puertos y dos pilas de múltiples bandejas]
