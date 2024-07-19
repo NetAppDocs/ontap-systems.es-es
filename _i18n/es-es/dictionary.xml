@@ -514,8 +514,6 @@
   <block id="35947e84e557291e52a523d2f7eefc27" category="list-text">Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.</block>
   <block id="5095693f193a3881c5590204404933d4" category="paragraph">El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.</block>
   <block id="ab580dd61655d242c5e7898b10207e71" category="paragraph">Al sustituir varias unidades de disco, debe esperar un minuto entre la eliminación de cada unidad de disco con fallo y la inserción de la unidad de disco de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de cada nuevo disco.</block>
-  <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="paragraph-title">Procedimiento</block>
-  <block id="dd48f304652176299be75f07f2b6523a" category="paragraph">Sustituya la unidad con error seleccionando la opción adecuada a las unidades que admite su plataforma.</block>
   <block id="b2503ad254a75d9be517466a531e8187" category="open-title">Opción 1: Sustituir SSD</block>
   <block id="349535790ff32da6089571ee962b5909" category="list-text">Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la unidad de reemplazo de asignación automática de unidades, si se encuentra habilitada</block>
   <block id="9b6925a7601fc7c5515a98f2e73c64cb" category="admonition">La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.</block>
@@ -557,7 +555,6 @@
   <block id="01c18660694535ca4b59c21e0e893461" category="paragraph">Por ejemplo, la siguiente ilustración muestra una unidad de disco con el botón de liberación situado en la parte superior de la cara de la unidad de disco:</block>
   <block id="572908986c1b5c1fc8dc618c9ad316ad" category="paragraph">El mango de leva de los muelles de accionamiento de disco se abre parcialmente y la unidad de disco se libera del plano medio.</block>
   <block id="0d8323eada848f2a4fe8cf79e773c078" category="list-text">Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad de disco del plano medio.</block>
-  <block id="7dc8175f2f2fc69f2fb815cbd3873bf3" category="image-alt">unidad drw abierta</block>
   <block id="cc4019f56a1373976b3ef90709ca6709" category="list-text">Deslice ligeramente la unidad de disco y deje que el disco se reduzca de forma segura, lo que puede tardar menos de un minuto. A continuación, retire la unidad con las dos manos de la bandeja de discos.</block>
   <block id="825b28c800f73d57ecb1e2ef500ff283" category="list-text">Con la palanca de leva en la posición abierta, inserte la unidad de disco de repuesto en el compartimiento de la unidad, empujando firmemente hasta que la unidad de disco se detenga.</block>
   <block id="6f80e13df4b5c2a4fc8fa945e1d512e0" category="admonition">Espere un mínimo de 10 segundos antes de insertar una nueva unidad de disco. Esto permite al sistema reconocer que se ha quitado una unidad de disco.</block>
@@ -3022,86 +3019,50 @@
   <block id="ea26f0c009e33e86f172f22d6e190d0a" category="paragraph">Si su par de alta disponibilidad ejecuta ONTAP 9.8 o posterior, se muestran los puertos no dedicados<block ref="91e02cd2b8621d0c05197f645668c5c4" prefix=" " category="inline-code"></block> en la<block ref="650be61892bf690026089544abbd9d26" prefix=" " category="inline-code"></block> columna.</block>
   <block id="744b6c476a210a04195ef528c6730bc7" category="paragraph">Si su par de alta disponibilidad ejecuta ONTAP 9.7 o 9.6, los puertos no dedicados se muestran<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> en la<block ref="c7b4666e1f46b9d8409deace1de37977" prefix=" " category="inline-code"></block> columna, también mostrar<block ref="075ae3d2fc31640504f814f60e5ef713" prefix=" " category="inline-code"></block> en la<block ref="46a2a41cc6e552044816a2d04634545d" prefix=" " category="inline-code"></block> columna.</block>
   <block id="d8109bc1e72c67d266f35804a93c0a8d" category="summary">Puede añadir en caliente una bandeja de unidades NS224 después de que su par de alta disponibilidad cumpla determinados requisitos y una vez completadas las tareas de preparación aplicables a su pareja de alta disponibilidad.</block>
-  <block id="305fade7b83ae4e7549b33a3ae1b1fd0" category="doc">Adición en caliente de una estantería - bandejas NS224</block>
   <block id="eca821c6b2673e81fce80d61c03099a4" category="section-title">Requisitos de una adición activa</block>
-  <block id="eeb59433d501968b152fd713cddd2e47" category="paragraph">Su par de alta disponibilidad debe cumplir determinados requisitos antes de añadir en caliente una bandeja de unidades NS224.</block>
-  <block id="9e3a02c5b7d1bbea0a425314be87f94c" category="list-text">El modelo y la versión de su plataforma de ONTAP deben ser compatibles con las bandejas NS224 y las unidades que se añaden en caliente.</block>
-  <block id="b3f61222fb51c826335ea05f957189ce" category="list-text">Debe tener el número y el tipo de cables correctos para conectar la bandeja.</block>
-  <block id="149bd884ff7361ec4900f148e94264c1" category="paragraph">Si el par de alta disponibilidad no tiene suficientes puertos disponibles para roce y el modelo de plataforma admite el uso de tarjetas PCIe o módulos de I/o compatibles con roce, debe haber instalado las tarjetas adicionales o módulos de I/o en las ranuras de controladora correctas, como lo admite el modelo de plataforma.</block>
-  <block id="bf9e404e3724ecf929670f95275b884e" category="paragraph">Los puertos no dedicados compatibles con roce deben configurarse para uso del almacenamiento (no para uso de redes).</block>
-  <block id="3a0537bc074963c8c7b8afdfa7851872" category="paragraph"><block ref="cd0ec4d1059266e2eb6b1658ce353e50" category="inline-xref-macro-rx"></block></block>
-  <block id="c86ca2ad8b18f1b66eec5105c703ce0a" category="list-text">Si tiene un par de alta disponibilidad A700 de AFF y está en caliente al añadir la bandeja de unidades inicial NS224 (no hay ninguna bandeja de unidades NS224 en su par de alta disponibilidad), debe haber instalado un módulo de volcado de núcleo (X9170A, SSD NVMe de 1 TB) en cada controladora para admitir volcados principales (almacenar archivos principales).</block>
   <block id="2a8cd3ca573de9451e94751347275dc3" category="inline-link-macro">Sustituya el módulo de almacenamiento en caché o añada/sustituya un módulo de volcado de memoria: A700 y FAS9000 de AFF</block>
-  <block id="475cacc4c4d3f4ca67cc021d7e76f4ce" category="paragraph"><block ref="475cacc4c4d3f4ca67cc021d7e76f4ce" category="inline-link-macro-rx"></block></block>
-  <block id="40b9aa2a1398aaa422dac35a64ae5873" category="list-text">Su pareja de alta disponibilidad debe tener una cantidad inferior a la cantidad máxima de bandejas compatibles, al menos con la cantidad de bandejas que haya planificado añadir en caliente.</block>
-  <block id="ad77a3083357fd77bd7e8fdbdf159740" category="paragraph">No puede haber superado el número máximo de bandejas compatibles con su pareja de alta disponibilidad después de añadir bandejas en activo.</block>
   <block id="0cba540a6f27fb2ed5b8694332213f9d" category="list-text">Si añade en caliente una bandeja a una pareja de alta disponibilidad que ya tiene una bandeja NS224, su par de alta disponibilidad no puede tener mensajes de error de cableado de almacenamiento y debe cablearse como alta disponibilidad multivía.</block>
-  <block id="6bdb195c7a34745d79922274f1a7c2c3" category="paragraph">Puede ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado de almacenamiento y las acciones correctivas que debe tomar.</block>
   <block id="839439b189cfb3960dee96d5900594f7" category="list-text">Necesita un clip de papel con un bolígrafo enderezado o con punta estrecha.</block>
-  <block id="6f1c8168a791947d3031cd2fdabd1192" category="paragraph">Para cambiar el ID de la bandeja, utilice el clip de papel o el bolígrafo para acceder al botón ID de la bandeja situado detrás del panel de visualización del operador (ODP).</block>
   <block id="a88a83b0bfb523c178bf4c0cfdf68574" category="section-title">Consideraciones para una adición en caliente</block>
-  <block id="7c1fc39297ae1348c713726df64dc610" category="paragraph">Antes de añadir en caliente una bandeja de unidades NS224, debe familiarizarse con las prácticas recomendadas y los aspectos de este procedimiento.</block>
-  <block id="b979e87e6bde70f013c6af59e1fa73aa" category="list-text">Si tiene un par de alta disponibilidad de ASA que admite bandejas NS224, puede utilizar este procedimiento.</block>
   <block id="544c0e56afe20cab7c081a167f90b40d" category="list-text">*Mejor práctica:* la mejor práctica es tener instalada la versión actual del paquete de cualificación de disco (DQP) antes de agregar en caliente una bandeja.</block>
   <block id="49499bb4b11cb28cd05725cd5cafadd0" category="paragraph">Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.</block>
   <block id="27ad121f85fccbb2fbae4c00d3c38810" category="inline-link">Descargas de NetApp: Paquete de cualificación de disco</block>
   <block id="6f0e65a313ceda26ae3094641da52d2e" category="paragraph"><block ref="6f0e65a313ceda26ae3094641da52d2e" category="inline-link-rx"></block></block>
   <block id="e47dc1184d0b4a889dc672df315a5a19" category="list-text">*Mejor práctica:* la mejor práctica es ejecutar Active IQ Config Advisor antes y después de añadir en caliente un estante.</block>
-  <block id="505979d325219f19e3b1590170f752f3" category="paragraph">Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se obtiene un captura de snap de la conectividad Ethernet (ENET) de la bandeja existente, se comprueban las versiones de firmware del módulo de bandeja NVMe (NSM) y se puede verificar un ID de bandeja que ya se está usando en el par de alta disponibilidad. Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.</block>
-  <block id="78c392199c08bab6bc34c660f80f7f24" category="list-text">*Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de añadir una bandeja nueva.</block>
   <block id="eb8f45b1db6775caf49b1a0ff7b38f44" category="list-text">Después de cablear una bandeja añadida en caliente, ONTAP reconoce la bandeja:</block>
   <block id="583e7dd0a618fcea3c1f37593c2e7202" category="list-text">La propiedad de la unidad se asigna si la asignación automática de unidad está habilitada.</block>
   <block id="97f2d61fca24e47abce33d66ce5427b7" category="list-text">El firmware de la bandeja NSM y el de la unidad deben actualizarse automáticamente, si es necesario.</block>
   <block id="3de1e52644cd0e31c01bd38eb7e3cd32" category="admonition">Las actualizaciones de firmware pueden tardar hasta 30 minutos.</block>
-  <block id="4cf3f390446c26252aab038e17c0643f" category="section-title">Prepare una adición activa</block>
-  <block id="c0f11900de778c0c7dbc4dcc23284ed9" category="paragraph">Debe completar las tareas de preparación aplicables a su par de alta disponibilidad antes de añadir en caliente una bandeja de unidades NS224.</block>
   <block id="1292d9da9c097d598fa72a64d548e359" category="paragraph">Debe haber cumplido los requisitos del sistema.</block>
   <block id="17d14abf2103752e4149b92b2294370e" category="paragraph"><block ref="1a0d84af954c02706175aa571a3829ff" category="inline-xref-macro-rx"></block></block>
-  <block id="204c25542c5d660c031ae735415785bc" category="list-text">En algunos modelos de plataforma, cuando se instala una tarjeta PCIe o un módulo I/o compatible con roce en una ranura compatible de una controladora, los puertos tienen la opción predeterminada automáticamente para el uso del almacenamiento (en lugar de las redes). Sin embargo, se recomienda completar este procedimiento para verificar que los puertos compatibles con roce se hayan configurado para el uso del almacenamiento.</block>
   <block id="2cd678bb1387e05d5c4dd3461278cff2" category="list-text">Si determina que los puertos no dedicados compatibles con roce de la pareja de alta disponibilidad no están configurados para su uso en el almacenamiento, se trata de un procedimiento no disruptivo para configurarlos.</block>
   <block id="f13cb5d2becdef8b8ebea94e8b537d9f" category="admonition">Si su par de alta disponibilidad está ejecutando una versión de ONTAP 9.6, debe reiniciar las controladoras, una a la vez.</block>
   <block id="f02a3810a88faed2075af7fdeef6cc0d" category="admonition">Si su pareja de alta disponibilidad ejecuta ONTAP 9.7 o una versión posterior, no necesita reiniciar las controladoras, a menos que una o ambas controladoras estén en modo de mantenimiento. En este procedimiento se asume que ninguna controladora está en modo de mantenimiento.</block>
-  <block id="622e2c1e48cbf4234cb8c28434a52588" category="list-text">Compruebe si los puertos no dedicados del par de alta disponibilidad están configurados para el uso del almacenamiento:<block ref="90e0991b70398b08e4e3eb0ae46c4163" prefix=" " category="inline-code"></block></block>
   <block id="9c421700c0f93ff32ed586c9cde9ac20" category="paragraph">Si su par de alta disponibilidad ejecuta ONTAP 9.8 o posterior, se muestran los puertos no dedicados<block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> en la<block ref="650be61892bf690026089544abbd9d26" prefix=" " category="inline-code"></block> columna.</block>
   <block id="1a0894ce06ca64ffb7715de304b85900" category="paragraph">Si su par de alta disponibilidad ejecuta ONTAP 9.7 o 9.6, los puertos no dedicados se muestran<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> en la<block ref="c7b4666e1f46b9d8409deace1de37977" prefix=" " category="inline-code"></block> columna, también mostrar<block ref="a10311459433adf322f2590a4987c423" prefix=" " category="inline-code"></block> en la<block ref="46a2a41cc6e552044816a2d04634545d" prefix=" " category="inline-code"></block> columna.</block>
   <block id="d0d1f0809de877f29fd0a846c8876708" category="list-text">Si los puertos no dedicados están configurados para el uso del almacenamiento, se realiza con este procedimiento.</block>
   <block id="07d80afbccd38f7712fa336226de0865" category="paragraph">Cuando los puertos no dedicados no están configurados para el uso del almacenamiento, el resultado del comando muestra lo siguiente:</block>
   <block id="73124fcd33e14baccdc22e05ad18e381" category="paragraph">Si su par de alta disponibilidad ejecuta ONTAP 9.7 o 9.6, los puertos no dedicados se muestran<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> en la<block ref="7ed427253695f845f908985c78b9f390" prefix=" " category="inline-code"></block> columna, también mostrar<block ref="075ae3d2fc31640504f814f60e5ef713" prefix=" " category="inline-code"></block> en la<block ref="46a2a41cc6e552044816a2d04634545d" prefix=" " category="inline-code"></block> columna.</block>
-  <block id="a71b3231969443f43b88fb3f3997c11b" category="list-text">Configure los puertos no dedicados para su uso del almacenamiento en uno de los módulos de la controladora:</block>
   <block id="1529765b6b367d0e6b6e265150953287" category="paragraph">Debe repetir el comando correspondiente para cada puerto que esté configurando.</block>
   <block id="5bf92b0f5dcba33ceffc7fde775fa3ac" category="paragraph">ONTAP 9.7 o 9.6</block>
   <block id="bb38aa03e396afd98be51523e1304b09" category="admonition">El reinicio puede demorar hasta 15 minutos.</block>
-  <block id="2af8713b29d92440aed549d35fa1f9a3" category="list-text">Repita los pasos para el segundo módulo de controlador:</block>
   <block id="fc4a6c2a954652ed60c43c56910ae75a" category="paragraph">ONTAP 9.7 o posterior</block>
   <block id="7dd2a92fd3f41a5334edf46f95d77e71" category="paragraph">ONTAP 9.6</block>
   <block id="97e5b69d6a085b09c71789a6b191bdbd" category="admonition">La primera controladora ya debe haber completado el reinicio.</block>
-  <block id="b4c2dd2542e47ff1364abd95f6610ff8" category="list-text">Compruebe que los puertos no dedicados en ambos módulos de controladora están configurados para almacenamiento:<block ref="90e0991b70398b08e4e3eb0ae46c4163" prefix=" " category="inline-code"></block></block>
   <block id="5f73e21cfc57f9099894052fde4bfc56" category="list-text">La presentación de las conexiones de puertos es un procedimiento no disruptivo si su bandeja cuenta con conectividad de alta disponibilidad multivía.</block>
   <block id="7e273a22e6f4b495323284cd54002213" category="admonition">Mover un cable no requiere tiempo de espera entre desconectar el cable de un puerto y conectarlo a otro.</block>
-  <block id="7e4c7e7366de7251794bd2cee31785b8" category="cell">Si dispone de una...</block>
   <block id="2f37a5aa23cfb87abad4097db5d8b5ee" category="admonition">Los subpasos dan por sentado que la bandeja existente se cableó a módulos de I/o compatibles con roce en la ranura 3 de cada controladora.</block>
-  <block id="ce2468b66455462f68b8eef51607d931" category="paragraph">Si es necesario, se pueden hacer referencia a las ilustraciones de cableado que muestran una única bandeja existente y la bandeja de doble bandeja.</block>
-  <block id="863ee9a0c8ca40928975158c8441cb3e" category="paragraph"><block ref="8b0dd5f6450b331119d433eade9d39d0" category="inline-xref-macro-rx"></block></block>
   <block id="336f4ce595af8dfded4dff3e6c2d2dbe" category="list-text">En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 7, puerto b (e7b).</block>
   <block id="7fade3ed4792ef4e89e2ae6000199479" category="list-text">Repita el mismo cable y mueva la controladora B.</block>
   <block id="97db9d4f6a8cf0456ad92952a384cb79" category="admonition">Los subpasos dan por sentado que la bandeja existente se cableó a tarjetas PCIe compatibles con roce en la ranura 5 de cada controladora.</block>
   <block id="f6eccf676a12f3899de1b6cd792b9d6f" category="list-text">En la controladora A, mueva el cable de la ranura 5, puerto b (e5b), a la ranura 3, puerto b (e3b).</block>
-  <block id="35abee2b20175ae748c82f6ba4453ac1" category="paragraph"><block ref="2d20d554d868477c9c895109bac068ae" category="inline-xref-macro-rx"></block></block>
   <block id="077cb21f670cc68aea4bf00f1abd4745" category="list-text">En la controladora A, mueva el cable del puerto e0d a la ranura 5 puerto b (e5b).</block>
-  <block id="d39331f2882996e7bd91bd33be8e8eda" category="list-text">Compruebe que la bandeja de dos bandejas se haya cableado correctamente.</block>
   <block id="f585cc2236674d2428b635421c54ecfc" category="section-title">Prepare la asignación manual de la propiedad de una unidad para una adición de activo</block>
-  <block id="b72b3c2205cb08a656771ba6697f52d1" category="paragraph">Si va a asignar manualmente la propiedad de una unidad para la bandeja de unidades NS224 que va a añadir en caliente, debe deshabilitar la asignación automática de unidades si está habilitada.</block>
   <block id="ba85497a31a9938c9ee8b64479f5eb73" category="paragraph">Si la asignación automática de unidades está activada, la salida muestra<block ref="ed2b5c0139cec8ad2873829dc1117d50" prefix=" " category="inline-code"></block> en la<block ref="36dcdb9f764aaa4313fab85a6eb8d6a6" prefix=" " category="inline-code"></block> (para cada módulo del controlador).</block>
-  <block id="98a23f93a2146d0c96053cc9158120a2" category="list-text">Debe haber completado los procedimientos de preparación correspondientes.</block>
-  <block id="4dc0b17b937c12129ebe893f11113096" category="paragraph"><block ref="b033791636e3890ff7903341ce0a7906" category="inline-xref-macro-rx"></block></block>
-  <block id="0d42cbc8b21edd5f33f740bf5b14d10d" category="list-text">Instale el kit de montaje en raíl incluido con su bandeja mediante el folleto de instalación incluido en la caja del kit.</block>
   <block id="738a7d32562c5557c170a7a1bacec3f1" category="admonition">No monte el estante con brida.</block>
-  <block id="70dc4293ceb1c0525c9a51737c5667b8" category="list-text">Utilice el folleto de instalación para instalar y proteger la bandeja en los soportes de soporte, así como en el rack o armario.</block>
   <block id="378b62d2964ec0a6c4ac6ec95662dee4" category="paragraph">Una bandeja se enciende cuando está conectada a una fuente de alimentación; no tiene interruptores de alimentación. Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.</block>
   <block id="7468ac9b50ce2792c160ba5ee26808fe" category="list-text">Establezca el ID de bandeja en un número único dentro de la pareja de alta disponibilidad:</block>
-  <block id="34ed719c558f180e6a8425d176730344" category="paragraph">Hay instrucciones más detalladas disponibles:</block>
   <block id="cc621d5c504973952f1b7498f7fbb7c5" category="inline-link-macro">Cambiar un ID de bandeja - bandejas NS224</block>
-  <block id="c69a1009359358cbb1f3e5d6483736fb" category="paragraph"><block ref="c69a1009359358cbb1f3e5d6483736fb" category="inline-link-macro-rx"></block></block>
   <block id="43672219196a0275d0fe8b439ccd44f9" category="list-text">Retire la tapa del extremo izquierdo y localice el orificio pequeño a la derecha de los LED.</block>
   <block id="e1f557b7e67a27c5135ebdc776739a0e" category="list-text">Introduzca el extremo de un clip de papel o una herramienta similar en el orificio pequeño para llegar al botón de ID de la bandeja.</block>
   <block id="82980b60b01c4e791ae1d8e73f193a85" category="list-text">Mantenga pulsado el botón (hasta 15 segundos) hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.</block>
@@ -3114,14 +3075,11 @@
   <block id="c114bc7a6acbc1b2c1f4739710699e0c" category="list-text">Apague y encienda la bandeja para que el ID de bandeja quede registrado.</block>
   <block id="7cd532a90215f8cff1bce2eea092415d" category="paragraph">Debe desconectar los dos cables de alimentación de la bandeja, esperar 10 segundos y, a continuación, volver a enchufarlos.</block>
   <block id="24e10780f209a577c697057f12f64f10" category="paragraph">Cuando se restablece la alimentación a las fuentes de alimentación, sus LED bicolores se iluminan en verde.</block>
-  <block id="d84d97bfca6c6a7d47f929c1b0ee1fb3" category="section-title">Consideraciones a tener en cuenta cuando se realiza el cableado de un complemento activo</block>
   <block id="52aad3ff52241a2e329ba14ca2b495ec" category="list-text">Los cables se insertan con la lengüeta de extracción del conector hacia arriba.</block>
   <block id="546b03f9ca211c30f5975ab99dd93ce8" category="paragraph">Cuando se inserta correctamente un cable, éste hace clic en su lugar.</block>
   <block id="36dad54a495121233a847704d6bf5a6b" category="paragraph">Después de conectar ambos extremos del cable, se encienden los LED LNK (verde) de la bandeja y el puerto de la controladora. Si un LED LNK de puerto no se ilumina, vuelva a colocar el cable.</block>
-  <block id="02c2cc4184073e3a32ac2cad0adca3ad" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A900</block>
   <block id="e859983e28521134b4429e2ad40d035f" category="paragraph">Cuando se necesita almacenamiento adicional, puede añadir hasta tres bandejas de unidades NS224 adicionales (con un total de cuatro bandejas) a un par de alta disponibilidad A900 de AFF.</block>
   <block id="6c4ae44d1114274bf4744f7a456ce07c" category="list-text">Debe haber instalado las bandejas, encendidas y configurado los ID de bandeja.</block>
-  <block id="373a35978efc6b28d1b1d225b662f5db" category="paragraph"><block ref="4688946b74942e3697fd11a0bd3e0972" category="inline-xref-macro-rx"></block></block>
   <block id="e1f00a018e7f4f086a0bcbc7eccb98fb" category="list-text">En este procedimiento se asume que su par de alta disponibilidad tiene al menos una bandeja NS224 existente y que va a añadir hasta tres bandejas adicionales en caliente.</block>
   <block id="6df1d9010eb2d59922ff15832ca8a435" category="list-text">Si su par de alta disponibilidad tiene solo una bandeja NS224 existente, en este procedimiento se asume que la bandeja se cableó en dos módulos I/o de 100 GbE compatibles con roce de cada controladora.</block>
   <block id="71c9cd1d9d6cb72f550738fcffdcb856" category="list-text">Si la bandeja NS224 que está agregando en caliente será la segunda bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
@@ -3130,31 +3088,22 @@
   <block id="d9547d2852203d7c517230eb1c874611" category="list-text">Puerto e0a de la bandeja de cables NSM B a la ranura de la controladora B, puerto a 10 (e10a).</block>
   <block id="58848607da5220d46a743527d7c9fb0b" category="list-text">Cable del puerto e0b NSM B a la ranura 2 de la controladora a, puerto b (e2b).</block>
   <block id="3be444e253b66e84c2a7ac44cc632d2f" category="paragraph">En la siguiente ilustración, se muestra el cableado de la segunda bandeja (y la primera bandeja).</block>
-  <block id="c01b7e73b5184f9332f2b3847a1e8a46" category="image-alt">drw ns224 a900 2 estantes</block>
   <block id="63a52597f01feafa7bac4f564671ef46" category="list-text">Si la bandeja NS224 que está agregando en caliente será la tercera bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
   <block id="7684dbbd76ade935a226af6dfe897289" category="list-text">Conecte El puerto NSM de La bandeja de cables e0a al puerto a de la ranura 1 de la controladora (e1a).</block>
   <block id="2ee333f6f9a00c250ae9813502d4fb07" category="list-text">Cable de la bandeja NSM Del puerto e0b a la ranura de la controladora B, puerto b (e11b) 11.</block>
   <block id="175a349725f8b3af6b3ec0d82c0e2318" category="list-text">Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B (e1a).</block>
   <block id="3eb8ce414e6e8d5e19024a3779a87e42" category="list-text">Cable de la bandeja NSM B del puerto e0b a la ranura de la controladora A 11, puerto b (e11b).</block>
   <block id="e3c4294c5b88b3a64211de084bc7bd2b" category="paragraph">En la siguiente ilustración, se muestra el cableado de la tercera bandeja.</block>
-  <block id="1cc4d52d52b1d439dc272f9193de4eee" category="image-alt">drw ns224 a900 3 estantes</block>
   <block id="ab4ee3b5165983371f54b55e9efd77af" category="list-text">Si la bandeja NS224 que está agregando en caliente será la cuarta bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
   <block id="855fdf1352556d56634d839385addb1b" category="list-text">Conecte el cable de la bandeja NSM de Un puerto e0a a a la ranura de controladora A 11 puerto a (e11a).</block>
   <block id="dd76ecf50f41da091f6d857178f31123" category="list-text">Conecte el cable del puerto NSM A e0b a la ranura de la controladora B del puerto b (e1b).</block>
   <block id="ee0a734e2f0193a65c1da9b82e1749c4" category="list-text">Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B 11 (e11a).</block>
   <block id="d49e45adf2352258d2679cda6d7594c5" category="list-text">Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1.</block>
   <block id="b434465fa52d0f783c7fd0f8d4ce72b7" category="paragraph">En la siguiente ilustración, se muestra el cableado de la cuarta bandeja.</block>
-  <block id="123ecdcab7b962064d8bc5e084e22a78" category="image-alt">drw ns224 a900 4estantes</block>
-  <block id="7383703619146a59a96c04d7ca7f4542" category="list-text">Compruebe que la bandeja añadida en activo se haya cableado correctamente.</block>
-  <block id="0c9aa1b8a23b895dc34c3de2f2a905b7" category="list-text">Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario.</block>
   <block id="e408fe4a40b4e2b5b430bb1a2e4b56a1" category="paragraph"><block ref="054067282f59c2ea6008fdf8f0b78dea" category="inline-xref-macro-rx"></block></block>
-  <block id="f0fad2647eb722df1f95d7cea636dfac" category="paragraph">Cuando se necesite almacenamiento adicional, puede añadir en caliente una bandeja de unidades NS224 a un par de alta disponibilidad FAS500f o AFF A250.</block>
   <block id="fa9763a154ca61da241ba542f9d894f7" category="paragraph">Una vez visto desde la parte posterior del chasis de la plataforma, el puerto para tarjetas compatible con roce de la izquierda es el puerto "a" (e1a) y el puerto de la derecha es el puerto "b" (e1b).</block>
   <block id="6636323e0aff4f454f3b81527e703c2b" category="list-text">Conecte los cables de las conexiones de la bandeja:</block>
   <block id="838163abcc84ed9f0cfee1181f77a021" category="list-text">Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1. + la siguiente ilustración muestra el cableado de las bandejas cuando se completa.</block>
-  <block id="075ac783ee242c66ec7ef26475fd212b" category="section-title">Cablee una bandeja de adición en caliente para un par de alta disponibilidad A700 de AFF</block>
-  <block id="544773fca9e8ae07d62dcf4db5a7cb78" category="list-text">Si va a añadir una bandeja en caliente que utiliza un conjunto de puertos compatibles con roce (un módulo de I/o compatible con roce) en cada módulo de controladora, y esta es la única bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
-  <block id="fec7dbe822daa329031be7af970538e7" category="admonition">Este paso supone que instaló el módulo de I/o compatible con roce en la ranura 3, en lugar de la ranura 7, en cada módulo de la controladora.</block>
   <block id="63efd7f12bfa615588bf813fbcf494a5" category="list-text">Conecte El cable de la bandeja NSM de Un puerto e0a a a la controladora de una ranura 3 puerto a.</block>
   <block id="20609b8391343d9357715cf71f95b8ef" category="list-text">Cable de la bandeja NSM De un puerto e0b a la ranura de la controladora B 3, puerto b.</block>
   <block id="acd47cf4eb7a4076ffdc07861a0e849b" category="list-text">Conecte el puerto NSM B del puerto e0a al puerto de la ranura de la controladora B 3 a.</block>
@@ -3178,41 +3127,25 @@
   <block id="fc10913effb15f2e7e45af08900dd916" category="list-text">Conecte el puerto e0b NSM B al puerto e0b de la controladora A la ranura 3, puerto b.</block>
   <block id="0dcadfb972a7b539c769d330f7ccc286" category="list-text">Vaya al paso 3.</block>
   <block id="44602264e094d019e88a336cd27d0156" category="paragraph">En la siguiente ilustración, se muestra el cableado de la primera y segunda bandejas añadidas en caliente:</block>
-  <block id="100c5224303bd4ddbc570f323ec3b601" category="list-text">Si va a añadir una bandeja en caliente que utiliza un conjunto de puertos compatibles con roce (una tarjeta PCIe compatible con roce) en cada módulo de controladora, y esta es la única bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
   <block id="7f52c439783621a5d09c0e1eb50d4319" category="admonition">Este paso supone que se instaló la tarjeta PCIe compatible con roce en la ranura 5.</block>
-  <block id="6f1539c78a094ce3c97746e4f05a0642" category="paragraph">En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante una tarjeta PCIe compatible con roce en cada módulo de controladora:</block>
-  <block id="e9aab26305dbeeca307e3f574bc6f620" category="list-text">Si va a añadir una o dos bandejas en caliente usando dos conjuntos de puertos compatibles con roce (dos tarjetas PCIe compatibles con roce) en cada módulo de controladora, complete los subpasos aplicables.</block>
   <block id="47f5ff4e183a793933d1f47d1d5d5b04" category="admonition">Este paso supone que instaló las tarjetas PCIe compatibles con roce en la ranura 5 y la ranura 3.</block>
   <block id="928e9f3198873a99cc05c02ab5403b7b" category="admonition">Estos subpasos suponen que se está iniciando el cableado por el puerto de bandeja e0a a a a la tarjeta PCIe compatible con roce en la ranura 5, en lugar de la ranura 3.</block>
   <block id="6ced4955dcb25812c5e43101235629b9" category="admonition">En estos subpasos se asume que está comenzando el cableado por el puerto de bandeja e0a a a la tarjeta PCIe compatible con roce en la ranura 3, en lugar de la ranura 5 (que se correlaciona con los subpasos de cableado de la bandeja 1).</block>
   <block id="75a57e4a236226bc25c09e120aeab4c5" category="paragraph">En la siguiente ilustración, se muestra el cableado de dos bandejas añadidas en caliente:</block>
-  <block id="873efd8427437501798d979ea439809c" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad del A400 AFF</block>
-  <block id="853f2f58eaae6f81846d73d68ec58fc7" category="list-text">Si va a añadir una bandeja en caliente que utiliza un conjunto de puertos compatibles con roce (puertos internos compatibles con roce) en cada módulo de controladora, y esta es la única bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
   <block id="22f0e629287a1d1f90741ddf77caa944" category="list-text">Conecte el cable de la bandeja NSM De Un puerto e0a al puerto e0c de la controladora A.</block>
   <block id="8c937d6d94aae90362b1dc41da2b9988" category="list-text">Cable de la bandeja NSM Del puerto e0b al puerto e0d de la controladora B.</block>
   <block id="1338474ed1400f2decaa8fd4832a842d" category="list-text">Cable del puerto NSM B e0a al puerto e0c de la controladora B.</block>
   <block id="0e756c90485de908977a44f0d58d0222" category="list-text">Conecte el cable del puerto e0b NSM B al puerto e0d de la controladora A.</block>
-  <block id="46678aedb5de8e96e18124083a8925ee" category="paragraph">En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante un conjunto de puertos compatibles con roce en cada módulo de controladora:</block>
-  <block id="c445ec69267514b825de2f1f527b6d69" category="image-alt">drw ns224 a400 1 estante</block>
-  <block id="8391296c9ad39c787ad4300c47db3f73" category="list-text">Si va a añadir una o dos bandejas que utilizan dos conjuntos de puertos compatibles con roce (puertos incorporados y compatibles con roce para tarjeta PCIe) en cada módulo de la controladora, complete los siguientes pasos.</block>
   <block id="c30f945bbdd11d29e0f5cde326554182" category="list-text">Conecte El cable NSM de Un puerto e0a al puerto e0c de la controladora A.</block>
   <block id="dfaa68fc610c2b43abf32ee0c2eff4d7" category="list-text">Conecte el cable del puerto NSM B e0a al puerto e0c de la controladora B.</block>
   <block id="9d77f869ed166aeb4c27e1b6054d86bb" category="list-text">Conecte el cable NSM del puerto e0b al puerto e0d de la controladora B.</block>
   <block id="f192386ba82b03da6277a09d4a2c63ac" category="list-text">Conecte el cable del puerto e0b NSM B al puerto e0d de la controladora A.</block>
-  <block id="f38b00317e342e10d9cf44073d00e94e" category="list-text">Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y volver a habilitar la asignación automática de unidades, si es necesario.</block>
-  <block id="b994ebf3b12ef21aee27b63036342d83" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A320</block>
-  <block id="e708da297b918a1363bc58facb9105b4" category="paragraph">Usted conecta una segunda bandeja de unidades NS224 a un par de alta disponibilidad existente cuando se necesita almacenamiento adicional.</block>
-  <block id="0d0422686a7d332d6a719d1fb6e38772" category="paragraph">En este procedimiento se asume que su par de alta disponibilidad de AFF A320 tiene una bandeja NS224 existente y que va a añadir en caliente una segunda bandeja.</block>
-  <block id="41165b98d83f72cbb439ce5bdb9e71da" category="list-text">Conecte el cable de la bandeja a los módulos de la controladora.</block>
   <block id="b4cef19f20771aa5828eb17c8503f9b4" category="list-text">Conecte El cable NSM de Un puerto e0a al puerto e0e de la controladora A.</block>
   <block id="e3602d852a9feaea5973c0c3f70de818" category="list-text">Conecte el cable NSM del puerto e0b al puerto e0b de la controladora B.</block>
   <block id="6893aba6204908a9ad4e8ef231b0937b" category="list-text">Conecte el cable del puerto e0a NSM B al puerto e0e de la controladora B.</block>
   <block id="fd1b7820b9a22b62bca8acf5ddbaf7ed" category="list-text">Conecte el cable del puerto e0b a el puerto e0b de la controladora a. + la siguiente ilustración muestra el cableado de la bandeja añadida en activo (bandeja 2):</block>
-  <block id="6fc814869e5db879112ab1136b39096b" category="image-alt">drw ns224 a320 2 estantes de conexión directa</block>
   <block id="63b43efd4d91098da87b471ae31f6a98" category="section-title">Complete el hot-add</block>
   <block id="c639108428188e5708bbbe72adfdde85" category="paragraph">Si deshabilitó la asignación automática de unidades como parte de la preparación para la bandeja de unidades NS224 con adición de activos, debe asignar manualmente la propiedad de la unidad y, luego, volver a habilitar la asignación automática de unidades si es necesario.</block>
-  <block id="c180b3ee265cd8852fc5bfedc37c02ae" category="paragraph">Debe haber cableado ya la bandeja según se indica para la pareja de alta disponibilidad.</block>
-  <block id="95fef4a83236d5e3f2ecc10020bc8967" category="paragraph"><block ref="cd2a16cde64eed80b7a03f7f34240bcb" category="inline-xref-macro-rx"></block></block>
   <block id="52e2f58fc39d834074ac8badf66c9b06" category="paragraph">Puede utilizar el carácter comodín para asignar más de una unidad a la vez.</block>
   <block id="c96ba587407b7de20ae8f5750c50673c" category="summary">Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También es posible cambiar un ID de bandeja cuando ONTAP está activo y en ejecución \(los módulos de controladora están disponibles para servir datos\) y todas las unidades de la bandeja son propiedad de la bandeja, piezas de repuesto o parte de un agregado(s\) apagado.</block>
   <block id="7bb2de11f19c9aab4053bb448f6f6712" category="paragraph">Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También puede cambiar un ID de bandeja cuando ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos) y todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.</block>
@@ -5345,10 +5278,6 @@
   <block id="3543f693e588dc2b8f0d38c9c547ec79" category="list-text">Deslice el conducto sobre el cable de alimentación de la PDU y pase el conducto a lo largo del bastidor del armario del sistema hasta la PDU.</block>
   <block id="f6fd32c0375af84905b62ee7c499c0f3" category="list-text">Instale las abrazaderas de retención del conducto del otro lado del armario sobre el conducto para fijarlo al bastidor del armario.</block>
   <block id="ca2f1d75952196e0940183d0bf21cf4c" category="list-text">Vuelva a enchufar el cable de identificación a la fuente de alimentación, pero no vuelva a conectar la fuente de alimentación.</block>
-  <block id="5766d5bcf366efbcdf82489014732653" category="summary">Cuando falla una unidad, la plataforma registra un mensaje de advertencia en la consola del sistema que indica qué unidad ha fallado. Además, tanto el LED de fallo del panel de visualización del operador como el LED de fallo de la unidad averiada se iluminan. Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso.</block>
-  <block id="19b0302f5ac7806ca8ce0cb36a698cf0" category="doc">Cambie en caliente una unidad</block>
-  <block id="43fc444d5187c6df1e74ba2ba7e24821" category="list-text">La unidad de sustitución debe ser compatible con su plataforma.</block>
-  <block id="392c7c0293f99a94fa12865a900879c7" category="list-text">Compruebe que la unidad que desea quitar tenga error al ejecutar el<block ref="aadfe3f601179615e320615d73c89773" prefix=" " category="inline-code"></block> comando. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.</block>
   <block id="696dd736b666ee17e46c95a26790f5d2" category="summary">Al desembalar el armario del sistema, debe asegurarse de que dispone de suficiente espacio para retirar el armario del sistema del material de embalaje. Asegúrese también de que la ubicación prevista para el armario del sistema sea lo suficientemente grande como para que pueda colocar el armario en su sitio.</block>
   <block id="595603bdc0003748af53e4c42b7507a5" category="doc">Requisitos de espacio y dimensiones del armario del sistema</block>
   <block id="a257ee96979da8c46a7e618b50a2de66" category="section-title">Espacio necesario para desembalar el armario del sistema</block>
@@ -5421,11 +5350,6 @@
   <block id="655b379eb55a962545027e4c4765decc" category="list-text">Con la siguiente ilustración como referencia, vuelva a instalar el distintivo iluminado en la puerta frontal del armario del sistema:</block>
   <block id="2893f66e6b01f34fba119ce895b85ff5" category="image-alt">instalación de la piedra de puente de la cabina drw sys</block>
   <block id="07fe9225534f4404a2e26cdf7452dbe0" category="list-text">Cierre y bloquee la puerta delantera.</block>
-  <block id="4dac35e9f6d4d6d9e1b5fb5abad708ed" category="summary">Cuando falla una unidad de disco, la plataforma registra un mensaje de advertencia en la consola del sistema que indica qué unidad de disco ha fallado. Además, tanto el LED de fallo del panel de visualización del operador como el LED de fallo de la unidad de disco averiada se iluminan. Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso.</block>
-  <block id="7b23cfe522c0eb5be8b96e2257f5acbe" category="doc">Cambie en caliente una unidad de disco</block>
-  <block id="9b8b69936ed16b21aad5e4c23a44b618" category="list-text">La unidad de disco de repuesto debe ser compatible con su plataforma.</block>
-  <block id="f6257d03456559fa38863d01fd3c105d" category="paragraph">La forma en que se intercambia el disco en caliente depende de cómo se utilice la unidad de disco. Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución de SED de la documentación de ONTAP. Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.</block>
-  <block id="dde8fb97f476e32cdda5c52804d55d36" category="admonition">Utilice siempre dos manos al extraer, instalar o transportar una unidad de disco.</block>
   <block id="525de838b0b63aa03a438e94f2a28f29" category="summary">Para extraer la placa de identificación iluminada es necesario abrir la puerta frontal del armario del sistema, desconectar el cable de alimentación de la parte posterior de la placa de identificación y, a continuación, retirar los componentes de la placa de identificación de la puerta del armario del sistema.</block>
   <block id="fcb9814ec0f783887dac12f72d00226b" category="doc">Retire el distintivo iluminado</block>
   <block id="4c0a89c292f890b878557c520551c332" category="paragraph">Utilice la siguiente ilustración junto con los pasos siguientes:<block ref="f85f4e62a4b22615b36542fe3d51ee23" category="inline-image-macro-rx" type="image"></block></block>
@@ -5561,8 +5485,6 @@
   <block id="8d4226b29e8d8bf46bb117669f643267" category="list-text">Dos tornillos por riel para fijar el riel al bastidor del armario del sistema</block>
   <block id="81fe716194ccbf369a36b4896558ebf6" category="paragraph">Llave de vaso</block>
   <block id="8f5552a8f76c90502d6d347229346036" category="paragraph">La llave de la media luna se utiliza para retirar los soportes de sujeción del palé de embalaje, ajustar las patas de nivelación del armario del sistema e instalar los soportes del kit de perno, si se solicita.</block>
-  <block id="acad25485f3484efab02626b832c8620" category="summary">Este vídeo muestra una descripción general del procedimiento de sustitución de la unidad integrada.</block>
-  <block id="eeb5172e31e91152913f891a13300865" category="doc">Descripción general del vídeo</block>
   <block id="d351abcbb11dcaf6e66ff33c4d15a5ea" category="summary">Después de instalar rieles de soporte adicionales en el armario del sistema, puede añadir más componentes del sistema al armario del sistema predefinido o agregar los componentes del sistema existentes a un armario vacío del sistema.</block>
   <block id="abcf9a9ca99b818d8f81b23edc5ef425" category="doc">Instale el equipo en el armario del sistema</block>
   <block id="b7ba26421fe04c0ccebbe429b0f66e1d" category="list-text">Desbloquee y abra las puertas traseras del armario del sistema y de la puerta delantera, si no está ya abierta.</block>
@@ -5614,8 +5536,6 @@
   <block id="d496b20bc480a8752b49e97fca9400c2" category="list-text">Repita estos pasos para la bisagra inferior.</block>
   <block id="45c0d75f9a5b23a971e2dc3ca0a0f6c2" category="list-text">Retire los tornillos del pestillo de bloqueo y, a continuación, mueva el pestillo de bloqueo hacia arriba en el armario del sistema lateral delantero opuesto.</block>
   <block id="6df4950fb076868b0e9a60e4ef9e05db" category="list-text">Gire el enganche 180 grados y, a continuación, fíjelo al armario del sistema en posición vertical.</block>
-  <block id="1e0b37d2bee8e34c12fabdc96d1c7b25" category="summary">Puede sustituir una unidad con error en su plataforma de forma no disruptiva eligiendo el procedimiento adecuado para las unidades que es compatible con su plataforma. El procedimiento para intercambiar en funcionamiento una unidad SSD está destinado a unidades sin discos giratorios y el procedimiento para intercambiar en funcionamiento una unidad HDD se indica para unidades en funcionamiento.</block>
-  <block id="4f0051637a20ec6776e183298f86f2f5" category="doc">Procedimiento que se debe utilizar</block>
   <block id="6551c0f6e6caf0566c6eae152ecd7b38" category="doc">Sustituya el soporte del maletero - AFF A900</block>
   <block id="3d583022c2a0e3f44141400e25a3113d" category="list-text"><block ref="3d583022c2a0e3f44141400e25a3113d" category="inline-link-macro-rx"></block></block>
   <block id="e95c782f97493fda4a0794b55f88c5be" category="list-text"><block ref="e95c782f97493fda4a0794b55f88c5be" category="inline-link-macro-rx"></block></block>
@@ -6326,20 +6246,11 @@
   <block id="413763831143110464ea32cf926646ff" category="list-text">Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación si se trata de una fuente de alimentación de CA, o apriete los dos tornillos si es una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.</block>
   <block id="fc2b3ed430cb8c91e352b492f909df0e" category="list-text">La siguiente animación proporciona una descripción general de las partes de extracción e inserción física del procedimiento de intercambio en caliente de la unidad.</block>
   <block id="a5296c0167e1a9e0e79d0ac90763897a" category="list-text">Puede utilizar la animación siguiente o los pasos escritos para reemplazar un DIMM.</block>
-  <block id="39d970461581cdbd7cd52a0c942e09cc" category="paragraph"><block ref="4c1ac301fada9548f6ad2acaf0e467d2" category="inline-xref-macro-rx"></block></block>
-  <block id="d83f6d97e759c5156f389e1bbaca2e46" category="paragraph"><block ref="b415fb6b993cf20b1b9d3f6c50f3ab17" category="inline-xref-macro-rx"></block></block>
   <block id="08755d45823cf538e7c3e95cdbf3232d" category="list-text">En el controlador A, mueva el cable de la ranura 4, puerto a (e4a), a la ranura 5, puerto b (e5b).</block>
-  <block id="2714efafc88a564eeaaee969d028a550" category="list-text">Conecte los cables de alimentación a la bandeja, fíjelos en su sitio con el retenedor del cable de alimentación si son fuentes de alimentación de CA o los dos tornillos de apriete manual si son fuentes de alimentación de CC y, a continuación, conecte los cables de alimentación a distintas fuentes de alimentación para obtener resistencia.</block>
-  <block id="ac729677e330b2bd79ba466237427cd0" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A250, AFF C250 o FAS500f</block>
-  <block id="f785dc6fbda4bf5cffbc5642d9f63fcc" category="image-alt">drw ns224 a250 c250 f500f 1 estante IEPOPS 963</block>
-  <block id="1f16f18b5edbb033abeecd941eede311" category="paragraph">La forma en que se conecte la conexión de una bandeja de unidades NS224 en un par de alta disponibilidad A700 de AFF depende del número de bandejas que se añadan en caliente y del número de conjuntos de puertos compatibles con roce (uno o dos) que utilice en los módulos de la controladora.</block>
-  <block id="06d25e1ce74f6aaec655716b2dff74fa" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A800 o AFF C800</block>
-  <block id="e71af3f859a96a4597c3ee57f2465148" category="paragraph">La forma en que se conecte la conexión de una bandeja de unidades NS224 en un par de alta disponibilidad AFF A800 o AFF C800 depende del número de bandejas que se añadan en caliente y del número de conjuntos de puertos compatibles con roce (uno o dos) que utilice en los módulos de la controladora.</block>
   <block id="4a64724d8e98b13ea57df6fa3ef82797" category="list-text">Conecte el puerto NSM de La bandeja de cables e0a al puerto a de la controladora A en la ranura 5 (e5a).</block>
   <block id="645f1ad1e72000ad9dc8c3735828b28a" category="list-text">Conecte el cable del puerto NSM A e0b a la ranura de la controladora B, puerto b (e5b) de 5.</block>
   <block id="0b2da11bd8c712291a7f895f49e9e5e9" category="list-text">Conecte el puerto NSM B de la bandeja de cables e0a a la ranura de la controladora B, puerto a 5 (e5a).</block>
   <block id="7d87c1e0b37af31cc86321a5d5f8fad9" category="list-text">Cable del puerto e0b NSM B a la ranura de la controladora A 5, puerto b (e5b).</block>
-  <block id="77216f6b109bab92f8497e814fbcd4a5" category="image-alt">drw ns224 a800 c800 1 bandeja IEOPS 964</block>
   <block id="67a1e7b2fb2710119ca2c369df46d177" category="list-text">Conecte El cable NSM de Un puerto e0a a al puerto a de la controladora A en la ranura 5 (e5a).</block>
   <block id="b2d8ae37f68adbef520c33f95bc7740d" category="list-text">Conecte el cable NSM del puerto e0b 3 a la ranura de la controladora B del puerto b (e3b).</block>
   <block id="109d29131c6d5647c766eefb23aec61b" category="list-text">Conecte el cable del puerto NSM B e0a al puerto a de la ranura de la controladora B 5 (e5a).</block>
@@ -6349,26 +6260,18 @@
   <block id="cb68744bc941069df627bd20238f7997" category="list-text">Conecte el cable del puerto NSM B e0a al puerto a de la ranura de la controladora B de 3 puertos (e3a).</block>
   <block id="62e633c0432fba605a22e8a2ab4b4bbe" category="list-text">Conecte el cable del puerto e0b NSM B al puerto b (e5b) de la controladora A la ranura 5.</block>
   <block id="e353caf6698cfea61d3a9c18256a7e59" category="image-alt">drw ns224 a800 c800 2 bandejas IEOPS 966</block>
-  <block id="bf357d9e6b8fc772b2e450e7c12e862a" category="paragraph">La forma en que se conecte la conexión de una bandeja de unidades NS224 en un par de alta disponibilidad de AFF A400 depende del número de bandejas que se añaden en caliente y la cantidad de conjuntos de puertos compatibles con roce (uno o dos) que se utilizan en los módulos de la controladora.</block>
   <block id="c8714c0d9fd482c82a6eb9a1f88a6c6a" category="list-text">Conecte el cable del puerto a e0b a la ranura 2 de la controladora B 5 (e5b).</block>
   <block id="ce53afcddddc3b3dd304dc0ca5abed65" category="list-text">Conecte el cable del puerto e0b NSM B al puerto 2 de la ranura 5 de la controladora A (e5b).</block>
   <block id="6239efbf6396bdace9a9955581f4409b" category="list-text">Conecte El cable NSM de Un puerto e0a al puerto 1 de la ranura 5 De la controladora A (e5a).</block>
   <block id="2fe8fb2268f4a14629b04075d5feb39b" category="list-text">Conecte el cable del puerto NSM B e0a al puerto 1 de la ranura de la controladora B 5 (e5a).</block>
-  <block id="f083687f229e9087607fc97422e119c0" category="image-alt">drw ns224 a400 2 bandejas IEPOPS 983</block>
-  <block id="3a6fe973f6f6e375a30d50e1b00bea51" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF C400</block>
-  <block id="0b6cfa43bebeb67d84b94f8437703149" category="paragraph">La forma en que se conecte la conexión de una bandeja de unidades NS224 en un par de alta disponibilidad AFF C400 depende del número de bandejas que se añadan en caliente y del número de conjuntos de puertos compatibles con roce (uno o dos) que utilice en los módulos de la controladora.</block>
-  <block id="7bbb938b0cef224ffa8f6826122559e4" category="list-text">Si va a añadir una bandeja en caliente que utiliza un conjunto de puertos compatibles con roce en cada módulo de controladora, y esta es la única bandeja NS224 del par de alta disponibilidad, complete los siguientes subpasos.</block>
   <block id="d5453cac8ec10c5502b08b0ac5208b06" category="list-text">Bandeja de cables NSM de un puerto e0a a a la ranura de la controladora A 4, puerto 1 (e4a).</block>
   <block id="f74b21e9e00a4f232af4a83d6e91ea56" category="list-text">Cable de la bandeja NSM Del puerto e0b a a la ranura de la controladora B, puerto 4 (e4b).</block>
   <block id="dea9986ba87dcbe7e1e56edd0971ea75" category="list-text">Puerto NSM B de la bandeja de cables e0a a a la ranura del controlador B, puerto 4 (e4a).</block>
   <block id="f0f25c87c1779ef06057bd2f760dd44a" category="list-text">Cable de la bandeja NSM B del puerto e0b a la ranura de la controladora A 4, puerto 2 (e4b).</block>
-  <block id="3c77f8a010dc228fdfa09613c4594a7f" category="image-alt">drw ns224 c400 1 estante IEOPS 985</block>
-  <block id="b53dcc9edd6c4009c02a65c16082912f" category="list-text">Si va a añadir una o dos bandejas en caliente utilizando dos conjuntos de puertos compatibles con roce en cada módulo de controladora, siga estos pasos.</block>
   <block id="a3a2d87cd45ac90b1a64a157d596387a" category="list-text">Conecte el cable NSM del puerto e0a al puerto 1 de la ranura 4 Del controlador A (e4a).</block>
   <block id="ec21ec9fcd2f64561315df3e90210f4e" category="list-text">Conecte el cable del puerto NSM B e0a al puerto de la controladora B, puerto 4 1 (e4a).</block>
   <block id="271862bfe83769232e835a8b7bc18b91" category="list-text">Conecte el cable NSM del puerto e0b a la ranura del controlador B, puerto 4 (e4b).</block>
   <block id="15c080954c797a5f48e731fe0b0c039f" category="list-text">Conecte el cable del puerto e0b NSM B al puerto 2 de la ranura 4 de la controladora A (e4b).</block>
-  <block id="e33765db8a9f63ae6e0b091a821ba6e2" category="image-alt">drw ns224 c400 2 estantes IEOPS 984</block>
   <block id="367a5e8a40acf4970fc5bd256036dad0" category="list-text">No mezcle fuentes de alimentación con diferentes niveles de eficiencia o con diferentes tipos de entrada.</block>
   <block id="ca2b5a039c8e27702d6e3bceb10da121" category="paragraph">Sustituya siempre como por ejemplo.</block>
   <block id="90b475888361b2f83d88d4a8d50e38ae" category="paragraph">Utilice el procedimiento adecuado para su tipo de PSU: CA o CC.</block>
@@ -8291,7 +8194,6 @@ SFP+ (destino/iniciador)</block>
   <block id="da98db34d10199077b14ab14b7e32c9f" category="sidebar">Bandeja sustituida en frío</block>
   <block id="674478ae995b81c552fa78ca38a62f55" category="sidebar">Supervise los LED de la bandeja</block>
   <block id="396b16fa397fdd85993f8aa5bef27ffc" category="paragraph">Utilice la <block ref="d1042c47c9aff448d2e8f9ac980b805e" category="inline-link-macro-rx"></block>.</block>
-  <block id="3e7aa82d2d70031bc903abc14fcef228" category="paragraph">Utilice los enlaces: <block ref="7c76049c7cc6b29a138ae1f21c8716c8" category="inline-link-macro-rx"></block>.</block>
   <block id="6febf85749247f2f22048a485869645e" category="paragraph">Esta guía da instrucciones gráficas para una instalación típica de su sistema desde el montaje en rack y el cableado hasta la puesta en marcha inicial del sistema. Utilice la <block ref="85d66ca1788630be12ac9fc5ee2595a5" category="inline-link-macro-rx"></block> Si está familiarizado con la instalación de sistemas de NetApp.</block>
   <block id="5398e5f0481212fec157da30d21384f0" category="inline-link-macro">Sustituya en frío una bandeja</block>
   <block id="13ce8c4588978587ac346becc2c018b0" category="list-text"><block ref="13ce8c4588978587ac346becc2c018b0" category="inline-link-macro-rx"></block></block>
@@ -8424,7 +8326,6 @@ SFP+ (destino/iniciador)</block>
   <block id="efd776be7a583ca294bb1a8ce2c4e66e" category="image-alt">Liberación del módulo del controlador</block>
   <block id="cc278673be0ce007e60343587ca221b7" category="image-alt">Opoen el conducto de aire</block>
   <block id="3adccad6709367d60f0645e89c86a994" category="image-alt">Cierre del conducto de aire</block>
-  <block id="025411d9958f9bc8ad2448f521a1ada6" category="image-alt">Quitar una unidad</block>
   <block id="d88c0d1de0c9fce014f21f630d9adb1a" category="image-alt">Apertura del mecanismo de enclavamiento</block>
   <block id="813ff1ce3d0de38d3d5b297e098fd16e" category="image-alt">Apertura de la cubierta del módulo del controlador</block>
   <block id="5c201446503767cfb281ca73fa947b1a" category="image-alt">Extracción de la tarjeta mezzanine</block>
@@ -8721,8 +8622,6 @@ SFP+ (destino/iniciador)</block>
   <block id="c4b17ef982ae644ec1d2b995fa1534a8" category="paragraph">Puede añadir un módulo de I/O al sistema de almacenamiento agregando un nuevo módulo de I/O a un sistema de almacenamiento con ranuras vacías o reemplazando un módulo de I/O por uno nuevo en un sistema de almacenamiento completamente lleno.</block>
   <block id="656450ae55843844fdfca7b44cbc5678" category="list-text">Compruebe la<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> para asegurarse de que el nuevo módulo de I/O es compatible con su sistema de almacenamiento y la versión de ONTAP que ejecuta.</block>
   <block id="9808a3e490e0cd81c2fab70cb489f958" category="paragraph">Puede agregar un módulo de E/S a una ranura para módulos vacía del sistema de almacenamiento.</block>
-  <block id="f9c9ac20332a969e865def6eb6464e99" category="list-text">Desconecte los cables de las fuentes de alimentación (PSU) del controlador.</block>
-  <block id="5f8429d099b5837b4b0f8245a6e25659" category="admonition">Si el sistema de almacenamiento tiene PSU de CC, desconecte el bloque de cables de alimentación de la PSU.</block>
   <block id="78263f5226743bdd204519f0e9bd22d2" category="list-text">Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.</block>
   <block id="72e0b58a2d456f6ab89ca8d83859264d" category="list-text">Retire el módulo de obturación de la ranura de destino del soporte:</block>
   <block id="abca9f9a7ffb3d4afa15f947303b1c4c" category="admonition">En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.</block>
@@ -8745,13 +8644,11 @@ SFP+ (destino/iniciador)</block>
   <block id="a06ddc697cce62226c19e353e0f2eeba" category="paragraph">Puede cambiar un módulo de E/S en una ranura de E/S de un sistema completamente ocupado eliminando un módulo de E/S existente y sustituyéndolo por otro módulo de E/S diferente.</block>
   <block id="47ab52c1da07a0c00e2b876e54778a95" category="paragraph">Reasignar permanentemente las LIF seleccionadas a un puerto raíz diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> para obtener información sobre el uso de System Manager para mover las LIF de forma permanente.</block>
   <block id="8f6ea8b644b16793208bc55e27bc7669" category="section-title">Paso 2: Reemplace un módulo de E/S.</block>
-  <block id="beb24afcb0e8b318a6d1dcdd39cadd0e" category="list-text">Desconecte los cables PSU de las PSU de la controladora.</block>
   <block id="900056c17f40fb1a034e134a72eca912" category="image-alt">Extraiga el módulo de E/S de AFF A1K</block>
   <block id="8181d3a6b1640b5868632cfe5589a05d" category="list-text">Pulse el botón de bloqueo de leva.</block>
   <block id="0cfc07520b64c5be4e64fac899e6eaa9" category="list-text">Instale el módulo de E/S en la ranura de destino del receptáculo:</block>
   <block id="7b71c8c5341c95139930e1f1748956d7" category="list-text">Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.</block>
   <block id="0169e44348295d5766b174aa4c296a62" category="list-text">Repita los pasos de extracción e instalación para reemplazar módulos adicionales para la controladora.</block>
-  <block id="eae4ce64858efbf6f1946bcf1cacd2bc" category="list-text">Vuelva a conectar las PSU.</block>
   <block id="7c99497119e4bb81fd50dbd906dfde72" category="list-text">Reinicie la controladora desde el símbolo del sistema del CARGADOR:_bye_</block>
   <block id="270bbec39f8392e251637a1b86bbf5c3" category="list-text">Compruebe la versión de BMC en el controlador: _SYSTEM SERVICE-PROCESSOR show_</block>
   <block id="d6b96e8ac8bc341aa87626c9a7f76ffd" category="list-text">Actualice el firmware de BMC si es necesario: _SYSTEM service-processor image update_</block>
@@ -8869,7 +8766,6 @@ SFP+ (destino/iniciador)</block>
   <block id="537f891f06a3ecc3188c33c8f8c77e26" category="cell">Una leva de bloqueo se bloquea</block>
   <block id="1dc32853fd03864e0537b3ae1ad7ef3b" category="list-text">Deslice el módulo del controlador fuera de la carcasa y colóquelo sobre una superficie plana y estable.</block>
   <block id="33fdb32302198e8a827003b4173b5eb0" category="paragraph">Asegúrese de que apoya la parte inferior del módulo del controlador mientras lo desliza fuera de la carcasa.</block>
-  <block id="ad2e93db0fd7faf8c4c39a6cd5326275" category="doc">Paso 1 Retire el módulo del controlador</block>
   <block id="75a5f080add11b67917840158e6bbd4b" category="paragraph">Para sustituir la controladora, debe extraer la controladora deteriorada, mover los componentes FRU al módulo de controladora de reemplazo, instalar el módulo de controladora de reemplazo en el compartimento y, a continuación, arrancar el sistema en modo de mantenimiento.</block>
   <block id="946c9f8702013d89a2409f6409b3b2c1" category="paragraph">Debe retirar los cinco módulos de ventilador del módulo de controlador defectuoso al módulo de controlador de repuesto.</block>
   <block id="ba353b9db22f76b4888d654901cd45fb" category="list-text">Pulse el botón de bloqueo gris del módulo de ventiladores y tire del módulo de ventiladores hacia fuera del chasis, asegurándose de que lo apoya con la mano libre.</block>
@@ -8934,7 +8830,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e17459e86046e44229fbebc069407c9c" category="list-text">Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.</block>
   <block id="8cc2ff9ddd81637d4ad2b7ee220a7774" category="section-title">Paso 2: Sustituya un módulo I/O fallido</block>
   <block id="2de111d6117fc7e01d3fbeb75aed3c88" category="paragraph">Para sustituir un módulo de E/S, búsquelo dentro del receptáculo y siga la secuencia específica de pasos.</block>
-  <block id="d65ea709db708c195e73f1f8f5f75781" category="list-text">Desconecte los cables de las PSU de las PSU del controlador.</block>
   <block id="0af6fe064800da7d11e3417d85012213" category="inline-image-macro">Retire el módulo de E/S.</block>
   <block id="1ac0ca437900f8bc507ae669a832b4dd" category="paragraph"><block ref="1ac0ca437900f8bc507ae669a832b4dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d09aea2ff4780e8e31df238e5b9f5161" category="paragraph">Bloqueo de leva de E/S.</block>
@@ -9047,19 +8942,16 @@ SFP+ (destino/iniciador)</block>
   <block id="d498932449bd1680afbe5aad136fb7e3" category="paragraph">Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo. Sin embargo, si el nodo era el único nodo del clúster con una licencia para la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo puede provocar que no cumpla el acuerdo de licencia, por lo que debe instalar las claves o la clave de licencia de reemplazo en el para el nodo lo antes posible.</block>
   <block id="3e508eeaedfdae09fad57a764b5e2b73" category="section-title">Paso 1: Apague el módulo del controlador defectuoso</block>
   <block id="6f13230d5681e1c88b50f5ecbce62637" category="paragraph">Apague o tome el control del módulo del controlador defectuoso mediante una de las siguientes opciones.</block>
-  <block id="ac3e2454340641f4dc863ba7de892571" category="list-text">Desconecte la alimentación tirando del módulo del controlador hacia fuera unas tres pulgadas:</block>
   <block id="5d053cb0e109f37b3c9cfa31e957c2bc" category="list-text">Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.</block>
   <block id="d9d1de25706aa51c5367e4dafd60898e" category="list-text">Retire el módulo de supresión de la ranura de destino del chasis:</block>
   <block id="192d3ce6854b267e65d46222f8f3a24f" category="image-alt">Retire un módulo de E/S.</block>
   <block id="75fa26086844dfcbf14f35086518217a" category="list-text">Retire el módulo de obturación.</block>
   <block id="2b6adb50592127273fdb4bb2b68918d5" category="list-text">Alinee el módulo de E/S con los bordes de la abertura de la ranura del módulo del controlador.</block>
   <block id="97366bfb1dcb5b97156c347c8ad89d9a" category="list-text">Deslice suavemente el módulo hasta el fondo en la ranura y, a continuación, gire el pestillo de la leva hasta el fondo para bloquear el módulo en su lugar.</block>
-  <block id="7e0cc13ccecee19c414070713bc932cd" category="admonition">Si dispone de PSU de CC, vuelva a conectar los bloques de cables a las PSU.</block>
   <block id="f0a953cf8667ec627e4c74a13844c3d6" category="inline-link">Añade en caliente una bandeja</block>
   <block id="2a6ebde871b7a14ea9937c0b77f288c1" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en<block ref="b6d396abfa2f33a744444ad20ba7003c" category="inline-link-rx"></block>.</block>
   <block id="2f3095e4c2c969f1f9dca69963ff66c1" category="paragraph">Reasignar de forma permanente los LIF ASAectados a un puerto de inicio diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> para obtener información sobre el uso de System Manager para mover las LIF de forma permanente.</block>
   <block id="6181ce929bc404494408989e6b8a9b52" category="paragraph">Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.</block>
-  <block id="5cdf632bde34078b63091a6513a92902" category="admonition">Si el sistema de almacenamiento tiene suministros de alimentación de CC, desconecte el bloque de cables de alimentación de la PSU.</block>
   <block id="8a9a8a0db84d9dd59b0f006930b47193" category="list-text">Pulse el botón de bloqueo de leva.</block>
   <block id="422e2aa4ec97de509f54db9d23618f37" category="list-text">Retire el módulo del chasis enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del chasis.</block>
   <block id="ce8b63d25565a610d1f9564150f85914" category="list-text">Deslice suavemente el módulo dentro de la ranura hasta el fondo del chasis y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.</block>
@@ -9072,7 +8964,6 @@ SFP+ (destino/iniciador)</block>
   <block id="50452a92c8429276ad6b40b6a483c0dc" category="paragraph">Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, extraer el soporte de arranque defectuoso, instalar el soporte de arranque de repuesto en el módulo de gestión del sistema y transferir la imagen de arranque a una unidad flash USB.</block>
   <block id="43d656a7b2fb92dbbe5e13b8f00a00b8" category="list-text">Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.</block>
   <block id="f0d27e50eb41ec006d18a96b5254063e" category="list-text">Gire la palanca de leva completamente hacia abajo y retire el módulo de gestión del sistema del módulo del controlador.</block>
-  <block id="d090349173c11be6a6275698aa2404cd" category="list-text">Vuelva a instalar el módulo Gestión del sistema:.</block>
   <block id="54a53a09772d42f23357a9952d2d46a1" category="section-title">Paso 2: Transfiera la imagen de arranque al soporte de arranque</block>
   <block id="ba6a859a07959f14e93fa82e7da1233e" category="image-alt">Cierre del gráfico del conducto de aire del módulo del controlador AFF A1K</block>
   <block id="51f2f04b22eba49bd6c9066a5648bd67" category="list-text">Compruebe que el LED de estado situado en la ranura 4/5 de la parte posterior del módulo del controlador defectuoso está apagado. Busque el icono de NV.</block>
@@ -9149,25 +9040,19 @@ SFP+ (destino/iniciador)</block>
   <block id="a34f5d7448ca509b8fdfe99eb0258923" category="list-text">Deslice suavemente el módulo en la ranura hasta el fondo y, a continuación, empuje el pestillo de leva completamente hacia arriba para bloquear el módulo en su sitio.</block>
   <block id="3da6ea6cfd2a784b8a10d3a2f614c9f8" category="section-title">Paso 9: Instale el módulo del controlador</block>
   <block id="b7dcc5448a06ec706832cdeab132792c" category="list-text">Si aún no lo ha hecho, vuelva a instalar el dispositivo de gestión de cables y conecte de nuevo el controlador.</block>
-  <block id="bb5b089c7f5c4d10ebe7f2948ffd4a76" category="paragraph">Para continuar con el procedimiento de reemplazo, vuelva a cablear el almacenamiento, las conexiones de red y vuelva a devolver la controladora.</block>
   <block id="eceb1e51c26ea3e966510ccb24feafbc" category="section-title">Paso 2: Devuelva el controlador</block>
   <block id="cd857ff122008e8c33281aac10c4a797" category="list-text">Localice los DIMM en el módulo del controlador e identifique el DIMM de destino.</block>
   <block id="8a682c66646ec7954594a9800184dc7d" category="inline-link">NetApp Hardware Universe</block>
   <block id="bbd2b770350c6f52732f68cd939d17e5" category="admonition">Consulte la<block ref="4e43c3b83d98d9534ba258422aad47e3" category="inline-link-rx"></block> asignación de FRU o de su módulo de controladora para obtener información sobre la ubicación exacta de DIMM para AFF A70 o AFF A90.</block>
   <block id="610add0822408300fa8ad516407472f4" category="section-title">Paso 3: Reemplace el ventilador</block>
-  <block id="46d9d4074dd716b11379b5c6b5eecbdd" category="admonition">Si el sistema de almacenamiento dispone de fuentes de alimentación de CC (PSU), desconecte el bloque de cables de alimentación de las PSU.</block>
   <block id="fc6665e9f1b6162e5d38bd8eb567b787" category="list-text">Retire el módulo de E/S del módulo del controlador:</block>
   <block id="43bdfcb23a758397ea6517f635aacc1d" category="paragraph">El pestillo de leva se aleja del módulo del controlador.</block>
   <block id="e7a88b07d0fe11e52b015a7a07b1b7ee" category="list-text">Instale el módulo de E/S de repuesto en la ranura de destino:</block>
   <block id="a3106006bcbd6b01107844abf97f1800" category="list-text">Deslice suavemente el módulo en la ranura hasta el fondo dentro del módulo del controlador y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.</block>
-  <block id="6ba2e9eb4c2829dc2017284892829c45" category="admonition">Si dispone de suministros de alimentación de CC, vuelva a conectar los bloques de cables en las PSU.</block>
   <block id="1089c3637780c1a22ad88c3e30e3eaa6" category="image-alt">Sustituya la batería NV</block>
   <block id="f5844b9beff2dd81e52b9a5d98082467" category="paragraph">El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con errores, debe quitar el módulo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.</block>
   <block id="f7de4e424b34170ef3a103ee0f882402" category="paragraph">Para sustituir el módulo NVRAM, búsquelo en la ranura 4/5 del chasis y siga la secuencia específica de pasos.</block>
-  <block id="25bc068a4c7f7f5d040abc107e9b53e7" category="admonition">Si el sistema tiene fuentes de alimentación de CC, desconecte el bloque de cables de alimentación de la PSU.</block>
   <block id="b9c07f9700f6e60517bd8e8c52b698d0" category="list-text">Retire el módulo NVRAM defectuoso del chasis enganchando el dedo en la abertura de la palanca de leva y tirando del módulo para sacarlo del chasis.</block>
-  <block id="380b4a9b7635aab20565f10313ad18ca" category="list-text">Vuelva a conectar la PSU.</block>
-  <block id="6cc4600854ca82a2aad4bc0932afe89b" category="admonition">Si el sistema tiene suministros de alimentación de CC, vuelva a conectar el bloque de cables de alimentación a la PSU.</block>
   <block id="95202d1c51ddd04e5c7ee2a579109553" category="list-text">Pulse el botón de leva.</block>
   <block id="eea43b1f9f4191af441ec7f1515ffd01" category="list-text">Retire el módulo NVRAM del chasis enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del chasis.</block>
   <block id="586cd1de26648f3c3aa70dbd61199e65" category="image-alt">Retire una fuente de alimentación de CC</block>
@@ -9613,7 +9498,6 @@ SFP+ (destino/iniciador)</block>
   <block id="24adca74cd4521b9f4f4a8ab1033a6d8" category="doc">Compruebe las claves de cifrado integradas: AFF A70, AFF A90</block>
   <block id="a79b7b4459526eba247c33a94309858e" category="doc">Inicie la imagen de recuperación - AFF A70, AFF A90</block>
   <block id="b565c8083612023ff18332e3f18570fb" category="doc">Sustituya el soporte de arranque: AFF A70, AFF A90</block>
-  <block id="7a78f14a4a6a79a25fb9d91deac29f7f" category="doc">Apague el controlador: AFF A70, AFF A90</block>
   <block id="3fd2ece46b2cae70b208d459839b7ea6" category="doc">Sustituya el chasis: AFF A70, AFF A90</block>
   <block id="47cc53453bdbc0a412f7d6260da64a94" category="doc">Apague los controladores: AFF A70, AFF A90</block>
   <block id="729f102b3131803a07803cd2f223d3c3" category="summary">Debe reconectar el reinicio del almacenamiento de la controladora.</block>
@@ -9754,60 +9638,24 @@ SFP+ (destino/iniciador)</block>
   <block id="b234edf4e69ffb2b833a8efb85ba5ee7" category="inline-link-macro">Complete su incorporación en caliente</block>
   <block id="a03ae9a3c924d10a64e97ade6d86ee2b" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="49e34f6a53fbd8084ac48e4e6738a264" category="inline-link-macro-rx"></block></block>
   <block id="6cfe7f4574d90cb894d56246a1414fa2" category="paragraph">Si deshabilitó la asignación automática de unidades como parte de la preparación para la adición en caliente, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.</block>
-  <block id="047de0ebf31d4be4fc5eb6722a69201e" category="list-text">Su pareja de alta disponibilidad debe tener suficientes puertos Ethernet compatibles con RoCE para admitir el número de bandejas que añade en caliente.</block>
-  <block id="2ab4e0b94726eca79e1aeeb2f1e8ceb5" category="paragraph">Para cada bandeja que se añada en caliente, es necesario tener dos puertos compatibles con RoCE en cada controladora. Estos puertos pueden estar integrados en las controladoras, en tarjetas PCIe compatibles con roce, en una combinación de ambos o en módulos de I/o compatibles con roce, según lo admita el modelo de plataforma.</block>
-  <block id="463315a2a8c1964ff9259e984ef43a7c" category="list-text">Identificar las ranuras de la controladora correctas para el modelo de plataforma.</block>
   <block id="132976e79206d2260fc5308469634e7a" category="list-text">Consulte la documentación del modelo de su plataforma para obtener instrucciones de instalación de tarjetas PCIe o módulos de E/S.</block>
-  <block id="088ddb10f92e4aec09d8bccaa095dbe7" category="paragraph"><block ref="088ddb10f92e4aec09d8bccaa095dbe7" category="inline-link-rx"></block></block>
-  <block id="bf06bfbbc1d29234d918a086f98a4c2c" category="section-title">Prepare puertos Ethernet no dedicados compatibles con RoCE para una incorporación en caliente</block>
-  <block id="c62d22065cef5eaab1771562c4464853" category="paragraph">Si la pareja de alta disponibilidad tiene puertos Ethernet no dedicados compatibles con RoCE que se utilizan para añadir en caliente una bandeja de unidades de NS224 TB, debe asegurarse de que los puertos estén configurados para el uso del almacenamiento (no se utiliza la conexión a redes).</block>
-  <block id="2d957a99f7e946ae3806773ee52b1821" category="paragraph">Debe haber cumplido los requisitos del sistema de almacenamiento, incluida la instalación de tarjetas PCIe adicionales de módulos de I/O compatibles con RoCE en cada controladora.</block>
-  <block id="b3af01e20201c67551f5dc6511b19431" category="admonition">Para cambiar los puertos de uso del almacenamiento a uso de redes, introduzca el comando,<block ref="9a677bf17da6cbfa9b6a63efbc67d3f2" prefix=" " category="inline-code"></block>.</block>
-  <block id="21e6d0e9cee07588109c3bca9e4f33a8" category="list-text">Inicie sesión en el clúster mediante SSH o el puerto de consola de serie.</block>
   <block id="5fc0fcdc83b05fb4f062a9fa1fe851d9" category="paragraph">De lo contrario, deberá configurar los puertos completando los pasos 4 a 7.</block>
   <block id="9db058e565a88604b6d87108ed139c51" category="paragraph"><block ref="6e972b196ebbc48e0575e24a92c8720d" prefix="" category="inline-code"></block></block>
   <block id="eb3110f9f105714e88d250d436520c1d" category="paragraph"><block ref="91bc4c8d50e9272a27ce62a39b4bf1a6" prefix="" category="inline-code"></block></block>
-  <block id="7c09109da9baa17bbe92aa7b509456d7" category="list-text">Si su par de alta disponibilidad está ejecutando ONTAP 9,6, reinicie el módulo de controladora para que los cambios del puerto surtan efecto<block ref="6751ed4c60ef0a0b22c8f041a5e5cf3d" prefix=" " category="inline-code"></block>: .</block>
   <block id="6f5a1f5a085ff35b3e9c182f13e6c8a8" category="list-text">Repita el paso 4.</block>
   <block id="83d3292b963da6451d1d0d83b537c8e3" category="list-text">Repita los pasos 4 y 5.</block>
-  <block id="7142ab39fb3d18d24163683bfd871b22" category="section-title">Prepare la conectividad de bandejas existente antes de añadir bandejas adicionales en caliente</block>
   <block id="a61cf40b2e5406ed295d4e38c35656df" category="paragraph">Antes de añadir bandejas adicionales en caliente, según el modelo de plataforma, es posible que deba volver a conectar los cables de una bandeja existente (después de haber instalado las tarjetas PCIe o módulos de I/O adicionales compatibles con RoCE) en dos conjuntos de puertos en ranuras diferentes para ofrecer resiliencia frente a fallo de ranura.</block>
-  <block id="74b8df0719b21a5aee599f46d92e870d" category="list-text">Debe haber cumplido los requisitos del sistema, incluida la instalación de tarjetas PCIe adicionales compatibles con RoCE o módulos de I/O en cada controladora.</block>
-  <block id="b3aa8ef8d86d2e03895965e9958978a7" category="list-text">Debe haber verificado que los puertos no dedicados de las tarjetas PCIe compatibles con RoCE o los módulos de I/O instalados están configurados para uso del almacenamiento.</block>
   <block id="bac6096d635a78bfc7662e151ab39559" category="list-text">Es posible mover un cable cada vez para mantener siempre la conectividad con la bandeja durante este procedimiento.</block>
-  <block id="51b7d26dc4977295bdc15e4ceffe3a84" category="list-text">Si cuenta con un par de alta disponibilidad AFF A1K y está agregando una tercera bandeja en caliente e instalando un tercer o cuarto módulo de I/O compatible con RoCE en cada controladora, la tercera bandeja solo se cableará a los tres o tres módulos de I/O en adelante. No es necesario volver a conectar ninguna bandeja existente.</block>
   <block id="e87dec4c82a6131b352eff5116f7fab8" category="list-text">Vuelva a conectar las conexiones de la bandeja existente en dos conjuntos de puertos compatibles con RoCE en ranuras diferentes, según corresponda al modelo de plataforma.</block>
-  <block id="5c8e2a1729140c2319ea38bc38c671ba" category="paragraph">Par de alta disponibilidad AFF A70 o AFF A90 y va a agregar en caliente una segunda bandeja</block>
-  <block id="815887f62fd8f7be15e3424efc32b20c" category="paragraph">Vuelva a conectar la primera bandeja de módulos I/O compatibles con RoCE:</block>
   <block id="3dbc71070033db4d4c05e736c6f4075a" category="admonition">Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 11 de cada controladora.</block>
   <block id="b73b81430a005b6489a33cd21955e985" category="list-text">En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 8, puerto b (e8b).</block>
-  <block id="5df57c3b9f444d48109943fb05d242b0" category="paragraph">Si es necesario, puede consultar ilustraciones de cableado que muestran una bandeja única existente y la bandeja recabada, en una configuración de dos bandejas.</block>
-  <block id="a935e388e4de5cd04b8314123fe7074d" category="paragraph"><block ref="a8947d9a1a575b89ffe8fcb06a161750" category="inline-xref-macro-rx"></block></block>
-  <block id="a36b1e64cc692b8ab8d3df36996375fb" category="paragraph">Par de alta disponibilidad A1K de AFF y están agregando en caliente una segunda bandeja</block>
   <block id="04c18e5cb17496cb3b9f53a5b07c76b4" category="list-text">En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 10, puerto b (e10b).</block>
-  <block id="ceab97c7abf1d0009b8f39e726984b0e" category="paragraph"><block ref="6bc0eba2df9bed360cea4cf9b0a3cb3d" category="inline-xref-macro-rx"></block></block>
-  <block id="1392119f637fc041996b3a606abe7bdd" category="paragraph">Par de alta disponibilidad A1K de AFF y está agregando en caliente una bandeja de cuatro bandejas</block>
-  <block id="787c328c7045406142342c912caafa3c" category="paragraph">Vuelva a conectar la tercera bandeja entre los módulos I/O con capacidad R0CE en la ranura 9 de cada controladora:</block>
   <block id="59a884f424ff6cf6eadda8a43ad15c18" category="list-text">En la controladora A, mueva el cable de la ranura 9, puerto b (e9b), a la ranura 8, puerto b (e8b).</block>
-  <block id="f6f7bd955e18a236aa6bd00bbe5b99b4" category="paragraph">Par de alta disponibilidad C400 de AFF y va a agregar una segunda bandeja en caliente</block>
-  <block id="97c77af9ebe44ea3e03f2f6517b0a3d3" category="paragraph">Vuelva a conectar la primera bandeja entre ambos conjuntos de puertos compatibles con RoCE en cada controladora:</block>
-  <block id="2ddae5c7aeab2acbf79374a7699a0e6b" category="paragraph">Par de alta disponibilidad AFF A800 o AFF C800 y va a agregar en caliente una segunda bandeja</block>
-  <block id="82d1c3d2c1369a3c0cf17eefbe0771e3" category="paragraph">Par de alta disponibilidad A400 de AFF y va a agregar una segunda bandeja en caliente</block>
-  <block id="b517525ed52282a89cb1f6c210c70b1a" category="paragraph">Par de alta disponibilidad A700 de AFF y va a agregar una segunda bandeja en caliente</block>
   <block id="6ffd935255573ad4570c6a3b3450e0f9" category="inline-link">Acerca de la asignación automática de propiedad de disco</block>
-  <block id="57c73fa2509bcf1d4b22913e1dd561cf" category="paragraph">Si no está seguro de si debe asignar manualmente propiedad de una unidad o desea comprender la asignación automática de las políticas de propiedad de unidades para el sistema de almacenamiento, consulte<block ref="7cf2c47025b8136f811da5dc672735ee" category="inline-link-rx"></block></block>
   <block id="53c2f27803aec3d938e33bbae4de6b05" category="paragraph">Puede introducir el comando en cualquiera de los nodos.</block>
   <block id="5aa025a6412a09854e833ab5ef7bad16" category="paragraph">Si la asignación automática de unidades está habilitada, el resultado se muestra<block ref="ed2b5c0139cec8ad2873829dc1117d50" prefix=" " category="inline-code"></block> en<block ref="36dcdb9f764aaa4313fab85a6eb8d6a6" prefix=" " category="inline-code"></block> la columna (en cada nodo).</block>
   <block id="76252ddf99e749110059e04910646005" category="paragraph">Debe deshabilitar la asignación automática de unidades en ambos nodos.</block>
-  <block id="dcd988efa9773d6784cd82af7e72fc28" category="paragraph">La instalación de una bandeja NS224 nueva implica instalar la bandeja en un rack o armario, conectar los cables de alimentación (que enciende automáticamente la bandeja) y, a continuación, configurar el ID de bandeja.</block>
   <block id="c44506a424da54e7a512c3fe58befda4" category="list-text">Asegúrese de tener un clip de papel con un lado enderezado o un bolígrafo de punta estrecha.</block>
-  <block id="d6f9c5ee662e9a54b98d8ab3c1fbbe0c" category="paragraph">Utilice el clip de papel o el bolígrafo para acceder al botón de ID de la bandeja situado detrás del panel de visualización del operador (ODP) durante el paso de ID de la bandeja de cambio.</block>
-  <block id="7834fa1dae5baa351b43df3825d7c51e" category="section-title">Conecte el cable de una bandeja a una incorporación en caliente</block>
-  <block id="0198adb183966b6a1cec77414f7184cf" category="paragraph">Familiarizarse con la orientación correcta de los conectores de cables y la ubicación y etiquetado de los puertos en los módulos de bandeja NSM de NS224 puede ser útil antes de cablear la bandeja añadida en caliente.</block>
-  <block id="403cdeaa74f4f7d57300e7cfb63e3508" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A70 o AFF A90</block>
-  <block id="4b2cba344589a212fe317976558dad4a" category="list-text">Debe haber cumplido los requisitos del sistema de almacenamiento.</block>
-  <block id="feadc282c1b706313d9abaf2e604fa56" category="paragraph"><block ref="8c3173c57b196b7c4ca9e3e232f3a310" category="inline-xref-macro-rx"></block></block>
-  <block id="6e76b79ceb1c0834e1d6d42376d001b2" category="section-title">Conecte un cable de una bandeja de adición en caliente para un par de alta disponibilidad AFF A1K</block>
   <block id="96ef72d95f222f00433291a58b6b8744" category="doc">Instale una bandeja para las bandejas NS224 añadidas en caliente</block>
   <block id="3e7bc606456977aca4460d0843a5999b" category="paragraph">Debe instalar una bandeja NS224 en un armario o rack de telecomunicaciones, conectar los cables de alimentación (que enciende automáticamente la bandeja) y definir el ID de bandeja.</block>
   <block id="ed86a7d5c45c5290afeff3be20438da8" category="paragraph">Para cambiar el ID de la bandeja, utilice el clip de papel o el bolígrafo para acceder al botón de ID de la bandeja situado detrás del panel de visualización del operador (ODP) para el paso de ID de la bandeja de cambio.</block>
@@ -10054,7 +9902,6 @@ SFP+ (destino/iniciador)</block>
   <block id="64e923d27d8f20b1c39e996784b889e8" category="paragraph">Siga estos pasos del flujo de trabajo para sustituir el chasis.</block>
   <block id="ad5348d83b53533243eebb2be9ef1707" category="inline-link-macro">requisitos y consideraciones para reemplazar el chasis</block>
   <block id="d00e4984e8012d79f3629015b50175c5" category="paragraph">Para sustituir el chasis, debe cumplir ciertos requisitos. Revise la <block ref="85b79c35aab56873c02d629d1d3908c3" category="inline-link-macro-rx"></block>.</block>
-  <block id="b9a16e18baf3e3435991b6d9c3ba01af" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="6b014aeda9f88c8732e6a64d143414df" category="inline-link-macro-rx"></block></block>
   <block id="d26fcd936ac92db8cf84389a3ab7bf47" category="inline-link-macro">Sustituya el chasis</block>
   <block id="d59de865276916bdd9f97d9473947ee3" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="50c430fbfd37e7720d34aff806c960b8" category="inline-link-macro-rx"></block></block>
   <block id="2c248a1a1b5e42590f3b77ae3ede043f" category="paragraph">La sustitución del chasis incluye mover las fuentes de alimentación, los discos duros y el módulo del controlador del chasis dañado al nuevo chasis, y el intercambio del chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.</block>
@@ -10069,7 +9916,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b1e4b88723d63ea7009965cda7a3722c" category="doc">Descripción general del módulo de E/S ADD y SUSTITUTE - AFF A70, AFF A90</block>
   <block id="137aeb15d685b764448324fcbbc40af6" category="paragraph">Es posible que deba realizar procedimientos de mantenimiento en el hardware. En esta sección se incluyen los procedimientos específicos para el mantenimiento de los componentes del sistema AFF A70 y AFF A90.</block>
   <block id="75775d88e26bd0ec1b5827bced4fb9dd" category="paragraph">En los procedimientos de esta sección se asume que AFF los sistemas A70 y A90 de AFF ya se han puesto en marcha como nodo de almacenamiento en el entorno de ONTAP.</block>
-  <block id="cde82c9b04790b90c2679aca48bf0641" category="paragraph">Para los sistemas de almacenamiento ASA A70 y ASA A90, se pueden realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="dc5fb977cb8c88d079092e9c6ec6160e" category="paragraph"><block ref="dc5fb977cb8c88d079092e9c6ec6160e" category="inline-link-macro-rx"></block></block>
   <block id="5d7bf1cac3020aecc9e419835da60990" category="paragraph"><block ref="5d7bf1cac3020aecc9e419835da60990" category="inline-link-macro-rx"></block></block>
   <block id="8c2694371a75dd052d8b2e0cd66496fc" category="paragraph">Una unidad es un dispositivo que ofrece el almacenamiento físico necesario para datos.</block>
@@ -10093,4 +9939,32 @@ SFP+ (destino/iniciador)</block>
   <block id="4f46fe04ed7debd30ef1d3c151e24935" category="sidebar">Flujo de trabajo de sustitución de controladoras</block>
   <block id="1ca4e63b42d944e09b1132b7f6f56b66" category="sidebar">Descripción general del módulo I/O.</block>
   <block id="926cbecf3e76b90a2bcdbc9c4519fc77" category="sidebar">Flujo de trabajo de sustitución del chasis</block>
+  <block id="1d2bcd4906e89f4b93900e7a729cfa23" category="list-text">Desconecte la alimentación del módulo del controlador tirando del módulo del controlador hacia fuera unas tres pulgadas:</block>
+  <block id="190e6dffac1e1ea2cdf61c6d2e1aa03f" category="list-text">Presione ambos pestillos de bloqueo del módulo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.</block>
+  <block id="18db855640715fe2445fe253feaa5737" category="list-text">Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.</block>
+  <block id="fd0b5e2ec2a2cf25a20efb1e3056cd3e" category="list-text">Vuelva a instalar el módulo Gestión del sistema:</block>
+  <block id="cad55b14298ba91aeb9818c5ded8ee54" category="list-text">Inserte la unidad flash USB en el puerto USB-A del módulo de gestión del sistema.</block>
+  <block id="c81ac37e18f8d2fc1fa9a876a4ec31e6" category="list-text">Vuelva a conectar la alimentación al módulo del controlador:</block>
+  <block id="81dfaa70d5a404c0e1608245cd5ffd7c" category="paragraph">Antes de sustituir el chasis, asegúrese de revisar los siguientes requisitos.</block>
+  <block id="6d5d746399cefcc613daba11aecdc51c" category="paragraph">Vuelva a conectar las conexiones de red y almacenamiento y, a continuación, vuelva a asignar la controladora.</block>
+  <block id="0ed0be895e046a90f3a9bee311a3835e" category="paragraph">Verifique la configuración de bajo nivel del sistema de la controladora de reemplazo y vuelva a configurar los ajustes del sistema según sea necesario.</block>
+  <block id="539ae767713043504856676d47fbdf4b" category="paragraph">Asegúrese de etiquetar los cables para saber de dónde vienen.</block>
+  <block id="959e9a2f2cfb56163a0772785510252a" category="admonition">La controladora se reinicia tan pronto como se coloca completamente en el chasis.</block>
+  <block id="efafbee0ffbc8d01f41e7d2a1428e535" category="section-title">Paso 4: Reasignar discos</block>
+  <block id="d2b549392d50d0e5724cdaa8e0662e54" category="list-text">Identifique la unidad con errores ejecutando<block ref="aadfe3f601179615e320615d73c89773" prefix=" " category="inline-code"></block> el comando desde la consola del sistema.</block>
+  <block id="9a3ce2ce3fa4d673c8baa3feb35a1d99" category="admonition">Según el tipo y la capacidad, la unidad puede demorar hasta varias horas en aparecer en la lista de unidades con errores.</block>
+  <block id="25a857f5f1a4649107ecc085c2020a12" category="paragraph">La forma en que se reemplace la unidad depende de cómo se utilice la unidad. Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución SED en<block ref="fc87e4868a863f484cb32d2391c4aa0d" category="inline-link-rx"></block>. Estas instrucciones describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.</block>
+  <block id="ecb3e4268bc39d477343c1e37a7a7507" category="list-text">Al sustituir una unidad, se debe esperar un minuto entre la eliminación de la unidad con error y la inserción de la unidad de reemplazo para permitir que el sistema de almacenamiento reconozca la existencia de la unidad nueva.</block>
+  <block id="2355c0de89c03f36fe4d254465752ee9" category="paragraph">Utilice los enlaces <block ref="082e4336681466ac35683d076de2007e" category="inline-link-macro-rx"></block>: .</block>
+  <block id="bfe3957a11dab27de6793691acba1b94" category="paragraph">*100 GbE QSFP28 cables de cobre*</block>
+  <block id="59850ec6ce706547c89ff81eb99141db" category="image-alt">Cable de cobre QSFP28 de 100 GbE</block>
+  <block id="98d708b05a190cb186f067bf90619d96" category="doc">Apague el controlador defectuoso - AFF A70, AFF A90</block>
+  <block id="c69300475b70372bd3ae9414f284bd95" category="inline-link-macro">Apague las controladoras</block>
+  <block id="d184fea7e7fa9090950a80f61d31a011" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="7965ac6558ac93dfaf2504fcd8c045af" category="inline-link-macro-rx"></block></block>
+  <block id="2c72cc19c0bd942b8dafe7de49659cc1" category="paragraph">Apague las controladoras para poder realizar el mantenimiento del chasis.</block>
+  <block id="df0a5e7efca0ed693d07e3026e615c4a" category="paragraph">Para los sistemas de almacenamiento AFF A70 y AFF A90, se pueden realizar procedimientos de mantenimiento en los componentes siguientes.</block>
+  <block id="3a18b3bb3b5d96ad964da98cfdd729b8" category="paragraph"><block ref="3a18b3bb3b5d96ad964da98cfdd729b8" category="inline-link-macro-rx"></block></block>
+  <block id="1d7ebda4bed7079759a768f2499d31e6" category="inline-link">Cómo reemplazar el dispositivo de arranque secundario de un AFF A700s</block>
+  <block id="9b7a185b60a0431ee8b8715c107b112e" category="paragraph">Si necesita reemplazar el soporte de arranque secundario mientras el soporte de arranque principal está instalado y en buen estado, póngase en contacto con el soporte de NetApp y mencione el<block ref="1f934b5b84ae8c28d2ccbd8c83b2dd26" category="inline-link-rx"></block> artículo de la base de conocimientos.</block>
+  <block id="0861a4c5524aee3e491db29774dd89a8" category="sidebar">Apague las controladoras</block>
 </blocks>
