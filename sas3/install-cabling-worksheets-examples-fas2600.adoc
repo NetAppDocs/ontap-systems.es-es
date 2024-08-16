@@ -19,11 +19,11 @@ NOTE: Esta información no se aplica a las plataformas FAS25XX.
 * Si es necesario, puede consultar link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información sobre las configuraciones compatibles, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja.
 * Los ejemplos de cableado muestran los cables de la controladora a la pila como sólidos o discontinuos para distinguir las conexiones de los puertos 0b/0b1 del controlador de las conexiones de los puertos 0A del controlador.
 +
-image::../media/drw_fas2600_controller_to_stack_cable_type_key_IEOPS-947.svg[Controlador drw fas2600 para apilar el tipo de cable clave IEOPS 947]
+image::../media/drw_fas2600_controller_to_stack_cable_type_key_IEOPS-947.svg[Llave de tipo de cable para plataformas con almacenamiento integrado]
 
 * Los ejemplos de cableado muestran conexiones de controladora a pila y conexiones de bandeja a bandeja en dos colores diferentes para distinguir la conectividad a través de IOM A (dominio A) e IOM B (dominio B).
 +
-image::../media/drw_fas2600_cable_color_key.png[tecla de color del cable drw fas2600]
+image::../media/drw_fas2600_cable_color_key.png[Llave de color de cable para plataformas con almacenamiento integrado]
 
 
 
@@ -33,7 +33,7 @@ image::../media/drw_fas2600_cable_color_key.png[tecla de color del cable drw fas
 
 El siguiente ejemplo muestra que no es necesario ningún cableado para adquirir conectividad de alta disponibilidad multivía:
 
-image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[drw fas2800 noshelf mpha IEOPS 954]
+image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[Alta disponibilidad multivía de FAS2800 sin bandejas externas]
 
 
 
@@ -41,7 +41,7 @@ image::../media/drw_fas2800_noshelf_mpha_IEOPS-954.svg[drw fas2800 noshelf mpha 
 
 En el siguiente ejemplo de cableado se muestra el cableado necesario entre las dos controladoras para lograr una conectividad de tres rutas:
 
-image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[drw fas2800 noshelf tpha IEOPS 955]
+image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[Fas2800 Ejemplo de cableado de alta disponibilidad de triple ruta sin bandejas externas]
 
 
 
@@ -49,9 +49,9 @@ image::../media/drw_fas2800_noshelf_tpha_IEOPS-955.svg[drw fas2800 noshelf tpha 
 
 La siguiente hoja de datos y ejemplo de cableado utiliza el par de puertos 0A/0b1:
 
-image::../media/drw_fas2800_worksheet_IEOPS-948.svg[Hoja DE TRABAJO drw fas2800 IEOPS 948]
+image::../media/drw_fas2800_worksheet_IEOPS-948.svg[FAS2800 Hoja de datos para el cableado de alta disponibilidad de tres rutas que muestra los pares de puertos para la pila 1]
 
-image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[drw fas2800 incluye bandejas tpha IEOPS 949]
+image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[Ejemplo de cableado de alta disponibilidad de tres rutas de FAS2800 a una pila]
 
 
 
@@ -62,9 +62,9 @@ En el siguiente ejemplo de hoja de datos y cableado se utiliza la pareja de puer
 
 NOTE: Esta sección no se aplica a los sistemas FAS2800 o FAS25XX.
 
-image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[drw fas2600 Hoja de trabajo de mpha IEOPS 1255]
+image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[Hoja de cálculo de cableado de alta disponibilidad multivía para plataformas con almacenamiento interno y una pila]
 
-image::../media/drw_fas2600_mpha_IEOPS-1256.svg[drw fas2600 mpha IEOPS 1256]
+image::../media/drw_fas2600_mpha_IEOPS-1256.svg[Ejemplo de cableado de alta disponibilidad multivía para plataformas con almacenamiento interno]
 
 
 
@@ -74,12 +74,12 @@ Las siguientes hojas de datos y ejemplos de cableado utilizan el par de puertos 
 
 En este ejemplo, la controladora se instala en la ranura A del chasis. Cuando una controladora se encuentra en la ranura A del chasis, su puerto de almacenamiento interno (0b) está en el dominio A (IOM A); por lo tanto, el puerto 0b debe conectarse con el dominio A (IOM A) en la pila.
 
-image::../media/drw_fas2600_mp_slot_a_worksheet.png[hoja de trabajo de la ranura drw fas2600 mp]
+image::../media/drw_fas2600_mp_slot_a_worksheet.png[Hoja de datos de cableado FAS2600 que muestra la pareja de puertos para una configuración multivía]
 
-image::../media/drw_fas2600_mp_slot_a.png[ranura a drw fas2600 mp]
+image::../media/drw_fas2600_mp_slot_a.png[Ejemplo de cableado multivía FAS2600 con controladora en la ranura del chasis 1]
 
 En este ejemplo, la controladora se instala en la ranura B del chasis. Cuando una controladora se encuentra en la ranura B del chasis, su puerto de almacenamiento interno (0b) se encuentra en el dominio B (IOM B); por lo tanto, el puerto 0b debe conectarse al dominio B (IOM B) en la pila.
 
-image::../media/drw_fas2600_mp_slot_b_worksheet.png[hoja de trabajo b de ranura de drw fas2600 mp]
+image::../media/drw_fas2600_mp_slot_b_worksheet.png[Hoja de datos de cableado FAS2600 que muestra la pareja de puertos para una configuración multivía]
 
-image::../media/drw_fas2600_mp_slot_b.png[ranura b drw fas2600 mp]
+image::../media/drw_fas2600_mp_slot_b.png[Ejemplo de cableado multivía FAS2600 con controladora en la ranura del chasis 2]
