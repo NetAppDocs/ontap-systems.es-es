@@ -153,7 +153,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Si utiliza las ranuras 3 y/o 7 para las redes, utilice `storage port modify -node __<node name>__ -port __<port name>__ -mode network` comando para convertir la ranura para su uso en la red.
 . Repita estos pasos para la controladora B.
-. Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"^].
+. Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en link:../ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"].
 
 
 
@@ -383,7 +383,7 @@ Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mod
  a| 
 Módulo de almacenamiento
  a| 
-Instale y conecte los cables de las bandejas NS224, según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"^].
+Instale y conecte los cables de las bandejas NS224, según se describe en link:../ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"].
 
 |===
 . Repita estos pasos para la controladora B.

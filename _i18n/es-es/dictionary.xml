@@ -1192,7 +1192,6 @@
   <block id="e13ec8340eb62f2310817c4d2909445e" category="list-text">Cables de red adicionales para conectar el sistema al conmutador de red y al portátil o a la consola con un navegador Web</block>
   <block id="0e6a8e99a6fb91e4c4fc0cee8731b786" category="list-text">Extraiga el contenido de todas las cajas.</block>
   <block id="9a7aa4a793df686179a9f904351e5dce" category="list-text">Registre el número de serie del sistema de las controladoras.</block>
-  <block id="a894e80c84e8ffdd148bac48114dae68" category="image-alt">etiqueta ssn drw</block>
   <block id="8b608b395d5ef435fa72e3a73b64beda" category="list-text">Realice un inventario y anote el número y los tipos de cables recibidos.</block>
   <block id="8c7e195c70a3c81b0d429b8f17f558bb" category="paragraph">En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si recibe un cable no enumerado en la tabla, consulte la Hardware Universe para localizar el cable e identificar su uso.</block>
   <block id="9eeb03fc4036ad14613095e0069f2192" category="cell">Tipo de cable...</block>
@@ -1243,10 +1242,8 @@
   <block id="847919144516a57af9b46ca0197df49a" category="list-text">Instale los kits de raíles, según sea necesario.</block>
   <block id="1d73b4bc0bd82d2084a03bfdfa9c1378" category="list-text">Instale y asegure el sistema siguiendo las instrucciones incluidas con el kit de raíl.</block>
   <block id="9f54b5b254fa807cab889d1440acbc05" category="admonition">Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.</block>
-  <block id="bf4bab0f60d5f890ac80c1ebcbbc12a9" category="image-alt">icono de elevación drw 9000</block>
   <block id="6aaee4945b201c5a5677251dde867361" category="admonition">La etiqueta de la izquierda indica un chasis vacío, mientras que la etiqueta de la derecha indica un sistema completamente cargado.</block>
   <block id="5f640e6d3479fd7b72c9ae7db89d3548" category="list-text">Conecte los dispositivos de administración de cables (como se muestra).</block>
-  <block id="85b367f413d423e28eebf0d4d7343b21" category="image-alt">brazos de gestión de cables drw 9000</block>
   <block id="d8f1926eaea2f861c4642d7c0de8a8ca" category="list-text">Coloque el panel frontal en la parte delantera del sistema.</block>
   <block id="76f8ab3a142a0ed066c38221ca4e605f" category="section-title">Paso 3: Conecte los controladores a la red</block>
   <block id="c08fb1bb0bc06fd60fcf8dd51de5f2ee" category="paragraph">Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.</block>
@@ -1254,16 +1251,13 @@
   <block id="9cc9aa6b319d537a98d9c9c820e6c4b3" category="paragraph">Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.</block>
   <block id="b0f36369923404e3d59d32e54263eb35" category="paragraph">Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.</block>
   <block id="08f8dc743a7889305e9e12b5efdf8be5" category="paragraph">Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas de cable están hacia arriba para todos los puertos del módulo de red.</block>
-  <block id="6fe081310097e5bdd9201304d5f2f43c" category="image-alt">lengüeta para tirar del cable de la oie</block>
   <block id="1ec9fa42251d8d9889cd15b2ab11e819" category="admonition">Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.</block>
   <block id="d50b249d8e309dd400e0180a12ceae23" category="list-text">Utilice la animación o la ilustración para completar el cableado entre las controladoras y los switches:</block>
   <block id="d42448253898da20d79d02f414303cb3" category="video-title">Animación: Conectar un clúster sin switch de dos nodos</block>
-  <block id="e7a50f58a45bba10b5aba5b8e04b5f6f" category="image-alt">Cableado compuesto drw 9000 TNSC</block>
   <block id="cdb5f9fd7bdb37f00fbde22fc433f594" category="list-text">Vaya a. <block ref="4261ea2b75c295a1978f7924667f1c11" category="inline-xref-macro-rx"></block> para obtener instrucciones sobre el cableado de la bandeja de unidades.</block>
   <block id="84252b20b7e0ac6281a9b368a8f95d01" category="section-title">Opción 2: Clúster de switches</block>
   <block id="64f550ceb718fb87884d6c018d99b0d3" category="paragraph">Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.</block>
   <block id="0815daeb3f5819b5b26f2d852a3480ed" category="video-title">Animación: Cableado de clúster conmutado</block>
-  <block id="2d4ee23b790e29acaba8afea7d2de7bf" category="paragraph"><block ref="2d4ee23b790e29acaba8afea7d2de7bf" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3791be63815c8fbe248b161feeb8b6cd" category="section-title">Paso 4: Conecte las controladoras a las bandejas de unidades</block>
   <block id="951f189826bb64c4dbc3f08ee373f69e" category="paragraph">Puede cablear el nuevo sistema a las bandejas DS212C, DS224C o NS224, según sea un sistema AFF o FAS.</block>
   <block id="67ec2b038363eb1a2ca82d119dc3c4ca" category="section-title">Opción 1: Conecte los cables de las controladoras a las bandejas de unidades DS212C o DS224C</block>
@@ -1870,7 +1864,6 @@
   <block id="7420f9b1d8e8ed836b7ae9c80124f6b8" category="list-text">Levantar la tapa del conducto de aire.</block>
   <block id="e0f21664596f0c97d1d5a04e2fdf74bc" category="paragraph">Utilice el siguiente vídeo o los pasos tabulados para reemplazar la batería RTC:</block>
   <block id="3bfc0205925c583b173da8aaa6c933a5" category="list-text">Localice la batería RTC entre el disipador térmico y el plano medio y retírela exactamente como se muestra en el gráfico.</block>
-  <block id="da00f0981a71582bcc5ed875dab5af5b" category="image-alt">drw a250 retire el batt rtc</block>
   <block id="fe3be7b129e2b9c74abd26381eea72bb" category="cell">Tire con cuidado de la lengüeta para separarla del alojamiento de la batería. *Atención:* tirar de él agresivamente puede desplazar la lengüeta.</block>
   <block id="d61a84f0b033dd225ff9a1af9b0f08a5" category="paragraph">Levante la batería. *Nota:* anote la polaridad de la batería.</block>
   <block id="2a79f92f83e80b8d7c1b1b19435df449" category="paragraph">La batería debe expulsarse.</block>
@@ -2564,9 +2557,7 @@
   <block id="ac153f0a41690d0111bba47080ad4deb" category="summary">Existen dos kits de guías de soporte de dos parantes que se pueden utilizar con los sistemas FAS9000 y A700 de AFF. Un kit le permite montar el sistema al ras en el rack de dos postes, y el otro kit le permite montar el sistema a la mitad en el rack de dos postes.</block>
   <block id="3d621fa2786c28a29e81425001413c0e" category="doc">Instrucciones de instalación del kit de rieles de soporte de dos parantes: A700 y FAS9000 de AFF</block>
   <block id="9de356bba732ea3279684bd5fa1e5f9f" category="section-title">Instale el kit de rieles de montaje medio de dos postes</block>
-  <block id="2f338557f8c0be16e8ae51b661b071b1" category="image-alt">soporte intermedio de telecomunicaciones drw 1</block>
   <block id="17bc73815850fd6dc60d586cf707300e" category="section-title">Instale el kit de raíl de montaje empotrado de dos postes</block>
-  <block id="ef2cbc76f2fb85efc97170002c910e15" category="image-alt">soporte frontal para telecomunicaciones drw 1</block>
   <block id="fb796745f1b93e7c27af0a928be9d5ae" category="doc">Módulo de almacenamiento en caché de intercambio en caliente: FAS9500</block>
   <block id="e5684d853146c37193094e90fea21bff" category="paragraph">Los módulos Flash Cache de SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM11, en la ranura 6 de sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
   <block id="1360261f3d9e17642c609debfd62b1d6" category="admonition">Si necesita o desea intercambiar en frío el módulo Flash Cache, siga los procedimientos para sustituir un módulo de I/O.</block>
@@ -2749,8 +2740,6 @@
   <block id="765c3c3f314b105120b116fa72fa83ec" category="list-text">Ranura A4 y B4 (e4a) en el conmutador de red del clúster.</block>
   <block id="370ef18034bcd8124be9ef4b4b76a551" category="list-text">Coloque A8 y B8 (e8a) en el conmutador de red del clúster.</block>
   <block id="d882321e2eb0b3930cc4d89826524491" category="inline-link">Información general sobre las reglas, hojas de trabajo y ejemplos de cableado SAS: Bandejas con módulos IOM12</block>
-  <block id="c88355c0ee4fee45dfc3a83996fea5ca" category="admonition">Para obtener más información y hojas de trabajo sobre el cableado SAS, consulte<block ref="a92f79530cc2a1794f52d1c1214e4c1c" category="inline-link-rx"></block></block>
-  <block id="9d00a2e517a4069bd82955f8b1b02a18" category="list-text">Rellene la hoja de datos del cableado SAS para el sistema. Consulte<block ref="a92f79530cc2a1794f52d1c1214e4c1c" category="inline-link-rx"></block>.</block>
   <block id="3e86e158b18295e17a62b9c2ae164933" category="list-text">Utilice la siguiente animación o dibujos para cablear las controladoras a tres (una pila de una bandeja de unidades y una pila de dos bandejas de unidades) bandejas de unidades DS224C.</block>
   <block id="b198e959073372c8a4e521b4b4a94fb3" category="video-title">Animación: Cableado de las estanterías de la unidad</block>
   <block id="dd012e2b911cefcb3afb5c18a9eea983" category="image-alt">cableado de bandejas sas drw 9500</block>
@@ -2799,7 +2788,6 @@
   <block id="4d3b1425bbd62943a546a9f98dc3b7ef" category="list-text">Proporcione el nodo atrás del nodo del partner.<block ref="49c908925c3b8a3554612823f81c8964" prefix=" " category="inline-code"></block></block>
   <block id="05648a23fc430a3dcc4fb4c1fbb040cd" category="list-text">Si utiliza las ranuras 3 y/o 7 para las redes, utilice<block ref="476ed8a8b3d60ed59cf37fb920c49f89" prefix=" " category="inline-code"></block> comando para convertir la ranura para su uso en la red.</block>
   <block id="6f8193ca6bfb281db32afbcc9e285f79" category="inline-link">Adición en caliente de una bandeja SAS</block>
-  <block id="9856beabcb389225df78cec96e74e365" category="list-text">Si ha instalado un módulo de I/o de almacenamiento, instale y cablee las bandejas SAS, como se describe en<block ref="322cc377ef41f5776a1c64690e12c49b" category="inline-link-rx"></block>.</block>
   <block id="3e0887648c519f4a3c16a1c61b2e8ec3" category="section-title">Opción 2: Añada un módulo de I/o en un sistema sin ranuras abiertas</block>
   <block id="cebb0168d5bfd94a91f0da51501ba6b8" category="list-text">Si está:</block>
   <block id="e818b574f8a890f6c21405d9164bb6ef" category="cell">Sustituyendo a...</block>
@@ -2816,7 +2804,6 @@
   <block id="85fd23f64df6d6e4c54bd55af7b58c44" category="paragraph">Módulo NIC en las ranuras 3 o 7,</block>
   <block id="86cf1151f6e6623b20e6f28b8eb846ea" category="paragraph">Utilice la<block ref="9dedaa5871e5e9684cbae52f5e1b987d" prefix=" " category="inline-code"></block> comando para cada puerto.</block>
   <block id="3cb2d50b71ca167f282d29cc4a2f763f" category="paragraph">Módulo de almacenamiento</block>
-  <block id="a282c221fc0b795896ece0422f9febe5" category="paragraph">Instale y conecte los cables de las bandejas SAS, como se describe en<block ref="f5c5b2b96e8da7cc3e4c1c8ae096611e" category="inline-link-rx"></block>.</block>
   <block id="1aa73ef56da88752323de5876f9b3750" category="doc">Cambie una fuente de alimentación - FAS9500</block>
   <block id="450bb6c29a5f5af0fe4d1f8fcfcb4777" category="paragraph">El intercambio de una fuente de alimentación implica apagar, desconectar y extraer la fuente de alimentación e instalar, conectar y encender la fuente de alimentación de reemplazo.</block>
   <block id="3e476a4d56adc74857e9c49cf82980f1" category="list-text">Existen cuatro fuentes de alimentación en el sistema.</block>
@@ -5092,7 +5079,6 @@
   <block id="80257ad9b8e102e01f1a08f309c3eed0" category="doc">Transfiera la imagen de arranque al medio de arranque - AFF A800</block>
   <block id="eaa58bc985f0e200420f274e19bb7272" category="doc">Sustituya el hardware del módulo de la controladora - AFF A800</block>
   <block id="3cf0b39ddc0b0c6fbe705a62aacc7d3c" category="list-text">En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.</block>
-  <block id="7acc547c8acfbe4a745ca72a3e0e83e4" category="image-alt">Unidad drw a800 asentada IEPOPS 960</block>
   <block id="9fec9d1f051b750c4b137dc68aaa9695" category="list-text">Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.</block>
   <block id="3caccb46026f8affc6c95f65aa0c8af1" category="list-text">Deslice el módulo del controlador para sacarlo del chasis y colóquelo sobre una superficie plana y estable.</block>
   <block id="9bc9bee1c7c86ea6e815437b4f02ff6c" category="paragraph">Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis. .</block>
@@ -5197,7 +5183,6 @@
   <block id="51096157b524c7405d973a26f6a00303" category="doc">Instale el kit de perno hacia abajo</block>
   <block id="4630806a49f3d566c73da0208c0cd76a" category="paragraph">Debe suministrar el perno de anclaje adecuado para su suelo para cada soporte atornillado.</block>
   <block id="147a1dc5cec13c688326299559be22ae" category="list-text">Marque el área del suelo donde se instalará el armario del sistema y, a continuación, coloque el armario en su lugar.</block>
-  <block id="319a2ed158a8cb88c3de9dd6a93c15a1" category="image-alt">kit de tornillo de retroceso universal de la cabina drw sys ozeki</block>
   <block id="1966a82c06f624b9d7efa1d0aa3d578b" category="paragraph">Soportes atornillables delanteros y traseros</block>
   <block id="b973d96e7d5bc1a13b71536b349a5588" category="paragraph">Ubicación del punto de anclaje del suelo en el soporte</block>
   <block id="547f8fa31ac2afc77d18705755c12837" category="list-text">Marque los puntos de anclaje en los que se anclarán los soportes inferiores del perno traseros al suelo y, a continuación, perfore los orificios de los soportes.</block>
@@ -5213,7 +5198,6 @@
   <block id="6389d85f34f387a4ea8fe4528c426e25" category="paragraph">Debe mover la fuente de alimentación, el cable de alimentación y el conducto de cableado de la placa de identificación iluminada al lado opuesto del armario del sistema al invertir la puerta del armario del sistema. El conjunto está diseñado de forma que el cable que va a la placa esté en el lateral del armario donde está instalada la bisagra de la puerta.</block>
   <block id="709ddaede46e6b855beff61d58586373" category="list-text">Abra el clip de sujeción del cable de alimentación y, a continuación, desconecte el cable de alimentación de la fuente de alimentación.</block>
   <block id="667c7de8e5248a14983029ec8ffffaa5" category="list-text">Retire la carcasa de la fuente de alimentación y la fuente de alimentación, con la ilustración como referencia:</block>
-  <block id="1776efc78bebc4dcee89829bd247c429" category="image-alt">la fuente de alimentación del marco de la cabina drw sys quita ozeki</block>
   <block id="2cf25b719c3838a91f027f2c3f8142fd" category="list-text">Levante el pasador de retención de la carcasa de la fuente de alimentación y, a continuación, retire la cubierta de la carcasa girándola hacia abajo y levántela de la carcasa de la fuente de alimentación trasera.</block>
   <block id="5591b24e5b893e15cc2f08bac3a35504" category="admonition">La fuente de alimentación está conectada a la carcasa de la fuente de alimentación con un parche de gancho y bucle.</block>
   <block id="7afcbe61bb1a2c3c522f1d080649dfd4" category="list-text">Desconecte la fuente de alimentación del cable del indicador luminoso y, a continuación, coloque la cubierta de la fuente de alimentación y de la fuente de alimentación en un lateral.</block>
@@ -5225,9 +5209,7 @@
   <block id="661e3d47c0a5f6ab62d151d30ccd98a3" category="list-text">Instale la cubierta de la fuente de alimentación y la fuente de alimentación alineando los ganchos de la cubierta con la fuente de alimentación hacia atrás, tirando del émbolo hacia arriba en la cubierta, girando el émbolo hacia arriba y soltando el émbolo.</block>
   <block id="20aadda179d514a8d5e6a99bf7d92b8e" category="list-text">Retire el conducto de la fuente de alimentación del bisel quitando las abrazaderas de retención del conducto de las abrazaderas de retención y, a continuación, deslice el conducto fuera del cable de alimentación.</block>
   <block id="aca431319f86a8f357d439e7ccf59f20" category="paragraph">Mantenga las abrazaderas de retención y los tornillos para instalar el conducto en el lado opuesto del armario.</block>
-  <block id="c48a48be7c0f1e99840883a3280b1799" category="image-alt">marco de la cabina drw sys, conducto de alimentación, ozeki</block>
   <block id="639cf71ee916974f7f6e30150a85d737" category="list-text">Mueva el cable de alimentación de la placa a la otra parte del armario:</block>
-  <block id="2d9b6f21ece6c57c36fd0e50193e491d" category="image-alt">movimiento del cable de alimentación del bisel de la cabina drw sys</block>
   <block id="22c0b80cd01ef90622d1da92c6e0296e" category="list-text">Gire el retenedor del cable de goma del armario en posición vertical 180° hacia la derecha, retírelo del bastidor del armario del sistema y, a continuación, tire suavemente del cable para extraerlo del armario del sistema.</block>
   <block id="845c272095f5b0f6e051259dcbf4b8c4" category="list-text">Mueva el cable hacia el otro lado del armario y, a continuación, enrosca completamente a través del orificio cerca de la parte superior del armario en posición vertical.</block>
   <block id="fb703b4947b0235a0a86e7284865fbdb" category="list-text">Alinee el retenedor del cable de caucho con el orificio del bastidor, empújelo hasta que alcance y, a continuación, gire el retenedor del cable 180° hacia la izquierda para fijarlo.</block>
@@ -5285,7 +5267,6 @@
   <block id="ba962792d53198162e980600d4ad1689" category="paragraph">12 pda</block>
   <block id="bfcd3622a8ea921fc92445a1fdabbd58" category="section-title">Dimensiones exteriores del armario del sistema</block>
   <block id="554d16876be8b6f45da7b9f94ca29374" category="paragraph">En la siguiente ilustración se muestran las vistas frontal, trasera y lateral del armario del sistema:</block>
-  <block id="d33692cb816156acc24972dd0730169e" category="image-alt">dimensiones delanteras del lado de la cabina del sistema drw ozeki</block>
   <block id="3d916345d2d4b88d59baeb4da4d032c2" category="paragraph">Las siguientes ilustraciones muestran las vistas superior e inferior del armario del sistema e identifican las aberturas a través de las cuales se pueden ejecutar los paquetes de cables desde la base del centro de datos hasta el armario del sistema. Las ilustraciones también muestran la ubicación de las ruedas del armario del sistema y las patas de nivelación.</block>
   <block id="8b33a6fabc9dc64d006c6243d17ccb18" category="paragraph">PRECAUCIÓN:</block>
   <block id="03e181c9a4ee916b1c6394530dfe5d25" category="paragraph">Para evitar que el armario del sistema caiga por el suelo central de datos, no intente girar el armario del sistema sobre una abertura del suelo que sea más ancha que la abertura de acceso del cable situada en la parte inferior del armario del sistema.</block>
@@ -5306,11 +5287,9 @@
   <block id="69204463d5fd7274cd7c15cdd8754c5b" category="section-title">Vuelva a instalar el indicador luminoso</block>
   <block id="e39173998bcb0a429fbb384ad9f2b4a3" category="paragraph">Una vez instalada la puerta del armario del sistema, deberá instalar el distintivo iluminado para completar el proceso de inversión de la puerta y, a continuación, cerrar y bloquear la puerta delantera.</block>
   <block id="655b379eb55a962545027e4c4765decc" category="list-text">Con la siguiente ilustración como referencia, vuelva a instalar el distintivo iluminado en la puerta frontal del armario del sistema:</block>
-  <block id="2893f66e6b01f34fba119ce895b85ff5" category="image-alt">instalación de la piedra de puente de la cabina drw sys</block>
   <block id="07fe9225534f4404a2e26cdf7452dbe0" category="list-text">Cierre y bloquee la puerta delantera.</block>
   <block id="525de838b0b63aa03a438e94f2a28f29" category="summary">Para extraer la placa de identificación iluminada es necesario abrir la puerta frontal del armario del sistema, desconectar el cable de alimentación de la parte posterior de la placa de identificación y, a continuación, retirar los componentes de la placa de identificación de la puerta del armario del sistema.</block>
   <block id="fcb9814ec0f783887dac12f72d00226b" category="doc">Retire el distintivo iluminado</block>
-  <block id="4c0a89c292f890b878557c520551c332" category="paragraph">Utilice la siguiente ilustración junto con los pasos siguientes:<block ref="f85f4e62a4b22615b36542fe3d51ee23" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5e431905274e59cf132f091a54196f47" category="list-text">Desbloquee y abra la puerta frontal del armario del sistema.</block>
   <block id="85c3d0cde48efa347bc893ba6c30e89b" category="list-text">Afloje los tornillos cautivos del panel posterior del distintivo en el interior de la puerta y, a continuación, tire con cuidado del panel posterior para separarlo de la malla de la puerta.</block>
   <block id="3316ddf58954cd81f69dd3a261a67df4" category="list-text">Desenchufe el cable de alimentación del panel posterior presionando el gancho de bloqueo del enchufe, desenchufando el cable de la toma y quitando el cable del panel posterior.</block>
@@ -5321,9 +5300,7 @@
   <block id="70150c1a82fd194a31cb4375a5daa21c" category="summary">El SuperRail puede instalarse en un bastidor de cuatro postes de orificio cuadrado estándar o en un rack de cuatro postes de orificio redondo estándar utilizando los soportes de adaptador de orificio redondo a cuadrado.</block>
   <block id="966a4cc013cbf07d2dc9b6d14833b3e0" category="doc">Instrucciones de instalación del kit SuperRail</block>
   <block id="04abd72307682d4665fde1d35d82daaf" category="section-title">Instalación de SuperRail en bastidor de cuatro postes con orificio cuadrado</block>
-  <block id="34da9d7212dd506252380d0f44fc7986" category="image-alt">nuevo kit de cuatro postes de orificio cuadrado drw superrail</block>
   <block id="c1f04067f36960edddc9075483e6ac55" category="section-title">Instalación de SuperRail en bastidor de cuatro postes de orificio redondo</block>
-  <block id="e38ed45d70c33aad1179b302b05d8606" category="image-alt">nuevo kit de cuatro postes de orificio redondo drw superrail</block>
   <block id="496b4a3650aab467cf608b170b892ff0" category="summary">Es posible sustituir una PDU con errores en el armario del sistema o sustituir una PDU existente por otro tipo de PDU.</block>
   <block id="ef229ddf3c0a14a70216a92856d40161" category="doc">Reemplace PDU</block>
   <block id="88cf45a15ad0d90bd6e19a24f810822a" category="paragraph">El armario del sistema debe admitir la PDU de repuesto y debe proporcionar alimentación suficiente al equipo instalado.</block>
@@ -5352,11 +5329,9 @@
   <block id="855cffdbc90612707b516c4fbf2e4af6" category="list-text">Si va a instalar el kit de interconexión con los paneles laterales quitados, quite la puerta frontal cuyas bisagras están en el borde donde se encuentran los armarios:</block>
   <block id="adb71487fe02ff95335d325d05bd2f15" category="list-text">Desbloquee y abra la puerta delantera que se está quitando.</block>
   <block id="9a4fe80d04ca9856800b2ddabd18e395" category="list-text">Utilice la siguiente ilustración como referencia para desconectar la alimentación del bisel iluminado:</block>
-  <block id="85816983ffa30e30b984a6f2f3ceaa67" category="image-alt">la cabina drw sys quita la banela trasera de la piedra de azufre</block>
   <block id="e8a8f00a7d5bf25e6a1ac90e7cb6e4ce" category="paragraph">Placa de circuitos y cable del bisel iluminado</block>
   <block id="4c3580dc8ec8ac15abb74f8ae9e12d37" category="paragraph">Panel posterior y tornillos de mariposa</block>
   <block id="7b38852247e34a7c2f895128fb65a1b9" category="list-text">Utilice la siguiente ilustración como referencia para extraer la puerta delantera:</block>
-  <block id="d685fa3196540e3ea5b6005dcc845f27" category="image-alt">drw sys puerta delantera daiginjo</block>
   <block id="b8935c8d03d333d31d39f234ce7ca6a2" category="paragraph">Cable de conexión a tierra de la puerta</block>
   <block id="137d396b6d0a86b1ac38d18e8d8c8941" category="paragraph">Bisagra superior puerta</block>
   <block id="990c943d20a9b30b2a54828e009ea5b0" category="paragraph">Pasador de bisagra</block>
@@ -5368,16 +5343,13 @@
   <block id="7a12958e889303dd69f0e10b6b24a30b" category="list-text">Levante la puerta de la bisagra inferior y, a continuación, coloque la puerta a un lado.</block>
   <block id="6e55d11b93b41e214f2747e4f2f62d30" category="list-text">Mueva los armarios del sistema completamente juntos y, a continuación, alinéelos y nivelos ajustando los cuatro pies de nivelación en la parte inferior de los armarios del sistema.</block>
   <block id="8219a534e6cd0a6c1713509618457269" category="list-text">Instale los soportes de interconexión.</block>
-  <block id="9003c6de864cf9e22d9985840ee11662" category="list-text">Utilice la siguiente ilustración como referencia si va a instalar los soportes de interconexión con los paneles laterales del armario del sistema en, como se recomienda:<block ref="901c263387e1aa6a92d2a47d94581abb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0581354b86d3712208b91e6cf6f161e8" category="paragraph">Remaches de plástico a presión en la parte superior del armario del sistema</block>
   <block id="2bebe43be7aead982807f7b4fe8cc0a2" category="paragraph">Soporte de interconexión superior</block>
   <block id="bb59e9a622257ac58cd5376c41c18911" category="paragraph">Soporte de interconexión inferior</block>
-  <block id="8ca8711af46d57c76eb7b29bf8e82c2c" category="list-text">Utilice la siguiente ilustración como referencia si va a instalar los soportes de interconexión con los paneles laterales del armario del sistema apagados:<block ref="ed3976d92b59b9f945feec2c90845831" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6ffc5df4a17461423317852eab42d605" category="list-text">Repita el proceso para los armarios de sistema restantes.</block>
   <block id="9513dbed5687d13ec78a5ed7ab3503cc" category="list-text">Apriete todos los tornillos del soporte de interconexión.</block>
   <block id="d971400e841652c0674351e1776f8782" category="summary">Debe quitar el material de embalaje que rodea el armario del sistema antes de moverlo a su sitio. También debe reciclar el material de embalaje después de desembalar el armario.</block>
   <block id="a95834c1a8ed59ab3858580d175bb665" category="doc">Desembale el armario del sistema</block>
-  <block id="129309842bc5dbd264ad4f8622f29bfc" category="image-alt">instrucciones de desembalaje de la cabina drw sys ozeki</block>
   <block id="065e0cfc1a644921f8da7dcbc4e51ec2" category="summary">Antes de instalar el armario del sistema, debe familiarizarse con sus funciones. También debe verificar que su sitio pueda admitir el armario del sistema, moverlo a la ubicación deseada y desembalarlo.</block>
   <block id="c3f0ef3ab0d6ba2b67aa70091a366e6d" category="doc">Prepare la instalación del armario del sistema</block>
   <block id="c9c398d96e19f76a792dde6c40d97674" category="summary">Puede solicitar un armario del sistema con las controladoras de almacenamiento de NetApp y bandejas de discos instaladas en él o un armario vacío del sistema si ya tiene equipo de NetApp. Se pueden conectar varios armarios de sistema utilizando el kit de interconexión opcional y pueden anclarse a la planta del centro de datos mediante el kit de atornillado opcional.</block>
@@ -5451,7 +5423,6 @@
   <block id="bccb69ce24042e59edaddcbd859db7ef" category="admonition">Si las bridas de montaje del equipo se extienden más allá de los orificios para tornillos del riel de soporte, instale las tuercas de la jaula encima del riel de soporte cuando sea necesario para fijar el equipo en posición vertical.</block>
   <block id="751d4b928240d52864a2818fe5317da7" category="list-text">Instale paneles de relleno en cualquier compartimento vacío del armario del sistema.</block>
   <block id="4ccedf93160862bbf89c3f9a64941193" category="paragraph">Si recibe el armario del sistema con el equipo ya instalado, debe retirar los rieles de amarre situados en la parte superior del equipo que se encuentra directamente debajo de los compartimientos vacíos del armario, como se muestra en la siguiente ilustración:</block>
-  <block id="b4449fca9dbd74bd7d58f7cfdbad1d41" category="image-alt">drw syslab ozei riel común retire el panel en blanco</block>
   <block id="cc32f847114f40b46bd875dc4bc7b049" category="list-text">Vuelva a instalar las puertas del armario del sistema delantero y trasero.</block>
   <block id="0d3dccbe0e804739d481b2318646849d" category="summary">Su armario del sistema tiene algunos rieles de soporte ya instalados. Si necesita rieles de soporte adicionales para su sistema, debe instalarlos antes de instalar los componentes de su sistema.</block>
   <block id="766ceed182488f716e50814e69e8d1c4" category="doc">Instale rieles de soporte adicionales</block>
@@ -5461,9 +5432,7 @@
   <block id="aa24a9cd171f9abd8925640d8d206200" category="list-text">Determine cuánto espacio necesita su equipo.</block>
   <block id="29bf63e9639af89689623a2194820d09" category="paragraph">Calcule la cantidad de espacio en U (1.75 pulgadas por U) que necesita el equipo, en función de la altura del equipo y, a continuación, determine dónde se instalará el equipo en el armario del sistema en función del espacio disponible.</block>
   <block id="2c66268a397bedc4a8ee565eb321a361" category="list-text">Localice donde necesite instalar los rieles de soporte y, a continuación, instálelos utilizando la siguiente ilustración para su referencia:</block>
-  <block id="7109dddefbc1cca910a17a3003f918d1" category="image-alt">instalación del carril de soporte drw syslab ozeki</block>
   <block id="84362391cde89925e3ad3550a96b7cd2" category="list-text">Si las bridas de montaje del equipo se extienden más allá de los orificios para tornillos del riel de soporte, instale las tuercas de jaula encima del riel de soporte, si es necesario.</block>
-  <block id="3b738832fd7805dcb59a6e3ceb6d1691" category="image-alt">instalación de la tuerca de abrazadera drw</block>
   <block id="158164ba02e099ef26a07a4dc2f190fb" category="summary">Al invertir la puerta del armario del sistema, debe mover la bisagra y el cierre de la puerta del armario del sistema a la parte delantera del armario del sistema en posición vertical.</block>
   <block id="4870418b0a18b6824d4496cb1208d178" category="doc">Invierta la bisagra de la puerta y el pestillo de la cerradura</block>
   <block id="44d110429706a22974a0a9f495eecabd" category="paragraph">Necesita las siguientes herramientas:</block>
@@ -5473,7 +5442,6 @@
   <block id="8c03dc270927151ae2f4c04ba9af6241" category="list-text">Retire los tornillos que fijan la bisagra superior del bastidor del armario del sistema y coloque los tornillos y la bisagra a un lado.</block>
   <block id="c504df8a2e05ee517dc6a7dfaae8534a" category="admonition">Tenga cuidado al retirar los tornillos Allen para evitar dejarlos caer en el bastidor del armario. Los tornillos Allen de repuesto se suministran en el kit de repuestos que se suministra con el armario del sistema.</block>
   <block id="6ae32f268b877b3b573defa304a11e20" category="list-text">Retire los tornillos que fijan la bisagra inferior del bastidor del armario del sistema y coloque los tornillos y la bisagra a un lado.</block>
-  <block id="f7903c84afc48e16923743ea24c3501f" category="image-alt">ozki de inversión de la puerta de la cabina drw sys</block>
   <block id="faf16e882ec4df1018434c9a53f4aba9" category="paragraph">Tornillo de conexión a tierra de la puerta con horquilla de cable de conexión a tierra</block>
   <block id="87a5515b72437b095b1c74278d86d9a5" category="paragraph">Cable de conexión a tierra</block>
   <block id="2dbb2b48352443791844e4033011af55" category="paragraph">Terminal del cable de conexión a tierra del bastidor</block>
@@ -5571,8 +5539,6 @@
   <block id="0721343ac8e5e32a5122775fda62e4d0" category="doc">Restaurar y verificar la configuración - AFF A900</block>
   <block id="b37eeea92bef8e254a5c7650e7002788" category="doc">Pasos detallados - AFF 900</block>
   <block id="c85d51015376017bfac06d7a393d65a8" category="paragraph">Almacenamiento NVME,</block>
-  <block id="2f50f96b8a95f8c73f9257ccd13d3c46" category="image-alt">Controlador drw a900 en el ID de chasis IEOPS 856</block>
-  <block id="ea69d5fd5f06add244968ab4b689c261" category="image-alt">Cableado de red drw a900 tnsc IEOPS 933</block>
   <block id="1450e01f2144c582867e61a2ce391ade" category="paragraph">Cable de switches de red 25 GbE:</block>
   <block id="562006e5bc5a05872c89072601752baa" category="paragraph">Puertos de las ranuras A3 y B3 (e3a y e3c) y A9 y B9 (e9a y e9c) a los switches de red de 25 GbE.</block>
   <block id="8b891f41fe066d01d04ca12a9bd0033f" category="paragraph">Cable de conexiones FC de 32 GB:</block>
@@ -5599,7 +5565,6 @@
   <block id="b96eaffe433fe3b487cd82b4f61be219" category="list-text">Conecte el puerto e10b de la controladora B a NSM A e0b en la bandeja 1.</block>
   <block id="8c6d7187872b78ef08222578448b1731" category="list-text">Conecte el puerto e2b de la controladora a NSM A e0b en la bandeja 2.</block>
   <block id="c3ecc9b1be38b712a8f61f8b27c41352" category="list-text">Conecte el puerto e10a del controlador B al NSM B e0a en la bandeja 2.</block>
-  <block id="5803fc3bcce0b024b213bb355de85f8f" category="paragraph">Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el taladro donde se encuentra el botón. consulte<block ref="86c3962fabec597b00cc6faeabccf883" category="inline-link-rx"></block> si desea obtener instrucciones detalladas.</block>
   <block id="6f189db9f1b1dfc1be838de48c805168" category="video-title">Animación: Configure los ID de bandeja de unidades NVMe</block>
   <block id="312be20d26d0db2b40b706dc2f350028" category="image-alt">drw a900 oie cambio ns224 ID de estante IEOPS 836</block>
   <block id="48fb10beb7e1cd15b9bdbab40aac9532" category="paragraph">Tapa final de estante</block>
@@ -6033,9 +5998,7 @@
   <block id="ba17e519b189ae10cd004d12dcc5e44d" category="paragraph"><block ref="751c01f8467f96987ff97e3a647e9973" category="inline-xref-macro-rx"></block></block>
   <block id="c1918f58421ab69768df267ff2412c99" category="paragraph"><block ref="0b030be2689b90a40f49c456c91f18ec" category="inline-xref-macro-rx"></block></block>
   <block id="b102c1828cf53d9df33f622c2208da4c" category="paragraph"><block ref="6ac3340c69a46ee235155eba76c461d6" category="inline-xref-macro-rx"></block></block>
-  <block id="d034ad76bb5b20c4f0a1790c3665c3b2" category="paragraph"><block ref="d034ad76bb5b20c4f0a1790c3665c3b2" category="inline-link-rx"></block></block>
   <block id="7be2f40216e9676314a384c650694fed" category="admonition">Consulte<block ref="17d46f7a995ead494ec7b2eb9caffda8" category="inline-link-rx"></block> Para su versión de ONTAP para obtener más información.</block>
-  <block id="1fad4d8ec174b60255a8febb2707e048" category="paragraph"><block ref="1fad4d8ec174b60255a8febb2707e048" category="inline-link-rx"></block></block>
   <block id="8c2c8bc4e47d0ed180d7a321a6f45a30" category="paragraph">Para sustituir el módulo NVRAM, localizarlo en la ranura 6 del chasis y seguir la secuencia específica de pasos.</block>
   <block id="44e91a10c5fb9bc923eb6ca613b41106" category="list-text">Presione el pestillo de leva numerado y con letras.</block>
   <block id="35ed901089030d76b9de29f7bb8d54ce" category="paragraph">El pestillo de la leva se aleja del chasis.</block>
@@ -6170,7 +6133,6 @@
   <block id="6a5cc777b5cea5516ed3c04946243c15" category="paragraph">Para sustituir una fuente de alimentación de CC, lleve a cabo los siguientes pasos.</block>
   <block id="81118bbf4dc8e737a15cb33e309d5928" category="list-text">Desenrosque el conector del cable de alimentación D-SUB DC con los tornillos de mariposa del enchufe.</block>
   <block id="a11fffebed2ec4e6399a05866d830825" category="list-text">Desenchufe el cable de alimentación de la fuente de alimentación y colóquelo a un lado.</block>
-  <block id="50e55f801844aaccd3dd2512f4973284" category="image-alt">drw dcpsu Remove sustituye al IEPOPS genérico 788</block>
   <block id="7e9c947073c870125f5537753ceb963c" category="inline-image-macro">anchura=10px</block>
   <block id="3c41e1437657ea44ea906d59991155fe" category="paragraph"><block ref="3c41e1437657ea44ea906d59991155fe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1a2188e25bb7db28c0b09dd772382a5c" category="paragraph">Tornillos de mariposa</block>
@@ -6248,13 +6210,6 @@
   <block id="1a4af28a3bbd2601782d5a7f4300eace" category="paragraph">Si el sistema está en una configuración MetroCluster, vaya a la<block ref="7a41c0ceac7b7f46cc98ba334d076153" category="inline-link-rx"></block> Y siga las instrucciones de instalación aplicables al tipo de configuración de MetroCluster.</block>
   <block id="71e3f3adc231b164f4f0837d133f2bc6" category="paragraph">Use el siguiente flujo de trabajo para implementar el sistema de almacenamiento cuando no se configura en una configuración de MetroCluster.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Uno</block>
-  <block id="8e4eec704f9a8706e1a3cf96accb2c17" category="list-text"><block ref="8e4eec704f9a8706e1a3cf96accb2c17" category="inline-link-rx"></block></block>
-  <block id="5173935e91aef44c51b8afd57f32f13f" category="list-text"><block ref="5173935e91aef44c51b8afd57f32f13f" category="inline-link-rx"></block></block>
-  <block id="e06ad9290eff5c16396920aafb75091e" category="list-text"><block ref="e06ad9290eff5c16396920aafb75091e" category="inline-link-rx"></block></block>
-  <block id="2f143cdae4fee80d6697460e215b8a02" category="list-text"><block ref="2f143cdae4fee80d6697460e215b8a02" category="inline-link-rx"></block></block>
-  <block id="9832cac218f9fee6c6d44a9f9b5e7d76" category="list-text"><block ref="9832cac218f9fee6c6d44a9f9b5e7d76" category="inline-link-rx"></block></block>
-  <block id="4cd32923632a1028f1e64fee85335b39" category="list-text"><block ref="4cd32923632a1028f1e64fee85335b39" category="inline-link-rx"></block></block>
-  <block id="2bf999bae7084da5db26c6b483ac44f0" category="list-text"><block ref="2bf999bae7084da5db26c6b483ac44f0" category="inline-link-rx"></block></block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Dos</block>
   <block id="26d2e0bd267361cc8916e7e16faebcbb" category="paragraph">Instale los switches en el rack o armario. Acceda a las siguientes instrucciones para su modelo de conmutador.</block>
   <block id="8821c03ea98d1edaf4b4b82c0aaf59dc" category="inline-link-macro">Instale el conmutador BES-53248</block>
@@ -6497,8 +6452,6 @@
   <block id="ac4fc8e93ed87aaf0d607c7594b760df" category="open-title">Opción 2: Conecte las controladoras a dos bandejas de unidades NS224</block>
   <block id="eab02c161618f87134d04b274c9ed0a9" category="image-alt">drw A900 NS224 LINE ART cableado de dos estantes IEOPS 1147</block>
   <block id="93d4151426ee3e46d52580ae98128972" category="list-text">Configure el sistema con los datos recogidos en el<block ref="31fb422f2cdfc1b2e916b587bec00136" category="inline-link-rx"></block></block>
-  <block id="a6857db3b19fb4b9bb2a3b1cad9a31f1" category="list-text"><block ref="a6857db3b19fb4b9bb2a3b1cad9a31f1" category="inline-link-rx"></block></block>
-  <block id="90a9e7415b88be6a0d94cebc7d4a7a57" category="list-text"><block ref="90a9e7415b88be6a0d94cebc7d4a7a57" category="inline-link-rx"></block></block>
   <block id="17732d64911b83c1ef019e7ce301df3a" category="summary">La documentación del sistema de almacenamiento le permite instalar, configurar y mantener el sistema ASA.</block>
   <block id="27562113eba41d0820398afd585cb267" category="sidebar">Configuración de software ASA</block>
   <block id="ff529c4d04327f7d20ae4d7b457bcd18" category="sidebar">Especificaciones técnicas de ASA</block>
@@ -6748,7 +6701,6 @@
   <block id="a9965269fc2882517b2f7404230818ad" category="list-text">Si va a agregar en caliente una o varias bandejas de discos a un final (la primera o la última bandeja de discos lógica) de una pila existente, complete los subpasos correspondientes para la configuración; de lo contrario, vaya al siguiente paso.</block>
   <block id="ca067501330c228a786fd00d17229575" category="paragraph">Agregar en caliente una bandeja de discos a un extremo de la pila que tiene alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de cuatro rutas o conectividad de cuatro rutas a las controladoras</block>
   <block id="fa3d4e5360018aa45e5104272d43148c" category="paragraph">La pila debe cumplir los requisitos indicados en la <block ref="d7ead9d51e0253f97f9c0ae83a2ee9eb" category="inline-xref-macro-rx"></block> sección de este procedimiento.</block>
-  <block id="78fe270cb69c9ecda90d7e049a571c28" category="list-text">Si &lt;lno-DARE&gt; no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9,6 o posterior, continúe con la sección siguiente. <block ref="a913f4e8384864716d5146884ff27f0e" category="inline-xref-macro-rx"></block>.</block>
   <block id="d9b691280dde7c1805e39052719c9c29" category="list-text">Deshabilite la devolución automática de la controladora en buen estado:
 storage failover modify -node local -auto-giveback false`
 o.<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-code"></block></block>
@@ -7001,7 +6953,6 @@ SFP+ (destino/iniciador)</block>
   <block id="945919717a9a1b9de8896baef8c155a5" category="paragraph">Conecte mediante cable las conexiones de red y los puertos de interconexión de clúster para un clúster conmutado.</block>
   <block id="b6713b6dcccfb0ea851ac5892871d1ce" category="paragraph">Conecte los cables de los controladores al almacenamiento externo.</block>
   <block id="3fc162aa6870cf22cf3e0a947b89615a" category="video-title">Animación: Cableado de la bandeja de unidades</block>
-  <block id="2728bec52c30a9bf554b834ce8cfd335" category="admonition">No utilice el puerto 0b2 en un FAS2800. Este puerto SAS no es utilizado por ONTAP y siempre está deshabilitado. Consulte<block ref="6f4656a8b776447b5b4debad13e7a22e" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="936f11624ce65028d5f2861c02e343af" category="image-alt">icono de leyenda de la oie 1 lo</block>
   <block id="c40e49e90ec7d35ff60916a8d39fe6e8" category="image-alt">icono de leyenda de la oie 2 mb</block>
   <block id="3b7d5f20d28c201cdbde659df3e31649" category="image-alt">icono de leyenda de la oie 3 t</block>
@@ -7698,12 +7649,7 @@ SFP+ (destino/iniciador)</block>
   <block id="a15b9605ee28854b0a879286a11a485d" category="doc">Mantener el hardware de FAS2800</block>
   <block id="3bf4e15c5081d9414a6cd3448aae890e" category="paragraph">Para el sistema de almacenamiento FAS2800, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="d90835a42340aac8a036ef710a1aa68a" category="doc">Póngase en funcionamiento con los sistemas de almacenamiento AFF, ASA y FAS</block>
-  <block id="fe16224741a81fa9747d82d6dc05182c" category="list-text"><block ref="fe16224741a81fa9747d82d6dc05182c" category="inline-link-rx"></block></block>
-  <block id="52142476f2ac75ac73f5e40f09d0e6d4" category="list-text"><block ref="52142476f2ac75ac73f5e40f09d0e6d4" category="inline-link-rx"></block></block>
-  <block id="b9cc4cc5d585d56b19a0b0bf8c7ff71f" category="list-text"><block ref="b9cc4cc5d585d56b19a0b0bf8c7ff71f" category="inline-link-rx"></block></block>
-  <block id="0ac6aa3296c0437f3274277862d88d2b" category="list-text"><block ref="0ac6aa3296c0437f3274277862d88d2b" category="inline-link-rx"></block></block>
   <block id="a334af0b164fc0db79711e89abe4cb0d" category="inline-link">FAS2800</block>
-  <block id="53e69397147d83b3fa253cab22a92a98" category="list-text"><block ref="53e69397147d83b3fa253cab22a92a98" category="inline-link-rx"></block></block>
   <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
   <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
   <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
@@ -7973,7 +7919,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ca7dce9cd06f0f2ef6e548c8c26d54d9" category="sidebar">Módulo de controlador ASA C800</block>
   <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link">Gestión de parejas de HA</block>
   <block id="665a2533bb5f8d55add7fd24df29e614" category="paragraph"><block ref="665a2533bb5f8d55add7fd24df29e614" category="inline-link-rx"></block></block>
-  <block id="8fa572d5dfdbff8c60e791d349eca279" category="list-text">Si se muestra &lt;lno-DARE&gt; o &lt;1Ono-DARE&gt; en el resultado del comando, el sistema no admite NVE, continúe con<block ref="c2302bfb39f1e6b6fccfd9207e94da44" category="inline-link-rx"></block>.</block>
   <block id="7d52b24114e5d676f50874574fb29878" category="paragraph">Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>.</block>
   <block id="6cca151867efbcb742b6e15efec51760" category="list-text">Apriete el pestillo de la palanca de leva hasta que se suelte, abra el asa de leva completamente para liberar el módulo del controlador del plano medio y, a continuación, con dos manos, tire del módulo del controlador hasta la mitad del chasis.</block>
   <block id="92edeac7b5b629f5e93e2de4ba2adf43" category="list-text">Compruebe el LED NVMEM situado en la parte posterior del módulo del controlador.  Busque el icono NV:</block>
@@ -8014,7 +7959,6 @@ SFP+ (destino/iniciador)</block>
   <block id="089568b0e72f52eda465bac3d797022f" category="list-text">Compruebe que la flecha de la ilustración tiene la orientación correcta de la lengüeta del conector del cable.</block>
   <block id="cef25943b26eeebcaa1241ede0442fb2" category="paragraph">Use la animación o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches.</block>
   <block id="86ef3e62afc46d4fbce176cfff238447" category="paragraph">En la siguiente tabla se identifica el tipo de cable con el número de llamada y el color del cable en las ilustraciones para cablear las bandejas de unidades al sistema de almacenamiento.</block>
-  <block id="225172475d1dd48d2f55426f1792f1b5" category="admonition">En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles. Consulte<block ref="defd6f8cbcbf4438c52ada1e92d7a17f" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="8a811c8bdca2987d299cfb24cf85ad86" category="paragraph">Cableado de bandeja a bandeja</block>
   <block id="3fa1bc4f962d0649f457ff7e994b46d8" category="paragraph">La controladora A a las bandejas de unidades</block>
   <block id="353960fbbf75aa5a4dd1042a20bf18dc" category="paragraph">La controladora B a las bandejas de unidades</block>
@@ -8041,7 +7985,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6a1952da65ff3ad3728cd89ec078bfa2" category="paragraph">Este procedimiento ofrece instrucciones paso a paso para instalar un sistema de almacenamiento AFF C250.</block>
   <block id="3e9ec063809ed35fdf77c6c261c6e205" category="paragraph">La guía rápida proporciona instrucciones gráficas para una instalación típica de su sistema, desde bastidores y cableado hasta la puesta en marcha inicial del sistema. Utilice este contenido si está familiarizado con la instalación de sistemas de NetApp.</block>
   <block id="34da8131e3c849a4fd58c995ca7c8514" category="paragraph">Las instrucciones de instalación y configuración proporcionan instrucciones gráficas para una instalación típica de su sistema, desde el bastidor y el cableado hasta la puesta en marcha inicial del sistema. Utilice esta guía si está familiarizado con la instalación de sistemas de NetApp.</block>
-  <block id="5590b96dc59eb91eb51b7b3ea51d3fd8" category="image-alt">drw C400 EXTIENE EL CONTROLADOR IEOPS 1216</block>
   <block id="8a8905b8ba33c894ca2404f3ecc9601d" category="image-alt">drw C400 conducto de aire abierto IEOPS 1215</block>
   <block id="7f3e7059150c562376058a9c62805700" category="image-alt">drw C400 sustituya el soporte de arranque IEOPS 1217</block>
   <block id="2e983c0397ba596f716adfed1e1f9821" category="image-alt">drw C400 Empty riser retire IEOPS 1225</block>
@@ -8051,7 +7994,6 @@ SFP+ (destino/iniciador)</block>
   <block id="5af2765bc8ec26a113a34fb076ee531e" category="image-alt">drw C400 Sustituya las tarjetas PCIe IEOPS 1235</block>
   <block id="f84e6736e0937abd8ec66865d23305e8" category="image-alt">drw C400 INSTALAR EL CONTROLADOR IEOPS 1226</block>
   <block id="e46b8c6d3d358d972a1fe516250dcf5d" category="paragraph">Deslice la controladora hacia el chasis</block>
-  <block id="ff0420a1b97d66a283e50773fa71f7ab" category="image-alt">Batería rtc drw C400 IEOPS 1239</block>
   <block id="d1ad021bd9b79ffa9323df56f68e4b22" category="paragraph">La guía rápida proporciona instrucciones gráficas para una instalación típica de su sistema, desde bastidores y cableado hasta la puesta en marcha inicial del sistema. Utilice este procedimiento si está familiarizado con la instalación de sistemas NetApp.</block>
   <block id="e7f3c0051e6bc5cbd205f59b35151985" category="inline-image-macro">anchura=500 px</block>
   <block id="8f9d84ce0761e9cbbd0e69dc419011a6" category="paragraph"><block ref="8f9d84ce0761e9cbbd0e69dc419011a6" category="inline-image-macro-rx" type="image"></block></block>
@@ -8096,14 +8038,7 @@ SFP+ (destino/iniciador)</block>
   <block id="ca42e40f781122cb5a2d8f08cb50d450" category="summary">La documentación del sistema de almacenamiento le permite instalar, configurar y mantener el sistema C-Series de ASA.</block>
   <block id="d6db6f02fef14cb7ca1df4e0aecf3992" category="doc">Sistemas C-Series de cabina All-Flash SAN (ASA)</block>
   <block id="1e328579e066bd52d81db5813109e763" category="paragraph">**Sistemas de la serie A de ASA**</block>
-  <block id="1ab5446725f4ee75e53cfa05dcd66d51" category="list-text"><block ref="1ab5446725f4ee75e53cfa05dcd66d51" category="inline-link-rx"></block></block>
-  <block id="5bdb8055b260f02eec19d823c3311a42" category="list-text"><block ref="5bdb8055b260f02eec19d823c3311a42" category="inline-link-rx"></block></block>
-  <block id="c68b919518dbc07c3ea6de93e748f2a8" category="list-text"><block ref="c68b919518dbc07c3ea6de93e748f2a8" category="inline-link-rx"></block></block>
-  <block id="77072c848f54ead938faeef11b9c0c7f" category="list-text"><block ref="77072c848f54ead938faeef11b9c0c7f" category="inline-link-rx"></block></block>
   <block id="41bfcd2f6014398965bef92c57ac1de1" category="paragraph">**Sistemas de la serie C de ASA**</block>
-  <block id="6505edfb90a2164175a72e5b1e50783a" category="list-text"><block ref="6505edfb90a2164175a72e5b1e50783a" category="inline-link-rx"></block></block>
-  <block id="503163f0da3a219668f1526d7486559b" category="list-text"><block ref="503163f0da3a219668f1526d7486559b" category="inline-link-rx"></block></block>
-  <block id="2127de740eb730a4618a8b073a6c6e02" category="list-text"><block ref="2127de740eb730a4618a8b073a6c6e02" category="inline-link-rx"></block></block>
   <block id="6be417bc5c1ffdb0f8da869305e5d269" category="list-text">Conecte los dispositivos de gestión de cables a la parte posterior de las controladoras (como se muestra).</block>
   <block id="d042cd94231d5a9490b5a46cb7fcfa64" category="image-alt">Bandeja de cables drw C400 IEOPS 1208</block>
   <block id="9e9d13bc60316acb706283fdc88fb378" category="image-alt">Cableado de red drw C400 TNSC IEOPS 1189</block>
@@ -8247,7 +8182,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b6f08137ef915aeef8b0f7a87febae2a" category="image-alt">Conector de cable con lengüeta en la parte superior</block>
   <block id="fba6f55e0eedb7bfb55d5ae671432c82" category="image-alt">Conector de cable con lengüeta en la parte inferior</block>
   <block id="8310c84e951a895da0b0f8647c1eb8d9" category="image-alt">Seleccione un icono de ONTAP</block>
-  <block id="c4e6f16ead2370d5b6f107bb474cb8d8" category="list-text"><block ref="c4e6f16ead2370d5b6f107bb474cb8d8" category="inline-link-rx"></block></block>
   <block id="efd776be7a583ca294bb1a8ce2c4e66e" category="image-alt">Liberación del módulo del controlador</block>
   <block id="cc278673be0ce007e60343587ca221b7" category="image-alt">Opoen el conducto de aire</block>
   <block id="3adccad6709367d60f0645e89c86a994" category="image-alt">Cierre del conducto de aire</block>
@@ -8413,7 +8347,6 @@ SFP+ (destino/iniciador)</block>
   <block id="421c376f4d6d54ea975a03a818082d3d" category="image-alt">Sustitución de DIMM</block>
   <block id="9cb7281bb7eb2acd0ccc0342394f8a2a" category="summary">Los módulos Flash Cache SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte frontal del módulo NVRAM11 en la ranura 6 de solo los sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
   <block id="be156c2254730ffea327aad8b7574600" category="paragraph">Directiva no resuelta en &lt;stdin&gt; - Include:../_include/700_9000_caching_module_and_core_dump_module_replace.adoc[]</block>
-  <block id="c2aecd7a81767c23b66c3ce771bbf967" category="image-alt">dimensiones superiores inferiores de la cabina drw ozeki sys ieops 1803</block>
   <block id="98c84c18c84bbdb869a3af52fb92fee5" category="admonition">La profundidad mínima entre los puntos de conexión delanteros y traseros para la instalación de SuperRail es de 24 pulgadas y mientras que la profundidad máxima es de 32 pulgadas.</block>
   <block id="391efe7c4ae90cf6bb51a9deabcdbefb" category="image-alt">Vista de las cinco cadenas para cables y los conectores vertical y horizontal de cada cajón</block>
   <block id="eaa8764720f96ec6f05bfcafb2927484" category="image-alt">Anillo naranja en el extremo de la cadena de cables</block>
@@ -9476,9 +9409,6 @@ SFP+ (destino/iniciador)</block>
   <block id="9020c560951313547d9b00a00f95d818" category="doc">Sustituya una fuente de alimentación: AFF A70, AFF A90</block>
   <block id="866b7e69a0fb0f745608a59b2a02f1ca" category="doc">Sustituya la batería del reloj en tiempo real - AFF A70, AFF A90</block>
   <block id="a1bdc631ad485f9356bc93d7ccbb7e85" category="doc">Sustituya el módulo de gestión del sistema - AFF A70, AFF A90</block>
-  <block id="47213676da315290cbc4f8dbfd4c19b1" category="list-text"><block ref="47213676da315290cbc4f8dbfd4c19b1" category="inline-link-rx"></block></block>
-  <block id="0f8eba0b4d4003961e911a8b87c8c645" category="list-text"><block ref="0f8eba0b4d4003961e911a8b87c8c645" category="inline-link-rx"></block></block>
-  <block id="afadad86a19bc1f3f4145429ab25f587" category="list-text"><block ref="afadad86a19bc1f3f4145429ab25f587" category="inline-link-rx"></block></block>
   <block id="f710bde9f928341df6ff92fee79cb81a" category="summary">Conecte mediante cable cada bandeja NS224 que esté añadiendo en caliente de modo que cada bandeja tenga dos conexiones a cada controladora del par de alta disponibilidad.</block>
   <block id="567fab43047b0960ce69a80b4d3eeef2" category="doc">Bandeja de cables a sistemas AFF - Bandejas NS224</block>
   <block id="62415c5f208498fa7a928f2f3d1ce337" category="example-title">Conecte el cable de la bandeja a AFF A1K</block>
@@ -9875,11 +9805,7 @@ SFP+ (destino/iniciador)</block>
   <block id="f4c083c41633c63a72a1bbce7db1c159" category="sidebar">Proporcione a la controladora</block>
   <block id="26916af0dde7f17e1c0020bc61152522" category="sidebar">Vuelva a conectar y devolver el controlador</block>
   <block id="a39e0fbfb2db42a80ba7546850d8b5c6" category="paragraph"><block ref="a39e0fbfb2db42a80ba7546850d8b5c6" category="inline-link-rx"></block></block>
-  <block id="e27597c307865e3bea898a954dc995d4" category="list-text">Instale y conecte los cables de las bandejas NS224, según se describe en<block ref="4c714ee9fc4a7e04a2f40d5895a74f6c" category="inline-link-rx"></block>.</block>
-  <block id="c143f6738ddd9a541350644ebd64ceb2" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en<block ref="4c714ee9fc4a7e04a2f40d5895a74f6c" category="inline-link-rx"></block>.</block>
-  <block id="755e668f97fbbf7befbf9d64fb746177" category="paragraph">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="f09cb6a873a3efd513b1f74c6b0f4d6b" category="inline-link-rx"></block>.</block>
   <block id="4c32ebd39f3a998e8ed434a92fb2337e" category="image-alt">Cableado para un AFF A250 C250 o FAS500f con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe</block>
-  <block id="b413266e5808605ce76e56374f66f52b" category="paragraph">Para obtener más información sobre el cableado, consulte<block ref="defd6f8cbcbf4438c52ada1e92d7a17f" category="inline-link-rx"></block>.</block>
   <block id="3512d92434ff4ef9e4eb4253b21a863e" category="image-alt">Los cables se insertan con la lengüeta de extracción del conector hacia arriba</block>
   <block id="fa8057e66f11f58b193c0063c5f89d0f" category="image-alt">Ubicación de los puertos e0a y e0b del módulo NS224 NSM100</block>
   <block id="21631ea576ae592d82bfa53578687d4b" category="image-alt">LED de alimentación del panel de visualización del operador</block>
@@ -9961,4 +9887,83 @@ SFP+ (destino/iniciador)</block>
   <block id="4b2bd889d120e947fdefd38ec782a1e4" category="image-alt">Cadena de cables de sustitución izquierda</block>
   <block id="73272ed5a28a1f4d9270f9fb73f87cc0" category="inline-image-macro">Cadena de cables de sustitución derecha</block>
   <block id="b4418dc8cc1b24bcce503c5f73b9599e" category="paragraph"><block ref="b4418dc8cc1b24bcce503c5f73b9599e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="abf8f13bdb84c7122ff9a72d14501969" category="image-alt">Quite la controladora</block>
+  <block id="f58d98f433350ee3e614bfdfe3036a89" category="image-alt">Retire el módulo del controlador</block>
+  <block id="0e6eb93881093798ffaf4eef324aae16" category="list-text">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
+  <block id="f399facc82d214513205adcdfed1e55f" category="image-alt">Unidades de disco de asiento</block>
+  <block id="f20a0219f10b0070c92efe4269486629" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
+  <block id="86e8e2badf42560bb0b1ed3bac3933fa" category="paragraph">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
+  <block id="32054c5ad8312edd8060078021c40e5a" category="list-text">Si se muestra &lt;lno-DARE&gt; o &lt;1Ono-DARE&gt; en el resultado del comando, el sistema no admite NVE, continúe con <block ref="28ec6f22ff725a2b75e5efb9fe4ec8ad" category="inline-link-macro-rx"></block>.</block>
+  <block id="f5fc26027a17bd6c3d672fadcfbcbd0a" category="list-text">Si &lt;lno-DARE&gt; no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9 E.6 o posterior, continúe con la siguiente sección, <block ref="2a46afadceb505b77f1bd61e2cc13b61" category="inline-link-macro-rx"></block>.</block>
+  <block id="b9c98500ab9d006e0d9fd3d1c95f7904" category="paragraph">Para obtener más información sobre el cableado, consulte <block ref="b8ff88c1a2e9444f28ec1504689e0040" category="inline-link-macro-rx"></block>.</block>
+  <block id="ade8035150bd89ce6852db30459ac3ea" category="image-alt">Icono de advertencia de peso AFF A90 AFF A70</block>
+  <block id="ef83cb60cd5ea6118e6d106efa30f927" category="image-alt">Precauciones con el peso de elevación</block>
+  <block id="f3badb2cde47b97db55936f633e8bbf1" category="image-alt">Cableado compuesto de cluster sin switches de dos nodos</block>
+  <block id="34af8f9ffd0b4b6280598852b3af1562" category="inline-image-macro">Cableado compuesto de cluster conmutado</block>
+  <block id="b366deff74abec3d97706be3787610e6" category="paragraph"><block ref="b366deff74abec3d97706be3787610e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e74fc944b6640bce2095a80e847f3353" category="paragraph"><block ref="e74fc944b6640bce2095a80e847f3353" category="inline-link-macro-rx"></block></block>
+  <block id="26b2e029138f60c53b9962c3dd979bff" category="paragraph"><block ref="26b2e029138f60c53b9962c3dd979bff" category="inline-link-macro-rx"></block></block>
+  <block id="56d92be82a54ba66080116a8d89e1c62" category="image-alt">Etiqueta de precaución para levantar el peso</block>
+  <block id="9554185bd1af8271072b83b3b2d575ac" category="image-alt">Instale el ARM de gestión de cables</block>
+  <block id="6689fce443e90feab8661570283f66c8" category="image-alt">Configuración típica del clúster</block>
+  <block id="e02d5ac9fd42c5389b0ad276455297f1" category="image-alt">dirección de la lengüeta de tracción del cable</block>
+  <block id="2bccda25615c5e6e7b2f2c08de00a446" category="paragraph">Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el orificio donde se encuentra el botón. Consulte <block ref="59d7f7611d6a3a02163f2743d346863e" category="inline-link-macro-rx"></block> para obtener instrucciones detalladas.</block>
+  <block id="79f9797d84bf75ae713143b18a0030f3" category="paragraph">Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el orificio donde se encuentra el botón. Consulte <block ref="59d7f7611d6a3a02163f2743d346863e" category="inline-link-macro-rx"></block> para obtener instrucciones detalladas.</block>
+  <block id="f3649257de65ad2898ffea0bcd6b4429" category="admonition">En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles. Consulte <block ref="b8ff88c1a2e9444f28ec1504689e0040" category="inline-link-macro-rx"></block> para obtener más información.</block>
+  <block id="a50d38918f3af2fcdf9a82289745bef3" category="admonition">No utilice el puerto 0b2 en un FAS2800. Este puerto SAS no es utilizado por ONTAP y siempre está deshabilitado. Consulte <block ref="e082bc1662f9e2eeea25ff123ac1639a" category="inline-link-macro-rx"></block> para obtener más información.</block>
+  <block id="cea2fe0896f98e522227f31af739bad1" category="image-alt">Cómo extraer la batería RTC</block>
+  <block id="c865faf8e136bd4fb16b864c71a1a831" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas SAS y conecte los cables de las mismas, tal como se describe en <block ref="4a30b7191a311b85a3f2f50c86b1c925" category="inline-link-macro-rx"></block>.</block>
+  <block id="1668821fbbc6ef249109c235ace901e6" category="paragraph">Módulo NIC en las ranuras 3 o 7</block>
+  <block id="482ef01703219125ccae426ff4615b76" category="paragraph">Instale y conecte los cables de las bandejas SAS, según se describe en <block ref="4a30b7191a311b85a3f2f50c86b1c925" category="inline-link-macro-rx"></block>.</block>
+  <block id="b50fb23aa9dcb8c4fb1207d42be2b9ef" category="admonition">Para obtener más información sobre el cableado SAS y hojas de cálculo, consulte <block ref="7a9ea3663e1b04ab8d8799fec120c13c" category="inline-link-macro-rx"></block></block>
+  <block id="59a6e33abad0374c68f887cd3fe3416f" category="list-text">Rellene la hoja de datos del cableado SAS para el sistema. Consulte <block ref="7a9ea3663e1b04ab8d8799fec120c13c" category="inline-link-macro-rx"></block>.</block>
+  <block id="b6799ec4c4ae20ab730ee39bdc6f022e" category="list-text"><block ref="b6799ec4c4ae20ab730ee39bdc6f022e" category="inline-link-macro-rx"></block></block>
+  <block id="51db8835b6a4662bdd282d562dce9ce4" category="list-text"><block ref="51db8835b6a4662bdd282d562dce9ce4" category="inline-link-macro-rx"></block></block>
+  <block id="9050a46bb2de8c6cc18f67e24b6f5bf6" category="list-text"><block ref="9050a46bb2de8c6cc18f67e24b6f5bf6" category="inline-link-macro-rx"></block></block>
+  <block id="314f50463955587e2037d8d2e40ae3af" category="list-text"><block ref="314f50463955587e2037d8d2e40ae3af" category="inline-link-macro-rx"></block></block>
+  <block id="45f5be1c6c4a88aeaa428800b6f3aee9" category="list-text"><block ref="45f5be1c6c4a88aeaa428800b6f3aee9" category="inline-link-macro-rx"></block></block>
+  <block id="8de3ebdb51afcc0413ac087089da1ef2" category="list-text"><block ref="8de3ebdb51afcc0413ac087089da1ef2" category="inline-link-macro-rx"></block></block>
+  <block id="67a1276a1283538eae5934ff4eb4a757" category="list-text"><block ref="67a1276a1283538eae5934ff4eb4a757" category="inline-link-macro-rx"></block></block>
+  <block id="126e4c17980262c3c430f022f5f56c3f" category="list-text"><block ref="126e4c17980262c3c430f022f5f56c3f" category="inline-link-macro-rx"></block></block>
+  <block id="ba2155c54eab4d26f52d9b663764d321" category="list-text"><block ref="ba2155c54eab4d26f52d9b663764d321" category="inline-link-macro-rx"></block></block>
+  <block id="c47800ce43f6bd4b5933465b941ca5e9" category="list-text"><block ref="c47800ce43f6bd4b5933465b941ca5e9" category="inline-link-macro-rx"></block></block>
+  <block id="e5aad213d0a77808fe82b572eeb5888c" category="list-text"><block ref="e5aad213d0a77808fe82b572eeb5888c" category="inline-link-macro-rx"></block></block>
+  <block id="c53d8396f56e01349bd6179f83e6a9a7" category="list-text"><block ref="c53d8396f56e01349bd6179f83e6a9a7" category="inline-link-macro-rx"></block></block>
+  <block id="694ebeeb15a60c82d17ed627858519ec" category="list-text"><block ref="694ebeeb15a60c82d17ed627858519ec" category="inline-link-macro-rx"></block></block>
+  <block id="c86567a0c3671bea1c02bd3e7294ad5b" category="list-text"><block ref="c86567a0c3671bea1c02bd3e7294ad5b" category="inline-link-macro-rx"></block></block>
+  <block id="fa92edc45af4eed5d7a491dc76f20edd" category="list-text"><block ref="fa92edc45af4eed5d7a491dc76f20edd" category="inline-link-macro-rx"></block></block>
+  <block id="c95480199cbbef020e68f17335af44d8" category="list-text"><block ref="c95480199cbbef020e68f17335af44d8" category="inline-link-macro-rx"></block></block>
+  <block id="ffb9da3894ac287e5ae93e12ca8cfbf5" category="list-text"><block ref="ffb9da3894ac287e5ae93e12ca8cfbf5" category="inline-link-macro-rx"></block></block>
+  <block id="33ec0e26cea0cf48884f5417b5271b20" category="list-text"><block ref="33ec0e26cea0cf48884f5417b5271b20" category="inline-link-macro-rx"></block></block>
+  <block id="76e66c3eaa0efaed0d080a74942cc900" category="list-text"><block ref="76e66c3eaa0efaed0d080a74942cc900" category="inline-link-macro-rx"></block></block>
+  <block id="b1b7d90b95e84c2c2f4f36df9e38550c" category="list-text"><block ref="b1b7d90b95e84c2c2f4f36df9e38550c" category="inline-link-macro-rx"></block></block>
+  <block id="8e4e1285f49cb2de8e4ad6f96de7a955" category="list-text"><block ref="8e4e1285f49cb2de8e4ad6f96de7a955" category="inline-link-macro-rx"></block></block>
+  <block id="6ed83ea3812e071cb890a3397f1ef8f3" category="list-text"><block ref="6ed83ea3812e071cb890a3397f1ef8f3" category="inline-link-macro-rx"></block></block>
+  <block id="f9e104181ae9f5f7cb047ada1d31db67" category="list-text"><block ref="f9e104181ae9f5f7cb047ada1d31db67" category="inline-link-macro-rx"></block></block>
+  <block id="7e888c9e662025943d61a7b6ab33fa3f" category="list-text"><block ref="7e888c9e662025943d61a7b6ab33fa3f" category="inline-link-macro-rx"></block></block>
+  <block id="0b91391244828b90a1ed6303288f165b" category="list-text"><block ref="0b91391244828b90a1ed6303288f165b" category="inline-link-macro-rx"></block></block>
+  <block id="57a2933dce60e141524865c41e2635ce" category="image-alt">Cómo instalar los rieles de soporte</block>
+  <block id="6fb023b413c1f113940c64b778b1ea19" category="image-alt">Cómo instalar las tuercas de la jaula</block>
+  <block id="71d0706f6b47786d0dedd60322ca91a7" category="image-alt">Ubicación de los soportes delanteros y traseros de los pernos y el punto de anclaje del suelo en el soporte</block>
+  <block id="bfc0cce31d98aae9ff6f0afbee4218da" category="image-alt">Cómo desconectar la alimentación del marco iluminado</block>
+  <block id="f578e985217a79047ffda7fc4b180e02" category="image-alt">Cómo retirar la puerta delantera</block>
+  <block id="b2564b61ca12ebf4a488cbdc0cce727f" category="inline-image-macro">Cómo instalar los soportes de interconexión con los paneles laterales del armario del sistema en</block>
+  <block id="cf8b97cab728f89b4da7baf0f5ca79cf" category="list-text">Utilice la siguiente ilustración como referencia si va a instalar los soportes de interconexión con los paneles laterales del armario del sistema, según se recomienda: <block ref="d70d3974fa2da1671002032761d0a6c5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5738a6b999fdf7d364607840e3cc0677" category="inline-image-macro">Cómo instalar los soportes de interconexión con los paneles laterales del armario del sistema apagados</block>
+  <block id="a61dd737c11d0f864c9548e2f6aa9f84" category="list-text">Utilice la siguiente ilustración como referencia si va a instalar los soportes de interconexión con los paneles laterales del armario del sistema apagados: <block ref="a1bcde1197c2dce30494d2f780a78e1d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ba6c2986da775e910e79b1ca95b73c8d" category="image-alt">Cómo desmontar los rieles de sujeción</block>
+  <block id="1dcfc009d16c30b8aacf28ebe57c47cc" category="image-alt">Cómo extraer la carcasa de la fuente de alimentación y la fuente de alimentación</block>
+  <block id="09a493301a026113d898691ba7dc2f2f" category="image-alt">Retire el conducto de alimentación de la cubierta protectora</block>
+  <block id="936ef259e0efb1f9f3f7d58c4321acd0" category="image-alt">Cómo mover el cable de alimentación del distintivo al otro lado del armario</block>
+  <block id="af93e1aa65228f426ca0975df51e9263" category="image-alt">Cómo volver a instalar la placa iluminada en la puerta delantera</block>
+  <block id="c4f952bf2e8da62bbec89d8b25f01d71" category="inline-image-macro">Cómo retirar la placa iluminada</block>
+  <block id="c10739aa61a9c6b713b87668c827de5b" category="paragraph">Utilice la siguiente ilustración junto con los siguientes pasos:<block ref="1afa4d7311a14b4db10f850c473bef34" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eaa40ecf0ab58cd749fd4bde3bca611e" category="image-alt">Retire los tornillos que fijan la bisagra inferior</block>
+  <block id="ac5733ebc895a7d02ab309fcfd6f1e39" category="image-alt">Vista frontal trasera y lateral del armario del sistema</block>
+  <block id="4f5967d6e1e7c3a8ebe7ff7cb13d297f" category="image-alt">Vistas superior e inferior del armario del sistema</block>
+  <block id="041e3dc0c2e09769718a5527ab4196a5" category="image-alt">Cómo desempaquetar el armario del sistema</block>
+  <block id="c6d2485e6e329f1085d2f13a06b7f1f7" category="image-alt">Cómo instalar SuperRail en un rack de cuatro postes con orificio cuadrado</block>
+  <block id="1a603190ae07bbceebb7036072831b8b" category="image-alt">Cómo instalar SuperRail en un rack de cuatro postes de orificio redondo</block>
+  <block id="7c89b00bc8ce7878c39671bd32585c2d" category="image-alt">Cómo instalar el kit de raíl de montaje hasta la mitad de dos postes</block>
+  <block id="887f19a9ed16e42d506a7ee90031e54f" category="image-alt">Cómo instalar el kit de guías de montaje enrasado de dos postes</block>
 </blocks>

@@ -28,8 +28,8 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 
 . Compruebe la versión de ONTAP que el sistema está funcionando en el controlador dañado si está activo, o en el controlador asociado si el controlador dañado está inactivo, usando el `version -v` comando:
 +
-** Si se muestra <lno-DARE> o <1Ono-DARE> en el resultado del comando, el sistema no admite NVE, continúe con https://docs.netapp.com/us-en/ontap-systems/fas2800/bootmedia-impaired-controller-shutdown.html["Apague el controlador dañado"].
-** Si <lno-DARE> no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9,6 o posterior, continúe con la sección siguiente. <<Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y posterior>>.
+** Si se muestra <lno-DARE> o <1Ono-DARE> en el resultado del comando, el sistema no admite NVE, continúe con link:../fas2800/bootmedia-impaired-controller-shutdown.html["Apague el controlador dañado"].
+** Si <lno-DARE> no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9 E.6 o posterior, continúe con la siguiente sección, link:../fas2800/bootmedia-encryption-preshutdown-checks.html#check-nve-or-nse-on-systems-running-ontap-9-6-and-later["Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y posterior"].
 
 
 . Deshabilite la devolución automática de la controladora en buen estado:

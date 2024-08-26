@@ -35,7 +35,7 @@ Debe proporcionar lo siguiente en el sitio:
 . Extraiga el contenido de todas las cajas.
 . Registre el número de serie del sistema de las controladoras.
 +
-image::../media/drw_ssn_label.svg[etiqueta ssn drw]
+image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema donde se muestra la ubicación del número]
 
 . Realice un inventario y anote el número y los tipos de cables recibidos.
 +
@@ -181,18 +181,18 @@ Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetAp
 NOTE: Debe ser consciente de los problemas de seguridad asociados con el peso del sistema.
 
 +
-image::../media/drw_9500_lifting_icon.svg[icono de elevación drw 9500]
+image::../media/drw_9500_lifting_icon.svg[Etiqueta de precaución para levantar el peso]
 
 . Conecte los dispositivos de administración de cables (como se muestra).
 +
-image::../media/drw_9500_cable_management_arms.svg[brazos de gestión de cables drw 9500]
+image::../media/drw_9500_cable_management_arms.svg[Instale el ARM de gestión de cables]
 
 . Coloque el panel frontal en la parte delantera del sistema.
 
 
 El siguiente diagrama muestra una representación del aspecto típico de un sistema y dónde se encuentran los componentes principales en la parte trasera del sistema:
 
-image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[Controlador drw a900 en el ID de chasis IEOPS 856]
+image::../media/drw_a900_controller_in _chassis_ID_IEOPS-856.svg[Configuración típica del clúster]
 
 
 
@@ -211,7 +211,7 @@ Debe haberse puesto en contacto con el administrador de red para obtener informa
 
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas de cable están hacia arriba para todos los puertos del módulo de red.
 
-image::../media/oie_cable_pull_tab_up.svg[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.svg[dirección de la lengüeta de tracción del cable]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, gírelo y vuelva a intentarlo.
@@ -221,7 +221,7 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 .Animación: Conectar un clúster sin switch de dos nodos
 video::37419c37-f56f-48e5-8e6c-afa600095444[panopto]
 +
-image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[Cableado de red drw a900 tnsc IEOPS 933]
+image::../media/drw_a900_tnsc_network_cabling_IEOPS-933.svg[Cableado de red de dos nodos sin switches]
 
 +
 |===
@@ -300,7 +300,7 @@ Debe haberse puesto en contacto con el administrador de red para obtener informa
 
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas de cable están hacia arriba para todos los puertos del módulo de red.
 
-image::../media/oie_cable_pull_tab_up.svg[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.svg[dirección de la lengüeta de tracción del cable]
 
 
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, vuelva a convertirlo y vuelva a intentarlo.
@@ -397,7 +397,7 @@ Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS22
 * Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
 
 
-image::../media/oie_cable_pull_tab_up.svg[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.svg[dirección de la lengüeta de tracción del cable]
 
 image::../media/oie_cable_pull_tab_down.svg[lengüeta del cable de la oie hacia abajo]
 
@@ -452,7 +452,7 @@ Debe conectar cada controladora a los módulos NSM de las bandejas de unidades N
 * Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
 
 
-image::../media/oie_cable_pull_tab_up.svg[lengüeta para tirar del cable de la oie]
+image::../media/oie_cable_pull_tab_up.svg[dirección de la lengüeta de tracción del cable]
 
 image::../media/oie_cable_pull_tab_down.svg[lengüeta del cable de la oie hacia abajo]
 
@@ -521,13 +521,13 @@ Si tiene la detección de red habilitada en el portátil, puede completar la con
 
 . Use la animación o el dibujo siguientes para establecer uno o varios ID de bandeja de unidades:
 +
-Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el taladro donde se encuentra el botón. consulte https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Cambiar un ID de bandeja - bandejas NS224"] si desea obtener instrucciones detalladas.
+Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el orificio donde se encuentra el botón. Consulte link:../ns224/change-shelf-id.html["Cambiar un ID de bandeja - bandejas NS224"] para obtener instrucciones detalladas.
 
 +
 .Animación: Configure los ID de bandeja de unidades NVMe
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie cambio ns224 ID de estante IEOPS 836]
+image::../media/drw_a900_oie_change_ns224_shelf_ID_IEOPS-836.svg[drw a900 oie cambio ns224 ID de estante IEOPS 836]
 
 +
 [cols="20%,80%"]
@@ -643,13 +643,13 @@ image::../media/drw_A900_cable_console_switch_controller_IEOPS-953.svg[controlad
 
 . Utilice la animación siguiente para establecer uno o varios ID de bandeja de unidades:
 +
-Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el taladro donde se encuentra el botón. consulte https://docs.netapp.com/us-en/ontap-systems/ns224/change-shelf-id.html["Cambiar un ID de bandeja - bandejas NS224"] si desea obtener instrucciones detalladas.
+Las bandejas NS224 vienen preconfiguradas con los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el orificio donde se encuentra el botón. Consulte link:../ns224/change-shelf-id.html["Cambiar un ID de bandeja - bandejas NS224"] para obtener instrucciones detalladas.
 
 +
 .Animación: Configure los ID de bandeja de unidades NVMe
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_a900_oie_change_ns224_shelf ID_IEOPS-836.svg[drw a900 oie cambio ns224 ID de estante IEOPS 836]
+image::../media/drw_a900_oie_change_ns224_shelf_ID_IEOPS-836.svg[drw a900 oie cambio ns224 ID de estante IEOPS 836]
 
 +
 [cols="20%,80%"]

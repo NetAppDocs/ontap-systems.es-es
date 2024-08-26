@@ -48,7 +48,7 @@ IMPORTANT: Los clientes con requisitos de alimentación específicos deben verif
 .. Recopile información sobre su sistema de almacenamiento; para ello, complete el https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["setup worksheet^ (Se necesita la URL de la hoja de trabajo)"].
 .. Registre el número de serie del sistema de almacenamiento de las controladoras.
 +
-image::../media/drw_ssn_label.svg[etiqueta ssn drw]
+image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema donde se muestra la ubicación del número]
 
 
 
@@ -401,7 +401,7 @@ Conecte los cables de los controladores al almacenamiento externo.
 En la siguiente tabla se identifica el tipo de cable con el número de llamada y el color del cable en las ilustraciones para cablear las bandejas de unidades al sistema de almacenamiento.
 
 
-NOTE: En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles. Consulte https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Instalación y cableado de las bandejas para una instalación nueva del sistema - estantes con módulos IOM12/IOM12B"^] si quiere más información.
+NOTE: En el ejemplo se utiliza DS224C. El cableado es similar con otras bandejas de unidades compatibles. Consulte link:../sas3/install-new-system.html["Instalación y cableado de las bandejas para una instalación nueva del sistema - estantes con módulos IOM12/IOM12B"] para obtener más información.
 
 [cols="20%,80%"]
 |===
@@ -436,7 +436,7 @@ image::../media/oie_cable_pull_tab_down.svg[lengüeta del cable de la oie hacia 
 Use la animación o las instrucciones paso a paso para completar el cableado entre las controladoras y las bandejas de unidades.
 
 
-IMPORTANT: No utilice el puerto 0b2 en un FAS2800. Este puerto SAS no es utilizado por ONTAP y siempre está deshabilitado. Consulte https://docs.netapp.com/us-en/ontap-systems/sas3/install-new-system.html["Instale una bandeja en un sistema de almacenamiento nuevo"^] si quiere más información.
+IMPORTANT: No utilice el puerto 0b2 en un FAS2800. Este puerto SAS no es utilizado por ONTAP y siempre está deshabilitado. Consulte link:../sas3/install-new-system.html["Instale una bandeja en un sistema de almacenamiento nuevo"^] para obtener más información.
 
 .Animación: Cableado de la bandeja de unidades
 video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]

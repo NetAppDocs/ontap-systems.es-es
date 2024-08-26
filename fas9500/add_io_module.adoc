@@ -162,7 +162,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Si utiliza las ranuras 3 y/o 7 para las redes, utilice `storage port modify -node __<node name>__ -port __<port name>__ -mode network` comando para convertir la ranura para su uso en la red.
 . Repita estos pasos para la controladora B.
-. Si ha instalado un módulo de I/o de almacenamiento, instale y cablee las bandejas SAS, como se describe en https://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Adición en caliente de una bandeja SAS"^].
+. Si instaló un módulo de I/O de almacenamiento, instale las bandejas SAS y conecte los cables de las mismas, tal como se describe en link:../sas3/install-hot-add-shelf.html["Adición en caliente de una bandeja SAS"].
 
 
 
@@ -387,7 +387,7 @@ NOTE: Si se produce un problema durante el reinicio, consulte https://mysupport.
 
 
  a| 
-Módulo NIC en las ranuras 3 o 7,
+Módulo NIC en las ranuras 3 o 7
  a| 
 Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mode network` comando para cada puerto.
 
@@ -396,7 +396,7 @@ Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mod
  a| 
 Módulo de almacenamiento
  a| 
-Instale y conecte los cables de las bandejas SAS, como se describe enhttps://docs.netapp.com/us-en/ontap-systems/sas3/install-hot-add-shelf.html["Adición en caliente de una bandeja SAS"^].
+Instale y conecte los cables de las bandejas SAS, según se describe en link:../sas3/install-hot-add-shelf.html["Adición en caliente de una bandeja SAS"].
 
 |===
 . Repita estos pasos para la controladora B.

@@ -116,7 +116,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 . Obtenga el nodo desde el nodo del partner: `storage failover giveback -ofnode target_node_name`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
 . Repita estos pasos para la controladora B.
-. Instale y conecte los cables de las bandejas NS224, según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"^].
+. Instale y conecte los cables de las bandejas NS224, según se describe en link:../ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"].
 
 
 --

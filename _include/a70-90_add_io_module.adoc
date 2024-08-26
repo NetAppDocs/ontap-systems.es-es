@@ -177,7 +177,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 . Repita estos pasos para la controladora B.
 . Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
 . Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
-. Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"^].
+. Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en link:../ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"].
 
 
 
@@ -399,7 +399,7 @@ Utilice la `storage port modify -node *_<node name>__ -port *_<port name>__ -mod
  a| 
 Módulo de almacenamiento
  a| 
-Instale y conecte los cables de las bandejas NS224, según se describe en https://docs.netapp.com/us-en/ontap-systems/ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"^].
+Instale y conecte los cables de las bandejas NS224, según se describe en link:../ns224/hot-add-shelf-overview.html["Flujo de trabajo de incorporación en caliente"].
 
 |===
 . Repita estos pasos para la controladora B.
