@@ -2716,8 +2716,6 @@
   <block id="47138f998237cc4fa9d1dde4218e6a79" category="image-alt">cable micro usb de la oie</block>
   <block id="c08fd160f4570df01d3a40efa2524ce7" category="image-alt">alimentación de cable de la oie</block>
   <block id="28746f946d763ce537494ffe0d6c6727" category="list-text">Revise la<block ref="31fb422f2cdfc1b2e916b587bec00136" category="inline-link-rx"></block> y recopilar la información necesaria que aparece en esa guía.</block>
-  <block id="92688677e16c8790a606404e51b362d1" category="image-alt">icono de elevación drw 9500</block>
-  <block id="0604808a9f6264877dad5ce927edb94f" category="image-alt">brazos de gestión de cables drw 9500</block>
   <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="admonition">Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, vuelva a convertirlo y vuelva a intentarlo.</block>
   <block id="b78339b4bcd807d0cb07b09d3b379c86" category="image-alt">cableado de red drw 9500 tnsc</block>
   <block id="8d9c487a6d60ae07a889bc52787cfb8f" category="image-alt">leyenda de la oie icono 1 lg</block>
@@ -5047,7 +5045,6 @@
   <block id="1bab600dfeb5dd52557d4dc719a4016b" category="admonition">No cambie la versión del BIOS del controlador _regrel_ para que coincida con el controlador asociado o con el módulo de controlador anterior.</block>
   <block id="161d11f75b68457ea33ac52c79b01c05" category="doc">Sustituya un NVDIMM - AFF A800</block>
   <block id="2c0856fef0927def0bd154513fb326fb" category="list-text">Si va a extraer o mover un NVDIMM, desbloquee el pestillo de bloqueo de la tarjeta vertical y, a continuación, extraiga la tarjeta vertical correspondiente.</block>
-  <block id="f8cdcc9997405437e79f5d57e18498f5" category="paragraph">Tarjeta vertical 2 y NVDIMM 11</block>
   <block id="80185b76790082a23c34d9ebf9a01f7e" category="doc">Sustituya una fuente de alimentación: AFF A800</block>
   <block id="4050846ab3a5766e0ed28bed6ef9631b" category="doc">Arranque la imagen de recuperación: AFF A800</block>
   <block id="3b1cae4630f47c8bafa2138c896b9e8d" category="list-text">Respalde la controladora con el<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> comando</block>
@@ -9988,7 +9985,6 @@ SFP+ (destino/iniciador)</block>
   <block id="f1d30d02381fe3fd0fcf25a5394ca931" category="paragraph"><block ref="f1d30d02381fe3fd0fcf25a5394ca931" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0ce4e5b97dc4eb5b063de87adcdd8d64" category="paragraph"><block ref="0ce4e5b97dc4eb5b063de87adcdd8d64" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1890402c394bdc8f92e9b00832d96f6b" category="paragraph"><block ref="1890402c394bdc8f92e9b00832d96f6b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b3d5200ae441b0d20a4914cbdec727d4" category="paragraph"><block ref="b3d5200ae441b0d20a4914cbdec727d4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d94ad2eb413c586a67a90ad278538137" category="paragraph"><block ref="d94ad2eb413c586a67a90ad278538137" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cbf85e66f1cb509bc0522dbbc1b48537" category="paragraph"><block ref="cbf85e66f1cb509bc0522dbbc1b48537" category="inline-image-macro-rx" type="image"></block></block>
   <block id="23f4a6989d877a6848ae85e75cb4107e" category="inline-image-macro">anchura = 30px</block>
@@ -10012,10 +10008,13 @@ SFP+ (destino/iniciador)</block>
   <block id="1eb01e42c3bc98cc6dc3939e3efbe66e" category="paragraph"><block ref="1eb01e42c3bc98cc6dc3939e3efbe66e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="577534c40b40575b9270f9eec17d10bb" category="paragraph"><block ref="577534c40b40575b9270f9eec17d10bb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="45a4f29af6323beb8354f98243d57637" category="paragraph"><block ref="45a4f29af6323beb8354f98243d57637" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b49587dccf0f5de061c677cc2cc91ade" category="paragraph"><block ref="b49587dccf0f5de061c677cc2cc91ade" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ac7edd3cc7124f409cdf5dc436336252" category="paragraph"><block ref="ac7edd3cc7124f409cdf5dc436336252" category="inline-image-macro-rx" type="image"></block></block>
   <block id="53c210c2168561d49ec663ddcdb6d39e" category="sidebar">MÓDULO DE I/O A1K</block>
   <block id="37e0009e8f9c1c6982a732432e86d180" category="sidebar">Módulo de I/O de AFF A70 y AFF A90</block>
   <block id="c079075c23cce6316cdc21e35ca264ec" category="sidebar">Sustituya la bandeja de unidades NS224</block>
   <block id="2ebb7b9dab34661ab53f47e149c49c5c" category="sidebar">Sustituya la bandeja de unidades SAS</block>
+  <block id="fb6ec7c4253b066bf6babd3c0e080e2c" category="paragraph">El módulo del controlador comienza a arrancar tan pronto como se conecta a la alimentación. Esté preparado para interrumpir el proceso de arranque.</block>
+  <block id="f7f4c867e693e550f28050ab9569b77b" category="paragraph">NVDIMM en las ranuras 11 y 23</block>
+  <block id="0ab01e08199504186fb2242508c77af5" category="paragraph">Mueva las unidades de disco duro y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.</block>
+  <block id="32c1650c7fd910bcdea68420f25c9c98" category="summary">Mueva las unidades de disco duro, y el módulo o módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del gabinete del sistema por el nuevo chasis del mismo modelo que el chasis dañado.</block>
+  <block id="f5fb85d160e4ca0263ef1d466e1904de" category="image-alt">Asas de elevación y dispositivo de gestión de cables</block>
 </blocks>
