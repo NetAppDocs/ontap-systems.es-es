@@ -1,0 +1,239 @@
+= Paso 1: Apague el controlador dañado
+:allow-uri-read: 
+
+
+El módulo de gestión del sistema, ubicado en la parte posterior de la controladora de la ranura 8, contiene componentes integrados para la gestión del sistema y puertos para la gestión externa. El controlador de destino debe apagarse para sustituir un módulo de gestión del sistema defectuoso o sustituir el soporte de arranque.
+
+El módulo Gestión del sistema tiene los siguientes componentes integrados:
+
+* Soporte de arranque, permitiendo la sustitución de medios de arranque sin extraer el módulo del controlador.
+* BMC
+* Switch de gestión
+
+
+El módulo Gestión del sistema también contiene los siguientes puertos para la gestión externa:
+
+* RJ45 Serie
+* Serie USB (tipo C)
+* USB tipo A (recuperación de arranque)
+* Ethernet de e0M RJ45 Gb
+
+
+Para sustituir el módulo de gestión del sistema o el soporte de arranque, debe apagar el controlador defectuoso.
+
+.Antes de empezar
+* Este procedimiento usa la siguiente terminología:
++
+** El controlador dañado es el controlador en el que realiza el mantenimiento.
+** El controlador sano es el compañero de alta disponibilidad del controlador dañado.
+
+
+* Todos los demás componentes del sistema deben funcionar correctamente.
+* La controladora asociada debe poder hacerse cargo de la controladora deteriorada.
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Apague o tome el control de la controladora dañada.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, el estado del quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Reemplace el módulo de gestión del sistema dañado
+
+Sustituya el módulo de gestión del sistema defectuoso.
+
+. Retire el módulo Gestión del sistema:
++
+
+NOTE: Asegúrese de que la separación de NVRAM se haya completado antes de continuar.
+
++
+image::../media/drw_a1k_sys-mgmt_remove_ieops-1384.svg[Sustituya el módulo Gestión del sistema]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+|===
++
+.. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
++
+
+NOTE: Asegúrese de que la separación de NVRAM se haya completado antes de continuar.
+
+.. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de que la etiqueta donde se conectaron los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
+.. Desconecte los cables de alimentación de la PSU de la controladora afectada.
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de leva del módulo de gestión del sistema.
+.. Gire la palanca de leva hacia abajo hasta el tope.
+.. Enrolle el dedo en el orificio de la palanca de leva y tire del módulo hacia fuera del sistema.
+.. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque.
+
+
+. Mueva el soporte de arranque al módulo de administración del sistema de reemplazo:
++
+image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Sustitución de soporte de arranque]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Número de llamada 2]
+ a| 
+Botón de bloqueo del soporte de arranque
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Número de llamada 3]
+ a| 
+Soporte de arranque
+
+|===
++
+.. Pulse el botón azul de bloqueo del soporte de arranque en el módulo de gestión del sistema defectuoso.
+.. Gire el soporte de arranque hacia arriba y deslícelo para extraerlo del conector.
+
+
+. Instale el soporte de arranque en el módulo de gestión del sistema de sustitución:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hasta que toque el botón de bloqueo.
+.. Presione el bloqueo azul, gire el soporte del maletero completamente hacia abajo y suelte el botón de bloqueo azul.
+
+
+. Instale el módulo de gestión del sistema de repuesto en el compartimento:
++
+.. Alinee los bordes del módulo de gestión del sistema de sustitución con la apertura del sistema y empújelo suavemente en el módulo del controlador.
+.. Deslice suavemente el módulo en la ranura hasta que el pestillo de leva comience a acoplarse con el pasador de leva de E/S y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su sitio.
+
+
+. Gire el ARM de gestión de cables hasta la posición cerrada.
+. Vuelva a conectar el módulo Gestión del sistema.
+
+
+
+
+== Paso 3: Reinicie el módulo del controlador
+
+Reinicie el módulo del controlador.
+
+. Vuelva a conectar los cables de alimentación en la PSU.
++
+El sistema comenzará a reiniciarse, normalmente en el aviso del CARGADOR.
+
+. Introduzca _bye_ en el indicador del CARGADOR.
+. Devuelva la controladora a su funcionamiento normal devolviendo su almacenamiento: _Storage failover giveback -ofnode _impaired_node_name__
+. Restaure la devolución automática del control mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+
+
+
+
+== Paso 4: Instale licencias y registre el número de serie
+
+Debe instalar licencias nuevas para el nodo si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo por nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
+
+.Acerca de esta tarea
+Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo. Sin embargo, si el nodo era el único nodo del clúster con una licencia para la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo puede provocar que no cumpla el acuerdo de licencia, por lo que debe instalar las claves o la clave de licencia de reemplazo en el para el nodo lo antes posible.
+
+.Antes de empezar
+Las claves de licencia deben tener el formato de 28 caracteres.
+
+Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
+
+.Pasos
+. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
++
+
+NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
+
+. Instale cada clave de licencia: `+system license add -license-code license-key, license-key...+`
+. Elimine las licencias antiguas, si lo desea:
++
+.. Comprobar si hay licencias no utilizadas: `license clean-up -unused -simulate`
+.. Si la lista parece correcta, elimine las licencias no utilizadas: `license clean-up -unused`
+
+
+. Registre el número de serie del sistema con el soporte de NetApp.
++
+** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
+** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
+
+
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

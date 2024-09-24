@@ -18,9 +18,9 @@ Puede agregar un módulo de E/S a una ranura para módulos vacía del sistema de
 
 
 
-=== Paso 1: Apague el nodo dañado
+=== Paso 1: Apague el módulo del controlador defectuoso
 
-Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+Apague o tome el control del módulo del controlador defectuoso.
 
 [role="tabbed-block"]
 ====
@@ -71,6 +71,9 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 --
 .Opción 2: La controladora se encuentra en un MetroCluster
 --
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 * Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
@@ -78,9 +81,9 @@ Para apagar el controlador dañado, debe determinar el estado del controlador y,
 
 
 .Pasos
-. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 +
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
 . Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
 . Lleve la controladora dañada al aviso DEL CARGADOR:
@@ -93,7 +96,7 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
  a| 
 El aviso del CARGADOR
  a| 
-Vaya al paso siguiente.
+Vaya al siguiente paso.
 
 
 
@@ -107,7 +110,7 @@ Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
  a| 
 Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
  a| 
-Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
 
 Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
 
@@ -141,7 +144,7 @@ image:../media/legend_icon_01.png["Número de llamada 1"]
 |===
 +
 .. Presione el pestillo de leva del módulo de supresión de la ranura de destino.
-.. Gire el pestillo de la leva hacia abajo hasta el tope. Para los módulos horizontales, gire la leva hacia fuera del módulo hasta el tope.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
 .. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
 
 
@@ -212,9 +215,9 @@ Utilice System Manager para migrar de forma permanente las LIF a distintos puert
 
 
 
-=== Paso 1: Apague el nodo dañado
+=== Paso 1: Apague el módulo del controlador defectuoso
 
-Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+Apague o tome el control del módulo del controlador defectuoso.
 
 [role="tabbed-block"]
 ====
@@ -339,10 +342,7 @@ image:../media/legend_icon_01.png["Número de llamada 1"]
 |===
 +
 .. Pulse el botón de bloqueo de leva.
-+
-El pestillo de la leva se aleja del chasis.
-
-.. Gire el pestillo de la leva hacia abajo hasta el tope. Para los módulos horizontales, gire la leva hacia fuera del módulo hasta el tope.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
 .. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
 +
 Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.

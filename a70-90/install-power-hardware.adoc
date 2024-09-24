@@ -4,26 +4,20 @@ sidebar: sidebar
 keywords: aff a70, a90, power controllers 
 summary: Conecte los cables de alimentación y encienda las bandejas y las controladoras. 
 ---
-= Encienda el sistema de almacenamiento: AFF A70, AFF A90
+= Encienda el sistema de almacenamiento: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Después de conectar la red y los cables de la bandeja, está listo para aplicar alimentación a las controladoras y las bandejas adicionales.
-
-
-NOTE: Las bandejas externas NS224 son opcionales.
+Después de instalar el hardware de rack para el sistema de almacenamiento AFF A70 o AFF A90 e instalar los cables para las controladoras y las bandejas de almacenamiento, debe encender las bandejas de almacenamiento y las controladoras.
 
 
 
 == Paso 1: Encienda la bandeja y asigne el ID de bandeja
 
-En los sistemas de almacenamiento de ONTAP, cada bandeja NS224 se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento. De manera predeterminada, los ID de bandeja normalmente se asignan como «00» y «01», pero es posible que deba ajustar estos ID para mantener la singularidad en todo su sistema de almacenamiento.
-
-
-NOTE: El ID de la bandeja del chasis de la controladora está codificado de forma fija como 00. No use el ID de bandeja '00' para ninguna bandeja NS224 conectada a la plataforma.
+Cada bandeja NS224 se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento. De manera predeterminada, los ID de bandeja se asignan como «00» y «01», pero es posible que deba ajustar estos ID para mantener la singularidad en todo su sistema de almacenamiento.
 
 .Acerca de esta tarea
 * Un ID de bandeja válido tiene un valor de 00 a 99.
@@ -37,7 +31,7 @@ La bandeja se enciende y arranca automáticamente cuando se conecta a la fuente 
 
 . Quite la tapa del extremo izquierdo para acceder al botón de ID de bandeja detrás de la placa frontal.
 +
-image:drw_a900_oie_change_ns224_shelf_id_ieops-836.svg["Cambie el ID de bandeja de NS224, width=300px"]
+image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[Cambie el ID de bandeja NS224]
 
 +
 [cols="20%,80%"]
@@ -45,44 +39,48 @@ image:drw_a900_oie_change_ns224_shelf_id_ieops-836.svg["Cambie el ID de bandeja 
 
 
  a| 
-image:legend_icon_01.svg["Número de llamada 1,width=20"]
+image::../media/legend_icon_01.svg[Número de llamada 1]
  a| 
 Tapa final de estante
 
 
 
  a| 
-image:legend_icon_02.svg["Número de llamada 2,width=20"]
+image::../media/legend_icon_02.svg[[Número de referencia 2]
  a| 
 Placa frontal de la bandeja
 
 
 
  a| 
-image:legend_icon_03.svg["Número de llamada 3,width=20"]
+image::../media/legend_icon_03.svg[[Número de referencia 3]
  a| 
 Número de ID de la bandeja
 
 
 
  a| 
-image:legend_icon_04.svg["Número de llamada 4,width=20"]
+image::../media/legend_icon_04.svg[[Número de referencia 4]
  a| 
-Botón de acceso de ID de la bandeja
+Botón de ID de bandeja
 
 |===
 . Cambie la primera cantidad de ID de bandeja:
 +
-.. Inserte el extremo enderezado de un clip o un bolígrafo con punta estrecha en el orificio pequeño.
-.. Mantenga presionado el botón hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
+.. Inserte el extremo enderezado de un clip de papel o un bolígrafo con punta estrecha en el orificio pequeño para presionar el botón de identificación de la bandeja.
++
+
+NOTE: En las bandejas de la serie DS, se puede acceder al botón de ID de bandeja directamente en la parte inferior de la oreja de la bandeja.
+
+.. Mantenga presionado el botón de ID de la bandeja hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
 +
 Este número puede tardar hasta 15 segundos en parpadear. De este modo se activa el modo de programación del identificador de bandeja.
 
 +
 
-NOTE: Si el ID tarda más de 15 segundos en parpadear, mantenga pulsado el botón de nuevo y asegúrese de pulsarlo completamente.
+NOTE: Si el ID tarda más de 15 segundos en parpadear, mantenga presionado el botón de ID de bandeja otra vez, asegurándose de presionarlo por completo.
 
-.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
+.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
 +
 Cada duración de la prensa y la liberación puede ser de un segundo.
 
@@ -100,18 +98,18 @@ Este número puede tardar hasta tres segundos en parpadear.
 +
 El primer número de la pantalla digital deja de parpadear.
 
-.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
+.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
 +
 El segundo número continúa parpadeando.
 
 
 
-. Bloquee el número deseado y salga del modo de programación manteniendo pulsado el botón hasta que el segundo número deje de parpadear.
+. Bloquee el número deseado y salga del modo de programación manteniendo presionado el botón de ID de la bandeja hasta que el segundo número deje de parpadear.
 +
 El número puede tardar hasta tres segundos en dejar de parpadear.
 
 +
-Ambos números de la pantalla digital comienzan a parpadear y el LED ámbar del ODP se ilumina después de unos cinco segundos, para avisarle de que el ID de bandeja pendiente aún no ha entrado en vigor.
+Ambos números de la pantalla digital comienzan a parpadear y el LED ámbar se enciende después de unos cinco segundos, para alertarle de que el ID de bandeja pendiente aún no ha aplicado.
 
 . Apague y encienda la bandeja durante al menos 10 segundos para que el ID de bandeja quede registrado.
 +
@@ -130,7 +128,10 @@ Una fuente de alimentación se enciende en cuanto el cable de alimentación est�
 
 == Paso 2: Encienda los controladores
 
-. Conecte el portátil al puerto de consola serie para que pueda supervisar la secuencia de arranque cuando se aplique alimentación a los controladores.
+Después de encender las bandejas de almacenamiento y asignarles ID únicos, encienda la alimentación de las controladoras de almacenamiento.
+
+.Pasos
+. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando se encienden las controladoras.
 +
 .. Configure el puerto de consola serie del portátil a 115.200 baudios con N-8-1.
 +
@@ -140,20 +141,23 @@ NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sob
 .. Conecte el cable de consola al portátil y conecte el puerto de consola serie del controlador mediante el cable de consola incluido con la plataforma.
 .. Conecte el portátil al interruptor de la subred de administración.
 +
-image:drw_a1k_70-90_console_connection_ieops-1702.svg["Conexiones de la consola"]
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Conexiones de la consola]
 
 .. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
 
 
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 +
-image:drw_affa1k_power_source_icon_ieops-1700.svg["Diagrama de conexión de alimentación genérica"]
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de conexión de alimentación genérica]
 
 +
 ** La plataforma comienza a arrancar. El arranque inicial puede tardar hasta ocho minutos.
 ** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
-** Los ventiladores pueden ser muy fuertes cuando se ponen en marcha por primera vez. El fuerte ruido del ventilador durante el arranque es normal.
+** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
 
 
 . Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación.
 
+
+.El futuro
+Después de encender su sistema de almacenamiento AFF A70 o AFF A90,link:install-complete.html["completar la configuración del sistema"]

@@ -1,0 +1,205 @@
+---
+permalink: asa-r2-70-90/chassis-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: asa r2 a70, asa r2 a90, move hardware components, replace the chassis 
+summary: Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Mueva y reemplace la tornillería: ASA A70 y ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mueva las unidades de disco duro y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+
+. Compruebe que el LED de estado situado en la ranura 4/5 de la parte posterior del módulo del controlador defectuoso está apagado. Busque el icono de NV.
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+
+NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
+
++
+** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de la controladora y el sistema de almacenamiento se encuentra en estado «esperando devolución», o cuando el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
+** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del chasis y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el módulo del controlador se puede extraer del chasis).
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables de la fuente de alimentación del módulo del controlador de las fuentes de alimentación (PSU) del módulo del controlador.
++
+
+NOTE: Si el sistema tiene alimentación de CC, desconecte el bloque de alimentación de las PSU.
+
+. Desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo del controlador, realizando un seguimiento de dónde se conectaron los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de gestión de cables del módulo del controlador.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Gráfico de extracción del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+| Un pestillo de bloqueo 
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2, ancho=30px"]
+ a| 
+Pasador de bloqueo
+
+|===
+. Deslice el módulo del controlador fuera del chasis y colóquelo sobre una superficie plana y estable.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Repita estos pasos para el otro módulo de controladora del chasis.
+
+
+
+
+== Paso 2: Mueva unidades al nuevo chasis
+
+Es necesario mover las unidades desde la apertura de cada bahía en el chasis antiguo hasta la misma abertura de bahía en el nuevo chasis.
+
+. Retire con cuidado el bisel de la parte delantera del sistema.
+. Quite las unidades:
++
+.. Pulse el botón de liberación situado en la parte superior de la cara del soporte debajo de los LED.
+.. Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad del plano medio y, a continuación, deslice suavemente la unidad para extraerla del chasis.
++
+La transmisión debe desconectarse del chasis, lo que le permitirá deslizarse sin el chasis.
+
++
+
+NOTE: Al extraer una unidad, utilice siempre dos manos para sostener su peso.
+
++
+
+NOTE: Las unidades son frágiles. Manipularlos lo menos posible para evitar que se dañen.
+
+
+
+. Realice un seguimiento de la bahía de unidad de la que era cada unidad y aparte las unidades en un carro o mesa libre de estática.
+
+
+
+
+== Paso 3: Sustituya el chasis desde el rack de equipos o el armario del sistema
+
+Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+
+. Quite los tornillos de los puntos de montaje del chasis.
+. Con dos personas, deslice el chasis antiguo fuera de los rieles del rack en un armario del sistema o rack del equipo y, a continuación, colóquelo aparte.
+. Con dos personas, instale el chasis de reemplazo en el rack o armario del sistema de equipamiento guiando el chasis hacia los rieles para rack en un armario del sistema o rack del equipo.
+. Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
+. Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
+. Instale las unidades del chasis antiguo en el chasis de reemplazo:
++
+.. Alinee la unidad del chasis antiguo con la misma abertura de la bahía en el nuevo chasis.
+
+
+. Empuje suavemente la unidad dentro del chasis hasta que llegue.
++
+La palanca de leva se acopla y comienza a girar hacia arriba.
+
++
+.. Empuje firmemente la unidad el resto del camino hacia el chasis y, a continuación, bloquee la palanca de leva empujándola hacia arriba y contra el soporte de la unidad.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la parte delantera del portador de accionamiento. Hace clic cuando es seguro.
+
+.. Repita el proceso para las unidades restantes del sistema.
+
+
+. Si todavía no lo ha hecho, instale el panel frontal.
+
+
+
+
+== Paso 4: Vuelva a instalar los módulos del controlador
+
+Vuelva a instalar el módulo del controlador y reinícielo.
+
+. Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
++
+Debe quedar a ras de la chapa metálica del módulo del controlador.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Recuperar el sistema, según sea necesario.
++
+Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
+
+. Complete la reinstalación del módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
+
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
++
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
+
+
+. Conecte los cables de alimentación en las fuentes de alimentación.
++
+
+NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
+
++
+El módulo del controlador arranca cuando se restaura la alimentación. Si arranca en el aviso del CARGADOR, reinicie la controladora con `boot_ontap` el comando.
+
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
+

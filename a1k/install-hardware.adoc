@@ -11,34 +11,39 @@ summary: Instale su sistema de almacenamiento en un armario o rack de telecomuni
 
 
 [role="lead"]
-Instale la tornillería en un armario vacío o en un rack de telecomunicaciones. Omita este paso si el armario está rellenado previamente.
+Después de prepararse para instalar el sistema de almacenamiento AFF A1K, instale el hardware para el sistema. En primer lugar, instale los kits de guías. A continuación, instale y asegure su plataforma en un armario o rack de telecomunicaciones.
+
+Omita este paso si el armario está rellenado previamente.
 
 .Antes de empezar
-* Debe revisar https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Avisos de seguridad"] el documento y comprender las precauciones para mover e instalar el hardware.
-* Deberá presentar las instrucciones en el paquete del kit de raíl.
-* Debe ser consciente de los problemas de seguridad asociados con el peso de la plataforma y el estante.
+* Asegúrese de tener las instrucciones incluidas en el kit de guías.
+* Tenga en cuenta los problemas de seguridad asociados con el peso del sistema de almacenamiento y la bandeja de almacenamiento.
+* Comprenda que el flujo de aire a través del sistema de almacenamiento entra desde la parte frontal donde se instalan las tapas de la cubierta protectora o de los extremos y sale de la parte posterior donde se encuentran los puertos.
 
 
 .Pasos
-. Instale los kits de guías para la plataforma y los estantes, según sea necesario, siguiendo las instrucciones incluidas con los kits.
-. Instale y asegure su plataforma en el gabinete o rack de telecomunicaciones:
+. Instale los kits de rieles para el sistema de almacenamiento y las bandejas de almacenamiento, según sea necesario, siguiendo las instrucciones incluidas en los kits.
+. Instale y proteja su sistema de almacenamiento en el armario o el rack de telecomunicaciones:
 +
-.. Coloque la plataforma en los rieles en el centro del gabinete o bastidor de telecomunicaciones, y luego apoye la plataforma desde la parte inferior y deslícela en su lugar.
-.. Fije la plataforma al armario o al rack Telco con los tornillos de montaje incluidos.
+.. Coloque el sistema de almacenamiento en los rieles situados en el centro del armario o rack de telecomunicaciones, y luego apoye el sistema de almacenamiento desde la parte inferior y deslícelo en su lugar.
+.. Fije el sistema de almacenamiento al armario o al rack de telecomunicaciones con los tornillos de montaje incluidos.
 
 
-. Instale la bandeja o las bandejas:
+. Instale la bandeja de almacenamiento:
 +
-.. Coloque la parte posterior de la bandeja en los rieles, y luego sostenga la bandeja desde la parte inferior y deslícela en el armario o rack de telecomunicaciones.
+.. Coloque la parte posterior de la bandeja de almacenamiento en los raíles, apoye la bandeja desde la parte inferior y deslícela en el armario o el rack de telecomunicaciones.
 +
-Si va a instalar varias bandejas, coloque la primera bandeja directamente encima de las controladoras. Coloque la segunda bandeja directamente debajo de las controladoras. Repita este patrón para todas las bandejas de unidades adicionales.
+Si va a instalar varias bandejas de almacenamiento, coloque la primera bandeja de almacenamiento directamente encima de las controladoras. Coloque la segunda bandeja de almacenamiento directamente debajo de las controladoras. Repita este patrón para todas las bandejas de almacenamiento adicionales.
 
-.. Fije la bandeja al armario o al rack Telco con los tornillos de montaje incluidos.
+.. Fije la bandeja de almacenamiento al armario o al rack Telco con los tornillos de montaje incluidos.
 
 
-. Conecte los dispositivos de gestión de cables a la parte posterior de la plataforma.
+. Conecte los dispositivos de gestión de cables a la parte posterior del sistema de almacenamiento.
 +
 image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Instale el dispositivo de gestión de cables]
 
-. Fije la cubierta protectora en la parte frontal de la plataforma.
+. Conecte el panel frontal a la parte frontal del sistema de almacenamiento.
 
+
+.El futuro
+Después de haber instalado el hardware para su sistema AFF A1K, ustedlink:install-cable.html["Conecte los cables del hardware del sistema de almacenamiento AFF A1K"].

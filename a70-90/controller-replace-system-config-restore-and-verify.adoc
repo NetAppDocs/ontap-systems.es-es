@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a70, aff a90, restore and verify the system configuration, verify and set the ha state of the controller module 
 summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
 ---
-= Restaurar y verificar la configuración del sistema: AFF A70, AFF A90
+= Restaurar y verificar la configuración del sistema: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -61,7 +61,7 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 +
 ** `ha`
 ** `mcc` (no compatible)
-** `mccip`
+** `mccip` (No compatible con sistemas ASA)
 ** `non-ha` (no compatible)
 
 

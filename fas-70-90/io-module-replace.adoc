@@ -1,0 +1,203 @@
+---
+permalink: fas-70-90/io-module-replace.html 
+sidebar: sidebar 
+keywords: fas70, fas90, replace a pcie card 
+summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas, quitar los módulos SFP y QSFP de las tarjetas antes de quitar la tarjeta vertical, volver a instalar la tarjeta vertical y, a continuación, volver a instalar los módulos SFP y QSFP antes de cablear las tarjetas. 
+---
+= Sustituya el módulo de E/S - FAS70 y FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilice este procedimiento para sustituir un módulo de E/S fallido.
+
+* Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
+* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+
+
+
+
+== Paso 1: Apague el nodo dañado
+
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al siguiente paso.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+== Paso 2: Sustituya un módulo I/O fallido
+
+Para sustituir un módulo de E/S, búsquelo dentro del receptáculo y siga la secuencia específica de pasos.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte cualquier cableado del módulo de E/S de destino.
+. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
++
+
+NOTE: En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.
+
++
+image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Retire el módulo de E/S."]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+ a| 
+Bloqueo de leva de E/S.
+
+|===
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Retire el módulo de E/S de destino del receptáculo:
++
+.. Pulse el botón de leva del módulo de destino.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
+
+
+. Coloque el módulo de E/S a un lado.
+. Instale el módulo de E/S de repuesto en la carcasa:
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el cable al módulo de E/S.
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+
+
+== Paso 3: Reinicie el controlador
+
+Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
+
+
+NOTE: Si el nuevo módulo de E/S no es el mismo modelo que el módulo con errores, primero debe reiniciar el BMC.
+
+.Pasos
+. Reinicie el BMC si el módulo de sustitución no es el mismo modelo que el módulo antiguo:
++
+.. Desde el aviso del CARGADOR, cambie al modo de privilegios avanzado: _SET PRIVILEGE ADVANCED_
+.. Reinicie BMC: _Sp reboot_
+
+
+. En el símbolo del sistema DEL CARGADOR, reinicie el nodo: _Bye_
++
+
+NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
+
+. Devuelva el nodo a su funcionamiento normal: _Storage failover giveback -ofnode impaired_node_name_
+. Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
+
+
+
+
+== Paso 4: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

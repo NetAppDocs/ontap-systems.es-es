@@ -14,19 +14,18 @@ La imagen se descarga desde la unidad flash USB.
 +
 [cols="1,2"]
 |===
-| Si el sistema tiene... | Realice lo siguiente... 
+| Si el sistema se está ejecutando... | Realice lo siguiente... 
 
 
  a| 
-Una conexión de red
+ONTAP 9.16.0 o anterior
  a| 
 .. En el controlador defectuoso, pulse _Y_ cuando vea `Do you want to restore the backup configuration now?`
 .. En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba `/etc/ssh/ssh_host_ecdsa_key`.
 .. En el controlador asociado en buen estado, establezca el controlador deficiente en el nivel de privilegio avanzado: _Set -privilege advanced_.
 .. En la controladora asociada en buen estado, ejecute el comando restore backup: _System node restore-backup -node local -target-address impaired_node_ip_address_.
 +
-
-NOTE: Si ve algún mensaje que no sea una restauración correcta, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+*NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
 .. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administrador: _Set -privilege admin_.
 .. En el controlador afectado, pulse _y_ cuando vea `Was the restore backup procedure successful?`.
@@ -35,26 +34,35 @@ NOTE: Si ve algún mensaje que no sea una restauración correcta, póngase en co
 .. Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure gestores de claves"].
 .. Conecte el cable de la consola al controlador asociado.
 .. Devuelva la controladora con el comando _storage failover giveback -fromnode local_.
-+
-... Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
-
-
+.. Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
 .. Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.
++
+*NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
 
-
-
- a| 
-No hay conexión de red
- a| 
-Contacto https://support.netapp.com["Soporte de NetApp"].
 
 
 
  a| 
-No hay conexión de red y está en una configuración de IP de MetroCluster
+ONTAP 9.16.1 o posterior
  a| 
-Contacto https://support.netapp.com["Soporte de NetApp"].
+.. En el controlador afectado, pulse _y_ cuando se le solicite restaurar la configuración de copia de seguridad.
++
+Después de que el procedimiento de restauración se haya realizado correctamente, este mensaje se mostrará en la consola - `syncflash_partner: Restore from partner complete`.
+
+.. En la controladora deteriorada, pulse _y_ cuando se le solicite confirmar si la copia de seguridad de la restauración se realizó correctamente.
+.. En el controlador afectado, pulse _y_ cuando se le solicite utilizar la configuración restaurada.
+.. En el controlador dañado, pulse _y_ cuando se le solicite reiniciar el nodo.
+.. En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.
+.. Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure gestores de claves"].
+.. Conecte el cable de la consola al controlador asociado.
+.. Devuelva la controladora con el comando _storage failover giveback -fromnode local_.
+.. Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
+.. Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.
++
+*NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+
 
 |===
 

@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a70, a90, prepare installation 
 summary: Complete la instalación y la configuración de la plataforma mediante la detección de clústeres con solo una conexión al switch y el portátil, o bien conectándose directamente a una controladora en el sistema de almacenamiento y posteriormente al switch de gestión. 
 ---
-= Instalación y configuración completas del sistema de almacenamiento: AFF A70, AFF A90
+= Instalación y configuración completas del sistema de almacenamiento: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Después de instalar el hardware, use el software ONTAP para configurar y gestionar el sistema de almacenamiento.
+Después de activar el sistema de almacenamiento, estará listo para detectar su red de clústeres y configurar un clúster de ONTAP.
 
 
 
@@ -19,7 +19,7 @@ Después de instalar el hardware, use el software ONTAP para configurar y gestio
 
 Si todavía no lo ha hecho, recopile la información que necesitará para configurar el clúster, como el puerto de la interfaz de gestión del clúster y la dirección IP.
 
-Utilice el https://docs.netapp.com/us-en/ontap/software_setup/index.html["hoja de cálculo de configuración del clúster"] para registrar los valores que necesita durante el proceso de configuración del clúster. Si se proporciona un valor predeterminado, puede usar dicho valor, o bien puede introducir el que desee.
+Utilice el https://docs.netapp.com/us-en/ontap/software_setup/index.html["hoja de cálculo de configuración del clúster"^] para registrar los valores que necesita durante el proceso de configuración del clúster. Si se proporciona un valor predeterminado, puede usar dicho valor, o bien puede introducir el que desee.
 
 
 
@@ -47,10 +47,10 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Cómo descubri
 
 NOTE: XXXXX es el número de serie de la plataforma para el nodo de destino.
 
+
+
 +
 Se abrirá System Manager.
-
-
 
 
 
@@ -60,7 +60,7 @@ Se abrirá System Manager.
 Si la detección de red no está habilitada en el portátil, complete la configuración mediante el asistente de configuración de clúster de la interfaz de línea de comandos (CLI) de ONTAP.
 
 .Antes de empezar
-Asegúrese de que el portátil está conectado al puerto de la consola serie y de que los controladores están encendidos. Consulte link:install-power-hardware.html#step-2-power-on-the-controllers["Encienda las controladoras"] para obtener instrucciones.
+Asegúrese de que el portátil está conectado al puerto de la consola serie y de que los controladores están encendidos. Consulte link:install-power-hardware.html#step-2-power-on-the-controllers["encienda el sistema de almacenamiento"] para obtener instrucciones.
 
 .Pasos
 Asigne una dirección IP de gestión de nodos inicial a uno de los nodos.
@@ -99,9 +99,9 @@ El nodo arranca y, a continuación, se inicia el Asistente de configuración de 
 
 == Paso 3: Configure el clúster
 
-NetApp recomienda usar System Manager para configurar clústeres nuevos. Consulte https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Configure ONTAP en un nuevo clúster con System Manager"] para obtener instrucciones de configuración.
+NetApp recomienda usar System Manager para configurar clústeres nuevos. Consulte https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Configure ONTAP en un nuevo clúster con System Manager"^] para obtener instrucciones de configuración.
 
 System Manager proporciona un flujo de trabajo sencillo y sencillo para la instalación y la configuración del clúster, incluidas la asignación de una dirección IP de gestión de nodos, la inicialización del clúster, la creación de un nivel local, la configuración de protocolos y el aprovisionamiento inicial de almacenamiento conectado.
 
-
-NOTE: Una vez inicializado el clúster, descargue y ejecute  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] para confirmar la configuración.
+.El futuro
+Una vez inicializado el clúster, descargue y ejecute  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] para confirmar la configuración.

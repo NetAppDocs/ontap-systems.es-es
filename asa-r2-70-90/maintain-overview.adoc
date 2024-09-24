@@ -1,0 +1,110 @@
+---
+permalink: asa-r2-70-90/maintain-overview.html 
+sidebar: sidebar 
+keywords: asa r2 a70 asa r2 a90 maintenance, maintenance, repairing asa r2 a70 asa r2 a90, repairing a70 asa r2 a90, replace a70 asa r2 a90 components 
+summary: Mantenga el hardware ASA R2 A70, ASA R2 A90 
+---
+= Mantener el hardware de ASA A70 y ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba realizar procedimientos de mantenimiento en el hardware. En esta sección se incluyen los procedimientos específicos para el mantenimiento de los componentes del sistema ASA A70 y ASA A90.
+
+En los procedimientos de esta sección se asume que ASA los sistemas A70 y A90 de ASA ya se han puesto en marcha como nodo de almacenamiento en el entorno de ONTAP.
+
+
+
+== Componentes del sistema
+
+Para los sistemas de almacenamiento ASA A70 y ASA A90, se pueden realizar procedimientos de mantenimiento en los componentes siguientes.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-overview.html["Soporte de arranque"]
+ a| 
+Los medios de arranque almacenan un conjunto primario y secundario de archivos de imagen ONTAP que el sistema utiliza cuando se inicia.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chasis"]
+ a| 
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controladora"]
+ a| 
+Una controladora consta de una placa, un firmware y un software. Controla el almacenamiento, las tarjetas de E/S y ejecuta el software del sistema operativo ONTAP.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Un módulo de memoria dual en línea (DIMM) es un tipo de memoria del ordenador. Se instalan para agregar memoria del sistema a una placa base de la controladora.
+
+
+
+ a| 
+link:drive-replace.html["Unidad"]
+ a| 
+Una unidad es un dispositivo que ofrece el almacenamiento físico necesario para datos.
+
+
+
+ a| 
+link:fan-swap-out.html["Ventilador"]
+ a| 
+Un ventilador enfría el controlador.
+
+
+
+ a| 
+link:nvram-replace.html["NVRAM"]
+ a| 
+La NVRAM (memoria de acceso aleatorio no volátil) es un módulo que permite a la controladora proteger y guardar datos en movimiento si el sistema sufre un corte de alimentación. El ID del sistema reside en el módulo de NVRAM. Cuando se sustituye, la controladora asume el nuevo ID del sistema desde el módulo NVRAM de reemplazo.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["Batería de NV"]
+ a| 
+La batería NV es responsable de suministrar alimentación al módulo de NVRAM mientras los datos en tránsito se separan a la memoria flash después de un corte de alimentación.
+
+
+
+ a| 
+link:io-module-overview.html["Módulo de I/O."]
+ a| 
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+ a| 
+link:power-supply-replace.html["Suministro de alimentación"]
+ a| 
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Batería del reloj en tiempo real"]
+ a| 
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+
+
+ a| 
+link:system-management-replace.html["Módulo de gestión del sistema"]
+ a| 
+El módulo de gestión del sistema proporciona la interfaz entre el controlador y una consola o portátil para el mantenimiento del controlador o del sistema. El módulo de gestión del sistema contiene el soporte de arranque y almacena el número de serie del sistema (SSN).
+
+|===

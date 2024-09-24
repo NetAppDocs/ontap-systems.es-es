@@ -1,0 +1,24 @@
+---
+permalink: asa-r2-a1k/bootmedia-overview.html 
+sidebar: sidebar 
+keywords: asa r2 a1k, overview, the boot media 
+summary: Obtenga información sobre el método automatizado y el método manual para reemplazar el soporte de arranque. 
+---
+= Descripción general de la sustitución del soporte de arranque - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reemplazar manualmente un soporte de arranque fallido mediante el módulo USB para la imagen de arranque o mediante la opción de reemplazo de soporte de arranque automático (BMR).
+
+* link:bootmedia-replace-requirements-bmr.html["Sustitución de soportes de arranque automatizado"]
++
+La sustitución automática de medios de arranque utiliza la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque correspondiente para instalar la imagen de arranque en el soporte de arranque de reemplazo.
+
+* link:bootmedia-replace-requirements.html["Sustitución manual del soporte de arranque"]
++
+La sustitución manual de soportes de arranque utiliza el método tradicional de descargar la imagen ONTAP del sitio de soporte de NetApp, transferir la imagen a una unidad USB, descargarla al soporte de arranque de reemplazo de destino y caminar manualmente por las opciones del menú de arranque para instalar la imagen ONTAP en el soporte de arranque de reemplazo.
+
+

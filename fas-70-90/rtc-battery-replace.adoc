@@ -1,0 +1,278 @@
+---
+permalink: fas-70-90/rtc-battery-replace.html 
+sidebar: sidebar 
+keywords: fas70, fas90, replace the real-time clock battery 
+summary: 'Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.' 
+---
+= Sustituya la batería del reloj en tiempo real - FAS70 y FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.
+
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
+* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, el estado del quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Cuando sustituya el módulo de controlador o sustituya uno de los componentes del módulo de controlador, debe quitar el módulo de controlador del compartimento.
+
+. Compruebe el LED de estado de NVRAM ubicado en la ranura 4/5 del sistema. También hay un LED NVRAM en el panel frontal del módulo de controladora. Busque el icono NV:
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 1, ancho=30px"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+
+NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
+
++
+** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de controladora y el módulo de la controladora se encuentra en el estado «esperando devolución» o el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
+** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del compartimento y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el controlador se puede retirar del receptáculo).
+
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. En la parte delantera de la unidad, enganche los dedos en los orificios de las levas de bloqueo, apriete las lengüetas de las palancas de leva y gire suavemente, pero firmemente, ambos pestillos hacia usted al mismo tiempo.
++
+El módulo del controlador se mueve ligeramente fuera del compartimento.
+
++
+image::../media/drw_a1k_pcm_remove_replace_ieops-1375.svg[Gráfico de extracción del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+| Una leva de bloqueo se bloquea 
+|===
+. Deslice el módulo del controlador fuera de la carcasa y colóquelo sobre una superficie plana y estable.
++
+Asegúrese de que apoya la parte inferior del módulo del controlador mientras lo desliza fuera de la carcasa.
+
+
+
+
+
+== Paso 3: Sustituya la batería RTC
+
+Retire la batería RTC defectuosa e instale la batería RTC de repuesto.
+
+. Abra el conducto de aire del controlador en la parte superior del controlador.
++
+.. Inserte los dedos en los huecos de los extremos del conducto de aire.
+.. Levante el conducto de aire y gírelo hacia arriba hasta el tope.
+
+
+. Localice la batería del RTC debajo del conducto de aire.
++
+image::../media/drw_a1k_rtc_remove_replace_ieops-1381.svg[Sustituya la batería del RTC]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+| Batería RTC y carcasa 
+|===
+. Tire suavemente de la batería para separarla del soporte, gírela del soporte y, a continuación, levántela para sacarla del soporte.
++
+
+NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte. La batería está marcada con un signo más y debe colocarse en el soporte correctamente. Un signo más cerca del soporte le indica cómo debe colocarse la batería.
+
+. Retire la batería de repuesto de la bolsa de transporte antiestática.
+. Observe la polaridad de la batería RTC y, a continuación, insértela en el soporte inclinando la batería en un ángulo y empujando hacia abajo.
+. Inspeccione visualmente la batería para asegurarse de que está completamente instalada en el soporte y de que la polaridad es correcta.
+
+
+
+
+== Paso 4: Vuelva a instalar el módulo del controlador
+
+Vuelva a instalar el módulo del controlador y arranque.
+
+. Si aún no lo ha hecho, cierre el conducto de aire.
+. Alinee el extremo del módulo del controlador con la abertura en la carcasa y deslice el módulo del controlador en el chasis con las palancas giradas hacia fuera de la parte delantera del sistema.
+. Una vez que el módulo del controlador le impide deslizarlo más, gire las asas de la leva hacia dentro hasta que queden atrapadas debajo de los ventiladores
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el módulo del controlador en la carcasa para evitar dañar los conectores.
+
++
+El módulo del controlador comienza a arrancar tan pronto como está completamente asentado en la carcasa.
+
+. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+
+
+
+
+== Paso 5: Restablezca la hora y la fecha del controlador
+
+
+NOTE: Después de reemplazar la batería de RTC, insertar el controlador y encender el primer restablecimiento del BIOS, verá los siguientes mensajes de error:
+`RTC date/time error. Reset date/time to default`
+`RTC power failure error` Estos mensajes se interrumpirán y podrá continuar con este procedimiento.
+
+. Compruebe la fecha y la hora de la controladora en buen estado con el comando _cluster date show_.
+
+
+
+NOTE: Si el sistema se detiene en el menú de arranque, seleccione la opción para  `Reboot node` y responda _y_ cuando se le solicite y, a continuación, arranque en el CARGADOR pulsando _Ctrl-C_
+
+. En el símbolo del sistema DEL CARGADOR DE la controladora objetivo, compruebe la hora y la fecha con `cluster date show` el comando.
+. Si es necesario, modifique la fecha con el `set date mm/dd/yyyy` comando.
+. Si es necesario, ajuste la hora en GMT utilizando `set time hh:mm:ss` comando.
++
+.. Confirme la fecha y la hora en la controladora de destino.
+.. En el aviso del CARGADOR, introduzca _bye_ para reinicializar las tarjetas PCIe y otros componentes y dejar que el controlador se reinicie.
+.. Devuelva la controladora a su funcionamiento normal devolviendo su almacenamiento: _Storage failover giveback -ofnode _impaired_node_name__
+.. Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
+
+
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

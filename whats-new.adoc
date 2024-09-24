@@ -1,27 +1,46 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: new, features,aff, asa,  fas, legacy, end-of-support 
-summary: Descubra las nuevas funciones para sistemas AFF, ASA y FAS, y el hardware heredado ya no es compatible. 
+keywords: new, features, asa r2, aff, asa, fas, legacy, end-of-support 
+summary: Obtenga información sobre las nuevas funciones para los sistemas de hardware de ONTAP. 
 ---
-= Novedades en los sistemas AFF, ASA y FAS
+= Novedades en los sistemas de hardware de ONTAP
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Obtenga más información sobre las nuevas funciones de los sistemas AFF, ASA y FAS.
+Obtenga información sobre las nuevas funciones para los sistemas de hardware de ONTAP.
 
 Para obtener información sobre problemas conocidos, limitaciones y precauciones de actualización en versiones de ONTAP 9, consulte la https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["Notas de la versión de ONTAP 9"]. Debe iniciar sesión con su cuenta de NetApp o crear una cuenta para acceder a las Notas de la versión.
 
 
 
-== Compatibilidad con nuevas plataformas
+== Soporte de plataformas
 
 [cols="2*"]
 |===
-| Plataformas (con enlaces a hojas de datos) | Comienzo disponible 
+| Plataformas | Comienzo disponible 
+
+
+ a| 
+https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Sistemas ASA r2"]
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+ a| 
+ONTAP 9.16.1
+
+
+
+ a| 
+https://www.netapp.com/data-storage/fas/["FAS70 y FAS90"]
+ a| 
+ONTAP 9.16.1
+
 
 
  a| 
@@ -212,7 +231,7 @@ ONTAP 9.6
 |===
 
 
-== Nuevo soporte de conmutador
+== Soporte del interruptor
 
 [cols="20,65,15"]
 |===
@@ -296,53 +315,7 @@ ONTAP 9.5P8
 |===
 
 
-== Nueva compatibilidad con el adaptador
-
-[cols="4*"]
-|===
-| Número de pieza del adaptador | Descripción | Categoría | Comienzo disponible 
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91148A"]
- a| 
-Roce QSFP28 de 100 GbE y 2 puertos
- a| 
-* Reducida
-* Redes
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X91122A"]
- a| 
-Roce QSFP28 de 25 GbE para 2 puertos
- a| 
-* Redes
-* HA/MetroCluster
-
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://hwu.netapp.com/adapter/index["X9170A"]
- a| 
-Módulo SSD de NVMe (1 TB)
- a| 
-Dispositivo de volcado de memoria
- a| 
-ONTAP 9.8
-
-|===
-
-
-== Nueva compatibilidad de bandejas
+== Soporte de bandejas
 
 [cols="2*"]
 |===
@@ -357,7 +330,7 @@ ONTAP 9.6
 |===
 
 
-== Nuevas actualizaciones de hardware
+== Actualizaciones de hardware
 
 [cols="25h,~,~"]
 |===

@@ -1,0 +1,84 @@
+---
+permalink: asa-r2-a1k/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: asa r2 a1k, replace the boot media 
+summary: Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque. 
+---
+= Sustituya el soporte de arranque: ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, retirar el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
+
+.Pasos
+El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
+
+image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Gráfico de sustitución de soporte de arranque]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/legend_icon_01.svg[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+
+
+ a| 
+image::../media/legend_icon_02.svg[Número de llamada 2]
+ a| 
+Botón de bloqueo del soporte de arranque
+
+
+
+ a| 
+image::../media/legend_icon_03.svg[Número de llamada 3]
+ a| 
+Soporte de arranque
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables de la fuente de alimentación de las PSU del controlador.
++
+
+NOTE: Si el sistema de almacenamiento tiene suministros de alimentación de CC, desconecte el bloque de cables de alimentación de las unidades de suministro de alimentación (PSU).
+
++
+.. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de leva de gestión del sistema.
+.. Gire el pestillo de la leva hacia abajo hasta el tope.
+.. Retire el módulo de gestión del sistema de la carcasa enganchando el dedo en la abertura de la palanca de leva y tirando del módulo para sacarlo de la carcasa.
+.. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque.
+
+
+. Retire el soporte de arranque del módulo de gestión:
++
+.. Pulse el botón de bloqueo azul.
+.. Gire el soporte de arranque hacia arriba, deslícelo para extraerlo de la toma y déjelo a un lado.
+
+
+. Instale el soporte de arranque de repuesto en el módulo de gestión del sistema:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hacia el botón de bloqueo.
+.. Pulse el botón de bloqueo, gire el soporte del maletero completamente hacia abajo y, a continuación, suelte el botón de bloqueo.
+
+
+. Vuelva a instalar el módulo Gestión del sistema.
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
++
+.. Vuelva a conectar el módulo Gestión del sistema.
+
+
+

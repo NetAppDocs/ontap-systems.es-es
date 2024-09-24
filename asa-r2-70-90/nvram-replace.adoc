@@ -1,0 +1,297 @@
+---
+permalink: asa-r2-70-90/nvram-replace.html 
+sidebar: sidebar 
+keywords: asa r2 a70, asa r2 a90, replace an nvdimm 
+summary: 'El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.' 
+---
+= Reemplace NVRAM - ASA A70 y ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con errores, debe quitar el módulo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.
+
+Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Apague o tome el control de la controladora dañada.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, el estado del quórum de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+
+
+== Paso 2: Sustituya el módulo NVRAM
+
+Para sustituir el módulo NVRAM, búsquelo en la ranura 4/5 del chasis y siga la secuencia específica de pasos.
+
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+
+. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del módulo del controlador tirando del módulo del controlador hacia fuera unas tres pulgadas:
++
+.. Presione ambos pestillos de bloqueo del módulo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
+.. Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.
+
+
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Quite el módulo NVRAM de destino del chasis:
++
+.. Pulse el botón de bloqueo de leva.
++
+El botón de leva se aleja del chasis.
+
+.. Gire el pestillo de leva hasta el tope.
+.. Retire el módulo NVRAM defectuoso del chasis enganchando el dedo en la abertura de la palanca de leva y tirando del módulo para sacarlo del chasis.
++
+image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Retire el módulo NVRAM12 y los DIMM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+ a| 
+Botón de bloqueo de leva
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2,width=30px"]
+ a| 
+Lengüetas de bloqueo DIMM
+
+|===
+
+
+. Ajuste el módulo NVRAM en una superficie estable.
+. Retire los DIMM, uno por uno, del módulo NVRAM dañado e instálelos en el módulo NVRAM de reemplazo.
+. Instale el módulo NVRAM de repuesto en el chasis:
++
+.. Alinee el módulo con los bordes de la abertura del chasis en la ranura 4/5.
+.. Deslice suavemente el módulo en la ranura hasta el fondo y, a continuación, empuje el pestillo de leva completamente hacia arriba para bloquear el módulo en su sitio.
+
+
+. Vuelva a conectar la alimentación al módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
+
+
++
+
+NOTE: La controladora se reinicia tan pronto como se coloca completamente en el chasis.
+
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+
+
+== Paso 3: Sustituya un DIMM de NVRAM
+
+Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
+
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+
+. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del módulo del controlador tirando del módulo del controlador hacia fuera unas tres pulgadas:
++
+.. Presione ambos pestillos de bloqueo del módulo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
+.. Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.
+
+
+. Gire la bandeja de gestión de cables hacia abajo tirando suavemente de las clavijas de los extremos de la bandeja y girando la bandeja hacia abajo.
+. Quite el módulo NVRAM de destino del chasis:
++
+.. Pulse el botón de leva.
++
+El botón de leva se aleja del chasis.
+
+.. Gire el pestillo de leva hasta el tope.
+.. Retire el módulo NVRAM del chasis enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del chasis.
++
+image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Retire el módulo NVRAM12 y los DIMM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1,width=30px"]
+| Botón de bloqueo de leva 
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2,width=30px"]
+ a| 
+Lengüetas de bloqueo DIMM
+
+|===
+
+
+. Ajuste el módulo NVRAM en una superficie estable.
+. Localice el DIMM que se va a sustituir dentro del módulo NVRAM.
++
+
+NOTE: Consulte la etiqueta de asignación de FRU en el lateral del módulo NVRAM para determinar la ubicación de las ranuras DIMM 1 y 2.
+
+. Retire el módulo DIMM presionando hacia abajo las lengüetas de bloqueo del módulo DIMM y levantando el módulo DIMM para extraerlo del conector.
+. Instale el módulo DIMM de repuesto alineando el módulo DIMM con el zócalo e empuje suavemente el módulo DIMM hacia el zócalo hasta que las lengüetas de bloqueo queden trabadas en su lugar.
+. Instale el módulo NVRAM en el chasis:
++
+.. Deslice suavemente el módulo en la ranura hasta que el pestillo de leva comience a acoplarse con el pasador de leva de E/S y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su sitio.
+
+
+. Vuelva a conectar la alimentación al módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
+
+
++
+
+NOTE: La controladora se reinicia tan pronto como se coloca completamente en el chasis.
+
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+
+
+== Paso 4: Verifique el estado de la controladora
+
+Debe confirmar el estado de la controladora de las controladoras conectadas al pool de discos al arrancar la controladora.
+
+.Pasos
+. Si la controladora se encuentra en modo de mantenimiento (y se muestra `*>` el aviso), salga del modo de mantenimiento y vaya al símbolo del sistema DEL CARGADOR: _Halt_
+. En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.
+. Espere hasta que se muestre el mensaje Waiting for giveback... en la consola de la controladora con el módulo de reemplazo y, a continuación, desde la controladora en buen estado, verifique el estado del sistema: _Storage failover show_
++
+En el resultado del comando, debe ver un mensaje que indica el estado de las controladoras.
+
++
+[listing]
+----
+
+                              Takeover
+Node           Partner        Possible State Description
+-------------- -------------- -------- -------------------------------------
+<nodename>
+               <nodename>-   true     Connected to <nodename>-P2-3-178.
+               P2-3-178                Waiting for cluster applications to
+                                       come online on the local node.
+AFF-A90-NBC-P2-3-178
+               <nodename>-   true     Connected to <nodename>-P2-3-177,
+               P2-3-177                Partial giveback
+2 entries were displayed.
+
+----
+. Devolver la controladora:
++
+.. Desde la controladora en buen estado, devuelva el almacenamiento de la controladora que se sustituyó: _Storage failover giveback -ofnode replacement_node_name_
++
+La controladora se conecta de nuevo a su pool de almacenamiento y completa el arranque.
+
++
+Si se le solicita que sustituya el ID del sistema debido a una discrepancia de ID del sistema, debe introducir _y_.
+
++
+
+NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
+
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["Comandos de devolución manual"^] tema para anular el veto.
+
+.. Una vez completada la devolución, confirme que la pareja de alta disponibilidad esté en buen estado y que la toma de control sea posible: _Storage failover show_
+
+
+. Compruebe que los discos que los pools de discos son los esperados: `storage disk show -ownership`
++
+[listing]
+----
+node1:> storage disk show -ownership
+
+Disk     Aggregate  Home Owner    DR Home      Home ID       Owner ID    DR Home ID  Reserver Pool
+-------- --------- ------------- ------------- ------------- ----------- ----------- ----------- ----------- ------
+1.0.0 pod_NVME_SSD_1
+
+0 0 - 0 Pool0
+1.0.1 pod_NVME_SSD_1
+0 0 - 0 Pool0
+1.0.2 pod_NVME_SSD_1
+0 0 - 0 Pool0
+----
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

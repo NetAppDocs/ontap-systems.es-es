@@ -1,0 +1,333 @@
+---
+permalink: fas-70-90/caching-module-hot-swap.html 
+sidebar: sidebar 
+keywords: fas70, fas90, hot swap, replace, FlashCache module carrier, caching module, FlashCache 
+summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo FlashCache no se puede intercambiar en caliente.' 
+---
+= Sustituya el portador del módulo Flash Cache o un módulo de almacenamiento en caché: FAS70 y FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache de SSD integrada en cada módulo de almacenamiento en caché.
+
+FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo FlashCache.
+
+Puede realizar cualquiera de los siguientes procedimientos en función de lo que necesite ser reemplazado: Todo el portador del módulo Flashcache o un módulo de almacenamiento en caché.
+
+* <<Sustituya el portador del módulo FlashCache>>
+* <<Sustituya el módulo de almacenamiento en caché>>
+
+
+
+
+== Sustituya el portador del módulo FlashCache
+
+El portador del módulo FlashCache se encuentra en la ranura 6 y alberga hasta dos módulos FlashCache. No es posible intercambiar en caliente el portador del módulo FlashCache
+
+.Antes de empezar
+* Asegúrese de que el sistema de almacenamiento tenga el sistema operativo adecuado para el portador del módulo FlashCache de repuesto.
+* Confirme que el resto de los componentes funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
+
+
+
+
+=== Paso 1: Apague el nodo dañado
+
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
+
+.Opción 1 de la mayoría de sistemas
+[%collapsible]
+====
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+====
+.Configuración de MetroCluster de la opción 2
+[%collapsible]
+====
+
+NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al siguiente paso.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+====
+
+
+=== Paso 2: Reemplace el portador del módulo FlashCache
+
+Realice los siguientes pasos para reemplazar el portador del módulo FlashCache.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice el portador del módulo FlashCache que ha fallado, en la ranura 6, mediante el LED de atención ámbar iluminado en la parte frontal del portador del módulo FlashCache.
++
+image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Retire el portador del módulo FlashCache]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+Portador del módulo FlashCache
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2, ancho=30px"]
+ a| 
+Núm.s de ranura del módulo de caché
+
+
+
+ a| 
+image:../media/legend_icon_03.svg["Número de llamada 3, ancho=30px"]
+ a| 
+Asa de leva portadora del módulo FlashCache
+
+
+
+ a| 
+image:../media/legend_icon_04.svg["Número de llamada 4, ancho=30px"]
+ a| 
+LED de fallo del portador del módulo FlashCache
+
+|===
+. Elimine el portador del módulo FlashCache con fallos:
++
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pellizque la pestaña azul situada en la parte inferior del portador del módulo FlashCache.
+.. Gire la lengüeta para separarla del módulo.
+
+
+. Extraiga el portador del módulo FlashCache del módulo del controlador y configúrelo en una alfombrilla antiestática.
+. Mueva los módulos de almacenamiento en caché al portador del módulo Flash Cache de sustitución:
++
+.. Pellizque la lengüeta Terra Cotta en la parte superior del módulo de caché y gire el asa de la leva lejos del módulo de caché.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo FlashCache.
+.. Instale el módulo de almacenamiento en caché en la misma ranura del soporte del módulo FlashCache de reemplazo y gire el asa de leva a la posición cerrada del módulo de almacenamiento en caché para bloquearlo en su lugar.
+
+
+. Repita estos pasos si hay un segundo módulo de almacenamiento en caché.
+. Instale la portadora del módulo FlashCache de repuesto en el sistema:
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+.. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+
+
+
+
+=== Paso 3: Reinicie el controlador
+
+Después de reemplazar el portador del módulo FlashCache, debe reiniciar el módulo del controlador.
+
+.Pasos
+. En el símbolo del sistema DEL CARGADOR, reinicie el nodo: _Bye_
++
+
+NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
+
+. Devuelva el nodo a su funcionamiento normal: _Storage failover giveback -ofnode impaired_node_name_
+. Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
+
+
+
+
+=== Paso 4: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.
+
+
+
+== Sustituya el módulo de almacenamiento en caché
+
+.Antes de empezar
+Los módulos Flash Cache (módulos de almacenamiento en caché) están ubicados en la ranura 6-1 o en la ranura 6-2 o en la ranura 6-1 y la ranura 6-2.
+
+Puede intercambiar en caliente los módulos de caché individuales con módulos de caché de la misma capacidad del mismo proveedor o de otro proveedor compatible.
+
+.Antes de empezar
+* Asegúrese de que el módulo de almacenamiento en caché de sustitución tiene la misma capacidad que el que ha fallado, del mismo proveedor o de otro proveedor compatible.
+* Confirme que el resto de los componentes funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
+* Las unidades en los módulos de almacenamiento en caché no son unidades reemplazables en campo (FRU). Debe sustituir todo el módulo de almacenamiento en caché.
+
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Localice el módulo de almacenamiento en caché que ha fallado, en la ranura 6, mediante el LED de atención ámbar iluminado en la parte frontal del módulo de almacenamiento en caché.
+. Prepare la ranura del módulo de almacenamiento en caché para su sustitución de la siguiente manera:
++
+.. Registre la capacidad del módulo de almacenamiento en caché, el número de pieza y el número de serie en el nodo de destino: _System node run local sysconfig -av 6_
+.. En el nivel de privilegios de administración, prepare la ranura del módulo de almacenamiento en caché de destino para su eliminación, respondiendo `y` cuando se le pregunte si desea continuar: _SYSTEM controller slot module remove -node_name -slot_number_ El siguiente comando prepara la ranura 6-1 en node1 para su eliminación y muestra un mensaje que es seguro eliminar:
++
+[listing]
+----
+::> system controller slot module remove -node node1 -slot 6-1
+
+Warning: SSD module in slot 6-1 of the node node1 will be powered off for removal.
+Do you want to continue? (y|n): _y_
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+.. Muestra el estado de la ranura con `system controller slot module show` comando.
++
+El estado de la ranura del módulo de almacenamiento en caché se muestra `powered-off` en la salida de la pantalla para el módulo de almacenamiento en caché que debe sustituirse.
+
+
+
++
+
+NOTE: Consulte https://docs.netapp.com/us-en/ontap-cli-9121/["Páginas manuales de comandos"^] Para su versión de ONTAP para obtener más información.
+
+. Retire el módulo de almacenamiento en caché:
++
+image::../media/drw_fas70-90_caching_module_remove_ieops-1773.svg[Extraiga el módulo de almacenamiento en caché]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/legend_icon_01.svg["Número de llamada 1, ancho=30px"]
+ a| 
+Palanca de leva del módulo de almacenamiento en caché
+
+
+
+ a| 
+image:../media/legend_icon_02.svg["Número de llamada 2, ancho=30px"]
+ a| 
+LED de fallo del módulo de almacenamiento en caché
+
+|===
++
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de liberación terracota en la parte frontal del módulo de caché.
+.. Gire la palanca de leva hasta el tope.
+.. Retire el módulo de almacenamiento en caché de la carcasa enganchando el dedo en la abertura de la palanca de leva y tirando del módulo fuera del soporte del módulo FlashCache.
++
+Asegúrese de admitir el módulo de almacenamiento en caché a medida que lo elimina del portador del módulo FlashCache.
+
+
+
+. Instale el módulo de almacenamiento en caché de repuesto:
++
+.. Alinee los bordes del módulo de almacenamiento en caché con la apertura del módulo del controlador.
+.. Empuje suavemente el módulo de almacenamiento en caché en el compartimento hasta que el mango de la leva se acople.
+.. Gire el mango de la leva hasta que encaje en su sitio.
+.. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+. Utilice el para conectar el módulo de almacenamiento en caché de sustitución `system controller slot module insert` comando de la siguiente manera:
++
+El siguiente comando prepara la ranura 6-1 del nodo 1 para el encendido y muestra un mensaje que indica que está encendida:
+
++
+[listing]
+----
+::> system controller slot module insert -node node1 -slot 6-1
+
+Warning: NVMe module in slot 6-1 of the node localhost will be powered on and initialized.
+Do you want to continue? (y|n): `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+. Compruebe el estado de la ranura mediante `system controller slot module show` comando.
++
+Asegúrese de que el resultado del comando informa el estado de la como `powered-on` y listo para el funcionamiento.
+
+. Compruebe que el módulo de almacenamiento en caché de sustitución está conectado y reconocido y, a continuación, compruebe visualmente que el LED de atención ámbar no está encendido: `sysconfig -av slot_number`
++
+
+NOTE: Si sustituye el módulo de almacenamiento en caché por un módulo de almacenamiento en caché de otro proveedor, el nombre del nuevo proveedor se muestra en el resultado del comando.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"^] la página para obtener más información.
+

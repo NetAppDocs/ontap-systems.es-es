@@ -1,0 +1,131 @@
+---
+permalink: fas-70-90/install-prepare.html 
+sidebar: sidebar 
+keywords: fas70, fas90, prepare installation 
+summary: Prepárese para instalar su plataforma FAS70 y FAS90. 
+---
+= Prepárese para instalar - FAS70 y FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepárese para instalar su sistema de almacenamiento FAS70 o FAS90 preparando el sitio, desempaquetando las cajas y comparando el contenido de las cajas con la hoja de embalaje, y registrando el sistema para acceder a los beneficios de soporte.
+
+
+
+== Paso 1: Preparar el sitio
+
+Para instalar el sistema de almacenamiento, asegúrese de que el sitio y el gabinete o rack que planea utilizar cumplan las especificaciones de su configuración.
+
+.Pasos
+. Utilice https://hwu.netapp.com["Hardware Universe de NetApp"^] esta herramienta para confirmar que su centro cumple los requisitos ambientales y eléctricos de su sistema de almacenamiento.
+. Asegúrese de que dispone de espacio de rack adecuado:
++
+** 4U en una configuración de alta disponibilidad para la plataforma
+** 2U por cada bandeja de almacenamiento NS224
+
+
++
+*NOTA:* Vea link:https://hwu.netapp.com["Hardware Universe de NetApp"^]los requisitos de espacio de rack para otros estantes de almacenamiento compatibles.
+
+. Instale los switches de red necesarios.
++
+Consulte la https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Documentación de los switches"^] para obtener instrucciones de instalación y link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre compatibilidad.
+
+
+
+
+
+== Paso 2: Desempaquetar las cajas
+
+Después de asegurarse de que el sitio y el gabinete o rack que planea utilizar para su sistema de almacenamiento cumplen con las especificaciones requeridas, desembale todas las cajas y compare el contenido con los artículos en la hoja de embalaje.
+
+.Pasos
+. Abra cuidadosamente todas las cajas y coloque el contenido de una manera organizada.
+. Compara el contenido que has desempaquetado con la lista de la hoja de embalaje.
++
+
+NOTE: Usted puede obtener su lista de embalaje escaneando el código QR en el lado de la caja de envío.
+
++
+Los siguientes elementos son algunos de los contenidos que puede ver en las cajas.
+
++
+Asegúrese de que todo lo que hay en las cajas coincide con la lista de la hoja de embalaje. Si hay alguna discrepancia, anótelas para realizar otras acciones.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | *Cables* |  
+
+
+ a| 
+** Frontal
+** Dispositivo de gestión de cables
+** Plataforma
+** Kits de rieles con instrucciones (opcional)
+** Bandeja de almacenamiento
+
+ a| 
+** Cables Ethernet de gestión (cables RJ-45)
+** Cables de red
+** Cables de alimentación
+** Cables de almacenamiento (si ha pedido almacenamiento adicional)
+** Cable de puerto serie USB-C.
+
+|  
+|===
+
+
+
+
+== Paso 3: Registre el sistema de almacenamiento
+
+Una vez que se asegura de que su sitio cumple los requisitos de las especificaciones del sistema de almacenamiento y comprueba que posee todas las piezas solicitadas, debe registrar su sistema.
+
+.Pasos
+. Busque el número de serie del sistema de almacenamiento.
++
+Puede encontrar el número en la hoja de embalaje, en el correo electrónico de confirmación o en el módulo de gestión del sistema del controlador después de desempaquetarlo.
+
++
+image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema donde se muestra la ubicación del número]
+
+. Vaya a la http://mysupport.netapp.com/["Sitio de soporte de NetApp"^].
+. Determine si necesita registrar el sistema de almacenamiento:
++
+[cols="1a,2a"]
+|===
+| Si usted es un... | Siga estos pasos... 
+
+
+ a| 
+Cliente existente de NetApp
+ a| 
+.. Inicie sesión con su nombre de usuario y contraseña.
+.. Selecciona *Sistemas* > *Mis sistemas*.
+.. Confirme que el nuevo número de serie aparece en la lista.
+.. De lo contrario, siga las instrucciones para nuevos clientes de NetApp.
+
+
+
+
+ a| 
+Nuevo cliente de NetApp
+ a| 
+.. Haga clic en *Registrar ahora* y cree una cuenta.
+.. Selecciona *Sistemas* > *Registrar sistemas*.
+.. Introduzca el número de serie del sistema de almacenamiento y los detalles solicitados.
+
+
+Una vez aprobado el registro, puede descargar el software necesario. El proceso de aprobación puede llevar hasta 24 horas.
+
+|===
+
+
+.El futuro
+Después de haber preparado para instalar su hardware FAS70 o FAS90, ustedlink:install-hardware.html["Instale el hardware del sistema de almacenamiento FAS70 o FAS90"].
