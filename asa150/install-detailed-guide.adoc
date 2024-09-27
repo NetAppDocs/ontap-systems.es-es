@@ -15,6 +15,8 @@ Aprenda a instalar su sistema ASA A150.
 
 Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentación de MetroCluster"^].
 
+*Advertencia:* Si su sistema se instala con ONTAP 9.13.1P8 - 9.13.1P11, ONTAP 9.14.1P1 - 9.14.1P7 o ONTAP 9.15,1 - 9.15.1P2 y su sistema contiene 10 o más unidades de estado sólido internas, debe tomar medidas adicionales para preparar el sistema para la instalación. Consulte Problema  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-285173["CONTAP-285173: ADP no deja una partición raíz de repuesto en un AFF A150 con 10 o más unidades internas"^].
+
 
 
 == Paso 1: Preparar la instalación

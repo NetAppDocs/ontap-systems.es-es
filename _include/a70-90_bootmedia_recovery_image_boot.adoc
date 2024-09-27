@@ -41,28 +41,5 @@ ONTAP 9.16.0 o anterior
 
 
 
-
-
- a| 
-ONTAP 9.16.1 o posterior
- a| 
-.. En el controlador afectado, pulse _y_ cuando se le solicite restaurar la configuración de copia de seguridad.
-+
-Después de que el procedimiento de restauración se haya realizado correctamente, este mensaje se mostrará en la consola - `syncflash_partner: Restore from partner complete`.
-
-.. En la controladora deteriorada, pulse _y_ cuando se le solicite confirmar si la copia de seguridad de la restauración se realizó correctamente.
-.. En el controlador afectado, pulse _y_ cuando se le solicite utilizar la configuración restaurada.
-.. En el controlador dañado, pulse _y_ cuando se le solicite reiniciar el nodo.
-.. En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.
-.. Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure gestores de claves"].
-.. Conecte el cable de la consola al controlador asociado.
-.. Devuelva la controladora con el comando _storage failover giveback -fromnode local_.
-.. Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
-.. Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.
-+
-*NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
-
-
-
 |===
 
