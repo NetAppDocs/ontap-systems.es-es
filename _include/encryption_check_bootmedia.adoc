@@ -1,0 +1,183 @@
+= Paso 1: Compruebe si su versión de ONTAP admite cifrado
+:allow-uri-read: 
+
+
+Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.
+
+
+
+== Paso 1: Compruebe si su versión de ONTAP admite cifrado
+
+Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.
+
+. Determine si la versión de ONTAP admite el cifrado ejecutando el siguiente comando:
++
+`version -v`
+
++
+Si la salida incluye `1Ono-DARE`, NVE no es compatible con la versión del clúster.
+
+. Según si NVE es compatible con el sistema, realice una de las siguientes acciones:
++
+** Si NVE es compatible, descargue la imagen ONTAP con NetApp Volume Encryption.
+** Si NVE no es compatible, descargue la imagen ONTAP *sin* Cifrado de volumen NetApp.
+
+
+
+
+
+
+== Paso 2: Determine si es seguro apagar el controlador
+
+Para apagar de forma segura una controladora, primero identifique si el gestor de claves incorporado (OKM) o el gestor de claves externo (EKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
+
+. Determine qué gestor de claves está activado en el sistema:
++
+[cols="1a,2a"]
+|===
+| Tipo de gestor de claves | Siga estos pasos... 
+
+
+ a| 
+Gestor de claves externo (EKM)
+ a| 
+Determine si EKM está habilitado en su sistema ejecutando el siguiente comando:
+
+`security key-manager show key store`
+
+Si EKM está activado, `external` aparece en la salida.
+
+
+
+ a| 
+Gestión de claves incorporada (OKM)
+ a| 
+Determine si OKM está activado en el sistema ejecutando uno de los siguientes comandos en función de la versión de ONTAP en la que se esté ejecutando el nodo.
+
+** Para ONTAP 9.14,1 o posterior, introduzca el siguiente comando:
++
+`security key-manager keystore show`
+
++
+Si OKM está activado, `OKM` aparece en la salida del comando.
+
+** Para ONTAP 9.13,1 o anterior, introduzca el siguiente comando:
++
+`security key-manager show-key-store`
+
++
+Si OKM está activado, `onboard` aparece en la salida del comando.
+
+
+
+|===
+. Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su gestor de claves:
++
+`security key-manager key query`
+
+. Compruebe la salida del valor de `Restored` la columna para su gestor de claves.
++
+Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.
+
++
+** Si el valor de la columna Restaurado es TRUE, las claves se restauran correctamente y es seguro continuar con el apagado de la controladora.
+** Si el valor es cualquier otra cosa que no sea true, las claves no se han restaurado, y deberá tomar pasos adicionales (restaurar o sincronizar claves) dependiendo de si está utilizando EKM o OKM.
+
+
+. En función de si está utilizando EKM o OKM, seleccione una de las siguientes opciones y siga los pasos adecuados en función del valor de salida mostrado en la `Restored` columna.
++
+[role="tabbed-block"]
+====
+.EKM
+--
+En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
+
+[cols="1a,2a"]
+|===
+| Valor de salida en `Restored` la columna | Siga estos pasos... 
+
+
+ a| 
+`true`
+ a| 
+Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+ a| 
+Cualquier otra cosa que no sea `true`
+ a| 
+.. Restaure las claves de autenticación de gestión de claves externas en todos los nodos del clúster mediante el siguiente comando:
++
+`security key-manager external restore`
+
++
+Si el comando falla, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
+
+.. Compruebe que `Restored` la columna se muestre `true` para todas las claves de autenticación introduciendo  `_security key-manager key query_`el comando.
++
+Si todas las claves de autenticación son `true`, puede apagar de forma segura el controlador defectuoso. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+|===
+--
+.OKM
+--
+En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
+
+[cols="1a,2a"]
+|===
+| Valor de salida en `Restored` la columna | Siga estos pasos... 
+
+
+ a| 
+`true`
+ a| 
+Realice una copia de seguridad manual de la información de OKM.
+
+.. Vaya al modo avanzado introduciendo `set -priv advanced` y, a continuación, introdúzcalo `Y` cuando se le solicite.
+.. Introduzca el siguiente comando para mostrar la información de gestión de claves:
++
+`security key-manager onboard show-backup`
+
+.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
++
+Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
+
+.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+
+ a| 
+Cualquier otra cosa que no sea `true`
+ a| 
+.. Introduzca el comando SYNC del gestor de claves de seguridad incorporado:
++
+`security key-manager onboard sync`
+
+.. Introduzca los 32 caracteres y la clave de acceso alfanumérica de gestión de claves incorporada cuando se le solicite.
++
+Si no se puede proporcionar la contraseña, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
+
+.. Compruebe que `Restored` se muestra la columna `true` para todas las claves de autenticación:
++
+`security key-manager key query`
+
+.. Compruebe que se muestra el `Key Manager` tipo `onboard`y, a continuación, realice una copia de seguridad manual de la información de OKM.
+.. Introduzca el comando para mostrar la información de backup para la gestión de claves:
++
+`security key-manager onboard show-backup`
+
+.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
++
+Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
+
+.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+|===
+--
+====
+

@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, retirar el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
+Debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema de la parte posterior del sistema, retirar el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
 
 
 
@@ -81,13 +81,13 @@ NOTE: Si el sistema de almacenamiento tiene suministros de alimentación de CC, 
 
 == Paso 2: Transfiera la imagen ONTAP al soporte de arranque
 
-El soporte de arranque de repuesto que instaló no tiene una imagen ONTAP, puede transferir la imagen ONTAP al soporte de arranque de reemplazo descargando la imagen de servicio ONTAP adecuada de https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a una unidad flash USB y, a continuación, al soporte de arranque de reemplazo.
+El medio de arranque de reemplazo que instaló se encuentra sin una imagen ONTAP. Puede transferir la imagen ONTAP al soporte de arranque de reemplazo descargando la imagen de servicio ONTAP adecuada de https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a una unidad flash USB y, a continuación, al soporte de arranque de reemplazo.
 
 .Antes de empezar
 * Debe tener una unidad flash USB vacía, formateada a FAT32, con al menos 4GB GB de capacidad.
-* Debe tener una copia de la misma versión de imagen de ONTAP que se estaba ejecutando la controladora dañada. Puede descargar la imagen adecuada de https://support.netapp.com/downloads["Descargas"] la sección del sitio de soporte de NetApp
+* Descargue una copia de la misma versión de imagen de ONTAP que la que se estaba ejecutando la controladora afectada. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp. Utilice `version -v` el comando para mostrar si su versión de ONTAP es compatible con NVE. Si aparece el resultado del comando `<10no- DARE>` , su versión de ONTAP no admite NVE.
 +
-** Si NVE es compatible, descargue la imagen con NetApp Volume Encryption, tal y como se indica en el botón de descarga.
+** Si NVE es compatible con su versión de ONTAP, descargue la imagen con el cifrado de volúmenes de NetApp, tal y como se indica en el botón de descarga.
 ** Si NVE no es compatible, descargue la imagen sin cifrado de volúmenes NetApp, como se indica en el botón de descarga.
 
 
@@ -103,12 +103,9 @@ El soporte de arranque de repuesto que instaló no tiene una imagen ONTAP, puede
 
 NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
 
-
-
 +
 La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutando el controlador dañado.
 
-+
 .. Extraiga la unidad flash USB del ordenador portátil.
 
 

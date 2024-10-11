@@ -4,76 +4,189 @@ sidebar: sidebar
 keywords: asa r2 a70, asa r2 a90, pre-shutdown checks for onboard encryption keys 
 summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
 ---
-= Compruebe las claves de cifrado integradas: ASA A70 y ASA A90
+= Compruebe la compatibilidad y el estado de la clave de cifrado: ASA A70 y ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que se está ejecutando.
-
-Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.
 
 
 
-== Compruebe NVE o NSE en los sistemas
+== Paso 1: Compruebe si su versión de ONTAP admite cifrado
 
-Antes de apagar la controladora deteriorada, debe verificar si el sistema tiene el administrador de claves de seguridad habilitado o discos cifrados.
+Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.
 
-
-
-== Verifique la configuración del gestor de claves de seguridad
-
-.Pasos
-. Determine si Key Manager está activo con el comando _security key-manager keystore show_. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap-cli/security-key-manager-keystore-show.html["Almacén de claves de seguridad gestor de claves mostrar página DEL COMANDO MAN"^]
+. Determine si la versión de ONTAP admite el cifrado ejecutando el siguiente comando:
 +
-
-NOTE: Es posible que tenga tipos de gestor de claves adicionales. Los tipos son `KMIP` `AKV`, y `GCP`. El proceso de confirmación de estos tipos es el mismo que el de confirmación `external` o `onboard` el de los tipos de gestor de claves.
+`version -v`
 
 +
-** Si no se muestra ninguna salida, vaya a link:bootmedia-shutdown.html["apague el controlador dañado"] para apagar el nodo defectuoso.
-** Si el comando muestra resultados, el sistema tiene `security key-manager` activo y necesita mostrar el `Key Manager` tipo y el estado.
+Si la salida incluye `1Ono-DARE`, NVE no es compatible con la versión del clúster.
 
-
-. Visualice la información de los activos `Key Manager` mediante el comando _security key-manager key query_.
+. Según si NVE es compatible con el sistema, realice una de las siguientes acciones:
 +
-** Si aparece el `Key Manager` tipo `external` y aparece la `Restored` columna `true`, es seguro apagar el controlador defectuoso.
-** Si aparece el `Key Manager` tipo `onboard` y aparece la `Restored` columna `true`, deberá realizar algunos pasos adicionales.
-** Si aparece el `Key Manager` tipo `external` y la `Restored` columna muestra cualquier otra cosa que no sea `true`, deberá realizar algunos pasos adicionales.
-** Si aparece el `Key Manager` tipo `onboard` y la `Restored` columna muestra cualquier otra cosa que no sea `true`, deberá realizar algunos pasos adicionales.
+** Si NVE es compatible, descargue la imagen ONTAP con NetApp Volume Encryption.
+** Si NVE no es compatible, descargue la imagen ONTAP *sin* Cifrado de volumen NetApp.
 
 
-. Si aparece el `Key Manager` tipo `onboard` y aparece la `Restored` columna `true`, realice una copia de seguridad manual de la información de OKM:
+
+
+
+
+== Paso 2: Determine si es seguro apagar el controlador
+
+Para apagar de forma segura una controladora, primero identifique si el gestor de claves incorporado (OKM) o el gestor de claves externo (EKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
+
+. Determine qué gestor de claves está activado en el sistema:
 +
-.. Introduzca `y` cuando se le solicite continuar: `set -priv advanced`
-.. Introduzca el comando para mostrar la información de gestión de claves: _Security key-manager onboard show-backup_
-.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados. Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
-.. Puede apagar el controlador defectuoso de forma segura.
+[cols="1a,2a"]
+|===
+| Tipo de gestor de claves | Siga estos pasos... 
 
 
-. Si aparece el `Key Manager` tipo `onboard` y la `Restored` columna muestra cualquier cosa que no sea `true`:
+ a| 
+Gestor de claves externo (EKM)
+ a| 
+Determine si EKM está habilitado en su sistema ejecutando el siguiente comando:
+
+`security key-manager show key store`
+
+Si EKM está activado, `external` aparece en la salida.
+
+
+
+ a| 
+Gestión de claves incorporada (OKM)
+ a| 
+Determine si OKM está activado en el sistema ejecutando uno de los siguientes comandos en función de la versión de ONTAP en la que se esté ejecutando el nodo.
+
+** Para ONTAP 9.14,1 o posterior, introduzca el siguiente comando:
 +
-.. Introduzca el comando sync del gestor de claves de seguridad incorporado: _Security key-manager onboard sync_
+`security key-manager keystore show`
+
 +
+Si OKM está activado, `OKM` aparece en la salida del comando.
 
-NOTE: Introduzca la clave de acceso 32 caracteres alfanumérica integrada en el símbolo del sistema. Si no se puede proporcionar la contraseña, comuníquese con el soporte de NetApp. http://mysupport.netapp.com/["mysupport.netapp.com"^]
+** Para ONTAP 9.13,1 o anterior, introduzca el siguiente comando:
++
+`security key-manager show-key-store`
 
-.. Compruebe que `Restored` se muestra la columna `true` para todas las claves de autenticación: `security key-manager key query`
++
+Si OKM está activado, `onboard` aparece en la salida del comando.
+
+
+
+|===
+. Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su gestor de claves:
++
+`security key-manager key query`
+
+. Compruebe la salida del valor de `Restored` la columna para su gestor de claves.
++
+Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.
+
++
+** Si el valor de la columna Restaurado es TRUE, las claves se restauran correctamente y es seguro continuar con el apagado de la controladora.
+** Si el valor es cualquier otra cosa que no sea true, las claves no se han restaurado, y deberá tomar pasos adicionales (restaurar o sincronizar claves) dependiendo de si está utilizando EKM o OKM.
+
+
+. En función de si está utilizando EKM o OKM, seleccione una de las siguientes opciones y siga los pasos adecuados en función del valor de salida mostrado en la `Restored` columna.
++
+[role="tabbed-block"]
+====
+.EKM
+--
+En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
+
+[cols="1a,2a"]
+|===
+| Valor de salida en `Restored` la columna | Siga estos pasos... 
+
+
+ a| 
+`true`
+ a| 
+Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+ a| 
+Cualquier otra cosa que no sea `true`
+ a| 
+.. Restaure las claves de autenticación de gestión de claves externas en todos los nodos del clúster mediante el siguiente comando:
++
+`security key-manager external restore`
+
++
+Si el comando falla, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
+
+.. Compruebe que `Restored` la columna se muestre `true` para todas las claves de autenticación introduciendo  `_security key-manager key query_`el comando.
++
+Si todas las claves de autenticación son `true`, puede apagar de forma segura el controlador defectuoso. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+|===
+--
+.OKM
+--
+En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
+
+[cols="1a,2a"]
+|===
+| Valor de salida en `Restored` la columna | Siga estos pasos... 
+
+
+ a| 
+`true`
+ a| 
+Realice una copia de seguridad manual de la información de OKM.
+
+.. Vaya al modo avanzado introduciendo `set -priv advanced` y, a continuación, introdúzcalo `Y` cuando se le solicite.
+.. Introduzca el siguiente comando para mostrar la información de gestión de claves:
++
+`security key-manager onboard show-backup`
+
+.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
++
+Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
+
+.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+
+
+
+ a| 
+Cualquier otra cosa que no sea `true`
+ a| 
+.. Introduzca el comando SYNC del gestor de claves de seguridad incorporado:
++
+`security key-manager onboard sync`
+
+.. Introduzca los 32 caracteres y la clave de acceso alfanumérica de gestión de claves incorporada cuando se le solicite.
++
+Si no se puede proporcionar la contraseña, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
+
+.. Compruebe que `Restored` se muestra la columna `true` para todas las claves de autenticación:
++
+`security key-manager key query`
+
 .. Compruebe que se muestra el `Key Manager` tipo `onboard`y, a continuación, realice una copia de seguridad manual de la información de OKM.
-.. Introduzca el comando para mostrar la información de backup de gestión de claves: _Security key-manager onboard show-backup_
-.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados. Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
-.. Puede apagar el controlador de forma segura.
-
-
-. Si aparece el `Key Manager` tipo `external` y la `Restored` columna muestra cualquier cosa que no sea `true`:
+.. Introduzca el comando para mostrar la información de backup para la gestión de claves:
 +
-.. Restaure las claves de autenticación de gestión de claves externas a todos los nodos del clúster: `security key-manager external restore`
+`security key-manager onboard show-backup`
+
+.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
 +
-Si el comando falla, póngase en contacto con el soporte de NetApp en http://mysupport.netapp.com/["mysupport.netapp.com"^].
+Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
 
-.. Compruebe que la `Restored` columna se muestra `true` para todas las claves de autenticación: _Security key-manager key query_
-.. Puede apagar el controlador defectuoso de forma segura.
+.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
 
 
+|===
+--
+====
 

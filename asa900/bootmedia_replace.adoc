@@ -11,7 +11,7 @@ summary: Debe quitar y abrir el módulo de la controladora, localizar y sustitui
 
 
 [role="lead"]
-Debe quitar y abrir el módulo de la controladora, localizar y sustituir los medios de arranque en la controladora y, a continuación, transferir la imagen al medio de arranque de reemplazo.
+Debe desconectar el módulo del controlador, extraer y abrir el módulo del controlador, localizar y sustituir el soporte de arranque en el controlador y, a continuación, transferir la imagen al soporte de arranque de reemplazo.
 
 
 
@@ -122,16 +122,29 @@ Puede instalar la imagen del sistema en el soporte de arranque de repuesto media
 
 .Antes de empezar
 * Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
-* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
+* Descargue una copia de la misma versión de imagen de ONTAP que la que se estaba ejecutando la controladora afectada. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp. Utilice `version -v` el comando para mostrar si su versión de ONTAP es compatible con NVE. Si aparece el resultado del comando `<10no- DARE>` , su versión de ONTAP no admite NVE.
 +
-** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
-** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
+** Si NVE es compatible con su versión de ONTAP, descargue la imagen con el cifrado de volúmenes de NetApp, tal y como se indica en el botón de descarga.
+** Si NVE no es compatible, descargue la imagen sin cifrado de volúmenes NetApp, como se indica en el botón de descarga.
 
 
 * Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
 
 
 .Pasos
+. Si no lo ha hecho, descargue y copie la imagen de servicio correspondiente desde el https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a la unidad flash USB.
++
+.. Descargue la imagen del servicio desde el enlace Descargas de la página, en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutando el controlador dañado.
+
+
+
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 . Recuperar el módulo del controlador, según sea necesario.
 . Inserte la unidad flash USB en la ranura USB del módulo de controlador.

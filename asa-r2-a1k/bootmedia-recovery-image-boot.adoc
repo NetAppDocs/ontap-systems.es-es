@@ -32,11 +32,11 @@ ONTAP 9.16.0 o anterior
 .. En el controlador defectuoso, pulse _Y_ cuando vea `Do you want to restore the backup configuration now?`
 .. En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba `/etc/ssh/ssh_host_ecdsa_key`.
 .. En el controlador asociado en buen estado, establezca el controlador deficiente en el nivel de privilegio avanzado: _Set -privilege advanced_.
-.. En la controladora asociada en buen estado, ejecute el comando restore backup: _System node restore-backup -node local -target-address impaired_node_ip_address_.
+.. En la controladora asociada en buen estado, ejecute el comando restore backup `system node restore-backup -node local -target-address impaired_node_IP_address`: .
 +
 *NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
-.. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administrador: _Set -privilege admin_.
+.. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administración `set -privilege admin`: .
 .. En el controlador afectado, pulse _y_ cuando vea `Was the restore backup procedure successful?`.
 .. En el controlador afectado, pulse _y_ cuando vea `...would you like to use this restored copy now?`.
 .. En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.

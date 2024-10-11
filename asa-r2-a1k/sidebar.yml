@@ -5,52 +5,52 @@ pdf-filename: Mantenimiento de ASA A1K
 entries:
 - title: Información general de mantenimiento
   url: "/asa-r2-a1k/maintain-overview.html"
-- title: Soporte de arranque
+- title: 'Soporte de arranque: Recuperación automatizada'
   pdf-filename: Soporte de arranque de ASA A1K
   entries:
   - title: Descripción general del soporte de arranque
+    url: "/asa-r2-a1k/bootmedia-overview-bmr.html"
+  - title: Flujo de trabajo de sustitución de medios de arranque
+    url: "/asa-r2-a1k/bootmedia-replace-workflow-bmr.html"
+  - title: Revise los requisitos
+    url: "/asa-r2-a1k/bootmedia-replace-requirements-bmr.html"
+  - title: Apague el controlador dañado
+    url: "/asa-r2-a1k/bootmedia-shutdown-bmr.html"
+  - title: Sustituir el soporte de arranque
+    url: "/asa-r2-a1k/bootmedia-replace-bmr.html"
+  - title: Restaurar imagen en soporte de arranque
+    url: "/asa-r2-a1k/bootmedia-recovery-image-boot-bmr.html"
+  - title: Devolución de pieza fallida a NetApp
+    url: "/asa-r2-a1k/bootmedia-complete-rma-bmr.html"
+- title: 'Soporte de arranque: Recuperación manual'
+  entries:
+  - title: Descripción general del soporte de arranque
     url: "/asa-r2-a1k/bootmedia-overview.html"
-  - title: Método automatizado
-    entries:
-    - title: Flujo de trabajo de sustitución de medios de arranque
-      url: "/asa-r2-a1k/bootmedia-replace-workflow-bmr.html"
-    - title: Revise los requisitos
-      url: "/asa-r2-a1k/bootmedia-replace-requirements-bmr.html"
-    - title: Apague el controlador dañado
-      url: "/asa-r2-a1k/bootmedia-shutdown-bmr.html"
-    - title: Sustituir el soporte de arranque
-      url: "/asa-r2-a1k/bootmedia-replace-bmr.html"
-    - title: Restaurar imagen en soporte de arranque
-      url: "/asa-r2-a1k/bootmedia-recovery-image-boot-bmr.html"
-    - title: Devolución de pieza fallida a NetApp
-      url: "/asa-r2-a1k/bootmedia-complete-rma-bmr.html"
-  - title: Método manual
-    entries:
-    - title: Flujo de trabajo de sustitución de medios de arranque
-      url: "/asa-r2-a1k/bootmedia-replace-workflow.html"
-    - title: Revise los requisitos
-      url: "/asa-r2-a1k/bootmedia-replace-requirements.html"
-    - title: Compruebe las claves de cifrado incorporadas
-      url: "/asa-r2-a1k/bootmedia-encryption-preshutdown-checks.html"
-    - title: Apague el controlador dañado
-      url: "/asa-r2-a1k/bootmedia-shutdown.html"
-    - title: Sustituir el soporte de arranque
-      url: "/asa-r2-a1k/bootmedia-replace.html"
-    - title: Imagen de recuperación de arranque
-      url: "/asa-r2-a1k/bootmedia-recovery-image-boot.html"
-    - title: Restaure el cifrado
-      url: "/asa-r2-a1k/bootmedia-encryption-restore.html"
-    - title: Devolución de pieza fallida a NetApp
-      url: "/asa-r2-a1k/bootmedia-complete-rma.html"
+  - title: Flujo de trabajo de sustitución de medios de arranque
+    url: "/asa-r2-a1k/bootmedia-replace-workflow.html"
+  - title: Revise los requisitos
+    url: "/asa-r2-a1k/bootmedia-replace-requirements.html"
+  - title: Compruebe las claves de cifrado
+    url: "/asa-r2-a1k/bootmedia-encryption-preshutdown-checks.html"
+  - title: Apague el controlador dañado
+    url: "/asa-r2-a1k/bootmedia-shutdown.html"
+  - title: Sustituir el soporte de arranque
+    url: "/asa-r2-a1k/bootmedia-replace.html"
+  - title: Imagen de recuperación de arranque
+    url: "/asa-r2-a1k/bootmedia-recovery-image-boot.html"
+  - title: Restaure el cifrado
+    url: "/asa-r2-a1k/bootmedia-encryption-restore.html"
+  - title: Devolución de pieza fallida a NetApp
+    url: "/asa-r2-a1k/bootmedia-complete-rma.html"
 - title: Controladora
-  pdf-filename: Módulo de controlador ASA A1K
+  pdf-filename: Controladora ASA A1K
   entries:
   - title: Flujo de trabajo de sustitución de controladoras
     url: "/asa-r2-a1k/controller-replace-workflow.html"
   - title: Revise los requisitos
     url: "/asa-r2-a1k/controller-replace-requirements.html"
   - title: Apague el controlador dañado
-    url: "/asa-r2-a1k/controller-replace-shutdown-asa-r2.html"
+    url: "/asa-r2-a1k/controller-replace-shutdown-nomcc.html"
   - title: Sustituya la controladora
     url: "/asa-r2-a1k/controller-replace-move-hardware.html"
   - title: Restaure la configuración del sistema
@@ -68,6 +68,7 @@ entries:
 - title: Batería NV
   url: "/asa-r2-a1k/nvdimm-battery-replace.html"
 - title: Módulo de I/O.
+  pdf-filename: Módulo de I/O ASA A1K
   entries:
   - title: Descripción general del módulo I/O.
     url: "/asa-r2-a1k/io-module-overview.html"

@@ -13,10 +13,11 @@ Necesita la siguiente información al restaurar la configuración de OKM:
 
 
 .Pasos
-. En el menú de arranque de ONTAP, seleccione la opción 10:
+. En el menú de arranque ONTAP, seleccione la opción apropiada:
 +
-[listing]
-----
+** Para ONTAP 9.8 y posterior, seleccione la opción 10:
++
+....
 
 Please choose one of the following:
 
@@ -33,9 +34,29 @@ Please choose one of the following:
 (11) Configure node for external key management.
 Selection (1-11)? 10
 
-----
+....
+** Para ONTAP 9, 7 y anteriores, introduzca el comando Oculto option `recover_onboard_keymanager`.
++
+....
+
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+Selection (1-19)? recover_onboard_keymanager
+
+....
+
+
 . Confirme la continuación del proceso.
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n):` _y_
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): `y`
 . Introduzca dos veces la clave de acceso para todo el clúster.
 +
 
@@ -52,8 +73,7 @@ NOTE: Al introducir la frase de acceso, la consola no mostrará ninguna entrada.
 Pulse la tecla ENTER dos veces al final de la entrada.
 
 +
-[listing]
-----
+....
 
 
 Enter the backup data:
@@ -91,11 +111,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 ---------------------------END BACKUP---------------------------
 
-----
+....
 . Se completará el proceso de recuperación.
 +
-[listing]
-----
+....
 
 Trying to recover keymanager secrets....
 Setting recovery material for the onboard key manager
@@ -110,15 +129,14 @@ Successfully recovered keymanager secrets.
 * Run the "security key-manager onboard sync" command to synchronize the key database after the node reboots.
 ***********************************************************************************
 
-----
+....
 +
 
 WARNING: No continúe si la salida mostrada es otra cosa que `Successfully recovered keymanager secrets`. Realice la solución de problemas para corregir el error.
 
 . Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
 +
-[listing]
-----
+....
 
 ***********************************************************************************
 * Select option "(1) Normal Boot." to complete the recovery process.
@@ -139,21 +157,24 @@ WARNING: No continúe si la salida mostrada es otra cosa que `Successfully recov
 (11) Configure node for external key management.
 Selection (1-11)? 1
 
-----
+....
 . Confirme que se muestre la consola de la controladora `Waiting for giveback...(Press Ctrl-C to abort wait)`
-. Desde el nodo del partner, devolver la controladora asociada: _Storage failover giveback -fromnode local -only-cfo-aggregates true_
-. Una vez iniciado solo con CFO aggregate, ejecute el comando _security key-manager onboard sync​​​​​​​_:
-. Introduzca la clave de acceso para todo el clúster de Onboard Key Manager:
+. Desde el nodo asociado, devolver la controladora asociada: `storage failover giveback -fromnode local -only-cfo-aggregates true`.
+. Una vez iniciado solo con CFO Aggregate, ejecute el comando _security key-manager onboard sync​​​​​​​_.
+. Introduzca la clave de acceso en todo el clúster para la instancia de Onboard Key Manager.
 +
-[listing]
-----
+....
 
 Enter the cluster-wide passphrase for the Onboard Key Manager:
 
 All offline encrypted volumes will be brought online and the corresponding volume encryption keys (VEKs) will be restored automatically within 10 minutes. If any offline encrypted volumes are not brought online automatically, they can be brought online manually using the "volume online -vserver <vserver> -volume <volume_name>" command.
 
-----
-. Asegúrese de que todas las claves estén sincronizadas: _Security key-manager key query -restored false_
+....
++
+
+NOTE: Si la sincronización se realiza correctamente, se devuelve el símbolo del sistema de clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.
+
+. Asegúrese de que todas las claves están sincronizadas `security key-manager key query -restored false`: .
 +
 `There are no entries matching your query.`
 
@@ -161,5 +182,5 @@ All offline encrypted volumes will be brought online and the corresponding volum
 
 NOTE: No deberían aparecer resultados al filtrar por false en el parámetro restaurado.
 
-. Devolución del nodo del partner: _Storage failover giveback -fromnode local_
+. Devolución del nodo del partner: `storage failover giveback -fromnode local`
 

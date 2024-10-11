@@ -13,7 +13,7 @@ summary: 'El soporte de arranque almacena un conjunto principal y secundario de 
 [role="lead"]
 El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.
 
-Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz`.
+Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.
 
 También debe copiar el `image_xxx.tgz` Archivo a la unidad flash USB para su uso posterior en este procedimiento.
 
@@ -23,7 +23,7 @@ También debe copiar el `image_xxx.tgz` Archivo a la unidad flash USB para su us
 ** Para el reemplazo disruptivo, no es necesaria una conexión de red para restaurar el `var` el sistema de archivos, pero el proceso requiere dos reinicios.
 
 
-* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir el componente con errores por un componente de FRU de reemplazo que haya recibido de NetApp.
 * Es importante que aplique los comandos en estos pasos en la controladora correcta:
 +
 ** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
