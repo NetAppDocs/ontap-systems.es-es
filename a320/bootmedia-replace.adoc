@@ -112,6 +112,10 @@ Hay dos carpetas en el archivo de imagen del servicio descomprimido:
 
 ... Copie la carpeta efi en el directorio superior de la unidad flash USB.
 +
+
+NOTE: Si la imagen de servicio no tiene carpeta efi, consulte link:https://kb.netapp.com/onprem/ontap/hardware/EFI_folder_missing_from_Service_Image_download_file_used_for_boot_device_recovery_for_FAS_and_AFF_models["Falta la carpeta EFI del archivo de descarga de la imagen de servicio utilizada para la recuperación del dispositivo de arranque para los modelos FAS y AFF^"].
+
++
 La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
 
 ... Extraiga la unidad flash USB del ordenador portátil.

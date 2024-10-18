@@ -2,25 +2,29 @@
 :allow-uri-read: 
 
 
-Restaure la configuración del gestor de claves externo desde el menú de arranque de ONATP.
+Restaure la configuración del gestor de claves externo desde el menú de inicio de ONATP.
 
 .Antes de empezar
 Necesitará la siguiente información para restaurar la configuración del gestor de claves externo (EKM):
 
-* Una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o la siguiente información:
+* Una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o de la siguiente información:
 +
 ** La dirección del servidor KMIP.
 ** El puerto KMIP.
 ** Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.
-** Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo del clúster o la clave de cliente.
+** Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo de clúster o la clave de cliente.
 ** Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.
 
 
 
 
 .Pasos
+. Conecte el cable de consola a la controladora de destino.
 . Seleccione la opción 11 en el menú de inicio de ONTAP.
 +
+.Mostrar ejemplo de menú de inicio
+[%collapsible]
+====
 ....
 
 (1)  Normal Boot.
@@ -35,38 +39,47 @@ Necesitará la siguiente información para restaurar la configuración del gesto
 (10) Set Onboard Key Manager recovery secrets.
 (11) Configure node for external key management.
 Selection (1-11)? 11
-
 ....
-. Cuando se le solicite, confirme que ha recopilado la información necesaria:
+====
+. Cuando se le solicite, confirme que ha recopilado la información obligatoria.
 +
-.. `Do you have a copy of the /cfcard/kmip/certs/client.crt file? {y/n}` _y_
-.. `Do you have a copy of the /cfcard/kmip/certs/client.key file? {y/n}` _y_
-.. `Do you have a copy of the /cfcard/kmip/certs/CA.pem file? {y/n}` _y_
-.. `Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}` _y_
-+
-En su lugar, también puede realizar estas indicaciones:
-
-.. `Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}` _n_
-+
-... `Do you know the KMIP server address? {y/n}` _y_
-... `Do you know the KMIP Port? {y/n}` _y_
-
-
-
-
-. Proporcione la información para cada una de estas peticiones de datos:
-+
-.. _Introduzca el contenido del archivo del certificado de cliente (client.crt):_
-.. _Introduzca el contenido del archivo de clave de cliente (client.key):_
-.. _Introduzca el contenido del archivo CA(s) del servidor KMIP (CA.pem):_
-.. _Introduzca el contenido del archivo de configuración del servidor (servers.cfg):_
-
-
-+
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
+====
 ....
-
-Example
-
+Do you have a copy of the /cfcard/kmip/certs/client.crt file? {y/n}
+Do you have a copy of the /cfcard/kmip/certs/client.key file? {y/n}
+Do you have a copy of the /cfcard/kmip/certs/CA.pem file? {y/n}
+Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}
+....
+====
++
+.Puede que vea estas indicaciones en su lugar
+[%collapsible]
+====
+....
+Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}
+Do you know the KMIP server address? {y/n}
+Do you know the KMIP Port? {y/n}
+....
+====
+. Cuando se le solicite, introduzca la información del cliente y del servidor.
++
+.Mostrar petición de datos
+[%collapsible]
+====
+....
+Enter the client certificate (client.crt) file contents:
+Enter the client key (client.key) file contents:
+Enter the KMIP server CA(s) (CA.pem) file contents:
+Enter the server configuration (servers.cfg) file contents:
+....
+====
++
+.Muestra el ejemplo
+[%collapsible]
+====
+....
 Enter the client certificate (client.crt) file contents:
 -----BEGIN CERTIFICATE-----
 MIIDvjCCAqagAwIBAgICN3gwDQYJKoZIhvcNAQELBQAwgY8xCzAJBgNVBAYTAlVT
@@ -99,10 +112,16 @@ Running command '/sbin/ifconfig e0M'
 ..
 ..
 kmip_init: cmd: ReleaseExtraBSDPort e0M
-​​​​​​
+​​​​....
+
+
 ....
-. El proceso de recuperación se completará:
+====
+. El proceso de recuperación finaliza.
 +
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
+====
 ....
 
 
@@ -112,9 +131,8 @@ Trying to recover keys from key servers....
 Successfully recovered keymanager secrets.
 
 ....
-. Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
-
-
+.. Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
++
 ....
 
 ***********************************************************************************
@@ -137,3 +155,15 @@ Successfully recovered keymanager secrets.
 Selection (1-11)? 1
 
 ....
+
+
+====
+. Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando:
++
+`storage failover modify -node local -auto-giveback true` comando.
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+

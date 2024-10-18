@@ -5055,7 +5055,6 @@
   <block id="759e216c6a22313a95c34c198ce8cb0b" category="summary">Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque.</block>
   <block id="34cf3a43d39d8b0acc65bd578d7188da" category="doc">Reemplace el soporte de arranque - AFF A800</block>
   <block id="b075a4576b5250274446097769fe8ec1" category="list-text">Instale el soporte de arranque de repuesto en el módulo del controlador:</block>
-  <block id="cece3275192f19a99192545e91b78506" category="list-text">Copie la carpeta efi en el directorio superior de la unidad flash USB. + la unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que está ejecutando el controlador dañado.</block>
   <block id="12abc0287f5162e3fd98e6515d1cc063" category="doc">Recuperar el sistema y reasignar discos - AFF A800</block>
   <block id="865bb86499cf1ad3a70c7ff888673760" category="doc">Apague el controlador dañado: AFF A800</block>
   <block id="842e14e3a23f8c1d39234a2a722507d3" category="list-text">Si la devolución automática está desactivada, vuelva a habilitarla:<block ref="3086be9a978819023381e21ccd535a21" prefix=" " category="inline-code"></block></block>
@@ -8615,7 +8614,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e1e5cf3c178b5500c9ca99734851f088" category="list-text">Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.</block>
   <block id="2e642e4a5011ff5ac26769f55b9fb111" category="list-text">Conecte los cables de alimentación en las fuentes de alimentación.</block>
   <block id="73bf3c5901e8959909093f245da79b5c" category="admonition">Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.</block>
-  <block id="7cb60d31286d9a356a9f1d81c01d5d76" category="paragraph">El módulo del controlador arranca cuando se restaura la alimentación. Si arranca en el aviso del CARGADOR, reinicie la controladora con<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> el comando.</block>
   <block id="c90c2ae11fe917d8b5a1debf0e0a1a26" category="list-text">*Este procedimiento es disruptivo.* En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.</block>
   <block id="7ae4c88c0c1f1ed7c8b6a312fdab75ab" category="paragraph">Para sustituir la controladora, debe extraer la controladora dañada, mover los componentes FRU del módulo de controladora dañado al módulo de controladora de repuesto, instalar el módulo de controladora de repuesto en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.</block>
   <block id="2fb967de668a2d809970dd0ee11a24ab" category="paragraph">Mueva los suministros de alimentación a la controladora de reemplazo.</block>
@@ -8779,8 +8777,6 @@ SFP+ (destino/iniciador)</block>
   <block id="9cdea9bbd0e16c22fc991522b7972ed5" category="paragraph">Debe completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio de este procedimiento.</block>
   <block id="7b2bdafe064028eef5977d05150f12ac" category="admonition">Si se habilitan NSE o NVE junto con el gestor de claves incorporado o externo, debe restaurar la configuración capturada al principio de este procedimiento.</block>
   <block id="63a4de1bcedff077618555275f624f08" category="open-title">Opción 1: Sistemas con configuración del servidor de gestión de claves incorporada</block>
-  <block id="da8f6d618f55e4068dea90bc98f1254e" category="paragraph">Restaure la configuración del gestor de claves incorporado desde el menú de arranque de ONATP.</block>
-  <block id="89cb88c9bc1bb6b7dcae6435585c0324" category="paragraph">Necesita la siguiente información al restaurar la configuración de OKM:</block>
   <block id="7000494e61efaf925f6df5293a176456" category="inline-link">al tiempo que habilita la gestión de claves incorporada</block>
   <block id="da204d9262b182aa6636ef0f759e2181" category="list-text">Se ha introducido la clave de acceso para todo el clúster<block ref="45fc92ed2fd28afadf25f8be26cb5500" category="inline-link-rx"></block>.</block>
   <block id="f295be867ed42957086669bda6d018d8" category="inline-link">Información de backup del gestor de claves incorporado</block>
@@ -8791,47 +8787,15 @@ SFP+ (destino/iniciador)</block>
   <block id="f9bffba0a703b49e4849f916f5e0b86a" category="admonition">Al introducir la frase de acceso, la consola no mostrará ninguna entrada.</block>
   <block id="13919b42be0dc9d06cf38142917f4b9e" category="paragraph"><block ref="2b673e138bf62e9f201d2fe3f4e48e85" prefix="" category="inline-code"></block></block>
   <block id="0784a1581386529d37ed702d7c0c6404" category="paragraph"><block ref="7c93709ee00a5bf88772022db8bfa591" prefix="" category="inline-code"></block></block>
-  <block id="de5132c93b5d93a59d85652f38a4c1be" category="list-text">Introduzca la información de backup. Pegue todo el contenido desde la línea de COPIA DE SEGURIDAD DE INICIO hasta la línea de COPIA DE SEGURIDAD FINAL.</block>
   <block id="23f31e8486de5b0c9919cdb1d6f7bb1f" category="paragraph">Pulse la tecla ENTER dos veces al final de la entrada.</block>
-  <block id="17f4c7292b19bfcfe3d4c928df22bc3c" category="list-text">Se completará el proceso de recuperación.</block>
   <block id="25a669068aaab50a7c2fd5bce904c674" category="admonition">No continúe si la salida mostrada es otra cosa que<block ref="3f52dc951949a3041638d54635d71099" prefix=" " category="inline-code"></block>. Realice la solución de problemas para corregir el error.</block>
   <block id="4ca210717c7b74a5849140e091b8b172" category="list-text">Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.</block>
-  <block id="de52f5c2d18fad1d9bb02f99ec8dadf5" category="list-text">Confirme que se muestre la consola de la controladora<block ref="22714968f3c097ea3249c9d4b9e8119f" prefix=" " category="inline-code"></block></block>
   <block id="36127ab42d959b7fd1802bde97fbbebd" category="paragraph"><block ref="ff552bb89260932a935c259f2e059d29" prefix="" category="inline-code"></block></block>
   <block id="1a397feeabbac5c761b3d1f336523079" category="admonition">No deberían aparecer resultados al filtrar por false en el parámetro restaurado.</block>
-  <block id="612c478fd861d23534a26dd856605b43" category="open-title">Opción 2: Sistemas con configuración de servidor de gestor de claves externo</block>
-  <block id="179622516286b14a2256b085ee45c10a" category="paragraph">Restaure la configuración del gestor de claves externo desde el menú de arranque de ONATP.</block>
   <block id="075c44463f07a0ee059a3e5089c43ca5" category="paragraph">Necesitará la siguiente información para restaurar la configuración del gestor de claves externo (EKM):</block>
   <block id="d60b517023845eb33535660ac501cf18" category="list-text">La dirección del servidor KMIP.</block>
   <block id="70b8d21a07e70130ed6b262a91c18626" category="list-text">El puerto KMIP.</block>
-  <block id="08abc77c04d9685a10837fbb9135a705" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.</block>
-  <block id="db1b600b813d1f6f50a04eba824c70ab" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo del clúster o la clave de cliente.</block>
-  <block id="dbf0b245d6b63885207c70d983243a7b" category="list-text">Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.</block>
   <block id="e43680b19a57600cbf0bc788265754c7" category="list-text">Seleccione la opción 11 en el menú de inicio de ONTAP.</block>
-  <block id="a2a02d01ac6ca6a677201d0767b02f34" category="list-text">Cuando se le solicite, confirme que ha recopilado la información necesaria:</block>
-  <block id="91edae04cf5f805055ec3dac6c3b7f8c" category="list-text"><block ref="b19458ff12859c393f2fd46d02cb24d4" prefix="" category="inline-code"></block> _y_</block>
-  <block id="635db4ba4393f4aa6637dd02dc8cabae" category="list-text"><block ref="05ac7348459861360c86dc5851e1ab0b" prefix="" category="inline-code"></block> _y_</block>
-  <block id="1ea0f8ccc55c1aaa4b40e778eca7d203" category="list-text"><block ref="0daafd01a5c78aa4cf52e57febc9c7d9" prefix="" category="inline-code"></block> _y_</block>
-  <block id="7edfa6272c16cc3e1b7ef52bbf985294" category="list-text"><block ref="05f6b998dcdacf2a7e5882ef776dfa8e" prefix="" category="inline-code"></block> _y_</block>
-  <block id="66b0e02903c6c36ff4685952e8a46ec1" category="paragraph">En su lugar, también puede realizar estas indicaciones:</block>
-  <block id="db7e8e2b0c1ff16e7d69c69fa0d6a061" category="list-text"><block ref="05f6b998dcdacf2a7e5882ef776dfa8e" prefix="" category="inline-code"></block> _n_</block>
-  <block id="ca2e8c6e7a166833a27d9755f814672b" category="list-text"><block ref="9254f5a10bf0e4d18aa18a91a9321bea" prefix="" category="inline-code"></block> _y_</block>
-  <block id="d0d46e5c203e3a92bef26e001a5e623d" category="list-text"><block ref="616aa2e195f429a92684489246e90f34" prefix="" category="inline-code"></block> _y_</block>
-  <block id="83b207edf8a800f4f88cf102b88cf241" category="list-text">Proporcione la información para cada una de estas peticiones de datos:</block>
-  <block id="a242b56bad1d07089dce8ccb795966f2" category="list-text">El proceso de recuperación se completará:</block>
-  <block id="3bac3ae452491bc05a59b99b3d2476d6" category="paragraph">Vaya al paso 6.</block>
-  <block id="070dd7606e33a466d7a8bb82a9a64b17" category="list-text">Confirme que la controladora de destino está lista para la devolución con el comando _storage failover show_.</block>
-  <block id="378fa36f6e90b3bf6ddbb070e35b0388" category="list-text">Mueva el cable de consola a la controladora asociada y devuelva el almacenamiento de la controladora de destino mediante el comando _storage failover giveback -fromnode local -only-cfo-aggregates true_.</block>
-  <block id="bd7b047ae429d755acf6b20e1064e5ce" category="list-text">Si el comando falla porque el partner no está listo, espere 5 minutos hasta que el subsistema HA se sincronice entre los partners.</block>
-  <block id="1bcf977583274fe2567618999a9b0c90" category="list-text">Espere 3 minutos y compruebe el estado de la conmutación por error con el comando _storage failover show_.</block>
-  <block id="d92dd32085afaf328cc7fcda13198cc8" category="list-text">En el símbolo del sistema de clustershell, introduzca el comando _network interface show -is-home false_ para mostrar las interfaces lógicas que no están en su controlador principal y su puerto.</block>
-  <block id="e396be98bc8257ac03b57843c10e38b9" category="paragraph">Si alguna interfaz se muestra<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>como , revierta esas interfaces de nuevo a su puerto raíz mediante el comando _net int revert -vserver Cluster -lif _nodename_.</block>
-  <block id="62de7d9b4c53e76eb0aa2abbb0821ccd" category="list-text">Mueva el cable de la consola al controlador de destino y ejecute el comando _version -v_ para comprobar las versiones de ONTAP.</block>
-  <block id="63d74ff14d34f13a62e8eb172d26a62f" category="list-text">Utilice el<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block> para revisar la salida.</block>
-  <block id="d9432d5d4d3a21bdc03aa318c2cfdb11" category="list-text">Utilice el comando _security key-manager key query_ para mostrar los identificadores de claves de las claves de autenticación almacenadas en los servidores de gestión de claves.</block>
-  <block id="8064cac27c9219c213e029af9a5800db" category="list-text">Si<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, utilice el comando _security key-manager external restore_ para restaurar los ID de clave de las claves de autenticación.</block>
-  <block id="8b6a11a09054c203c222c056a501059f" category="list-text">Si<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, utilice el comando _security key-manager onboard sync_ para sincronizar las claves integradas que faltan en el nodo reparado.</block>
-  <block id="27b0a5d00d58f515ceda3d56b392bdf7" category="paragraph">Utilice el comando _security key-manager key query_ para verificar que la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
   <block id="4f95ab1472771ae8e2475d26cfccfefd" category="paragraph">El siguiente mensaje AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*&gt; system node AutoSupport invoke -node * -type all -message MAINT=2h</block>
   <block id="46bbc90a4740f73d85b026da0e0ba4db" category="list-text">Deshabilite la devolución automática de la controladora en buen estado:</block>
   <block id="b719e721c62569ed8b97aaf7ac03691a" category="paragraph">Switch de interconexión de varios clústeres</block>
@@ -9238,7 +9202,6 @@ SFP+ (destino/iniciador)</block>
   <block id="3e6277588162255770fd3384bad09d6d" category="list-text">En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.</block>
   <block id="9daabece8db7521a7882f63ebd76a891" category="image-alt">Retire una unidad con el botón de liberación en la parte superior</block>
   <block id="e0bc24820711c466532ba2cb67ababd9" category="image-alt">Retire una unidad con el botón de liberación en el centro</block>
-  <block id="5be3be4e3c78f5ba4233a70fab6255f9" category="paragraph">Complete el proceso de sustitución de medios de arranque después del arranque normal realizando las comprobaciones finales y devolviendo almacenamiento.</block>
   <block id="38821947dff053760f4c97b648ca454a" category="admonition">No enchufe los cables de alimentación todavía.</block>
   <block id="b0dc4e3ef222885899ea12125b17e5eb" category="list-text">Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.</block>
   <block id="a620e4025016adf1d0a58233ca0fabf5" category="image-alt">Retire o sustituya la batería del RTC</block>
@@ -9620,7 +9583,6 @@ SFP+ (destino/iniciador)</block>
   <block id="d6b5f802b07df1179c13649ed53524f0" category="paragraph">Verá lo siguiente cuando se complete el proceso de recuperación:</block>
   <block id="c6980bbd79483c6809cc84795b7d14d6" category="paragraph">Cuando se completa la restauración, el nodo se reinicia para completar el proceso.</block>
   <block id="0afa9147e7fde537954ecea742d84625" category="list-text">Seleccione una de las siguientes opciones para restaurar la configuración del administrador de claves incorporado desde el menú de arranque ONATP.</block>
-  <block id="1f816c392c5ee466677e2fd2587ce8a1" category="section-title">Paso 2: Complete la sustitución del soporte de arranque</block>
   <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="doc">Paso 1: Conecte las controladoras de almacenamiento a la red</block>
   <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">Si se conecta a un switch óptico, inserte el transceptor de factor de forma pequeño conectable (SFP) en el puerto de la controladora antes de cablear al puerto.</block>
   <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">Conecte las controladoras directamente entre sí y a su red host.</block>
@@ -9670,7 +9632,6 @@ SFP+ (destino/iniciador)</block>
   <block id="871681e86e80556b261166721e0bbe3b" category="list-text">Fije la bandeja de almacenamiento al armario o al rack Telco con los tornillos de montaje incluidos.</block>
   <block id="c5eaaf4a6fa532356e5d0189384e0e34" category="list-text">Conecte los dispositivos de gestión de cables a la parte posterior del sistema de almacenamiento.</block>
   <block id="36eaeecf3fe5d82e498290c50c773db1" category="list-text">Conecte el panel frontal a la parte frontal del sistema de almacenamiento.</block>
-  <block id="c239b345dc160b2bfc0fb8247acc17eb" category="paragraph">Cada bandeja NS224 se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento. De manera predeterminada, los ID de bandeja se asignan como «00» y «01», pero es posible que deba ajustar estos ID para mantener la singularidad en todo su sistema de almacenamiento.</block>
   <block id="f044e75ec5037aabefb204d1365ba96b" category="image-alt">Cambie el ID de bandeja NS224</block>
   <block id="d8147b4a0f272144c59f006b412b8290" category="image-alt">[Número de referencia 2</block>
   <block id="8c5529e435c4992332c3afef54410f4e" category="image-alt">[Número de referencia 3</block>
@@ -10375,7 +10336,6 @@ SFP+ (destino/iniciador)</block>
   <block id="5bfc9396e31ecaf44561c35f76ab21a6" category="list-text">Debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en un estado habilitado y normal <block ref="4d06f3844212ac745a73965bbb3f6e51" prefix="(" category="inline-code"></block>).</block>
   <block id="b53660f761dc53e7b68aefd5edbbae44" category="paragraph">Vaya a la siguiente sección.</block>
   <block id="cb469b95641c1382be009038b04e5158" category="paragraph">Debe conectar el módulo del controlador, extraer el módulo de gestión del sistema de la parte posterior del sistema, extraer el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.</block>
-  <block id="ffffd77faa91cb4a767b88905267cf2b" category="doc">Paso 1: Compruebe si su versión de ONTAP admite cifrado</block>
   <block id="ef265e1108b8991c7b12209078d6123e" category="paragraph">Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.</block>
   <block id="fdb2cbe8b1e451ff001e9714b834c459" category="paragraph">Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.</block>
   <block id="1c09443221312bdba5a22ddbba4f768f" category="list-text">Determine si la versión de ONTAP admite el cifrado ejecutando el siguiente comando:</block>
@@ -10385,27 +10345,14 @@ SFP+ (destino/iniciador)</block>
   <block id="d8b3ebaef14f15ddadd58f8788097867" category="list-text">Si NVE es compatible, descargue la imagen ONTAP con NetApp Volume Encryption.</block>
   <block id="723417ff6efb8e61349dd2d6b90d0898" category="list-text">Si NVE no es compatible, descargue la imagen ONTAP *sin* Cifrado de volumen NetApp.</block>
   <block id="6bd78f9c7732510cf857d49ceb4bd776" category="section-title">Paso 2: Determine si es seguro apagar el controlador</block>
-  <block id="bdaa0edeb07bd0ecc38e28982c4df8d7" category="paragraph">Para apagar de forma segura una controladora, primero identifique si el gestor de claves incorporado (OKM) o el gestor de claves externo (EKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.</block>
   <block id="30f7cbebdfdaa0338bc99a69c5ef0e38" category="list-text">Determine qué gestor de claves está activado en el sistema:</block>
-  <block id="aac34f614f4514a3f670bae971a30369" category="cell">Tipo de gestor de claves</block>
-  <block id="a36a9da82fdc17311ba2d5d847082cce" category="paragraph">Determine si EKM está habilitado en su sistema ejecutando el siguiente comando:</block>
-  <block id="c62c99e83e1c9d2a44da11eaa2e0b14a" category="paragraph"><block ref="0565c41723caaa37b0079906ad365846" prefix="" category="inline-code"></block></block>
-  <block id="89add348f9d444253c70c9efcfa0b483" category="paragraph">Si EKM está activado,<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> aparece en la salida.</block>
-  <block id="518b09108bfe2ee41d9afdf44e6a6e45" category="paragraph">Determine si OKM está activado en el sistema ejecutando uno de los siguientes comandos en función de la versión de ONTAP en la que se esté ejecutando el nodo.</block>
-  <block id="f8cefe4e9eda67cd04349f4560aad96f" category="list-text">Para ONTAP 9.14,1 o posterior, introduzca el siguiente comando:</block>
   <block id="9b5996b90a7a19dc5ca9e91a6d0c7ac9" category="paragraph"><block ref="ed039e134fdf3b84c71d409a4024dbc7" prefix="" category="inline-code"></block></block>
   <block id="67d6aa20f2257cc1b6c99fa4ed444eca" category="paragraph">Si OKM está activado,<block ref="90d4e6078945c9c6155e77edcafa9984" prefix=" " category="inline-code"></block> aparece en la salida del comando.</block>
-  <block id="5114d877b6bdc7484d5c2c9efc040aa0" category="list-text">Para ONTAP 9.13,1 o anterior, introduzca el siguiente comando:</block>
   <block id="6f76cbf64620dc55dc8a5d1462ae7822" category="paragraph"><block ref="1847f4f206eb3ab8397f6206fcf1bb3f" prefix="" category="inline-code"></block></block>
   <block id="4efa472f82474aa8572aacddb95c4a1b" category="paragraph">Si OKM está activado,<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> aparece en la salida del comando.</block>
-  <block id="b520d3c69ccbf428928a30eeb5fcaeec" category="list-text">Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su gestor de claves:</block>
   <block id="2a4a9d693caa859153f77cf2204d30cc" category="paragraph"><block ref="c9b37f9017fc101cecef415e707e7b5f" prefix="" category="inline-code"></block></block>
   <block id="775c4f8ef2eabc8574bb57ddd10b0b23" category="list-text">Compruebe la salida del valor de<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna para su gestor de claves.</block>
   <block id="0244ade962fa9d071f4def5c7ef769cc" category="paragraph">Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.</block>
-  <block id="5532ef9f6f6fe7cdd455dde7a78eb12c" category="list-text">Si el valor de la columna Restaurado es TRUE, las claves se restauran correctamente y es seguro continuar con el apagado de la controladora.</block>
-  <block id="8ec65b3b21949ed324beef5dbc025c92" category="list-text">Si el valor es cualquier otra cosa que no sea true, las claves no se han restaurado, y deberá tomar pasos adicionales (restaurar o sincronizar claves) dependiendo de si está utilizando EKM o OKM.</block>
-  <block id="b4bddfeecfd5716741acba5ef08dfdd9" category="list-text">En función de si está utilizando EKM o OKM, seleccione una de las siguientes opciones y siga los pasos adecuados en función del valor de salida mostrado en la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna.</block>
-  <block id="d080cdba04a9e58adbe244b4d170ff25" category="open-title">EKM</block>
   <block id="a26b32b28af2e3521ad3e104fee11f80" category="paragraph">En función del valor de salida mostrado en la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna, siga los pasos adecuados.</block>
   <block id="c9fb391da0641ace637021ed0f9d1c94" category="cell">Valor de salida en<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna</block>
   <block id="22cfef4d87bd251ba39dd92d08a6b0bb" category="paragraph"><block ref="b326b5062b2f0e69046810717534cb09" prefix="" category="inline-code"></block></block>
@@ -10414,9 +10361,7 @@ SFP+ (destino/iniciador)</block>
   <block id="1a1cd257525bddea68723047e36e6e90" category="list-text">Restaure las claves de autenticación de gestión de claves externas en todos los nodos del clúster mediante el siguiente comando:</block>
   <block id="74c90316d25b4cdc5c8e524af066a5a0" category="paragraph"><block ref="24b420efa276a683b4bd02f14a2d6f59" prefix="" category="inline-code"></block></block>
   <block id="581f12d33ebdffd65e567d7483436438" category="paragraph">Si el comando falla, póngase en contacto con<block ref="1a36b59ecae7684863b79a0f690b6840" category="inline-link-rx"></block>.</block>
-  <block id="c2c27d455a0034831b8e2b3d5a1fdd37" category="list-text">Compruebe que<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna se muestre<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> para todas las claves de autenticación introduciendo <block ref="91f9c18d13195a5e3c010df87360adf2" prefix=" " category="inline-code"></block>el comando.</block>
   <block id="90b0be5cd55fef8ba4b2677ba61937be" category="paragraph">Si todas las claves de autenticación son<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, puede apagar de forma segura el controlador defectuoso. Vaya a <block ref="eee94cfaa2087b0a7525f83880646105" category="inline-link-macro-rx"></block>.</block>
-  <block id="90d4e6078945c9c6155e77edcafa9984" category="open-title">OKM</block>
   <block id="f756353c7a60081133f6ef85804b6485" category="paragraph">Realice una copia de seguridad manual de la información de OKM.</block>
   <block id="349e0edd7094f31576c430a35f1c73e3" category="list-text">Vaya al modo avanzado introduciendo<block ref="8d2cf87827d8c4c105b70542cc18077d" prefix=" " category="inline-code"></block> y, a continuación, introdúzcalo<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> cuando se le solicite.</block>
   <block id="86123e57ff90dca177de37d445925d0d" category="list-text">Introduzca el siguiente comando para mostrar la información de gestión de claves:</block>
@@ -10431,20 +10376,8 @@ SFP+ (destino/iniciador)</block>
   <block id="d81a048f736ca3a03a0fc11c4bc74978" category="list-text">Introduzca el comando para mostrar la información de backup para la gestión de claves:</block>
   <block id="d019a61bbe760bfae51153af25e806b3" category="doc">Paso 1: Restaurar el administrador de claves</block>
   <block id="926dc92762712fb5c888d06d13b2835c" category="list-text">En el menú de arranque ONTAP, seleccione la opción apropiada:</block>
-  <block id="802134e5cd64408009bf9ca5065786b2" category="list-text">Para ONTAP 9.8 y posterior, seleccione la opción 10:</block>
-  <block id="07447cab17885ca45337781e921897fa" category="list-text">Para ONTAP 9, 7 y anteriores, introduzca el comando Oculto option<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block>.</block>
-  <block id="b8853c4009726e2ece8d95f47908e1c0" category="list-text">Confirme la continuación del proceso.<block ref="31d3e9f860a1ea4bc24acbcd0c462856" prefix=" " category="inline-code"></block></block>
-  <block id="2f494951e987e38666c6a1935c0c88be" category="list-text">Desde el nodo asociado, devolver la controladora asociada:<block ref="291b31306c2e0668f091d41edca7e97f" prefix=" " category="inline-code"></block>.</block>
-  <block id="b6074ec78f4878986cfabd4a86abf5c8" category="list-text">Una vez iniciado solo con CFO Aggregate, ejecute el comando _security key-manager onboard sync​​​​​​​_.</block>
   <block id="3554bd6dca965e0e8bcb314a54ef655c" category="list-text">Introduzca la clave de acceso en todo el clúster para la instancia de Onboard Key Manager.</block>
   <block id="68e51e7cb5faf4732838f76bc7db6b45" category="admonition">Si la sincronización se realiza correctamente, se devuelve el símbolo del sistema de clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.</block>
-  <block id="ce4fb0e60bb66e89ea3ad1fd2ff46a30" category="list-text">Asegúrese de que todas las claves están sincronizadas<block ref="297f477a8524857592ffedfea06bb8d7" prefix=" " category="inline-code"></block>: .</block>
-  <block id="39182fbb28bf0718bee46eab1961e1bd" category="list-text">Devolución del nodo del partner:<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block></block>
-  <block id="61942e8f4689a17c71500d84d0b47041" category="list-text">Una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o la siguiente información:</block>
-  <block id="6b7fb6689b4ff21477eda31338d189ce" category="list-text">_Introduzca el contenido del archivo del certificado de cliente (client.crt):_</block>
-  <block id="4cf3e6ebf1c573912cdf7f61f3baff04" category="list-text">_Introduzca el contenido del archivo de clave de cliente (client.key):_</block>
-  <block id="8a0822d48c830ac216ea7f9d4db5a9dd" category="list-text">_Introduzca el contenido del archivo CA(s) del servidor KMIP (CA.pem):_</block>
-  <block id="fff930cef46bf6cadd68fad5ec20a254" category="list-text">_Introduzca el contenido del archivo de configuración del servidor (servers.cfg):_</block>
   <block id="5eadc2e25337518dc852a80577d9cf1e" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A150</block>
   <block id="0dc57322765c9d58ce88190f1690fcde" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A1K</block>
   <block id="8bc64411ac44956417615b1424961016" category="paragraph">Restaure el cifrado en el nodo.</block>
@@ -10507,4 +10440,109 @@ SFP+ (destino/iniciador)</block>
   <block id="d431e47bf770a9393ee9f239dc2035b5" category="sidebar">Módulo de I/O ASA A70 y ASA A90</block>
   <block id="2d5a952fbb91c4ae00f6cf700a7a8912" category="sidebar">Controladora ASA A1K</block>
   <block id="21b2ca1e48faf28d5918cce56ce73345" category="sidebar">Módulo de I/O ASA A1K</block>
+  <block id="de6146d3d2df55568fb2490009341fe7" category="inline-link-macro">Falta la carpeta EFI del archivo de descarga de la imagen de servicio utilizada para la recuperación del dispositivo de arranque para los modelos FAS y AFF^</block>
+  <block id="08bb41e143a5dbcb1f95809650758d5d" category="admonition">Si la imagen de servicio no tiene carpeta efi, consulte <block ref="ff41085fda5f8dca9d0e49c279b90ce2" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb187e830be89fc21d44062ee3e0783a" category="list-text">Desde el aviso de Loader, inicie la imagen de recuperación desde la unidad flash USB:<block ref="199329b95897fa5b91256fa51b2186ce" prefix=" " category="inline-code"></block></block>
+  <block id="9f4b6474b2791f1e18fb394e0a9d5749" category="list-text">En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block>: .</block>
+  <block id="852fee667b0218d56efb26732593192d" category="inline-link-macro">Proceso posterior al reemplazo de la placa base para actualizar las licencias en un sistema AFF/FAS</block>
+  <block id="77464f13a7bfd5b5de3f6d6592b43344" category="admonition">Si su sistema estaba ejecutando inicialmente ONTAP 9.10,1 o posterior, utilice el procedimiento documentado en <block ref="396f3a939b9056719487db53e0cdf43e" category="inline-link-macro-rx"></block>. Si no está seguro de la versión inicial de ONTAP para su sistema, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> para obtener más información.</block>
+  <block id="8137cc3da5d92cb60020874c492d8701" category="list-text">Vuelva a conectar el sistema de almacenamiento, según sea necesario.</block>
+  <block id="fc2585bb5dd330e4d87dd2cdbd6c596b" category="admonition">Asegúrese de que el cable de la consola está conectado al módulo del controlador reparado para que reciba mensajes de la consola cuando se reinicie. La controladora reparada recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.</block>
+  <block id="1dbff4f0fe05034cfd08080f90023ca9" category="admonition">Si la controladora arranca en el símbolo del SISTEMA DE Loader, reiníciela con<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> el comando.</block>
+  <block id="c9a687d1939d0b48b69bff3618583e04" category="doc">Paso 1: Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp</block>
+  <block id="7a98ae061f92b7a841dcacb8930a02c5" category="paragraph">Para apagar de forma segura una controladora, primero identifique si el gestor de claves externo (EKM) o el gestor de claves incorporado (OKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.</block>
+  <block id="8dd09587169b8d8db58ece09496b890f" category="cell">Ejecute este comando</block>
+  <block id="d5069b83ec1ddf9e9d88f354e8909059" category="paragraph">ONTAP 9.14.1 o posterior</block>
+  <block id="196874775b44aa4bd067da099307af94" category="list-text">Si EKM está activado,<block ref="d080cdba04a9e58adbe244b4d170ff25" prefix=" " category="inline-code"></block> aparece en la salida del comando.</block>
+  <block id="de8ced263989be76729e57ef48af2580" category="list-text">Si no hay ningún gestor de claves activado,<block ref="6f10782c5275dd4037c763904b15d067" prefix=" " category="inline-code"></block> aparece en el resultado del comando.</block>
+  <block id="70c9355c5ddc7957399355ec7ad55706" category="paragraph">ONTAP 9.13.1 o anterior</block>
+  <block id="bf7423b09b1d8268d393de84679df3cb" category="list-text">Si EKM está activado,<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> aparece en la salida del comando.</block>
+  <block id="3bdaba759104a48c3a95e5443ba7e5e0" category="list-text">Si no hay ningún gestor de claves activado,<block ref="119e62c9aa407bc6041ef3db23b93be8" prefix=" " category="inline-code"></block> aparece en el resultado del comando.</block>
+  <block id="4867667f589f1bf5a2892fe48a4b93ba" category="list-text">En función de si hay configurado un gestor de teclas en el sistema, seleccione una de las siguientes opciones.</block>
+  <block id="52aadd496ee1f92c301bdde94ed48b99" category="open-title">No se ha configurado ningún gestor de claves</block>
+  <block id="3bf4a86005a59ea3cd8643586d04cd78" category="open-title">Se ha configurado el gestor de claves externo o incorporado</block>
+  <block id="64d036deb4b248416ccf87deceafe674" category="list-text">Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su administrador de claves.</block>
+  <block id="22f8cc1607d6f80a2aa89016db8a184d" category="list-text">En función de si el sistema está utilizando el Administrador de claves externo o el Administrador de claves incorporado, seleccione una de las siguientes opciones.</block>
+  <block id="7f6aa2eddb31d7d07b49d6c308057b6a" category="open-title">Gestor de claves externo</block>
+  <block id="710588d994062c1accbe164eb56effb3" category="list-text">Compruebe que<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna se muestre<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> para todas las claves de autenticación introduciendo <block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block>el comando.</block>
+  <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="open-title">Gestión de claves incorporada</block>
+  <block id="9b9655d38c65764bacf8c0b8b4afb853" category="doc">Opción 1: Restaure la configuración del gestor de claves incorporado</block>
+  <block id="7e6403e728a2ec69c3089e7bc3236779" category="paragraph">Se deben completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio del procedimiento de reemplazo de medios de arranque.</block>
+  <block id="be88b9d7f41515efb1dc3a6709cef2ab" category="paragraph">En función del gestor de teclas configurado en el sistema, seleccione una de las siguientes opciones para restaurarlo desde el menú de inicio.</block>
+  <block id="206a7e535a6da65b30f0a9fac61abc1c" category="list-text"><block ref="206a7e535a6da65b30f0a9fac61abc1c" category="inline-link-macro-rx"></block></block>
+  <block id="9969c9b9ffd1f5e74ee3793724d1c3ee" category="inline-link-macro">Opción 2: Restaure la configuración del gestor de claves externo</block>
+  <block id="68a33ad2037a014f19d73eff657236ff" category="list-text"><block ref="68a33ad2037a014f19d73eff657236ff" category="inline-link-macro-rx"></block></block>
+  <block id="959b1843f7153b31ca9e5042d5534f8c" category="paragraph">Restaure la configuración del Administrador de claves integrado (OKM) desde el menú de inicio de ONTAP.</block>
+  <block id="8f697727fea4250d67048e2138fdfe91" category="list-text">Asegúrese de que dispone de la siguiente información al restaurar la configuración de OKM:</block>
+  <block id="c7c0fa0163df4e41253409458437d32b" category="list-text">En el menú de inicio de ONTAP, seleccione la opción correspondiente en el menú de inicio.</block>
+  <block id="d94292453b69f94bbc4d0bef7005d22f" category="cell">Seleccione esta opción</block>
+  <block id="c6cd4470ed1711bc2e8d8495a077a331" category="paragraph">Seleccione la opción 10.</block>
+  <block id="5aae59241c50fe780033cb1d5baf9473" category="example-title">Mostrar ejemplo de menú de inicio</block>
+  <block id="5a830b76ff5a71db59759b13f383410c" category="paragraph">ONTAP 9,7 y anteriores</block>
+  <block id="f3f3dc4442f797fb778f168eb6675243" category="paragraph">Seleccione la opción oculta<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block></block>
+  <block id="2872bac3bb8e962ddbf71990facbbad1" category="list-text">Confirme que desea continuar con el proceso de recuperación.</block>
+  <block id="8c93e57015aff70c970b23d7de65c653" category="example-title">Mostrar símbolo del sistema de ejemplo</block>
+  <block id="e314c9fb053c84dcecbf01a9551cdbba" category="paragraph"><block ref="9c14d4f8d14519ea4ded790c9f9cd146" prefix="" category="inline-code"></block></block>
+  <block id="ec8983024a1dd9d86d8993145c0634a2" category="list-text">Introduzca la información de backup.</block>
+  <block id="488b5fa5584634f2b60d1dede7597561" category="list-text">Pegue todo el contenido desde la línea de COPIA DE SEGURIDAD DE INICIO hasta la línea de COPIA DE SEGURIDAD FINAL.</block>
+  <block id="22533ece7a970e82cf7bf3234ae433b9" category="paragraph">El proceso de recuperación finaliza.</block>
+  <block id="56a002b10eeb1f0bd392165e1ce5d75e" category="list-text">Confirme que la consola de la controladora muestre el siguiente mensaje.</block>
+  <block id="0825b93c2d111f930b63d2cd3e2d04ef" category="paragraph"><block ref="22714968f3c097ea3249c9d4b9e8119f" prefix="" category="inline-code"></block></block>
+  <block id="3f6182c959954ae64a1f0a7915a90752" category="list-text">Desde el nodo del partner, devolver la controladora del partner introduciendo el siguiente comando.</block>
+  <block id="d13607256d488794948c0a4e6b5b5273" category="paragraph"><block ref="291b31306c2e0668f091d41edca7e97f" prefix="" category="inline-code"></block>.</block>
+  <block id="63faa4ccd80cd6495683040b69af8206" category="list-text">Después de arrancar solo con el agregado CFO, ejecute el siguiente comando.</block>
+  <block id="83b41e54088cea42afe1d3b83e81ef91" category="list-text">Asegúrese de que todas las claves estén sincronizadas introduciendo el comando siguiente.</block>
+  <block id="a1f1cac1fa107bdba40f9cbe641925e7" category="paragraph"><block ref="297f477a8524857592ffedfea06bb8d7" prefix="" category="inline-code"></block>.</block>
+  <block id="f0069062031757b5fc9b9b11649dfe8f" category="list-text">Realice la devolución del nodo del compañero introduciendo el comando siguiente.</block>
+  <block id="d2dafc284c7314e818c45df3a8758637" category="paragraph"><block ref="e23a9f1c6189f372292c98d844a0895f" prefix="" category="inline-code"></block></block>
+  <block id="670813ebc2cd52c023ff4cd4ada7a627" category="list-text">Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando.</block>
+  <block id="50273ef55b3a53bf30771dd1ef5f8b5f" category="list-text">Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando.</block>
+  <block id="824a761c1584c25f025a384b7b387c56" category="paragraph"><block ref="9ac424c0d7b432975df36a19daf50c9c" prefix="" category="inline-code"></block></block>
+  <block id="02f6f43349cf003c6dd944a923f4ce06" category="paragraph">Restaure la configuración del Administrador de claves externo desde el menú de inicio de ONTAP.</block>
+  <block id="9b5c6b418b2bc4f063803a9b7739bb1d" category="paragraph">Necesita la siguiente información para restaurar la configuración de un gestor de claves externo (EKM).</block>
+  <block id="2b48a2afe7987203a2b1e9de1f031374" category="list-text">Una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o de la siguiente información:</block>
+  <block id="482d3df52d0525a7489378dac2f01ff9" category="list-text">Una copia del<block ref="d606236dedb6ed649b29651c1ec53a99" prefix=" " category="inline-code"></block> archivo de otro nodo del clúster o del certificado de cliente.</block>
+  <block id="97caf745f0852f09d6e00ee59a8529bb" category="list-text">Una copia del<block ref="ccb442c2c2cc4367a087cfc7cd3b4876" prefix=" " category="inline-code"></block> archivo de otro nodo de clúster o la clave de cliente.</block>
+  <block id="18c2b9b14349e289338452c8eeaa5868" category="list-text">Una copia<block ref="443acc94def30bc037fb2dacac4fb7d3" prefix=" " category="inline-code"></block> del archivo de otro nodo del clúster o las CA del servidor KMIP.</block>
+  <block id="3addeb39344804a6c77f096b5c3fe2fc" category="list-text">Seleccione la opción 11 en el menú de inicio de ONTAP.</block>
+  <block id="962741d9207d007a86d85dd741057111" category="list-text">Cuando se le solicite, confirme que ha recopilado la información obligatoria.</block>
+  <block id="8fbd4854fd031dc0c47635c899b74c12" category="list-text">Cuando se le solicite, introduzca la información del cliente y del servidor.</block>
+  <block id="b1a80a7089afd7d3b9be5936d7cc2c4b" category="example-title">Mostrar petición de datos</block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">Muestra el ejemplo</block>
+  <block id="6758e112526dd1470fdafbd89c3b25df" category="paragraph">Después de introducir la información del cliente y el servidor, el proceso de recuperación finaliza.</block>
+  <block id="5c333c9d5086ee50b7f10724d1f9dc2b" category="paragraph">A| ONTAP 9.7 y anteriores A| Seleccione la opción oculta<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block></block>
+  <block id="d9b80a753e6bd9c6b770fc295f295dc3" category="cell">+ . Confirme que desea continuar con el proceso de recuperación. + .Mostrar indicador de ejemplo [%Collapsible]</block>
+  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
+  <block id="68ce5ec1e3f9c353c053b6feafae61f1" category="paragraph">+ ADVERTENCIA: No proceda si la salida mostrada es otra cosa que<block ref="3f52dc951949a3041638d54635d71099" prefix=" " category="inline-code"></block> . Realice la solución de problemas para corregir el error.</block>
+  <block id="1544c9897deafcbdffc044dac2f06610" category="list-text">Confirme que la consola de la controladora muestre lo siguiente:</block>
+  <block id="1ebe17e50ef0f20c9a4943cdde00f20b" category="list-text">Desde el nodo asociado, restaure la controladora del partner:</block>
+  <block id="24de39ef6b972a13ee81c8f1e764261f" category="list-text">Después de arrancar solo con CFO Aggregate, ejecute el siguiente comando:</block>
+  <block id="a26071b84ebad6f3f9f4f6902bd06efe" category="paragraph"><block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix="" category="inline-code"></block> comando.</block>
+  <block id="93c58e434dc7b5eb5c16678bb00205d0" category="paragraph">+ NOTA: Si la sincronización se realiza correctamente, se devuelve la petición de datos del clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.</block>
+  <block id="85ea8ad93708cbd62f01b1e93c22f93c" category="list-text">Asegúrese de que todas las claves estén sincronizadas:</block>
+  <block id="e4cab1326503c7b85827bb20b6ecc371" category="list-text">Devolución del nodo desde el partner:</block>
+  <block id="8c262ff4c019499a1809393e7aaf9ec1" category="list-text">Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando:</block>
+  <block id="b0a8481877486fd3aa85b04b4ae588ea" category="list-text">Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando:</block>
+  <block id="98605073c3b6ddfa49164a951555a334" category="paragraph">Restaure la configuración del gestor de claves externo desde el menú de inicio de ONATP.</block>
+  <block id="44175671016a3c55aa9144d7352ab920" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.</block>
+  <block id="d424dce62a7b2ea39afe29d8361240e7" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo de clúster o la clave de cliente.</block>
+  <block id="b8dd2898e8ee20a6f6cb34867845aa17" category="list-text">Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.</block>
+  <block id="7ae600ed46c79416b9301ce3a1377c21" category="paragraph">+ .Mostrar ejemplo</block>
+  <block id="16080a7eee840ac3e377c36a8da5fb6f" category="paragraph">El sistema está preparado para utilizar gestores de claves externos. Intentando recuperar claves de los servidores de claves.... [Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [InitOpenssl]:460: Realizando la inicialización de OpenSSL recuperó correctamente los secretos del gestor de claves.</block>
+  <block id="f9797a252c2780e96d414a71cd6ecf04" category="list-text">Seleccione la opción '(1) Normal Boot.' para completar el proceso de recuperación. *</block>
+  <block id="285251407570005df5c8fe081a777f29" category="paragraph">(1) Arranque normal. (2) Arranque sin /etc/rc. (3) Cambiar contraseña. (4) Limpiar la configuración e inicializar todos los discos. (5) Arranque en el modo de mantenimiento. (6) Actualizar flash desde la configuración de copia de seguridad. (7) Instale primero el nuevo software. (8) Reiniciar nodo. (9) Configurar creación avanzada de particiones de unidades. (10) Configurar secretos de recuperación del gestor de claves incorporado. (11) Configure el nodo para la gestión de claves externas. Selección (1-11)? 1</block>
+  <block id="5943dcc79f4be51c7946faa01081c8c7" category="admonition">Si su sistema estaba ejecutando inicialmente ONTAP 9.10,1 o posterior, utilice el procedimiento documentado en <block ref="b14f44ab326196475bf1d94f7e3821ad" category="inline-link-rx"></block>. Si no está seguro de la versión inicial de ONTAP para su sistema, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> para obtener más información.</block>
+  <block id="6379280c267113ec35e5881e1b0f65bb" category="paragraph">Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.</block>
+  <block id="937eeb311ae4c7f36059ec45705ae05b" category="list-text">Un ID de bandeja externa válido es de 01 a 99.</block>
+  <block id="ce4b2f7741d87ac6c37e8727ca9ad20a" category="paragraph">Si tiene bandejas internas (almacenamiento), que se integran en las controladoras, se les asigna un ID de bandeja fijo de 00.</block>
+  <block id="9944ff6c526e81f7d9ce060adc105e86" category="list-text">Pulse y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9, o bien de 1 a 9 si el sistema tiene almacenamiento integrado.</block>
+  <block id="52f79b2833c42027e63e45681585067e" category="example-title">Puede que vea estas indicaciones en su lugar</block>
+  <block id="e65e1ac152dcb95552c1c1f62ceaf393" category="paragraph"><block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix="" category="inline-code"></block> comando.</block>
+  <block id="85ef91c4d71faa53c83efc7222148253" category="video-title">Sustituya el soporte de arranque de la bandeja NS224</block>
+  <block id="bed8800ffb3dfb17d15fabcbf21305be" category="video-title">Sustituya un DIMM en una bandeja NS224</block>
+  <block id="d0a4089478fc848fcc714a17114651e5" category="video-title">Intercambio en caliente de una unidad en una bandeja NS224</block>
+  <block id="adf9a21a79092388f61e544af11cd756" category="video-title">Sustituya un ventilador de una bandeja NS224</block>
+  <block id="f8798e73b2d5e1dfd7612b46ff0e89e2" category="video-title">Reemplace un módulo NSM en una bandeja NS224</block>
+  <block id="ed5f0b1fadc9d155c332ddd3a2c8910b" category="video-title">Intercambie en caliente una fuente de alimentación de una bandeja NS224</block>
+  <block id="4dc161fec1e803228a4a6e64a87cc800" category="video-title">Reemplace una batería de RTC en una bandeja NS224</block>
 </blocks>

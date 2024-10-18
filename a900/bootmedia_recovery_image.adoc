@@ -13,7 +13,7 @@ summary: El procedimiento para arrancar la controladora con deterioro de la imag
 [role="lead"]
 Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
 
-. Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
+. Desde el aviso de Loader, inicie la imagen de recuperación desde la unidad flash USB: `boot_recovery <image_name>`
 +
 La imagen se descarga desde la unidad flash USB.
 
@@ -30,7 +30,7 @@ ONTAP 9.16.0 o anterior
  a| 
 .. En el controlador defectuoso, pulse _Y_ cuando vea `Do you want to restore the backup configuration now?`
 .. En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba `/etc/ssh/ssh_host_ecdsa_key`.
-.. En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado `set -privilege admin`: .
+.. En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado `set -privilege advanced`: .
 .. En la controladora asociada en buen estado, ejecute el comando restore backup `system node restore-backup -node local -target-address impaired_node_IP_address`: .
 +
 *NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].

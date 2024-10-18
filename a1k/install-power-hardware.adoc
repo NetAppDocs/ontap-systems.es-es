@@ -17,10 +17,13 @@ Después de instalar el hardware de rack para el sistema de almacenamiento de AF
 
 == Paso 1: Encienda la bandeja y asigne el ID de bandeja
 
-Cada bandeja NS224 se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento. De manera predeterminada, los ID de bandeja se asignan como «00» y «01», pero es posible que deba ajustar estos ID para mantener la singularidad en todo su sistema de almacenamiento.
+Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.
 
 .Acerca de esta tarea
-* Un ID de bandeja válido tiene un valor de 00 a 99.
+* Un ID de bandeja externa válido es de 01 a 99.
++
+Si tiene bandejas internas (almacenamiento), que se integran en las controladoras, se les asigna un ID de bandeja fijo de 00.
+
 * Se debe apagar y encender la bandeja (desconecte los dos cables de alimentación, espere la cantidad de tiempo correspondiente y vuelva a conectarlos) para que el ID de bandeja surta efecto.
 
 
@@ -98,7 +101,7 @@ Este número puede tardar hasta tres segundos en parpadear.
 +
 El primer número de la pantalla digital deja de parpadear.
 
-.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
+.. Pulse y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9, o bien de 1 a 9 si el sistema tiene almacenamiento integrado.
 +
 El segundo número continúa parpadeando.
 

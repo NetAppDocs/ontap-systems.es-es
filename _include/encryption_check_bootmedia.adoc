@@ -1,4 +1,4 @@
-= Paso 1: Compruebe si su versión de ONTAP admite cifrado
+= Paso 1: Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp
 :allow-uri-read: 
 
 
@@ -6,7 +6,7 @@ Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es co
 
 
 
-== Paso 1: Compruebe si su versión de ONTAP admite cifrado
+== Paso 1: Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp
 
 Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.
 
@@ -29,66 +29,68 @@ Si la salida incluye `1Ono-DARE`, NVE no es compatible con la versión del clús
 
 == Paso 2: Determine si es seguro apagar el controlador
 
-Para apagar de forma segura una controladora, primero identifique si el gestor de claves incorporado (OKM) o el gestor de claves externo (EKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
+Para apagar de forma segura una controladora, primero identifique si el gestor de claves externo (EKM) o el gestor de claves incorporado (OKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
 
 . Determine qué gestor de claves está activado en el sistema:
 +
 [cols="1a,2a"]
 |===
-| Tipo de gestor de claves | Siga estos pasos... 
+| Versión de ONTAP | Ejecute este comando 
 
 
  a| 
-Gestor de claves externo (EKM)
+ONTAP 9.14.1 o posterior
  a| 
-Determine si EKM está habilitado en su sistema ejecutando el siguiente comando:
-
-`security key-manager show key store`
-
-Si EKM está activado, `external` aparece en la salida.
-
-
-
- a| 
-Gestión de claves incorporada (OKM)
- a| 
-Determine si OKM está activado en el sistema ejecutando uno de los siguientes comandos en función de la versión de ONTAP en la que se esté ejecutando el nodo.
-
-** Para ONTAP 9.14,1 o posterior, introduzca el siguiente comando:
-+
 `security key-manager keystore show`
 
-+
-Si OKM está activado, `OKM` aparece en la salida del comando.
+** Si EKM está activado, `EKM` aparece en la salida del comando.
+** Si OKM está activado, `OKM` aparece en la salida del comando.
+** Si no hay ningún gestor de claves activado, `No key manager keystores configured` aparece en el resultado del comando.
 
-** Para ONTAP 9.13,1 o anterior, introduzca el siguiente comando:
-+
+
+
+
+ a| 
+ONTAP 9.13.1 o anterior
+ a| 
 `security key-manager show-key-store`
 
-+
-Si OKM está activado, `onboard` aparece en la salida del comando.
-
+** Si EKM está activado, `external` aparece en la salida del comando.
+** Si OKM está activado, `onboard` aparece en la salida del comando.
+** Si no hay ningún gestor de claves activado, `No key managers configured` aparece en el resultado del comando.
 
 
 |===
-. Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su gestor de claves:
-+
-`security key-manager key query`
-
-. Compruebe la salida del valor de `Restored` la columna para su gestor de claves.
-+
-Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.
-
-+
-** Si el valor de la columna Restaurado es TRUE, las claves se restauran correctamente y es seguro continuar con el apagado de la controladora.
-** Si el valor es cualquier otra cosa que no sea true, las claves no se han restaurado, y deberá tomar pasos adicionales (restaurar o sincronizar claves) dependiendo de si está utilizando EKM o OKM.
-
-
-. En función de si está utilizando EKM o OKM, seleccione una de las siguientes opciones y siga los pasos adecuados en función del valor de salida mostrado en la `Restored` columna.
+. En función de si hay configurado un gestor de teclas en el sistema, seleccione una de las siguientes opciones.
 +
 [role="tabbed-block"]
 ====
-.EKM
+.No se ha configurado ningún gestor de claves
+--
+Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+
+--
+.Se ha configurado el gestor de claves externo o incorporado
+--
+.. Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su administrador de claves.
++
+`security key-manager key query`
+
+.. Compruebe la salida del valor de `Restored` la columna para su gestor de claves.
++
+Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.
+
+
+
+--
+====
+
+
+. En función de si el sistema está utilizando el Administrador de claves externo o el Administrador de claves incorporado, seleccione una de las siguientes opciones.
++
+[role="tabbed-block"]
+====
+.Gestor de claves externo
 --
 En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
 
@@ -114,7 +116,7 @@ Cualquier otra cosa que no sea `true`
 +
 Si el comando falla, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
 
-.. Compruebe que `Restored` la columna se muestre `true` para todas las claves de autenticación introduciendo  `_security key-manager key query_`el comando.
+.. Compruebe que `Restored` la columna se muestre `true` para todas las claves de autenticación introduciendo  `security key-manager key query`el comando.
 +
 Si todas las claves de autenticación son `true`, puede apagar de forma segura el controlador defectuoso. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
 
@@ -122,7 +124,7 @@ Si todas las claves de autenticación son `true`, puede apagar de forma segura e
 
 |===
 --
-.OKM
+.Gestión de claves incorporada
 --
 En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
 
