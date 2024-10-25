@@ -293,8 +293,9 @@ NOTE: Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinície
 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
-. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 

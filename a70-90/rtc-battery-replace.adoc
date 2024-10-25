@@ -288,8 +288,9 @@ NOTE: Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinície
 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
-. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 
@@ -313,8 +314,6 @@ NOTE: Si el sistema se detiene en el menú de arranque, seleccione la opción pa
 +
 .. Confirme la fecha y la hora en la controladora de destino.
 .. En el aviso del CARGADOR, introduzca _bye_ para reinicializar las tarjetas PCIe y otros componentes y dejar que el controlador se reinicie.
-.. Devuelva la controladora a su funcionamiento normal devolviendo su almacenamiento: _Storage failover giveback -ofnode _impaired_node_name__
-.. Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
 
 
 

@@ -186,6 +186,9 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: La controladora se reinicia tan pronto como se coloca completamente en el chasis.
 
 . Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 
@@ -260,6 +263,9 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: La controladora se reinicia tan pronto como se coloca completamente en el chasis.
 
 . Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 
@@ -361,8 +367,9 @@ dr-group-id            cluster node           configuration-state
 ----
 . Compruebe que los volúmenes esperados estén presentes para cada controladora: `vol show -node node-name`
 . Si el cifrado del almacenamiento está habilitado, debe restaurar la funcionalidad.
-. Si deshabilitó la toma de control automática en el reinicio, habilite desde la controladora en buen estado: _Storage failover modify -node replacement-node-name -onreboot true_
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 

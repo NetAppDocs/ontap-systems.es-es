@@ -244,9 +244,9 @@ Reinicie el módulo del controlador.
 El sistema comenzará a reiniciarse, normalmente en el aviso del CARGADOR.
 
 . Introduzca _bye_ en el indicador del CARGADOR.
-. Devuelva la controladora a su funcionamiento normal devolviendo su almacenamiento: _Storage failover giveback -ofnode _impaired_node_name__
-. Restaure la devolución automática del control mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 

@@ -2,12 +2,12 @@
 :allow-uri-read: 
 
 
-Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 
 .Antes de empezar
 Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
 
-Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+Debe sustituir el componente con errores por un componente de FRU de reemplazo que haya recibido de NetApp.
 
 
 
@@ -300,8 +300,9 @@ NOTE: Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinície
 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
-. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
 

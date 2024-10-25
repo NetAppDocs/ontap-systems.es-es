@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: fas8200, post boot media replacement steps for okm, nse, and nve 
 summary: 'Una vez marcadas las variables de entorno, debe completar los pasos específicos de los sistemas que tienen Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) o NetApp Volume Encryption \(NVE\) habilitado.' 
 ---
-= Restaure OKM, NSE y NVE según sea necesario: FAS8200
+= Restaurar cifrado - FAS8200
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Restaure el cifrado en el soporte de arranque de reemplazo.
+
 Se deben completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio del procedimiento de reemplazo de medios de arranque.
 
 En función del gestor de teclas configurado en el sistema, seleccione una de las siguientes opciones para restaurarlo desde el menú de inicio.

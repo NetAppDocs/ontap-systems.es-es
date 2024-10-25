@@ -13,24 +13,18 @@ summary: 'Una vez marcadas las variables de entorno, debe completar los pasos es
 [role="lead"]
 Restaure el cifrado en el soporte de arranque de reemplazo.
 
+Se deben completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio del procedimiento de reemplazo de medios de arranque.
+
+En función del gestor de teclas configurado en el sistema, seleccione una de las siguientes opciones para restaurarlo desde el menú de inicio.
+
+* link:["Opción 1: Restaure la configuración del gestor de claves incorporado"]
+* link:["Opción 2: Restaure la configuración del gestor de claves externo"]
 
 
-== Paso 1: Restaurar el administrador de claves
-
-Debe completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio de este procedimiento.
 
 
-NOTE: Si se habilitan NSE o NVE junto con el gestor de claves incorporado o externo, debe restaurar la configuración capturada al principio de este procedimiento.
+== Opción 1: Restaure la configuración del gestor de claves incorporado
 
-.Pasos
-. Conecte el cable de consola a la controladora de destino.
-. Seleccione una de las siguientes opciones para restaurar la configuración del administrador de claves incorporado desde el menú de arranque ONATP.
-
-
-[role="tabbed-block"]
-====
-.Opción 1: Sistemas con configuración del servidor de gestión de claves incorporada
---
 Restaure la configuración del Administrador de claves integrado (OKM) desde el menú de inicio de ONTAP.
 
 .Antes de empezar
@@ -45,7 +39,7 @@ Restaure la configuración del Administrador de claves integrado (OKM) desde el 
 
 .Pasos
 . Conecte el cable de consola a la controladora de destino.
-. En el menú de arranque ONTAP, seleccione la opción apropiada:
+. En el menú de inicio de ONTAP, seleccione la opción correspondiente en el menú de inicio.
 +
 [cols="1a,2a"]
 |===
@@ -57,10 +51,8 @@ ONTAP 9.8 o posterior
  a| 
 Seleccione la opción 10.
 
-|===
-
-
---
+.Mostrar ejemplo de menú de inicio
+[%collapsible]
 ====
 ....
 
@@ -80,10 +72,16 @@ Please choose one of the following:
 Selection (1-11)? 10
 
 ....
-[]
 ====
-A| ONTAP 9.7 y anteriores A| Seleccione la opción oculta `recover_onboard_keymanager`
 
+
+ a| 
+ONTAP 9,7 y anteriores
+ a| 
+Seleccione la opción oculta `recover_onboard_keymanager`
+
+.Mostrar ejemplo de menú de inicio
+[%collapsible]
 ====
 ....
 
@@ -101,40 +99,35 @@ Please choose one of the following:
 Selection (1-19)? recover_onboard_keymanager
 
 ....
-[]
 ====
 |===
-
-
-| + . Confirme que desea continuar con el proceso de recuperación. + .Mostrar indicador de ejemplo [%Collapsible] 
-|===
+. Confirme que desea continuar con el proceso de recuperación.
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 `This option must be used only in disaster recovery procedures. Are you sure? (y or n):`
 
-[]
 ====
 . Introduzca dos veces la clave de acceso para todo el clúster.
 +
 Al introducir la frase de acceso, la consola no mostrará ninguna entrada.
 
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 `Enter the passphrase for onboard key management:`
 
 `Enter the passphrase again to confirm:`
 
-[]
 ====
-+
-
 . Introduzca la información de backup.
 +
 .. Pegue todo el contenido desde la línea de COPIA DE SEGURIDAD DE INICIO hasta la línea de COPIA DE SEGURIDAD FINAL.
-
-
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 ....
 Enter the backup data:
@@ -173,18 +166,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ---------------------------END BACKUP---------------------------
 
 ....
-[]
 ====
-. Pulse la tecla ENTER dos veces al final de la entrada.
+.. Pulse la tecla ENTER dos veces al final de la entrada.
 +
 El proceso de recuperación finaliza.
 
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 ....
-
-Enter the backup data:
 
 Trying to recover keymanager secrets....
 Setting recovery material for the onboard key manager
@@ -200,13 +191,17 @@ Successfully recovered keymanager secrets.
 ***********************************************************************************
 
 ....
-[]
 ====
-+ ADVERTENCIA: No proceda si la salida mostrada es otra cosa que `Successfully recovered keymanager secrets` . Realice la solución de problemas para corregir el error.
+
+
++
+
+WARNING: No continúe si la salida mostrada es otra cosa que `Successfully recovered keymanager secrets`. Realice la solución de problemas para corregir el error.
 
 . Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 ....
 
@@ -230,23 +225,23 @@ Successfully recovered keymanager secrets.
 Selection (1-11)? 1
 
 ....
-[]
 ====
-. Confirme que la consola de la controladora muestre lo siguiente:
+. Confirme que la consola de la controladora muestre el siguiente mensaje.
 +
 `Waiting for giveback...(Press Ctrl-C to abort wait)`
 
-. Desde el nodo asociado, restaure la controladora del partner:
+. Desde el nodo del partner, devolver la controladora del partner introduciendo el siguiente comando.
 +
 `storage failover giveback -fromnode local -only-cfo-aggregates true`.
 
-. Después de arrancar solo con CFO Aggregate, ejecute el siguiente comando:
+. Después de arrancar solo con el agregado CFO, ejecute el siguiente comando.
 +
-`security key-manager onboard sync` comando.
+`security key-manager onboard sync`
 
 . Introduzca la clave de acceso en todo el clúster para la instancia de Onboard Key Manager.
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 ....
 
@@ -255,11 +250,12 @@ Enter the cluster-wide passphrase for the Onboard Key Manager:
 All offline encrypted volumes will be brought online and the corresponding volume encryption keys (VEKs) will be restored automatically within 10 minutes. If any offline encrypted volumes are not brought online automatically, they can be brought online manually using the "volume online -vserver <vserver> -volume <volume_name>" command.
 
 ....
-[]
 ====
-+ NOTA: Si la sincronización se realiza correctamente, se devuelve la petición de datos del clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.
++
 
-. Asegúrese de que todas las claves estén sincronizadas:
+NOTE: Si la sincronización se realiza correctamente, se devuelve el símbolo del sistema de clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.
+
+. Asegúrese de que todas las claves estén sincronizadas introduciendo el comando siguiente.
 +
 `security key-manager key query -restored false`.
 
@@ -270,44 +266,46 @@ All offline encrypted volumes will be brought online and the corresponding volum
 
 NOTE: No deberían aparecer resultados al filtrar por false en el parámetro restaurado.
 
-. Devolución del nodo desde el partner:
+. Realice la devolución del nodo del compañero introduciendo el comando siguiente.
 +
 `storage failover giveback -fromnode local`
 
-. Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando:
+. Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando.
 +
 `storage failover modify -node local -auto-giveback true`
 
-. Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando:
+. Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando.
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
---
 
---
-Restaure la configuración del gestor de claves externo desde el menú de inicio de ONATP.
+
+== Opción 2: Restaure la configuración del gestor de claves externo
+
+Restaure la configuración del Administrador de claves externo desde el menú de inicio de ONTAP.
 
 .Antes de empezar
-Necesitará la siguiente información para restaurar la configuración del gestor de claves externo (EKM):
+Necesita la siguiente información para restaurar la configuración de un gestor de claves externo (EKM).
 
 * Una copia del archivo /cfcard/kmip/servers.cfg de otro nodo de cluster o de la siguiente información:
 +
 ** La dirección del servidor KMIP.
 ** El puerto KMIP.
-** Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.
-** Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo de clúster o la clave de cliente.
-** Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.
 
 
+* Una copia del `/cfcard/kmip/certs/client.crt` archivo de otro nodo del clúster o del certificado de cliente.
+* Una copia del `/cfcard/kmip/certs/client.key` archivo de otro nodo de clúster o la clave de cliente.
+* Una copia `/cfcard/kmip/certs/CA.pem` del archivo de otro nodo del clúster o las CA del servidor KMIP.
 
 
 .Pasos
 . Conecte el cable de consola a la controladora de destino.
 . Seleccione la opción 11 en el menú de inicio de ONTAP.
-
-
++
+.Mostrar ejemplo de menú de inicio
+[%collapsible]
 ====
 ....
 
@@ -324,13 +322,11 @@ Necesitará la siguiente información para restaurar la configuración del gesto
 (11) Configure node for external key management.
 Selection (1-11)? 11
 ....
-[]
 ====
-+
-
 . Cuando se le solicite, confirme que ha recopilado la información obligatoria.
-
-
++
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
 ====
 ....
 Do you have a copy of the /cfcard/kmip/certs/client.crt file? {y/n}
@@ -338,23 +334,11 @@ Do you have a copy of the /cfcard/kmip/certs/client.key file? {y/n}
 Do you have a copy of the /cfcard/kmip/certs/CA.pem file? {y/n}
 Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}
 ....
-[]
 ====
-+
-
-====
-....
-Do you have a copy of the /cfcard/kmip/servers.cfg file? {y/n}
-Do you know the KMIP server address? {y/n}
-Do you know the KMIP Port? {y/n}
-....
-[]
-====
-+
-
 . Cuando se le solicite, introduzca la información del cliente y del servidor.
-
-
++
+.Mostrar petición de datos
+[%collapsible]
 ====
 ....
 Enter the client certificate (client.crt) file contents:
@@ -362,10 +346,10 @@ Enter the client key (client.key) file contents:
 Enter the KMIP server CA(s) (CA.pem) file contents:
 Enter the server configuration (servers.cfg) file contents:
 ....
-[]
 ====
-+ .Mostrar ejemplo
-
++
+.Muestra el ejemplo
+[%collapsible]
 ====
 ....
 Enter the client certificate (client.crt) file contents:
@@ -379,8 +363,7 @@ Fp8=
 
 Enter the client key (client.key) file contents:
 -----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEAoU1eajEG6QC2h2Zih0jEaGVtQUexNeoCFwKPoMSePmjDNtrU
-MSB1SlX3VgCuElHk57XPdq6xSbYlbkIb4bAgLztHEmUDOkGmXYAkblQ=
+<key_value>
 -----END RSA PRIVATE KEY-----
 
 Enter the KMIP server CA(s) (CA.pem) file contents:
@@ -400,103 +383,56 @@ Running command '/sbin/ifconfig e0M'
 ..
 ..
 kmip_init: cmd: ReleaseExtraBSDPort e0M
-​​​​....
-
-
+....
 ====
-
-. The recovery process completes.
-
++
+Después de introducir la información del cliente y el servidor, el proceso de recuperación finaliza.
 
 +
-.Show example prompt
+.Muestra el ejemplo
 [%collapsible]
 ====
 ....
-El sistema está preparado para utilizar gestores de claves externos. Intentando recuperar claves de los servidores de claves.... [Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [InitOpenssl]:460: Realizando la inicialización de OpenSSL recuperó correctamente los secretos del gestor de claves.
-
+System is ready to utilize external key manager(s).
+Trying to recover keys from key servers....
+[Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [initOpenssl]:460: Performing initialization of OpenSSL
+Successfully recovered keymanager secrets.
 ....
-
-
-
-. Select option 1 from the boot menu to continue booting into ONTAP.
-
+====
+. Seleccione la opción 1 en el menú de arranque para continuar arrancando en ONTAP.
 +
+.Mostrar símbolo del sistema de ejemplo
+[%collapsible]
+====
 ....
-****
-* Seleccione la opción '(1) Normal Boot.' para completar el proceso de recuperación. *
+
+***********************************************************************************
+* Select option "(1) Normal Boot." to complete the recovery process.
+*
+***********************************************************************************
 
 
-****
-(1) Arranque normal. (2) Arranque sin /etc/rc. (3) Cambiar contraseña. (4) Limpiar la configuración e inicializar todos los discos. (5) Arranque en el modo de mantenimiento. (6) Actualizar flash desde la configuración de copia de seguridad. (7) Instale primero el nuevo software. (8) Reiniciar nodo. (9) Configurar creación avanzada de particiones de unidades. (10) Configurar secretos de recuperación del gestor de claves incorporado. (11) Configure el nodo para la gestión de claves externas. Selección (1-11)? 1
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 1
 
 ....
 ====
+. Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando.
 +
+`storage failover modify -node local -auto-giveback true`
 
-
-. Restore automatic giveback, if you disabled it, by entering the following command:
-+
-`storage failover modify -node local -auto-giveback true` command.
-
-. If AutoSupport is enabled, restore automatic case creation by entering  the following command:
+. Si AutoSupport está habilitado, restaure la creación automática de casos introduciendo el siguiente comando.
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
---
-
-====
-
-== Step 2: Complete the boot media replacement
-
-Complete the boot media replacement process after the normal boot by completing final checks and giving back storage.
-
-. Check the console output:
-+
-[%header,cols="1,3"]
-|===
-| If the console displays...| Then...
-a|
-The login prompt
-a|
-Go to Step 6.
-a|
-Waiting for giveback...
-a|
-
- .. Log into the partner controller.
- .. Confirm the target controller is ready for giveback with the _storage failover show_ command.
-
-|===
-
-. Move the console cable to the partner controller and give back the target controller storage using the _storage failover giveback -fromnode local -only-cfo-aggregates true_ command.
-
- ** If the command fails because of a failed disk, physically disengage the failed disk, but leave the disk in the slot until a replacement is received.
-
- ** If the command fails because the partner is "not ready", wait 5 minutes for the HA subsystem to synchronize between the partners.
- ** If the command fails because of an NDMP, SnapMirror, or SnapVault process, disable the process. See the appropriate Documentation Center for more information.
-. Wait 3 minutes and check the failover status with the _storage failover show_ command.
-. At the clustershell prompt, enter the _network interface show -is-home false_ command to list the logical interfaces that are not on their home controller and port.
-+
-If any interfaces are listed as `false`, revert those interfaces back to their home port using the _net int revert -vserver Cluster -lif _nodename_ command.
-
-. Move the console cable to the target controller and run the _version -v_ command to check the ONTAP versions.
-
-. Use the `storage encryption disk show` to review the output.
-. Use the _security key-manager key query_ command to display the key IDs of the authentication keys that are stored on the key management servers.
- ** If the `Restored` column = `yes/true`, you are done and can proceed to complete the replacement process.
- ** If the `Key Manager type` = `external` and the `Restored` column = anything other than `yes/true`, use the _security key-manager external restore_ command to restore the key IDs of the authentication keys.
-+
-NOTE: If the command fails, contact Customer Support.
-
- ** If the `Key Manager type` = `onboard` and the `Restored` column = anything other than `yes/true`, use the _security key-manager onboard sync_ command to synchronize the missing onboard keys on the repaired node.
-+
-Use the _security key-manager key query_ command to verify that the `Restored` column = `yes/true` for all authentication keys.
-
-. Connect the console cable to the partner controller.
-. Give back the controller using the `storage failover giveback -fromnode local` command.
-. Restore automatic giveback if you disabled it by using the _storage failover modify -node local -auto-giveback true_ command.
-. If AutoSupport is enabled, restore/unsuppress automatic case creation by using the _system node autosupport invoke -node * -type all -message MAINT=END_ command.
-
-....

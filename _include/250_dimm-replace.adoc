@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.
+Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 
 .Acerca de esta tarea
 Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.

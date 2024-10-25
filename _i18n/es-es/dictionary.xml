@@ -164,77 +164,8 @@
   <block id="ff979fc0a0ab041b0436a8d7243aa05b" category="list-text">Desde el aviso del CARGADOR, introduzca:<block ref="d3bc32150d1d972afca2cd16da79c694" prefix=" " category="inline-code"></block> para capturar todas las variables ambientales de arranque. Guarde el resultado en el archivo de registro.</block>
   <block id="61e0109e9abc6d9e0e9d957157c4a657" category="admonition">Es posible que este comando no funcione si el dispositivo de inicio está dañado o no funciona.</block>
   <block id="6d21dbcd6d30fc2426dd0b077d719da5" category="summary">Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando.</block>
-  <block id="d1614290531967ae3b3623d71b4ed961" category="paragraph">Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que se está ejecutando.</block>
-  <block id="1bb835185391c9f6463cb5dc111090d1" category="paragraph">Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir este tipo de servicios, debe corregir el problema antes de apagar la controladora con deficiencias; consulte la <block ref="68d9e980b8b4998ef88139d7b7ab8ff6" category="inline-link-macro-rx"></block>.</block>
-  <block id="6d4079af860d745f44d13bfe9834115d" category="list-text">Compruebe el estado del controlador dañado:</block>
-  <block id="6f0786e478994e04512bb55e945ab79c" category="list-text">Si el controlador dañado se encuentra en la solicitud de inicio de sesión, inicie sesión como<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>.</block>
-  <block id="1f543f99cb43496b3a35f9786089c979" category="list-text">Si la controladora dañada se encuentra en el aviso del CARGADOR y forma parte de la configuración de alta disponibilidad, inicie sesión como<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> en el controlador en buen estado.</block>
   <block id="0373910e51252c7b97dcbea9f4942604" category="inline-link-macro">mysupport.netapp.com</block>
-  <block id="ec5866194941126dcbe55d496f612191" category="list-text">Si la controladora dañada se encuentra en una configuración independiente y en un aviso DEL CARGADOR, póngase en contacto con <block ref="d4b5db761eff3af8abec9c2aa8b19609" category="inline-link-macro-rx"></block>.</block>
   <block id="19285c8cf559d5176d09036ecccfca21" category="list-text">Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:<block ref="fbcb7868c4849064439910664677cb60" prefix=" " category="inline-code"></block></block>
-  <block id="efed560995ba912dfc2aa959620707ff" category="list-text">Compruebe la versión de ONTAP que el sistema está funcionando en el controlador dañado si está activo, o en el controlador asociado si el controlador dañado está inactivo, usando el<block ref="86722c94aea996cb23c11ba144dd63ed" prefix=" " category="inline-code"></block> comando:</block>
-  <block id="3c737345883504ebe7f0075c2e20f47e" category="list-text">Si se muestra &lt;lno-DARE&gt; o &lt;1Ono-DARE&gt; en el resultado del comando, el sistema no admite NVE, continúe para apagar la controladora.</block>
-  <block id="24b6214418480e5248eaed7a69ead79c" category="list-text">Si la controladora dañada forma parte de una configuración de alta disponibilidad, deshabilite la recuperación automática de la controladora en buen estado:<block ref="f454cdc7efb7d9bfad8109c4264a3a1b" prefix=" " category="inline-code"></block> o.<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-code"></block></block>
-  <block id="5a9f897d2d5283081378f66d6ed3cb7a" category="paragraph">Antes de apagar la controladora dañada, debe comprobar si el sistema tiene habilitado el cifrado de volúmenes de NetApp (NVE) o el cifrado de almacenamiento de NetApp (NSE). Si es así, debe comprobar la configuración.</block>
-  <block id="a66e142cebcfd6f8d676e487cf4cc04c" category="list-text">Conecte el cable de la consola al controlador dañado.</block>
-  <block id="b227d8958eb504b6da0a08172b4222db" category="list-text">Compruebe si el cifrado de volúmenes está configurado para cualquier volumen del clúster:<block ref="7c3d71a76f4de7c8aee1a7d4724dc269" prefix=" " category="inline-code"></block></block>
-  <block id="757faef19dddc204a17e4b5890ef2088" category="paragraph">Si algún volumen aparece en la salida, NVE se configura y debe verificar la configuración NVE. Si no aparece ningún volumen en la lista, compruebe si NSE está configurado.</block>
-  <block id="68e27ac90c8755079206639397a6abfe" category="list-text">Compruebe si NSE está configurado:<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block></block>
-  <block id="f5275334d8eb3b5cf9ea9368de40cedc" category="list-text">Si el resultado del comando incluye los detalles de la unidad con información sobre el modo y el identificador de claves, se configura NSE y se debe verificar la configuración de NSE.</block>
-  <block id="d13e2b9934c9ee03ca8acee53a7c7ab8" category="list-text">Si NVE y NSE no están configurados, es seguro apagar el controlador afectado.</block>
-  <block id="e11e37bddb45a2b092655cc718d388d5" category="section-title">Verifique la configuración de NVE</block>
-  <block id="a2a9cf44f7484401e6ca68da00a8fb6f" category="list-text">Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves:<block ref="881d6e3f0dd2c3e78dfd71306b0ea094" prefix=" " category="inline-code"></block></block>
-  <block id="a4dd34bde59d47a4d8ab4374389ea809" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> y se muestran todos los gestores de claves<block ref="e4894ca167b08880bfc35862f18575eb" prefix=" " category="inline-code"></block>, es seguro apagar el controlador dañado.</block>
-  <block id="6c2aeadd2a92753dd1f137a6c7068dc8" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>o si aparece algún gestor de claves<block ref="7060e0481896e00b3f7d20f1e8e2749a" prefix=" " category="inline-code"></block>, necesita completar algunos pasos adicionales.</block>
-  <block id="ff31b8e8c86ed558e88ec6430564b19a" category="list-text">Si ve el mensaje este comando no es compatible con la gestión de claves incorporada, debe completar algunos pasos adicionales.</block>
-  <block id="fdf5e8b8acf351dcc2fa5bbdd1ba8957" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna mostrada cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>o si aparece algún gestor de claves<block ref="7060e0481896e00b3f7d20f1e8e2749a" prefix=" " category="inline-code"></block>:</block>
-  <block id="ec36c7cfd75ef20d8b0ef51a16507a88" category="list-text">Recupere y restaure todas las claves de autenticación y los ID de clave asociados:<block ref="20ac3db1f77f6d53cac1035183191ed3" prefix=" " category="inline-code"></block></block>
-  <block id="aa93e7bc262e7964a396fd16f3a41d6b" category="paragraph">Si el comando falla, póngase en contacto con el soporte de NetApp.</block>
-  <block id="31509d9d2ecd7357c2d79b6100170edf" category="paragraph"><block ref="31509d9d2ecd7357c2d79b6100170edf" category="inline-link-rx"></block></block>
-  <block id="af4d1d3ffadafe2bf36d2f97e0624f27" category="list-text">Compruebe que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> para todas las claves de autenticación y que se muestran todos los gestores de claves<block ref="e4894ca167b08880bfc35862f18575eb" prefix=" " category="inline-code"></block>:<block ref="881d6e3f0dd2c3e78dfd71306b0ea094" prefix=" " category="inline-code"></block></block>
-  <block id="215eb27cc249e5b8e5b527e07342268c" category="list-text">Apague el controlador dañado.</block>
-  <block id="289ff53a98abf4d0113c963cb872935c" category="list-text">Si vio el mensaje este comando no es compatible cuando la gestión de claves incorporada está habilitada, muestre las claves almacenadas en el gestor de claves incorporado:<block ref="24bd9ca5c0703147837d742884b1fce7" prefix=" " category="inline-code"></block></block>
-  <block id="6675c229d440b5fa295266d2c66af8cb" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> realice un backup manual de la información de gestión de claves incorporada:</block>
-  <block id="edf0839ebd25c40cc1ef62105e3a5d8f" category="list-text">Vaya al modo de privilegios avanzado e introduzca<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite continuar:<block ref="8d2cf87827d8c4c105b70542cc18077d" prefix=" " category="inline-code"></block></block>
-  <block id="64b5850437a6c5ede6e9cff83bdaf98e" category="list-text">Introduzca el comando para mostrar la información de backup de OKM:<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block></block>
-  <block id="78a22d38c1530a757fec402c5079de18" category="list-text">Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados. Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.</block>
-  <block id="19f83f3f355a8b287ae2aa40b5c8fc99" category="list-text">Volver al modo admin:<block ref="d637edfa9d495486d28c165345856456" prefix=" " category="inline-code"></block></block>
-  <block id="eacc67b97d93f923ad42c8176ba8faa9" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>:</block>
-  <block id="24220f32b44e782b90a7317dc26ed7aa" category="list-text">Ejecute el asistente de configuración Key-Manager:<block ref="4b8262b0d75b9b325e2a26c3d4e25c38" prefix=" " category="inline-code"></block></block>
-  <block id="eaa3e7284bb9122bca13b95d6cc59ef1" category="admonition">Introduzca la clave de acceso de gestión de claves incorporada del cliente en el símbolo del sistema de. Si no se puede proporcionar la frase de contraseña, póngase en contacto con<block ref="7bc6752d2076d2c755eaebbdfeb91d23" category="inline-link-rx"></block></block>
-  <block id="e09a2f79fa1a4d59c75a72c0eaf5b34c" category="list-text">Compruebe que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> para toda la clave de autenticación:<block ref="24bd9ca5c0703147837d742884b1fce7" prefix=" " category="inline-code"></block></block>
-  <block id="b0ca95eab963c35c3d977c396c4acc7d" category="list-text">Puede apagar la controladora de forma segura.</block>
-  <block id="8eb91adaedfd18d8e21833ed58db7673" category="section-title">Verifique la configuración de NSE</block>
-  <block id="1adea8aec2ec00910dfbe0bb9bffce8e" category="list-text">Si ve el mensaje este comando no es compatible con la gestión de claves incorporada, debe completar algunos pasos adicionales</block>
-  <block id="4111f4985df04f9002129e591bafb45f" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, realice una copia de seguridad manual de la información de administración de claves integrada:</block>
-  <block id="c4761cfb1761b743925b9f1be16248cb" category="list-text">Introduzca el comando para mostrar la información de backup de OKM: <block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block></block>
-  <block id="dd987c60871b23529ac187b4b51deed6" category="admonition">Introduzca la frase de contraseña de OKM del cliente en la solicitud. Si no se puede proporcionar la frase de contraseña, póngase en contacto con<block ref="7bc6752d2076d2c755eaebbdfeb91d23" category="inline-link-rx"></block></block>
-  <block id="9a771de258008e976b0c48e9801a4c8c" category="list-text">Compruebe que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> para todas las claves de autenticación:<block ref="24bd9ca5c0703147837d742884b1fce7" prefix=" " category="inline-code"></block></block>
-  <block id="9829800481ae88069f363ca18226b993" category="list-text">Introduzca el comando para realizar un backup de la información de OKM: <block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix="" category="inline-code"></block></block>
-  <block id="dfeb46620d45b8d49ed48c1634840b5c" category="admonition">Asegúrese de que la información de OKM se guarda en su archivo de registro. Esta información será necesaria en situaciones de desastre en las que OKM podría necesitar recuperación manual.</block>
-  <block id="f715a6054e8d53c0d1e16dc1d6abcac0" category="list-text">Copie el contenido de la información de la copia de seguridad en un archivo o registro separados. Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.</block>
-  <block id="9e81e760541928935bc75be3ec2823a3" category="list-text">Puede apagar el controlador de forma segura.</block>
-  <block id="dbb06a74442cb70fc4d49f092b265be8" category="paragraph">Antes de apagar la controladora dañada, debe verificar si el sistema tiene habilitado el cifrado de volúmenes de NetApp (NVE) o el cifrado de almacenamiento de NetApp (NSE). Si es así, debe comprobar la configuración.</block>
-  <block id="9b744d081289382cce38c59e4b6d3f76" category="list-text">Verifique si el cifrado de volúmenes está en uso para cualquier volumen del clúster:<block ref="7c3d71a76f4de7c8aee1a7d4724dc269" prefix=" " category="inline-code"></block></block>
-  <block id="7ab4c93a1ecb36778005e21c2d800f15" category="paragraph">Si algún volumen aparece en la salida, NVE se configura y debe verificar la configuración NVE. Si no aparece ningún volumen en la lista, compruebe si NSE está configurado y en uso.</block>
-  <block id="9a8dafa2367c711dd5820d53a42508e9" category="list-text">Compruebe si NSE está configurado y en uso:<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block></block>
-  <block id="ad6e341d56390163e7fc8c5722a9e033" category="list-text">Si el resultado del comando incluye los detalles de la unidad con información sobre el modo y el identificador de clave, NSE se configura y es necesario verificar la configuración de NSE y en uso.</block>
-  <block id="52f57fb3e4c5bd20a2a75ecc9242ad9a" category="list-text">Si no se muestra ningún disco, NSE no está configurado.</block>
-  <block id="d592a26ccf1ea8ee5faa30f916fd2fb6" category="list-text">Si NVE y NSE no están configurados, no hay unidades protegidas con las claves NSE, es seguro apagar la controladora dañada.</block>
-  <block id="08c67f907b0f6c715c552d9ca4f21200" category="admonition">Después de la versión ONTAP 9.6, es posible que tenga otros tipos de gestor de claves. Los tipos son<block ref="5a2c55bb167f4f0fcfe52384fe7a4f0b" prefix=" " category="inline-code"></block>,<block ref="15460966dfd5d819470e51c2381536a3" prefix=" " category="inline-code"></block>, y.<block ref="c731f72e1d22a7c5e01a7cb789a8885e" prefix=" " category="inline-code"></block>. El proceso de confirmación de estos tipos es el mismo que el de confirmación<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> o.<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> tipos de gestor de claves.</block>
-  <block id="bc06dd585ab0c8107e022844d1397b0b" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, es seguro apagar el controlador dañado.</block>
-  <block id="ea9a06f5fb2cd5470a0c0c25b039a03c" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, necesita completar algunos pasos adicionales.</block>
-  <block id="c6d9b949fc815c7d1290e5acb1f3ade9" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, necesita completar algunos pasos adicionales.</block>
-  <block id="b43c8f6b2fe8e4b5d1d2f97c83c7c6ca" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, necesita completar algunos pasos adicionales.</block>
-  <block id="ad569dbab7bcafe6ae2a28cd4d832fd1" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>, Realizar una copia de seguridad manual de la información de OKM:</block>
-  <block id="1b3e3ec3fd07bf53abc8401f17b2a7b5" category="list-text">Introduzca el comando para mostrar la información de gestión de claves:<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block></block>
-  <block id="59d3229a75f9a710337879feec6b35c8" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>:</block>
-  <block id="c664ce90df89e48082cd24116ca9c5cf" category="list-text">Restaure las claves de autenticación de gestión de claves externas a todos los nodos del clúster:<block ref="24b420efa276a683b4bd02f14a2d6f59" prefix=" " category="inline-code"></block></block>
-  <block id="4729966d1b42f799e14eba4dd6dedbdb" category="paragraph"><block ref="4729966d1b42f799e14eba4dd6dedbdb" category="inline-link-rx"></block></block>
-  <block id="09344dc6761d2a7f8e0074911899de26" category="list-text">Si la<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> aparece el tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block>:</block>
-  <block id="f5321e091dead7c4ead8728aa3332803" category="list-text">Introduzca el comando SYNC del gestor de claves de seguridad incorporado:<block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix=" " category="inline-code"></block></block>
-  <block id="b1dfba2b33907e87a5254267b34a3e32" category="list-text">Compruebe que el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> el tipo muestra<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block>, Y a continuación, realice una copia de seguridad manual de la información de OKM.</block>
-  <block id="5420f491e628cc60c7e1ffcad20d35da" category="list-text">Introduzca el comando para mostrar la información de backup para la gestión de claves:<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block></block>
   <block id="33d6eb89aeb8e2ba671f43912a716deb" category="summary">Instale y configure el sistema.</block>
   <block id="32df575971fcea9e12bea94b59ef2afa" category="doc">Empezar desde aquí: Elija la experiencia de instalación y configuración</block>
   <block id="27e824f8d84211dc662b81aa3d2c5296" category="paragraph">Puede elegir entre formatos de contenido diversos a modo de guía durante la instalación y configuración de su nuevo sistema de almacenamiento.</block>
@@ -269,61 +200,14 @@
   <block id="69d8be94d5b9ba35360160c6e3097920" category="list-text">Si AutoSupport no está habilitado, llame al<block ref="201cec37350c6561a61e79fe67dd46bf" category="inline-link-rx"></block> para registrar el número de serie.</block>
   <block id="d6017f1e7a58b5b39e8610db7b5b53b0" category="section-title">Paso 3: Devuelva la pieza que falló a NetApp</block>
   <block id="d5bfba1ac511ef4b8b0fcb489bdaf25b" category="summary">Una vez marcadas las variables de entorno, debe completar los pasos específicos de los sistemas que tienen Onboard Key Manager \(OKM\), NetApp Storage Encryption \(NSE\) o NetApp Volume Encryption \(NVE\) habilitado.</block>
-  <block id="adbdad02f5bfa87c9c2f8f336a215924" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A200</block>
   <block id="080362a2b4cc1ec10758d0142bde822c" category="paragraph">Una vez marcadas las variables de entorno, debe completar los pasos específicos de los sistemas que tienen activada la opción Onboard Key Manager (OKM), el cifrado en almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE).</block>
-  <block id="675deaab2af548f6613e03341b8c6bf5" category="paragraph">Si NSE o NVE están habilitados junto con Onboard Key Manager, debe restaurar la configuración que capturó al principio de este procedimiento.</block>
   <block id="27be5ff3320dd506741c0dbef8e1a1d9" category="list-text">Conecte el cable de consola a la controladora de destino.</block>
-  <block id="58381527d135a27a6bde4b5bd05e7a8a" category="list-text">Utilice la<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> Comando en el símbolo del sistema del CARGADOR para arrancar la controladora.</block>
-  <block id="9031c37a40e72ae548a2065bf45f23a8" category="list-text">Compruebe la salida de la consola:</block>
-  <block id="48bb654d023280bd32c893baf085bc9c" category="cell">*Si la consola muestra...*</block>
-  <block id="5868efbae90f2f86a5ed062e24cabc9d" category="cell">*Entonces...*</block>
-  <block id="be909ce65bf8d6df63809bd8c8368b35" category="paragraph">Arranque el controlador en el menú de arranque:<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block></block>
-  <block id="c970b4d58ed065781ff23330890becaf" category="list-text">Introduzca<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> en el prompt de</block>
-  <block id="f150e0b3fbf0503690ae315a44612249" category="list-text">En el aviso del CARGADOR, introduzca el<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="37aa3abead44124c60d5894612210c4c" category="list-text">Introduzca la frase de acceso para el administrador de claves incorporado que haya obtenido del cliente al principio de este procedimiento.</block>
-  <block id="0ea97f116afede3b0e4b9dba4ca1aef5" category="admonition">Los datos se emiten desde cualquiera de los dos<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> o.<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="02903ebc5b96b9e7e091112d0909726c" category="paragraph">Ejemplo de datos de backup:</block>
-  <block id="ccabb1a53730fc0cb785a201547625ee" category="paragraph">------------------------------ COMIENCE COPIA DE SEGURIDAD----------------------------------------------------- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAYAYAYAYAYAYAYAYAYAYAYAYAYZYAYAYAYAYAYZYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY . . . H4nPQM0nrDRYRa9SCv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</block>
-  <block id="f24608ce23f83ac6c7240ac03d83765f" category="paragraph">------------------------------- BACKUP FINAL---------------------------------------------------------</block>
-  <block id="4c01cfbecac579c81f79ea4297891a2e" category="list-text">En Boot Menu (Menú de inicio), seleccione la opción para el inicio normal.</block>
   <block id="fd8f15b053a3b35d3aaa40b5f46c7fbc" category="list-text">Confirme que la controladora de destino está lista para la devolución con el<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="8179ceedf2aad3a2fafb48feb6a32bdb" category="list-text">Si el comando falla debido a un disco fallido, desactive físicamente el disco que ha fallado, pero deje el disco en la ranura hasta que se reciba un reemplazo.</block>
-  <block id="cb941ddf6eb69b4ddc86e6b07a005e30" category="list-text">Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo se cierran las sesiones CIFS.</block>
-  <block id="49a6e24ea887965d547c6593680c2f1f" category="admonition">Los terminación CIFS pueden provocar la pérdida de datos.</block>
-  <block id="b52ec9545c2eb85c1596e99bc30ce43d" category="list-text">Si el comando falla porque el partner está "no listo", espere 5 minutos para que los NVMems se sincronicen.</block>
-  <block id="4de9d59eeee5e688ec5317cbedf4cac0" category="list-text">Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el centro de documentación adecuado para obtener más información.</block>
-  <block id="ad72ea31e4e098e2baae0a62a1ab50e5" category="list-text">Una vez que se haya completado la devolución, compruebe el estado de la conmutación al nodo de respaldo y la devolución con el<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> y..<block ref="03e0a2fa0be82678d3c0e0dc213cf91c" prefix=" " category="inline-code"></block>comandos -giveback'.</block>
-  <block id="579b0712f3b828fdc4e9020e1b1bf320" category="paragraph">Solo se mostrarán los agregados CFO (agregados raíz y datos en estilo CFO).</block>
-  <block id="9b1d1f16f124136fae5f19f7571be4e8" category="list-text">Mueva el cable de la consola a la controladora de destino.</block>
-  <block id="0b5a2bb237981cd334295abf32e335c5" category="list-text">Espere 10 minutos hasta que la clave se sincronice en el clúster.</block>
-  <block id="94f8d95799ad1cb87cd8f02b76a24ddb" category="list-text">Ejecute el<block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix=" " category="inline-code"></block> y, a continuación, introduzca la frase de acceso cuando se le solicite.</block>
-  <block id="7efe0ba3bdb03965520de5d493cb1efa" category="list-text">Introduzca el<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block> comando para ver una vista detallada de todas las claves almacenadas en el gestor de claves incorporado y verificar que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
-  <block id="36ec6aaaed7ffba8db1abf0b30f8ad7e" category="admonition">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, Póngase en contacto con el servicio de atención al cliente</block>
-  <block id="e5a640f18574a8775849c862d1047203" category="list-text">Mueva el cable de la consola al controlador correspondiente.</block>
-  <block id="3626acf8f3fb043db8b4ec1fa9c88689" category="list-text">Proporcione a la controladora objetivo mediante el<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="f1f2858d6d4ebbd18bf81861cde4a024" category="list-text">Compruebe el estado de devolución, 3 minutos después de que el informe haya finalizado, utilizando la<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="c7db1a1f0c259cdde0a5d94486a50eab" category="paragraph">Si la devolución no está completa tras 20 minutos, póngase en contacto con el soporte de cliente.</block>
-  <block id="fbca918423039255e9a6e82d918f66a5" category="list-text">En el símbolo del sistema clustershell, introduzca el<block ref="55cf88a325a6e0574aef732566cc984c" prefix=" " category="inline-code"></block> comando para mostrar las interfaces lógicas que no están en su controladora y puerto de inicio.</block>
-  <block id="6b74e1ea2b206c2676c7c5e7a08d32f1" category="paragraph">Si alguna interfaz aparece como<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>, vuelva a revertir estas interfaces a su puerto de inicio mediante el<block ref="c6d78454e93ac9b7b19033252e24216f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="c1f75c987a465b1cc4e36d81f98dc0f6" category="list-text">Mueva el cable de la consola a la controladora de destino y ejecute el<block ref="86722c94aea996cb23c11ba144dd63ed" prefix=" " category="inline-code"></block> Comando para comprobar las versiones de ONTAP.</block>
   <block id="0e4c0966d084bca62cb0b1d57bb4cd37" category="list-text">Restaure la devolución automática si la ha desactivado mediante el<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> comando.</block>
   <block id="2d3bee2aa5bb3ec8ffb5a77dc1eba625" category="paragraph">La solicitud de inicio de sesión de</block>
-  <block id="9a937b3bb3ba6ff155022c69722c1b2d" category="paragraph">Vaya al paso 7.</block>
   <block id="da3aca27b9eb9a6e192b169e434a93ae" category="list-text">Inicie sesión en el controlador asociado.</block>
-  <block id="22a48d4647a1c5395be2a1c92346ddfe" category="list-text">Mueva el cable de la consola a la controladora correspondiente y regrese el almacenamiento de la controladora objetivo mediante el<block ref="b8fdea4d66ac1f147d264423cfbd7950" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="f872779437b4e53b16edbb822fb3c0f4" category="list-text">Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo cerrar sesiones CIFS.</block>
-  <block id="1924e570ac40cf94ae49e97f9ee5aa7c" category="list-text">Si el comando falla porque el partner "no está listo", espere 5 minutos para que los NVMems se sincronicen.</block>
-  <block id="aa633ff512f47818b432e9d473f72e85" category="list-text">Espere 3 minutos y compruebe el estado de la conmutación al nodo de respaldo con el<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="05b88caec4b40ec70bfc6914f6b9a2ac" category="list-text">Utilice la<block ref="46353f4e0bb2c136591c37c9eeedcf40" prefix=" " category="inline-code"></block> en el símbolo del sistema clustershell, para revisar el resultado.</block>
   <block id="5902a3ce474984c1a3dac5ba814ff133" category="list-text">Conecte el cable de la consola al controlador asociado.</block>
   <block id="432fbc80d952a560e7d764411dacca12" category="list-text">Respalde la controladora con el<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="4b6f3f55d184c33efac164b8b2ee5af1" category="cell">Si la consola muestra...</block>
-  <block id="847e5cb0171189006a180b0bdc820c1d" category="list-text">Utilice la<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block> Comando para mostrar los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves.</block>
-  <block id="0ef66abc20cffa4c4991ca92804b1201" category="list-text">Si la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, ha finalizado y puede continuar con el proceso de sustitución.</block>
-  <block id="3590d4c7e4b3d4c1072a4ec2b4e51916" category="list-text">Si la<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, utilice la<block ref="24b420efa276a683b4bd02f14a2d6f59" prefix=" " category="inline-code"></block> Comando para restaurar los ID de claves de las claves de autenticación.</block>
-  <block id="115d1cf06878d4a98f851bc4a19497e0" category="admonition">Si el comando falla, póngase en contacto con el servicio de atención al cliente.</block>
-  <block id="1548ff1f461a56c2764d1d704c63c971" category="list-text">Si la<block ref="aac34f614f4514a3f670bae971a30369" prefix=" " category="inline-code"></block> =<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna = cualquier otra cosa que no sea<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block>, utilice la<block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix=" " category="inline-code"></block> Comando para volver a sincronizar el tipo de gestor de claves.</block>
-  <block id="85782e063d10d2f824adbf09b6b2f2df" category="paragraph">Utilice la consulta de claves del administrador de claves de seguridad para verificar que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
   <block id="f63424327284890605f150c96c2c4961" category="summary">Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.</block>
   <block id="14330db1bbe50472e695b6fe53ec9c46" category="doc">Arranque la imagen de recuperación: AFF A200</block>
   <block id="bf2fbe1a850cb2856c4fface544e0048" category="list-text">Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB:<block ref="ec44bfe32a6d575f528cbdeeb29c9942" prefix=" " category="inline-code"></block></block>
@@ -860,7 +744,6 @@
   <block id="7fae300c0e583b8ddac7c68a83249aa0" category="list-text">Alinee el módulo con el compartimento con la muesca de la esquina del módulo situada cerca del pestillo del deslizador del chasis. El compartimento le impedirá instalar el módulo boca abajo.</block>
   <block id="4ca78e7a42c4693e2d9cfe7f6930f8a7" category="list-text">Empuje el módulo dentro del compartimento hasta que esté completamente asentado al ras con el chasis.</block>
   <block id="97f6bb6bf183f068f291c29c77c8d952" category="paragraph">Hay un clic audible cuando el módulo está seguro y conectado al plano medio.</block>
-  <block id="f6731fc619f8ba373101af81f8f57df0" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A700 y FAS9000</block>
   <block id="1e9b0aa552aa50eb60a5f0b0da0057b0" category="summary">Para reemplazar un módulo de E/S, debe realizar una secuencia específica de tareas.</block>
   <block id="67217a13f69bc00335677c551451bc10" category="doc">Sustituya un módulo I/o - AFF A700 y FAS9000</block>
   <block id="e3ca62ecd59008690a4c01731db9497c" category="section-title">Paso 2: Sustituya los módulos de E/S.</block>
@@ -915,11 +798,6 @@
   <block id="cf10f00c0112c9e38ae28a3188c8cbd6" category="section-title">Paso 7: Devuelva la pieza que falló a NetApp</block>
   <block id="b4c31341ab0f1e49529261f974be146d" category="summary">Antes de apagar el nodo con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado del nodo con deterioro, deshabilitar la devolución automática del nodo y comprobar la versión de ONTAP que el sistema se está ejecutando.</block>
   <block id="44e5cb60393d7e735de29347758edd23" category="doc">Compruebe las claves de cifrado incorporadas</block>
-  <block id="9c675ab95a17d7706cc75c5ef43cd314" category="list-text">Si &lt;lno-DARE&gt; no se muestra en el resultado del comando y el sistema ejecuta ONTAP 9.5, vaya a. <block ref="bb573a9efe1b6bf0e0892d0c586f8500" category="inline-xref-macro-rx"></block>.</block>
-  <block id="08b4a74e7beb4fdd66d8c35f48e446dd" category="list-text">Si &lt;lno-DARE&gt; no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9.6 o una versión posterior, vaya a. <block ref="51b5502ad45a0354bf57a42b448e6184" category="inline-xref-macro-rx"></block>.</block>
-  <block id="e1cb9a7881589d8bbc03d3bc416f6eb6" category="list-text">Si el nodo dañado forma parte de una configuración de alta disponibilidad, deshabilite la recuperación automática del nodo en buen estado:<block ref="f454cdc7efb7d9bfad8109c4264a3a1b" prefix=" " category="inline-code"></block> o.<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-code"></block></block>
-  <block id="598fddf79c16170c6db6427cdff14daa" category="section-title">Opción 1: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.5 y versiones anteriores</block>
-  <block id="eb924216b30cedba77ddd9a35ecc861e" category="section-title">Opción 2: Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores</block>
   <block id="727b43bb986548fddfd9fbbfd6c3c609" category="summary">Para completar el procedimiento de sustitución y restaurar el sistema a pleno funcionamiento, debe recuperar el almacenamiento, restaurar la configuración de cifrado del almacenamiento de NetApp (si fuera necesario) e instalar licencias para la nueva controladora.</block>
   <block id="a0d8eae32c5a472f83afef8b93706ea5" category="paragraph">Para completar el procedimiento de sustitución y restaurar el sistema a pleno funcionamiento, debe recuperar el almacenamiento, restaurar la configuración de cifrado del almacenamiento de NetApp (si fuera necesario) e instalar licencias para la nueva controladora. Debe completar una serie de tareas antes de restaurar el sistema a pleno funcionamiento.</block>
   <block id="2d8b1cc5d54ecd8a729105fdf07054a0" category="section-title">Paso 1: Instalar licencias para el nodo de repuesto en ONTAP</block>
@@ -1478,20 +1356,6 @@
   <block id="26d09b9ba8933f73cf8d88ec306034f4" category="list-text">Gire el mango de la leva de forma que quede alineado con la fuente de alimentación.</block>
   <block id="21a759f002cfc3385b168953dde9a34e" category="summary">El procedimiento para arrancar la controladora con deterioro de la imagen de recuperación depende de si el sistema está en una configuración MetroCluster de dos nodos.</block>
   <block id="d8be62011c1882fcf382ba1c61256314" category="doc">Arrancar la imagen de recuperación: AFF A400</block>
-  <block id="2b7c2aaa4a365717d683513bec2dd543" category="doc">Restauración de OKM, NSE y NVE según sea necesario: AFF A400</block>
-  <block id="23e65b68007bc60e8ad67b39ecae3fd1" category="list-text">Determine qué sección debe usar para restaurar sus configuraciones de OKM, NSE o NVE: Si NSE o NVE están habilitados junto con el gestor de claves incorporado debe restaurar la configuración capturada al principio de este procedimiento.</block>
-  <block id="062e5198807f7350b9d909ed3712446f" category="list-text">Si NSE o NVE están habilitados y el gestor de claves incorporado está habilitado, vaya a. <block ref="33a171c6b2b99214dd0e88721c37d6a3" category="inline-xref-macro-rx"></block>.</block>
-  <block id="ab86e173cd8c1637bf2f46855c4a5445" category="list-text">Si NSE o NVE están habilitados para ONTAP 9.6, vaya a. <block ref="562d430b0be788e16727b0e1ac85777d" category="inline-xref-macro-rx"></block>.</block>
-  <block id="8ec39994b3f9e646dc5702b80aa074eb" category="section-title">Restaure NVE o NSE cuando el gestor de claves incorporado está habilitado</block>
-  <block id="c6ad4048580181b0fbf4e191b6491baa" category="paragraph">Esperando devolución</block>
-  <block id="349f344b4475008476c2c7c47e12e197" category="list-text">En el mensaje: ¿Desea detener este nodo en lugar de esperar [y/n]? , introduzca:<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block></block>
-  <block id="edcc5f0d9a5fe5c90139ba29a255573a" category="list-text">En Boot Menu (Menú de inicio), introduzca el comando oculto,<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block> y responda<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> en el prompt de</block>
-  <block id="2994665dfb5faa99ddd30c342c374c54" category="list-text">Cuando se le solicite que introduzca los datos de copia de seguridad, pegue los datos de copia de seguridad que capturó al principio de este procedimiento, cuando se le solicite. Pegue la salida de<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> O.<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> comando</block>
-  <block id="18b0469d01c1aab8ffb650afc5ac6e1b" category="paragraph">El sistema arranca esperando la devolución... prompt.</block>
-  <block id="aec87d8b58ad2257f437b0c97adc8c43" category="list-text">Restauración únicamente de los agregados del director financiero con la<block ref="291b31306c2e0668f091d41edca7e97f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="be2212e27f9b1a451164ead27dee26c8" category="list-text">Si ejecuta ONTAP 9.6 o una versión posterior, ejecute la sincronización integrada del gestor de claves de seguridad:</block>
-  <block id="c21bd0aede10c854ba134924f61e7b69" category="section-title">Restaure NSE/NVE en sistemas que ejecutan ONTAP 9.6 y versiones posteriores</block>
-  <block id="19594966094891bac0ec9a57c3d97502" category="paragraph">Utilice la<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block> para comprobar que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
   <block id="510635eaf5a7fc8c0ceb9ca04a70c3e1" category="summary">Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cualquier módulo SFP y QSFP de las tarjetas, sustituir el PCIe o la tarjeta intermedia con error y volver a conectar las tarjetas.</block>
   <block id="dd473272c4d6050e610191be8ab18137" category="doc">Sustituya una tarjeta PCIe o intermedia - AFF A400</block>
   <block id="d26f9a8db778421541cf5cebfdeb9039" category="section-title">Paso 3: Sustituya una tarjeta PCIe</block>
@@ -1616,8 +1480,6 @@
   <block id="ea1ac931101dcb5e350d2730dc13a26f" category="section-title">Paso 7: Instale el módulo del controlador</block>
   <block id="8647835bebea663e6009839ccbd3ce9e" category="paragraph">Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.</block>
   <block id="ef4c4a16058180d2b1384df9210877f6" category="paragraph">Puede utilizar la animación, la ilustración o los pasos escritos siguientes para instalar el módulo de la controladora de reemplazo en el chasis.</block>
-  <block id="ababafc28230637bc7ee0dc0762d3d7a" category="list-text">Si &lt;lno-DARE&gt; no aparece en el resultado del comando y el sistema está ejecutando ONTAP 9.6 o una versión posterior, vaya a la siguiente sección.</block>
-  <block id="ddf5ebb5c1d9ad17f6222185e1822bf6" category="section-title">Compruebe NVE o NSE en sistemas que ejecutan ONTAP 9.6 y posterior</block>
   <block id="936537a41290b6040d5cea518bd8e9f8" category="doc">Restaurar y verificar la configuración del sistema: AFF A400</block>
   <block id="9826dc7dca2ce77788236ffc0e442de8" category="section-title">Paso 2: Verifique y configure el estado de alta disponibilidad del módulo de la controladora</block>
   <block id="79cfe080d4a6943442ed3bba2502d8a1" category="doc">Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos: AFF A400</block>
@@ -1822,7 +1684,6 @@
   <block id="91a6324d4b829f5094febe4585477532" category="paragraph">Si el sistema está en una configuración IP de MetroCluster, consulte<block ref="5cf80fcf55f6ce2ad8515082eb643f93" category="inline-link-rx"></block> instrucciones.</block>
   <block id="b0a5349e52bfc1b486c0f4bb7f8c6b18" category="doc">Apague los controladores - AFF A250</block>
   <block id="1f684a558f672dca1e5cd104fa082470" category="doc">Restauración completa del sistema - AFF A250</block>
-  <block id="09ceb3b4ff2ad3b2c821f40047aee6f1" category="doc">Restauración de OKM, NSE y NVE según sea necesario: AFF A250</block>
   <block id="5e6435d148cbdc8c0269f95c1ec7b442" category="doc">Inicie la imagen de recuperación: AFF A250</block>
   <block id="9bd3c449bc91b7e2a90bbc21bfbd5dcb" category="doc">Sustituya el hardware del módulo del controlador AFF A250</block>
   <block id="8ebd201c2b1ccf04603b91e8657dad2b" category="paragraph">Utilice el siguiente vídeo o los pasos tabulados para reemplazar un módulo de controlador:</block>
@@ -2044,7 +1905,6 @@
   <block id="f13064e88c8a13f2443d04d2ee4b74bf" category="list-text">Pulse<block ref="a6fc3b403c4b76c48752c271ead92be8" prefix=" " category="inline-code"></block> cuando se le solicite que restaure la configuración de copia de seguridad.</block>
   <block id="044d6d45343bea91e00935a60885325b" category="paragraph">Si se le solicita que continúe con la actualización, pulse<block ref="13a9c4ec1810b3cc11a9e77c220f41c9" prefix=" " category="inline-code"></block>.</block>
   <block id="2c3a780fd5e013ffc611cc8a846f36b2" category="list-text">Si una variable de entorno no está establecida como se espera, modifíquela con el<block ref="67e167b3f3ad09b36432a3cfd7c50ec2" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="c8ba643914db1664b5eb486f2f97cf94" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF C190</block>
   <block id="0f614c99bcb66f2ffd7b4fb27558ea2a" category="doc">Descripción general de la sustitución del chasis: AFF C190</block>
   <block id="390911875f818301a4ee051939794a66" category="paragraph">Para sustituir el chasis, debe mover las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos de la controladora del chasis dañado al nuevo chasis, y cambiar el chasis dañado del bastidor del equipo o del armario del sistema por el nuevo chasis del mismo modelo que el chasis dañado.</block>
   <block id="bdcac988a0903764d18f7be5086a6f98" category="doc">Sustituya un DIMM - AFF C190</block>
@@ -2055,7 +1915,6 @@
   <block id="e258cc57dc79df503088fd861585707d" category="paragraph">Debe buscar un mensaje de la consola de actualización automática del firmware. Si aparece el mensaje de actualización, no pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> para interrumpir el proceso de arranque hasta que aparezca un mensaje confirmando que la actualización ha finalizado.</block>
   <block id="33ebea377cad1dfbfc8858828ecec322" category="paragraph">Sólo pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> cuando vea el mensaje<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block>.</block>
   <block id="6bc52fae9fd0e09da172551e507a1444" category="admonition">Si se cancela la actualización del firmware, el proceso de arranque sale al símbolo del sistema del CARGADOR. Debe ejecutar el comando update_flash y, a continuación, salir DEL CARGADOR y arrancar en modo de mantenimiento pulsando<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Cuando vea iniciar AUTOBOOT, pulse Ctrl+C para cancelar.</block>
-  <block id="81b014b89575d4c2c10465dcae392a39" category="doc">Compruebe las claves de cifrado incorporadas: AFF C190</block>
   <block id="42ab358b243344438e34cb8483bb2ca2" category="doc">Restaurar y verificar la configuración del sistema: AFF C190</block>
   <block id="76afa3fde08aeab96dca3e3a39dcd27a" category="list-text">mcc-2n</block>
   <block id="3125087114c2490b7c6800800a39a990" category="summary">En esta sección se proporcionan instrucciones gráficas para una instalación típica de su sistema desde el montaje en rack y el cableado mediante la puesta en marcha inicial del sistema.</block>
@@ -2157,7 +2016,6 @@
   <block id="8f2c083353ba46faa1f5bfb6d1740753" category="doc">Arranque la imagen de recuperación: FAS8200</block>
   <block id="b6c33850022ae87ff1d2d111469a0da5" category="paragraph">: Debe arrancar la imagen ONTAP desde la unidad USB, restaurar el sistema de archivos y comprobar las variables de entorno.</block>
   <block id="5ff3f260d4c603a9f1e9d18be080e7e7" category="list-text">Restaure el sistema de archivos var:</block>
-  <block id="aae29116de4798f9a6b173dc6aa9ace8" category="doc">Restaure OKM, NSE y NVE según sea necesario: FAS8200</block>
   <block id="dc981419fad4296d2c2f3fd5fbc53ea9" category="summary">Para reemplazar una tarjeta PCIe, debe realizar una secuencia específica de tareas.</block>
   <block id="d48c73102976c851dd07cb5e9103a138" category="doc">Sustituya una tarjeta PCIe - FAS8200</block>
   <block id="414a13111d71acdb13232c28cd2fb7b4" category="paragraph">Para sustituir una tarjeta PCIe, búsquela dentro de la controladora y siga la secuencia específica de pasos.</block>
@@ -2225,7 +2083,6 @@
   <block id="c15449579d92fa124a659aa412ed32be" category="section-title">Paso 7: Instale la controladora</block>
   <block id="771cc9329585f02c8fc3df678acde373" category="list-text">Si aún no lo ha hecho, cierre el conducto de aire de la CPU.</block>
   <block id="ce412027e710a9d744a414178dca4fc9" category="paragraph">*Importante:* durante el proceso de inicio, es posible que vea las siguientes indicaciones:</block>
-  <block id="82430a05d3820aeaeb756230e94ee643" category="doc">Compruebe el cifrado incorporado: FAS8200</block>
   <block id="d0df344784eb5147448a19da06257cbe" category="doc">Restaurar y verificar la configuración del sistema: FAS8200</block>
   <block id="ec2f589bb209f983546d21f6ab53d160" category="doc">Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos: FAS8200</block>
   <block id="061a78fed35fa26d870ae789dd6685b8" category="doc">Devuelva la parte con el error a NetApp - FAS8200</block>
@@ -2366,7 +2223,6 @@
   <block id="81991fce0a133e64dc7f5bd7f590afbd" category="list-text">Ranuras DIMM del sistema: 2,4, 7, 9, 13, 15, 18, y 20</block>
   <block id="42fedd56824cc1ddf6aa00c30e53255e" category="list-text">Ranura NVDIMM: 11</block>
   <block id="eca300a6c6eda57ea2fabc4bee898f5f" category="doc">Recuperar el sistema y reasignar discos - AFF A320</block>
-  <block id="9652a78dd98a74622c7cc8ab283453ef" category="doc">Restauración de OKM, NSE y NVE según sea necesario: AFF A320</block>
   <block id="bf9092f2ef7eb615a69f90a85ffa3cae" category="doc">Arranque la imagen de recuperación - AFF A320</block>
   <block id="cf32c31dc3885f15168fe5279b7d1cf8" category="list-text">Ejecute el comando restore backup:<block ref="44d388b27236c791c5fe1d30cc29bc43" prefix=" " category="inline-code"></block></block>
   <block id="34a4ecb461cfb36d2012f0c5b69f96be" category="list-text">Si una variable de entorno no está establecida como se espera, modifíquela con el<block ref="9065882215d4a8221fe75c4a7e40b529" prefix=" " category="inline-code"></block> comando.</block>
@@ -2510,31 +2366,7 @@
   <block id="0161d43ee09fff69cc35ae43ed1f07f5" category="image-alt">drw 9500 retire REPLACE LED mod</block>
   <block id="f0bf4654c0d8dcfe407c27af203be1d1" category="paragraph">Módulo LED USB</block>
   <block id="9bfe8c74a54e0b8aed08814ba2231085" category="section-title">Paso 2: Devuelve el componente que ha fallado</block>
-  <block id="c864447c725c6855c6a867ef48db2ee6" category="doc">Pasos de sustitución de medios posteriores al arranque para OKM, NSE y NVE: FAS9500</block>
-  <block id="3520fe246261ba13b3370caf4fcfc36f" category="paragraph">Una vez marcadas las variables de entorno, debe completar los pasos específicos para restaurar la gestión de claves incorporada (OKM), el cifrado de almacenamiento de NetApp (NSE) y el cifrado de volúmenes de NetApp (NVE).</block>
-  <block id="cb8bd5f8b409f772feeb282be5c812fd" category="list-text">Conecte el cable de consola al nodo de destino.</block>
-  <block id="09c59b704f34eb3d4a2fd7d67e831c1b" category="list-text">Utilice la<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> Comando en el símbolo del sistema del CARGADOR para arrancar el nodo.</block>
-  <block id="ee576c01fd9d6961677d0a6255745ad9" category="paragraph">Arrancar el nodo en el menú de arranque:<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block></block>
-  <block id="9a35117ce5f367da3a3ca5116d861d73" category="list-text">En Boot Menu (Menú de inicio), introduzca el comando oculto,<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block>, y conteste<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> en el prompt de.</block>
-  <block id="2a5c64cf16afc052ecc2fa22a6498fd8" category="list-text">Cuando se le solicite que introduzca los datos de copia de seguridad, pegue los datos de copia de seguridad que capturó al principio de esta sección, cuando se le solicite. Pegue la salida de<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> O.<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="b1a9ca4c67f6b51a4dc8e3cdf1151948" category="admonition">Los datos se emiten desde cualquiera de los dos<block ref="6b6f6c1a8bc1fede794cda92ed140953" prefix=" " category="inline-code"></block> o el comando «show-backup» de la gestión de claves de seguridad integrada.</block>
-  <block id="1491d378fbbc2d9a6048e5b9b67a396a" category="paragraph">Introduzca los datos de backup:</block>
-  <block id="da0c8baa25fcee791ffa412ec90044ca" category="list-text">Mueva el cable de la consola al nodo compañero e inicie sesión como administrador.</block>
-  <block id="04767794ed138df3aa3f519e53e96bcc" category="list-text">Entorno sólo los agregados del director financiero con la<block ref="291b31306c2e0668f091d41edca7e97f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="56b9aa57eb07c87d93d8f36e42537891" category="list-text">Si el comando falla debido a una sesión CIFS abierta, compruebe con el cliente cómo se cierran las sesiones CIFS.</block>
-  <block id="99cf22e04f567c5375349f8aa14becd4" category="list-text">Si el comando falla porque el asociado "no está listo", espere 5 minutos para que los NVRAMS se sincronicen.</block>
-  <block id="4d2b3834d59169dcbb17afc3c699e3ac" category="list-text">Si se produce un error en el comando debido a un proceso de NDMP, SnapMirror o SnapVault, deshabilite el proceso. Consulte el contenido adecuado para obtener más información.</block>
-  <block id="2f6a11061d2c04a9d9730e06edaa97a6" category="list-text">Una vez que se haya completado la devolución, compruebe el estado de la conmutación al nodo de respaldo y la devolución con el<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> y comandos show-giveback de conmutación al nodo de respaldo de almacenamiento.</block>
-  <block id="dc8d8ea6e07ddae6b12e88e3bd16de6b" category="list-text">Introduzca el<block ref="29147b8df9427de2766a06d943470fcf" prefix=" " category="inline-code"></block> comando para ver una vista detallada de todas las claves almacenadas en el gestor de claves incorporado y verificar que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
-  <block id="da4a2b9c52e805a46a6951e79d1796d9" category="list-text">Mueva el cable de consola al nodo compañero.</block>
-  <block id="da4a3c359cf5d24082930f89cd19b3fc" category="list-text">Vuelva a generar el nodo de destino mediante el<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="2c5db3c58d5b9378c452e1c4413e4723" category="list-text">Compruebe el estado de devolución, tres minutos después de que haya completado el informe, utilizando la<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="a23d49d00b003ec7514a6fcf51f93bac" category="list-text">En el símbolo del sistema clustershell, introduzca el<block ref="55cf88a325a6e0574aef732566cc984c" prefix=" " category="inline-code"></block> comando para mostrar las interfaces lógicas que no están en su puerto y nodo de inicio.</block>
-  <block id="80d6c51420c97a5fd468a280127498fe" category="list-text">Mueva el cable de consola al nodo de destino y ejecute el<block ref="86722c94aea996cb23c11ba144dd63ed" prefix=" " category="inline-code"></block> Comando para comprobar las versiones de ONTAP.</block>
   <block id="681ec8b91432585ef548a814edeadbb6" category="paragraph">Vaya al paso 7.</block>
-  <block id="809f0d7cd6f78909c00532d70262031d" category="list-text">Mueva el cable de consola al nodo asociado y vuelva a proporcionar el almacenamiento del nodo de destino mediante el<block ref="b8fdea4d66ac1f147d264423cfbd7950" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="d0dfaa684d62992773c993db76a1b047" category="list-text">Utilice la<block ref="29147b8df9427de2766a06d943470fcf" prefix=" " category="inline-code"></block> comando para mostrar las claves de cifrado y autenticación almacenadas en los servidores de gestión de claves.</block>
-  <block id="9c261e7ffcca743a66955073e35233a0" category="paragraph">Utilice la<block ref="29147b8df9427de2766a06d943470fcf" prefix=" " category="inline-code"></block> para comprobar que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna =<block ref="0f456cd0d7a5ae4a393a7b207a83284e" prefix=" " category="inline-code"></block> para todas las claves de autenticación.</block>
   <block id="eb0c0a024c4f0aa6cfdd5767de1f16f1" category="doc">Sustituya un módulo de E/S - FAS9500</block>
   <block id="b1ba38ad947dd1578f31b0197f58b44d" category="paragraph">Vaya al paso siguiente.</block>
   <block id="c593377a30c937702f96d13d76989bc2" category="video-title">Animación: Desmontaje/montaje del módulo de E/S.</block>
@@ -2558,8 +2390,6 @@
   <block id="3c882fe343465f148bf8900ab7dde11b" category="image-alt">drw 9500 sustituye a los módulos dimm del PCM</block>
   <block id="2ea72e4e42953327054629036f1b6a12" category="video-title">Animación: Instalar el controlador</block>
   <block id="ad4cfe6fc2b7cb05bf19c4a07bb3ec19" category="list-text">Para interrumpir el proceso de arranque, pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> Cuando vea Pulse Ctrl-C para el menú de inicio.</block>
-  <block id="111654993a380e0c9bea6bf2840bed64" category="doc">Comprobaciones previas al apagado para las claves de cifrado integradas - FAS9500</block>
-  <block id="127cae73d2b4d7758b4c0a0e3f49ba5f" category="section-title">ONTAP 9.6 y posteriores</block>
   <block id="cdcb00922b21796793c48c3b35b6c0f4" category="doc">Inicie la imagen de recuperación - FAS9500</block>
   <block id="6ce5f7147d284a7d41c1fc93d3072d57" category="list-text">Pulse<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite sobrescribir<block ref="295b4ac77f4e1c5f93c6894df85fd86d" prefix=" " category="inline-code"></block>.</block>
   <block id="1396dacdf561903f32c605f06d2cf5d8" category="list-text">Pulse<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite que confirme si la copia de seguridad de la restauración se realizó correctamente.</block>
@@ -3186,14 +3016,12 @@
   <block id="b94c622729a1c3b9f221ed4f8376e65b" category="doc">Sustituya una fuente de alimentación - FAS500f</block>
   <block id="1661dbd7e15cf50b73ab10b3561b2d66" category="paragraph">Puede usar el siguiente vídeo o los pasos tabulados para reemplazar la fuente de alimentación:</block>
   <block id="a2eee56e65b85ca98cf164fa99598b1b" category="doc">Inicie la imagen de recuperación - FAS500f</block>
-  <block id="24f4a2e7ff21c7e7b62929514e79a48b" category="doc">Restaure OKM, NSE y NVE según sea necesario: FAS500f</block>
   <block id="ee2afac6b0f5165d1fc3096864ac9a41" category="doc">Descripción general de la sustitución del chasis - FAS500f</block>
   <block id="a7457ab9f25a3df58d992d0436ce1834" category="doc">Sustituya un módulo DIMM - FAS500f</block>
   <block id="d7e9bb71d12c55787c7f0839a67057f4" category="paragraph">Puede utilizar el siguiente vídeo o los pasos tabulados para reemplazar un DIMM:</block>
   <block id="609f905dd4d82082470b920d9a7de394" category="doc">Sustituya el hardware del módulo del controlador - FAS500f</block>
   <block id="2685cb32d91e3c7296420631a7066229" category="paragraph">Puede usar el siguiente vídeo o los pasos tabulados para reemplazar un módulo de controlador:</block>
   <block id="e65c4f5a39a793b014b217f53d825905" category="list-text">Inserte el módulo de la controladora en el chasis.</block>
-  <block id="a27042b0e01fb9b4136d2de6e8c1db73" category="doc">Compruebe las claves de cifrado integradas - FAS500f</block>
   <block id="49cc582b0e041effb99494704c8f0963" category="doc">Restaure y verifique la configuración del sistema - FAS500f</block>
   <block id="5c41efcd6cdac2bf93f02a8055089ed8" category="section-title">Paso 2: Verificar y establecer el estado de alta disponibilidad del chasis</block>
   <block id="bee4c56b42643842f4964906e7825545" category="summary">En esta sección se proporcionan instrucciones gráficas para una instalación típica de su sistema desde el montaje en rack y el cableado mediante la puesta en marcha inicial del sistema.</block>
@@ -4420,7 +4248,6 @@
   <block id="09b725ec4b513cf16714e69e0bf388eb" category="doc">Descripción general de la sustitución del módulo de controladora: AFF A700s</block>
   <block id="2e7119d7d654a51006d39261079ed460" category="doc">Retire el módulo del controlador AFF A700s</block>
   <block id="5e1a5ffb20ce25d1d79c8e2014f87d45" category="doc">Arranque la imagen de recuperación: AFF A700s</block>
-  <block id="39d85e49c5dadc98a9a1f6eaef4229dc" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A700s</block>
   <block id="0adc04c81c64b8636310e95596f6f092" category="summary">Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas de la tarjeta vertical, extraer la tarjeta vertical, sustituir la tarjeta vertical y, a continuación, volver a conectar las tarjetas de esa tarjeta vertical.</block>
   <block id="ae5748bcef90e1cb5076c109b969e1d9" category="doc">Sustituya una tarjeta PCIe AFF A700s</block>
   <block id="ab0f1b74bde528a6c04a7682a94cb284" category="paragraph">Para sustituir una tarjeta PCIe, debe retirar el cableado y todos los SFP de los puertos de las tarjetas PCIe de la tarjeta vertical de destino, retire la tarjeta vertical del módulo de la controladora, extraiga y reemplace la tarjeta PCIe, vuelva a instalar la tarjeta vertical y vuelva a retirarla.</block>
@@ -4611,7 +4438,6 @@
   <block id="a23c69960d3b280b58087226f261d0e1" category="doc">Arranque la imagen de recuperación: AFF A300</block>
   <block id="825f13ad9fc8dc2bdd837adbced6f40f" category="paragraph">El procedimiento para arrancar el controlador dañado de la imagen de recuperación depende de si el sistema está en una configuración de MetroCluster de dos controladoras.</block>
   <block id="c11d911fdc6f049d5491a18850fa08dd" category="doc">Restauración completa del sistema - AFF A300</block>
-  <block id="e3d77d25c42b5b22d3782666486eb37f" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A300</block>
   <block id="e935849faf7cd25a183a726f34797bb7" category="doc">Sustituya el módulo del controlador - AFF A300</block>
   <block id="a8c75b5a2932fcdaedc42e616d63e269" category="section-title">Paso 6: Instale la controladora</block>
   <block id="889b878f17fd664e744718e80f4d60de" category="doc">Apague el controlador dañado - AFF A300</block>
@@ -4647,7 +4473,6 @@
   <block id="bf333756fca94003818a0db8ced6f7d9" category="list-text">Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:<block ref="a2a0d2a805a6a7b779572d78313420fd" prefix=" " category="inline-code"></block></block>
   <block id="3a08488c499949ce994ce7beebe666ee" category="doc">Sustituya una fuente de alimentación: FAS8300 y FAS8700</block>
   <block id="9860772233b4555001c5a388230758df" category="doc">Arranque la imagen de recuperación - AFF FAS8300 y FAS8700</block>
-  <block id="85d8efbc74d6524c8654e1ba5832036b" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF fas8300 y FAS8700</block>
   <block id="f060498e4a9c2e920e619ab0da23740a" category="doc">Sustituya una tarjeta PCIe o intermedia - FAS8300 y FAS8700</block>
   <block id="f53fd2bac78253daaa912be518fddcc2" category="doc">Un módulo de ventilador intercambiable en caliente: FAS8300 y FAS8700</block>
   <block id="27dcde903ce9d2827a6882d72efe7cb4" category="doc">Apague la controladora con deterioro - AFF FAS8300 y FAS8700</block>
@@ -4672,7 +4497,6 @@
   <block id="b769c31ad04360afee6ce7c21e51f91b" category="list-text">Gire el módulo de almacenamiento en caché hacia abajo hacia la placa base.</block>
   <block id="6fa69afac2c36bdcc90389549843343d" category="list-text">Coloque el dedo en el extremo del módulo de almacenamiento en caché con el botón azul, presione firmemente el extremo del módulo de almacenamiento en caché y, a continuación, levante el botón de bloqueo para bloquear el módulo de almacenamiento en caché en su lugar.</block>
   <block id="838316a92edbe8e931b912c827cad7b7" category="section-title">Paso 7: Mueva los DIMM</block>
-  <block id="b35abadbe34f4c4e5f4b2befaba8124d" category="doc">Compruebe las claves de cifrado integradas: Fas8300 y FAS8700 de AFF</block>
   <block id="e81e65a4f6bbdd26bd0618bcbf34a71d" category="doc">Restaurar y verificar la configuración del sistema: FAS8300 y FAS8700</block>
   <block id="bef53c14eb719bb1cd8539b91f7515d7" category="doc">Agregados de conmutación de nuevo en una configuración MetroCluster de dos nodos: Fas8300 y FAS8700 de AFF</block>
   <block id="d1903d398c4c8283b66cc2ee2599cef5" category="doc">Guía rápida: FAS8300 y FAS8700</block>
@@ -4879,7 +4703,6 @@
   <block id="42eb4da4054bc83a79fd36f832504d55" category="paragraph"><block ref="42eb4da4054bc83a79fd36f832504d55" category="inline-link-macro-rx"></block></block>
   <block id="32ab532730861844c01e0b025a4708f5" category="doc">Descripción general de la sustitución del módulo de controladora - FAS2600</block>
   <block id="d2efa0c31f219abbc043377bfd4ffa3b" category="doc">Arranque la imagen de recuperación - FAS2600</block>
-  <block id="5e57d07ff1fc6536107cc6e45fe9f281" category="doc">Restaure OKM, NSE y NVE según sea necesario: FAS2600</block>
   <block id="49ba302fbc53429009e579494e0457be" category="list-text"><block ref="49ba302fbc53429009e579494e0457be" category="inline-link-macro-rx"></block></block>
   <block id="c66eef3fd6b2a7fdd9b6e9fbe927aa2f" category="doc">Vídeo de instalación y configuración: FAS2600</block>
   <block id="7d529e0ab83dded43342f45ed2a098bd" category="inline-link-macro">Vídeo de configuración de FAS2600 de AFF</block>
@@ -4900,7 +4723,6 @@
   <block id="482f9dcd012d730126a9c52d8eac49ab" category="paragraph">Debe tener el nuevo módulo de controlador preparado para poder mover el módulo de almacenamiento en caché directamente desde el módulo de controlador anterior a la ranura correspondiente en el nuevo. Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.</block>
   <block id="6bbc48da569bffd650e8c37eb91825ba" category="list-text">Tire suavemente del módulo de almacenamiento en caché hacia fuera de la carcasa.</block>
   <block id="b08b6d72a159368a3b72d6c28c8a2392" category="list-text">Cierre la cubierta del módulo del controlador, según sea necesario.</block>
-  <block id="120d4b04cada3ad4213234c2437fb645" category="doc">Consulte las claves de cifrado integradas - FAS2600</block>
   <block id="cdb877e559bf1542dd2ee0540807d4a8" category="doc">Restaurar y verificar la configuración del sistema: FAS2600</block>
   <block id="586b0b2395e2a0e300f3fa9bf559633c" category="doc">Sustituya la unidad SSD o la unidad HDD: FAS2600</block>
   <block id="a47803b6b6d01b67efcc88a157378c39" category="doc">Devuelva la pieza con el error a NetApp - FAS2600</block>
@@ -4961,7 +4783,6 @@
   <block id="80185b76790082a23c34d9ebf9a01f7e" category="doc">Sustituya una fuente de alimentación: AFF A800</block>
   <block id="4050846ab3a5766e0ed28bed6ef9631b" category="doc">Arranque la imagen de recuperación: AFF A800</block>
   <block id="3b1cae4630f47c8bafa2138c896b9e8d" category="list-text">Respalde la controladora con el<block ref="e23a9f1c6189f372292c98d844a0895f" prefix=" " category="inline-code"></block> comando</block>
-  <block id="ca509809c0cb66e22f010cac79984c8b" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A800</block>
   <block id="b847555d08409368f0fef45554d04bc5" category="doc">Sustituya una tarjeta PCIe AFF A800</block>
   <block id="1ae20649d2f47264734a3a5ec5e979b9" category="paragraph">Para sustituir una tarjeta PCIe, debe retirar el cableado y todos los QSFP e SFP de los puertos de las tarjetas PCIe de la tarjeta vertical objetivo, quitar la tarjeta vertical del módulo de la controladora, retirar y sustituir la tarjeta PCIe, volver a instalar la tarjeta vertical y cualquier QSFP y SFP en los puertos, y conecte los cables de los puertos.</block>
   <block id="2f5f40c20deffe104b10db195557449f" category="list-text">Determine si la tarjeta que está reemplazando es de la tarjeta vertical 1 o si es de la tarjeta vertical 2 ó 3.</block>
@@ -5018,7 +4839,6 @@
   <block id="8b26c226c3b2f8b0febf9a60a1354c96" category="list-text">Repita el paso anterior para los elevadores PCIe restantes.</block>
   <block id="7f162e118d7c5841e35145af500cfea2" category="section-title">Paso 10: Instale el módulo del controlador</block>
   <block id="99c63b9bf884dd51a946aceee88a56e0" category="paragraph">Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.</block>
-  <block id="7103ae2dc232b897a89408d0cd914f59" category="doc">Consulte las claves de cifrado integradas - AFF A800</block>
   <block id="ea00def363aacc8779f9b5afd4cc8812" category="doc">Restaurar y verificar la configuración del sistema: AFF A800</block>
   <block id="b0e69a1b113b20966641e48d3d36e788" category="doc">Pasos rápidos - AFF A800</block>
   <block id="42e8099baf01da8bcc3b8362f29f317c" category="inline-link-macro">Instrucciones de instalación y configuración de AFF A800</block>
@@ -5381,13 +5201,6 @@
   <block id="df958dff87a8c819a8e0b81a1b306ead" category="list-text">El controlador de sustitución es el nuevo controlador que está reemplazando al controlador afectado.</block>
   <block id="283fab4cea5d664827b937416e41a5e5" category="list-text">El controlador sano es el controlador que va a sobrevivir.</block>
   <block id="6012de004f4bd50d98163ac921889523" category="doc">Sustituya un módulo USB LED - AFF A900</block>
-  <block id="0b0ce175074093bb880164e8608f30ab" category="list-text">Utilice el comando boot_ontap en el símbolo del sistema DEL CARGADOR para arrancar la controladora.</block>
-  <block id="c44f1e5dca108a88d3a5c0122cfaad60" category="list-text">Mueva el cable de la consola a la controladora correspondiente e inicie sesión como administrador.</block>
-  <block id="eab386a3f0ee69cc95b939175ad1da27" category="list-text">Una vez que se haya completado la devolución, compruebe el estado de la conmutación al nodo de respaldo y la devolución con el<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> y..<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block> comandos.</block>
-  <block id="6c8465bcaf5ce5fddf9eade0934b0fcf" category="list-text">En el símbolo del sistema clustershell, introduzca el comando net int show -is-home false para enumerar las interfaces lógicas que no están en su controlador y puerto de casa.</block>
-  <block id="3e18dc9be2b2d52bb3684dd323591a77" category="list-text">Mueva el cable de la consola a la controladora del partner y rebase el almacenamiento de la controladora de destino mediante el comando local de recuperación tras fallos del almacenamiento -fromnode -only-cfo-agents true local.</block>
-  <block id="b17e311ccd8e21ff73506e54f24b6cfd" category="list-text">Espere 3 minutos y compruebe el estado de la conmutación al respaldo con el comando Storage Failover show.</block>
-  <block id="6895f6bac75ce22d9b20367054acb577" category="list-text">Dé vuelta a la controladora con el comando de recuperación tras fallos del almacenamiento -fromnode local.</block>
   <block id="2aba05ee9a4093e5315b48903c27d988" category="doc">Sustituya un módulo de E/S - AFF A900</block>
   <block id="a5462faa34b6cf806cb49f24d84b02a7" category="list-text">Si el sistema está configurado para admitir conexiones de clúster de 10 GbE y conexiones de datos en NIC de 40 GbE, convierta estos puertos a conexiones de 10 GbE mediante el comando nicadmin convert del modo de mantenimiento. Consulte<block ref="2d808a662d9493bde97b50913a25a294" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="13c4db3516e2bb246a5834f3d7814d4f" category="doc">Cambie un ventilador - AFF A900</block>
@@ -5477,7 +5290,6 @@
   <block id="4bbcc3f3d11202923e4c61604d535622" category="list-text"><block ref="4bbcc3f3d11202923e4c61604d535622" category="inline-link-macro-rx"></block></block>
   <block id="7c308c086b5e1b83f888d7cdb4ec7dfc" category="list-text"><block ref="7c308c086b5e1b83f888d7cdb4ec7dfc" category="inline-link-macro-rx"></block></block>
   <block id="56c92e962f19f33c819fa704568c60fe" category="list-text"><block ref="56c92e962f19f33c819fa704568c60fe" category="inline-link-macro-rx"></block></block>
-  <block id="9da34b3563e3dc0c838ac5494efca1fe" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A220 y FAS2700</block>
   <block id="4a548135158bf0dbaee8622657e29f8a" category="doc">Apague la controladora con deficiencias: AFF A220 y FAS2700</block>
   <block id="b609dd6c87556493ce1f11c7ab61cbdb" category="list-text">Compruebe el LED de NVMEM en la parte posterior del módulo de la controladora.</block>
   <block id="616fd6518ea3af054114db97fda5ce99" category="section-title">Paso 2: Mueva la batería de NVMEM</block>
@@ -5485,7 +5297,6 @@
   <block id="1952d412a2089ae2581c6a09ce1f7282" category="section-title">Paso 5: Mueva un módulo de almacenamiento en caché, si está presente</block>
   <block id="25b7b68a965a32e77a175144ad9d98b8" category="paragraph">Si el sistema AFF A220 o FAS2700 cuenta con un módulo de almacenamiento en caché, debe mover el módulo de almacenamiento en caché del módulo de la controladora anterior al módulo de la controladora de reemplazo. El módulo de almacenamiento en caché se denomina «M.2 tarjeta PCIe» en la etiqueta del módulo del controlador.</block>
   <block id="d56209c7e3ab8840b7ec4dfa719e7d5a" category="paragraph">Sólo pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> después de ver la<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block> mensaje.</block>
-  <block id="77c90a069b30ca068906f4bbc5d904e1" category="doc">Compruebe las claves de cifrado integradas: AFF A220 y FAS2700</block>
   <block id="9b84aee1c6149b8506044c563e4a3178" category="inline-link-macro">Instrucciones de instalación y configuración de los sistemas AFF A220/FAS2700</block>
   <block id="8db94eb390aaecb9128a260b00e455e8" category="paragraph"><block ref="8db94eb390aaecb9128a260b00e455e8" category="inline-link-macro-rx"></block></block>
   <block id="03be12a0476133b21cb6c1c927956d23" category="doc">Sustituya la unidad SSD o la unidad HDD: AFF A220 y FAS2700</block>
@@ -5665,7 +5476,6 @@
   <block id="241c179d2adc97920bb3ec4cd2d467aa" category="sidebar">Apague el controlador dañado</block>
   <block id="90d6224326bc2ce2bada52a2663f2dbe" category="sidebar">Sustituir el soporte de arranque</block>
   <block id="6ad18d600bb32103fed4e18fdfa6c440" category="sidebar">Imagen de recuperación de arranque</block>
-  <block id="6f067b96310ad4260a8f4dd718261296" category="sidebar">Restauración de OKM, NSE y NVE</block>
   <block id="59293e04244880734e8114db6dbd1ed4" category="sidebar">Devolución de pieza fallida a NetApp</block>
   <block id="3388786d3a71e2dc264dd9a25e4c40cc" category="sidebar">Chasis AFF A200</block>
   <block id="5e9f3b79a908c552a802e6c0d9c51269" category="sidebar">Sustituya el hardware</block>
@@ -5757,7 +5567,6 @@
   <block id="d73758375aa4c2c0d806b85cf93229be" category="sidebar">Instalación y configuración de FAS9500</block>
   <block id="fd44bc5547a31fa6a44a5dba383710f5" category="sidebar">Mantenimiento del sistema FAS9500</block>
   <block id="ee6cf51d21f40cc78c0a70dbb1b8d104" category="sidebar">Soporte de arranque FAS9500</block>
-  <block id="4b4ef0c79b0398f75f85815a11b15104" category="sidebar">El apagado previo comprueba las claves de cifrado integradas</block>
   <block id="d5e04348de632d7c88520b90cf79f1fa" category="sidebar">Arranque la imagen de recuperación</block>
   <block id="33a725da473f57f9db39e8cb90fb8ec1" category="sidebar">Chasis FAS9500</block>
   <block id="2e8840df8a206cd4e5aa7e0fa02b1cf7" category="sidebar">Sustituya el hardware</block>
@@ -5888,7 +5697,6 @@
   <block id="49c230c702ed6b30a6efde8eba87e563" category="doc">Devuelva la pieza que ha fallado a NetApp - AFF A150</block>
   <block id="3dfa4c8dc7083d8d9bf2fb1fc402660a" category="doc">Guía rápida - AFF A150</block>
   <block id="6e0311a42e114c05c9779f6c830f1d97" category="inline-link-macro">Instrucciones de instalación y configuración del sistema AFF A150</block>
-  <block id="b80ee1e7ed290f304dbaae444297a4fa" category="doc">Restauración de OKM, NSE y NVE según sea necesario: AFF A150</block>
   <block id="e822ef8c7b4b17d3230b125760d56e76" category="doc">Restaure y verifique la configuración del sistema: AFF A150</block>
   <block id="178a6a7a54abe615089fef92a8499c05" category="doc">Inicie la imagen de recuperación - AFF A150</block>
   <block id="1639fff89eb56a9268790c9fe41436ab" category="doc">Descripción general de la sustitución del módulo del controlador - AFF A150</block>
@@ -5945,10 +5753,8 @@
   <block id="a4829fef0cfb953ea3181e31db648a62" category="paragraph">Puede sustituir una unidad SSD con errores sin interrupciones mientras hay operaciones de I/o en curso.</block>
   <block id="d7b7b72f7a0bd85854375ed25ad54137" category="admonition">La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.</block>
   <block id="f6551f88d88dddb684035802224a0336" category="doc">Apague el controlador AFF C250</block>
-  <block id="1338d35acdb3c964dd3a62d00b16a635" category="doc">Compruebe las claves de cifrado integradas: AFF C250</block>
   <block id="d667058635875eca097800e4379f58cd" category="doc">Pasos rápidos - AFF C250</block>
   <block id="84918b89947f6a68e4b25fe4753c02bc" category="inline-link-macro">Instrucciones de instalación y configuración de AFF C250</block>
-  <block id="d3d5358ee829ec20cfebc87c86eed844" category="doc">Restauración de OKM, NSE y NVE según sea necesario: AFF C250</block>
   <block id="64e5c97f01cbac1639343e8b0f670c20" category="list-text"><block ref="64e5c97f01cbac1639343e8b0f670c20" category="inline-link-macro-rx"></block></block>
   <block id="38471c9931ce26e5aeb8c80bf6483a48" category="list-text"><block ref="38471c9931ce26e5aeb8c80bf6483a48" category="inline-link-macro-rx"></block></block>
   <block id="82e9cd9a6fede8cb6fa3e276cac9a710" category="list-text"><block ref="82e9cd9a6fede8cb6fa3e276cac9a710" category="inline-link-macro-rx"></block></block>
@@ -5961,7 +5767,6 @@
   <block id="4d8adba62be8512e84ae7825848692e9" category="doc">Devuelva la pieza fallida a NetApp - AFF C400</block>
   <block id="28dd2419d5232cd5e390f590d7d76b55" category="doc">Guía rápida - AFF C400</block>
   <block id="bef061f2ba2a880a4d71960c6fb14a8f" category="inline-link-macro">Instrucciones de instalación y configuración de AFF C400</block>
-  <block id="dde11f85a430c37e085e56c530fa6482" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF C400</block>
   <block id="a637f1b4c2a1d9b5cb9f0347c7e77539" category="doc">Restaurar y verificar la configuración del sistema - AFF C400</block>
   <block id="b1c4aeeae550bfbe7c6574898398d781" category="doc">Sustituya la batería NVDIMM - AFF C400</block>
   <block id="76f50c3f31d2ab405df556357b00ae41" category="doc">Descripción general de la sustitución del módulo del controlador - AFF C400</block>
@@ -5980,7 +5785,6 @@
   <block id="e6423ca3487b9b75d5af512862698175" category="doc">Sustituya el hardware del módulo del controlador - AFF C400</block>
   <block id="5edd30c4cef8fac3bd29e60266f4cb36" category="doc">Apague los controladores - AFF C400</block>
   <block id="5254fce53c38649f011fdb307e35d4b3" category="doc">Sustituya un DIMM - AFF C400</block>
-  <block id="8db6fdf9679dcdf01a0f39d01d482c0c" category="doc">Compruebe el cifrado incorporado AFF C400</block>
   <block id="454f2d4445f738afc6491f938272785d" category="doc">Recuperar el sistema y reasignar discos - AFF C400</block>
   <block id="7fc305adae8e903c0dc8bff5a49862c9" category="doc">Sustituya una tarjeta intermedia o PCIe AFF C400</block>
   <block id="042e6e8da8b6da480bf85ff04e4d7922" category="doc">Descripción general de la sustitución del soporte de arranque - AFF C400</block>
@@ -6100,7 +5904,6 @@
   <block id="a7d1c95d57e2d4d91562898a605711c2" category="doc">Devuelva la pieza con el error a NetApp - AFF C800</block>
   <block id="c7567cf7dbf1c0e5da4f2ff1ced923ef" category="doc">Pasos rápidos - AFF C800</block>
   <block id="f8eb42a3c2c9e8d82c874d7ccd6ef2a9" category="inline-link-macro">Instrucciones de instalación y configuración de AFF C800</block>
-  <block id="51e6f316a2e32ea2e86cbacf242892f6" category="doc">Restaurar OKM, NSE y NVE según sea necesario: AFF C800</block>
   <block id="6d940c412bcfcdb76ebf095399d157ea" category="doc">Restaurar y verificar la configuración del sistema: AFF C800</block>
   <block id="83087c77244cbf7473481303d60706cd" category="doc">Inicie la imagen de recuperación: AFF C800</block>
   <block id="e00efce1b44b4a70e33640aa4e4da7ab" category="doc">Sustituya un ventilador - AFF C800</block>
@@ -6121,7 +5924,6 @@
   <block id="2a6e70f5ba0bf4b1e8256c095ec0cd1c" category="doc">Sustituya el hardware del módulo de la controladora - AFF C800</block>
   <block id="90571542a9bc3f19e7a4f29fa9556cff" category="doc">Apague las controladoras - AFF C800</block>
   <block id="96575ba10e2fbb7c8295e344411ca2d1" category="doc">Sustituya un DIMM - AFF C800</block>
-  <block id="592fdd085a6d32be5ca82d8cf41fd57d" category="doc">Compruebe las claves de cifrado integradas: AFF C800</block>
   <block id="053f6b40fe6bb9b0a6dde49c0f76dc01" category="doc">Recuperar el sistema y reasignar discos - AFF C800</block>
   <block id="1085be18597d7d6c96ecba68a211bd73" category="doc">Sustituya una tarjeta PCIe AFF C800</block>
   <block id="a3ab531d62779409698b7c4da393c7e6" category="doc">Transfiera la imagen de arranque al soporte de arranque - AFF C800</block>
@@ -6202,10 +6004,6 @@
   <block id="7765edbf8893ad208b9932e53c6d932a" category="doc">Sustituya la unidad SSD: AFF C800</block>
   <block id="632bcda28821b8191cdaaa396c4b3e22" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM del chasis dañado, siga la secuencia de pasos específica.</block>
   <block id="bcf7de048a0b400d784ce2434b8beffe" category="doc">Sustituya la unidad SSD: AFF C250</block>
-  <block id="767f4271a1d06fc66fc1c9d48c7b86e8" category="list-text">Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves:<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block></block>
-  <block id="e084232082046eab4e75b332c2a9fbe5" category="list-text">Compruebe que el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna es igual<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> para todas las claves de autenticación:<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block></block>
-  <block id="7ef95216354d37756f204adf213d9c42" category="list-text">Compruebe el<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> la columna muestra<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> para todas las claves de autenticación:<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block></block>
-  <block id="1f7aa359582e430ea0f9f103a2603e1e" category="list-text">Muestre los ID de claves de las claves de autenticación que se almacenan en los servidores de gestión de claves:<block ref="eb3cf23f0c9c60ca759ddca34bbfbf56" prefix=" " category="inline-code"></block></block>
   <block id="1ffab5c59dbafc5f9803c8c1c9f1a392" category="list-text">Mantenga pulsado el botón de bloqueo de terracota en el asa de la fuente de alimentación y, a continuación, extraiga la fuente de alimentación del chasis.</block>
   <block id="053d4f46894c00d901f3095a3ad91755" category="paragraph">Botón de bloqueo de terracota</block>
   <block id="80e9690d6c33d863eeba6d3568a54e20" category="list-text">Pulse el botón de bloqueo de terracota en el módulo de ventiladores y tire del módulo de ventiladores hacia fuera del chasis, asegurándose de que lo sujeta con la mano libre.</block>
@@ -6448,7 +6246,6 @@
   <block id="71d4d064630d70cfb9adf86452b9de52" category="paragraph">Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales:<block ref="985591930e85610706940dd82967bd61" prefix=" " category="inline-code"></block></block>
   <block id="5f9489878c0e21ab14f2c4768367bc39" category="list-text">Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block> comando.</block>
   <block id="fe5bb47bbec2cc6ab51288fa7ec602da" category="paragraph">Vuelva a conectar los cables de las conexiones de red y almacenamiento del módulo del controlador.</block>
-  <block id="8f71288719d23ae490bd8fa8ba6d2988" category="paragraph">Si alguna interfaz aparece como<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>, vuelva a revertir estas interfaces a su puerto de inicio mediante el<block ref="71c4baf0f55b5bfce2627ab279a13043" prefix=" " category="inline-code"></block> comando.</block>
   <block id="657e1e449c74518bb94702c89e392c1b" category="list-text">En el nodo _Healthy_, compruebe la hora del sistema:<block ref="1cac34e5e8442fb80d6ade838d969fc0" prefix=" " category="inline-code"></block></block>
   <block id="6071c318b780c1f56da250b5fe0334d8" category="paragraph">La fecha y la hora se basan en la zona horaria configurada.</block>
   <block id="598dc5e99f2a14bda43240b77ca40634" category="section-title">Paso 2: Abra el sistema</block>
@@ -6556,10 +6353,6 @@
   <block id="a9965269fc2882517b2f7404230818ad" category="list-text">Si va a agregar en caliente una o varias bandejas de discos a un final (la primera o la última bandeja de discos lógica) de una pila existente, complete los subpasos correspondientes para la configuración; de lo contrario, vaya al siguiente paso.</block>
   <block id="ca067501330c228a786fd00d17229575" category="paragraph">Agregar en caliente una bandeja de discos a un extremo de la pila que tiene alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de cuatro rutas o conectividad de cuatro rutas a las controladoras</block>
   <block id="fa3d4e5360018aa45e5104272d43148c" category="paragraph">La pila debe cumplir los requisitos indicados en la <block ref="d7ead9d51e0253f97f9c0ae83a2ee9eb" category="inline-xref-macro-rx"></block> sección de este procedimiento.</block>
-  <block id="d9b691280dde7c1805e39052719c9c29" category="list-text">Deshabilite la devolución automática de la controladora en buen estado:
-storage failover modify -node local -auto-giveback false`
-o.<block ref="1d2c479b57949de891a15e148e1ebcf5" prefix=" " category="inline-code"></block></block>
-  <block id="ce62d26f194e7c2888ff8e53c7d011c5" category="paragraph">Una vez comprobadas las variables de entorno, debe completar los pasos específicos de los sistemas que tengan habilitado su gestión de claves incorporada (OKM), cifrado de almacenamiento de NetApp (NSE) o cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio de este procedimiento.</block>
   <block id="a9b1f8d4946ebf3182e44c224cfa7997" category="doc">Apague el controlador averiado - FAS2800</block>
   <block id="ba1ddb4c1d6bdc698ece9a974aae0713" category="paragraph">Apague o tome el control de la controladora dañada.</block>
   <block id="3ab3867dfd753c1ff0d27e903bff1cc4" category="doc">Sustituya el soporte de arranque - FAS2800</block>
@@ -6726,7 +6519,6 @@ Instale la batería de repuesto:</block>
   <block id="51f7be1d2b3585b769547e04e7036ed9" category="image-alt">drw 2850 reemplace la batería rtc IEOPS 701</block>
   <block id="9f463a2feadd622498da11734b7d3548" category="paragraph">Vuelva a instalar el módulo del controlador y arranque en el aviso del CARGADOR.</block>
   <block id="8133c5bbfd79c61b3d28f53fd52d6b77" category="section-title">Paso 5: Ajuste la hora / fecha después de la sustitución de la batería RTC</block>
-  <block id="c9f8b929f9ab0b6a880c4fbdb297685c" category="doc">Restaure OKM, NSE y NVE según sea necesario: FAS2800</block>
   <block id="e8b941fcc944e0bbefda4636b0900a37" category="list-text"><block ref="e8b941fcc944e0bbefda4636b0900a37" category="inline-link-macro-rx"></block></block>
   <block id="531b14cc35d21cdbdd3198396f0be9e2" category="list-text"><block ref="531b14cc35d21cdbdd3198396f0be9e2" category="inline-link-macro-rx"></block></block>
   <block id="64bd602d0544a5fe1fc2a2419daab9cb" category="list-text"><block ref="64bd602d0544a5fe1fc2a2419daab9cb" category="inline-link-macro-rx"></block></block>
@@ -6947,7 +6739,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e6286a186c95dfa765e7e19dc10afa9e" category="section-title">Batería de reloj en tiempo real</block>
   <block id="fba5965b9134bd1291bee1260f5fcf21" category="paragraph">Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.</block>
   <block id="a67cc26cbba94ea1d2b847cbc0574686" category="section-title">Paso 5 (solo MetroCluster de dos nodos): Vuelva a cambiar los agregados</block>
-  <block id="0ab7f92a68b16764d7667e3b826e3433" category="paragraph">Antes de apagar la controladora deficiente y comprobar el estado de las claves de cifrado incorporadas, debe comprobar el estado de la controladora deficiente, deshabilitar la devolución automática y comprobar qué versión de ONTAP se está ejecutando en el sistema.</block>
   <block id="28a80c9e2cd7e688ac36b9d1d600c170" category="summary">Debe comprobar el estado HA del chasis, conmutar los agregados y devolver la pieza fallida a NetApp, tal y como se describe en las instrucciones de la RMA que se suministran con el kit.</block>
   <block id="69f3a5a3fa19fee640389983d958d940" category="section-title">Paso 2: Vuelva a conmutar los agregados en una configuración de MetroCluster de dos nodos</block>
   <block id="341b682adfeb628f1bd1c2eb360fa9a4" category="paragraph">Mueva los ventiladores, las unidades de disco duro y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.</block>
@@ -6987,9 +6778,7 @@ SFP+ (destino/iniciador)</block>
   <block id="8e7a33c44e49f9b5c0e2db2d78219211" category="doc">Mantener el hardware de ASA A250</block>
   <block id="63c77f3bd33a61dbe342def54e1aaf5b" category="paragraph">Para el sistema de almacenamiento ASA A250, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="84fba8bc1002a05a2e1bc0df39a0d311" category="section-title">Batería de NVEM</block>
-  <block id="e80f92a9874e9f1b07fbfef7aa513724" category="doc">Restaure OKM, NSE y NVE según sea necesario: ASA A250</block>
   <block id="290bd37a39561a18b23a42421cfcf3ee" category="doc">Descripción general de la sustitución del módulo del controlador - ASA A250</block>
-  <block id="fae9adfe600cdc4c5b43bf973bfc3188" category="doc">Compruebe las claves de cifrado integradas: ASA A250</block>
   <block id="943cbde5eb2522f265b1edf4f60529fd" category="doc">Apague los controladores - ASA A250</block>
   <block id="fa26ab686e2bca1aebda5034632821e5" category="doc">Reemplace la batería de NVMEM - ASA A250</block>
   <block id="b7a0d897933205e6e22755b6d3ed6203" category="list-text"><block ref="b7a0d897933205e6e22755b6d3ed6203" category="inline-link-macro-rx"></block></block>
@@ -7111,7 +6900,6 @@ SFP+ (destino/iniciador)</block>
   <block id="027df07ace2b49bdd101ed7de8831a66" category="doc">Inicie la imagen de recuperación - ASA A800</block>
   <block id="1809d57833f6aee6ca28a7a9976f3c02" category="doc">Sustituya la unidad SSD o la unidad de disco duro - ASA A800</block>
   <block id="8efb05cbcb76a25c9260967bb6da74ea" category="doc">Sustituya la fuente de alimentación - ASA A800</block>
-  <block id="4ec9ac1d6cfd564e14c7762ed15dd4ca" category="doc">Compruebe las claves de cifrado integradas: ASA A800</block>
   <block id="ab40c87c67587a22552f3f86175f6b6c" category="doc">Sustituya el controlador: ASA A800</block>
   <block id="3e1e482bf99769f878506ac262ea9469" category="doc">Sustituya el chasis - ASA A800</block>
   <block id="cf89ec61d7d165d24a4540839ef73f51" category="doc">Reemplazo completo del chasis - ASA A800</block>
@@ -7145,7 +6933,6 @@ SFP+ (destino/iniciador)</block>
   <block id="74aa9c71bfd41b33dc21e26b67720c49" category="doc">Intercambio en caliente de un módulo de alimentación del controlador de eliminación de etapas (DCPM) - FAS9000</block>
   <block id="14e88a77d6efea55ca64c457b9ab65da" category="doc">Apague el controlador averiado - FAS9000</block>
   <block id="e3424c519d237723175dbe678f466fe1" category="doc">Intercambio en caliente de un módulo de almacenamiento en caché: FAS9000</block>
-  <block id="bc33853f048b214c5af2f7aea8908547" category="doc">Restaure OKM, NSE y NVE según sea necesario: FAS9000</block>
   <block id="20be13c1d1090a2ab17f091e497bb866" category="doc">Sustituya el hardware del módulo del controlador - FAS9000</block>
   <block id="62195060113df8a2782db9da3228a189" category="doc">Inicie la imagen de recuperación - FAS9000</block>
   <block id="3a201b28e54c09ae98a539a9903e205e" category="doc">Pasos rápidos - FAS9000</block>
@@ -7195,8 +6982,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ed6183c79360d84f37e156e80fe33aa6" category="doc">Apague los controladores - ASA A900</block>
   <block id="67bcd92a05c94a3a813d8e595b1f5283" category="doc">Restauración completa del sistema - ASA A900</block>
   <block id="eb192783589d844d1af1ecb849489b22" category="section-title">Paso 1: Instale las licencias para la nueva controladora</block>
-  <block id="30237a59a1f5031aa00a02bf9f671edc" category="doc">Pasos de sustitución de medios posteriores al arranque para OKM, NSE y NVE: ASA A900</block>
-  <block id="545b78c60c2feb900e5c34b5af729c01" category="paragraph">Una vez comprobadas las variables de entorno, debe completar los pasos específicos para restaurar su gestor de claves incorporado (OKM), el cifrado del almacenamiento de NetApp (NSE) y el cifrado de volúmenes de NetApp (NVE).</block>
   <block id="996a9b0ff7207d4230b2b6f5ca8de4e0" category="doc">Inicie la imagen de recuperación - ASA A900</block>
   <block id="4da6be1bf421fc7ff067ee2e73b4b8b1" category="summary">Proporciona instrucciones gráficas para una instalación típica del sistema, desde el montaje en rack y el cableado hasta la puesta en marcha inicial del sistema.</block>
   <block id="4848727d4d964e87d86f556430e12505" category="doc">Pasos rápidos - ASA A900</block>
@@ -7205,7 +6990,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ffd35f8c2bbd04d0d068c1f8df413804" category="doc">Pasos de vídeo - ASA A900</block>
   <block id="7d1fb483052073af4f4cc12799641b5e" category="doc">Sustituya el DCPM que contiene la batería NVRAM11: ASA A900</block>
   <block id="2b061d20a12abc555d3ec31b4a597fbd" category="doc">Sustituya el hardware del módulo del controlador: ASA A900</block>
-  <block id="f4f193c187311fbf0be5df1f8b0bb0e4" category="doc">Comprobaciones previas al apagado para las claves de cifrado integradas: ASA A900</block>
   <block id="600bae2dfd13ad78a23b5956bad21213" category="doc">Sustituya el chasis - ASA A900</block>
   <block id="6bce460d3973f94c0284f11300e21aab" category="doc">Restaurar y verificar la configuración - ASA A900</block>
   <block id="df8c04fe473c2ae44cd201952a9c2108" category="doc">Sustituya el módulo del controlador - ASA A900</block>
@@ -7268,7 +7052,6 @@ SFP+ (destino/iniciador)</block>
   <block id="2f22eb2147b4f40176e6b5b76c428118" category="doc">Mantener el hardware de ASA A220</block>
   <block id="5008278e1e32e8ad93241b23cfd34db7" category="doc">Cambie una fuente de alimentación - AFF A220</block>
   <block id="f9f06c08cb5d35391dc83c9a4f0f6c9e" category="doc">Apague los controladores - AFF A220</block>
-  <block id="64ea13cf975482cfba9a36aa8054a2d1" category="doc">Restaure OKM, NSE y NVE según sea necesario: AFF A220</block>
   <block id="86abc489b1bf331707e191a10be0f086" category="doc">Restauración completa del sistema - AFF A220</block>
   <block id="1273c9fbc5c944f1ba9781560b258420" category="summary">Esta página proporciona instrucciones gráficas para una instalación típica del sistema, desde el montaje en rack y el cableado hasta la puesta en marcha inicial del sistema.</block>
   <block id="fd21e05e00e82c93ae08fac45c859f89" category="doc">Guía rápida - AFF A220</block>
@@ -7319,7 +7102,6 @@ SFP+ (destino/iniciador)</block>
   <block id="85b480bf87d91a2932c8ed43e4def5f4" category="admonition">El ASA A150 utiliza el mismo procedimiento de instalación que el sistema AFF A150.</block>
   <block id="48a9a0f255a122f383dce55509b5a79a" category="doc">Inicie la imagen de recuperación - ASA A150</block>
   <block id="76ee45904d9d171832835353313011a4" category="doc">Sustituya la unidad SSD o la unidad de disco duro - ASA 150</block>
-  <block id="fbbc44ce8ce19560615b28dfcbfe46d3" category="doc">Compruebe las claves de cifrado integradas: ASA A150</block>
   <block id="070bdcad0142d8cf21268dca6275fe89" category="doc">Sustituya el controlador: ASA A150</block>
   <block id="f3bad228bd34f18781843874208259c3" category="doc">Descripción general de la sustitución del chasis - ASA A150</block>
   <block id="0b11c8d8ffff83e1165677b553555d82" category="doc">Restaurar y verificar la configuración - ASA A150</block>
@@ -7365,7 +7147,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b65dcf1c7ad6c86f6d2d5bed4626bcc6" category="doc">Guía rápida - ASA A400</block>
   <block id="5eb8101a6e8a2a3f54c56549ab21ade4" category="admonition">El ASA A400 utiliza el mismo procedimiento de instalación que el sistema AFF A400.</block>
   <block id="b26cf0fc163ec7e9ea966514eed60da1" category="doc">Sustitución de una fuente de alimentación: ASA A400</block>
-  <block id="5f2eeb826d2873b3f4c3b6f5107d3feb" category="doc">Compruebe el cifrado integrado: ASA A400</block>
   <block id="2d7c6c8ec11dfd6f4583d91c8d94d5d0" category="doc">Sustituya el controlador: ASA A400</block>
   <block id="1952c1c21894126b1d43fd1b446add88" category="doc">Descripción general de la sustitución del chasis - ASA A400</block>
   <block id="8a5c79d05f266b99fd8b21d069b75d78" category="doc">Reemplazo completo del chasis - ASA A400</block>
@@ -7564,8 +7345,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6e511e082f09f049a4c7c1e36e35c9c3" category="inline-image-macro">Ilustración que muestra la ubicación de los puertos de gestión en la parte posterior del sistema</block>
   <block id="d439da4c3831de2165d4e3edbb6ad2de" category="paragraph">Conecte los puertos de gestión a los switches de red de gestión    <block ref="5f7dc0c41e4463eda3eca8496148edc4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10fbfa6320d8e7c72e731fbd9a6e6c69" category="admonition">La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.</block>
-  <block id="ce75c7b2bf3b15b7659cc85a9c36c6f8" category="admonition">Introduzca 32 la clave de acceso de gestión de claves incorporada y alfanumérica del cliente en el símbolo del sistema. Si no se puede proporcionar la clave de acceso, comuníquese con el soporte de NetApp.<block ref="28649c93049a329043d206ec7fa0c6f8" category="inline-link-rx"></block></block>
-  <block id="2f061f16ff1dc3668b0b979718bcf140" category="paragraph">Introduzca 32 la clave de acceso de gestión de claves incorporada y alfanumérica del cliente en el símbolo del sistema. Si no se puede proporcionar la clave de acceso, comuníquese con el soporte de NetApp.</block>
   <block id="f44ae95a820a7e92672103acdefa1387" category="paragraph"><block ref="5e48dfc079c01fd7f817337abb01a320" prefix="" category="inline-code"></block></block>
   <block id="4d2ddfe3e3c29216d5f6b430195c79ea" category="paragraph">Lengüetas de bloqueo DIMM</block>
   <block id="61442583e1c58477c0407d6793d8994b" category="paragraph">Toma DIMM</block>
@@ -7614,9 +7393,7 @@ SFP+ (destino/iniciador)</block>
   <block id="f85c225eac9932f77dacb6e6236f7ce2" category="paragraph">Para el sistema de almacenamiento ASA C400, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="2097e20950ae1f46d998ba486146b369" category="doc">Sustituya un NVDIMM - ASA C400</block>
   <block id="76707ae3bb72f26856ca1367c5a4ac26" category="doc">Descripción general de la sustitución del chasis - ASA C400</block>
-  <block id="c2e0801f4fc7b1cf02d78195b3131f54" category="doc">Restaure OKM, NSE y NVE según sea necesario: ASA C400</block>
   <block id="ec587342818437cd0c6a0daf4be599a1" category="doc">Vuelva a conmutar agregados en una configuración MetroCluster de dos nodos: ASA C400</block>
-  <block id="d01d4189a4ad8b718886cbc79fe007a5" category="doc">Compruebe el cifrado integrado: ASA C400</block>
   <block id="f7f6cafa82cca0d649fec769636a374b" category="doc">Apague el controlador defectuoso: ASA C400</block>
   <block id="124e5d993905ca8fc1e3ed8fa62e76ad" category="doc">Sustituya un módulo DIMM ASA C400</block>
   <block id="987d3338a5584fedd4b7efd844691246" category="doc">Sustituya el soporte de arranque: ASA C400</block>
@@ -7646,8 +7423,6 @@ SFP+ (destino/iniciador)</block>
   <block id="bcf1e5f5ec2f5fa0fb4df4081483cf5a" category="doc">Mantener el hardware de ASA C250</block>
   <block id="d856c63691d6118cb3531626f4c662b5" category="paragraph">Para el sistema de almacenamiento ASA C250, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="778936817303ec79ea5a4c275ed17135" category="doc">Descripción general de la sustitución del chasis - ASA C250</block>
-  <block id="b01e565a4186b159f90650ce3ca4196a" category="doc">Restaure OKM, NSE y NVE según sea necesario: ASA C250</block>
-  <block id="0c80834eb80ee789c355be4e4a0edad5" category="doc">Compruebe las claves de cifrado integradas: ASA C250</block>
   <block id="706f40f792c3dab367a62e0d94e461ee" category="doc">Sustituya o instale una tarjeta mezzanine - ASA C250</block>
   <block id="8336f1f72044234f7e63ccadc716be3d" category="doc">Sustituya un módulo DIMM ASA C250</block>
   <block id="bc2311b6a715da1a660ee0a9afd2016e" category="doc">Sustituya el soporte de arranque: ASA C250</block>
@@ -7680,8 +7455,6 @@ SFP+ (destino/iniciador)</block>
   <block id="f9ea5dff2f002c5b2f6eeeb84451e9f5" category="paragraph">Para el sistema de almacenamiento ASA C800, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
   <block id="3f9ba83126a2d0a1b4562908efe4870c" category="doc">Sustituya un NVDIMM - ASA C800</block>
   <block id="50097ad5c1b5e616bbe0f94d6918f272" category="doc">Sustituya el chasis - ASA C800</block>
-  <block id="8e0d3110e2fb313b0ac5d7178af78d83" category="doc">Restaure OKM, NSE y NVE según sea necesario: ASA C800</block>
-  <block id="2927ec98383ea38a218c0b37add3584b" category="doc">Compruebe las claves de cifrado integradas: ASA C800</block>
   <block id="f672d90fc8d0ab339549e32ae4a18c26" category="doc">Sustituya un módulo DIMM ASA C800</block>
   <block id="dccd487628e9e3fb202bf1d54f224f85" category="doc">Sustituya el soporte de arranque: ASA C800</block>
   <block id="16c54e4c9f50a83bb13eddc18729c9e7" category="doc">Sustituya la batería del NVDIMM - ASA C800</block>
@@ -8307,31 +8080,8 @@ SFP+ (destino/iniciador)</block>
   <block id="db89594b0a0cbb483395a2641220f1fe" category="list-text">Habilite la devolución automática del control si se deshabilitó: _Storage failover modify -node local -auto-giveback true_</block>
   <block id="4e0b6dc04aaa383038bc23130a17cb25" category="cell">Si el módulo de E/S es un...</block>
   <block id="09c2cf2531a14305542e6aff93e691c5" category="paragraph">Módulo de NIC</block>
-  <block id="f4247136ba1a68a91a49f4e715963146" category="paragraph">Antes de apagar la controladora deteriorada, debe verificar si el sistema tiene el administrador de claves de seguridad habilitado o discos cifrados.</block>
-  <block id="ee3b489243bdd4fdcc48ef1ad422f531" category="section-title">Verifique la configuración del gestor de claves de seguridad</block>
-  <block id="19033065ab73d137563560b1fc6895b0" category="inline-link">Almacén de claves de seguridad gestor de claves mostrar página DEL COMANDO MAN</block>
-  <block id="71f479ec4da1fa9d5c9be25ad13a546d" category="admonition">Es posible que tenga tipos de gestor de claves adicionales. Los tipos son<block ref="5a2c55bb167f4f0fcfe52384fe7a4f0b" prefix=" " category="inline-code"></block><block ref="15460966dfd5d819470e51c2381536a3" prefix=" " category="inline-code"></block>, y<block ref="c731f72e1d22a7c5e01a7cb789a8885e" prefix=" " category="inline-code"></block>. El proceso de confirmación de estos tipos es el mismo que el de confirmación<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> o<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> el de los tipos de gestor de claves.</block>
   <block id="a286fff38dd07b679c8ce3d88b6f2962" category="inline-link-macro">apague el controlador dañado</block>
-  <block id="367826db12be5d0f5fa3825090445002" category="list-text">Si no se muestra ninguna salida, vaya a <block ref="eee94cfaa2087b0a7525f83880646105" category="inline-link-macro-rx"></block> para apagar el nodo defectuoso.</block>
-  <block id="d59c3f1076a11584ab7756dc397ac53d" category="list-text">Si el comando muestra resultados, el sistema tiene<block ref="3e5d9bfa91fefbf6ef9dcbbf78fad776" prefix=" " category="inline-code"></block> activo y necesita mostrar el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo y el estado.</block>
-  <block id="9c6ad91fc60690c917a5cd6ed6cd7a33" category="list-text">Visualice la información de los activos<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> mediante el comando _security key-manager key query_.</block>
-  <block id="d4d54422637dc235d95476cfe54ea635" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y aparece la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, es seguro apagar el controlador defectuoso.</block>
-  <block id="70a67dee5ee1d1759bf1a2c010c1e811" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y aparece la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, deberá realizar algunos pasos adicionales.</block>
-  <block id="a2bb34c9514c6e80246f4c62ebc228ba" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, deberá realizar algunos pasos adicionales.</block>
-  <block id="9c33fca9f2622d604fc8874a364353ac" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier otra cosa que no sea<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, deberá realizar algunos pasos adicionales.</block>
-  <block id="74604182978b167f63843f1b5103e2fc" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y aparece la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, realice una copia de seguridad manual de la información de OKM:</block>
-  <block id="2f860acdf6b26736b405ca465ba26aa8" category="list-text">Introduzca<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite continuar:<block ref="8d2cf87827d8c4c105b70542cc18077d" prefix=" " category="inline-code"></block></block>
-  <block id="4c94e967d32d6a5e4a0ee6ac899694ef" category="list-text">Introduzca el comando para mostrar la información de gestión de claves: _Security key-manager onboard show-backup_</block>
-  <block id="20ae1bfb7c7e894e8452d6455767525e" category="list-text">Puede apagar el controlador defectuoso de forma segura.</block>
-  <block id="557f328fcef62c2d64ceebcbd641d6c9" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier cosa que no sea<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>:</block>
-  <block id="8df76dc1d3bd7d69bf652ac978436153" category="list-text">Introduzca el comando sync del gestor de claves de seguridad incorporado: _Security key-manager onboard sync_</block>
-  <block id="2f7724b07e3bd024392416fca683c713" category="admonition">Introduzca la clave de acceso 32 caracteres alfanumérica integrada en el símbolo del sistema. Si no se puede proporcionar la contraseña, comuníquese con el soporte de NetApp.<block ref="28649c93049a329043d206ec7fa0c6f8" category="inline-link-rx"></block></block>
-  <block id="00aae9c1b73fd095e6e3a0c8e04cc543" category="list-text">Compruebe que<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> se muestra la columna<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> para todas las claves de autenticación:<block ref="c9b37f9017fc101cecef415e707e7b5f" prefix=" " category="inline-code"></block></block>
   <block id="4332aa8c798bac1ec6c0f4c83e0df305" category="list-text">Compruebe que se muestra el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block>y, a continuación, realice una copia de seguridad manual de la información de OKM.</block>
-  <block id="ad7a7ba5e951e1f95f031b922654b81d" category="list-text">Introduzca el comando para mostrar la información de backup de gestión de claves: _Security key-manager onboard show-backup_</block>
-  <block id="f460d19ca5b84d519df411e9bc1309e8" category="list-text">Si aparece el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="6a21b6995a068148bbb65c8f949b3fb2" prefix=" " category="inline-code"></block> y la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna muestra cualquier cosa que no sea<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>:</block>
-  <block id="bd978885d127d957b96043955d436bad" category="paragraph">Si el comando falla, póngase en contacto con el soporte de NetApp en<block ref="28649c93049a329043d206ec7fa0c6f8" category="inline-link-rx"></block>.</block>
-  <block id="0fc2888b577a950f06774de71be916c1" category="list-text">Compruebe que la<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> columna se muestra<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> para todas las claves de autenticación: _Security key-manager key query_</block>
   <block id="7f1dab55b896652272852d94aadf9413" category="list-text">Desde el aviso del CARGADOR, inicie la imagen de recuperación desde la unidad flash USB: _Boot_recovery_</block>
   <block id="66e5f5f877412d7578e6bec4d8f933b5" category="list-text">En el controlador defectuoso, pulse _Y_ cuando vea<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
   <block id="3578391379ba5c5411207a0793afef71" category="list-text">En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba<block ref="295b4ac77f4e1c5f93c6894df85fd86d" prefix=" " category="inline-code"></block>.</block>
@@ -8518,7 +8268,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ed60c71388c93567b70f2c648568f43e" category="paragraph">La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada controladora mostrará un estado configurado, con mirroring de DR habilitado y un modo normal. <block ref="3a430417b055bb7642531def2eebffec" prefix=" " category="inline-code"></block>El resultado del comando muestra el ID del sistema deficiente hasta que la configuración de MetroCluster vuelve a un estado normal.</block>
   <block id="df52882bdb0f8ccab117b27b8ad08f11" category="list-text">El controlador es el propietario actual de los discos en el sitio de recuperación ante desastres.</block>
   <block id="dbdb9c1ac216db7c2a5488c988607c9b" category="list-text">Si su sistema tiene una configuración de MetroCluster, verifique que cada controladora esté configurada: _MetroCluster node show - fields configuration-state_</block>
-  <block id="1964518eff1cbd81e89b8431963a7b3a" category="list-text">Si deshabilitó la toma de control automática en el reinicio, habilite desde la controladora en buen estado: _Storage failover modify -node replacement-node-name -onreboot true_</block>
   <block id="f83defba1f467eab098c839b34ecd50f" category="image-alt">Sustituya la PSU</block>
   <block id="dc77af39a42fc8bba7b24ca9686dfb67" category="paragraph">Lengüeta de bloqueo de PSU de terracota</block>
   <block id="e1335ae9dd3c981060cb7896ec1cad9f" category="paragraph">Retire la batería RTC defectuosa e instale la batería RTC de repuesto.</block>
@@ -8578,7 +8327,6 @@ SFP+ (destino/iniciador)</block>
   <block id="75fa26086844dfcbf14f35086518217a" category="list-text">Retire el módulo de obturación.</block>
   <block id="2b6adb50592127273fdb4bb2b68918d5" category="list-text">Alinee el módulo de E/S con los bordes de la abertura de la ranura del módulo del controlador.</block>
   <block id="97366bfb1dcb5b97156c347c8ad89d9a" category="list-text">Deslice suavemente el módulo hasta el fondo en la ranura y, a continuación, gire el pestillo de la leva hasta el fondo para bloquear el módulo en su lugar.</block>
-  <block id="2f3095e4c2c969f1f9dca69963ff66c1" category="paragraph">Reasignar de forma permanente los LIF ASAectados a un puerto de inicio diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> para obtener información sobre el uso de System Manager para mover las LIF de forma permanente.</block>
   <block id="6181ce929bc404494408989e6b8a9b52" category="paragraph">Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.</block>
   <block id="8a9a8a0db84d9dd59b0f006930b47193" category="list-text">Pulse el botón de bloqueo de leva.</block>
   <block id="422e2aa4ec97de509f54db9d23618f37" category="list-text">Retire el módulo del chasis enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del chasis.</block>
@@ -8773,10 +8521,6 @@ SFP+ (destino/iniciador)</block>
   <block id="92a8f4f22e2adcc65ead3e4c5a1435db" category="list-text">Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.</block>
   <block id="ccb7122523ff13a861d44c2bcdc45f81" category="list-text">Asigne cada unidad:<block ref="e546c7c0f19a803f32f47d3907849b62" prefix=" " category="inline-code"></block></block>
   <block id="3774ddca34a7ba4f3e245f00869ad3d4" category="paragraph">Al sustituir varias unidades de disco, debe esperar 70 segundos entre la extracción de cada unidad de disco con errores y la inserción de la unidad de disco de reemplazo para que el sistema de almacenamiento pueda reconocer la existencia de cada disco nuevo.</block>
-  <block id="9f8cb0e8a48411f934bc97473df58706" category="list-text">Si AutoSupport está habilitado, restaure o desactive la creación automática de casos mediante el<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
-  <block id="9cdea9bbd0e16c22fc991522b7972ed5" category="paragraph">Debe completar los pasos específicos de los sistemas que tengan habilitado el gestor de claves incorporado (OKM), el cifrado de almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE) mediante la configuración capturada al principio de este procedimiento.</block>
-  <block id="7b2bdafe064028eef5977d05150f12ac" category="admonition">Si se habilitan NSE o NVE junto con el gestor de claves incorporado o externo, debe restaurar la configuración capturada al principio de este procedimiento.</block>
-  <block id="63a4de1bcedff077618555275f624f08" category="open-title">Opción 1: Sistemas con configuración del servidor de gestión de claves incorporada</block>
   <block id="7000494e61efaf925f6df5293a176456" category="inline-link">al tiempo que habilita la gestión de claves incorporada</block>
   <block id="da204d9262b182aa6636ef0f759e2181" category="list-text">Se ha introducido la clave de acceso para todo el clúster<block ref="45fc92ed2fd28afadf25f8be26cb5500" category="inline-link-rx"></block>.</block>
   <block id="f295be867ed42957086669bda6d018d8" category="inline-link">Información de backup del gestor de claves incorporado</block>
@@ -8796,8 +8540,6 @@ SFP+ (destino/iniciador)</block>
   <block id="d60b517023845eb33535660ac501cf18" category="list-text">La dirección del servidor KMIP.</block>
   <block id="70b8d21a07e70130ed6b262a91c18626" category="list-text">El puerto KMIP.</block>
   <block id="e43680b19a57600cbf0bc788265754c7" category="list-text">Seleccione la opción 11 en el menú de inicio de ONTAP.</block>
-  <block id="4f95ab1472771ae8e2475d26cfccfefd" category="paragraph">El siguiente mensaje AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*&gt; system node AutoSupport invoke -node * -type all -message MAINT=2h</block>
-  <block id="46bbc90a4740f73d85b026da0e0ba4db" category="list-text">Deshabilite la devolución automática de la controladora en buen estado:</block>
   <block id="b719e721c62569ed8b97aaf7ac03691a" category="paragraph">Switch de interconexión de varios clústeres</block>
   <block id="237cf241ea2c39cca38863cb459577d8" category="paragraph">Las configuraciones de varios clústeres permiten que varios clústeres compartan el mismo switch de clúster, proporcionado a través de dos nuevos archivos de configuración de referencia para configuraciones de nodos 4x4 y 2x8.</block>
   <block id="8020ad245e7cbc2ac49c84b7f4ace684" category="paragraph">ONTAP 9.14.1</block>
@@ -9198,7 +8940,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6476573ba5b973ad8ea01c57f5b30267" category="sidebar">Sistemas ASA</block>
   <block id="9aaba65702056e024efc0836758c1538" category="sidebar">Añada en caliente</block>
   <block id="b1cd69e899e8ab2e8b0c559899a3f2d7" category="admonition">En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.</block>
-  <block id="ed8012a83cd9088ec111d26e82a75971" category="list-text">Determine si Key Manager está activo con el comando _security key-manager keystore show_. Para obtener más información, consulte<block ref="4b8f2aeacb1514195535ef615c2cae4a" category="inline-link-rx"></block></block>
   <block id="3e6277588162255770fd3384bad09d6d" category="list-text">En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.</block>
   <block id="9daabece8db7521a7882f63ebd76a891" category="image-alt">Retire una unidad con el botón de liberación en la parte superior</block>
   <block id="e0bc24820711c466532ba2cb67ababd9" category="image-alt">Retire una unidad con el botón de liberación en el centro</block>
@@ -9443,8 +9184,6 @@ SFP+ (destino/iniciador)</block>
   <block id="f399facc82d214513205adcdfed1e55f" category="image-alt">Unidades de disco de asiento</block>
   <block id="f20a0219f10b0070c92efe4269486629" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
   <block id="86e8e2badf42560bb0b1ed3bac3933fa" category="paragraph">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
-  <block id="32054c5ad8312edd8060078021c40e5a" category="list-text">Si se muestra &lt;lno-DARE&gt; o &lt;1Ono-DARE&gt; en el resultado del comando, el sistema no admite NVE, continúe con <block ref="28ec6f22ff725a2b75e5efb9fe4ec8ad" category="inline-link-macro-rx"></block>.</block>
-  <block id="f5fc26027a17bd6c3d672fadcfbcbd0a" category="list-text">Si &lt;lno-DARE&gt; no se muestra en el resultado del comando y el sistema está ejecutando ONTAP 9 E.6 o posterior, continúe con la siguiente sección, <block ref="2a46afadceb505b77f1bd61e2cc13b61" category="inline-link-macro-rx"></block>.</block>
   <block id="b9c98500ab9d006e0d9fd3d1c95f7904" category="paragraph">Para obtener más información sobre el cableado, consulte <block ref="b8ff88c1a2e9444f28ec1504689e0040" category="inline-link-macro-rx"></block>.</block>
   <block id="ef83cb60cd5ea6118e6d106efa30f927" category="image-alt">Precauciones con el peso de elevación</block>
   <block id="f3badb2cde47b97db55936f633e8bbf1" category="image-alt">Cableado compuesto de cluster sin switches de dos nodos</block>
@@ -9530,7 +9269,6 @@ SFP+ (destino/iniciador)</block>
   <block id="d17bb023ab45bd18aad4108bff14bf1e" category="list-text">Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte<block ref="672892c7f98df9ad95d0024f72bc4b95" category="inline-link-rx"></block> la página para obtener más información.</block>
   <block id="66a35db4b6d963b540c6a3d31a9d39e6" category="paragraph">Apague o tome el control del módulo del controlador defectuoso.</block>
   <block id="011b6189f470beb455ff657e2d7f7a63" category="list-text">Gire el pestillo de leva hacia fuera del módulo hasta el tope.</block>
-  <block id="7f6199cbd3ee90e0a5a981dd4bcdb2b3" category="doc">Compruebe NVE o NSE</block>
   <block id="5ad3ca057c7fdbeb9a29c3682785baa3" category="cell">Si el sistema se está ejecutando...</block>
   <block id="2e8e8fd780cc78a14b825cad663b2611" category="paragraph">ONTAP 9.16.0 o anterior</block>
   <block id="607ae42cd8348594bc8bfa6a3c380eba" category="paragraph">*NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
@@ -9545,7 +9283,6 @@ SFP+ (destino/iniciador)</block>
   <block id="c1b6a9a30a6ce8d79305050622234851" category="paragraph">En el resultado del comando, debe ver un mensaje que indica el estado de las controladoras.</block>
   <block id="b58ec5a6cf078c8a3a2b309a797f9e62" category="paragraph">La controladora se conecta de nuevo a su pool de almacenamiento y completa el arranque.</block>
   <block id="c23f2b6754e0bfe310956814b83c20c2" category="list-text">Compruebe que los discos que los pools de discos son los esperados:<block ref="a9fae81f0c924f3a581cf23a9c8b11b1" prefix=" " category="inline-code"></block></block>
-  <block id="13a20619b6dc3827356a336b68087987" category="doc">Compruebe NVE o NSE en los sistemas</block>
   <block id="56bce10b49b12be932b0ca38009e1da1" category="paragraph">Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, extraer el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.</block>
   <block id="7acc547c8acfbe4a745ca72a3e0e83e4" category="image-alt">Unidad drw a800 asentada IEPOPS 960</block>
   <block id="322279d0aaf25c776901bdae1ee30ea2" category="list-text"><block ref="f46f944e351f8b92e40c3308318738a3" prefix="" category="inline-code"></block> (No compatible con ASA)</block>
@@ -9582,7 +9319,6 @@ SFP+ (destino/iniciador)</block>
   <block id="d1da2db4d465ceb969bae13f9a2c1665" category="list-text">Introduzca de nuevo la frase de contraseña del gestor de claves incorporado cuando se le solicite que confirme la clave de acceso.</block>
   <block id="d6b5f802b07df1179c13649ed53524f0" category="paragraph">Verá lo siguiente cuando se complete el proceso de recuperación:</block>
   <block id="c6980bbd79483c6809cc84795b7d14d6" category="paragraph">Cuando se completa la restauración, el nodo se reinicia para completar el proceso.</block>
-  <block id="0afa9147e7fde537954ecea742d84625" category="list-text">Seleccione una de las siguientes opciones para restaurar la configuración del administrador de claves incorporado desde el menú de arranque ONATP.</block>
   <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="doc">Paso 1: Conecte las controladoras de almacenamiento a la red</block>
   <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">Si se conecta a un switch óptico, inserte el transceptor de factor de forma pequeño conectable (SFP) en el puerto de la controladora antes de cablear al puerto.</block>
   <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">Conecte las controladoras directamente entre sí y a su red host.</block>
@@ -9947,7 +9683,6 @@ SFP+ (destino/iniciador)</block>
   <block id="65cc6c94582f61a33aa4704c52ac52c0" category="cell">Módulo de bandejas</block>
   <block id="8c5d814fd2a79ee668b40d5bb90febe6" category="paragraph">Módulo IOM 6</block>
   <block id="a50d5562329cec378062f8ecd6f08580" category="doc">Devuelva la pieza fallida a NetApp - FAS70 y FAS90</block>
-  <block id="748f3a5b6d81b68d72c4ee26da4759a6" category="doc">Compruebe las claves de cifrado integradas: FAS70 y FAS90</block>
   <block id="70e171be442c06a383310683a983f973" category="doc">Restaurar cifrado - FAS70 y FAS90</block>
   <block id="0f8fed13fee9009a30d0eed748301401" category="doc">Inicie la imagen de recuperación - FAS70 y FAS90</block>
   <block id="3b51f7db40d40ca8865f924da6fb8314" category="doc">Sustituya el medio de arranque - FAS70 y FAS90</block>
@@ -10374,7 +10109,6 @@ SFP+ (destino/iniciador)</block>
   <block id="2318a1a52ce7d20091148211d8be58fd" category="paragraph">Si no se puede proporcionar la contraseña, póngase en contacto con<block ref="1a36b59ecae7684863b79a0f690b6840" category="inline-link-rx"></block>.</block>
   <block id="f1223f2beed0f1db66fa98879448bb9d" category="list-text">Compruebe que<block ref="5fdf564f22be6bd901a690f1c5a6d9eb" prefix=" " category="inline-code"></block> se muestra la columna<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> para todas las claves de autenticación:</block>
   <block id="d81a048f736ca3a03a0fc11c4bc74978" category="list-text">Introduzca el comando para mostrar la información de backup para la gestión de claves:</block>
-  <block id="d019a61bbe760bfae51153af25e806b3" category="doc">Paso 1: Restaurar el administrador de claves</block>
   <block id="926dc92762712fb5c888d06d13b2835c" category="list-text">En el menú de arranque ONTAP, seleccione la opción apropiada:</block>
   <block id="3554bd6dca965e0e8bcb314a54ef655c" category="list-text">Introduzca la clave de acceso en todo el clúster para la instancia de Onboard Key Manager.</block>
   <block id="68e51e7cb5faf4732838f76bc7db6b45" category="admonition">Si la sincronización se realiza correctamente, se devuelve el símbolo del sistema de clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.</block>
@@ -10510,15 +10244,10 @@ SFP+ (destino/iniciador)</block>
   <block id="b1a80a7089afd7d3b9be5936d7cc2c4b" category="example-title">Mostrar petición de datos</block>
   <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">Muestra el ejemplo</block>
   <block id="6758e112526dd1470fdafbd89c3b25df" category="paragraph">Después de introducir la información del cliente y el servidor, el proceso de recuperación finaliza.</block>
-  <block id="5c333c9d5086ee50b7f10724d1f9dc2b" category="paragraph">A| ONTAP 9.7 y anteriores A| Seleccione la opción oculta<block ref="7191584fa52473c1df15d3c03b065c0b" prefix=" " category="inline-code"></block></block>
-  <block id="d9b80a753e6bd9c6b770fc295f295dc3" category="cell">+ . Confirme que desea continuar con el proceso de recuperación. + .Mostrar indicador de ejemplo [%Collapsible]</block>
-  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
-  <block id="68ce5ec1e3f9c353c053b6feafae61f1" category="paragraph">+ ADVERTENCIA: No proceda si la salida mostrada es otra cosa que<block ref="3f52dc951949a3041638d54635d71099" prefix=" " category="inline-code"></block> . Realice la solución de problemas para corregir el error.</block>
   <block id="1544c9897deafcbdffc044dac2f06610" category="list-text">Confirme que la consola de la controladora muestre lo siguiente:</block>
   <block id="1ebe17e50ef0f20c9a4943cdde00f20b" category="list-text">Desde el nodo asociado, restaure la controladora del partner:</block>
   <block id="24de39ef6b972a13ee81c8f1e764261f" category="list-text">Después de arrancar solo con CFO Aggregate, ejecute el siguiente comando:</block>
   <block id="a26071b84ebad6f3f9f4f6902bd06efe" category="paragraph"><block ref="1fd11ad9c6fc9e17e9729cd939a2b47b" prefix="" category="inline-code"></block> comando.</block>
-  <block id="93c58e434dc7b5eb5c16678bb00205d0" category="paragraph">+ NOTA: Si la sincronización se realiza correctamente, se devuelve la petición de datos del clúster sin mensajes adicionales. Si la sincronización falla, aparecerá un mensaje de error antes de volver al símbolo del sistema del clúster. No continúe hasta que se corrija el error y la sincronización se ejecute correctamente.</block>
   <block id="85ea8ad93708cbd62f01b1e93c22f93c" category="list-text">Asegúrese de que todas las claves estén sincronizadas:</block>
   <block id="e4cab1326503c7b85827bb20b6ecc371" category="list-text">Devolución del nodo desde el partner:</block>
   <block id="8c262ff4c019499a1809393e7aaf9ec1" category="list-text">Restaure la devolución automática, si la deshabilitó, introduciendo el siguiente comando:</block>
@@ -10527,10 +10256,6 @@ SFP+ (destino/iniciador)</block>
   <block id="44175671016a3c55aa9144d7352ab920" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.crt de otro nodo del clúster o del certificado de cliente.</block>
   <block id="d424dce62a7b2ea39afe29d8361240e7" category="list-text">Una copia del archivo /cfcard/kmip/certs/client.key de otro nodo de clúster o la clave de cliente.</block>
   <block id="b8dd2898e8ee20a6f6cb34867845aa17" category="list-text">Una copia del archivo /cfcard/kmip/certs/CA.pem de otro nodo del clúster o de las CA del servidor KMIP.</block>
-  <block id="7ae600ed46c79416b9301ce3a1377c21" category="paragraph">+ .Mostrar ejemplo</block>
-  <block id="16080a7eee840ac3e377c36a8da5fb6f" category="paragraph">El sistema está preparado para utilizar gestores de claves externos. Intentando recuperar claves de los servidores de claves.... [Aug 29 21:06:28]: 0x808806100: 0: DEBUG: kmip2::main: [InitOpenssl]:460: Realizando la inicialización de OpenSSL recuperó correctamente los secretos del gestor de claves.</block>
-  <block id="f9797a252c2780e96d414a71cd6ecf04" category="list-text">Seleccione la opción '(1) Normal Boot.' para completar el proceso de recuperación. *</block>
-  <block id="285251407570005df5c8fe081a777f29" category="paragraph">(1) Arranque normal. (2) Arranque sin /etc/rc. (3) Cambiar contraseña. (4) Limpiar la configuración e inicializar todos los discos. (5) Arranque en el modo de mantenimiento. (6) Actualizar flash desde la configuración de copia de seguridad. (7) Instale primero el nuevo software. (8) Reiniciar nodo. (9) Configurar creación avanzada de particiones de unidades. (10) Configurar secretos de recuperación del gestor de claves incorporado. (11) Configure el nodo para la gestión de claves externas. Selección (1-11)? 1</block>
   <block id="5943dcc79f4be51c7946faa01081c8c7" category="admonition">Si su sistema estaba ejecutando inicialmente ONTAP 9.10,1 o posterior, utilice el procedimiento documentado en <block ref="b14f44ab326196475bf1d94f7e3821ad" category="inline-link-rx"></block>. Si no está seguro de la versión inicial de ONTAP para su sistema, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> para obtener más información.</block>
   <block id="6379280c267113ec35e5881e1b0f65bb" category="paragraph">Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.</block>
   <block id="937eeb311ae4c7f36059ec45705ae05b" category="list-text">Un ID de bandeja externa válido es de 01 a 99.</block>
@@ -10545,4 +10270,65 @@ SFP+ (destino/iniciador)</block>
   <block id="f8798e73b2d5e1dfd7612b46ff0e89e2" category="video-title">Reemplace un módulo NSM en una bandeja NS224</block>
   <block id="ed5f0b1fadc9d155c332ddd3a2c8910b" category="video-title">Intercambie en caliente una fuente de alimentación de una bandeja NS224</block>
   <block id="4dc161fec1e803228a4a6e64a87cc800" category="video-title">Reemplace una batería de RTC en una bandeja NS224</block>
+  <block id="63de15d7ebdc2c559ae57bca24a50ba0" category="paragraph">Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.</block>
+  <block id="e2c22e2725f2ca1633de7f84c13e7ee9" category="list-text">Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento:<block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix=" " category="inline-code"></block>.</block>
+  <block id="31b425d57d182760ff64de2b5271d716" category="list-text">Si se ha desactivado la devolución automática, vuelva a activarla<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block>: .</block>
+  <block id="1092e7972468642cadebab10dd64d57e" category="list-text">Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block>: .</block>
+  <block id="5d76f009f7cd6e682bfd4e7b7100bf50" category="list-text">Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento:<block ref="942475a8b85026371f0df2238e2242a7" prefix=" " category="inline-code"></block>.</block>
+  <block id="6cc1bea98a5917bd99040659271eee84" category="list-text">Si se ha desactivado la devolución automática, vuelva a activarla<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block>: .</block>
+  <block id="a503a72dbd766bd5c26b4a8607a4883a" category="paragraph">Vuelva a instalar los módulos del controlador en el chasis y reinítelos.</block>
+  <block id="179799acf0ae457231cd3985051c6ae8" category="list-text">Si ha abierto el conducto de aire, cierre el conducto de aire girándolo hacia abajo hasta el tope.</block>
+  <block id="52b8f282be8abda5f74f6d660d929735" category="paragraph">Debe quedar a ras de la chapa metálica del módulo del controlador.</block>
+  <block id="e929e5cc1e429d4acd62e249388409a8" category="list-text">Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el controlador hasta el fondo del chasis.</block>
+  <block id="73e9cf7fa448804b249c0a2b4c72d5db" category="paragraph">El módulo del controlador comienza a arrancar tan pronto como se instala y se restaura la alimentación. Si arranca en el aviso del CARGADOR, reinicie la controladora con<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> el comando.</block>
+  <block id="9279c5976d0efa7962d255d2c0bdf1f7" category="doc">Restaurar cifrado - AFF A150</block>
+  <block id="039688df1117abc37830485d9cfc19a2" category="doc">Restaurar cifrado - AFF A200</block>
+  <block id="9c582befdd75b28e94852b8d29c862c2" category="doc">Restaurar cifrado - AFF A220</block>
+  <block id="dc6b10f7631fef2a5e55cf11bd351edd" category="doc">Restaurar cifrado - AFF A250</block>
+  <block id="ae502bfb3f22fd2663f2d03c21f3d2a9" category="doc">Restaurar cifrado - AFF A300</block>
+  <block id="774b438539147f48fe16a294d75f3f50" category="doc">Restaurar cifrado - AFF A320</block>
+  <block id="85dca47caa75e0735191113853902175" category="doc">Restaurar cifrado - AFF A400</block>
+  <block id="7a73c203991b85364d378e1776f409cf" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A700</block>
+  <block id="f36bab8f805adf4900ae9ba7bc242338" category="doc">Restaurar cifrado - AFF A700</block>
+  <block id="6c13a509fd78299270a0410be952c7f6" category="doc">Restaurar cifrado - AFF A700s</block>
+  <block id="db71ee8a5e2594d351f37a0a87806486" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A800</block>
+  <block id="bb6a55badec0bac9362f16ebd5009e5f" category="doc">Restaurar cifrado - AFF A800</block>
+  <block id="71e403f2789af4510e56370feed1aa6d" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA C250</block>
+  <block id="ee21012549fd21859836ecc5ec149d22" category="doc">Restaurar cifrado - ASA C250</block>
+  <block id="7f3c48e5322ed9fd25902457cb11a8b3" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA C400</block>
+  <block id="13e402a48516f3df0a4a2b09e3076481" category="doc">Restaurar cifrado - ASA C400</block>
+  <block id="511796586d19d0b2cb5a4cd14581478a" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA C800</block>
+  <block id="f477d17555442c3400a29898cd852b96" category="doc">Restaurar cifrado - ASA C800</block>
+  <block id="e4cee0c18f92a2719465d58340bc4ab5" category="paragraph">Puede sustituir manualmente un soporte de arranque fallido mediante un módulo USB para la imagen de arranque.</block>
+  <block id="e4db105eaa26749e6726fe6644b77f2f" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: ASA A150</block>
+  <block id="f9c62bff8e46b0d2433f3609b7ecdb39" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA A250</block>
+  <block id="0f791bd55bfa2fd01f0eba9b2a93ae03" category="doc">Restaurar cifrado - ASA A250</block>
+  <block id="6a3dc34ad6a214d72bd704b1c631ac27" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA A400</block>
+  <block id="0a1b1a82d29b54f3c96fa637e88dbed7" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA A800</block>
+  <block id="a4cc434d6b8cdf1077083caf578280ed" category="paragraph">Directiva no resuelta en &lt;stdin&gt; - Include:../_include/800_bootmedia_encryption_preshutdown_checks.adoc[]</block>
+  <block id="a462f90654e012446c7de81d57862efa" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - ASA A900</block>
+  <block id="e6b007124129e06cf12d3969e2e3ed17" category="doc">Restaurar cifrado - ASA A900</block>
+  <block id="9b07e08c3c5e2bcabe683268fcd03412" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C190</block>
+  <block id="ae74d18925f53499ace58d7411a0f2ab" category="doc">Restaurar cifrado - AFF C190</block>
+  <block id="c74c4a68f6158322162718bd4a784ad4" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C250</block>
+  <block id="b68bc3b3e2e227787b4c59fd6d36b955" category="doc">Restaurar cifrado - AFF C250</block>
+  <block id="ec37c512fcd210525dc10d15a10e5a95" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C400</block>
+  <block id="c193dadfbf15d42f5494a4bbbc76356d" category="doc">Restaurar cifrado - AFF C400</block>
+  <block id="72a12cc831feb59de9ead4ebd134011d" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C800</block>
+  <block id="087db3b88ab1127d927c06f47dd3bd04" category="doc">Restaurar cifrado - AFF C800</block>
+  <block id="88c689cc37cba41450ae79f21e6beabf" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: FAS70 y FAS90</block>
+  <block id="a29212026f644e3af5d7d35e4872e64e" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS2600</block>
+  <block id="f69fe3fd7c25297cb61a32bc5fc76020" category="doc">Restaurar cifrado - FAS2600</block>
+  <block id="5d4211964469579f1f45285fc12474dd" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A220 y FAS2700</block>
+  <block id="73bc3dac4ffabefd42b1c26a096bbc4e" category="doc">Restaurar cifrado - AFF A220 y FAS2700</block>
+  <block id="c0e6c6c0a121f35fdbf7c8694a70b562" category="doc">Restaurar cifrado - FAS2800</block>
+  <block id="cbae18ebc2b8ffd413dbf0fb20bf3f9d" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS500f</block>
+  <block id="a7b0a510fdfaae6ab395e09cd164f2f8" category="doc">Restaurar cifrado - FAS500f</block>
+  <block id="8de2c4c1d0c319cb07b6837fd62d106e" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS8200</block>
+  <block id="9845ad900ab8d052684f6f9e49107a1f" category="doc">Restaurar cifrado - FAS8200</block>
+  <block id="1bc2845699cb3ceb88ee2b3bffabb9b4" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF FAS8300 y FAS8700</block>
+  <block id="e9f4f2164b3732f470d6acec805f446d" category="doc">Restaurar cifrado: AFF FAS8300 y FAS8700</block>
+  <block id="3d7237c5aa2d20431d9cae1d4abbadb9" category="doc">Restaurar cifrado - FAS9000</block>
+  <block id="13e7cf07309f0d95eee5aa49b6842dc0" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS9500</block>
+  <block id="e4d9374bc79ce9095fb021e03551599f" category="doc">Restaurar cifrado - FAS9500</block>
 </blocks>
