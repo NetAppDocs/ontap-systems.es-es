@@ -191,10 +191,6 @@ NOTE: Si el nuevo módulo de E/S no es el mismo modelo que el módulo con errore
 
 NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
 
-+
-
-NOTE: Asegúrese de salir del modo de mantenimiento después de completar la conversión.
-
 . Devuelva el nodo a su funcionamiento normal: _Storage failover giveback -ofnode impaired_node_name_
 . Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
 

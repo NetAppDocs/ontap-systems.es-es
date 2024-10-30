@@ -165,13 +165,7 @@ Botón de bloqueo de leva
 .. Deslice suavemente el módulo hasta el fondo en la ranura y, a continuación, gire el pestillo de la leva hasta el fondo para bloquear el módulo en su lugar.
 
 
-. Conecte el cable al módulo de E/S.
-+
-Si el módulo de E/S es una NIC, conecte el módulo a los conmutadores de datos.
-
-+
-Si el módulo de I/O es un módulo de almacenamiento, conecte los cables a la bandeja NS224.
-
+. Conecte el módulo de E/S al dispositivo designado.
 +
 
 NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
@@ -184,7 +178,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 
 . Devuelva la controladora de la controladora asociada: _Storage failover giveback -ofnode target_node_name_
 . Repita estos pasos para la controladora B.
-. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
+. Desde el nodo en buen estado, restaure la devolución automática si lo deshabilitó mediante `storage failover modify -node local -auto-giveback true` el comando.
 . Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 
 
@@ -370,7 +364,7 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 .. Deslice suavemente el módulo dentro de la ranura hasta el fondo del chasis y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
 
 
-. Conecte el cable al módulo de E/S.
+. Conecte el módulo de E/S al dispositivo designado.
 . Repita los pasos de extracción e instalación para reemplazar módulos adicionales para el módulo del controlador.
 . Gire la bandeja de gestión de cables a la posición bloqueada.
 . Reinicie el módulo del controlador desde el símbolo del sistema del CARGADOR:_bye_

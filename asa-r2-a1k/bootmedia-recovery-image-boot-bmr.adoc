@@ -207,4 +207,16 @@ LOADER-B>
 
 
 . Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 

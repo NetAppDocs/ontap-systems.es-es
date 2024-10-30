@@ -4072,7 +4072,6 @@
   <block id="c50fdb32ee76a4d77a2a4b76520e5bed" category="admonition">Después de sustituir el módulo de ventilador, el LED de atención permanece encendido (ámbar fijo) mientras el firmware comprueba que el módulo de ventilador se ha instalado correctamente. El LED se apaga una vez completado este proceso.</block>
   <block id="162c19cb0e58f8c6c83c319b91d9da12" category="paragraph">Póngase en contacto con el soporte técnico en<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>, 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA.</block>
   <block id="5b07090bafdc58182b6f01852ecbad05" category="summary">Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de controladoras que puede utilizar para cablear los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr conectividad con cuatro rutas en una configuración de par de alta disponibilidad o de controlador individual. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones de cuatro rutas para la configuración.</block>
-  <block id="5d57c73dbe661f28ff4ab36825900d40" category="doc">Plantilla de hoja de trabajo para el cableado de controladora a pila para la conectividad de cuatro rutas: Bandejas con módulos IOM1/IOM12B2</block>
   <block id="f8688b55e48596e9efbee0294dc9b0af" category="list-title">Acerca de su tarea</block>
   <block id="0410b8cb4945f84623b17f2f6249cf4a" category="list-text">Este procedimiento y la plantilla de la hoja de trabajo son aplicables a la conectividad de cuatro rutas para una configuración de alta disponibilidad de cuatro rutas o de cuatro rutas con una o varias pilas.</block>
   <block id="70c45a3fea4e20bf8f37ec9e02cb575c" category="paragraph">Se proporcionan ejemplos de hojas de trabajo completadas para configuraciones de ruta cuádruple de alta disponibilidad y ruta cuádruple.</block>
@@ -6696,7 +6695,6 @@ SFP+ (destino/iniciador)</block>
   <block id="cfad0a7419f44ea0c64db24197abbf70" category="paragraph">Parpadeo</block>
   <block id="6b6aa0b6d9b620cfef1de19db2c781e5" category="paragraph">Los LED de una fuente de alimentación de CA o CC indican si la fuente de alimentación funciona con normalidad o si hay problemas de hardware.</block>
   <block id="ddf6d4204e991f952d5f65cedae767ce" category="paragraph">En la ilustración y las tablas siguientes se describe el LED de una fuente de alimentación. (La ilustración es una fuente de alimentación de CA; sin embargo, la ubicación de los LED es la misma en la fuente de alimentación de CC):</block>
-  <block id="7609b319dac3aca8b9d7c805388fc5e6" category="paragraph">El LED bicolor indica la alimentación/actividad cuando está en verde y un fallo en ámbar.</block>
   <block id="0cb6b469a5da43eb5225c25fab0b5ff0" category="cell">Potencia/actividad (verde)</block>
   <block id="cd5f6c10b859eea6eaed71a2e494c0db" category="paragraph">No hay alimentación de CA/CC en la carcasa</block>
   <block id="aade40c62d1308360c2f119536da1c63" category="paragraph">No hay alimentación de CA/CC a la fuente de alimentación</block>
@@ -9290,35 +9288,7 @@ SFP+ (destino/iniciador)</block>
   <block id="cf91b43675e7187d6e724e7c312e336a" category="list-text">Gire el pestillo de leva hacia fuera del módulo hasta el tope.</block>
   <block id="f5c1d99a4f032f30d087e32fbbbdb994" category="paragraph">Apague o tome el control de la controladora dañada. - Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control del controlador para que el controlador en buen estado continúe sirviendo datos del almacenamiento del controlador dañado.</block>
   <block id="5050dae1093a80a257a1d121ca5f3b0f" category="section-title">Paso 4: Verifique el estado de la controladora</block>
-  <block id="dbc253985631ee33fc6976832d319aa9" category="list-text">En el símbolo del sistema DE Loader, introduzca el comando _boot_recovery -partner_.</block>
-  <block id="9071774e0d4e739ca2fe57b55c805c89" category="paragraph">La pantalla mostrará el mensaje<block ref="a42d5407fe60b5716cd9fdd4d4063f27" prefix=" " category="inline-code"></block> e iniciará las comprobaciones iniciales y la instalación de los archivos de recuperación de arranque.</block>
-  <block id="c3fcf34a186ddf28b42002ccdea5bb89" category="list-text">Si External Key Manager (EKM) está configurado, aparecerá lo siguiente:</block>
-  <block id="e41b0fa291ba7a2f8d02db37d829dfe6" category="list-text">Introduzca _y_ si se ha configurado un gestor de claves.</block>
-  <block id="8652886cdac2e198b58233db3fe44eb6" category="paragraph">La opción bootmenu 11 solicitará al usuario toda la información de configuración de EKM para que los archivos de configuración puedan ser reconstruidos.</block>
-  <block id="3fd9d3baae5e410a98ba4eb52a03ab26" category="list-text">Introduzca la configuración de EKM en cada petición de datos.</block>
-  <block id="4cbdd1cac9566795166b3d9206cbcf86" category="paragraph">*NOTA:* La mayor parte de esta información fue ingresada cuando EKM fue originalmente habilitado. Debe introducir la misma información que se introdujo durante la configuración inicial de EKM.</block>
-  <block id="b5a73f8c93bdb89882d1ca9e462b0e2a" category="list-text">Compruebe que<block ref="1cc9af734f039af6fc9db1cd2f09ad05" prefix=" " category="inline-code"></block> los y<block ref="878efc5de6def52e25be6f622fb5a7ee" prefix=" " category="inline-code"></block> son correctos.</block>
-  <block id="5fb974d016811ca21ebd195d4c257e8e" category="list-text">En el nodo del partner, recupere el UUID de clúster con <block ref="73bad5beeda4a2a6bd01d97def1d4e67" prefix=" " category="inline-code"></block>el comando.</block>
-  <block id="923bf1a61097d8e90a02dbe1a7df32ad" category="list-text">En el nodo asociado, recupere el UUID de almacén de claves con el<block ref="2f710df81fb8b58c1792ebb010c82902" prefix=" " category="inline-code"></block> comando y<block ref="f2892b1a90652446a2c8a2dce1d42eee" prefix=" " category="inline-code"></block> el comando.</block>
   <block id="6d194eccb9cd88bfbcde1df65103cbb4" category="list-text">Introduzca los valores para UUID del almacén de claves y UUID de clúster cuando se le solicite.</block>
-  <block id="dc96ebaefbca0b39bdff8d2d09a5fc61" category="paragraph">*NOTA:* Si el nodo asociado no está disponible, el UUID de almacén de claves y el UUID de clúster se pueden obtener de la clave Mroot-AK ubicada en el servidor de claves configurado.</block>
-  <block id="a1af56a72048fea6d9e9cfde4d42ba60" category="paragraph">Verifique<block ref="b8bbecc4d00a5d5b7dc368313818ee3e" prefix=" " category="inline-code"></block> para el UUID de clúster y<block ref="8a298935cfa9f81db49083081a35f190" prefix=" " category="inline-code"></block> los atributos de UUID de almacén de claves a fin de asegurarse de tener las claves correctas.</block>
-  <block id="d887305d2b2206bc86e35b35a47e130f" category="list-text">Si la clave se restaura correctamente, el proceso de recuperación continúa y reinicia el nodo.</block>
-  <block id="e4b7511a00ba0effd6c938bde56c85b1" category="paragraph">La pantalla mostrará el mensaje<block ref="a42d5407fe60b5716cd9fdd4d4063f27" prefix=" " category="inline-code"></block> y comenzará las comprobaciones iniciales.</block>
-  <block id="d1de7a2b347063926ee7045aa2c0d40f" category="list-text">Supervise el proceso como Loader configura los puertos del clúster local y ejecuta netboot a través<block ref="41e7db54f2498671a212595a5bc3f9c4" prefix=" " category="inline-code"></block>de .</block>
-  <block id="7d7167e676e301c377a23cf821f58e87" category="paragraph">Una vez que netboot se está ejecutando,<block ref="78a0f5e144f919e879f7037c4f29865c" prefix=" " category="inline-code"></block> se muestra en la pantalla y el proceso completa el proceso de instalación.</block>
-  <block id="e9bdba49a952b52d8fc36e6ae32295bf" category="list-text">Si Key Manager no está configurado, verá el siguiente mensaje:</block>
-  <block id="233309cf2a420789e8fcc1627010277c" category="list-text">Si aparece el siguiente mensaje, Onboard Key Manager (OKM) está configurado:</block>
-  <block id="0062654a58ca10b6a4b1ffce37755e67" category="paragraph">Vaya a para completar el proceso de recuperación.</block>
-  <block id="e6424e7ff2e258bc2ce037ee38b77931" category="list-text">Si ve el siguiente mensaje, External Key Manager (EKM) está configurado. Vaya al tema de EKM y complete el proceso de recuperación:</block>
-  <block id="b5b024aba6aeeef11aba1df77e7bc935" category="list-text">Supervisar el proceso BMR a medida que ejecuta la restauración de la configuración de copia de seguridad, el archivo env, mdb y rdb desde el partner.</block>
-  <block id="1fd38840c77d72c3a907f5a961467b12" category="list-text">El nodo se reinicia y la BMR se completa cuando observe lo siguiente:</block>
-  <block id="76e65f6de5f0ef338defad156e9302d6" category="list-text">Si Onboard Key Manager (OKM) está configurado, verá lo siguiente:</block>
-  <block id="16881782fee9167d362ad031a7bd4efa" category="list-text">Introduzca _y_ en la petición de datos.</block>
-  <block id="efdeb95716fc588d0e0896e9945962d6" category="list-text">Introduzca la clave de acceso del gestor de claves incorporado cuando lo vea<block ref="2b673e138bf62e9f201d2fe3f4e48e85" prefix=" " category="inline-code"></block></block>
-  <block id="d1da2db4d465ceb969bae13f9a2c1665" category="list-text">Introduzca de nuevo la frase de contraseña del gestor de claves incorporado cuando se le solicite que confirme la clave de acceso.</block>
-  <block id="d6b5f802b07df1179c13649ed53524f0" category="paragraph">Verá lo siguiente cuando se complete el proceso de recuperación:</block>
-  <block id="c6980bbd79483c6809cc84795b7d14d6" category="paragraph">Cuando se completa la restauración, el nodo se reinicia para completar el proceso.</block>
   <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="doc">Paso 1: Conecte las controladoras de almacenamiento a la red</block>
   <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">Si se conecta a un switch óptico, inserte el transceptor de factor de forma pequeño conectable (SFP) en el puerto de la controladora antes de cablear al puerto.</block>
   <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">Conecte las controladoras directamente entre sí y a su red host.</block>
@@ -9898,7 +9868,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6aa2bbbbcd863a688ecea951a078cc57" category="sidebar">Módulo FlashCache</block>
   <block id="9d6e68abc86ef52726565c7e52c9dea7" category="image-alt">Ejemplo del número de serie del sistema</block>
   <block id="acaf98d7d873f9a7ee774034dc1440fc" category="image-alt">Icono de advertencia de peso de AFF A90 y AFF A70</block>
-  <block id="edd9ce1e4d9cc655a3b0e8c6c36049db" category="paragraph">Restaure la imagen del soporte de arranque.</block>
   <block id="54425f945644281ccaf6201b998f169f" category="paragraph"><block ref="54425f945644281ccaf6201b998f169f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e41a410f85201d7cc87e022e1f2daf34" category="paragraph">Si tiene habilitada la detección de red en el portátil, puede completar la instalación y la configuración mediante la detección automática de clústeres.</block>
   <block id="637d6f599c1184d1c5de273700d7924f" category="list-text">Conecte el cable de consola al portátil y conecte el puerto de consola serie de la controladora mediante el cable de consola que se incluía con el sistema de almacenamiento.</block>
@@ -10055,7 +10024,6 @@ SFP+ (destino/iniciador)</block>
   <block id="cd5ec5f3586869573f3f0b3112426052" category="sidebar">TR-4290: SAP HANA en sistemas NetApp FAS con NFS</block>
   <block id="1e4893fc6c634f02ace3ba7beb78d669" category="inline-link-macro">estado del quórum</block>
   <block id="8df1727c16aa446d0622abe8cab177ae" category="list-text">Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix="(" category="inline-code"></block>) para el blade SCSI de la controladora dañada. <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix=" " category="inline-code"></block>El comando (desde el modo avanzado priv) muestra el nombre del nodo, <block ref="8650efa63daff32c831511388978454c" category="inline-link-macro-rx"></block> de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.</block>
-  <block id="35f2b79f2ef05c6cbaae401c14dbe36d" category="list-text">En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado<block ref="0a654c13d63710f829bc02c4cbec79ee" prefix=" " category="inline-code"></block>: .</block>
   <block id="8ad44b8e0ede0abb18fd1d9732ea1fec" category="list-text">En la controladora asociada en buen estado, ejecute el comando restore backup<block ref="44d388b27236c791c5fe1d30cc29bc43" prefix=" " category="inline-code"></block>: .</block>
   <block id="3fef721e9c365db9acdcf0c6462afc1d" category="list-text">En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administración<block ref="0a654c13d63710f829bc02c4cbec79ee" prefix=" " category="inline-code"></block>: .</block>
   <block id="eb907bd5c32aa1799bf0e27e04819907" category="list-text">Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a <block ref="9946ce0c7c3feb5cc0b8738324cc4807" category="inline-link-macro-rx"></block>.</block>
@@ -10331,4 +10299,18 @@ SFP+ (destino/iniciador)</block>
   <block id="3d7237c5aa2d20431d9cae1d4abbadb9" category="doc">Restaurar cifrado - FAS9000</block>
   <block id="13e7cf07309f0d95eee5aa49b6842dc0" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS9500</block>
   <block id="e4d9374bc79ce9095fb021e03551599f" category="doc">Restaurar cifrado - FAS9500</block>
+  <block id="bd5c047c4a41e95a8a9424888875e56a" category="list-text">Conecte el módulo de E/S al dispositivo designado.</block>
+  <block id="2d8241a8fe54414b6494b29d26d8b251" category="list-text">Desde el nodo en buen estado, restaure la devolución automática si lo deshabilitó mediante<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> el comando.</block>
+  <block id="9d462bd05672844aeab0d3d5d323d66a" category="list-text">Vuelva a instalar el controlador y vuelva a conectar la alimentación al módulo del controlador:</block>
+  <block id="4d872659b015ad414d5e68440a7ddfd6" category="paragraph">El controlador comienza a arrancar tan pronto como se asienta y se restablece la alimentación.</block>
+  <block id="6f3fa8086df2fa20b3e903512f693396" category="list-text">Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:</block>
+  <block id="c2e17c0358bcab54416e83b4418be536" category="paragraph"><block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix="" category="inline-code"></block>.</block>
+  <block id="32c032e6d73023a7bc6955f5bc422d4d" category="list-text">Si la devolución automática está desactivada, vuelva a habilitarla:</block>
+  <block id="929b41baf89e2c5975631c98cabedd59" category="paragraph"><block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix="" category="inline-code"></block>.</block>
+  <block id="af4b4d5cc6a7f6d9937999949dd33233" category="list-text">Si AutoSupport está habilitado, restaure la creación automática de casos:</block>
+  <block id="0306ff5f8ff1d760b409c6f7f1b3b8bd" category="paragraph"><block ref="9ac424c0d7b432975df36a19daf50c9c" prefix="" category="inline-code"></block>.</block>
+  <block id="e48348202fcdb5533fd8d224264fdc58" category="paragraph">Directiva no resuelta en &lt;stdin&gt; - Include:../_include/bootmedia_recovery_image.adoc[]</block>
+  <block id="1ae221b034a7bacf99b88892279c2462" category="paragraph">El LED bicolor indica la alimentación/actividad cuando está en verde y un fallo cuando está en rojo.</block>
+  <block id="7ea17d80896a391ffe01665c36e03909" category="cell">Atención (rojo)</block>
+  <block id="ede3a6bd0f0cd8205608f251691a19e1" category="doc">Plantilla de hoja de trabajo para el cableado de controladora a pila para la conectividad de cuatro rutas: Bandejas con módulos IOM12/IOM12B</block>
 </blocks>

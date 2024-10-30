@@ -11,43 +11,4 @@ summary: El procedimiento para arrancar la controladora con deterioro de la imag
 
 
 [role="lead"]
-Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
-
-. Desde el aviso de Loader, inicie la imagen de recuperación desde la unidad flash USB: `boot_recovery <image_name>`
-+
-La imagen se descarga desde la unidad flash USB.
-
-. Cuando se le solicite, introduzca el nombre de la imagen o acepte la imagen predeterminada que se muestra dentro de los corchetes de la pantalla.
-. Restaure el sistema de archivos var:
-+
-[cols="1,2"]
-|===
-| Si el sistema se está ejecutando... | Realice lo siguiente... 
-
-
- a| 
-ONTAP 9.16.0 o anterior
- a| 
-.. En el controlador defectuoso, pulse _Y_ cuando vea `Do you want to restore the backup configuration now?`
-.. En el controlador afectado, pulse _Y_ cuando se le solicite que sobrescriba `/etc/ssh/ssh_host_ecdsa_key`.
-.. En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado `set -privilege advanced`: .
-.. En la controladora asociada en buen estado, ejecute el comando restore backup `system node restore-backup -node local -target-address impaired_node_IP_address`: .
-+
-*NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
-
-.. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administración `set -privilege admin`: .
-.. En el controlador afectado, pulse _y_ cuando vea `Was the restore backup procedure successful?`.
-.. En el controlador afectado, pulse _y_ cuando vea `...would you like to use this restored copy now?`.
-.. En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.
-.. Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a link:bootmedia_encryption_restore.html["Restaure gestores de claves"].
-.. Conecte el cable de la consola al controlador asociado.
-.. Devuelva la controladora con el comando _storage failover giveback -fromnode local_.
-.. Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.
-.. Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.
-+
-*NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
-
-
-
-|===
-
+Directiva no resuelta en <stdin> - Include:../_include/bootmedia_recovery_image.adoc[]
