@@ -143,7 +143,9 @@ image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Retire el módulo de E/
 
  a| 
 image:../media/icon_round_1.png["Número de llamada 1"]
-| Bloqueo de leva de E/S. 
+ a| 
+Bloqueo de leva de E/S.
+
 |===
 +
 Asegúrese de etiquetar los cables para saber de dónde proceden.
@@ -187,8 +189,7 @@ NOTE: Si el nuevo módulo de E/S no es el mismo modelo que el módulo con errore
 
 . En el símbolo del sistema DEL CARGADOR, reinicie el nodo: _Bye_
 +
-
-NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
+De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
 
 . Devuelva el nodo a su funcionamiento normal: _Storage failover giveback -ofnode impaired_node_name_
 . Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_

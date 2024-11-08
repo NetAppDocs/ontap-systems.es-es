@@ -11,37 +11,118 @@ summary: Reinicie el sistema.
 
 
 [role="lead"]
-Transfiera la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo.
+Verifique las conexiones de almacenamiento y red, y luego regrese la controladora.
 
-.Pasos
-. Si el sistema de almacenamiento tiene cifrado configurado, debe restaurar la funcionalidad de almacenamiento o cifrado de volúmenes mediante el siguiente procedimiento para reiniciar el sistema:
+
+
+== Devuelva la controladora
+
+Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
+
+[role="tabbed-block"]
+====
+.Sin cifrado
+--
+. En el símbolo del sistema Loader, introduzca `boot_ontap`.
+. Pulse <enter> cuando se detengan los mensajes de la consola.
 +
-.. Inicie en el menú y ejecute la opción 10
-.. Introduzca la frase de contraseña y realice una copia de seguridad de los datos y, a continuación, realice un arranque normal. Consulte https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Restore_onboard_key_management_encryption_keys["Restaure las claves de cifrado de gestión de claves incorporadas"].
-.. Realice el retorno al nodo primario solo de CFO
-.. Realice Onboard Sync y verifique que SVM-KEK está establecido en true. Consulte https://kb.netapp.com/on-prem/ontap/DM/Encryption/Encryption-KBs/Onboard_keymanager_sync_fails_after_motherboard_replacement["Giveback después de que el reemplazo MB falla - la operación fue vetada por keymanager"]
-.. Giveback SFO, (sin fuerza)
+** Si ve la petición de datos _login_, vaya al siguiente paso al final de esta sección.
+** Si ve _Waiting for giveback_, pulse la clave <enter>, inicie sesión en el nodo partner y vaya al paso siguiente al final de esta sección.
 
 
-. Si el sistema no tiene el cifrado configurado, realice el siguiente procedimiento para reiniciar el sistema:
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
+
+
+--
+.Cifrado incorporado (OKM)
+--
+. En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
+. Compruebe la versión del firmware de TMP con el `sysconfig -v` comando.
 +
-.. Inicie en el menú y ejecute la opción 1.
-.. Devolver la controladora:
-.. Desde la controladora en buen estado, proporcione almacenamiento a la controladora que sustituyó: `storage failover giveback -ofnode _replacement_node_name_`
+** Si la versión es inferior a 5,63, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+** Si la versión es superior a 5,63, salga del prompt Loader: `halt`.
+
+
+. Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
+. Introduzca la frase de contraseña de OKM. Puede obtener esta frase de contraseña del cliente, o póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 +
-La controladora _reader_ recupera su almacenamiento y completa el arranque.
+
+NOTE: Se le pedirá dos veces la contraseña.
+
+. Introduzca los datos de la clave de backup cuando se le solicite.
+. En el menú de inicio, introduzca la opción `1` para el arranque normal.
+. Pulse <enter> cuando aparezca _Waiting for giveback_.
+. Mueva el cable de la consola al nodo asociado e inicie sesión como `admin`.
+. Asegúrese de que los volcados de memoria en el nodo reparado se guardan en modo avanzado» `set -privilege advanced` y luego `run local partner savecore`.
+. Volver a la palanca de administración `set privilege admin`: .
+. Devolver solo los agregados de CFO (el agregado raíz): `storage failover giveback -fromnode local -only-cfo-aggregates true`
++
+** Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+
+. Espere 5 minutos después de que se complete el informe de devolución y compruebe el estado de la conmutación por error y el estado de la devolución: `storage failover show` Y `storage failover show-giveback`.
+. Mueva el cable de la consola al nodo de reemplazo e introduzca `security key-manager onboard sync`
++
+
+NOTE: Se le pedirá la clave de acceso de OKM para todo el clúster.
+
+. Compruebe el estado de las claves con el siguiente comando: `security key-manager key query -key-type svm-KEK`.
++
+Si la columna _restored_ muestra cualquier cosa que no sea _true_, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
+
+
+--
+.Gestor de claves externo (EKM)
+--
+. Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
+. Responda `y` o `n` a las siguientes preguntas:
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/client.crt? {s/n}
+
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/client.key? {s/n}
+
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/ca.pem? {s/n}
+
++
+O.
+
++
+¿Tiene una copia del archivo /cfcard/kmip/servers.cfg? {s/n}
+
++
+¿Conoce la dirección del servidor KMIP? {s/n}
+
++
+¿Conoce el puerto KMIP? {s/n}
 
 +
 
-NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
+NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] si tiene problemas.
 
+. Proporcione la información para:
 +
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Busque el contenido de Configuración de alta disponibilidad para su versión de ONTAP 9"]
+** El contenido del archivo del certificado de cliente (client.crt).
+** Contenido del archivo de clave de cliente (client.key).
+** El contenido del archivo de CA (CA.pem) del servidor KMIP.
+** La dirección IP del servidor KMIP.
+** El puerto del servidor KMIP.
 
-.. Una vez finalizada la devolución, confirme que el par de alta disponibilidad está en buen estado y que la toma de control es posible: `storage failover show`
+
+. Una vez que el sistema se procese, verá el menú de inicio. Seleccione '1' para el arranque normal.
+. Compruebe el estado de toma de control `storage failover show`: .
+. Asegúrese de que los volcados de memoria en el nodo reparado se guardan en modo avanzado» `set -privilege advanced` y luego `run local partner savecore`.
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
+. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
 
 
-. Compruebe que los volúmenes esperados estén presentes para cada controladora: `vol show -node node-name`
-. Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde la controladora en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
-
+--
+====

@@ -37,15 +37,8 @@ LED de alerta de NVRAM
 
 |===
 +
-
-NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
-
-+
-El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
-
-+
-** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de la controladora y el sistema de almacenamiento se encuentra en estado «esperando devolución», o cuando el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
-** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del chasis y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el módulo del controlador se puede extraer del chasis).
+** Si el LED NV está apagado, vaya al siguiente paso.
+** Si el LED NV parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
 
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -73,7 +66,9 @@ image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Gráfico de extracc
 
  a| 
 image:../media/icon_round_1.png["Número de llamada 1"]
-| Un pestillo de bloqueo 
+ a| 
+Pestillo de bloqueo
+
 
 
  a| 
@@ -352,14 +347,18 @@ image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Retire el módu
 |===
 
 
-| image:../media/icon_round_1.png["Número de llamada 1"]  a| 
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
 Botón de bloqueo de leva
 
 
 
  a| 
 image:../media/icon_round_2.png["Número de llamada 2"]
-| Lengüeta de bloqueo de DIMM 
+ a| 
+Lengüeta de bloqueo de DIMM
+
 |===
 . Retire el módulo NVRAM del módulo del controlador defectuoso:
 +
@@ -394,14 +393,8 @@ Debe quedar a ras de la chapa metálica del módulo del controlador.
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
-. Vuelva a conectar el sistema de almacenamiento, según sea necesario.
-+
-Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
-
-+
-
-NOTE: Asegúrese de que el cable de la consola está conectado al módulo del controlador reparado para que reciba mensajes de la consola cuando se reinicie. La controladora reparada recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.
-
+. Vuelva a instalar el ARM de gestión de cables (si se quitó), pero no vuelva a conectar ningún cable a la controladora de reemplazo.
+. Conecte el cable de la consola al puerto de la consola del módulo de controlador de reemplazo y vuelva a conectarlo al portátil para que reciba mensajes de la consola cuando se reinicie. La controladora de reemplazo recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.
 . Complete la reinstalación del módulo del controlador:
 +
 .. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
@@ -417,15 +410,21 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 +
 
-NOTE: Si la controladora arranca en el símbolo del SISTEMA DE Loader, reiníciela con `boot_ontap` el comando.
+NOTE: La controladora arranca en el símbolo del sistema DE Loader tan pronto como está completamente asentada.
+
+. Desde el aviso de Loader, introduzca `show date` para mostrar la fecha y la hora de la controladora de reemplazo. La fecha y la hora están en GMT.
++
+
+NOTE: La hora mostrada es la hora local no siempre GMT y se muestra en modo 24hr.
+
+. Establezca la hora actual en GMT con `set time hh:mm:ss` el comando. Puede obtener el GMT actual del nodo socio el comando `date -u`command.
+. Vuelva a conectar el sistema de almacenamiento, según sea necesario.
++
+Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
 
 . Conecte los cables de alimentación en las fuentes de alimentación.
 +
 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
-. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
-. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
-. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
-. Si aún no lo ha hecho, vuelva a instalar el dispositivo de gestión de cables y conecte de nuevo el controlador.
 

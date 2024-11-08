@@ -147,15 +147,8 @@ LED de alerta de NVRAM
 
 |===
 +
-
-NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
-
-+
-El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
-
-+
-** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de controladora y el módulo de la controladora se encuentra en el estado «esperando devolución» o el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
-** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del compartimento y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el controlador se puede retirar del receptáculo).
+** Si el LED NV está apagado, vaya al siguiente paso.
+** Si el LED NV parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
 
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -236,7 +229,10 @@ IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alin
 
 Vuelva a instalar el módulo del controlador y arranque.
 
-. Si aún no lo ha hecho, cierre el conducto de aire.
+. Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
++
+Debe quedar a ras de la chapa metálica del módulo del controlador.
+
 . Alinee el extremo del módulo del controlador con la abertura en la carcasa y deslice el módulo del controlador en el chasis con las palancas giradas hacia fuera de la parte delantera del sistema.
 . Una vez que el módulo del controlador le impide deslizarlo más, gire las asas de la leva hacia dentro hasta que queden atrapadas debajo de los ventiladores
 +

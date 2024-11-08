@@ -47,9 +47,9 @@ https://hwu.netapp.com["Hardware Universe de NetApp"^]
 * Las configuraciones de parejas de ALTA DISPONIBILIDAD deben cablearse como configuraciones de alta disponibilidad multivía o de alta disponibilidad de ruta cuádruple, con las siguientes excepciones:
 +
 ** Las plataformas con almacenamiento interno no admiten la conectividad de alta disponibilidad de cuatro rutas.
-** Un par de alta disponibilidad de FAS2800 se puede cablear como alta disponibilidad de tres vías.
+** Un par de alta disponibilidad de FAS2820 se puede cablear como alta disponibilidad de tres vías.
 +
-Puede encontrar información sobre la conectividad FAS2800 en la <<Conectividad de alta disponibilidad trirruta>> sección.
+Puede encontrar información sobre la conectividad FAS2820 en <<Conectividad de alta disponibilidad trirruta>> la sección.
 
 ** Las plataformas con almacenamiento interno se pueden cablear como configuraciones de alta disponibilidad de ruta única (desde el puerto 0b/0b1 a bandejas externas) para admitir la conectividad con un dispositivo de backup en cinta SAS externo (desde el puerto 0A).
 
@@ -58,7 +58,7 @@ Puede encontrar información sobre la conectividad FAS2800 en la <<Conectividad 
 
 [NOTE]
 ====
-Para FAS2800 pares de alta disponibilidad, aunque el cableado a bandejas externas es de alta disponibilidad de ruta única, debido a la conexión interna de cada controladora del puerto 0b a su expansor local (IOM12G) y el puerto 0C al expansor de su compañero, la configuración del par de alta disponibilidad es multivía.
+Para FAS2820 pares de alta disponibilidad, aunque el cableado a bandejas externas es de alta disponibilidad de ruta única, debido a la conexión interna de cada controladora del puerto 0b a su expansor local (IOM12G) y el puerto 0C al expansor de su compañero, la configuración del par de alta disponibilidad es multivía.
 
 ====
 * Las configuraciones de controladora única se deben cableado como configuraciones de multivía o de ruta cuádruple, con las siguientes excepciones:
@@ -296,7 +296,7 @@ image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Conectividad de d
 
 === Conectividad de alta disponibilidad trirruta
 
-La conectividad de alta disponibilidad de triple vía está disponible en pares de alta disponibilidad FAS2800. La conectividad de alta disponibilidad de triple ruta tiene tres rutas entre cada controlador y bandejas internas (IOM12G) y externas:
+La conectividad de alta disponibilidad de triple vía está disponible en pares de alta disponibilidad FAS2820. La conectividad de alta disponibilidad de triple ruta tiene tres rutas entre cada controlador y bandejas internas (IOM12G) y externas:
 
 * La conexión interna de cada controladora del puerto 0b a su IOM12G local y al puerto 0C al IOM12G de su compañero ofrece una conectividad de alta disponibilidad multivía para el par de alta disponibilidad.
 * El cableado de los puertos de almacenamiento externo de cada controladora, 0A y 0b1, proporciona un par de alta disponibilidad de tres rutas.
@@ -309,16 +309,16 @@ A continuación se muestran las conexiones internas y el cableado externo de la 
 
 image::../media/drw_fas2800_concept_tpha_IEOPS-950.svg[Conectividad HA TRI PATH]
 
-Los puertos SAS externos de FAS2800:
+Los puertos SAS externos de FAS2820:
 
 * El puerto 0A procede del HBA interno (como otras plataformas con una bandeja interna).
 * El puerto 0b1 procede de la bandeja interna (como los puertos 0b de otras plataformas con una bandeja interna).
 * No se utiliza el puerto 0b2. Está desactivado. Si un cable está conectado a él, se genera un mensaje de error.
 
 
-image::../media/drw_sas3_ports_on_fas2800_IEOPS-946.svg[Puertos sas externos de FAS2800]
+image::../media/drw_sas3_ports_on_fas2800_IEOPS-946.svg[Puertos sas externos de FAS2820]
 
-Pueden encontrarse ejemplos de cableado para pares de alta disponibilidad de FAS2800 en la link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"] sección.
+En la  sección se pueden encontrar ejemplos de cableado de pares de alta disponibilidad deFAS2820link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el cableado entre controladora y pila y ejemplos de cableado para las plataformas con almacenamiento interno"].
 
 
 

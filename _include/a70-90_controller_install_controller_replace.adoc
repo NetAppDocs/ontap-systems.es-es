@@ -1,0 +1,50 @@
+= 
+:allow-uri-read: 
+
+
+Vuelva a instalar el módulo del controlador y reinícielo.
+
+. Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
++
+Debe quedar a ras de la chapa metálica del módulo del controlador.
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
++
+
+NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
+
+. Vuelva a instalar el ARM de gestión de cables (si se quitó), pero no vuelva a conectar ningún cable a la controladora de reemplazo.
+. Conecte el cable de la consola al puerto de la consola del módulo de controlador de reemplazo y vuelva a conectarlo al portátil para que reciba mensajes de la consola cuando se reinicie. La controladora de reemplazo recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.
+. Complete la reinstalación del módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
++
+
+NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
+
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
+
+
++
+
+NOTE: La controladora arranca en el símbolo del sistema DE Loader tan pronto como está completamente asentada.
+
+. Desde el aviso de Loader, introduzca `show date` para mostrar la fecha y la hora de la controladora de reemplazo. La fecha y la hora están en GMT.
++
+
+NOTE: La hora mostrada es la hora local no siempre GMT y se muestra en modo 24hr.
+
+. Establezca la hora actual en GMT con `set time hh:mm:ss` el comando. Puede obtener el GMT actual del nodo socio el comando `date -u`command.
+. Vuelva a conectar el sistema de almacenamiento, según sea necesario.
++
+Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
+
+. Conecte los cables de alimentación en las fuentes de alimentación.
++
+
+NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
+
+

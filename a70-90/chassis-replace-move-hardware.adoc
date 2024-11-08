@@ -46,15 +46,8 @@ LED de alerta de NVRAM
 
 |===
 +
-
-NOTE: Si el LED de estado de NVRAM está parpadeando, puede significar que el módulo de la controladora no se ha desconectado o detenido correctamente (datos no comprometidos). Si el módulo de controlador asociado no ha asumido correctamente el módulo de controlador defectuoso, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
-
-+
-El comportamiento general del LED de estado de NVRAM en el módulo del controlador defectuoso es el siguiente:
-
-+
-** El LED de estado de NVRAM parpadea cuando se extrae alimentación del módulo de la controladora y el sistema de almacenamiento se encuentra en estado «esperando devolución», o cuando el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos).
-** El LED de estado de NVRAM parpadea cuando el módulo de la controladora se retira del chasis y puede significar que el módulo de la controladora no se desconecta o se detiene correctamente (datos no comprometidos). Confirme que el módulo del controlador ha tomado correctamente el control del módulo del controlador asociado o que el módulo del controlador defectuoso muestra `waiting for giveback`. A continuación, se puede ignorar el LED parpadeante (y el módulo del controlador se puede extraer del chasis).
+** Si el LED NV está apagado, vaya al siguiente paso.
+** Si el LED NV parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
 
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -82,7 +75,9 @@ image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Gráfico de extracc
 
  a| 
 image:../media/icon_round_1.png["Número de llamada 1"]
-| Un pestillo de bloqueo 
+ a| 
+Pestillo de bloqueo
+
 
 
  a| 
