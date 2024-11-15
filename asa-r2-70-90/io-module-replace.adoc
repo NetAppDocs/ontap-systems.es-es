@@ -132,17 +132,8 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 
 Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
 
-
-NOTE: Si el nuevo módulo de E/S no es el mismo modelo que el módulo con errores, primero debe reiniciar el BMC.
-
 .Pasos
-. Reinicie el BMC si el módulo de sustitución no es el mismo modelo que el módulo antiguo:
-+
-.. Desde el aviso del CARGADOR, cambie al modo de privilegios avanzado: _SET PRIVILEGE ADVANCED_
-.. Reinicie BMC: _Sp reboot_
-
-
-. En el símbolo del sistema DEL CARGADOR, reinicie el nodo: _Bye_
+. Desde el prompt de Loader, reinicie el nodo:`bye`
 +
 
 NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
@@ -151,8 +142,8 @@ NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y s
 
 NOTE: Asegúrese de salir del modo de mantenimiento después de completar la conversión.
 
-. Devuelva el nodo a su funcionamiento normal: _Storage failover giveback -ofnode impaired_node_name_
-. Si se ha deshabilitado la devolución automática, vuelva a habilitarla: _Storage failover modify -node local -auto-giveback true_
+. Devolver al nodo a su funcionamiento normal: `storage failover giveback -ofnode impaired_node_name`
+. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 
 
 

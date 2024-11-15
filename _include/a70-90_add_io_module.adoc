@@ -360,18 +360,12 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 . Gire la bandeja de gestión de cables a la posición bloqueada.
 . Reinicie el módulo del controlador desde el símbolo del sistema del CARGADOR:_bye_
 +
-.. Compruebe la versión de BMC en el controlador: _SYSTEM SERVICE-PROCESSOR show_
-.. Actualice el firmware de BMC si es necesario: _SYSTEM service-processor image update_
-.. Reinicie el nodo: _Bye_
-+
+Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 
-NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
 
-+
+
 
 NOTE: Si se produce un problema durante el reinicio, consulte https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1494308["BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S."]
-
-
 
 . Devuelva el módulo del controlador desde el módulo del controlador asociado. _storage failover giveback -ofnode target_node_name_
 . Habilite la devolución automática del control si se deshabilitó: _Storage failover modify -node local -auto-giveback true_
