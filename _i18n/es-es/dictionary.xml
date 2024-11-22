@@ -2530,13 +2530,7 @@
   <block id="4d3b1425bbd62943a546a9f98dc3b7ef" category="list-text">Proporcione el nodo atrás del nodo del partner.<block ref="49c908925c3b8a3554612823f81c8964" prefix=" " category="inline-code"></block></block>
   <block id="05648a23fc430a3dcc4fb4c1fbb040cd" category="list-text">Si utiliza las ranuras 3 y/o 7 para las redes, utilice<block ref="476ed8a8b3d60ed59cf37fb920c49f89" prefix=" " category="inline-code"></block> comando para convertir la ranura para su uso en la red.</block>
   <block id="6f8193ca6bfb281db32afbcc9e285f79" category="inline-link">Adición en caliente de una bandeja SAS</block>
-  <block id="cebb0168d5bfd94a91f0da51501ba6b8" category="list-text">Si está:</block>
-  <block id="e818b574f8a890f6c21405d9164bb6ef" category="cell">Sustituyendo a...</block>
-  <block id="d6737fd4fc838900efec68220d9b62d5" category="paragraph">Módulo de E/S NIC con el mismo número de puertos</block>
   <block id="c5cb03fb8ac84e8ed0867902373368c5" category="paragraph">Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.</block>
-  <block id="5b4da5fe899903c4fb7ea38cdcd59059" category="paragraph">Módulo de E/S NIC con menos puertos</block>
-  <block id="c964f542415e7614484e4edf970ab7a8" category="paragraph">Reasignar permanentemente los LIF afectados a un puerto raíz diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> Para obtener información acerca del uso de System Manager para mover las LIF de forma permanente.</block>
-  <block id="f83c48dd124994c4062d124a835da954" category="paragraph">Módulo de E/S de NIC con un módulo de E/S de almacenamiento</block>
   <block id="6d351dbc4a7187d4512a1c505c200687" category="paragraph">Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block>.</block>
   <block id="3312f9cce5a2b0b4ea67ddcce0850bf9" category="video-title">Animación: Sustituya un módulo de E/S.</block>
   <block id="658f167c4900ed24167db8a2c8ec0dae" category="list-text">Instale el módulo de E/S en la ranura de destino:</block>
@@ -5658,7 +5652,6 @@
   <block id="c5a520bea2989fd52c3041960b69fed4" category="sidebar">DIMM FAS2700</block>
   <block id="f69188f77ddf41c996359e3104869fb3" category="sidebar">Unidad FAS2700</block>
   <block id="abf01648d47e7b2a7ff0a2d4727b1bb3" category="sidebar">Batería del reloj de FAS2700 en tiempo real</block>
-  <block id="741ade379895992f2a574e8e60de1571" category="section-title">Paso 2: Adición de módulos de I/O.</block>
   <block id="55f1569cdcfb82612fcf293f23db4f6f" category="list-text">Compruebe la<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.</block>
   <block id="6e4968851f4373ab9764e16cffb39389" category="list-text">Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Y utilice el mejor disponible para su módulo de E/S.</block>
   <block id="757216293ea1da04339a2c9b8eaa2641" category="admonition">El archivo tar.gz se debe colocar en una partición con formato FAT32 que tenga un mínimo de 4 GB. Aunque las particiones FAT32 pueden ser de hasta 2 TB, las herramientas integradas de Windows (por ejemplo, DiskPart) no pueden formatear particiones FAT32 de más de 32 GB.</block>
@@ -7969,14 +7962,10 @@ SFP+ (destino/iniciador)</block>
   <block id="61612a74be5170dd342eb619d607d9a0" category="paragraph">El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas:<block ref="6cf51b10a85b7bdc2a6698400ee841b7" prefix=" " category="inline-code"></block></block>
   <block id="ab859514fa976f71299cd0d5366c702d" category="paragraph">Detenga o tome el control del controlador dañado del controlador en buen estado:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block></block>
   <block id="fd9366185c7040d2814e95fefcce2264" category="list-text">Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de AutoSupport:<block ref="fbcb7868c4849064439910664677cb60" prefix=" " category="inline-code"></block></block>
-  <block id="9f496d341d66d79304a55547445c00a2" category="doc">Opción 1: Agregue un módulo de E/S a un sistema de almacenamiento con ranuras vacías</block>
-  <block id="c4b17ef982ae644ec1d2b995fa1534a8" category="paragraph">Puede añadir un módulo de I/O al sistema de almacenamiento agregando un nuevo módulo de I/O a un sistema de almacenamiento con ranuras vacías o reemplazando un módulo de I/O por uno nuevo en un sistema de almacenamiento completamente lleno.</block>
   <block id="656450ae55843844fdfca7b44cbc5678" category="list-text">Compruebe la<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> para asegurarse de que el nuevo módulo de I/O es compatible con su sistema de almacenamiento y la versión de ONTAP que ejecuta.</block>
-  <block id="9808a3e490e0cd81c2fab70cb489f958" category="paragraph">Puede agregar un módulo de E/S a una ranura para módulos vacía del sistema de almacenamiento.</block>
   <block id="78263f5226743bdd204519f0e9bd22d2" category="list-text">Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.</block>
   <block id="72e0b58a2d456f6ab89ca8d83859264d" category="list-text">Retire el módulo de obturación de la ranura de destino del soporte:</block>
   <block id="abca9f9a7ffb3d4afa15f947303b1c4c" category="admonition">En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.</block>
-  <block id="b0fe3ad00c115ca25f49fb3d48769b0b" category="image-alt">Retire un módulo de E/S AFF A1K</block>
   <block id="243dd5ebf726e6d6a9762938953c1a6a" category="cell">Botón de bloqueo de leva</block>
   <block id="3939b3c4c6e868d0268fd9a75f3b3805" category="list-text">Presione el pestillo de leva del módulo de supresión de la ranura de destino.</block>
   <block id="c053808d9acb931bed74754155a6e86f" category="list-text">Gire el pestillo de la leva hacia abajo hasta el tope. Para los módulos horizontales, gire la leva hacia fuera del módulo hasta el tope.</block>
@@ -7984,24 +7973,13 @@ SFP+ (destino/iniciador)</block>
   <block id="f47dbf934d7d51340a5c58741715b2d5" category="list-text">Alinee el módulo de E/S con los bordes de la abertura de la ranura del compartimento.</block>
   <block id="b3fe1b3e8557371fcb101f90a1a32fd0" category="list-text">Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.</block>
   <block id="be9dc0332662b913cef88d5dcde78acd" category="list-text">Conecte el cable al módulo de E/S.</block>
-  <block id="040f840d8fdf859359eb680be25e8992" category="paragraph">Si el módulo de E/S es una NIC, conecte el módulo a los conmutadores de datos.</block>
-  <block id="3072040b83655039de255184380a9271" category="paragraph">Si el módulo de I/O es un módulo de almacenamiento, conecte los cables a la bandeja NS224.</block>
   <block id="9056e6b74b2e2b546abd76b6e7408f4d" category="list-text">Gire la bandeja de gestión de cables hasta la posición cerrada.</block>
-  <block id="a0a7e707ad35c210d4582fab4069c223" category="list-text">Devuelva la controladora de la controladora asociada: _Storage failover giveback -ofnode target_node_name_</block>
   <block id="6c91356d53993ce0d1f0c1af28c7a48b" category="list-text">Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="026bf593d893e27d6f090dc74e403a75" category="section-title">Opción 2: Agregue un módulo de I/O en un sistema de almacenamiento sin ranuras vacías</block>
-  <block id="a06ddc697cce62226c19e353e0f2eeba" category="paragraph">Puede cambiar un módulo de E/S en una ranura de E/S de un sistema completamente ocupado eliminando un módulo de E/S existente y sustituyéndolo por otro módulo de E/S diferente.</block>
-  <block id="47ab52c1da07a0c00e2b876e54778a95" category="paragraph">Reasignar permanentemente las LIF seleccionadas a un puerto raíz diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> para obtener información sobre el uso de System Manager para mover las LIF de forma permanente.</block>
-  <block id="8f6ea8b644b16793208bc55e27bc7669" category="section-title">Paso 2: Reemplace un módulo de E/S.</block>
-  <block id="900056c17f40fb1a034e134a72eca912" category="image-alt">Extraiga el módulo de E/S de AFF A1K</block>
   <block id="8181d3a6b1640b5868632cfe5589a05d" category="list-text">Pulse el botón de bloqueo de leva.</block>
   <block id="0cfc07520b64c5be4e64fac899e6eaa9" category="list-text">Instale el módulo de E/S en la ranura de destino del receptáculo:</block>
   <block id="7b71c8c5341c95139930e1f1748956d7" category="list-text">Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.</block>
   <block id="0169e44348295d5766b174aa4c296a62" category="list-text">Repita los pasos de extracción e instalación para reemplazar módulos adicionales para la controladora.</block>
   <block id="7c99497119e4bb81fd50dbd906dfde72" category="list-text">Reinicie la controladora desde el símbolo del sistema del CARGADOR:_bye_</block>
-  <block id="db89594b0a0cbb483395a2641220f1fe" category="list-text">Habilite la devolución automática del control si se deshabilitó: _Storage failover modify -node local -auto-giveback true_</block>
-  <block id="4e0b6dc04aaa383038bc23130a17cb25" category="cell">Si el módulo de E/S es un...</block>
-  <block id="09c2cf2531a14305542e6aff93e691c5" category="paragraph">Módulo de NIC</block>
   <block id="a286fff38dd07b679c8ce3d88b6f2962" category="inline-link-macro">apague el controlador dañado</block>
   <block id="4332aa8c798bac1ec6c0f4c83e0df305" category="list-text">Compruebe que se muestra el<block ref="c759882cd4e7fcd95f15b0df0ce7f51c" prefix=" " category="inline-code"></block> tipo<block ref="c6b9507c26062233f2341cb90db60eaa" prefix=" " category="inline-code"></block>y, a continuación, realice una copia de seguridad manual de la información de OKM.</block>
   <block id="66e5f5f877412d7578e6bec4d8f933b5" category="list-text">En el controlador defectuoso, pulse _Y_ cuando vea<block ref="aa48693d0248bb57512e373cd7f7eebc" prefix=" " category="inline-code"></block></block>
@@ -8010,7 +7988,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e9636d3f8e24f08b43c5d1ed71e065ea" category="list-text">En el controlador afectado, pulse _y_ cuando vea<block ref="396e369cf75815ba643925818d3ec37e" prefix=" " category="inline-code"></block>.</block>
   <block id="976af5aa217f6c1b1dbf16e0ed0a4bde" category="list-text">En el controlador afectado, pulse _y_ cuando se le solicite reiniciar el controlador dañado y pulse _ctrl-c_ para el menú de arranque.</block>
   <block id="29d550bee6b8b18ca38f7642778d8dad" category="inline-link-macro">Restaure gestores de claves</block>
-  <block id="88045ffbfc0d9ef09cd470c545082621" category="list-text">Si el sistema no utiliza encyption, seleccione _Opción 1 Arranque normal._; de lo contrario, vaya a <block ref="f2abf47fd75193a34b6b143e08f5b248" category="inline-link-macro-rx"></block>.</block>
   <block id="55f7c3a98a49a2f2d96cb2d21b95d947" category="list-text">Devuelva la controladora con el comando _storage failover giveback -fromnode local_.</block>
   <block id="4c6b53c8ce9f5900a70a994f21a32c6b" category="list-text">Restaure la devolución automática del control si la deshabilitó con el comando _storage failover modify -node local -auto-giveback true_.</block>
   <block id="85ef34c14131c3f446c3d96330659ce7" category="list-text">Si AutoSupport está habilitado, restaure/anule la supresión de la creación automática de casos mediante el comando _system node AutoSupport invoke -node * -type all -message MAINT=END_.</block>
@@ -8233,23 +8210,10 @@ SFP+ (destino/iniciador)</block>
   <block id="05dceffd3c31a9d53e9b23ec48d1bf77" category="paragraph">Debe instalar licencias nuevas para el nodo si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo por nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.</block>
   <block id="d498932449bd1680afbe5aad136fb7e3" category="paragraph">Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo. Sin embargo, si el nodo era el único nodo del clúster con una licencia para la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo puede provocar que no cumpla el acuerdo de licencia, por lo que debe instalar las claves o la clave de licencia de reemplazo en el para el nodo lo antes posible.</block>
   <block id="3e508eeaedfdae09fad57a764b5e2b73" category="section-title">Paso 1: Apague el módulo del controlador defectuoso</block>
-  <block id="6f13230d5681e1c88b50f5ecbce62637" category="paragraph">Apague o tome el control del módulo del controlador defectuoso mediante una de las siguientes opciones.</block>
   <block id="5d053cb0e109f37b3c9cfa31e957c2bc" category="list-text">Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.</block>
-  <block id="d9d1de25706aa51c5367e4dafd60898e" category="list-text">Retire el módulo de supresión de la ranura de destino del chasis:</block>
-  <block id="192d3ce6854b267e65d46222f8f3a24f" category="image-alt">Retire un módulo de E/S.</block>
-  <block id="75fa26086844dfcbf14f35086518217a" category="list-text">Retire el módulo de obturación.</block>
-  <block id="2b6adb50592127273fdb4bb2b68918d5" category="list-text">Alinee el módulo de E/S con los bordes de la abertura de la ranura del módulo del controlador.</block>
-  <block id="97366bfb1dcb5b97156c347c8ad89d9a" category="list-text">Deslice suavemente el módulo hasta el fondo en la ranura y, a continuación, gire el pestillo de la leva hasta el fondo para bloquear el módulo en su lugar.</block>
   <block id="6181ce929bc404494408989e6b8a9b52" category="paragraph">Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.</block>
   <block id="8a9a8a0db84d9dd59b0f006930b47193" category="list-text">Pulse el botón de bloqueo de leva.</block>
-  <block id="422e2aa4ec97de509f54db9d23618f37" category="list-text">Retire el módulo del chasis enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del chasis.</block>
-  <block id="ce8b63d25565a610d1f9564150f85914" category="list-text">Deslice suavemente el módulo dentro de la ranura hasta el fondo del chasis y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.</block>
-  <block id="fb2068c184d4dbf1c0e520d9e9b173b2" category="list-text">Repita los pasos de extracción e instalación para reemplazar módulos adicionales para el módulo del controlador.</block>
   <block id="ed5714a7b9709284c56117bd6dc4e081" category="list-text">Gire la bandeja de gestión de cables a la posición bloqueada.</block>
-  <block id="268bccb6c35b538d967467b5d2935b49" category="list-text">Reinicie el módulo del controlador desde el símbolo del sistema del CARGADOR:_bye_</block>
-  <block id="253b24d74d0517388c6e5b078713c86a" category="inline-link">BURT 1494308: Es posible que se active el apagado del entorno durante la sustitución del módulo de E/S.</block>
-  <block id="fc5ee1a4ca46ff0160eeada84fe673fc" category="admonition">Si se produce un problema durante el reinicio, consulte<block ref="5f4b19e33781d4df6c59a005be26e607" category="inline-link-rx"></block></block>
-  <block id="cfedf0b233356261eb909e7add24bded" category="list-text">Devuelva el módulo del controlador desde el módulo del controlador asociado. _storage failover giveback -ofnode target_node_name_</block>
   <block id="43d656a7b2fb92dbbe5e13b8f00a00b8" category="list-text">Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.</block>
   <block id="f0d27e50eb41ec006d18a96b5254063e" category="list-text">Gire la palanca de leva completamente hacia abajo y retire el módulo de gestión del sistema del módulo del controlador.</block>
   <block id="54a53a09772d42f23357a9952d2d46a1" category="section-title">Paso 2: Transfiera la imagen de arranque al soporte de arranque</block>
@@ -8848,7 +8812,6 @@ SFP+ (destino/iniciador)</block>
   <block id="f3585daa539c5917b4fedd0eb7efb3f2" category="sidebar">Sistemas AFF</block>
   <block id="6476573ba5b973ad8ea01c57f5b30267" category="sidebar">Sistemas ASA</block>
   <block id="9aaba65702056e024efc0836758c1538" category="sidebar">Añada en caliente</block>
-  <block id="b1cd69e899e8ab2e8b0c559899a3f2d7" category="admonition">En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.</block>
   <block id="3e6277588162255770fd3384bad09d6d" category="list-text">En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.</block>
   <block id="9daabece8db7521a7882f63ebd76a891" category="image-alt">Retire una unidad con el botón de liberación en la parte superior</block>
   <block id="e0bc24820711c466532ba2cb67ababd9" category="image-alt">Retire una unidad con el botón de liberación en el centro</block>
@@ -9088,7 +9051,6 @@ SFP+ (destino/iniciador)</block>
   <block id="0e6eb93881093798ffaf4eef324aae16" category="list-text">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
   <block id="f399facc82d214513205adcdfed1e55f" category="image-alt">Unidades de disco de asiento</block>
   <block id="f20a0219f10b0070c92efe4269486629" category="list-text">Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y conecte los cables de las mismas, tal como se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
-  <block id="86e8e2badf42560bb0b1ed3bac3933fa" category="paragraph">Instale y conecte los cables de las bandejas NS224, según se describe en <block ref="4dfda7c2f93914990922f65bd50f90b3" category="inline-link-macro-rx"></block>.</block>
   <block id="b9c98500ab9d006e0d9fd3d1c95f7904" category="paragraph">Para obtener más información sobre el cableado, consulte <block ref="b8ff88c1a2e9444f28ec1504689e0040" category="inline-link-macro-rx"></block>.</block>
   <block id="ef83cb60cd5ea6118e6d106efa30f927" category="image-alt">Precauciones con el peso de elevación</block>
   <block id="f3badb2cde47b97db55936f633e8bbf1" category="image-alt">Cableado compuesto de cluster sin switches de dos nodos</block>
@@ -9833,7 +9795,6 @@ SFP+ (destino/iniciador)</block>
   <block id="c285ffddf1786cd1a14a26bcf9b74c7d" category="paragraph"><block ref="061047859ec1e213bd771fe5350bda2c" prefix="" category="inline-code"></block></block>
   <block id="811ae15d713f8c846d0516e053f895b2" category="list-text">Supervise el proceso de recuperación de medios de arranque como Loader configura los puertos del clúster local y se ejecuta<block ref="83a4445bcfef2bd179eaffaabe3b3c20" prefix=" " category="inline-code"></block> desde el nodo asociado.</block>
   <block id="8f616ca67798afd132662e15fc4caa28" category="paragraph">Cuando netboot se está ejecutando,<block ref="f6715e6f2a651bfc51d27566b1be5385" prefix=" " category="inline-code"></block> aparece el mensaje.</block>
-  <block id="ab8b7433e2ad2aa82ba07b42b4cd465d" category="list-text">Según el método de cifrado, seleccione la opción que coincida con su configuración de nodo único:</block>
   <block id="39cb6e7651585d511fc148af8198837f" category="open-title">Sin cifrado</block>
   <block id="aada4d2dac8a2a5bd04bf211104ff2c5" category="paragraph">Si no se detecta ningún cifrado, el proceso de recuperación de medios de arranque continúa sin necesidad de gestión de claves.</block>
   <block id="69c50e084d31ca90079f6b8b4409607b" category="paragraph">Continuar supervisando el proceso de recuperación mientras restaura la configuración de backup, el archivo env, mdb y rdb desde el nodo asociado.</block>
@@ -10190,7 +10151,6 @@ SFP+ (destino/iniciador)</block>
   <block id="13e7cf07309f0d95eee5aa49b6842dc0" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado - FAS9500</block>
   <block id="e4d9374bc79ce9095fb021e03551599f" category="doc">Restaurar cifrado - FAS9500</block>
   <block id="bd5c047c4a41e95a8a9424888875e56a" category="list-text">Conecte el módulo de E/S al dispositivo designado.</block>
-  <block id="2d8241a8fe54414b6494b29d26d8b251" category="list-text">Desde el nodo en buen estado, restaure la devolución automática si lo deshabilitó mediante<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> el comando.</block>
   <block id="9d462bd05672844aeab0d3d5d323d66a" category="list-text">Vuelva a instalar el controlador y vuelva a conectar la alimentación al módulo del controlador:</block>
   <block id="4d872659b015ad414d5e68440a7ddfd6" category="paragraph">El controlador comienza a arrancar tan pronto como se asienta y se restablece la alimentación.</block>
   <block id="6f3fa8086df2fa20b3e903512f693396" category="list-text">Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:</block>
@@ -10370,9 +10330,6 @@ SFP+ (destino/iniciador)</block>
   <block id="09109aaca603d8ac1da46aa588c46f63" category="paragraph">NIC a NIC (distinto número de puertos)</block>
   <block id="4e7b2ae169cb37276347e7c88d211db4" category="paragraph">Reasignar permanentemente las LIF seleccionadas a un puerto raíz diferente. Consulte<block ref="8a81e44d8701c7e0abd4b6ad328792f0" category="inline-link-rx"></block> para obtener más información.</block>
   <block id="0c3f64052572f9d13d9b078656a055e4" category="paragraph">De NIC al módulo de I/O de almacenamiento</block>
-  <block id="deaf42dafc1e4522c0ccf86ad58f237e" category="list-text">Devuelva el controlador desde el controlador asociado:`sarage failover giveback -ofnode target_node_name`</block>
-  <block id="c1d0761e549ef1ce873a404f8d41a2d5" category="list-text">Reinicie la controladora desde el símbolo del sistema de Loader:<block ref="bfa99df33b137bc8fb5f5407d7e58da8" prefix=" " category="inline-code"></block></block>
-  <block id="5d831aef00c06eb087aebfb790f041b7" category="section-title">Paso 2: Añadir nuevo módulo de I/O.</block>
   <block id="68c06f8f4688078ddfe1ceedef798cae" category="list-text">Devuelva la controladora de la controladora asociada:</block>
   <block id="523f5a38bba8d64b2af1cdee174a06cc" category="paragraph"><block ref="49c908925c3b8a3554612823f81c8964" prefix="" category="inline-code"></block></block>
   <block id="b98036ad0a9b610670da83fe762dadb5" category="list-text">Desde el nodo en buen estado, restaure la devolución automática si la deshabilitó mediante el siguiente comando:</block>
@@ -10392,4 +10349,6 @@ SFP+ (destino/iniciador)</block>
   <block id="cac74c301a508cf350f8f41a7de866a0" category="paragraph">Puede añadir un módulo de I/O al sistema de almacenamiento ASA A1K cuando haya ranuras vacías o cuando todas estén completamente ocupadas.</block>
   <block id="94aa992895c11cf963b2b749b84aa267" category="paragraph">Puede añadir un módulo de I/O al sistema de almacenamiento FAS70 y FAS90 cuando haya ranuras vacías disponibles o cuando todas estén completamente ocupadas.</block>
   <block id="bc049e4428d592b69605104cc85d56bc" category="section-title">Paso 2: Agregue los nuevos módulos de I/O.</block>
+  <block id="a6448c631c301c525a61c500fdf8e46a" category="list-text">Según el método de cifrado, seleccione la opción que coincida con la configuración del sistema:</block>
+  <block id="92ba658b9a66d0825f0f084b7da309b7" category="list-text">Si el sistema no utiliza cifrado, seleccione _Opción 1 Normal Boot._; de lo contrario, vaya a <block ref="d767082d20397ebb99e586749eda3a08" category="inline-link-macro-rx"></block>.</block>
 </blocks>
