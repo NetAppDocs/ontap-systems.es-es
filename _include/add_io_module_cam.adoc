@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Si el sistema de almacenamiento tiene ranuras vacías, instale el nuevo módulo de E/S en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.
+Si el sistema de almacenamiento tiene ranuras disponibles, instale el nuevo módulo de I/O en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.
 
 .Antes de empezar
 * Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"^] para asegurarse de que el nuevo módulo de I/O es compatible con su sistema de almacenamiento y la versión de ONTAP que ejecuta.
@@ -12,9 +12,9 @@ Si el sistema de almacenamiento tiene ranuras vacías, instale el nuevo módulo 
 
 [role="tabbed-block"]
 ====
-.Agregue un módulo de E/S a una ranura vacía
+.Agregue un módulo de E/S a una ranura disponible
 --
-Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras vacías disponibles.
+Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras disponibles.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -38,21 +38,24 @@ Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras
 NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
 
 . Gire la bandeja de gestión de cables hasta la posición cerrada.
-. Reinicie la controladora desde el aviso del CARGADOR: _Bye_
+. Desde el aviso del CARGADOR, reinicie el nodo:
++
+`bye`
+
 +
 
-NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+NOTE: De este modo, se reinicializa el módulo de I/O y otros componentes, y se reinicia el nodo.
 
 . Devuelva la controladora de la controladora asociada:
 +
 `storage failover giveback -ofnode target_node_name`
 
 . Repita estos pasos para la controladora B.
-. Desde el nodo en buen estado, restaure la devolución automática si la deshabilitó mediante el siguiente comando:
+. Desde el nodo en buen estado, restaure la devolución automática si la deshabilitó:
 +
-`storage failover modify -node local -auto-giveback true`
+`storage failover modify -node local -auto-giveback _true_`
 
-. Si AutoSupport está habilitado, restaure la creación automática de casos mediante el siguiente comando:
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
