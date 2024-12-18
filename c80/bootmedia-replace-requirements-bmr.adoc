@@ -1,0 +1,24 @@
+---
+permalink: c80/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: c80, replace the boot media 
+summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+---
+= Requisitos y consideraciones: AFF C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos.
+
+* Debe sustituir el componente con errores por un componente de FRU de reemplazo que haya recibido de NetApp.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+* No debe haber puertos de clúster defectuosos en la controladora dañada.
+

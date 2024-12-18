@@ -24,6 +24,7 @@ En esta sección de cableado se describe cómo conectar la bandeja NS224 a los s
 
 == Acerca de esta tarea
 
+* Este procedimiento sólo se aplica al almacenamiento de conexión directa. Para ver las instrucciones para el almacenamiento conectado por switch, consulte nuestro link:cable-as-switch-attached.html["guía de cableado conectado a switches"].
 * Familiarícese con la orientación correcta del conector de cables, así como con la ubicación y el etiquetado de los puertos en los módulos de bandeja NS224 NSM100.
 +
 ** Los cables se insertan con la lengüeta de extracción del conector hacia arriba.
@@ -38,14 +39,29 @@ image::../media/oie_cable_pull_tab_up.png[Los cables se insertan con la lengüet
 
 ** Puede usar la siguiente ilustración para identificar físicamente los puertos NSM100, e0a y e0b de la bandeja.
 +
-Una bandeja NS224 contiene dos módulos NSM100. El módulo superior va en la ranura A (NSM A) y el módulo inferior va en la ranura B (NSM B).
-
-+
-Cada módulo de NSM100 incluye 2 puertos 100GbE QSFP28: e0a y e0b.
-
+[role="tabbed-block"]
+====
+.NSM100 módulos
+--
+*** Una bandeja NS224 contiene dos módulos NSM100. El módulo superior va en la ranura A (NSM A) y el módulo inferior va en la ranura B (NSM B).
+*** Cada módulo de NSM100 incluye 2 puertos 100GbE QSFP28: e0a y e0b.
 +
 image::../media/drw_ns224_back_ports.png[Ubicación de los puertos e0a y e0b del módulo NS224 NSM100]
 
+
+
+--
+.NSM100B módulos
+--
+*** Una bandeja NS224 contiene dos módulos NSM100B. El módulo superior va en la ranura A (NSM A) y el módulo inferior va en la ranura B (NSM B).
+*** Cada módulo de NSM100B incluye 2 puertos 100GbE CX6/DX: E1A y e1b.
++
+image::../media/drw_ns224_nsmb_back_ports_ieops-2006.svg[Ubicación de los puertos e0a y e0b del módulo NS224 NSM100B]
+
+
+
+--
+====
 
 
 * Después de cablear una bandeja añadida en caliente, ONTAP reconoce la bandeja:

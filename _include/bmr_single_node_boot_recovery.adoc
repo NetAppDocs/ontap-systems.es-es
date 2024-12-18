@@ -50,9 +50,9 @@ Cuando netboot se está ejecutando, `Starting BMR` aparece el mensaje.
 --
 Si no se detecta ningún cifrado, el proceso de recuperación de medios de arranque continúa sin necesidad de gestión de claves.
 
-Continuar supervisando el proceso de recuperación mientras restaura la configuración de backup, el archivo env, mdb y rdb desde el nodo asociado.
+.. Continuar supervisando el proceso de recuperación mientras restaura la configuración de backup, el archivo env, mdb y rdb desde el nodo asociado.
+.. Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
 
-Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
 
 ....
 
@@ -64,6 +64,13 @@ Terminated
 varfs_backup_restore: bootarg.abandon_varfs is set! Skipping /var backup.
 
 ....
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+
+
 --
 .Gestión de claves incorporada (OKM)
 --
@@ -110,6 +117,15 @@ Trying to delete any existing km_onboard.wkeydb file.
 
 Successfully recovered keymanager secrets.
 ....
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+.. Después de arrancar solo con el agregado CFO, ejecute el siguiente comando.
++
+`security key-manager onboard sync`
+
 
 
 --
@@ -118,7 +134,7 @@ Successfully recovered keymanager secrets.
 Si se configura EKM, el sistema muestra el siguiente prompt.
 
 ....
-Error when fetching key manager config from partner <IP>: 28
+Error when fetching key manager config from partner <IP>:
 
 Has key manager been configured on this system? {y|n}
 ....
@@ -140,7 +156,7 @@ Se le pedirá la configuración de EKM que se utilizó inicialmente durante la c
 
 *** En el nodo asociado, recupere el UUID del almacén de claves con los siguientes comandos.
 +
-`vserver show -type admin`
+`vserver show -type admin -fields uuid`
 
 +
 `key-manager keystore show -vserver <nodename>`
@@ -189,16 +205,16 @@ LOADER-B>
 =====
 
 
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
 
 
 --
 ====
 
-
-. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
-. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
 
 . Si la devolución automática está desactivada, vuelva a habilitarla:
 +

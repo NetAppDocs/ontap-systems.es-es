@@ -1,0 +1,96 @@
+---
+permalink: a20-30-50/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff a20 aff a30 aff a50 maintenance, maintenance, repairing a20 aff a30 aff a50, replace a20 aff a30 aff a50 components 
+summary: Mantenga el hardware de AFF A20, AFF A30 y AFF A50 
+---
+= Descripción general del mantenimiento de hardware: AFF A20, AFF A30 y AFF A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba realizar procedimientos de mantenimiento en el hardware. En esta sección se incluyen los procedimientos específicos para el mantenimiento de los componentes del sistema AFF A20, AFF A30 y AFF A50.
+
+En los procedimientos de esta sección se asume que los sistemas de almacenamiento A20, AFF A30 o AFF A50 de AFF ya se han puesto en marcha como nodos de almacenamiento en el entorno ONTAP.
+
+
+
+== Componentes del sistema
+
+Para los sistemas de almacenamiento AFF A20, AFF A30 y AFF A50, se pueden realizar procedimientos de mantenimiento en los siguientes componentes.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Soporte de arranque"]
+ a| 
+Los medios de arranque almacenan un conjunto primario y secundario de archivos de imagen ONTAP, así como la información de configuración del sistema que utiliza el sistema cuando se inicia.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chasis"]
+ a| 
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controladora"]
+ a| 
+Una controladora consta de una placa, un firmware y un software. Controla las unidades y ejecuta el software del sistema operativo ONTAP.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Un módulo de memoria dual en línea (DIMM) es un tipo de memoria del ordenador. Se instalan para agregar memoria del sistema a una placa base de la controladora.
+
+
+
+ a| 
+link:drive-replace.html["Unidad"]
+ a| 
+Una unidad es un dispositivo que ofrece el almacenamiento físico necesario para datos.
+
+
+
+ a| 
+link:fan-replace.html["Ventilador"]
+ a| 
+Un ventilador enfría la controladora y las unidades.
+
+
+
+ a| 
+link:io-module-overview.html["Módulo de I/O."]
+ a| 
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["Batería de NV"]
+ a| 
+La batería de la memoria no volátil (NV) es responsable de suministrar alimentación a los componentes de NVMEM mientras los datos en tránsito se separan a la memoria flash tras un corte de alimentación.
+
+
+
+ a| 
+link:power-supply-replace.html["Suministro de alimentación"]
+ a| 
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Batería del reloj en tiempo real"]
+ a| 
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+|===

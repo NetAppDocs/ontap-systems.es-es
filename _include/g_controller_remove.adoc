@@ -1,0 +1,107 @@
+= 
+:allow-uri-read: 
+
+
+Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
+
+.Antes de empezar
+El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+.Pasos
+. En el controlador deteriorado, asegúrese de que el LED NV está apagado.
++
+Cuando el LED NV está apagado, la separación se completa y es seguro retirar el controlador defectuoso.
+
++
+
+NOTE: Si el LED NV parpadea (verde), la separación está en curso. Debe esperar a que se apague el LED NV. Sin embargo, si el parpadeo continúa durante más de cinco minutos, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El LED NV se encuentra junto al icono de NV de la controladora.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Ubicación del LED de estado de NV]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Icono de NV y LED en el controlador
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del controlador dañado:
++
+
+NOTE: Las fuentes de alimentación (PSU) no tienen un interruptor de alimentación.
+
++
+[cols="1,2"]
+|===
+| Si va a desconectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Abra el retén del cable de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación de CC D-SUB.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+|===
+. Desconecte todos los cables del controlador dañado.
++
+Mantenga un registro de dónde se conectaron los cables.
+
+. Retire el controlador deteriorado:
++
+En la siguiente ilustración, se muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de la controladora) al quitar una controladora:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[asa la operación de la controladora para quitar una controladora]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del controlador, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para desalojar el controlador del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera del controlador y luego siente algo de resistencia, siga tirando.
+
+** Deslice el controlador para sacarlo del chasis mientras sostiene la parte inferior del controlador y colóquelo en una superficie plana y estable.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
+
+|===
+

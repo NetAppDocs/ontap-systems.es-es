@@ -14,17 +14,17 @@ summary: Puede sustituir un DIMM defectuoso de forma no disruptiva en una bandej
 Puede sustituir un DIMM defectuoso de forma no disruptiva en una bandeja de unidades NS224 que se enciende y mientras la I/o está en curso.
 
 .Antes de empezar
-* El módulo NSM de partners de la bandeja debe estar activo y en funcionamiento y debe cablearse correctamente de manera que su bandeja mantenga la conectividad al quitar el módulo NSM con el FRU fallido (módulo NSM de destino).
+* El NSM del partner de la bandeja debe estar en funcionamiento y cableado correctamente para que la bandeja mantenga la conectividad al quitar el NSM con la FRU con errores (NSM de destino).
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
-* Todos los demás componentes del sistema, incluidos los otros tres módulos DIMM, deben funcionar correctamente.
+* Todos los demás componentes del sistema, incluidos los otros tres DIMM del módulo NSM100 y uno del módulo NSM100B, deben funcionar correctamente.
 
 
 .Acerca de esta tarea
 * Permita al menos 70 segundos entre la eliminación y la instalación del módulo de bandeja de NVMe (NSM).
 +
-Esto le da tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
+Esto le otorga tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
 
 * *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
 +
@@ -44,52 +44,56 @@ No revierte el firmware a una versión que no admite la bandeja y sus componente
 Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
 
 +
-Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero mediante el `off` opción.
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
 
 * Cuando desembale el DIMM de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva el DIMM con errores.
 +
 Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
 
-* Puede utilizar la animación siguiente o los pasos escritos para reemplazar un DIMM.
-+
+
+
+[role="tabbed-block"]
+====
+.NSM100 módulos
+--
+Puede utilizar la animación siguiente o los pasos escritos para reemplazar un DIMM.
+
 .Sustituya un DIMM en una bandeja NS224
 video::eef28b10-ed93-4aa7-bfce-aa86002f20a2[panopto]
-
-
 .Pasos
 . Puesta a tierra apropiadamente usted mismo.
-. Desconecte el cableado del módulo NSM que contiene la FRU que desea sustituir:
+. Desconecte el cableado del NSM que contiene la FRU que desea reemplazar:
 +
 .. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación si es una fuente de alimentación de CA, o desenroscando los dos tornillos si es una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.
 +
 Las fuentes de alimentación no tienen un switch de alimentación.
 
-.. Desconecte el cableado de almacenamiento de los puertos del módulo NSM.
+.. Desconecte el cableado de almacenamiento de los puertos NSM.
 +
-Anote los puertos del módulo NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el módulo NSM, más adelante en este procedimiento.
+Anote los puertos NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el NSM, más adelante en este procedimiento.
 
 
 
-. Quite el módulo NSM de la bandeja:
+. Quite el NSM de la bandeja:
 +
-.. Enrolle los dedos de índice a través de los orificios de los dedos de los mecanismos de bloqueo a ambos lados del módulo NSM.
+.. Enrolle los dedos índice a través de los orificios de los dedos de los mecanismos de enclavamiento a ambos lados del NSM.
 +
 
-NOTE: Si va a extraer el módulo NSM inferior y si el riel inferior obstruye el acceso a los mecanismos de bloqueo, coloque los dedos de índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
+NOTE: Si va a retirar el NSM inferior y si el riel inferior está obstruyendo el acceso a los mecanismos de enclavamiento, coloque los dedos índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
 
 .. Con los pulgares, presione y sostenga las lengüetas naranjas en la parte superior de los mecanismos de bloqueo.
 +
 Los mecanismos de bloqueo se elevan, borrando los pasadores de cierre de la bandeja.
 
-.. Tire suavemente hasta que el módulo NSM salga de la estantería aproximadamente un tercio, sujete los lados del módulo NSM con ambas manos para sostener su peso y, a continuación, colóquelo sobre una superficie plana y estable.
+.. Tire suavemente hasta que el NSM esté cerca de un tercio de la salida del estante, sujete los lados del NSM con ambas manos para soportar su peso y luego colóquelo en una superficie plana y estable.
 +
-Cuando comience a tirar, los brazos del mecanismo de bloqueo se extienden desde el módulo NSM y se bloquean en su posición completamente extendida.
+Cuando comience a tirar, los brazos del mecanismo de bloqueo se extienden desde el NSM y se bloquean en su posición completamente extendida.
 
 
 
-. Afloje el tornillo de palomilla de la cubierta del módulo NSM y abra la cubierta.
+. Afloje el tornillo de mariposa de la cubierta NSM y abra la cubierta.
 +
-La etiqueta FRU de la cubierta del módulo NSM muestra la ubicación de los cuatro DIMM, dos a ambos lados del disipador de calor, en el centro del módulo NSM.
+La etiqueta FRU de la cubierta NSM muestra la ubicación de los cuatro DIMM, dos a cada lado del disipador térmico, en el centro del NSM.
 
 . Identifique físicamente el DIMM defectuoso.
 +
@@ -117,31 +121,31 @@ Cuando se inserta correctamente, el DIMM debe entrar fácilmente pero ajustarse 
 .. Empuje hacia abajo con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de ambos extremos del DIMM.
 
 
-. Cierre la cubierta del módulo NSM y, a continuación, apriete el tornillo de mariposa.
-. Vuelva a insertar el módulo NSM en la bandeja:
+. Cierre la cubierta NSM y, a continuación, apriete el tornillo de mariposa.
+. Vuelva a insertar el NSM en la bandeja:
 +
 .. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
-.. Con ambas manos, deslice suavemente el módulo NSM hacia dentro de la bandeja hasta que el peso del módulo NSM sea totalmente compatible con la bandeja.
-.. Inserte el módulo NSM en la bandeja hasta que se detenga (aproximadamente media pulgada de la parte posterior de la bandeja).
+.. Usando ambas manos, deslice suavemente el NSM en el estante hasta que el peso del NSM quede completamente soportado por el estante.
+.. Empuje el NSM en la bandeja hasta que se detenga (aproximadamente media pulgada desde la parte posterior de la bandeja).
 +
-Puede colocar los pulgares en las lengüetas naranjas de la parte frontal de cada bucle de dedos (de los brazos del mecanismo de bloqueo) para empujar el módulo NSM.
+Puede colocar los pulgares en las lengüetas naranjas de la parte frontal de cada bucle de dedo (de los brazos del mecanismo de bloqueo) para empujar el NSM.
 
-.. Enrolle los dedos de índice a través de los orificios de los dedos de los mecanismos de bloqueo a ambos lados del módulo NSM.
+.. Enrolle los dedos índice a través de los orificios de los dedos de los mecanismos de enclavamiento a ambos lados del NSM.
 +
 
-NOTE: Si va a insertar el módulo NSM inferior y si el riel inferior obstruye el acceso a los mecanismos de bloqueo, coloque los dedos de índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
+NOTE: Si está insertando el NSM inferior, y si el riel inferior está obstruyendo el acceso a los mecanismos de enclavamiento, coloque los dedos índice a través de los orificios de los dedos desde el interior (cruzando los brazos).
 
 .. Con los pulgares, presione y sostenga las lengüetas naranjas en la parte superior de los mecanismos de bloqueo.
 .. Empuje suavemente hacia adelante para que los pestillos queden sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y, a continuación, siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
 +
-El módulo NSM debe insertarse por completo en el estante y enrasarse con los bordes del estante.
+El NSM debe insertarse completamente en la bandeja y alinearse con los bordes de la bandeja.
 
 
 
-. Vuelva a conectar el cableado al módulo NSM:
+. Vuelva a conectar el cableado al NSM:
 +
-.. Vuelva a conectar el cableado de almacenamiento a los mismos dos puertos del módulo NSM.
+.. Vuelva a conectar el cableado de almacenamiento a los mismos dos puertos NSM.
 +
 Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
 
@@ -150,15 +154,15 @@ Los cables se insertan con la lengüeta de extracción del conector hacia arriba
 Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
 
 +
-Además, se encienden los dos LED LNK (verde) del puerto del módulo NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+Además, se iluminan los LED LNK (verde) del puerto NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
 
 
 
-. Compruebe que los LED de atención (ámbar) del módulo NSM que contiene el DIMM fallido y el panel de visualización del operador de la bandeja ya no están encendidos.
+. Compruebe que los LED de atención (ámbar) del NSM que contienen el DIMM fallido y el panel de visualización del operador de la bandeja ya no están encendidos.
 +
-Los LED de atención del módulo NSM se apagan después de que se reinicie el módulo NSM y ya no detecta un problema DIMM. Esto puede tardar entre tres y cinco minutos.
+Los LED de atención de NSM se apagan después de que se reinicia NSM y ya no detectan un problema de DIMM. Esto puede tardar entre tres y cinco minutos.
 
-. Verifique que el módulo NSM esté cableado correctamente ejecutando Active IQ Config Advisor.
+. Compruebe que el NSM se ha cableado correctamente ejecutando Active IQ Config Advisor.
 +
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
@@ -166,3 +170,169 @@ Si se genera algún error de cableado, siga las acciones correctivas proporciona
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
 
 
+
+--
+.NSM100B módulos
+--
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Desconecte el cableado del NSM que contiene la FRU que desea reemplazar:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación si es una fuente de alimentación de CA, o desenroscando los dos tornillos si es una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento de los puertos NSM.
++
+Anote los puertos NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el NSM, más adelante en este procedimiento.
+
+
+
+. Inserte el NSM en la bandeja:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Sustituya la NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si ha girado las asas NSM en posición vertical (junto a las pestañas) para alejarlas mientras ha reparado el NSM, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Alinee la parte posterior del NSM con la abertura de la bandeja y, a continuación, empuje suavemente el NSM con las asas hasta que quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas.
+
+|===
+. Abra la cubierta NSM girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
++
+La etiqueta FRU de la cubierta NSM muestra la ubicación de los dos DIMM y dos DIMM en blanco en el NSM.
+
+. Identifique físicamente el DIMM defectuoso.
++
+Cuando un módulo DIMM está defectuoso, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué módulo DIMM debe sustituirse.
+
+. Retire el módulo DIMM defectuoso:
++
+image::../media/drw_t_dimm_ieops-1978.svg[Quite los DIMM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Numeración y posiciones de las ranuras DIMM.
+
+El NSM contiene DIMM en las ranuras 1 y 3, y espacios DIMM en las ranuras 2 y 4.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Observe la orientación del módulo DIMM en el conector para poder insertar el módulo DIMM de repuesto con la misma orientación.
+** Extraiga el módulo DIMM defectuoso empujando lentamente las dos lengüetas del expulsor DIMM en ambos extremos de la ranura DIMM.
+
+
+
+IMPORTANT: Sujete con cuidado el DIMM por las esquinas o bordes para evitar la presión en los componentes de la placa de circuitos DIMM.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el módulo DIMM y sáquelo de la ranura.
+
+Las lengüetas del expulsor permanecen en la posición abierta.
+
+|===
+. Sustituya el módulo DIMM:
++
+.. Retire el módulo DIMM de repuesto de su bolsa de transporte antiestática.
+.. Sujete el módulo DIMM por las esquinas y, a continuación, inserte el módulo DIMM directamente en una ranura.
++
+La muesca de la parte inferior del DIMM, entre los pasadores, debe alinearse con la lengüeta de la ranura.
+
++
+Cuando se inserta correctamente, el DIMM debe entrar fácilmente pero ajustarse firmemente en la ranura. De lo contrario, vuelva a insertar el DIMM.
+
+.. Empuje hacia abajo con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de ambos extremos del DIMM.
+
+
+. Cierre la cubierta NSM y, a continuación, apriete el tornillo de mariposa.
+. Inserte el NSM en la bandeja:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Sustituya la NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si ha girado las asas NSM en posición vertical (junto a las pestañas) para alejarlas mientras ha reparado el NSM, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Alinee la parte posterior del NSM con la abertura de la bandeja y, a continuación, empuje suavemente el NSM con las asas hasta que quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas.
+
+|===
+. Vuelva a conectar el cableado al NSM:
++
+.. Vuelva a conectar el cableado de almacenamiento a los mismos dos puertos NSM.
++
+Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación si es una fuente de alimentación de CA, o apriete los dos tornillos de palomilla si es una fuente de alimentación de CC.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
++
+Además, se iluminan los LED LNK (verde) del puerto NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+
+
+
+. Compruebe que los LED de atención (ámbar) del NSM que contienen el DIMM fallido y el panel de visualización del operador de la bandeja ya no están encendidos.
++
+Los LED de atención de NSM se apagan después de que se reinicia NSM y ya no detectan un problema de DIMM. Esto puede tardar entre tres y cinco minutos.
+
+. Compruebe que el NSM se ha cableado correctamente ejecutando Active IQ Config Advisor.
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
+
+
+
+--
+====

@@ -1,0 +1,63 @@
+---
+permalink: c80/controller-replace-system-config-restore-and-verify.html 
+sidebar: sidebar 
+keywords: c80, restore and verify the system configuration, verify and set the ha state of the controller module 
+summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
+---
+= Restaurar y verificar la configuración del sistema - AFF C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verifique la configuración de bajo nivel del sistema de la controladora de reemplazo y vuelva a configurar los ajustes del sistema según sea necesario.
+
+
+
+== Paso 1: Verifique la configuración de alta disponibilidad
+
+Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
+
+. Arranque en modo de mantenimiento: `boot_ontap maint`
++
+.. Introduzca `y` cuando vea _Continue with boot?_.
++
+Si aparece el mensaje de advertencia _System ID mismatch_, introduzca `y`.
+
+
+
+. Introduzca `sysconfig -v` y capture el contenido de la pantalla.
++
+
+NOTE: Si ve _PERSONALITY MISMATCH_ póngase en contacto con el servicio de atención al cliente.
+
+. En `sysconfig -v` la salida, compare la información de la tarjeta del adaptador con las tarjetas y las ubicaciones de la controladora de reemplazo.
+. Compruebe que todos los componentes muestran el mismo `HA` estado: `ha-config show`
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
++
+El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+
++
+** `ha`
+** `mcc` (no compatible)
+** `mccip` (No compatible con sistemas ASA)
+** `non-ha` (no compatible)
+
+
+. Confirme que el ajuste ha cambiado: `ha-config show`
+
+
+
+
+== Paso 2: Verifique la lista de discos
+
+. Compruebe que el adaptador enumera las rutas de acceso a todos los discos con el `storage show disk -p`.
++
+Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
+
+. Salir del modo de mantenimiento `halt`: .
+

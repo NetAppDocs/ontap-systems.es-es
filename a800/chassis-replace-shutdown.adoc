@@ -56,11 +56,11 @@ NOTE: Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar
 
 . Detenga los dos nodos ubicados en el chasis dañado:
 +
-`system node halt -node <node>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
+`system node halt -node <node1>,<node2> -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`
 
 +
 
-NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: `system node halt -node <node>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
+NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: `system node halt -node <node1>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
 . Introduzca *y* para cada controlador en el clúster cuando lo vea `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
 {y|n}:_`

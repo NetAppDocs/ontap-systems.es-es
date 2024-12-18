@@ -67,43 +67,36 @@ NOTE: Las comprobaciones del firmware de la unidad se realizan cada dos minutos.
 Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
 
 +
-Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y uno en cada módulo NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero mediante el `off` opción.
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
 
 * Cuando desembale la unidad de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la unidad con error.
 +
 Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
 
-* La siguiente animación proporciona una descripción general de las partes de extracción e inserción física del procedimiento de intercambio en caliente de la unidad.
-+
-.Intercambio en caliente de una unidad en una bandeja NS224
-video::733011a7-e03a-41b0-8723-aa840133bf25[panopto]
-+
+
+
 .Pasos
-.. Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la asignación automática de unidades si se encuentra habilitada.
+. Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la asignación automática de unidades si se encuentra habilitada.
 +
 
-NOTE: Debe asignar manualmente la propiedad de una unidad si las unidades de la bandeja son propiedad de ambos módulos de controladora en la pareja de alta disponibilidad.
+NOTE: Debe asignar manualmente la propiedad de una unidad si las unidades de la bandeja son propiedad de ambos módulos de controladora en la pareja de alta disponibilidad. Complete esta tarea más adelante en este procedimiento.
 
 +
-
-NOTE: La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.
-
-+
-... Compruebe si la asignación automática de unidades está habilitada: `storage disk option show`
+.. Compruebe si la asignación automática de unidades está habilitada: `storage disk option show`
 +
 Puede introducir el comando en cualquier módulo de la controladora.
 
 +
 Si la asignación automática de unidades está activada, la salida muestra `on` en la `Auto Assign` (para cada módulo del controlador).
 
-... Si la asignación automática de unidades está habilitada, deshabilítela: `storage disk option modify -node node_name -autoassign off`
+.. Si la asignación automática de unidades está habilitada, deshabilítela: `storage disk option modify -node node_name -autoassign off`
 +
 Debe deshabilitar la asignación automática de unidades en ambos módulos de la controladora.
 
 
 
-.. Puesta a tierra apropiadamente usted mismo.
-.. Identifique físicamente la unidad con error.
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente la unidad con error.
 +
 Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y la unidad con error se iluminan.
 
@@ -111,49 +104,70 @@ Cuando falla una unidad, el sistema registra un mensaje de advertencia en la con
 
 NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
 
-.. Quite la unidad con error:
+. Quite la unidad con error:
 +
-... Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
-... Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad.]
+
++
+[cols="1,4"]
+|===
 
 
-.. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+
+|===
+. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
 +
 Esto permite al sistema reconocer que se ha quitado una unidad.
 
-.. Inserte la unidad de reemplazo:
+. Inserte la unidad de reemplazo:
 +
-... Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
-... Presione hasta que la unidad se detenga.
-... Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
+.. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
+.. Empuje suavemente hasta que la unidad se detenga.
+.. Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
 +
 Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
 
 
 
-.. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
+. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
 +
 Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
 
-.. Si desea sustituir otra unidad, repita los pasos 3 al paso 7.
-.. Si deshabilitó la asignación automática de unidades en el paso 1, asigne manualmente la propiedad de la unidad y vuelva a habilitar la asignación automática de unidades si es necesario:
+. Si desea sustituir otra unidad, repita los pasos 3 al paso 7.
+. Si deshabilitó la asignación automática de unidades en el paso 1, asigne manualmente la propiedad de la unidad y vuelva a habilitar la asignación automática de unidades si es necesario:
 +
-... Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
+.. Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
 +
 Puede introducir el comando en cualquier módulo de la controladora.
 
-... Asigne cada unidad: `storage disk assign -disk disk_name -owner owner_name`
+.. Asigne cada unidad: `storage disk assign -disk disk_name -owner owner_name`
 +
 Puede introducir el comando en cualquier módulo de la controladora.
 
 +
 Puede usar el carácter comodín para asignar más de una unidad a la vez.
 
-... Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node node_name -autoassign on`
+.. Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node node_name -autoassign on`
 +
 Debe volver a habilitar la asignación automática de unidades en ambos módulos de la controladora.
-
-
 
 
 

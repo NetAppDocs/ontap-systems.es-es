@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, requirement 
 summary: Para añadir en caliente una bandeja de unidades NS224, una pareja de alta disponibilidad debe cumplir ciertos requisitos. 
 ---
-= Requisitos y prácticas recomendadas para una incorporación en caliente: Bandejas NS224
+= Requisitos y prácticas recomendadas para añadir en caliente bandejas NS224
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -47,7 +47,7 @@ Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y uti
 
 * * Mejores prácticas:* La mejor práctica es ejecutar https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] antes y después de agregar en caliente un estante.
 +
-Si se ejecuta Active IQ Config Advisor antes de añadir una bandeja en caliente, se obtiene un captura de snap de la conectividad Ethernet (ENET) de la bandeja existente, se comprueban las versiones de firmware del módulo de bandeja NVMe (NSM) y se puede verificar un ID de bandeja que ya se está usando en el par de alta disponibilidad.
+Si se ejecuta Active IQ Config Advisor antes de añadir en caliente una bandeja, se obtiene una instantánea de la conectividad Ethernet (ENET) de la bandeja existente, se verifican las versiones de firmware del módulo de bandeja NVMe (NSM) y, además, es posible comprobar que el ID de bandeja ya se está utilizando en el par de alta disponibilidad.
 
 +
 Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.

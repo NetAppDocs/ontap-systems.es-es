@@ -39,12 +39,6 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 .Cifrado incorporado (OKM)
 --
 . En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
-. Compruebe la versión del firmware de TMP con el `sysconfig -v` comando.
-+
-** Si la versión es inferior a 5,63, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
-** Si la versión es superior a 5,63, salga del prompt Loader: `halt`.
-
-
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
 . Introduzca la frase de contraseña de OKM. Puede obtener esta frase de contraseña del cliente, o póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 +

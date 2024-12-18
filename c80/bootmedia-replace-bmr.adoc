@@ -1,0 +1,93 @@
+---
+permalink: c80/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: c80, replace the boot media 
+summary: Para localizar el medio de arranque fallido, elimine el módulo de gestión del sistema antes de poder sustituir el soporte de arranque. 
+---
+= Sustituya el soporte de arranque: AFF C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir el soporte de arranque, debe extraer el módulo de gestión del sistema de la parte posterior del sistema, extraer el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
+
+.Pasos
+El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
+
+image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Gráfico de sustitución de soporte de arranque]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Botón de bloqueo del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Soporte de arranque
+
+|===
+. En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidad drw a800 asentada IEPOPS 960]
+
+. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del módulo del controlador tirando del módulo del controlador hacia fuera unas tres pulgadas:
++
+.. Presione ambos pestillos de bloqueo del módulo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
+.. Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.
+.. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.
+.. Gire la palanca de leva completamente hacia abajo y retire el módulo de gestión del sistema del módulo del controlador.
+.. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque.
+
+
+. Retire el soporte de arranque del módulo de gestión:
++
+.. Pulse el botón de bloqueo azul.
+.. Gire el soporte de arranque hacia arriba, deslícelo para extraerlo de la toma y déjelo a un lado.
+
+
+. Instale el soporte de arranque de repuesto en el módulo de gestión del sistema:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hacia el botón de bloqueo.
+.. Pulse el botón de bloqueo, gire el soporte del maletero completamente hacia abajo y, a continuación, suelte el botón de bloqueo.
+
+
+. Vuelva a instalar el módulo Gestión del sistema:
++
+.. Gire la bandeja de gestión de cables hasta la posición cerrada.
+.. Vuelva a conectar el módulo Gestión del sistema.
+
+
+. Vuelva a instalar el controlador y vuelva a conectar la alimentación al módulo del controlador:
++
+.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
++
+Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
+
+.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
++
+El controlador comienza a arrancar tan pronto como se asienta y se restablece la alimentación.
+
+
+
+. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
+

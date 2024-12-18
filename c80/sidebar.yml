@@ -1,0 +1,100 @@
+---
+section: c80
+title: Sistemas AFF C80
+entries:
+- title: Instalar y configurar
+  pdf-filename: C80 Instalación y configuración
+  entries:
+  - title: Instale el flujo de trabajo
+    url: "/c80/install-overview.html"
+  - title: Revise los requisitos
+    url: "/c80/install-requirements.html"
+  - title: Prepárese para la instalación
+    url: "/c80/install-prepare.html"
+  - title: Instale el hardware
+    url: "/c80/install-hardware.html"
+  - title: Hardware del cable
+    url: "/c80/install-cable.html"
+  - title: Encienda el sistema
+    url: "/c80/install-power-hardware.html"
+  - title: Completar la configuración del sistema
+    url: "/c80/install-complete.html"
+- title: Mantener
+  pdf-filename: C80 Mantener
+  entries:
+  - title: Información general de mantenimiento
+    url: "/c80/maintain-overview.html"
+  - title: Soporte de arranque
+    pdf-filename: C80 Medio de arranque
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/c80/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/c80/bootmedia-replace-requirements.html"
+    - title: Compruebe las claves de cifrado
+      url: "/c80/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/c80/bootmedia-shutdown.html"
+    - title: Sustituir el soporte de arranque
+      url: "/c80/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/c80/bootmedia-recovery-image-boot.html"
+    - title: Restaure el cifrado
+      url: "/c80/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/c80/bootmedia-complete-rma.html"
+  - title: Chasis
+    pdf-filename: C80 Chasis
+    entries:
+    - title: Flujo de trabajo de sustitución del chasis
+      url: "/c80/chassis-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/c80/chassis-replace-requirements.html"
+    - title: Apague las controladoras
+      url: "/c80/chassis-replace-shutdown.html"
+    - title: Sustituya el chasis
+      url: "/c80/chassis-replace-move-hardware.html"
+    - title: Reemplazo completo de chasis
+      url: "/c80/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador C80
+    entries:
+    - title: Flujo de trabajo de sustitución de controladoras
+      url: "/c80/controller-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/c80/controller-replace-requirements.html"
+    - title: Apague el controlador dañado
+      url: "/c80/controller-replace-shutdown.html"
+    - title: Sustituya la controladora
+      url: "/c80/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/c80/controller-replace-system-config-restore-and-verify.html"
+    - title: Vuelva a conectar y devolver el controlador
+      url: "/c80/controller-replace-recable-reassign-disks.html"
+    - title: Reemplazo completo de controladoras
+      url: "/c80/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/c80/dimm-replace.html"
+  - title: Unidad
+    url: "/c80/drive-replace.html"
+  - title: Ventilador
+    url: "/c80/fan-swap-out.html"
+  - title: NVRAM
+    url: "/c80/nvram-replace.html"
+  - title: Batería NV
+    url: "/c80/nvdimm-battery-replace.html"
+  - title: Módulo de I/O.
+    pdf-filename: MÓDULO DE I/O C80
+    entries:
+    - title: Descripción general del módulo I/O.
+      url: "/c80/io-module-overview.html"
+    - title: Agregue módulo de E/S.
+      url: "/c80/io-module-add.html"
+    - title: Sustituya el módulo de E/S.
+      url: "/c80/io-module-replace.html"
+  - title: Suministro de alimentación
+    url: "/c80/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/c80/rtc-battery-replace.html"
+  - title: Módulo de gestión del sistema
+    url: "/c80/system-management-replace.html"

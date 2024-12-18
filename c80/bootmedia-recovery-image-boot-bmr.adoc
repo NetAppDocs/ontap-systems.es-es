@@ -1,0 +1,236 @@
+---
+permalink: c80/bootmedia-recovery-image-boot-bmr.html 
+sidebar: sidebar 
+keywords: c80, boot the recovery image 
+summary: Puede restaurar la imagen en el soporte de arranque desde el controlador asociado a través del proceso de recuperación automática al arranque. 
+---
+= Recuperación de arranque automatizada - C80
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Restaure la imagen ONTAP desde el nodo asociado cuando el soporte de arranque esté dañado.
+
+.Acerca de esta tarea
+Si el medio de arranque de un nodo está dañado, el proceso de arranque se detendrá en el símbolo del sistema de Loader y mostrará los mensajes de error de arranque.
+
+Cuando encuentre estos mensajes de error de arranque, deberá restaurar la imagen ONTAP desde el nodo compañero.
+
+.Mostrar ejemplo de mensajes de error de inicio
+[%collapsible]
+====
+....
+Can't find primary boot device u0a.0
+Can't find backup boot device u0a.1
+ACPI RSDP Found at 0x777fe014
+
+Starting AUTOBOOT press Ctrl-C to abort...
+Could not load fat://boot0/X86_64/freebsd/image1/kernel: Device not found
+
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/Linux/image1/vmlinuz (boot0, fat)
+ERROR: Error booting OS on: 'boot0' file: fat://boot0/X86_64/freebsd/image1/kernel (boot0, fat)
+
+Autoboot of PRIMARY image failed. Device not found (-6)
+LOADER-A>
+....
+====
+.Pasos
+. En el símbolo del SISTEMA de Loader, introduzca el comando:
++
+`boot_recovery -partner`
+
++
+La pantalla muestra el siguiente mensaje:
+
++
+`Starting boot media recovery (BMR) process. Press Ctrl-C to abort…`
+
+. Supervise el proceso de recuperación de medios de arranque como Loader configura los puertos del clúster local y se ejecuta `netboot` desde el nodo asociado.
++
+Cuando netboot se está ejecutando, `Starting BMR` aparece el mensaje.
+
+. Según el método de cifrado, seleccione la opción que coincida con la configuración del sistema:
++
+[role="tabbed-block"]
+====
+.Sin cifrado
+--
+Si no se detecta ningún cifrado, el proceso de recuperación de medios de arranque continúa sin necesidad de gestión de claves.
+
+.. Continuar supervisando el proceso de recuperación mientras restaura la configuración de backup, el archivo env, mdb y rdb desde el nodo asociado.
+.. Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
+
+
+....
+
+varfs_backup_restore: update checksum for varfs.tgz
+varfs_backup_restore: restore using /cfcard/x86_64/freebsd/oldvarfs.tgz
+varfs_backup_restore: Rebooting to load the new varfs
+.
+Terminated
+varfs_backup_restore: bootarg.abandon_varfs is set! Skipping /var backup.
+
+....
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+
+
+--
+.Gestión de claves incorporada (OKM)
+--
+Si se detecta Onboard Key Manager (OKM), el sistema muestra el siguiente mensaje.
+
+....
+key manager is configured.
+Entering Bootmenu Option 10...
+
+This option must be used only in disaster recovery procedures. Are you sure? (y or n):
+....
+.. Desde la indicación de la opción bootmenu, introduzca `Y` para confirmar que desea utilizar la opción de recuperación bootmedia.
+.. Introduzca la frase de acceso del gestor de claves incorporado cuando se le solicite y vuelva a introducir la frase de acceso para confirmarla.
++
+.Mostrar ejemplo de peticiones de contraseña
+[%collapsible]
+=====
+....
+Enter the passphrase for onboard key management:
+Enter the passphrase again to confirm:
+Enter the backup data:
+TmV0QXBwIEtleSBCbG9iAAECAAAEAAAAcAEAAAAAAAA3yR6UAAAAACEAAAAAAAAA
+QAAAAAAAAACJz1u2AAAAAPX84XY5AU0p4Jcb9t8wiwOZoqyJPJ4L6/j5FHJ9yj/w
+RVDO1sZB1E4HO79/zYc82nBwtiHaSPWCbkCrMWuQQDsiAAAAAAAAACgAAAAAAAAA
+3WTh7gAAAAAAAAAAAAAAAAIAAAAAAAgAZJEIWvdeHr5RCAvHGclo+wAAAAAAAAAA
+IgAAAAAAAAAoAAAAAAAAAEOTcR0AAAAAAAAAAAAAAAACAAAAAAAJAGr3tJA/LRzU
+QRHwv+1aWvAAAAAAAAAAACQAAAAAAAAAgAAAAAAAAABHVFpxAAAAAHUgdVq0EKNp
+.
+.
+.
+.
+....
+=====
+.. Continuar supervisando el proceso de recuperación mientras restaura la configuración de backup, el archivo env, mdb y rdb desde el nodo asociado.
++
+Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
+
++
+....
+Trying to recover keymanager secrets....
+Setting recovery material for the onboard key manager
+Recovery secrets set successfully
+Trying to delete any existing km_onboard.wkeydb file.
+
+Successfully recovered keymanager secrets.
+....
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+.. Después de arrancar solo con el agregado CFO, ejecute el siguiente comando.
++
+`security key-manager onboard sync`
+
+
+
+--
+.Gestor de claves externo (EKM)
+--
+Si se configura EKM, el sistema muestra el siguiente prompt.
+
+....
+Error when fetching key manager config from partner <IP>:
+
+Has key manager been configured on this system? {y|n}
+....
+.. Introduzca `Y` si se ha configurado EKM.
++
+....
+key manager is configured.
+Entering Bootmenu Option 11...
+....
++
+Se le pedirá la configuración de EKM que se utilizó inicialmente durante la configuración.
+
+.. Introduzca cada valor de configuración de EKM cuando se le solicite.
+.. Verifique que los atributos para el UUID de cluster y el UUID de almacén de claves son correctos.
++
+*** En el nodo del partner, recupere el UUID de clúster con el siguiente comando.
++
+`cluster identity show`
+
+*** En el nodo asociado, recupere el UUID del almacén de claves con los siguientes comandos.
++
+`vserver show -type admin -fields uuid`
+
++
+`key-manager keystore show -vserver <nodename>`
+
+*** Si el nodo asociado no está disponible, utilice la clave Mroot-AK para recuperar el UUID:
++
+**** Para el UUID de clúster, introduzca el siguiente comando:
++
+`x-NETAPP-ClusterName: <cluster name>`
+
+**** Para el UUID del almacén de claves, introduzca el siguiente comando:
++
+`x-NETAPP-KeyUsage: MROOT-AK`
+
+
+
+
+
+.. Introduzca los valores para UUID del almacén de claves y UUID de clúster cuando se le solicite.
+.. En función de si la clave se ha restaurado correctamente, realice una de las siguientes acciones:
++
+*** Si la clave se restaura correctamente, el proceso de recuperación continúa y reinicia el nodo. Continúe con el paso 4.
+*** Si la llave no se restaura correctamente, el sistema se detendrá y mostrará mensajes de error y advertencia. Vuelva a ejecutar el proceso de recuperación.
++
+.Muestre un ejemplo de mensajes de error y advertencia de recuperación de claves
+[%collapsible]
+=====
+....
+
+ERROR: kmip_init: halting this system with encrypted mroot...
+
+WARNING: kmip_init: authentication keys might not be available.
+
+System cannot connect to key managers.
+
+ERROR: kmip_init: halting this system with encrypted mroot...
+
+Terminated
+
+Uptime: 11m32s
+
+System halting...
+
+LOADER-B>
+....
+=====
+
+
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+
+
+--
+====
+
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
+

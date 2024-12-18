@@ -2,213 +2,74 @@
 :allow-uri-read: 
 
 
-[cols="2*"]
-|===
-| Plataformas | Comienzo disponible 
-
-
- a| 
-https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Sistemas ASA r2"]
-
-* ASA A1K
-* ASA A70
-* ASA A90
-
- a| 
-ONTAP 9.16.0
-
-
-
- a| 
-https://www.netapp.com/data-storage/fas/["FAS70 y FAS90"]
- a| 
-ONTAP 9.15.1
-
-
-
- a| 
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A1K"]
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A70"]
-* https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A90"]
-
- a| 
-ONTAP 9.15.1
-
-
-
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C250"]
- a| 
-ONTAP 9.13.1P1
-
-
-
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C400"]
- a| 
-ONTAP 9.13.1P1
-
-
-
- a| 
-https://www.netapp.com/data-storage/all-flash-san-storage-array/["ASA C800"]
- a| 
-ONTAP 9.13.1P1
-
-
-
- a| 
-https://hwu.netapp.com/ProductSpecs/Index["FAS2820"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A150"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A250"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A400"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/85736-DS-4254-NetApp-ASA.pdf["ASA A900"]
- a| 
-ONTAP 9.13.1
-
-
-
- a| 
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C250"]
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C400"]
-* https://www.netapp.com/media/81583-da-4240-aff-c-series.pdf["AFF C800"]
-
- a| 
-ONTAP 9.12.1P1
-
-ONTAP 9.13.1 GA y versiones posteriores de ONTAP
-
-[NOTE]
+[role="tabbed-block"]
 ====
-Estas plataformas no son compatibles con ONTAP 9.13.1 RC1.
+.Sistemas AFF
+--
+Los modelos AFF A-Series y C-Series son una plataforma sólida de escalado horizontal creada para entornos virtualizados y se pueden poner en marcha como un sistema independiente o un nivel de alto rendimiento en una configuración de NetApp ONTAP. link:https:://www.netapp.com/data-storage/all-flash-san-storage-array["Obtenga más información sobre los sistemas AFF"].
 
+.AFF A20, AFF A30, AFF A50
+Disponible a partir de ONTAP 9.16.1
+
+.AFF C30 y AFF C60
+Disponible a partir de ONTAP 9.16.1
+
+.AFF A1K, AFF A70 y AFF A90
+Disponible a partir de ONTAP 9.15.1
+
+.AFF A150
+Disponible empezando con ONTAP 9.13.1, ONTAP 9.12.1P1, ONTAP 9.11.1P8, ONTAP 9.10.1P12
+
+.AFF A900
+Disponible a partir de ONTAP 9.10.1
+
+.AFF A250 y AFF A800
+Disponible a partir de ONTAP 9,8
+
+.AFF A400
+Disponible a partir de ONTAP 9,7
+
+.AFF C250, AFF C400, AFF C800
+Disponible a partir de ONTAP 9.12.1P1, ONTAP 9.13.1 GA
+
+--
+.Sistemas ASA r2
+--
+Los sistemas R2 de ASA ofrecen una solución de hardware y software unificada que crea una experiencia simplificada específica para las necesidades de los clientes de SAN exclusivamente. link:https:://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Obtenga más información sobre los sistemas R2 de ASA"].
+
+.ASA A1K, ASA A70, ASA A90
+Disponible a partir de ONTAP 9.16.0
+
+--
+.Sistemas ASA
+--
+Los modelos ASA A-Series y C-Series ofrecen una experiencia SAN simplificada y dedicada que ofrece disponibilidad continua de datos para bases de datos de misión crítica para la empresa y otras cargas de trabajo SAN que utilizan el protocolo iSCSI o la certificación FCP. link:https:://www.netapp.com/data-storage/all-flash-san-storage-array["Obtenga más información sobre los sistemas ASA"].
+
+.ASA A150, ASA A250, ASA A400, ASA A900
+Disponible a partir de ONTAP 9.13.1
+
+.ASA C250, C400, C800
+Disponible a partir de ONTAP 9.13.1P1
+
+--
+.Sistemas FAS
+--
+Los sistemas FAS proporcionan almacenamiento secundario seguro y eficiente, la solución definitiva para la clasificación en niveles, el backup y la recuperación ante desastres. link:https:://www.netapp.com/data-storage/fas/["Obtenga más información acerca de los sistemas FAS"].
+
+.FAS70 y FAS90
+Disponible a partir de ONTAP 9.15.1
+
+.FAS9500
+Disponible a partir de ONTAP 9.11.1, ONTAP 9.10.1P3
+
+.FAS8300 y FAS700
+Disponible a partir de ONTAP 9,7
+
+.FAS2820
+Disponible a partir de ONTAP 9.13.1
+
+.FAS2700
+Disponible a partir de ONTAP 9.13.1
+
+--
 ====
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-DS-3582-AFF-A-Series.pdf["AFF A150"]
-
-[NOTE]
-====
-No intente instalar o arrancar el sistema de almacenamiento AFF A150 con una versión no compatible de ONTAP. Si intenta instalar o iniciar el sistema con una versión no compatible de ONTAP, ONTAP lo permitirá (ONTAP no bloqueará el intento). El resultado es que su sistema de almacenamiento A150 de AFF se presentara como un sistema de almacenamiento FAS2750.
-
-==== a| 
-ONTAP 9.13.1 y versiones posteriores de ONTAP
-
-ONTAP 9.12.1P1
-
-ONTAP 9.11.1P8
-
-ONTAP 9.10.1P12
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS9500"]
- a| 
-ONTAP 9.11.1
-
-ONTAP 9.10.1P3
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A900"]
- a| 
-ONTAP 9.10.1
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A250/AFF ASA A250"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS500f"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["A800 de AFF ASA"]
- a| 
-ONTAP 9.8
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS8300"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7819-ds-4020.pdf["FAS8700"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["AFF A400"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/17190-na-382.pdf["AFF ASA A220"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7828-ds-3582.pdf["A700 de AFF ASA"]
- a| 
-ONTAP 9.7
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/7623-ds-3989.pdf["C190 de AFF"^]
- a| 
-ONTAP 9.6
-
-
-
- a| 
-https://www.netapp.com/pdf.html?item=/media/17190-na-382.pdf["AFF A320"]
- a| 
-ONTAP 9.6
-
-|===

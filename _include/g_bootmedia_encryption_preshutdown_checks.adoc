@@ -1,0 +1,13 @@
+= Compruebe NVE o NSE en los sistemas
+:allow-uri-read: 
+
+
+Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que se está ejecutando.
+
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+
+== Compruebe NVE o NSE en los sistemas
+
+Directiva no resuelta en <stdin> - Include:../_include/encryption_check_915_later.adoc[]

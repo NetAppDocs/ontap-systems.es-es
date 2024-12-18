@@ -1,0 +1,328 @@
+= Paso 1: Quite la controladora
+:allow-uri-read: 
+
+
+Para sustituir el soporte de arranque, debe extraer el controlador deteriorado, extraer el soporte de arranque, instalar el soporte de arranque de repuesto y transferir la imagen de arranque a una unidad flash USB.
+
+
+
+== Paso 1: Quite la controladora
+
+Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
+
+.Antes de empezar
+El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+.Pasos
+. En el controlador deteriorado, asegúrese de que el LED NV está apagado.
++
+Cuando el LED NV está apagado, la separación se completa y es seguro retirar el controlador defectuoso.
+
++
+
+NOTE: Si el LED NV parpadea (verde), la separación está en curso. Debe esperar a que se apague el LED NV. Sin embargo, si el parpadeo continúa durante más de cinco minutos, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El LED NV se encuentra junto al icono de NV de la controladora.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Ubicación del LED de estado de NV]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Icono de NV y LED en el controlador
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del controlador dañado:
++
+
+NOTE: Las fuentes de alimentación (PSU) no tienen un interruptor de alimentación.
+
++
+[cols="1,2"]
+|===
+| Si va a desconectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Abra el retén del cable de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación de CC D-SUB.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+|===
+. Desconecte todos los cables del controlador dañado.
++
+Mantenga un registro de dónde se conectaron los cables.
+
+. Retire el controlador deteriorado:
++
+En la siguiente ilustración, se muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de la controladora) al quitar una controladora:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[asa la operación de la controladora para quitar una controladora]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del controlador, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para desalojar el controlador del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera del controlador y luego siente algo de resistencia, siga tirando.
+
+** Deslice el controlador para sacarlo del chasis mientras sostiene la parte inferior del controlador y colóquelo en una superficie plana y estable.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
+
+|===
+. Coloque el controlador sobre una alfombrilla antiestática.
+. Abra la cubierta del controlador girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Para sustituir el medio de arranque, búsquelo dentro de la controladora y siga la secuencia de pasos específica.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el soporte de arranque:
++
+image::../media/drw_g_boot_media_replace_ieops-1872.svg[Gráfico de sustitución de soporte de arranque]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Ubicación del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Presione la pestaña azul hacia abajo para soltar el extremo derecho del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el extremo derecho del soporte de arranque en un ángulo ligero para conseguir un buen agarre a lo largo de los laterales del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Número de llamada 4]
+ a| 
+Tire suavemente del extremo izquierdo del soporte de arranque para extraerlo de su toma.
+
+|===
+. Instale el soporte de arranque de repuesto:
++
+.. Retire el soporte de arranque de su paquete.
+.. Deslice el extremo de la toma del soporte de arranque en su toma.
+.. En el extremo opuesto del soporte de arranque, presione y mantenga presionada la lengüeta azul (en la posición abierta), presione suavemente hacia abajo ese extremo del soporte de arranque hasta que se detenga, y luego suelte la pestaña para bloquear el soporte de arranque en su lugar.
+
+
+
+
+
+
+== Paso 3: Vuelva a instalar el controlador
+
+Vuelva a instalar la controladora en el chasis, pero no la reinicie.
+
+.Acerca de esta tarea
+La siguiente ilustración muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de una controladora) al reinstalar la controladora y se puede utilizar como referencia para el resto de los pasos de reinstalación de la controladora.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[operación de manija del controlador para instalar un controlador]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si giró las asas del controlador en posición vertical (junto a las pestañas) para alejarlas mientras realizaba el mantenimiento del controlador, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Empuje las asas para volver a insertar el controlador en el chasis hasta la mitad y, a continuación, cuando se le indique, empuje hasta que el controlador esté completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas de bloqueo.
+
+|===
+.Pasos
+. Cierre la cubierta del controlador y gire el tornillo de mariposa hacia la derecha hasta que se apriete.
+. Inserte la controladora a la mitad en el chasis.
++
+Alinee la parte posterior de la controladora con la apertura del chasis y empuje suavemente la controladora con las asas.
+
++
+
+NOTE: No inserte por completo la controladora en el chasis hasta que se le indique hacerlo más adelante en este procedimiento.
+
+. Vuelva a conectar los cables a la controladora; sin embargo, no conecte el cable de alimentación al suministro de alimentación (PSU) en este momento.
++
+
+NOTE: Asegúrese de que el cable de la consola está conectado a la controladora porque desea capturar y registrar la secuencia de arranque más adelante en el procedimiento de sustitución de medios de arranque cuando coloque completamente la controladora en el chasis y comience a arrancar.
+
+
+
+
+
+== Paso 4: Transfiera la imagen de arranque al soporte de arranque
+
+El soporte de arranque de repuesto que ha instalado no tiene una imagen ONTAP, por lo que debe transferir una imagen ONTAP mediante una unidad flash USB.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Debe tener una copia de la misma versión de imagen de ONTAP que se estaba ejecutando la controladora dañada. Puede descargar la imagen adecuada de https://support.netapp.com/downloads["Descargas"] la sección del sitio de soporte de NetApp
++
+** Si NVE es compatible, descargue la imagen con NetApp Volume Encryption, tal y como se indica en el botón de descarga.
+** Si NVE no es compatible, descargue la imagen sin cifrado de volúmenes NetApp, como se indica en el botón de descarga.
+
+
+* Debe tener una conexión de red entre los puertos de gestión de nodos de las controladoras (normalmente las interfaces e0M).
+
+
+.Pasos
+. Descargue y copie la imagen de servicio adecuada desde el https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a la unidad flash USB.
++
+.. Descargue la imagen del servicio desde el enlace Descargas de la página, en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutando el controlador dañado.
+
+.. Extraiga la unidad flash USB del ordenador portátil.
+
+
+. Inserte la unidad flash USB en el puerto USB-A del controlador afectado.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Coloque completamente el controlador deteriorado en el chasis:
++
+.. Empuje firmemente las asas hasta que el controlador se encuentre con el plano medio y quede completamente asentado.
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que podría dañar los conectores.
+
++
+
+NOTE: La controladora arranca cuando está completamente asentada en el chasis. Obtiene su poder del controlador asociado.
+
+.. Gire las asas del controlador hacia arriba y bloquéelas en su lugar con las lengüetas.
+
+
+. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
++
+** Si va a configurar DHCP:
++
+`ifconfig e0M -auto`
+
++
+
+NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
+
+** Si está configurando conexiones manuales: +
++
+`ifconfig e0M -addr=filer_addr -mask=netmask -gw=gateway`
+
++
+*** Filer_addr es la dirección IP del sistema de almacenamiento.
+*** La máscara de red es la máscara de red de la red de gestión conectada al partner de alta disponibilidad.
+*** gateway es la puerta de enlace de la red.
+
+
++
+
+NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede entrar `help ifconfig` en el símbolo del sistema del firmware para obtener detalles.
+
+
+
+. Vuelva a conectar el cable de alimentación a la fuente de alimentación (PSU) de la controladora dañada.
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
++
+[cols="1,2"]
+|===
+| Si va a volver a conectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Conecte el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación con el retén del cable de alimentación.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+
+
+|===
+

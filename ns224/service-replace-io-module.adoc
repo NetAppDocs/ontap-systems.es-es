@@ -1,0 +1,197 @@
+---
+permalink: ns224/service-replace-io-module.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, replace, fail,  nondisruptive, power, i/o 
+summary: Puede sustituir un módulo de I/O Ethernet con fallos de forma no disruptiva en una bandeja de unidades NS224 que se encienda y mientras la I/O esté en curso. 
+---
+= Sustituya el módulo Ethernet I/O - NS224 bandejas con módulos NSM100B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede sustituir un módulo de I/O Ethernet con fallos de forma no disruptiva en una bandeja de unidades NS224 que se encienda y mientras la I/O esté en curso. Este procedimiento solo se aplica a las bandejas NS224 con módulos NSM100B.
+
+.Antes de empezar
+* El NSM del partner de la bandeja debe estar en funcionamiento y en funcionamiento, y se debe cablear correctamente para que la bandeja mantenga la conectividad al quitar el NSM con fallos.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
+
+* Todos los demás componentes del sistema deben funcionar correctamente.
+
+
+.Acerca de esta tarea
+* Permita al menos 70 segundos entre la eliminación y la instalación del módulo de bandeja de NVMe (NSM).
++
+Esto le da tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
+
+* *Mejor práctica:* la práctica recomendada es tener versiones actuales del firmware del módulo de bandeja NVMe (NSM) y del firmware de unidades en el sistema antes de sustituir componentes FRU.
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
+
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
+
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* El firmware de la bandeja (NSM) se actualiza automáticamente (no disruptiva) en una nueva NSM que tiene una versión de firmware no actual.
++
+Las comprobaciones de firmware NSM se realizan cada 10 minutos. Una actualización de firmware del NSM puede demorar hasta 30 minutos.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
+
+* Cuando desembale el NSM de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva el NSM con errores.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Desconecte el cableado del NSM que contiene la FRU que desea reemplazar:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación si es una fuente de alimentación de CA, o desenroscando los dos tornillos si es una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento de los puertos NSM.
++
+Anote los puertos NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el NSM, más adelante en este procedimiento.
+
+
+
+. Retire la NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Quite el NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del NSM, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para retirar el NSM del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera de la bandeja. Cuando sientas algo de resistencia, sigue tirando.
+
+** Deslice el NSM hacia fuera del estante y colóquelo en una superficie plana y estable.
++
+Asegúrese de apoyar la parte inferior del NSM a medida que lo desliza fuera de la bandeja.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas en posición vertical (junto a las pestañas) para alejarlas.
+
+|===
+. Quite el módulo I/O fallido del NSM:
++
+image::../media/drw_t_io_module_replace_ieops-1980.svg[Sustituya el módulo de E/S.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Gire el tornillo de apriete manual del módulo de E/S hacia la izquierda para aflojarlo.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Extraiga el módulo de E/S del NSM utilizando la pestaña de etiqueta de puerto de la izquierda y el tornillo de mariposa.
+
+|===
+. Instale el módulo de E/S de repuesto en la ranura de destino:
++
+.. Alinee el módulo de E/S con los bordes de la ranura.
+.. Empuje suavemente el módulo de E/S completamente en la ranura, asegurándose de que el módulo se asienta correctamente en el conector.
++
+Puede utilizar la lengüeta de la izquierda y el tornillo de mariposa para insertar el módulo de E/S.
+
+.. Gire el tornillo de mariposa hacia la derecha para apretarlo.
+
+
+. Inserte el NSM en la bandeja:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Sustituya la NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si ha girado las asas NSM en posición vertical (junto a las pestañas) para alejarlas mientras ha reparado el NSM, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Alinee la parte posterior del NSM con la abertura de la bandeja y, a continuación, empuje suavemente el NSM con las asas hasta que quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas.
+
+|===
+. Vuelva a conectar la NSM.
++
+.. Vuelva a conectar el cableado de almacenamiento a los mismos dos puertos NSM.
++
+Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y, a continuación, asegure el cable de alimentación con el retenedor del cable de alimentación si se trata de una fuente de alimentación de CA, o apriete los dos tornillos si es una fuente de alimentación de CC y, a continuación, desenchufe el cable de alimentación de la fuente de alimentación.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
++
+Además, se iluminan los LED LNK (verde) del puerto NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+
+
+
+. Compruebe que los LED de atención (ámbar) del NSM que contienen el módulo de E/S fallido y el panel de visualización del operador de la bandeja ya no están encendidos
++
+Los LED de atención de NSM se apagan después de que se reinicia NSM y ya no detectan un problema del módulo de I/O. Esto puede tardar entre tres y cinco minutos.
+
+. Compruebe que el NSM se ha cableado correctamente ejecutando Active IQ Config Advisor.
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"^]
+
+

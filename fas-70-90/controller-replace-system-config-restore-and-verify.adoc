@@ -48,7 +48,6 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 ** `non-ha` (no compatible)
 
 
-. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
 . Confirme que el ajuste ha cambiado: `ha-config show`
 
 
