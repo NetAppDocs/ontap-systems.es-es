@@ -49,8 +49,6 @@ NOTE: Se le pedirá dos veces la contraseña.
 . En el menú de inicio, introduzca la opción `1` para el arranque normal.
 . Pulse <enter> cuando aparezca _Waiting for giveback_.
 . Mueva el cable de la consola al nodo asociado e inicie sesión como `admin`.
-. Asegúrese de que los volcados de memoria en el nodo reparado se guardan en modo avanzado» `set -privilege advanced` y luego `run local partner savecore`.
-. Volver a la palanca de administración `set privilege admin`: .
 . Devolver solo los agregados de CFO (el agregado raíz): `storage failover giveback -fromnode local -only-cfo-aggregates true`
 +
 ** Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].

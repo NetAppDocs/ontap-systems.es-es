@@ -147,72 +147,6 @@ image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualizaci
 Puerto/enlace NVMe: Atención
 
 |===
---
-.NSM100B módulos
---
-image::../media/drw_ns224_nsmb_leds_ieops-2004.svg[NS224 NSM100B LED de módulo]
-
-[cols="1,1,2,4"]
-|===
-| Llame | Icono DE LED | Color | Descripción 
-
-
- a| 
-image:../media/icon_round_1.png["Número de llamada 1"]
- a| 
-LNK
- a| 
-Verde
- a| 
-Puerto/enlace NVMe: Estado
-
-
-
- a| 
-image:../media/icon_round_2.png["Número de llamada 2"]
- a| 
-image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
- a| 
-Ámbar
- a| 
-Puerto/enlace NVMe: Atención
-
-
-
- a| 
-image:../media/icon_round_3.png["Número de llamada 3"]
- a| 
-image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
- a| 
-Ámbar
- a| 
-Módulo de I/O: Estado
-
-
-
- a| 
-image:../media/icon_round_4.png["Número de llamada 4"]
- a| 
-image::../media/drw_sas3_location_icon.svg[LED de ubicación del panel de visualización del operador]
- a| 
-Azul
- a| 
-NSM: Ubicación
-
-
-
- a| 
-image:../media/icon_round_5.png["Número de llamada 5"]
- a| 
-image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
- a| 
-Ámbar
- a| 
-NSM: Atención
-
-|===
---
-====
 [cols="2,1,1,1"]
 |===
 | Estado | Atención NSM (ámbar) | Puerto LNK (verde) | Atención del puerto (ámbar) 
@@ -294,6 +228,180 @@ Cualquier estado
 Cualquier estado
 
 |===
+--
+.NSM100B módulos
+--
+image::../media/drw_ns224_nsmb_leds_ieops-2004.svg[NS224 NSM100B LED de módulo]
+
+[cols="1,1,2,4"]
+|===
+| Llame | Icono DE LED | Color | Descripción 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+LNK
+ a| 
+Verde
+ a| 
+Puerto/enlace NVMe: Estado
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+Puerto/enlace NVMe: Atención
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+Módulo de I/O: Atención
+
+
+
+ a| 
+image:../media/icon_round_4.png["Número de llamada 4"]
+ a| 
+image::../media/drw_sas3_location_icon.svg[LED de ubicación del panel de visualización del operador]
+ a| 
+Azul
+ a| 
+NSM: Ubicación
+
+
+
+ a| 
+image:../media/icon_round_5.png["Número de llamada 5"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+NSM: Atención
+
+|===
+[cols="2,1,1,1,1"]
+|===
+| Estado | Atención NSM (ámbar) | Puerto LNK (verde) | Atención del puerto (ámbar) | Atención del módulo de E/S. 
+
+
+ a| 
+NSM normal
+ a| 
+Apagado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+ a| 
+Apagado
+
+
+
+ a| 
+Fallo de NSM
+ a| 
+Encendido
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Error de NSM VPD
+ a| 
+Encendido
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+No hay conexión de puerto de host
+ a| 
+Cualquier estado
+ a| 
+Apagado
+ a| 
+Apagado
+ a| 
+Apagado
+
+
+
+ a| 
+Enlace de conexión del puerto de host activo
+ a| 
+Cualquier estado
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Conexión del puerto de host con el fallo
+ a| 
+Encendido
+ a| 
+Encendido/apagado si todos los carriles tienen fallos
+ a| 
+Encendido
+ a| 
+Apagado
+
+
+
+ a| 
+Arranque del BIOS desde la imagen del BIOS después del encendido
+ a| 
+Parpadeo
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Falta el módulo de E/S.
+ a| 
+Encendido
+ a| 
+N.A.
+ a| 
+N.A.
+ a| 
+Encendido
+
+|===
+--
+====
 
 
 == Indicadores LED del sistema de alimentación
