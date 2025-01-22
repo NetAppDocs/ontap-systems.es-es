@@ -20,7 +20,7 @@ Después de instalar el hardware de rack para el sistema de almacenamiento de AF
 Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.
 
 .Acerca de esta tarea
-* Un ID de bandeja externa válido es de 01 a 99.
+* Un ID de bandeja válido es de 01 a 99.
 +
 Si tiene bandejas internas (almacenamiento), que se integran en las controladoras, se les asigna un ID de bandeja fijo de 00.
 
@@ -71,10 +71,6 @@ Botón de ID de bandeja
 . Cambie la primera cantidad de ID de bandeja:
 +
 .. Inserte el extremo enderezado de un clip de papel o un bolígrafo con punta estrecha en el orificio pequeño para presionar el botón de identificación de la bandeja.
-+
-
-NOTE: En las bandejas de la serie DS, se puede acceder al botón de ID de bandeja directamente en la parte inferior de la oreja de la bandeja.
-
 .. Mantenga presionado el botón de ID de la bandeja hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
 +
 Este número puede tardar hasta 15 segundos en parpadear. De este modo se activa el modo de programación del identificador de bandeja.
@@ -101,7 +97,7 @@ Este número puede tardar hasta tres segundos en parpadear.
 +
 El primer número de la pantalla digital deja de parpadear.
 
-.. Pulse y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9, o bien de 1 a 9 si el sistema tiene almacenamiento integrado.
+.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
 +
 El segundo número continúa parpadeando.
 
@@ -131,35 +127,35 @@ Una fuente de alimentación se enciende en cuanto el cable de alimentación est�
 
 == Paso 2: Encienda los controladores
 
-Después de encender las bandejas de almacenamiento y asignarles ID únicos, encienda la alimentación de las controladoras de almacenamiento.
+Después de encender las bandejas y asignarles ID únicos, encienda las controladoras de almacenamiento.
 
 .Pasos
-. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando se encienden las controladoras.
+. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando las controladoras estén encendidas.
 +
 .. Configure el puerto de consola serie del portátil a 115.200 baudios con N-8-1.
 +
 
 NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sobre cómo configurar el puerto de la consola de serie.
 
-.. Conecte el cable de consola al portátil y conecte el puerto de consola serie de la controladora mediante el cable de consola que se incluía con el sistema de almacenamiento.
+.. Mediante el cable de consola proporcionado con el sistema de almacenamiento, conecte un extremo del cable de la consola a su portátil y el otro extremo al puerto de la consola serie de la controladora A.
 .. Conecte el portátil al interruptor de la subred de administración.
 +
 image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Conexiones de la consola]
 
-.. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
 
 
+. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 +
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de conexión de alimentación genérica]
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Sistema de almacenamiento A1K y diagrama de conexión de alimentación de A70 o A90]
 
 +
-** El sistema de almacenamiento comienza a arrancar. El arranque inicial puede tardar hasta ocho minutos.
+** El sistema comienza a iniciarse. El arranque inicial puede tardar hasta ocho minutos.
 ** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
 ** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
 
 
-. Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación.
+. Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación. :a1k-a70-90!:
 
 
 .El futuro

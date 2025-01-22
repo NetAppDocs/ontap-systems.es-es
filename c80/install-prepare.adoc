@@ -21,14 +21,13 @@ Para instalar el sistema de almacenamiento, asegúrese de que el sitio y el gabi
 
 .Pasos
 . Utilice https://hwu.netapp.com["Hardware Universe de NetApp"^] esta herramienta para confirmar que su centro cumple los requisitos ambientales y eléctricos de su sistema de almacenamiento.
-. Asegúrese de que dispone de espacio de rack adecuado:
+. Asegúrese de que tiene suficiente espacio en armario o rack para el sistema de almacenamiento, las bandejas y los switches:
 +
-** 4U en una configuración de alta disponibilidad para el sistema de almacenamiento
+** 4U en una configuración de alta disponibilidad
 ** 2U por cada bandeja de almacenamiento NS224
 
 
-+
-*NOTA:* Vea link:https://hwu.netapp.com["Hardware Universe de NetApp"^]los requisitos de espacio de rack para otros estantes de almacenamiento compatibles.
+
 
 . Instale los switches de red necesarios.
 +
@@ -68,14 +67,14 @@ Asegúrese de que todo lo que hay en las cajas coincide con la lista de la hoja 
 ** Dispositivo de gestión de cables
 ** Sistema de almacenamiento
 ** Kits de rieles con instrucciones (opcional)
-** Bandeja de almacenamiento
+** Bandeja de almacenamiento (si pidió almacenamiento adicional)
 
  a| 
 ** Cables Ethernet de gestión (cables RJ-45)
 ** Cables de red
 ** Cables de alimentación
 ** Cables de almacenamiento (si ha pedido almacenamiento adicional)
-** Cable de puerto serie USB-C.
+** Cable de consola serie USB-C.
 
 |  
 |===
@@ -85,15 +84,19 @@ Asegúrese de que todo lo que hay en las cajas coincide con la lista de la hoja 
 
 == Paso 3: Registre el sistema de almacenamiento
 
-Una vez que se asegura de que su sitio cumple los requisitos de las especificaciones del sistema de almacenamiento y comprueba que posee todas las piezas solicitadas, debe registrar su sistema.
+Una vez que se asegura de que su sitio cumple los requisitos de las especificaciones del sistema de almacenamiento y comprueba que posee todas las piezas solicitadas, debe registrar su sistema de almacenamiento.
 
 .Pasos
-. Busque el número de serie del sistema de almacenamiento.
+. Busque los números de serie del sistema (SSN) de cada controladora que se está instalando. Puede encontrar los números de serie en las siguientes ubicaciones:
+. Puede encontrar los números de serie en las siguientes ubicaciones:
 +
-Puede encontrar el número en la hoja de embalaje, en el correo electrónico de confirmación o en el módulo de gestión del sistema del controlador después de desempaquetarlo.
+** En la hoja de embalaje
+** En su correo electrónico de confirmación
+** En el módulo de gestión del sistema de cada controladora
+
 
 +
-image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema]
+image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema donde se muestra la ubicación del número]
 
 . Vaya a la http://mysupport.netapp.com/["Sitio de soporte de NetApp"^].
 . Determine si necesita registrar el sistema de almacenamiento:
@@ -108,7 +111,7 @@ Cliente existente de NetApp
  a| 
 .. Inicie sesión con su nombre de usuario y contraseña.
 .. Selecciona *Sistemas* > *Mis sistemas*.
-.. Confirme que el nuevo número de serie aparece en la lista.
+.. Confirme que aparecen los nuevos números de serie.
 .. De lo contrario, siga las instrucciones para nuevos clientes de NetApp.
 
 
@@ -119,7 +122,7 @@ Nuevo cliente de NetApp
  a| 
 .. Haga clic en *Registrar ahora* y cree una cuenta.
 .. Selecciona *Sistemas* > *Registrar sistemas*.
-.. Introduzca el número de serie del sistema de almacenamiento y los detalles solicitados.
+.. Introduzca los números de serie del sistema de almacenamiento y los detalles solicitados.
 
 
 Una vez aprobado el registro, puede descargar el software necesario. El proceso de aprobación puede llevar hasta 24 horas.
