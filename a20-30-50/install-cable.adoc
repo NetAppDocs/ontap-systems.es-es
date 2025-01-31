@@ -1,7 +1,7 @@
 ---
 permalink: a20-30-50/install-cable.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, prepare installation 
+keywords: aff a20, aff a30, aff a50, cabling, cluster cabling, host network cabling, management network cabling, shelf cabling 
 summary: Los puertos de red de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster y de alta disponibilidad se cablean en ambas controladoras. Los módulos del controlador están conectados al almacenamiento externo, si se solicita. 
 ---
 = Conecte los cables del hardware: AFF A20, AFF A30 y AFF A50
@@ -38,11 +38,11 @@ Conecte los cables de las controladoras al clúster de ONTAP. Este procedimiento
 ====
 .Cableado de clúster sin switches
 --
+Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
+
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
-
 .Pasos
 . Conectar las conexiones de interconexión de clúster/alta disponibilidad:
 +
@@ -127,11 +127,10 @@ image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[diagrama 
 
 =====
 --
-====
-[role="tabbed-block"]
-====
 .Cableado de clúster conmutado
 --
+Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
+
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
 [%collapsible]
 =====
