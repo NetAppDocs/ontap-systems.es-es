@@ -32,14 +32,12 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Dirección de la len
 
 == Paso 1: Conecte los cables de las conexiones del clúster/alta disponibilidad
 
-Conecte los cables de las controladoras al clúster de ONTAP. Este procedimiento varía según el modelo del sistema de almacenamiento y la configuración del módulo de I/O.
+Conecte los cables de las controladoras para crear las conexiones del clúster ONTAP.
 
 [role="tabbed-block"]
 ====
 .Cableado de clúster sin switches
 --
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
-
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
 [%collapsible]
 =====
@@ -73,8 +71,6 @@ image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg
 .AFF A30 o AFF A50 con un módulo de I/O de 40/100 GbE de 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
-
 .Pasos
 . Conectar las conexiones de interconexión de clúster/alta disponibilidad:
 +
@@ -101,8 +97,6 @@ image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg
 .AFF A20 con un módulo I/O de 10/25 GbE con 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
-
 .Pasos
 . Conectar las conexiones de interconexión de clúster/alta disponibilidad:
 +
@@ -129,13 +123,9 @@ image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[diagrama 
 --
 .Cableado de clúster conmutado
 --
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
-
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras a los switches de red de clúster para crear las conexiones del clúster ONTAP.
-
 .Pasos
 . Conectar las conexiones de interconexión de clúster/alta disponibilidad:
 +
@@ -168,8 +158,6 @@ image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[d
 .AFF A30 o AFF A50 con un módulo de I/O de 40/100 GbE de 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras a los switches de red de clúster para crear las conexiones del clúster ONTAP.
-
 .Pasos
 . Conecte los cables de las controladoras a los switches de red de clúster:
 +
@@ -198,8 +186,6 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[C
 .AFF A20 con un módulo I/O de 10/25 GbE con 2 puertos
 [%collapsible]
 =====
-Conecte los cables de las controladoras a los switches de red de clúster para crear las conexiones del clúster ONTAP.
-
 . Conecte los cables de las controladoras a los switches de red de clúster:
 +
 
@@ -230,23 +216,17 @@ image:../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg["a20 diagram
 
 == Paso 2: Conecte los cables de las conexiones de red host
 
-Conecte los cables de las controladoras a la red host.
+Conecte las controladoras a la red host Ethernet o FC.
 
-Este procedimiento varía según el modelo del sistema de almacenamiento y la configuración del módulo de I/O.
-
+[role="tabbed-block"]
+====
+.Cableado del host Ethernet
+--
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
 [%collapsible]
-====
+=====
 .Pasos
-. Cablee las conexiones de red del host.
-+
-Los siguientes subpasos son ejemplos de cableado de red host opcional. Si es necesario, link:https://hwu.netapp.com["Hardware Universe de NetApp"^]consulte para conocer la configuración específica del sistema de almacenamiento.
-
-+
-.. Opcional: Conecte las controladoras a los switches de red host.
-+
-En cada controladora, conecte los puertos E2B y e4b a los switches de red host Ethernet.
-
+. En cada controladora, conecte los puertos E2B y e4b a los switches de red host Ethernet.
 +
 
 NOTE: Los puertos en los módulos de I/O de la ranura 2 y 4 son de 40/100 GbE (la conectividad de host es de 40/100 GbE).
@@ -260,37 +240,14 @@ image::../media/oie_cable_sfp_gbe_copper.png[Cable de 40/100 GB]
 +
 image::../media/drw_isi_a30-50_host_2p_40-100gbe_2card_cabling_ieops-2014.svg[Cable a switches de red host ethernet 40/100GbE]
 
-.. Opcional: Conecte las controladoras a los switches de red del host FC.
-+
-En cada controladora, conecte los puertos 1a, 1b, 1c y 1d a los switches de red host FC.
-
-+
-*64 Gb/s cables FC*
-
-+
-image:../media/oie_cable_sfp_gbe_copper.png["Cable fc de 64 GB, ancho = 100px cm"]
-
-+
-image::../media/drw_isi_a30-50_4p_64gb_fc_2card_cabling_ieops-2023.svg[Cable de A30 o A50 a 64GB switches de red host fc que utilizan dos módulos iO]
 
 
-
-
-
-====
-.AFF A30 o AFF A50 con un módulo de I/O de 10/25 GbE de 2 puertos
+=====
+.AFF A20, A30 o AFF A50 con un módulo I/O de 10/25 GbE de 4 puertos
 [%collapsible]
-====
+=====
 .Pasos
-. Cablee las conexiones de red del host.
-+
-Los siguientes subpasos son ejemplos de cableado de red host opcional. Si es necesario, link:https://hwu.netapp.com["Hardware Universe de NetApp"^]consulte para conocer la configuración específica del sistema de almacenamiento.
-
-+
-.. Opcional: Conecte las controladoras a los switches de red host.
-+
-En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
-
+. En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
 +
 * Cables de 10/25 GbE*
 
@@ -300,10 +257,17 @@ image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE, width=10
 +
 image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Cable a switches de red host ethernet 40/100GbE]
 
-.. Opcional: Conecte las controladoras a los switches de red del host FC.
-+
-En cada controladora, conecte los puertos 1a, 1b, 1c y 1d a los switches de red host FC.
 
+
+=====
+--
+.Cableado del host FC
+--
+.AFF A20, A30 o AFF A50 con un módulo de I/O FC de 64 Gb/s de 4 puertos
+[%collapsible]
+=====
+.Pasos
+. En cada controladora, conecte los puertos 1a, 1b, 1c y 1d a los switches de red host FC.
 +
 *64 Gb/s cables FC*
 
@@ -315,48 +279,8 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cable a s
 
 
 
-
-
-====
-.AFF A20 con un módulo de 2 puertos de 10/25 GbE
-[%collapsible]
-====
-.Pasos
-. Cablee las conexiones de red del host.
-+
-Los siguientes subpasos son ejemplos de cableado de red host opcional. Si es necesario, link:https://hwu.netapp.com["Hardware Universe de NetApp"^]consulte para conocer la configuración específica del sistema de almacenamiento.
-
-+
-.. Opcional: Conecte los cables de las controladoras a los switches de red host.
-+
-En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
-
-+
-* Cables de 10/25 GbE*
-
-+
-image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE, width=100pxx"]
-
-+
-image::../media/drw_isi_a20_host_4p_25gbe_cabling_ieops-2017.svg[Cable de A20 a switches de red host ethernet 40/100GbE]
-
-.. Opcional: Conecte las controladoras a los switches de red del host FC.
-+
-En cada controladora, conecte los puertos 1a, 1b, 1c y 1d a los switches de red host FC.
-
-+
-*64 Gb/s cables FC*
-
-+
-image:../media/oie_cable_sfp_gbe_copper.png["Cable fc de 64 GB, ancho = 100pxx cm"]
-
-+
-image::../media/drw_isi_a20_4p_64gb_fc_cabling_ieops-2016.svg[Cable A20 a 64GB conmutadores de red host fc]
-
-
-
-
-
+=====
+--
 ====
 
 
