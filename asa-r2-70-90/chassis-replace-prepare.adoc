@@ -1,0 +1,65 @@
+---
+permalink: asa-r2-70-90/chassis-replace-prepare.html 
+sidebar: sidebar 
+keywords: asa r2 a70, asa r2 a90, prepare to replace the chassis 
+summary: Se sustituye un chasis deficiente por el nuevo chasis del mismo modelo que el chasis dañado. 
+---
+= Prepárese para reemplazar el chasis: ASA A70 y ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepárese para sustituir el chasis deteriorado por el nuevo chasis del mismo modelo que el chasis deteriorado.
+
+
+
+== Paso 1: Localice y supervise su sistema
+
+Debe abrir una sesión de consola y guardar los registros de sesiones para futuras referencias, así como encender el LED de ubicación del sistema para encontrar el chasis dañado.
+
+. Conéctese al puerto de la consola de serie para la interfaz con el sistema y supervisarlo.
+. Busque y encienda el LED de ubicación de la controladora:
++
+.. Utilice `system controller location-led show` el comando para mostrar el estado actual del LED de ubicación.
+.. Cambie el estado del LED de ubicación a ON:
++
+`system controller location-led modify -node _node1_ -state on`.
+
++
+El LED de ubicación permanece encendido durante 30 minutos.
+
+
+
+
+
+
+
+== Paso 2: Verifique los componentes de reemplazo
+
+Debe verificar que ha recibido los componentes necesarios, quitarlos del empaque y guardar el empaque.
+
+. Antes de abrir el embalaje, debe mirar la etiqueta del embalaje y verificar:
++
+** Número de pieza del componente.
+** Descripción de la pieza.
+** Cantidad en la caja.
+
+
+. Quite el contenido del paquete y utilice el paquete para devolver el componente con errores a NetApp.
+
+
+
+
+== Paso 3: Etiquete los cables y los módulos del controlador y conéctelos a tierra
+
+Debe etiquetar los cables y las controladoras antes de quitarlos de los módulos de la controladora o el chasis.
+
+. Etiquete todos los cables asociados con el sistema de almacenamiento. Esto facilita el recableado más adelante en este procedimiento.
+. Etiquete los módulos del controlador.
+. Si aún no está correctamente conectado a tierra, asígnese a tierra.
+
+
+.El futuro
+Después de haber preparado para reemplazar su hardware de chasis ASA A70 o ASA A90, debe hacerlolink:chassis-replace-shutdown.html["apague las controladoras"].

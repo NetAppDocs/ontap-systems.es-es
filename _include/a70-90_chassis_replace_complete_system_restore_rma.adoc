@@ -1,38 +1,39 @@
-= Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+= Paso 1: Arranque las controladoras y devuelva las controladoras
 :allow-uri-read: 
 
 
-Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
 
 
+== Paso 1: Arranque las controladoras y devuelva las controladoras
 
-== Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
+Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
 
-Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
-
-. En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
+. Compruebe la salida de la consola:
 +
-El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+.. Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinicie la controladora con `boot_ontap` el comando.
+.. Si la consola aparece `waiting for giveback` después del reinicio, inicie sesión en la controladora asociada y compruebe que la controladora reemplazada esté lista para el retorno con `storage failover show` el comando.
 
-. Si el estado del sistema mostrado para el chasis no coincide con la configuración del sistema:
+
+. Realice la devolución del control:
 +
-.. Establezca el estado de alta disponibilidad para el chasis: `ha-config modify chassis _HA-state_`
-+
-El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
-
-+
-*** `ha`
-*** `mcc` (No compatible con ASA)
-
-
-.. Confirme que el ajuste ha cambiado: `ha-config show`
-
-
-. Si aún no lo ha hecho, puede volver a obtener el resto de su sistema.
+.. Conecte el cable de la consola al controlador asociado.
+.. Devuelva la controladora con `storage failover giveback -fromnode local` el comando.
 
 
 
 
-== Paso 2: Devuelve la parte fallida a NetApp
+
+
+== Paso 2: Verifique el estado del sistema de almacenamiento
+
+Después de que la controladora haya devuelto el almacenamiento, debe comprobar el estado general con https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
+
+. Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
+. Corrija los problemas que encuentre.
+
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -14,17 +14,12 @@ summary: Para sustituir el chasis, debe apagar las controladoras.
 
 == Opción 1: Mayoría de las configuraciones
 
-Apague las controladoras para poder realizar el mantenimiento del chasis.
-
-Este procedimiento es para sistemas con configuraciones de dos nodos. Si tiene un sistema con más de dos nodos, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_perform_a_graceful_shutdown_and_power_up_of_one_HA_pair_in_a_4__node_cluster["Cómo realizar un apagado y encendido con gracia de una pareja de alta disponibilidad en un clúster de cuatro nodos"^].
+Este procedimiento es para sistemas con configuraciones de dos nodos. Para obtener más información sobre el cierre correcto al realizar el mantenimiento de un cluster, consulte https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Apagar y encender sin problemas la Guía de resolución del sistema de almacenamiento: Base de conocimientos de NetApp"].
 
 .Antes de empezar
-* Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.
-* Suspender trabajos de backup externo.
 * Asegúrese de que dispone de los permisos y credenciales necesarios:
 +
 ** Credenciales de administrador local para ONTAP.
-** Clave de acceso para todo el clúster de gestión de claves incorporada de NetApp (OKM) si usa cifrado de almacenamiento o NVE/NAE.
 ** Accesibilidad de BMC para cada controladora.
 
 
@@ -40,22 +35,23 @@ Este procedimiento es para sistemas con configuraciones de dos nodos. Si tiene u
 
 .Pasos
 . Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.
-. Desactive AutoSupport e indique cuánto tiempo espera que el sistema esté fuera de línea:
+. Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.
+. Suspender trabajos de backup externo.
+. Si AutoSupport está habilitado, suprima la creación de casos e indique cuánto tiempo espera que el sistema esté sin conexión:
 +
-`system node autosupport invoke -node * -type all -message "MAINT=8h Power Maintenance"`
+`system node autosupport invoke -node * -type all -message "MAINT=2h Replace chassis"`
 
-. Identifique la dirección del SP/BMC de todos los nodos:
+. Identifique la dirección SP/BMC de todos los nodos del clúster:
 +
 `system service-processor show -node * -fields address`
 
-. Salga del shell de cluster: `exit`
-. Inicie sesión en SP/BMC sobre SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior.
+. Salga del shell de cluster:
++
+`exit`
+
+. Inicie sesión en SP/BMC over SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior para supervisar el progreso.
 +
 Si está utilizando una consola/portátil, inicie sesión en la controladora con las mismas credenciales de administrador del clúster.
-
-+
-
-NOTE: Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar el progreso.
 
 . Detenga los dos nodos ubicados en el chasis dañado:
 +
@@ -65,8 +61,10 @@ NOTE: Abra una sesión SSH en cada conexión SP/BMC de modo que pueda supervisar
 
 NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: `system node halt -node <node1>,<node2>  -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true -ignore-strict-sync-warnings true`
 
-. Introduzca *y* para cada controlador en el clúster cuando lo vea `_Warning: Are you sure you want to halt node "cluster <node-name> number"?
-{y|n}:_`
+. Ingrese *y* para cada controlador en el clúster cuando vea:
++
+`Warning: Are you sure you want to halt node _<node_name>_? {y|n}:`
+
 . Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.
 
 

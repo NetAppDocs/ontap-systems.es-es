@@ -14,41 +14,38 @@ summary: Los puertos de red de gestión de las controladoras están conectados a
 Después de instalar el hardware de rack para el sistema de almacenamiento FAS70 o FAS90, instale los cables de red para las controladoras y conecte los cables entre las controladoras y las bandejas de almacenamiento.
 
 .Antes de empezar
-Compruebe que la flecha de la ilustración en los diagramas de cableado tiene la orientación correcta de la lengüeta de extracción del conector de cable.
+Póngase en contacto con el administrador de red para obtener información sobre cómo conectar el sistema de almacenamiento a los switches.
 
-image::../media/drw_cable_pull_tab_direction_ieops-1699.svg[Ejemplo de orientación de pestaña de cable]
+.Acerca de esta tarea
+* Estos procedimientos muestran configuraciones comunes. El cableado específico depende de los componentes solicitados del sistema de almacenamiento. Para obtener información completa sobre la configuración y la prioridad de las ranuras, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
+* Los gráficos de cableado tienen iconos de flecha que muestran la orientación correcta (hacia arriba o hacia abajo) de la lengüeta extraíble del conector de cable al insertar un conector en un puerto.
++
+Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, vuelva a convertirlo y vuelva a intentarlo.
 
-* Al insertar el conector, debe sentir que encaja en su sitio; si no siente que hace clic, quítelo, gire el cabezal del cable y vuelva a intentarlo.
-* Si se conecta a un óptico a un switch, inserte el SFP en el puerto del controlador antes de cablear al puerto.
++
+image::../media/drw_cable_pull_tab_direction_ieops-1699.svg[Ejemplo de orientación de la pestaña de extracción de cable]
+
+* Si el cableado va a un conmutador óptico, inserte el transceptor óptico en el puerto del controlador antes de realizar el cableado en el puerto del switch.
 
 
 
 
 == Paso 1: Conecte las controladoras de almacenamiento a la red
 
-Conecte las controladoras de almacenamiento a la red host.
+Conecte los cables de las controladoras al clúster de ONTAP. Este procedimiento varía según el modelo del sistema de almacenamiento y la configuración del módulo de I/O.
 
-.Antes de empezar
-Póngase en contacto con el administrador de red para obtener información sobre cómo conectar el sistema de almacenamiento a los switches.
-
-.Acerca de esta tarea
-Estos procedimientos muestran configuraciones comunes. Tenga en cuenta que el cableado específico depende de los componentes solicitados para su sistema de almacenamiento. Para obtener información completa sobre la configuración y la prioridad de las ranuras, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
-
-[role="tabbed-block"]
-====
-.Opción 1: Conecte las controladoras a un clúster ONTAP sin switches
---
-Conecte las controladoras de almacenamiento entre sí para crear las conexiones del clúster de ONTAP y luego conecte los puertos Ethernet de cada controladora a la red de host.
-
-.Pasos
-. Use el cable de interconexión de clúster/alta disponibilidad para conectar los puertos e1a a e1a y los puertos e7a a e7a.
-+
 
 NOTE: El tráfico de interconexión de clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos.
 
-+
-.. Conecte el puerto e1a de la Controladora A al puerto e1a de la Controladora B.
-.. Conecte el puerto e7a de la Controladora A al puerto e7a de la Controladora B.
+[role="tabbed-block"]
+====
+.Cableado de clúster sin switches
+--
+Use el cable de interconexión de clúster/alta disponibilidad para conectar los puertos e1a a e1a y los puertos e7a a e7a.
+
+.Pasos
+. Conecte el puerto e1a de la Controladora A al puerto e1a de la Controladora B.
+. Conecte el puerto e7a de la Controladora A al puerto e7a de la Controladora B.
 +
 * Cables de interconexión Cluster/HA*
 
@@ -60,66 +57,14 @@ image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Diagrama de cableado
 
 
 
-. Conecte los puertos del módulo Ethernet a la red host.
-+
-A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
-
-+
-.. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
-+
-
-NOTE: Para obtener el rendimiento máximo del sistema para el tráfico de alta disponibilidad y clúster, no utilice los puertos e1b y e7b para las conexiones de red de host. Utilice una tarjeta de host independiente para maximizar el rendimiento.
-
-+
-*Cable de 100 GbE*
-
-+
-image::../media/oie_cable_sfp_gbe_copper.png[100GB Cable Ethernet]
-
-+
-image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Cable a red Ethernet 100GB]
-
-.. Conecte los switches de red host de 10/25 GbE.
-+
-*Host de 10/25 GbE*
-
-+
-image::../media/oie_cable_sfp_gbe_copper.png[Cable Ethernet 10/25GB]
-
-+
-image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Cable a red Ethernet 10/25GB]
-
-
-
-. Use los cables 1000BASE-T RJ-45 para conectar los puertos de gestión de controladoras (llave) a los switches de red de gestión.
-+
-image::../media/oie_cable_rj45.png[Cables RJ-45]
-
-+
-* 1000BASE-T CABLES RJ-45*
-
-+
-image::../media/drw_a1k_management_connection_ieops-1651.svg[Conéctese a su red de gestión]
-
-
-
-
-IMPORTANT: No enchufe los cables de alimentación todavía.
-
 --
-.Opción 2: Conecte las controladoras a un clúster de ONTAP con switches
+.Cableado de clúster conmutado
 --
-Conecte las controladoras de almacenamiento a los switches de red de clúster para crear las conexiones del clúster de ONTAP y luego conecte los puertos Ethernet de cada controladora a la red host.
+Use el cable de 100 GbE para conectar los puertos e1a a e1a y los puertos e7a a e7a.
 
 .Pasos
-. Realice las siguientes conexiones de cableado:
-+
-
-NOTE: El tráfico de interconexión de clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos.
-
-+
-.. Conecte el puerto e1a de la Controladora A y el puerto e1a de la Controladora B al switch de red de clúster A.
-.. Conecte el puerto e7a de la Controladora A y el puerto e7a de la Controladora B al switch de red de clúster B.
+. Conecte el puerto e1a de la Controladora A y el puerto e1a de la Controladora B al switch de red de clúster A.
+. Conecte el puerto e7a de la Controladora A y el puerto e7a de la Controladora B al switch de red de clúster B.
 +
 *Cable de 100 GbE*
 
@@ -131,12 +76,18 @@ image::../media/drw_a1k_switched_cluster_cabling_ieops-1652.svg[Cablear las cone
 
 
 
-. Conecte los puertos del módulo Ethernet a la red host.
-+
+--
+====
+
+
+== Paso 2: Conecte los cables de las conexiones de red host
+
+Conecte los puertos del módulo Ethernet a la red host.
+
 A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
 
-+
-.. Conecte los puertos e9a y e9b al switch de red de datos Ethernet como se muestra.
+.Pasos
+. Conecte los puertos e9a y e9b al switch de red de datos Ethernet.
 +
 
 NOTE: Para obtener el rendimiento máximo del sistema para el tráfico de alta disponibilidad y clúster, no utilice los puertos e1b y e7b para las conexiones de red de host. Utilice una tarjeta de host independiente para maximizar el rendimiento.
@@ -150,7 +101,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[100GB Cable Ethernet]
 +
 image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Cable a red Ethernet 100GB]
 
-.. Conecte los switches de red host de 10/25 GbE.
+. Conecte los switches de red host de 10/25 GbE.
 +
 *4 puertos, 10/25 GbE Host*
 
@@ -162,36 +113,34 @@ image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Cable a red Ethernet 10/
 
 
 
-. Conecte los puertos de gestión de controladoras (llave inglesa) a los switches de red de gestión mediante cables 1000BASE-T RJ-45.
-+
+
+
+== Paso 3: Conecte los cables de las conexiones de red de gestión
+
+Utilice los cables 1000BASE-T RJ-45 para conectar los puertos de gestión (llave) de cada controladora a los switches de red de gestión.
+
 image::../media/oie_cable_rj45.png[Cables RJ-45]
 
-+
 * 1000BASE-T CABLES RJ-45*
 
-+
 image::../media/drw_a1k_management_connection_ieops-1651.svg[Conéctese a su red de gestión]
-
-
 
 
 IMPORTANT: No enchufe los cables de alimentación todavía.
 
---
-====
 
 
-== Paso 2: Conecte los controladores a las bandejas
+== Paso 4: Conecte los cables de las conexiones de la bandeja
 
-Conecte los cables de las controladoras a la bandeja o las bandejas.
+Los siguientes procedimientos de cableado muestran cómo conectar las controladoras a una bandeja de almacenamiento. Elija una de las siguientes opciones de cableado que coincidan con su configuración.
 
-Estos procedimientos muestran cómo conectar los cables de las controladoras a una bandeja o dos bandejas NS224, o dos o cuatro bandejas DS460C. Puede conectar directamente hasta cuatro bandejas NS224 a las controladoras.
+Para conocer la cantidad máxima de bandejas compatibles con el sistema de almacenamiento y todas las opciones de cableado, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
 
 [role="tabbed-block"]
 ====
-.Opción 1: Conecte a una bandeja de almacenamiento NS224
+.Opción 1: Una bandeja de almacenamiento NS224
 --
-Conecte mediante cable cada controladora a los módulos NSM de la bandeja NS224. Los gráficos muestran el cableado de cada una de las controladoras: El cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
+Conecte cada controladora a los módulos NSM de la bandeja NS224. El gráfico muestra el cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
 
 *100 GbE QSFP28 cables de cobre*
 
@@ -219,9 +168,9 @@ image:../media/drw_a1k_1shelf_cabling_b_ieops-1704.svg["Conecte el cable de los 
 
 
 --
-.Opción 2: Conéctese a dos bandejas de almacenamiento NS224
+.Opción 2: Dos bandejas de almacenamiento NS224
 --
-Conecte mediante cable cada controladora a los módulos NSM en ambas bandejas NS224. Los gráficos muestran el cableado de cada una de las controladoras: El cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
+Conecte mediante cable cada controladora a los módulos NSM en ambas bandejas NS224. El gráfico muestra el cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
 
 *100 GbE QSFP28 cables de cobre*
 
@@ -253,9 +202,9 @@ image:../media/drw_a1k_2shelf_cabling_b_ieops-1706.svg["Conecte el cable de la c
 
 
 --
-.Opción 3: Conecte los cables a dos bandejas DS460C
+.Opción 3: Dos bandejas DS460C
 --
-Conecte mediante cable cada controladora a los módulos IOM en ambas bandejas DS460C. Los gráficos muestran el cableado de cada una de las controladoras: El cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
+Conecte mediante cable cada controladora a los módulos IOM en ambas bandejas DS460C. El gráfico muestra el cableado de la controladora A en azul y el cableado de la controladora B en amarillo.
 
 * Cable mini-SAS HD*
 
