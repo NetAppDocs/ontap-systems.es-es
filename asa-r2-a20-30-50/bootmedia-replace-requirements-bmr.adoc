@@ -1,0 +1,63 @@
+---
+permalink: asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: aff a20, aff a30, aff a50, replace the boot media 
+summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+---
+= Requisitos: AFF A20, AFF A30 y AFF A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos y consideraciones.
+
+
+
+== Requisitos
+
+* Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
+* El puerto e0S (llave e0M) de la controladora dañada no puede estar defectuoso.
++
+El puerto e0S se utiliza para la recuperación automática del arranque.
+
+* Determine si Onboard Key Manager (OKM) o Eternal Key Manager (EKM) está configurado mediante uno de los siguientes métodos:
++
+** Puede preguntar al administrador del sistema si OKM o EKM están activados.
+** Para comprobar si OKM está activado, puede utilizar el `security key-manager onboard show`.
+** Para comprobar si EKM está activado, puede utilizar el `security key-manager external show`.
+
+
+* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para EKM, necesita copias de los siguientes archivos del nodo asociado:
++
+** archivo /cfcard/kmip/servers.cfg.
+** archivo /cfcard/kmip/certs/client.crt.
+** archivo /cfcard/kmip/certs/client.key.
+** Archivo /cfcard/kmip/certs/ca.pem.
+
+
+
+
+
+
+== Consideraciones
+
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+* Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
++
+Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
+.El futuro
+Después de revisar los requisitos de soporte de arranque, link:bootmedia-shutdown-bmr.html["apague el controlador defectuoso"].

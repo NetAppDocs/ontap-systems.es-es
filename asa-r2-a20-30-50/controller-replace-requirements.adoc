@@ -1,0 +1,48 @@
+---
+permalink: asa-r2-a20-30-50/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: asa a20, asa a30, asa a50, prerequisite, replace the controller module 
+summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+---
+= Requisitos de sustitución de controladoras: ASA A20, ASA A30 y ASA A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe revisar los requisitos y consideraciones del procedimiento de reemplazo de la controladora.
+
+
+
+== Requisitos
+
+* Todas las bandejas deben funcionar correctamente.
+* El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
+* Debe sustituir una controladora por una controladora del mismo tipo de modelo. No se puede actualizar el sistema simplemente reemplazando la controladora.
+* No es posible cambiar ninguna unidad o bandeja como parte de este procedimiento.
+* Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.
++
+La salida de la consola le proporciona un registro del procedimiento que puede utilizar para solucionar los problemas que pueda encontrar durante el proceso de reemplazo.
+
+
+
+
+
+== Consideraciones
+
+* Es importante aplicar los comandos de este procedimiento a la controladora correcta:
++
+** El controlador _drinated_ es el controlador que se va a sustituir.
+** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
++
+Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+

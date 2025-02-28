@@ -2,7 +2,7 @@
 permalink: a70-90/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, pre-shutdown checks for onboard encryption keys 
-summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
+summary: 'Para garantizar la seguridad de los datos en el sistema de almacenamiento AFF A70 y AFF A90, debe comprobar la compatibilidad y el estado de la clave de cifrado. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.' 
 ---
 = Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A70 y AFF A90
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Antes de apagar la controladora con deterioro y comprobar el estado de 
 
 
 [role="lead"]
+Para garantizar la seguridad de los datos en el sistema de almacenamiento AFF A70 y AFF A90, debe comprobar la compatibilidad y el estado de la clave de cifrado. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+
 Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.
 
 
