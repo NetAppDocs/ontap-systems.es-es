@@ -2,7 +2,7 @@
 permalink: a70-90/bootmedia-recovery-image-boot.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, boot the recovery image 
-summary: Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB, restaurar la configuración desde el nodo asociado y verificar las variables de entorno. 
+summary: Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado. 
 ---
 = Inicie la imagen de recuperación - AFF A70 y AFF A90
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, 
 
 
 [role="lead"]
-Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB, restaurar la configuración desde el nodo asociado y verificar las variables de entorno.
+Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado.
 
 Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
 
@@ -67,3 +67,6 @@ Después de que el procedimiento de restauración se haya realizado correctament
 *NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
 
+
+.El futuro
+Después de arrancar la imagen de recuperación, es necesario link:bootmedia-encryption-restore.html["restaure el cifrado en el soporte de arranque"].

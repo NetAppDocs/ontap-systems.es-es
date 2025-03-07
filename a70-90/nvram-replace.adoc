@@ -1,21 +1,24 @@
 ---
 permalink: a70-90/nvram-replace.html 
 sidebar: sidebar 
-keywords: aff a70, aff a90, replace an nvdimm 
-summary: 'El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.' 
+keywords: aff a70, aff a90, replace an nvram 
+summary: Sustituya el NVRAM en su sistema AFF A70 o AFF A90 cuando la memoria no volátil falle o necesite una actualización. 
 ---
-= Reemplace NVRAM - AFF A70 y AFF A90
+= Sustituya el NVRAM - AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con errores, debe quitar el módulo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.
+Sustituya el NVRAM en su sistema AFF A70 o AFF A90 cuando la memoria no volátil falle o necesite una actualización. El proceso de sustitución implica apagar la controladora deteriorada, sustituir el módulo NVRAM o NVRAM DIMM, reasignar los discos y devolver la pieza averiada a NetApp.
 
-Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con https://support.netapp.com["Soporte de NetApp"].
+El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.
 
-Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+.Antes de empezar
+* Asegúrese de tener la pieza de repuesto disponible. Debe sustituir el componente fallido por un componente de sustitución que ha recibido del proveedor.
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
 
 
 
@@ -204,9 +207,9 @@ NOTE: La controladora se reinicia tan pronto como se coloca completamente en el 
 
 
 
-== Paso 3: Sustituya un DIMM de NVRAM
+== Paso 3: Reemplace los DIMM NVRAM
 
-Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
+Para sustituir los módulos DIMM NVRAM en el módulo NVRAM, primero debe extraer el módulo NVRAM y, a continuación, sustituir el módulo DIMM de destino.
 
 . En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
 +

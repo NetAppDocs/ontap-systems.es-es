@@ -2,20 +2,20 @@
 permalink: a70-90/dimm-replace.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, replace a dimm 
-summary: Reemplace un DIMM en su sistema AFF A70 o AFF A90 cuando se detecten demasiados errores corregibles o que no se pueden corregir. Estos problemas, a menudo provocados por un único fallo de DIMM, pueden impedir que el sistema de almacenamiento arranque el ONTAP. 
+summary: Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasiados errores de memoria corregibles o que no se pueden corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora dañada, extraerla, sustituir el DIMM y luego reinstalar la controladora. 
 ---
-= Sustituya un módulo DIMM: AFF A70 y AFF A90
+= Sustituya un DIMM por errores corregibles o que no pueden corregirse: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Reemplace un DIMM en su sistema AFF A70 o AFF A90 cuando se detecten demasiados errores corregibles o que no se pueden corregir. Estos problemas, a menudo provocados por un único fallo de DIMM, pueden impedir que el sistema de almacenamiento arranque el ONTAP.
+Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasiados errores de memoria corregibles o que no se pueden corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora dañada, extraerla, sustituir el DIMM y luego reinstalar la controladora.
 
 .Antes de empezar
-* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
-* Debe sustituir el componente con errores por un componente de FRU de reemplazo que haya recibido de NetApp.
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
+* Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
 
 
 
@@ -208,9 +208,9 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
-== Paso 3: Sustituya un DIMM
+== Paso 3: Reemplace la DIMM
 
-Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
+Para sustituir el DIMM, búsquelos dentro de la controladora y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Abra el conducto de aire del controlador en la parte superior del controlador.

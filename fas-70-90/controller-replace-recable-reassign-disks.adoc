@@ -38,7 +38,10 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 --
 .Cifrado incorporado (OKM)
 --
-. En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
+. Desde el aviso del CARGADOR, introduzca:
++
+`boot_ontap maint`
+
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
 . Introduzca la frase de contraseña de OKM. Puede obtener esta frase de contraseña del cliente, o póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 +
@@ -110,7 +113,6 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 . Una vez que el sistema se procese, verá el menú de inicio. Seleccione '1' para el arranque normal.
 . Compruebe el estado de toma de control `storage failover show`: .
-. Asegúrese de que los volcados de memoria en el nodo reparado se guardan en modo avanzado» `set -privilege advanced` y luego `run local partner savecore`.
 . Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
 . Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
 . Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .

@@ -213,7 +213,6 @@ NOTE: No inserte completamente el módulo de la controladora en el chasis hasta 
 +
 Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
 
-. Conecte el cable de alimentación a la fuente de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte la fuente de alimentación.
 . Complete la reinstalación del módulo del controlador:
 +
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
@@ -225,10 +224,11 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
-+
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
-
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
+.. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
++
+El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.
+
 
 
 . Si el sistema está configurado para admitir conexiones de clúster de 10 GbE y conexiones de datos en NIC de 40 GbE o puertos internos, convierta estos puertos a conexiones de 10 GbE mediante el comando nicadmin convert del modo de mantenimiento.

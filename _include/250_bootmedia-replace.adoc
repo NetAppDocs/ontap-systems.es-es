@@ -178,7 +178,6 @@ Tornillo de apriete manual
 
 |===
 .. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
-.. Enchufe el cable de alimentación en la fuente de alimentación y vuelva a instalar el retenedor del cable de alimentación.
 .. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
 +
 Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
@@ -187,11 +186,15 @@ Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositiv
 .. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
 .. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
-+
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
+
 
 +
 El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
++
+.. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
++
+El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.
 
 .. Interrumpa el proceso de arranque para que se detenga en el símbolo del SISTEMA DEL CARGADOR pulsando Ctrl-C cuando vea iniciando AUTOBOOT, pulse Ctrl-C para cancelar....
 +
@@ -201,31 +204,6 @@ Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo d
 +
 El sistema empieza a arrancar y se detiene en el aviso del CARGADOR.
 
-.. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
-+
-*** Si va a configurar DHCP: `ifconfig e0a -auto`
-+
 
-NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
-
-*** Si está configurando conexiones manuales: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
-+
-**** `filer_addr` Es la dirección IP del sistema de almacenamiento.
-**** `netmask` Es la máscara de red de la red de gestión que está conectada al partner de alta disponibilidad.
-**** `gateway` es la puerta de enlace de la red.
-**** `dns_addr` Es la dirección IP de un servidor de nombres en la red.
-**** `dns_domain` Es el nombre de dominio del sistema de nombres de dominio (DNS).
-+
-Si utiliza este parámetro opcional, no necesita un nombre de dominio completo en la URL del servidor para reiniciar el sistema. Solo necesita el nombre de host del servidor.
-
-
-
-
-
-
-
-+
-
-NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede entrar `help ifconfig` en el símbolo del sistema del firmware para obtener detalles.
 
 

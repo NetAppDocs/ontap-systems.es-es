@@ -41,18 +41,18 @@ Puede ejecutar  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-confi
 
 Familiarícese con las siguientes prácticas recomendadas antes de agregar en caliente una bandeja NS224.
 
-* * Mejores prácticas:* La mejor práctica es tener la versión actual de la https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Paquete de cualificación de disco"^] instalada antes de agregar en caliente una estantería.
+* *Paquete de calificación de disco:* La mejor práctica es tener la versión actual del https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Paquete de cualificación de disco"^] instalado antes de agregar en caliente un estante.
 +
 Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
 
-* * Mejores prácticas:* La mejor práctica es ejecutar https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] antes y después de agregar en caliente un estante.
+* *Active IQ Config Advisor:* La mejor práctica es ejecutar https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] antes y después de agregar en caliente un estante.
 +
 Si se ejecuta Active IQ Config Advisor antes de añadir en caliente una bandeja, se obtiene una instantánea de la conectividad Ethernet (ENET) de la bandeja existente, se verifican las versiones de firmware del módulo de bandeja NVMe (NSM) y, además, es posible comprobar que el ID de bandeja ya se está utilizando en el par de alta disponibilidad.
 
 +
 Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.
 
-* * Mejores prácticas:* La mejor práctica es tener versiones actuales de https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Firmware del módulo de bandeja NVMe (NSM)"^] y https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["firmware de la unidad"^] en su sistema de almacenamiento antes de agregar una nueva bandeja.
+* *Firmware NSM:* La mejor práctica es tener versiones actuales de https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Firmware del módulo de bandeja NVMe (NSM)"^] y https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["firmware de la unidad"^] en su sistema de almacenamiento antes de agregar una nueva bandeja.
 +
 
 NOTE: No revierte el firmware a una versión que no admite la bandeja y sus componentes.

@@ -6,8 +6,9 @@ Revise los requisitos para sustituir el módulo del controlador.
 
 * Todas las bandejas de unidades deben funcionar correctamente.
 * El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
-* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
-* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* No utilice este procedimiento para las actualizaciones de la controladora; consulte la https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para obtener orientación.
+* Si su sistema tiene una configuración MetroCluster, debe revisar https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe usar este procedimiento.
+* Debe sustituir el componente con errores por la unidad reemplazable del sector (FRU) que ha recibido de NetApp.
 * Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
 * No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
 * Debido a que el dispositivo de inicio está ubicado en el módulo de administración del sistema que está instalado en la parte posterior del sistema, no es necesario mover el dispositivo de arranque al reemplazar un módulo de controlador.

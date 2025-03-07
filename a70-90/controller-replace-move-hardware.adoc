@@ -2,16 +2,16 @@
 permalink: a70-90/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, move the controller module hardware 
-summary: Reemplace la controladora en su sistema AFF A70 o AFF A90 cuando un error de hardware o actualización lo requiera. Este proceso implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla. 
+summary: Reemplace la controladora en el sistema AFF A70 o AFF A90 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla. 
 ---
-= Sustituya el módulo del controlador: AFF A70 y AFF A90
+= Sustituya el controlador: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Reemplace la controladora en su sistema AFF A70 o AFF A90 cuando un error de hardware o actualización lo requiera. Este proceso implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.
+Reemplace la controladora en el sistema AFF A70 o AFF A90 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.
 
 
 
@@ -437,3 +437,6 @@ Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
 
+
+.El futuro
+Después de reemplazar el controlador AFF A70 o AFF A90 dañado, es necesario link:controller-replace-system-config-restore-and-verify.html["restaure la configuración del sistema"].

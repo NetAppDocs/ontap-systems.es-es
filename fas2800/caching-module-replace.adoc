@@ -35,7 +35,7 @@ Tal vez desee borrar el contenido del módulo de almacenamiento en caché antes 
 .. Borre los datos del módulo de almacenamiento en caché: `system controller flash-cache secure-erase run -node _node name_ localhost -device-id _device_number_`
 +
 
-NOTE: Ejecute el `system controller flash-cache show` Comando si no conoce el identificador de dispositivo de flashcache.
+NOTE: Ejecute `system controller flash-cache show` el comando si no conoce el identificador de dispositivo de Flash Cache.
 
 .. Compruebe que los datos se han borrado del módulo de almacenamiento en caché: `system controller flash-cache secure-erase show`
 +

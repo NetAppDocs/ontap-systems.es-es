@@ -150,31 +150,6 @@ La controladora comienza a arrancar en cuanto se ha instalado por completo en el
 +
 Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
 
-. Configure el tipo de conexión de red en el símbolo del sistema del CARGADOR:
-+
-** Si va a configurar DHCP: `ifconfig e0a -auto`
-+
-
-NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
-
-** Si está configurando conexiones manuales: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
-+
-*** Filer_addr es la dirección IP del sistema de almacenamiento.
-*** La máscara de red es la máscara de red de la red de gestión conectada al partner de alta disponibilidad.
-*** gateway es la puerta de enlace de la red.
-*** dns_addr es la dirección IP de un servidor de nombres de la red.
-*** dns_Domain es el nombre de dominio del sistema de nombres de dominio (DNS).
-+
-Si utiliza este parámetro opcional, no necesita un nombre de dominio completo en la URL del servidor para reiniciar el sistema. Solo necesita el nombre de host del servidor.
-
-
-
-
-
-+
-
-NOTE: Es posible que sean necesarios otros parámetros para la interfaz. Puede introducir ayuda ifconfig en el símbolo del sistema del firmware para obtener más detalles.
-
 . Si la controladora está en una MetroCluster con ampliación o conexión a la estructura, debe restaurar la configuración del adaptador de FC:
 +
 .. Arranque en modo de mantenimiento: `boot_ontap maint`

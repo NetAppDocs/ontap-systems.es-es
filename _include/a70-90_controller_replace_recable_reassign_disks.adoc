@@ -6,7 +6,7 @@
 ====
 .Sin cifrado
 --
-Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal
+Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
 
 .Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap`.
@@ -31,14 +31,14 @@ Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal
 
 
 --
-.Cifrado incorporado (OKM)
+.Cifrado OKM
 --
 Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
 
 .Pasos
 . Desde el aviso del CARGADOR, introduzca:
 +
-`boot_ontap maint`.
+`boot_ontap maint`
 
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
 . Introduzca la frase de contraseña de OKM. Puede obtener esta frase de contraseña del cliente, o póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
@@ -91,7 +91,7 @@ Si la columna _restored_ muestra cualquier cosa que no sea _true_, póngase en c
 
 
 --
-.Gestor de claves externo (EKM)
+.Cifrado EKM
 --
 Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.
 
@@ -137,14 +137,7 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 +
 `storage failover show`.
 
-. Asegúrese de que todos los volcados de memoria en el nodo reparado se guarden en el modo avanzado:
-+
-`set -privilege advanced` y luego `run local partner savecore`.
-
-. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
-+
-`storage failover giveback -ofnode _impaired_node_name_`.
-
+. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
 . Si la devolución automática está desactivada, vuelva a habilitarla:
 +
 `storage failover modify -node local -auto-giveback true`.

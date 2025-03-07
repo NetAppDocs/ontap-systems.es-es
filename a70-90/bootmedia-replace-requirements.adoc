@@ -2,16 +2,16 @@
 permalink: a70-90/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a70, a90, replace the boot media 
-summary: Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de contar con el dispositivo de arranque de reemplazo correcto, acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales. 
+summary: Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que tiene el dispositivo de arranque de reemplazo correcto, el acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales. 
 ---
-= Requisitos de sustitución de soportes de arranque: AFF A70 y AFF A90
+= Requisitos para sustituir el soporte de arranque: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de contar con el dispositivo de arranque de reemplazo correcto, acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales.
+Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que tiene el dispositivo de arranque de reemplazo correcto, el acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales.
 
 Revise los siguientes requisitos.
 
@@ -25,3 +25,6 @@ Revise los siguientes requisitos.
 
 
 
+
+.El futuro
+Después de revisar los requisitos para reemplazar el soporte de arranque, debe link:bootmedia-encryption-preshutdown-checks.html["compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque"].

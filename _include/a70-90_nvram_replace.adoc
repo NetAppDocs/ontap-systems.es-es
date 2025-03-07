@@ -2,11 +2,12 @@
 :allow-uri-read: 
 
 
-El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con errores, debe quitar el módulo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.
+El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.
 
-Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con https://support.netapp.com["Soporte de NetApp"].
+.Antes de empezar
+* Asegúrese de tener la pieza de repuesto disponible. Debe sustituir el componente fallido por un componente de sustitución que ha recibido del proveedor.
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
-Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
 
 
@@ -195,9 +196,9 @@ NOTE: La controladora se reinicia tan pronto como se coloca completamente en el 
 
 
 
-== Paso 3: Sustituya un DIMM de NVRAM
+== Paso 3: Reemplace los DIMM NVRAM
 
-Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
+Para sustituir los módulos DIMM NVRAM en el módulo NVRAM, primero debe extraer el módulo NVRAM y, a continuación, sustituir el módulo DIMM de destino.
 
 . En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
 +

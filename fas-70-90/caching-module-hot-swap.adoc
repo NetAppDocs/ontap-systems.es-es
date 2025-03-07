@@ -1,8 +1,8 @@
 ---
 permalink: fas-70-90/caching-module-hot-swap.html 
 sidebar: sidebar 
-keywords: fas70, fas90, hot swap, replace, FlashCache module carrier, caching module, FlashCache 
-summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo FlashCache no se puede intercambiar en caliente.' 
+keywords: fas70, fas90, hot swap, replace, Flash Cache module carrier, caching module, Flash Cache 
+summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo Flash Cache no se puede intercambiar en caliente.' 
 ---
 = Sustituya el portador del módulo Flash Cache o un módulo de almacenamiento en caché: FAS70 y FAS90
 :allow-uri-read: 
@@ -11,24 +11,24 @@ summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módul
 
 
 [role="lead"]
-El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache de SSD integrada en cada módulo de almacenamiento en caché.
+El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache SSD integrada en cada módulo de almacenamiento en caché.
 
-FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo FlashCache.
+FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo Flash Cache.
 
-Puede realizar cualquiera de los siguientes procedimientos en función de lo que necesite ser reemplazado: Todo el portador del módulo Flashcache o un módulo de almacenamiento en caché.
+Puede realizar cualquiera de los siguientes procedimientos dependiendo de lo que haya que reemplazar: Todo el portador de módulo de Flash Cache o un módulo de almacenamiento en caché.
 
-* <<Sustituya el portador del módulo FlashCache>>
+* <<Sustituya el soporte del módulo Flash Cache>>
 * <<Sustituya el módulo de almacenamiento en caché>>
 
 
 
 
-== Sustituya el portador del módulo FlashCache
+== Sustituya el soporte del módulo Flash Cache
 
-El portador del módulo FlashCache se encuentra en la ranura 6 y alberga hasta dos módulos FlashCache. No es posible intercambiar en caliente el portador del módulo FlashCache
+El portador del módulo Flash Cache está ubicado en la ranura 6 y aloja hasta dos módulos Flash Cache. No es posible intercambiar en caliente el portador del módulo Flash Cache
 
 .Antes de empezar
-* Asegúrese de que el sistema de almacenamiento tenga el sistema operativo adecuado para el portador del módulo FlashCache de repuesto.
+* Asegúrese de que el sistema de almacenamiento tenga el sistema operativo adecuado para el portador del módulo Flash Cache de reemplazo.
 * Confirme que el resto de los componentes funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
 
 
@@ -136,15 +136,15 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
-=== Paso 2: Reemplace el portador del módulo FlashCache
+=== Paso 2: Sustituya el portador del módulo Flash Cache
 
-Realice los siguientes pasos para reemplazar el portador del módulo FlashCache.
+Realice los pasos siguientes para sustituir el portador del módulo Flash Cache.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Localice el portador del módulo FlashCache que ha fallado, en la ranura 6, mediante el LED de atención ámbar iluminado en la parte frontal del portador del módulo FlashCache.
+. Localice en la ranura 6 el portador del módulo Flash Cache que ha fallado mediante el LED de atención ámbar iluminado en la parte frontal del portador del módulo Flash Cache.
 +
-image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Retire el portador del módulo FlashCache]
+image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Extraiga el soporte del módulo Flash Cache]
 
 +
 [cols="1,4"]
@@ -154,7 +154,7 @@ image::../media/drw_fas70-90_remove_caching_module_carrier_ieops-1772.svg[Retire
  a| 
 image:../media/icon_round_1.png["Número de llamada 1"]
  a| 
-Portador del módulo FlashCache
+Portador del módulo Flash Cache
 
 
 
@@ -168,33 +168,33 @@ Núm.s de ranura del módulo de caché
  a| 
 image:../media/icon_round_3.png["Número de llamada 3"]
  a| 
-Asa de leva portadora del módulo FlashCache
+Asa de leva portadora del módulo Flash Cache
 
 
 
  a| 
 image:../media/icon_round_4.png["Número de llamada 4"]
  a| 
-LED de fallo del portador del módulo FlashCache
+LED de fallo del portador del módulo Flash Cache
 
 |===
-. Elimine el portador del módulo FlashCache con fallos:
+. Elimine el portador del módulo Flash Cache con errores:
 +
 .. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
-.. Pellizque la pestaña azul situada en la parte inferior del portador del módulo FlashCache.
+.. Pellizque la pestaña azul que se encuentra en la parte inferior del portador del módulo Flash Cache.
 .. Gire la lengüeta para separarla del módulo.
 
 
-. Extraiga el portador del módulo FlashCache del módulo del controlador y configúrelo en una alfombrilla antiestática.
+. Saque el portador del módulo Flash Cache del módulo de la controladora y establézcalo en una alfombrilla antiestática.
 . Mueva los módulos de almacenamiento en caché al portador del módulo Flash Cache de sustitución:
 +
 .. Pellizque la lengüeta Terra Cotta en la parte superior del módulo de caché y gire el asa de la leva lejos del módulo de caché.
-.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo FlashCache.
-.. Instale el módulo de almacenamiento en caché en la misma ranura del soporte del módulo FlashCache de reemplazo y gire el asa de leva a la posición cerrada del módulo de almacenamiento en caché para bloquearlo en su lugar.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo Flash Cache.
+.. Instale el módulo de almacenamiento en caché en la misma ranura del soporte del módulo Flash Cache de reemplazo y gire el asa de leva a la posición cerrada en el módulo de almacenamiento en caché para bloquearlo en su sitio.
 
 
 . Repita estos pasos si hay un segundo módulo de almacenamiento en caché.
-. Instale la portadora del módulo FlashCache de repuesto en el sistema:
+. Instale el portador del módulo Flash Cache de repuesto en el sistema:
 +
 .. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
 .. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
@@ -207,7 +207,7 @@ LED de fallo del portador del módulo FlashCache
 
 === Paso 3: Reinicie el controlador
 
-Después de reemplazar el portador del módulo FlashCache, debe reiniciar el módulo del controlador.
+Después de sustituir el portador del módulo Flash Cache, debe reiniciar el módulo de la controladora.
 
 .Pasos
 . En el símbolo del sistema DEL CARGADOR, reinicie el nodo: _Bye_
@@ -292,9 +292,9 @@ LED de fallo del módulo de almacenamiento en caché
 .. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
 .. Pulse el botón de liberación terracota en la parte frontal del módulo de caché.
 .. Gire la palanca de leva hasta el tope.
-.. Retire el módulo de almacenamiento en caché de la carcasa enganchando el dedo en la abertura de la palanca de leva y tirando del módulo fuera del soporte del módulo FlashCache.
+.. Retire el módulo de almacenamiento en caché de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo Flash Cache.
 +
-Asegúrese de admitir el módulo de almacenamiento en caché a medida que lo elimina del portador del módulo FlashCache.
+Asegúrese de admitir el módulo de almacenamiento en caché cuando lo retire del portador del módulo Flash Cache.
 
 
 

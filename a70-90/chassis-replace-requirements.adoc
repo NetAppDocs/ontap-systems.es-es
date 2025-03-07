@@ -2,16 +2,16 @@
 permalink: a70-90/chassis-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, replace the chassis 
-summary: Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, compruebe que todos los demás componentes del sistema funcionen correctamente, asegúrese de tener credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias. 
+summary: Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que el resto de componentes del sistema funcionan correctamente, verificar que cuenta con credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias. 
 ---
-= Requisitos de sustitución del chasis: AFF A70 y AFF A90
+= Requisitos para sustituir el chasis: AFF A70 y AFF A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, compruebe que todos los demás componentes del sistema funcionen correctamente, asegúrese de tener credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.
+Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que el resto de componentes del sistema funcionan correctamente, verificar que cuenta con credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.
 
 El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
 
@@ -22,8 +22,8 @@ Antes de sustituir el chasis, asegúrese de revisar los siguientes requisitos.
 * Asegúrese de que dispone de las herramientas y el equipo necesarios para la sustitución.
 * Puede usar el procedimiento de reemplazo de chasis con todas las versiones de ONTAP compatibles con el sistema.
 * El procedimiento de sustitución del chasis se escribe suponiendo que va a mover el panel frontal, las unidades NVMe y los módulos de controladora al nuevo chasis, y que el chasis de reemplazo es un nuevo componente de NetApp.
-* *El procedimiento de reemplazo del chasis es disruptivo.* En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+* El procedimiento de sustitución del chasis es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
 
 
 .El futuro
-Después de revisar los requisitos de reemplazo del chasis, debe link:chassis-replace-prepare.html["prepare el reemplazo del chasis"].
+Después de revisar los requisitos para reemplazar el chasis, debe link:chassis-replace-prepare.html["prepárese para sustituir el chasis"].

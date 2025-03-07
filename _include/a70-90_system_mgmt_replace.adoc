@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-El módulo de gestión del sistema, ubicado en la parte posterior de la controladora de la ranura 8, contiene componentes integrados para la gestión del sistema y puertos para la gestión externa. El controlador de destino debe apagarse para sustituir un módulo de gestión del sistema defectuoso o sustituir el soporte de arranque.
+El módulo de gestión del sistema, ubicado en la parte posterior de la controladora de la ranura 8, contiene componentes integrados para la gestión del sistema y puertos para la gestión externa. El controlador de destino debe apagarse para sustituir un módulo de gestión del sistema defectuoso o para sustituir el soporte de arranque.
 
 El módulo Gestión del sistema tiene los siguientes componentes integrados:
 
@@ -19,18 +19,17 @@ El módulo Gestión del sistema también contiene los siguientes puertos para la
 * Ethernet de e0M RJ45 Gb
 
 
-Para sustituir el módulo de gestión del sistema o el soporte de arranque, debe apagar el controlador defectuoso.
-
 .Antes de empezar
-* Este procedimiento usa la siguiente terminología:
-+
-** El controlador dañado es el controlador en el que realiza el mantenimiento.
-** El controlador sano es el compañero de alta disponibilidad del controlador dañado.
+* Asegúrese de que todos los demás componentes del sistema funcionen correctamente.
+* Asegúrese de que la controladora asociada pueda hacerse cargo de la controladora deteriorada.
+* Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
 
 
-* Todos los demás componentes del sistema deben funcionar correctamente.
-* La controladora asociada debe poder hacerse cargo de la controladora deteriorada.
-* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+.Acerca de esta tarea
+Este procedimiento usa la siguiente terminología:
+
+* El controlador dañado es el controlador en el que realiza el mantenimiento.
+* El controlador sano es el compañero de alta disponibilidad del controlador dañado.
 
 
 

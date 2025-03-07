@@ -5,7 +5,7 @@
 Durante el proceso de actualización, es posible mover el almacenamiento, encender el nodo 3 y el nodo 4, arrancar la imagen de software y configurar los nodos. La distribución de puertos físicos entre los nodos originales y los nuevos puede ser diferente. La asignación de los puertos entre los nodos originales y los de reemplazo se debe realizar para identificar un diseño correcto de los puertos y las conexiones.
 
 .Acerca de esta tarea
-Si la versión de ONTAP que se ejecuta en los nuevos nodos es diferente de la versión de los nodos originales, debe haber descargado el archivo <ontap_version>_image.tgz correcto desde el sitio de soporte de NetApp en un directorio accesible desde web (consulte el paso 4). Necesita el archivo <ontap_version>_image.tgz para realizar un arranque desde el sistema.
+Si la versión de ONTAP que se ejecuta en los nodos nuevos es diferente a la versión de los nodos originales, debe haber descargado el archivo <xxx_image.tgz> correcto del sitio de soporte de NetApp en un directorio accesible mediante web (consulte el Paso 4). Es necesario que el archivo <xxx_image.tgz> realice un arranque en red del sistema.
 
 .Pasos
 . Encienda el nodo 3 y, a continuación, pulse inmediatamente Ctrl-C en el terminal de la consola para acceder al aviso del CARGADOR.
@@ -63,11 +63,11 @@ DHCP
  a| 
 *Todos los demás sistemas*
  a| 
-`+netboot http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`
+`+netboot http://web_server_ip/path_to_web-accessible_directory/<xxx_image.tgz>+`
 
 |===
 +
-El directorio_path_to_the_web-accessible_directory es la ubicación del archivo <ontap_version>_image.tgz descargado.
+Path_to_the_web-accessible_directory es la ubicación del archivo <xxx_image.tgz> descargado.
 
 +
 
@@ -77,7 +77,7 @@ NOTE: Si no puede reiniciar el sistema de las nuevas controladoras, póngase en 
 +
 Ignore el siguiente mensaje: "Este procedimiento no es compatible con la actualización no disruptiva en un par de alta disponibilidad". Se aplica a las actualizaciones no disruptivas del software, no a las actualizaciones de controladoras.
 
-. Si se le solicita que continúe el procedimiento, introduzca `y`Y cuando se le solicite el paquete, escriba la dirección URL del archivo de imagen: `+http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz+`.
+. Si se le solicita que continúe con el procedimiento, introduzca `y` y, cuando se le solicite el paquete, introduzca la dirección URL del archivo de imagen: `+http://web_server_ip/path_to_web-accessible_directory/<xxx_image.tgz>+`.
 +
 Introduzca el nombre de usuario o la contraseña, si procede, o pulse Intro para continuar.
 

@@ -672,7 +672,6 @@
   <block id="20fb63d96f0c0c1b27482e0044df988a" category="paragraph">La operación de conmutación de estado se completa cuando los clústeres están en el<block ref="fea087517c26fadd409bd4b9dc642555" prefix=" " category="inline-code"></block> estado:</block>
   <block id="96079f0a36e437f5bfadad93d5fec62f" category="paragraph">Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar el estado de las líneas base en curso utilizando el<block ref="32762e78cfa49b07513c4f60c2b0a741" prefix=" " category="inline-code"></block> comando.</block>
   <block id="bebab338ce208a8365444e4ebe4efe11" category="list-text">Restablecer cualquier configuración de SnapMirror o SnapVault.</block>
-  <block id="1544c9529e8061df2e6df349a1585acc" category="summary">Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM10 solo en la ranura 6 de sistemas FAS9000. A partir de ONTAP 9.4, puede cambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o de un proveedor compatible distinto.</block>
   <block id="5b4711acf4c2d0b25a2539612d1166aa" category="paragraph">Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:</block>
   <block id="5f02cc98e909c306d397a3ee47760670" category="list-text">Debe tener el sistema operativo adecuado para el módulo de almacenamiento en caché que está instalando.</block>
   <block id="ee9a7c8426388e1f808989ad540f6665" category="list-text">Debe admitir la capacidad de almacenamiento en caché.</block>
@@ -874,7 +873,6 @@
   <block id="12aec4fbc7647a1e52c203364239e9ee" category="section-title">Paso 3: Extraiga el módulo del controlador</block>
   <block id="7bb3e2efcb7169f8ff52d523079a8978" category="paragraph">Para sustituir el chasis, debe extraer el módulo o los módulos de la controladora del chasis antiguo.</block>
   <block id="27289e7e37a8ebe804b1a49b34e69e35" category="section-title">Paso 4: Extraiga los módulos de E/S.</block>
-  <block id="7d6149f51977af90ca10cd8b827e1eec" category="paragraph">Para eliminar módulos de I/o del chasis antiguo, incluidos los módulos de NVRAM, siga la secuencia específica de pasos. No es necesario quitar el módulo Flash Cache del módulo NVRAM al moverlo a un nuevo chasis.</block>
   <block id="f237f7ef0851804ffdea97155b697410" category="list-text">Repita el paso anterior para los módulos de I/o restantes del chasis antiguo.</block>
   <block id="e3ffa7ef57fa247f588e5917dee58499" category="section-title">Paso 5: Extraiga el módulo de alimentación del controlador de etapas</block>
   <block id="fa32cefdac621b08336fe76915d4002f" category="paragraph">Debe quitar los módulos de alimentación de la controladora despreconfigurar del chasis antiguo para preparar la instalación del chasis de reemplazo.</block>
@@ -895,7 +893,6 @@
   <block id="92daee87c206004c0a528bcbabd3a9e0" category="paragraph">Para instalar los módulos de ventilador al sustituir el chasis, debe realizar una secuencia específica de tareas.</block>
   <block id="48305d46318ca8d808105dab6b4407c9" category="list-text">Repita estos pasos para los módulos de ventilador restantes.</block>
   <block id="f7e35bdcf8da9684539c8d0c30bdfc4c" category="section-title">Paso 10: Instalar módulos de E/S.</block>
-  <block id="ae4f5c29207fbe466adb203203473a97" category="paragraph">Para instalar módulos de E/S, incluidos los módulos NVRAM/Flash Cache del chasis antiguo, siga la secuencia específica de pasos.</block>
   <block id="dbf1ba99b87a5b7bf76e1a0174f863f4" category="paragraph">Debe tener el chasis instalado de modo que pueda instalar los módulos de I/o en las ranuras correspondientes del nuevo chasis.</block>
   <block id="a93fa9aba373d58e2f971de1346e1b75" category="list-text">Después de instalar el chasis de repuesto en el bastidor o armario, instale los módulos de E/S en sus ranuras correspondientes del chasis de reemplazo deslizando suavemente el módulo de E/S en la ranura hasta que el pestillo de leva de E/S numerado y con letras comience a acoplarse, Y, a continuación, empuje completamente hacia arriba el pestillo de la leva de E/S para bloquear el módulo en su sitio.</block>
   <block id="9e7e7cbeedbd0ad635413a96fd7e3734" category="list-text">Repita el paso anterior para los módulos de E/S restantes que haya reservado.</block>
@@ -911,7 +908,6 @@
   <block id="45c20771cb1532f5746ddda7446e7140" category="list-text">Arranque cada nodo en el modo de mantenimiento:</block>
   <block id="b3dd491c5d322d28567e04f0d5b0ee6f" category="list-text">Cuando cada nodo inicie el arranque, pulse<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> para interrumpir el proceso de arranque cuando vea el mensaje<block ref="c7edd01af4c95bd0ec0f7072d8035155" prefix=" " category="inline-code"></block>.</block>
   <block id="f2ff55accbe6a2f86bcb85e25825d8fb" category="doc">Complete el proceso de sustitución: A700 y FAS9000 de AFF</block>
-  <block id="6c5689e6cebd33e09bd3177ac7c907ca" category="summary">El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
   <block id="93042cc4c4d4eead8d68941113308dfd" category="list-text">Todas las bandejas de discos deben funcionar correctamente.</block>
   <block id="cfdacb5b8eea6906da1318b4cc5ee5a2" category="list-text">Si su sistema está en un par de alta disponibilidad, el nodo del partner debe poder tomar el control del nodo asociado con el módulo NVRAM que se va a reemplazar.</block>
   <block id="105e727cdc375bb7add37bd9f101765d" category="list-text">Este procedimiento usa la siguiente terminología:</block>
@@ -922,14 +918,8 @@
   <block id="b3e40f87c203ef282d4d64a42d869542" category="open-title">Opción 2: La controladora está en un MetroCluster de dos nodos</block>
   <block id="ed8076069cbf889b55cfae7fbfe0fa77" category="section-title">Paso 2: Sustituya el módulo NVRAM</block>
   <block id="a50a60c5a4b173a391b664ba7a38c5de" category="paragraph">Para sustituir el módulo NVRAM, búsquelo en la ranura 6 del chasis y siga la secuencia específica de pasos.</block>
-  <block id="5d0d368db133218e5906d443b61514c6" category="list-text">Mueva el módulo FlashCache del módulo NVRAM antiguo al nuevo módulo NVRAM:</block>
-  <block id="e2daacc31483bc3b72e7bcacf14a33cf" category="paragraph">Botón de liberación naranja (gris en módulos Flash Cache vacíos)</block>
-  <block id="82ce6e7b2bec620e2323db80d43596ed" category="paragraph">Identificador de leva Flash Cache</block>
-  <block id="172abe1f5570c53335678f7df0c537d6" category="list-text">Pulse el botón naranja de la parte frontal del módulo Flash Cache.</block>
-  <block id="2228c66310ba59834f0b6f9926e2c172" category="admonition">El botón de liberación de los módulos Flash Cache vacíos es gris.</block>
   <block id="bba309c8a06aaa0ae0083c07ed7d1439" category="list-text">Gire el asa de leva hacia fuera hasta que el módulo empiece a deslizarse fuera del módulo NVRAM antiguo.</block>
   <block id="42ae2677ae87c3a059cee0a88ad9a862" category="list-text">Sujete el asa de leva del módulo y deslícelo para sacarlo del módulo NVRAM e insértelo en la parte frontal del nuevo módulo NVRAM.</block>
-  <block id="b5f730ed78c52d852a761b7c3c7ace60" category="list-text">Empuje suavemente el módulo Flash Cache hasta que llegue al módulo NVRAM y, a continuación, gire el asa de leva cerrada hasta que bloquee el módulo en su lugar.</block>
   <block id="0ecd762c67fe8cf5a5a773646ce470c9" category="list-text">Quite el módulo NVRAM de destino del chasis:</block>
   <block id="c4f162b9feccf5f963d674a3299a9f00" category="paragraph">El módulo NVRAM se desconecta del chasis y se mueve hacia fuera unas pocas pulgadas.</block>
   <block id="ca401bca71da68589a6c9f6ae6d2abdf" category="list-text">Extraiga el módulo NVRAM del chasis tirando de las lengüetas de tiro situadas en los lados de la cara del módulo.</block>
@@ -1206,7 +1196,6 @@
   <block id="568cc5cf99c02458b3c071cfa0438d78" category="list-text">Los módulos de volcado principales se pueden instalar en las ranuras 6-1 y 6-2. La mejor práctica recomendada es instalar el módulo en la ranura 6-1.</block>
   <block id="ad76310ff3a94c1bac5eaff22586fdc8" category="list-text">El módulo de volcado principal X9170A no se puede intercambiar en caliente.</block>
   <block id="fdb927001af9ab6198815c75f2c63fc8" category="section-title">Paso 2: Sustituya o añada un módulo de almacenamiento en caché</block>
-  <block id="cd9ce211a477f674f43c4e29c1c20b1e" category="paragraph">Los módulos Flash Cache de SSD NVMe (Flash Cache o módulos de almacenamiento en caché) son módulos independientes. Se encuentran en la parte frontal del módulo NVRAM. Para sustituir o añadir un módulo de almacenamiento en caché, búsquelo en la parte posterior del sistema en la ranura 6 y, a continuación, siga la secuencia específica de pasos para reemplazarlo.</block>
   <block id="6455eae9a97e513335af578c9694839e" category="list-text">El nodo de destino debe estar en el símbolo del sistema del CARGADOR antes de agregar o sustituir el módulo de almacenamiento en caché.</block>
   <block id="f4496d0c4c82d1c695320ac451dc5dfd" category="admonition">Si va a agregar otro módulo de almacenamiento en caché al sistema, retire el módulo en blanco y vaya al siguiente paso.</block>
   <block id="ccd51b5896f29fdf3c48513d957ea970" category="section-title">Paso 3: Agregar o reemplazar un módulo de volcado principal X9170A</block>
@@ -2342,8 +2331,6 @@
   <block id="9de356bba732ea3279684bd5fa1e5f9f" category="section-title">Instale el kit de rieles de montaje medio de dos postes</block>
   <block id="17bc73815850fd6dc60d586cf707300e" category="section-title">Instale el kit de raíl de montaje empotrado de dos postes</block>
   <block id="fb796745f1b93e7c27af0a928be9d5ae" category="doc">Módulo de almacenamiento en caché de intercambio en caliente: FAS9500</block>
-  <block id="e5684d853146c37193094e90fea21bff" category="paragraph">Los módulos Flash Cache de SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM11, en la ranura 6 de sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
-  <block id="1360261f3d9e17642c609debfd62b1d6" category="admonition">Si necesita o desea intercambiar en frío el módulo Flash Cache, siga los procedimientos para sustituir un módulo de I/O.</block>
   <block id="fa807167a57a5e7782f90326093319e4" category="list-text">El módulo de almacenamiento en caché debe estar funcionando lo suficientemente bien como para que el sistema lo vea. Si el módulo de almacenamiento en caché no funciona desde el último arranque, no podrá utilizar este procedimiento y deberá utilizar el procedimiento de intercambio en frío.</block>
   <block id="bdd8c99ec41c2de3e99ba0a36e04bfbf" category="list-text">En el nivel de privilegios de administrador, prepare la ranura NVMe de destino para su eliminación y responda<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le pregunte si desea continuar:<block ref="0277bb5cae56876e81c890026e236b8d" prefix=" " category="inline-code"></block> El siguiente comando prepara la ranura 6-1 en el nodo 1 para su extracción y muestra un mensaje que es seguro quitar:</block>
   <block id="68607949342d7df39c7770d809d0a5f2" category="image-alt">drw 9500 retire el flashcache</block>
@@ -2426,7 +2413,6 @@
   <block id="68912cac581299e947ce3696c1a369cb" category="section-title">Paso 2: Deseche las pilas</block>
   <block id="a6426e3554ef4761ece421786e4d1cbc" category="inline-link">Información sobre seguridad y avisos normativos</block>
   <block id="a3d6b87a3696ea4158d81bf432d3724e" category="paragraph"><block ref="a3d6b87a3696ea4158d81bf432d3724e" category="inline-link-rx"></block></block>
-  <block id="23b82013e68c4445eaa3ec355ca09fb4" category="summary">El módulo NVRAM consta de NVRAM11 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
   <block id="3f679ad9b20cbb8994ff36e9ce18d58f" category="doc">Sustituya el módulo NVRAM y/o los módulos DIMM NVRAM - FAS9500</block>
   <block id="4d365227a3a5ccf9886fa9c35ba6a99d" category="paragraph">El módulo NVRAM consta de NVRAM11 y DIMM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con fallos, debe quitarlo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.</block>
   <block id="140a295824b1023b2fcf1ac1414fc56b" category="paragraph">Para sustituir y el DIMM de NVRAM, debe extraer el módulo NVRAM del chasis, sustituir el DIMM con errores en el módulo y, a continuación, volver a instalar el módulo NVRAM.</block>
@@ -2566,8 +2552,6 @@
   <block id="4d10af14d34e5e468c4aee19207329d3" category="list-text">kmip.init.gateway &lt;value&gt;</block>
   <block id="a1781eecf18376feb2f740b6a3d7781d" category="list-text">bootarg.onboard_keymanager &lt;value&gt;</block>
   <block id="8ed13fe688162a9d4d89829700344e8f" category="list-text">Confirme los cambios mediante el<block ref="de69d3b344fe42b2519bfd5cb80aa443" prefix=" " category="inline-code"></block> comando.</block>
-  <block id="890a5db496d99a96f099de944c9791c0" category="admonition">El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con el nodo dañado desde el nodo en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.</block>
-  <block id="61fb64589c53cb1543b86398c0f9bf5f" category="admonition">Es posible que sean necesarios otros parámetros para la interfaz. Puede introducir ayuda ifconfig en el símbolo del sistema del firmware para obtener más detalles.</block>
   <block id="92119567969a6dfb8d14b4d139115118" category="list-text">Establezca los puertos MetroCluster como iniciadores:<block ref="8efde65d7e5db5248f7c89fa6db7fac1" prefix=" " category="inline-code"></block></block>
   <block id="3bdc20d60c6095f8c752a75e72777feb" category="doc">Recuperar el sistema - FAS9500</block>
   <block id="f57131a371345f28120c2c1540cdc3dd" category="paragraph">Continuar con el procedimiento de sustitución presentando las instalaciones de almacenamiento y de red.</block>
@@ -2861,11 +2845,7 @@
   <block id="883c91c37ee151a81d34d6105afae5ea" category="summary">Si tiene un sistema en el que las bandejas de unidades NS224 necesitan cablearse como almacenamiento conectado al switch \(no almacenamiento de conexión directa\), utilice la información proporcionada.</block>
   <block id="e8f8b2e7fe84a76416bedc8340d89ea1" category="doc">Bandejas de cables como almacenamiento conectado a conmutador - bandejas NS224</block>
   <block id="a94de468f363b57c8cc1ea1b7a532a9e" category="paragraph">Si tiene un sistema en el que las bandejas de unidades NS224 deben cablearse como almacenamiento conectado al switch (no como almacenamiento de conexión directa), utilice la información proporcionada.</block>
-  <block id="0ab54354ff641ba8f3492f71c03aa435" category="list-text">Conectar las bandejas de unidades NS224 a través de switches de almacenamiento:</block>
-  <block id="d1f671afbf5d4ca47b95e86f70c6bcc1" category="list-text">Instale los switches de almacenamiento:</block>
   <block id="97a30f090fd38397124788f1f0376eda" category="inline-link">Documentación de AFF y switches FAS</block>
-  <block id="008b8867712161228bd794977fcd0d4b" category="paragraph"><block ref="008b8867712161228bd794977fcd0d4b" category="inline-link-rx"></block></block>
-  <block id="4aaebba2a5287c74eb41bf080e6d1fe4" category="list-text">Confirme el hardware compatible, como los switches y cables de almacenamiento, para su modelo de plataforma:</block>
   <block id="66c55f70fc7014da19c97d66f75b43e0" category="summary">Puede sustituir una unidad con error de forma no disruptiva en una bandeja de unidades NS224 que se enciende y mientras la I/o está en curso.</block>
   <block id="100cf583f6cdd16852a08df77146f368" category="doc">Intercambio en caliente de una unidad: Bandejas NS224</block>
   <block id="9e09af22b61dcdd808a9a927f88b99ed" category="list-text">La unidad que está instalando debe ser compatible con la bandeja NS224.</block>
@@ -4195,8 +4175,6 @@
   <block id="f0883ed7dc01ca5a7c6baa998e45a6be" category="section-title">Opción 1: Transfiera archivos al soporte de arranque mediante la recuperación de copia de seguridad desde el segundo soporte de arranque</block>
   <block id="f2517f7437e31c22e8ebbe3208bc1f18" category="paragraph">Puede instalar la imagen del sistema en el soporte de arranque de reemplazo mediante la imagen del segundo soporte de arranque instalado en el módulo de la controladora. Este es el método principal para transferir los archivos de medios de arranque al medio de arranque de reemplazo en sistemas con dos medios de arranque en el módulo del controlador.</block>
   <block id="c74fc698f6085001fa8e634011afdd6d" category="paragraph">La imagen del soporte de arranque secundario debe contener un<block ref="c1317185516b20a37b064c5ed31cf719" prefix=" " category="inline-code"></block> error de archivo y no debe ser informado. Si falta el archivo image.tgz o el soporte de arranque informa de fallos, no puede usar este procedimiento. Debe transferir la imagen de inicio al soporte de arranque de repuesto mediante el procedimiento de sustitución de la unidad flash USB.</block>
-  <block id="dd04dd92143954e62338ecb34a5c6620" category="list-text">Vuelva a conectar la fuente de alimentación y, a continuación, conéctela a la fuente de alimentación.</block>
-  <block id="e5116f5891aa80c66712f78ca68f7345" category="paragraph">Asegúrese de volver a colocar el collarín de bloqueo del cable de alimentación en el cable de alimentación.</block>
   <block id="0c285136d46116873f7508d317da15c6" category="list-text">Empuje suavemente el módulo del controlador hasta que los ganchos de bloqueo del módulo del controlador empiecen a elevarse, empuje firmemente los ganchos de bloqueo para terminar de fijar el módulo del controlador y, a continuación, gire los ganchos de bloqueo a la posición de bloqueo sobre los pasadores del módulo del controlador.</block>
   <block id="9a31048ac5a99c8ed4056d3af461b406" category="list-text">Desde el aviso del CARGADOR, arranque la imagen de recuperación desde el medio de arranque secundario:<block ref="ec44bfe32a6d575f528cbdeeb29c9942" prefix=" " category="inline-code"></block></block>
   <block id="e640ac5f7f5b30fe8c1918548c6df741" category="paragraph">La imagen se descarga desde el soporte de arranque secundario.</block>
@@ -4544,7 +4522,6 @@
   <block id="2f92df8531df1f2b3292aaca0327afca" category="inline-link">Actualizar controladoras con reubicación de agregados a Actualizar manualmente hardware de controladora que ejecuta ONTAP 9.7 y versiones anteriores</block>
   <block id="9cd2ad15fd6e17e2089c3e6d267284e8" category="paragraph"><block ref="9cd2ad15fd6e17e2089c3e6d267284e8" category="inline-link-rx"></block></block>
   <block id="cfd2431baff6fc4122f2c8fed540c128" category="paragraph">Durante el proceso de actualización, es posible mover el almacenamiento, encender el nodo 3 y el nodo 4, arrancar la imagen de software y configurar los nodos. La distribución de puertos físicos entre los nodos originales y los nuevos puede ser diferente. La asignación de los puertos entre los nodos originales y los de reemplazo se debe realizar para identificar un diseño correcto de los puertos y las conexiones.</block>
-  <block id="f9001cb2001a5d31c1674d860cf46052" category="paragraph">Si la versión de ONTAP que se ejecuta en los nuevos nodos es diferente de la versión de los nodos originales, debe haber descargado el archivo &lt;ontap_version&gt;_image.tgz correcto desde el sitio de soporte de NetApp en un directorio accesible desde web (consulte el paso 4). Necesita el archivo &lt;ontap_version&gt;_image.tgz para realizar un arranque desde el sistema.</block>
   <block id="cc32105596984688d6ab5fee199bc645" category="list-text">Encienda el nodo 3 y, a continuación, pulse inmediatamente Ctrl-C en el terminal de la consola para acceder al aviso del CARGADOR.</block>
   <block id="25870cbb4fe9afef5797b531420b7012" category="paragraph">Si los nodos 3 y 4 se encuentran en el mismo chasis, vaya al paso 2. De lo contrario, vaya al paso 3.</block>
   <block id="6c43e0670806fec2f9b82e002c3d44d5" category="list-text">Si los nodos 3 y 4 se encuentran en una configuración de chasis único (con controladoras en el mismo chasis):</block>
@@ -4562,12 +4539,9 @@
   <block id="a6d12afddb580faaf04d9a073325f914" category="paragraph">*SISTEMAS DE LAS SERIES FAS2200, FAS2500, FAS3200, FAS6200 Y FAS/AFF8000*</block>
   <block id="935d002e70e8bae5172c906d561c2c9e" category="paragraph"><block ref="461505a825167d6b66e648674621319f" prefix="" category="inline-code"></block></block>
   <block id="339dbbf2e3919abe2381758c4b54e24c" category="paragraph">*Todos los demás sistemas*</block>
-  <block id="508003c9dbd4389e46ce53a1eb4ca352" category="paragraph"><block ref="25156c70c24793d6bc7b5c324049ae49" prefix="" category="inline-code"></block></block>
-  <block id="3d72abdf0c5ff5a5928889b5949891bd" category="paragraph">El directorio_path_to_the_web-accessible_directory es la ubicación del archivo &lt;ontap_version&gt;_image.tgz descargado.</block>
   <block id="a7cb2d731b29707bf9c40c8d88a0c732" category="admonition">Si no puede reiniciar el sistema de las nuevas controladoras, póngase en contacto con el soporte técnico.</block>
   <block id="9a8c20fab9267090fe0211c579b8d259" category="list-text">En el menú de inicio, seleccione la opción *(7) instale primero el nuevo software* para descargar e instalar la nueva imagen de software en el dispositivo de arranque.</block>
   <block id="071501038eea1d369bfa271bfc4c7ff9" category="paragraph">Ignore el siguiente mensaje: "Este procedimiento no es compatible con la actualización no disruptiva en un par de alta disponibilidad". Se aplica a las actualizaciones no disruptivas del software, no a las actualizaciones de controladoras.</block>
-  <block id="3119febddbb24ba81e9b7dcfef909e01" category="list-text">Si se le solicita que continúe el procedimiento, introduzca<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>Y cuando se le solicite el paquete, escriba la dirección URL del archivo de imagen:<block ref="19c0bfab79f4f10800e29edee6831b90" prefix=" " category="inline-code"></block>.</block>
   <block id="647f982b341b67a165ac63d735784a54" category="paragraph">Introduzca el nombre de usuario o la contraseña, si procede, o pulse Intro para continuar.</block>
   <block id="a01beec0f6ce0a2dd45c8f1d5aa3e76c" category="list-text">Introduzca<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block> para omitir la recuperación de backup cuando observe un símbolo del sistema similar a lo siguiente:</block>
   <block id="4c311f4de89068c42d4731e90025eefc" category="list-text">Reinicie introduciendo<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando vea un símbolo del sistema similar a lo siguiente:</block>
@@ -5495,7 +5469,6 @@
   <block id="6e4968851f4373ab9764e16cffb39389" category="list-text">Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> Y utilice el mejor disponible para su módulo de E/S.</block>
   <block id="757216293ea1da04339a2c9b8eaa2641" category="admonition">El archivo tar.gz se debe colocar en una partición con formato FAT32 que tenga un mínimo de 4 GB. Aunque las particiones FAT32 pueden ser de hasta 2 TB, las herramientas integradas de Windows (por ejemplo, DiskPart) no pueden formatear particiones FAT32 de más de 32 GB.</block>
   <block id="e9d3276fadd16a57346b54cecf613793" category="list-text">Borre los datos del módulo de almacenamiento en caché:<block ref="5ffb603e9f437c31dabf66aeb6dc9941" prefix=" " category="inline-code"></block></block>
-  <block id="06dd51a0351c6bc1041f60a7a78358f1" category="admonition">Ejecute el<block ref="77da07d2ad54f11335f6a0e867b30843" prefix=" " category="inline-code"></block> Comando si no conoce el identificador de dispositivo de flashcache.</block>
   <block id="955a29c530e47b3a4d397e3e2ff7a94a" category="list-text">Compruebe que los datos se han borrado del módulo de almacenamiento en caché:<block ref="5a00050b2fc68dfbfe21cffc587aa407" prefix=" " category="inline-code"></block></block>
   <block id="04f13a81f468108c54934d79ebdf3ceb" category="admonition">Si las etiquetas de puerto de la tarjeta no son visibles, compruebe la orientación de instalación de la tarjeta (el conector hembra PCIe está en el lado izquierdo de la ranura de tarjeta en el A400 y FAS8300/8700) y, a continuación, busque la tarjeta, por número de pieza, en el<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> para un gráfico del bisel que muestra las etiquetas de puerto. El número de referencia de la tarjeta se puede encontrar mediante la<block ref="432345ed72f5509f18312f01d4f08dff" prefix=" " category="inline-code"></block> o en la lista de embalaje del sistema.</block>
   <block id="3a5f51ab8f29522107285c1bd243bf95" category="paragraph">Si el campo compatibilidad con pilas mixtas SAS2/SAS3 no aparece en la salida o tiene el valor "none", el sistema no admite pilas mixtas.</block>
@@ -5798,7 +5771,6 @@
   <block id="0a73484fb1b3edef8bbbf67f873dec2a" category="paragraph">Para sustituir el chasis, debe quitar los componentes del chasis dañado e instalarlos en el chasis de reemplazo.</block>
   <block id="c41b6afef3be0625148760974efbe53b" category="paragraph">Quitar las fuentes de alimentación al reemplazar un chasis implica apagar, desconectar y luego quitar las cuatro fuentes de alimentación de la parte trasera del chasis dañado.</block>
   <block id="f29cd4bb20b414e068c19ba637ce5223" category="paragraph">Para sustituir el chasis, debe retirar el módulo o los módulos del controlador del chasis dañado.</block>
-  <block id="d29be88ad14bfa795c9cb4b5e8e71620" category="paragraph">Para quitar módulos I/O del chasis deficiente, incluidos los módulos NVRAM, siga la secuencia de pasos específica. No tiene que quitar el módulo FlashCache, si está presente, del módulo NVRAM al moverlo a un chasis de reemplazo.</block>
   <block id="70796c97dce9e8bc0ec4d548fad4c33c" category="list-text">Repita el paso anterior para los módulos de E/S restantes en el chasis dañado.</block>
   <block id="7dcb58280c958448c619b7845f19a872" category="paragraph">Retire los dos módulos de alimentación del controlador de separación de etapas de la parte delantera del chasis dañado.</block>
   <block id="bd87961e02bb318277afd71851d575b3" category="section-title">Paso 6: Retire el módulo led USB</block>
@@ -5809,7 +5781,6 @@
   <block id="2bc629fe1fa0756ba85648b1b075475e" category="list-text">Con la ayuda de dos o tres personas, deslice el chasis dañado fuera de los rieles del bastidor en un gabinete del sistema o soportes _L_ en un bastidor de equipo, y luego déjelo a un lado.</block>
   <block id="1cff1ec8bb5f01806ddb910dceecf767" category="list-text">Fije la parte delantera del chasis al bastidor del equipo o al armario del sistema con los tornillos que ha retirado del chasis dañado.</block>
   <block id="979104406ee03d12a7689ad931f5410b" category="list-text">Si va a usar los soportes de gestión de cables, quite esos soportes del chasis dañado y luego instálelos en el chasis de reemplazo.</block>
-  <block id="b9179a26176765e84f442a338275974c" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM/FlashCache desde el chasis dañado, siga la secuencia de pasos específica.</block>
   <block id="8a063f47876606fb88039df27bbfad1f" category="paragraph">Debe tener instalado el chasis para poder instalar los módulos de I/O en las ranuras correspondientes del chasis de reemplazo.</block>
   <block id="62d3b0199402c94809d4bbaf872df5c3" category="admonition">Si el chasis deficiente tiene paneles de I/O vacíos, muévalos al chasis de reemplazo en este momento.</block>
   <block id="dc844fd8ca4280150d42e7895f0e653c" category="list-text">Asegúrese de que los balancines de las fuentes de alimentación estén en la posición de apagado.</block>
@@ -6564,8 +6535,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6363d003788743405ff89be986530a80" category="doc">Cambie un ventilador - AFF A700</block>
   <block id="425b45a67b7c80ba6549e393946073c1" category="doc">Sustituya el soporte de arranque: AFF A700</block>
   <block id="140d684ef1769656ce93863b342912ff" category="doc">Sustituya el módulo NVRAM o los DIMM de NVRAM - AFF A700</block>
-  <block id="b180ad00948e933913ce3bc8c504ee6d" category="paragraph">El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.</block>
-  <block id="37ea95dcece93b9043b6f57473c523cc" category="paragraph">Para sustituir un módulo NVRAM con fallos, debe eliminarlo del chasis, quitar el módulo Flash Cache o los módulos del módulo NVRAM, mover los DIMM al módulo de reemplazo, volver a instalar el módulo o módulos Flash Cache e instalar el módulo NVRAM de reemplazo en el chasis.</block>
   <block id="464d8fc73e92650a9ae0878d27074167" category="paragraph">Debido a que el ID del sistema se deriva del módulo NVRAM, si se reemplaza el módulo, los discos que pertenecen al sistema se reasignan al nuevo ID del sistema.</block>
   <block id="629fa568eaf78ff78d0fcfe8dda40271" category="doc">Mueva y reemplace la tornillería - AFF A700</block>
   <block id="ec3ff203f5d79b791c68957799b25408" category="doc">Agregue un módulo de almacenamiento X91148A en un sistema sin ranuras abiertas - A700</block>
@@ -7367,7 +7336,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ec2ab707a85ae3f8634491d0876e34c6" category="paragraph">Al reemplazar una bandeja de unidades de un sistema de producción que cuenta con discos en uso, debe reemplazar una bandeja en frío. Este es un procedimiento disruptivo. Esto requiere que detenga las controladoras en su par de alta disponibilidad.</block>
   <block id="b70986af2d94261df69e2141b1a928cf" category="inline-link">Cómo sustituir un chasis de bandeja mediante un procedimiento de retirada de bandeja de datos fríos</block>
   <block id="3946a95173cf2872b6b6e8309352d61b" category="inline-link">Guía de cableado de bandeja de unidades NVMe NS224</block>
-  <block id="29c2f32397b266395d18c9814ee2c641" category="paragraph"><block ref="29c2f32397b266395d18c9814ee2c641" category="inline-link-rx"></block></block>
   <block id="5932d352036c33399a3ddcba5a995002" category="summary">Es posible sustituir en frío una bandeja de unidades NS224.</block>
   <block id="1aba95483fe95743e6b48b8708c5c514" category="doc">Sustituya en frío una bandeja: NS224 bandejas</block>
   <block id="efc8f4d1076344beccb8353312cb002a" category="sidebar">Bandeja de unidades</block>
@@ -7627,7 +7595,6 @@ SFP+ (destino/iniciador)</block>
   <block id="5cc16253a8aee4b43fffd03ab6bf4dcc" category="image-alt">Extracción o instalación de una tarjeta PCIe</block>
   <block id="19d09ef846ca4e7e9e07b780168aa7e8" category="image-alt">Quitar una fuente de alimentación</block>
   <block id="421c376f4d6d54ea975a03a818082d3d" category="image-alt">Sustitución de DIMM</block>
-  <block id="9cb7281bb7eb2acd0ccc0342394f8a2a" category="summary">Los módulos Flash Cache SSD de NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte frontal del módulo NVRAM11 en la ranura 6 de solo los sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
   <block id="be156c2254730ffea327aad8b7574600" category="paragraph">Directiva no resuelta en &lt;stdin&gt; - Include:../_include/700_9000_caching_module_and_core_dump_module_replace.adoc[]</block>
   <block id="98c84c18c84bbdb869a3af52fb92fee5" category="admonition">La profundidad mínima entre los puntos de conexión delanteros y traseros para la instalación de SuperRail es de 24 pulgadas y mientras que la profundidad máxima es de 32 pulgadas.</block>
   <block id="391efe7c4ae90cf6bb51a9deabcdbefb" category="image-alt">Vista de las cinco cadenas para cables y los conectores vertical y horizontal de cada cajón</block>
@@ -7807,8 +7774,6 @@ SFP+ (destino/iniciador)</block>
   <block id="502b19f0923675ac37953f046d92661c" category="list-text">Inserte la unidad flash USB en la ranura USB del módulo de administración del sistema.</block>
   <block id="54d19c7d0de44aef2c43e3480794f731" category="list-text">Conecte los cables de alimentación a las fuentes de alimentación y vuelva a instalar el retén del cable de alimentación.</block>
   <block id="beab314ce8e147a2186f06e70152d37b" category="paragraph">La controladora comienza a arrancar en cuanto se vuelve a conectar la alimentación al sistema.</block>
-  <block id="023f9d7e0e4f25a5ac2fefbe339b9d2a" category="list-text">Si va a configurar DHCP:<block ref="910e8145592a2ef4eaf5e3c21b90a5e1" prefix=" " category="inline-code"></block></block>
-  <block id="be7a3d5eb4dec2257326a1191d508e3f" category="list-text">Si está configurando conexiones manuales:<block ref="0cfd36fa2f6970c4256c7587d6c9730f" prefix=" " category="inline-code"></block></block>
   <block id="1db37c7c622a5ec1ab0be3b691e2c1f6" category="image-alt">Cierre del gráfico del conducto de aire del módulo del controlador AFF A70-90</block>
   <block id="814c3874029ed6ca8ad80dd3b7be6a3b" category="list-text"><block ref="d7c37365844b6be16568f626fb19383d" prefix="" category="inline-code"></block> Para cabinas AFF A220 y All SAN</block>
   <block id="2544230e60d1b55358bdfdcb8dc88d1a" category="paragraph">Vuelva a instalar el módulo del controlador y arranque.</block>
@@ -8338,7 +8303,6 @@ SFP+ (destino/iniciador)</block>
   <block id="807b26d7111f209057a30d265b88f6ae" category="paragraph">El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.</block>
   <block id="517e65cbfa02ca306eec69200485822d" category="paragraph">Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.</block>
   <block id="aebd84aedf30ca3854097975c59229ed" category="doc">Sustituya la batería NV - AFF A1K</block>
-  <block id="ef0c1c9390131a9f1f9560791151e3fd" category="summary">El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
   <block id="f133a8ed8a0b7a76b6c1b28bc00b0fb1" category="doc">Sustituya el módulo NVRAM AFF A1K</block>
   <block id="6794ac4e17218aaa4a21099cb6c428a5" category="doc">Sustituya una fuente de alimentación: AFF A1K</block>
   <block id="5dae7574a50de0a82f041d98e2b363d4" category="doc">Sustituya la batería del reloj en tiempo real - AFF A1K</block>
@@ -8521,12 +8485,9 @@ SFP+ (destino/iniciador)</block>
   <block id="c2ffe02d76c4f089648f1647b43e4ee5" category="section-title">Mejores prácticas</block>
   <block id="c4d5d39d9de05fa063bc3710cce88d43" category="paragraph">Familiarícese con las siguientes prácticas recomendadas antes de agregar en caliente una bandeja NS224.</block>
   <block id="b0af51fce4a966624ca8dbbb18556393" category="inline-link">Paquete de cualificación de disco</block>
-  <block id="fc229f016899e45241a8132e54e09068" category="list-text">* Mejores prácticas:* La mejor práctica es tener la versión actual de la<block ref="2e664cd4eb21331de01544565a2d83a5" category="inline-link-rx"></block> instalada antes de agregar en caliente una estantería.</block>
-  <block id="98321f616aed394d511784263fe8c7fb" category="list-text">* Mejores prácticas:* La mejor práctica es ejecutar<block ref="7064c89577900622f24a070c24ebbaa7" category="inline-link-rx"></block> antes y después de agregar en caliente un estante.</block>
   <block id="9f24cdc2b556e4f7c914bbbf091868aa" category="paragraph">Si se ejecuta Active IQ Config Advisor después de añadir una bandeja en caliente, es posible verificar que las bandejas se hayan cableado correctamente y que los ID de bandeja sean únicos en el par de alta disponibilidad.</block>
   <block id="3ddbd0df27907810ff1b446086cf9a21" category="inline-link">Firmware del módulo de bandeja NVMe (NSM)</block>
   <block id="9a29657c935c0df841655f534d7ab2f2" category="inline-link">firmware de la unidad</block>
-  <block id="b8f81eee7a525fe28574a64eeb1b3cd6" category="list-text">* Mejores prácticas:* La mejor práctica es tener versiones actuales de<block ref="2e6e5b670045aa9f131e153e1b997791" category="inline-link-rx"></block> y<block ref="fdb117163130a37cd01d2ae31eb75969" category="inline-link-rx"></block> en su sistema de almacenamiento antes de agregar una nueva bandeja.</block>
   <block id="79a4da7f1ec39f638870f54388dd033e" category="sidebar">Sistemas AFF A1K</block>
   <block id="1359f19561173d7123369e0c8f9fb141" category="sidebar">Instalación y configuración de AFF A1K</block>
   <block id="6f550466a69bad21f11ab99fc12db497" category="sidebar">Instale el flujo de trabajo</block>
@@ -8859,7 +8820,6 @@ SFP+ (destino/iniciador)</block>
   <block id="7f5f5398e620a9f9ae998736b2d4d230" category="list-text">Espere hasta que se muestre el mensaje Waiting for giveback... en la consola de la controladora con el módulo de reemplazo y, a continuación, desde la controladora en buen estado, verifique el estado del sistema: _Storage failover show_</block>
   <block id="c1b6a9a30a6ce8d79305050622234851" category="paragraph">En el resultado del comando, debe ver un mensaje que indica el estado de las controladoras.</block>
   <block id="b58ec5a6cf078c8a3a2b309a797f9e62" category="paragraph">La controladora se conecta de nuevo a su pool de almacenamiento y completa el arranque.</block>
-  <block id="c23f2b6754e0bfe310956814b83c20c2" category="list-text">Compruebe que los discos que los pools de discos son los esperados:<block ref="a9fae81f0c924f3a581cf23a9c8b11b1" prefix=" " category="inline-code"></block></block>
   <block id="7acc547c8acfbe4a745ca72a3e0e83e4" category="image-alt">Unidad drw a800 asentada IEPOPS 960</block>
   <block id="db4669e53766b1110dbd428a22b6f5cc" category="list-text">Pulse el botón de la leva de gestión del sistema.</block>
   <block id="cf91b43675e7187d6e724e7c312e336a" category="list-text">Gire el pestillo de leva hacia fuera del módulo hasta el tope.</block>
@@ -8992,13 +8952,9 @@ SFP+ (destino/iniciador)</block>
   <block id="d03f5ec8a330688c4e047e99f5fecd12" category="inline-link-macro">Prepare la instalación del sistema de almacenamiento de AFF A1K</block>
   <block id="95225809efab4457ee4a53c1a58dfb52" category="paragraph">Después de haber revisado los requisitos de hardware, usted <block ref="483aaa3c2f4f88e7b219b85383e864a7" category="inline-link-macro-rx"></block>.</block>
   <block id="e736c3581e7cc7eb9804edd4215c31b3" category="doc">Devuelva la pieza fallida a NetApp - AFF A70 and AFF A90</block>
-  <block id="e32530d54c0288f36793648830558717" category="doc">Restaurar cifrado: AFF A70 y AFF A90</block>
   <block id="a13516239a2a49e82fd12bff6cdd2f91" category="doc">Inicie la imagen de recuperación - AFF A70 y AFF A90</block>
-  <block id="7c506ea0b7da853881a11acc736d97c7" category="doc">Requisitos de sustitución de soportes de arranque: AFF A70 y AFF A90</block>
   <block id="08d73f01628a5943295e92f24c02e02b" category="doc">Sustituya el soporte de arranque: AFF A70 y AFF A90</block>
-  <block id="ecf04557e2cacfb271d9b67c7f2b3a72" category="doc">Apague el controlador defectuoso: AFF A70 y AFF A90</block>
   <block id="a91e5640776c0744ff211f74a193dc57" category="doc">Sustituya el chasis: AFF A70 y AFF A90</block>
-  <block id="85d8564bfb7225b8979b99bf295a46f1" category="doc">Requisitos de sustitución del chasis: AFF A70 y AFF A90</block>
   <block id="2f7658a94038d064a8c1d014e3362aa8" category="doc">Apague los controladores: AFF A70 y AFF A90</block>
   <block id="610624f1a6b2eadbbc362858bfa11e2f" category="inline-link-macro">Revise los requisitos de reemplazo del chasis</block>
   <block id="15f73c32702be38a6c35694972953b59" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="9e50dfd69463f0498a1a5a1d869a2b1e" category="inline-link-macro-rx"></block></block>
@@ -9006,14 +8962,11 @@ SFP+ (destino/iniciador)</block>
   <block id="04639049161c98433d708c0a6845499c" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="7965ac6558ac93dfaf2504fcd8c045af" category="inline-link-macro-rx"></block></block>
   <block id="49b45e8248fd2d5ed919902809621c44" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="50c430fbfd37e7720d34aff806c960b8" category="inline-link-macro-rx"></block></block>
   <block id="b47ee6654722b2bed7a27aba5a38d41e" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="24cfaad2045c82e6542685b8f9154291" category="inline-link-macro-rx"></block></block>
-  <block id="8b2975d216e00ec9bbae796edb379021" category="doc">Sustituya el módulo del controlador: AFF A70 y AFF A90</block>
   <block id="b851102d36222ece27890507e1841ecc" category="doc">Requisitos de sustitución de controladoras: AFF A70 y AFF A90</block>
   <block id="68e66200bb827544f2bc5f02c2c9a441" category="doc">Sustitución de controladora completa: AFF A70 y AFF A90</block>
   <block id="5e1c3f88c24c4db392d7d1d519b28aa4" category="doc">Apague el controlador dañado: AFF A70 y AFF A90</block>
   <block id="50a2e3714f0440fca3d96537b2113368" category="doc">Restaurar y verificar la configuración del sistema: AFF A70 y AFF A90</block>
   <block id="ea0554b4bb91e270fbc2d78ea4e70d10" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e14fc53a2fbc5d3f87f2c572a1629eed" category="inline-link-macro-rx"></block></block>
-  <block id="d76ab8637f7b871faf1afbc59cd046ca" category="doc">Sustituya un módulo DIMM: AFF A70 y AFF A90</block>
-  <block id="48144ea57b64dddd5b6d7aa9af0b7f31" category="doc">Sustituir unidad SSD: AFF A70 y AFF A90</block>
   <block id="6c8228ef743965fe7b33006e88a295a0" category="doc">Sustituya un módulo de ventilador - AFF A70 y AFF A90</block>
   <block id="d570d60e6fb68aef28765899da0c3a11" category="summary">Mantener el hardware de AFF A70 y AFF A90</block>
   <block id="633a66c416ef74d4bb2e9b9bd6538f11" category="doc">Mantener el hardware de AFF A70 y AFF A90</block>
@@ -9042,7 +8995,6 @@ SFP+ (destino/iniciador)</block>
   <block id="addbfcd02447e9d1c6cbb3810c45a6ac" category="paragraph">Después de instalar el hardware de rack para el sistema de almacenamiento AFF A70 o AFF A90 e instalar los cables para las controladoras y las bandejas de almacenamiento, debe encender las bandejas de almacenamiento y las controladoras.</block>
   <block id="ed1a15747627f84755b5eef621bb8e85" category="inline-link-macro">completar la configuración del sistema</block>
   <block id="c0677b3f2eac3919f6dafe43a0461dd5" category="paragraph">Después de encender su sistema de almacenamiento AFF A70 o AFF A90,<block ref="a6663b3be7b31b2e16a5286f009fcfff" category="inline-link-macro-rx"></block></block>
-  <block id="21fcd461c7d93e9d4e6cc391e27e2f50" category="summary">Prepárate para instalar tu plataforma AFF A70 y AFF A90.</block>
   <block id="ec9b0b25a575ea2719a43e0ed4eba2ef" category="doc">Prepárese para instalar - AFF A70 y AFF A90</block>
   <block id="e2ffcf27d17e53137e3f3b594c1cd4c4" category="paragraph">Prepárese para instalar su sistema de almacenamiento AFF A70 o AFF A90 preparando el sitio, desempaquetando las cajas y comparando el contenido de las cajas con la hoja de embalaje, y registrando el sistema para acceder a los beneficios de soporte.</block>
   <block id="61c06139b6cae8ee51fc2ec7501dee42" category="inline-link-macro">Instale el hardware para el sistema de almacenamiento AFF A70 o AFF A90</block>
@@ -9055,10 +9007,8 @@ SFP+ (destino/iniciador)</block>
   <block id="904251477a4ab72deb06fb568e51e8e9" category="doc">Descripción general del módulo de E/S ADD y SUSTITUTE - AFF A70 y AFF A90</block>
   <block id="23c290996bbddd9feb90c8208ce03776" category="doc">Sustituya el módulo de E/S - AFF A70 y AFF A90</block>
   <block id="45246f3dd0a53426b7b68a7138275eae" category="doc">Sustituya la batería NV - AFF A70 y AFF A90</block>
-  <block id="59d1ac278f79c5b6902c13cbe126a692" category="doc">Reemplace NVRAM - AFF A70 y AFF A90</block>
   <block id="142aed9b4219bef04d9ce41b26e16e98" category="doc">Sustituya una fuente de alimentación: AFF A70 y AFF A90</block>
   <block id="09667d54b485aed2ff058a0b9116b943" category="doc">Sustituya la batería del reloj en tiempo real: AFF A70 y AFF A90</block>
-  <block id="e0bb6be3391ff9aea036f34370ebe044" category="doc">Sustituya el módulo de gestión del sistema - AFF A70 y AFF A90</block>
   <block id="1d04f5bb7d7b81fc8fded3b79cc0c8d3" category="doc">Instale y configure sus sistemas ASA R2</block>
   <block id="22d05c38a6e8032e35e9ff8d6b826ee0" category="inline-link">Documentación del sistema ASA R2</block>
   <block id="5aef6f7c7bd154b3669d06150a10ac8f" category="paragraph">Vaya al<block ref="4842686d9ffe46ff775159613c5fe1d3" category="inline-link-rx"></block> para obtener información sobre cómo instalar, usar y gestionar su sistema ASA R2.</block>
@@ -9151,40 +9101,15 @@ SFP+ (destino/iniciador)</block>
   <block id="ecda8f0a8ab2239fa58008bc2a6778f3" category="inline-link-macro">Revise los requisitos de sustitución de soportes de arranque</block>
   <block id="1246a1947c9d78ac27a693476f2c4ef2" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="49f63bb068bbde0e2924e3e81e942570" category="inline-link-macro-rx"></block></block>
   <block id="789b5a8a8cbbdce99d0cd8864ee0122a" category="doc">Apague la controladora con deterioro: FAS70 y FAS90</block>
-  <block id="05b595056622ad7d437a73c41db4bd5b" category="summary">El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo FlashCache no se puede intercambiar en caliente.</block>
-  <block id="aff5c09093f639896fea8aee1334af32" category="doc">Sustituya el portador del módulo Flash Cache o un módulo de almacenamiento en caché: FAS70 y FAS90</block>
-  <block id="e59c2a74cd130e52d9f5e488b284afd2" category="paragraph">El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache de SSD integrada en cada módulo de almacenamiento en caché.</block>
-  <block id="cb31e24fc56b3b07f537f88f0cb0663e" category="paragraph">FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo FlashCache.</block>
-  <block id="1a0f9807030e2dcfcf3ad16528a90a4c" category="paragraph">Puede realizar cualquiera de los siguientes procedimientos en función de lo que necesite ser reemplazado: Todo el portador del módulo Flashcache o un módulo de almacenamiento en caché.</block>
-  <block id="7393401d7aa7c5b4209f5909c56bc452" category="list-text"><block ref="74d9532e70287c4c6d14bca0d22b793b" category="inline-xref-macro-rx"></block></block>
   <block id="2902ee20441450339d3c624a2432953d" category="list-text"><block ref="402920e7db99056d01d15836c97d7e6e" category="inline-xref-macro-rx"></block></block>
-  <block id="da50599709f8ceacbb2f44ac74538cb8" category="section-title">Sustituya el portador del módulo FlashCache</block>
-  <block id="638f93e44a4e5eba8188b65837d38950" category="paragraph">El portador del módulo FlashCache se encuentra en la ranura 6 y alberga hasta dos módulos FlashCache. No es posible intercambiar en caliente el portador del módulo FlashCache</block>
-  <block id="509e381c6e70d6f5709eab0ac2007056" category="list-text">Asegúrese de que el sistema de almacenamiento tenga el sistema operativo adecuado para el portador del módulo FlashCache de repuesto.</block>
   <block id="0ead7a2e2db558cfd790c55a9c76462e" category="list-text">Confirme que el resto de los componentes funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.</block>
   <block id="fd39955a756e9aaa81ca55b2791f9b72" category="example-title">Opción 1 de la mayoría de sistemas</block>
   <block id="d4373786f422d4c41e16fcb4a1e26b83" category="example-title">Configuración de MetroCluster de la opción 2</block>
-  <block id="ae50de269a959e0165943b2893821522" category="section-title">Paso 2: Reemplace el portador del módulo FlashCache</block>
-  <block id="a66569371b683ea32e370479ad445c58" category="paragraph">Realice los siguientes pasos para reemplazar el portador del módulo FlashCache.</block>
-  <block id="a78dfa5641477f997773a8a496bc6c27" category="list-text">Localice el portador del módulo FlashCache que ha fallado, en la ranura 6, mediante el LED de atención ámbar iluminado en la parte frontal del portador del módulo FlashCache.</block>
-  <block id="c16e4c00d79ee8ef92fcca1fa9492cc2" category="image-alt">Retire el portador del módulo FlashCache</block>
-  <block id="a6cb82ced449dbb1046ef723067b7901" category="paragraph">Portador del módulo FlashCache</block>
   <block id="1cc5afe23260cb08d578b3171ed8bb0d" category="paragraph">Núm.s de ranura del módulo de caché</block>
-  <block id="b87d1c8ec894a37f26543a535e844e8b" category="paragraph">Asa de leva portadora del módulo FlashCache</block>
-  <block id="dcb325bf6ea5bcab2981a5f7a0a35ede" category="paragraph">LED de fallo del portador del módulo FlashCache</block>
-  <block id="b155caf60041968d40f3e850d614a9be" category="list-text">Elimine el portador del módulo FlashCache con fallos:</block>
-  <block id="5e32cbbf004ffb2d2a509ed571493ccc" category="list-text">Pellizque la pestaña azul situada en la parte inferior del portador del módulo FlashCache.</block>
   <block id="9c7e22c30b9aa93d97efb0ef5d7ccaa8" category="list-text">Gire la lengüeta para separarla del módulo.</block>
-  <block id="8a8dded5367958de77da2461985e38fd" category="list-text">Extraiga el portador del módulo FlashCache del módulo del controlador y configúrelo en una alfombrilla antiestática.</block>
-  <block id="c00f75b52aaf83129bdb959706a88e8c" category="list-text">Mueva los módulos de almacenamiento en caché al portador del módulo Flash Cache de sustitución:</block>
   <block id="21c6d5df7d87902fb54560352086c7e1" category="list-text">Pellizque la lengüeta Terra Cotta en la parte superior del módulo de caché y gire el asa de la leva lejos del módulo de caché.</block>
-  <block id="4f4941d42ca92d09bfdc51b1db6f1492" category="list-text">Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo FlashCache.</block>
-  <block id="868f5dcbc8a0ef4e68545139a9d4e14f" category="list-text">Instale el módulo de almacenamiento en caché en la misma ranura del soporte del módulo FlashCache de reemplazo y gire el asa de leva a la posición cerrada del módulo de almacenamiento en caché para bloquearlo en su lugar.</block>
   <block id="15810adb6f66a6901a9d5669bbe5721d" category="list-text">Repita estos pasos si hay un segundo módulo de almacenamiento en caché.</block>
-  <block id="79702206636b151f5aa2012db730e395" category="list-text">Instale la portadora del módulo FlashCache de repuesto en el sistema:</block>
-  <block id="b5c24cb45faff065206365210b18a04d" category="paragraph">Después de reemplazar el portador del módulo FlashCache, debe reiniciar el módulo del controlador.</block>
   <block id="cdbccebd677a8b1d134192f19ecf3f8b" category="section-title">Sustituya el módulo de almacenamiento en caché</block>
-  <block id="6ce18d354fca16bc5032faa6fef743c0" category="paragraph">Los módulos Flash Cache (módulos de almacenamiento en caché) están ubicados en la ranura 6-1 o en la ranura 6-2 o en la ranura 6-1 y la ranura 6-2.</block>
   <block id="c124cf7f1b815bf5f6c6e601798519fa" category="paragraph">Puede intercambiar en caliente los módulos de caché individuales con módulos de caché de la misma capacidad del mismo proveedor o de otro proveedor compatible.</block>
   <block id="f3852a3ed3dc942e88ae4523de9161a2" category="list-text">Asegúrese de que el módulo de almacenamiento en caché de sustitución tiene la misma capacidad que el que ha fallado, del mismo proveedor o de otro proveedor compatible.</block>
   <block id="6451bd5ba5fd42e2e0da530ac0e1f08d" category="list-text">Las unidades en los módulos de almacenamiento en caché no son unidades reemplazables en campo (FRU). Debe sustituir todo el módulo de almacenamiento en caché.</block>
@@ -9195,8 +9120,6 @@ SFP+ (destino/iniciador)</block>
   <block id="f6c9707e7b722f478882c6903c0ab72a" category="paragraph">Palanca de leva del módulo de almacenamiento en caché</block>
   <block id="6bc5838b4111c8e8e34c5a24a2c44cb0" category="paragraph">LED de fallo del módulo de almacenamiento en caché</block>
   <block id="9afed1489f4d1563ca216b11c1352728" category="list-text">Gire la palanca de leva hasta el tope.</block>
-  <block id="39ce51da7e9a2b8c7e5c38a0066b127f" category="list-text">Retire el módulo de almacenamiento en caché de la carcasa enganchando el dedo en la abertura de la palanca de leva y tirando del módulo fuera del soporte del módulo FlashCache.</block>
-  <block id="8fa7d40c54b52a6cdc5ee7ed5fd71a29" category="paragraph">Asegúrese de admitir el módulo de almacenamiento en caché a medida que lo elimina del portador del módulo FlashCache.</block>
   <block id="8de7e250263d4ca2d8dc62ef2ed1f825" category="list-text">Alinee los bordes del módulo de almacenamiento en caché con la apertura del módulo del controlador.</block>
   <block id="15add6e162f9346663b8cfaeb8d3f8c7" category="doc">Sustituya el módulo del controlador - FAS70 y FAS90</block>
   <block id="550ddae6f9579850ff21dd2afce3b69f" category="doc">Devuelva el controlador - FAS70 y FAS90</block>
@@ -9269,8 +9192,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6177b8fb5c4b14da752dc936dbe29ae8" category="doc">Sustituya el módulo de E/S - FAS70 y FAS90</block>
   <block id="2b104c49f9b8bb92d09875a956d19795" category="paragraph">Es posible que deba realizar procedimientos de mantenimiento en el hardware. En esta sección se incluyen los procedimientos específicos para el mantenimiento de los componentes del sistema FAS70 y FAS90.</block>
   <block id="2b90a1267a3b7e2b64a23c5c62d7f171" category="paragraph">En los procedimientos de esta sección se asume que el sistema FAS70 y FAS90 ya se ha puesto en marcha como nodo de almacenamiento en el entorno de ONTAP.</block>
-  <block id="37461bd85478fb33903c38944a96af87" category="inline-link-macro">Flash Cache</block>
-  <block id="0b85bf5744472ad352d98cea5a764ba0" category="paragraph"><block ref="0b85bf5744472ad352d98cea5a764ba0" category="inline-link-macro-rx"></block></block>
   <block id="3a36e6b466e0265c25d241c486f64e02" category="paragraph">Flash Cache acelera el acceso a los datos mediante el almacenamiento en caché inteligente en tiempo real de datos recientes de usuarios y metadatos de NetApp. Es eficaz para cargas de trabajo de lectura intensiva aleatoria, como bases de datos, correo electrónico y servicios de archivos.</block>
   <block id="f15dd37cefd717a7d017e45fe876146c" category="doc">Reemplace la batería NV - FAS70 y FAS90</block>
   <block id="c4ed6403201dfa217ff707bb31f7629c" category="doc">Reemplace NVRAM - FAS70 y FAS90</block>
@@ -9305,7 +9226,6 @@ SFP+ (destino/iniciador)</block>
   <block id="c91d48fe9284f4d299615b787ff7c882" category="sidebar">Instalar y configurar sistemas C-Series</block>
   <block id="d82b198ed12fecd580981b34c4959490" category="sidebar">Mantener los sistemas A-Series</block>
   <block id="e32ee65ffedbf05873ffce177cee51b5" category="sidebar">Mantener los sistemas C-Series</block>
-  <block id="0ab1a7883d0399cbaf77a2e38633a6ea" category="sidebar">Los nuevos sistemas NetApp ASA R2 (ASA A1K, ASA A70 y ASA A90) ofrecen una solución de hardware y software unificada que crea una experiencia simplificada específica de las necesidades de clientes exclusivos de SAN.</block>
   <block id="9c2e760711833288658335a04261b16a" category="sidebar">La documentación del sistema de almacenamiento R2 de ASA permite instalar, configurar y mantener el sistema ASA R2.</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="sidebar">Obtenga información sobre los sistemas de almacenamiento R2 de ASA</block>
   <block id="aa0dbb314a1c2c27148345705facc55c" category="sidebar">Instalar y mantener los sistemas ASA R2</block>
@@ -9336,7 +9256,6 @@ SFP+ (destino/iniciador)</block>
   <block id="db79c96e3435962e695832e0fd51205b" category="sidebar">FAS70 y FAS90 mantienen</block>
   <block id="546320f5b1318ecbf9a2d5efa8278b70" category="sidebar">Medios de arranque FAS70 y FAS90</block>
   <block id="bbd90c57f0c4facd0e407d460b63f5e4" category="sidebar">Módulo del controlador FAS70 y FAS90</block>
-  <block id="6aa2bbbbcd863a688ecea951a078cc57" category="sidebar">Módulo FlashCache</block>
   <block id="9d6e68abc86ef52726565c7e52c9dea7" category="image-alt">Ejemplo del número de serie del sistema</block>
   <block id="54425f945644281ccaf6201b998f169f" category="paragraph"><block ref="54425f945644281ccaf6201b998f169f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e41a410f85201d7cc87e022e1f2daf34" category="paragraph">Si tiene habilitada la detección de red en el portátil, puede completar la instalación y la configuración mediante la detección automática de clústeres.</block>
@@ -9524,7 +9443,6 @@ SFP+ (destino/iniciador)</block>
   <block id="080b3cf38e099673417f605870f1f8cd" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A300</block>
   <block id="3e96ff4d6696124ce25d44a88c2473b3" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A320</block>
   <block id="77c6f82f1fa8571b22c5fbbe73050bac" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A400</block>
-  <block id="44ba9a845369e38f447427d3106ecf71" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A70 y AFF A90</block>
   <block id="357726df28778aa8dccb6c780dddce89" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A700s</block>
   <block id="db444b24eeeefc93d51087354a133eeb" category="paragraph"><block ref="db444b24eeeefc93d51087354a133eeb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4641b0536fa1cc37c103002b67dbc848" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A900</block>
@@ -9729,7 +9647,6 @@ SFP+ (destino/iniciador)</block>
   <block id="137e91ab373d54ca35c36fff0be47241" category="list-text">En el menú de inicio, introduzca la opción<block ref="c4ca4238a0b923820dcc509a6f75849b" prefix=" " category="inline-code"></block> para el arranque normal.</block>
   <block id="e5954b5f665f3b9aee4023c5d8eb4f5f" category="list-text">Pulse &lt;enter&gt; cuando aparezca _Waiting for giveback_.</block>
   <block id="68921013f9ca843f9d1bcfd514ee67de" category="list-text">Mueva el cable de la consola al nodo asociado e inicie sesión como<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>.</block>
-  <block id="92e13c6a52e1a9d4e2955cd77e4db99d" category="list-text">Asegúrese de que los volcados de memoria en el nodo reparado se guardan en modo avanzado»<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block> y luego<block ref="7f4756e08687048c35020c40f9c8567b" prefix=" " category="inline-code"></block>.</block>
   <block id="9e989767231ec29efb85ce3345c961ff" category="list-text">Devolver solo los agregados de CFO (el agregado raíz):<block ref="291b31306c2e0668f091d41edca7e97f" prefix=" " category="inline-code"></block></block>
   <block id="e28912f373bd8bce85f7c259590bbe92" category="list-text">Si encuentra errores, póngase en contacto con<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
   <block id="bfc2c53d06a8a433a0fef8b142ab388e" category="list-text">Espere 5 minutos después de que se complete el informe de devolución y compruebe el estado de la conmutación por error y el estado de la devolución:<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> Y<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block>.</block>
@@ -10048,9 +9965,6 @@ SFP+ (destino/iniciador)</block>
   <block id="28180201bfb2d7bf5615528194442289" category="admonition">No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que podría dañar los conectores.</block>
   <block id="799ddb867e56fb20fe535c39a2bd93c6" category="admonition">La controladora arranca cuando está completamente asentada en el chasis. Obtiene su poder del controlador asociado.</block>
   <block id="a676323e6fcbbd59df78bae524b7b40c" category="list-text">Gire las asas del controlador hacia arriba y bloquéelas en su lugar con las lengüetas.</block>
-  <block id="de684735ed01be293fbf913a2a8ec714" category="list-text">Si va a configurar DHCP:</block>
-  <block id="f92453641f9de288d51e422a67039e9a" category="list-text">Si está configurando conexiones manuales: +</block>
-  <block id="7b357e81ab493d4020534d05d49f8a43" category="paragraph"><block ref="0cfd36fa2f6970c4256c7587d6c9730f" prefix="" category="inline-code"></block></block>
   <block id="0b57b3f2fbb1058ed0b97ec1a2a69f99" category="list-text">Vuelva a conectar el cable de alimentación a la fuente de alimentación (PSU) de la controladora dañada.</block>
   <block id="ed54d3fee552241630c6da46076d26b8" category="cell">Si va a volver a conectar un...</block>
   <block id="9a74e4a0a346c8db4ead325b107dc493" category="list-text">Conecte el cable de alimentación a la fuente de alimentación.</block>
@@ -11022,12 +10936,10 @@ SFP+ (destino/iniciador)</block>
   <block id="df1e51256150b209588942af3aa39c86" category="list-text">Instale el chasis de reemplazo:</block>
   <block id="88713b0102b6702a4390c31e0218a5d0" category="list-text">Con dos personas o un ascensor, instale el chasis de reemplazo en el rack de equipos o armario del sistema guiando el chasis hacia los rieles del rack de un armario del sistema o un rack de equipos.</block>
   <block id="c2ca3f0f2cd46c993c472fe2b2ead2a1" category="section-title">Paso 4: Instale los componentes del chasis</block>
-  <block id="8e7b85e50ba49f7e438e34fd94f17067" category="paragraph">Una vez instalado el chasis de reemplazo, debe instalar los módulos de controlador, volver a conectarlos y, a continuación, volver a instalar las unidades y las PSU.</block>
   <block id="c35dbeca6a0894e924dd0f22bc74b7b6" category="list-text">Comenzando por el módulo de controlador inferior, instale los módulos de controlador en el chasis de reemplazo:</block>
   <block id="462e0b4244f7f81086d8ed4914a4091d" category="paragraph">Si ha quitado los convertidores de medios (QSFP o SFPs), recuerde reinstalarlos.</block>
   <block id="30c13d1d724de7528c0d72d4e7555203" category="paragraph">Asegúrese de que los cables están conectados haciendo referencia a las etiquetas de los cables.</block>
   <block id="3c4de6b643f23f2b06411d92b09f2db7" category="list-text">Vuelva a instalar las unidades en sus bahías de unidad correspondientes en la parte delantera del chasis.</block>
-  <block id="ebe9851634608cdaec3bc032f0aac89c" category="list-text">Instale los cuatro PSU:</block>
   <block id="3af83db7024a86329156a3f0ea145165" category="list-text">Vuelva a conectar los cables de alimentación de la PSU a las cuatro PSU.</block>
   <block id="f0db4562c2eae985bf11a09aadc6070d" category="paragraph">Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis y fije el cable de alimentación a la fuente de alimentación con los tornillos de mariposa.</block>
   <block id="6ba7c840e651190e5c5f357b0b73f0cd" category="paragraph">Los módulos del controlador comienzan a arrancar en cuanto se instalan las PSU y se restaura la alimentación.</block>
@@ -11046,8 +10958,6 @@ SFP+ (destino/iniciador)</block>
   <block id="378ec75aa1d255c16ad9c85e0cb3c38d" category="list-text">Descripción de la pieza.</block>
   <block id="a28e205929838e9983677a0a5740982f" category="list-text">Cantidad en la caja.</block>
   <block id="aa540bb7b6b5d4e1ae19ef870d81aeed" category="list-text">Quite el contenido del paquete y utilice el paquete para devolver el componente con errores a NetApp.</block>
-  <block id="e64dc7a7ef4e501b9e8f23daf322a905" category="section-title">Paso 3: Etiquete los cables y los módulos del controlador y conéctelos a tierra</block>
-  <block id="6f91c65dd15df5f61f60c1e3aabb4318" category="paragraph">Debe etiquetar los cables y las controladoras antes de quitarlos de los módulos de la controladora o el chasis.</block>
   <block id="79de133f35ffda00b1cc87bd3df0f0a1" category="list-text">Etiquete todos los cables asociados con el sistema de almacenamiento. Esto facilita el recableado más adelante en este procedimiento.</block>
   <block id="61f54831afd31c3c4bb5fa569858091d" category="list-text">Etiquete los módulos del controlador.</block>
   <block id="02a322185bda81e4fb6f85f159dc2ba9" category="list-text">Si aún no está correctamente conectado a tierra, asígnese a tierra.</block>
@@ -11077,7 +10987,6 @@ SFP+ (destino/iniciador)</block>
   <block id="9a720e4e76be699dfb02bbc1262d3cb7" category="doc">Complete el reemplazo del chasis: AFF A70 y AFF A90</block>
   <block id="d15e3734e85341b27e4da1641e1f59e1" category="inline-link-macro">complete el reemplazo del chasis</block>
   <block id="8814a36d70b251b1442c439b51299ee4" category="paragraph">Después de reemplazar el chasis AFF A70 o AFF A90 dañado y volver a instalar los componentes en él, debe <block ref="e567761f3b9d650307e1ffbce9c62dc9" category="inline-link-macro-rx"></block>.</block>
-  <block id="a1d3bcf20c089dbf9082bd95e68d717d" category="doc">Prepárese para sustituir el chasis: AFF A70 y AFF A90</block>
   <block id="fb34a84a11047c5449582cfc3e832942" category="inline-link-macro">apague las controladoras</block>
   <block id="d3a08051606463fa6af8ba4af97a9c04" category="paragraph">Después de que haya preparado para reemplazar su hardware de chasis AFF A70 o AFF A90, debe <block ref="5ad1268d806d8db9e0e59370c95dfac1" category="inline-link-macro-rx"></block>.</block>
   <block id="11e980ab44ebd379750fafda5a247d2c" category="paragraph">Revise los requisitos para reemplazar un chasis defectuoso.</block>
@@ -11173,7 +11082,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e531efa1ffce94331d0abc4548448cac" category="list-text">En el aviso de Loader del controlador defectuoso, configure la dirección IP del módulo del controlador dañado:</block>
   <block id="9674c99b013ac8cdab6eb0df64e77028" category="paragraph"><block ref="83ed86e403dd4a24d2825f48008e5af3" prefix="" category="inline-code"></block></block>
   <block id="8c58ea9784c7fa6869b22626814be32c" category="list-text">En el símbolo del sistema de Loader, reinicie el nodo dañado:</block>
-  <block id="c73c2dd2459e6650d5b71cc2059faf0e" category="paragraph"><block ref="a8ede5eb13f058392e245c0a8a92ae3d" prefix="" category="inline-code"></block></block>
   <block id="682c67c386e9533bb90087e13557b0aa" category="list-text">En el menú de inicio, seleccione la opción<block ref="8f14e45fceea167a5a36dedd4bea2543" prefix=" " category="inline-code"></block>.</block>
   <block id="a0ea840e423d2247bf566acde2c201ab" category="list-text">Introduzca<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block> cuando se le pida restaurar la configuración de copia de seguridad.</block>
   <block id="3115cf8c3646a9861bf194086219616c" category="list-text">Introduzca<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> cuando se le solicite reiniciar el nodo.</block>
@@ -11209,11 +11117,9 @@ SFP+ (destino/iniciador)</block>
   <block id="a81626227e94d15884d465e1127d3af4" category="sidebar">Medios de arranque ASA A70 y ASA A90</block>
   <block id="9482f3836d9bb6259f467a0685f5e3b4" category="sidebar">Soporte de arranque de ASA A1K</block>
   <block id="3636656d79b8f02465b883839da0c32b" category="paragraph">Revise los siguientes requisitos.</block>
-  <block id="92f1ff7f532dd794f633da55b69f7c85" category="paragraph">Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal</block>
   <block id="6f6020a95b7d00c90f878194cd791491" category="list-text">Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:</block>
   <block id="2dc03ded03c37126b29eeb1dce677708" category="paragraph">Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.</block>
   <block id="334dc8a527ec5589fe66e9a5a8360575" category="list-text">Desde el aviso del CARGADOR, introduzca:</block>
-  <block id="79a5dee23638f4d5e3607951ecac75c4" category="paragraph"><block ref="cce56b203b8705f3487342813b7117be" prefix="" category="inline-code"></block>.</block>
   <block id="61d5125f4ea65c28c78898c7eb459ce2" category="list-text">Devolver solo los agregados de CFO (el agregado raíz):</block>
   <block id="07f79b362b9ba5998ff0d2001a027c73" category="paragraph"><block ref="291b31306c2e0668f091d41edca7e97f" prefix="" category="inline-code"></block></block>
   <block id="5bb45bbec6e74b011ff0ed7135d29f73" category="list-text">Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:</block>
@@ -11224,8 +11130,6 @@ SFP+ (destino/iniciador)</block>
   <block id="527eb837f30ed81358ebded9ee118169" category="paragraph">Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.</block>
   <block id="4969df85e38b1334145c46668de5d393" category="list-text">Compruebe el estado de toma de control:</block>
   <block id="ff06f9ac0caa721ed879f199881e0bf3" category="paragraph"><block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix="" category="inline-code"></block>.</block>
-  <block id="dbaf9b3984e2d85f4fed5065ef8777ee" category="list-text">Asegúrese de que todos los volcados de memoria en el nodo reparado se guarden en el modo avanzado:</block>
-  <block id="74d6510049f762b67fe103a2ea65ea1f" category="paragraph"><block ref="0581d0d071ad835f74bf419081ce5d75" prefix="" category="inline-code"></block> y luego<block ref="7f4756e08687048c35020c40f9c8567b" prefix=" " category="inline-code"></block>.</block>
   <block id="385e0461e78c6be76ddc4a5aac6f0998" category="paragraph">Revise los requisitos para sustituir el módulo del controlador.</block>
   <block id="653521d025652d70e27438c926da2d94" category="list-text">Debe tener la pieza de repuesto disponible.</block>
   <block id="20277dcf478fd8c98c1e17e544b131b2" category="list-text">Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionen correctamente. De lo contrario, póngase en contacto con el soporte técnico.</block>
@@ -11243,39 +11147,22 @@ SFP+ (destino/iniciador)</block>
   <block id="e21bdbd552261278be0a5ad02fbc6fa7" category="list-text">ASA A30</block>
   <block id="3ee9bc9a210bd85fa921ca63bdeef612" category="list-text">ASA A50</block>
   <block id="18b37022407b9886f4f4138833f49d5c" category="summary">Si un componente del sistema AFF A70 o AFF A90 falla, devuelva la parte averiada a NetApp. Consulte<block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block> la página para obtener más información.</block>
-  <block id="58075b4980e4db98db3e72c4d42ca97b" category="summary">Para garantizar la seguridad de los datos en el sistema de almacenamiento AFF A70 y AFF A90, debe comprobar la compatibilidad y el estado de la clave de cifrado. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.</block>
   <block id="00298fcd1cdb59855d04153fb372d5b1" category="summary">Restaure el cifrado en el medio de arranque de reemplazo en su sistema AFF A70 o AFF A90 para garantizar una protección de datos continua. Este proceso implica verificar la disponibilidad de claves, volver a aplicar la configuración de cifrado, confirmar el acceso seguro a sus datos.</block>
-  <block id="3991198e40ba997176ba31a00113838e" category="paragraph">Restaure el cifrado en el medio de arranque de reemplazo en su sistema AFF A70 o AFF A90 para garantizar una protección de datos continua. Este proceso implica verificar la disponibilidad de claves, volver a aplicar la configuración de cifrado y confirmar el acceso seguro a sus datos.</block>
-  <block id="a51e74eb0b262c93ab751f84ff5ad828" category="summary">Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB, restaurar la configuración desde el nodo asociado y verificar las variables de entorno.</block>
-  <block id="a25f6bec97e7646ff80d5c1552348d28" category="summary">Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de contar con el dispositivo de arranque de reemplazo correcto, acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales.</block>
   <block id="01dc782410b8bf757f56e6d2dd9ba8de" category="summary">Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90 preparando el medio de reemplazo, instalándolo en el sistema, restaurando la imagen de arranque y verificando la funcionalidad del sistema.</block>
   <block id="a39d40ffc6e883059dd303e4c5826bf2" category="doc">Inicio rápido para la sustitución de soportes de arranque - AFF A70 y AFF A90</block>
   <block id="7254e311c159ba205a6bc5f38cfc3060" category="summary">El medio de arranque del sistema AFF A70 o AFF A90 almacena datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado y sustituir el soporte de arranque en el módulo de gestión del sistema.</block>
   <block id="2de09d050e108c03bd290fc9b42a73f3" category="summary">Apague la controladora en el sistema de almacenamiento AFF A70 o AFF A90 cuando esté dañado. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
-  <block id="073ca97ff948f7b2fa9eb788aa349602" category="summary">Reinicie las controladoras, verifique el estado del sistema y devuelva la parte con errores a NetApp para completar el paso final en el flujo de trabajo de reemplazo del chasis de AFF A70 y AFF A90.</block>
-  <block id="d0f18667169dd5cba8bd1abf930d8979" category="summary">Reemplace el chasis en el sistema AFF A70 o AFF A90 cuando un error de hardware o actualización lo requiera. Este proceso implica apagar el sistema, quitar el chasis existente, instalar el nuevo y reconfigurar los componentes para garantizar un funcionamiento adecuado del sistema.</block>
   <block id="14c9c3ca2e43bd07ece3df269a696d56" category="summary">Prepárese para sustituir el chasis deficiente de su sistema AFF A70 o AFF A90 identificando el chasis deficiente, verificando los componentes de reemplazo y etiquetando los cables y los módulos de la controladora.</block>
-  <block id="cd38b993c6ad2e5704c0162f9d789f18" category="summary">Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, compruebe que todos los demás componentes del sistema funcionen correctamente, asegúrese de tener credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.</block>
-  <block id="6c63d33eb7783335379b1c9d94af11b3" category="summary">Apague las controladoras en su sistema de almacenamiento AFF A70 o AFF A90 cuando necesite reemplazar el chasis. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
   <block id="f3265cef339dbf3c5e74c4290cc2674d" category="summary">La sustitución del chasis AFF A70 y AFF A90 incluye pasos para apagar el sistema, quitar y sustituir el chasis, reconfigurar los componentes y verificar las operaciones del sistema.</block>
   <block id="82d80770b27097a251d9548f43c9e382" category="doc">Inicio rápido para la sustitución del chasis - AFF A70 y AFF A90</block>
-  <block id="2bb5a266a17138195f24b92087b37ebb" category="summary">Reemplace la controladora en su sistema AFF A70 o AFF A90 cuando un error de hardware o actualización lo requiera. Este proceso implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.</block>
-  <block id="f19d0ea02c5cb924d1bbd1b1393e656f" category="summary">Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A70 o AFF A90 puedan reanudar el funcionamiento normal.</block>
-  <block id="946e9ff613b0698dff71f93c998421e6" category="summary">Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye tener el chasis de sustitución correcto, una copia de seguridad de la configuración del sistema y el acceso a las herramientas y firmware necesarios.</block>
   <block id="e39656e100387da3ec6b6a54806cef2f" category="paragraph">Antes de sustituir la controladora en su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye tener la controladora de sustitución correcta, una copia de seguridad de la configuración del sistema y el acceso a las herramientas y el firmware necesarios.</block>
-  <block id="13584ead3579381e47832c1fc5821f4a" category="summary">Compruebe que las interfaces lógicas generan informes en su puerto inicial, realice una comprobación del estado del clúster y devuelva la parte con errores a NetApp para completar el paso final en el flujo de trabajo de sustitución de la controladora AFF A70 y AFF A90.</block>
   <block id="a36efc11d87f3dc60d9f74397a3d68a6" category="paragraph">Apague el módulo del controlador mediante una de las siguientes opciones.</block>
   <block id="fc6315489b2675580df80b8ba798580a" category="summary">Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF A70 o AFF A90 y confirme que los adaptadores del sistema enumeran todas las rutas a los discos.</block>
   <block id="5804af3501a907b164a7eade0771c13a" category="summary">La sustitución de controladoras AFF A70 y AFF A90 incluye los pasos para apagar la controladora, quitar y sustituir la controladora, reconfigurar los ajustes del sistema y verificar las operaciones del sistema.</block>
   <block id="d2005409b1b3df2f36eafbd1c707b35a" category="doc">Inicio rápido para la sustitución del controlador: AFF A70 y AFF A90</block>
-  <block id="693444ad7c3a519b57ea2f6a67afe3ee" category="summary">Reemplace un DIMM en su sistema AFF A70 o AFF A90 cuando se detecten demasiados errores corregibles o que no se pueden corregir. Estos problemas, a menudo provocados por un único fallo de DIMM, pueden impedir que el sistema de almacenamiento arranque el ONTAP.</block>
-  <block id="085e9f138bf88e992aba5f4bb28477e8" category="summary">Reemplace una unidad en el sistema AFF A70 o AFF A90 cuando se produzca un error en una unidad o requiera una actualización. Este proceso implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema.</block>
-  <block id="0dccdedc6bfcf30123409a5daf909e3a" category="summary">Sustituya un módulo de ventilador en su sistema AFF A70 o AFF A90 cuando se produzca un error en un ventilador o no esté funcionando de manera eficiente, lo que puede afectar a la refrigeración del sistema y al rendimiento general.</block>
   <block id="6f13230d5681e1c88b50f5ecbce62637" category="paragraph">Apague o tome el control del módulo del controlador defectuoso mediante una de las siguientes opciones.</block>
   <block id="9d942fe208df847ebbb52d3ac4973c12" category="summary">Puede sustituir un módulo de I/O con fallo en el sistema de almacenamiento AFF A70 o AFF A90 por el mismo tipo de módulo de I/O, o por otro tipo de módulo de I/O diferente. También puede agregar un módulo de E/S a un sistema con ranuras vacías.</block>
-  <block id="1853543dc222d3a9f913dd023a08b255" category="paragraph">Sustituya un módulo de E/S de su sistema AFF A70 o AFF A90 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales.</block>
   <block id="870bcf4039fdcff653f180566b1ae65d" category="summary">Mantener el hardware de sus sistemas de almacenamiento de AFF A70 y AFF A90 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.</block>
-  <block id="c7366a4e629f0430862d80db101f4a13" category="doc">Mantenimiento de los sistemas de almacenamiento AFF A70 y AFF A90</block>
   <block id="af1dd5bed2e7f895621a59db47f7a163" category="paragraph">Los procedimientos de mantenimiento se dan por sentado que los sistemas AFF A70 y AFF A90 ya se han puesto en marcha como nodo de almacenamiento en el entorno de ONTAP.</block>
   <block id="d7cae672b9df48e3106485c6d34eeb2c" category="summary">Si el medio de arranque del sistema ASA A70 o ASA A90 está dañado, puede iniciar la imagen de recuperación, restaurar la configuración desde el nodo asociado y verificar las variables de entorno.</block>
   <block id="635808fcf7151910b4d230fdffc539b6" category="paragraph">Si el medio de arranque del sistema ASA A70 o ASA A90 está dañado, puede arrancar la imagen de recuperación y restaurar la configuración desde el nodo asociado.</block>
@@ -11383,4 +11270,161 @@ SFP+ (destino/iniciador)</block>
   <block id="f29453fc9b172b87989c48fc7a5c5299" category="sidebar">Chasis ASA A20, ASA A30 y ASA A50</block>
   <block id="d1c24e8a39fae2157a44e2cc90a3ef86" category="sidebar">Módulo de controlador ASA A20, ASA A30 y ASA A50</block>
   <block id="c135c802a875bd87fd7ec037edbbefaa" category="sidebar">Módulo I/O ASA A20, ASA A30 y ASA A50</block>
+  <block id="ded04a98a4cf976c5fe334710e1beb0e" category="admonition">Ejecute<block ref="77da07d2ad54f11335f6a0e867b30843" prefix=" " category="inline-code"></block> el comando si no conoce el identificador de dispositivo de Flash Cache.</block>
+  <block id="b004088fa722ea0327164c4ba4c02ace" category="list-text">Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.</block>
+  <block id="045e3738db30f0570266e975de702462" category="paragraph">El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.</block>
+  <block id="6b0f67919a1f7266d12612788d6f00a5" category="list-text">Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar. + El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.</block>
+  <block id="53f7d1f44f0967b908adcf413c5c43b3" category="paragraph">Para eliminar módulos de I/o del chasis antiguo, incluidos los módulos de NVRAM, siga la secuencia específica de pasos. No es necesario quitar el módulo de Flash Cache del módulo NVRAM al moverlo a un nuevo chasis.</block>
+  <block id="dd892e2fd2dce9a107edec02b445ef7d" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM/Flash Cache desde el chasis antiguo, siga la secuencia específica de pasos.</block>
+  <block id="b01bdac065de5aab3293d4c9b6c143d1" category="paragraph">El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.</block>
+  <block id="f8d5ac07d03e3b9a976830db254e0555" category="paragraph">Para sustituir un módulo NVRAM con fallos, debe retirarlo del chasis, quitar o módulos de Flash Cache del módulo NVRAM, mover los DIMM al módulo de reemplazo, reinstalar el módulo o los módulos de Flash Cache e instalar el módulo NVRAM de reemplazo en el chasis.</block>
+  <block id="b5a7ca7700898c9641ac87a395952ac3" category="list-text">Mueva el módulo Flash Cache del antiguo módulo NVRAM al nuevo módulo NVRAM:</block>
+  <block id="b3e3769bccb68aed4a66a70b9249b23f" category="paragraph">Botón de liberación naranja (gris en módulos Flash Cache vacíos)</block>
+  <block id="8befbe5f9e65001ca21f12c3bc9ac971" category="paragraph">Asa de leva Flash Cache</block>
+  <block id="bd6adf2a407ffbf3e4a8eedb33e202a2" category="list-text">Pulse el botón naranja de la parte frontal del módulo Flash Cache.</block>
+  <block id="4d9ed4404057a5ca291db83ff81a93ff" category="admonition">El botón de liberación de los módulos vacíos de Flash Cache aparece en gris.</block>
+  <block id="83ff481b2e94b4067569617b8b2beb74" category="list-text">Empuje suavemente el módulo Flash Cache hasta el fondo en el módulo NVRAM y, a continuación, gire el asa de la leva hasta que bloquee el módulo en su lugar.</block>
+  <block id="eeb7f593c159ca9eb2fb310bd7d23fc2" category="paragraph">Los módulos Flash Cache (Flash Cache o módulos de almacenamiento en caché) SSD NVMe son módulos separados. Se encuentran en la parte frontal del módulo NVRAM. Para sustituir o añadir un módulo de almacenamiento en caché, búsquelo en la parte posterior del sistema en la ranura 6 y, a continuación, siga la secuencia específica de pasos para reemplazarlo.</block>
+  <block id="b6a69cb39407395404cfbc744c377b6a" category="paragraph">Los módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM10 en la ranura 6 de solo sistemas FAS9000. A partir de ONTAP 9.4, puede cambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o de un proveedor compatible distinto.</block>
+  <block id="df6c8e6b3ba5bce0814db19ab16307c3" category="list-text">Verifique que se muestren todos los discos:<block ref="242f4ce1948273386f8bb487bdd3732f" prefix=" " category="inline-code"></block></block>
+  <block id="6fbf6612f01484a6facb5d0d33a5b4ba" category="paragraph">Después de instalar el chasis de reemplazo, debe instalar los módulos del controlador, volver a conectarlos y, a continuación, volver a instalar las unidades y las PSU.</block>
+  <block id="4b4bb5ddb129b80d911b66a281db42da" category="list-text">Instale las cuatro PSU:</block>
+  <block id="81cf1b6821a9509701aa3ffa438696e8" category="inline-link">Seleccione el procedimiento de actualización del hardware de la controladora</block>
+  <block id="ebffb50e0b751314d493e13cf6d9bae2" category="list-text">No utilice este procedimiento para las actualizaciones del sistema; en su lugar, consulte la<block ref="624f79ea247af93b551ac85c36e5246e" category="inline-link-rx"></block> para obtener instrucciones.</block>
+  <block id="11715af7d7c992de7e50f09b0ef0bd34" category="section-title">Paso 3: Etiquete los cables y los módulos del controlador</block>
+  <block id="cc7478989c9d0ccd78b85146f63bc5dc" category="paragraph">Debe etiquetar los cables y los módulos de controladoras antes de quitarlos de los módulos de la controladora o el chasis.</block>
+  <block id="2ebb9d1c7085d32cb7f9f4ac52713740" category="list-text">El procedimiento de sustitución del chasis es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.</block>
+  <block id="c3d2740d50d775957cdc077eff98b9c9" category="paragraph">Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.</block>
+  <block id="881029605ca74e40713919d1bb348fae" category="open-title">Cifrado OKM</block>
+  <block id="b21b09fdeb57aca76290eb4fe2ae643a" category="open-title">Cifrado EKM</block>
+  <block id="b2e96dd14c92c1706a90f1bd89cb23c7" category="list-text">No utilice este procedimiento para las actualizaciones de la controladora; consulte la<block ref="624f79ea247af93b551ac85c36e5246e" category="inline-link-rx"></block> para obtener orientación.</block>
+  <block id="5699c77101753104190332a9d7da9ce5" category="list-text">Si su sistema tiene una configuración MetroCluster, debe revisar<block ref="dbcae02c495cc3db61b37ce85396171e" category="inline-link-rx"></block> para determinar si debe usar este procedimiento.</block>
+  <block id="a5edbd6d88a4165346e4d8cdb1f47c5c" category="list-text">Debe sustituir el componente con errores por la unidad reemplazable del sector (FRU) que ha recibido de NetApp.</block>
+  <block id="98647483b31cc877bfa79fa69527651a" category="list-text">Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.</block>
+  <block id="5936be00e88eb782af00b7d10949837a" category="section-title">Paso 3: Reemplace la DIMM</block>
+  <block id="f93850287d87d3b25d1ae82f23739c89" category="paragraph">Para sustituir el DIMM, búsquelos dentro de la controladora y siga la secuencia específica de pasos.</block>
+  <block id="b68e23ba744de81732ee8532ad0ffa65" category="paragraph">El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.</block>
+  <block id="92eb8adda50290707f24c0186757e6b6" category="list-text">Asegúrese de tener la pieza de repuesto disponible. Debe sustituir el componente fallido por un componente de sustitución que ha recibido del proveedor.</block>
+  <block id="eddcdc7ef0c41a163b1aa75c692e684c" category="list-text">Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, póngase en contacto con<block ref="dac6ef02422de09259cb8cc562a669a7" category="inline-link-rx"></block>.</block>
+  <block id="6308cea3813d33c5bf2949b30d1a8f10" category="section-title">Paso 3: Reemplace los DIMM NVRAM</block>
+  <block id="0e22dd23e6324e2e936de48ef986b220" category="paragraph">Para sustituir los módulos DIMM NVRAM en el módulo NVRAM, primero debe extraer el módulo NVRAM y, a continuación, sustituir el módulo DIMM de destino.</block>
+  <block id="76341fe070bb8baf145cd67f5221a7ed" category="list-text">Comprenda que puede utilizar este procedimiento con todas las versiones de ONTAP compatibles con el sistema.</block>
+  <block id="4564e5afb25f1ffe83d0d3ac84e6cb52" category="paragraph">El módulo de gestión del sistema, ubicado en la parte posterior de la controladora de la ranura 8, contiene componentes integrados para la gestión del sistema y puertos para la gestión externa. El controlador de destino debe apagarse para sustituir un módulo de gestión del sistema defectuoso o para sustituir el soporte de arranque.</block>
+  <block id="09251107807a8863c162ef0d13b4ddbb" category="list-text">Asegúrese de que todos los demás componentes del sistema funcionen correctamente.</block>
+  <block id="8715aa093d3bd0ff3589f26f08de5eda" category="list-text">Asegúrese de que la controladora asociada pueda hacerse cargo de la controladora deteriorada.</block>
+  <block id="bf5a59710d5b5e8b78221799e840dc18" category="paragraph"><block ref="d21ecc516ee16c13faec7e470282a04d" prefix="" category="inline-code"></block></block>
+  <block id="6e724374a7f94186bf150ad3f2518ad5" category="paragraph">Si la versión de ONTAP que se ejecuta en los nodos nuevos es diferente a la versión de los nodos originales, debe haber descargado el archivo &lt;xxx_image.tgz&gt; correcto del sitio de soporte de NetApp en un directorio accesible mediante web (consulte el Paso 4). Es necesario que el archivo &lt;xxx_image.tgz&gt; realice un arranque en red del sistema.</block>
+  <block id="d40530e10631f437f94d6f1fef14cd53" category="paragraph"><block ref="17adc220b188022ae9f0e1b23b988522" prefix="" category="inline-code"></block></block>
+  <block id="4f77b2dcd560973ee59e2f123323c869" category="paragraph">Path_to_the_web-accessible_directory es la ubicación del archivo &lt;xxx_image.tgz&gt; descargado.</block>
+  <block id="716023d4600a7c0e1d8be69651c1702f" category="list-text">Si se le solicita que continúe con el procedimiento, introduzca<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> y, cuando se le solicite el paquete, introduzca la dirección URL del archivo de imagen:<block ref="87c1a3418135883a8a235fe337372005" prefix=" " category="inline-code"></block>.</block>
+  <block id="091fa7b82bf6559b6079bd7650861afb" category="summary">El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
+  <block id="021566978f7488f2b517501566bc0db7" category="summary">Para garantizar la seguridad de los datos en el sistema de almacenamiento AFF A70 y AFF A90, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.</block>
+  <block id="7d2eb8f41328745f5274b206e54aae98" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque: AFF A70 y AFF A90</block>
+  <block id="eefb5accf7d4ad2229c3cc4e823f76b3" category="paragraph">Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF A70 o AFF A90, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.</block>
+  <block id="9cd2a6b6bdd086af956c7e27d3059067" category="inline-link-macro">apague la controladora</block>
+  <block id="482e4d1e9586e44d69c9610613f0abf6" category="paragraph">Después de comprobar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque, debe <block ref="68b439f7374cbf94d1d0674cba562466" category="inline-link-macro-rx"></block>.</block>
+  <block id="2c41be3742dfd04cb3e35161b5aa8cae" category="doc">Restaure el cifrado en el medio de arranque: AFF A70 y AFF A90</block>
+  <block id="159bd84020d09d0cb2a2382b469de5c4" category="paragraph">Restaure el cifrado en el medio de arranque de reemplazo en su sistema AFF A70 o AFF A90 para garantizar una protección de datos continua. El proceso de sustitución implica verificar la disponibilidad de claves, volver a aplicar la configuración de cifrado y confirmar el acceso seguro a sus datos.</block>
+  <block id="e2e2ae565aa28a204ee6037dec714ccc" category="paragraph">Después de restaurar el cifrado en el soporte de arranque, debe <block ref="e2df5d85d0d0d8d0a3a4f7656136cebe" category="inline-link-macro-rx"></block>.</block>
+  <block id="6740691430de88734e113f13d35b6983" category="summary">Si el soporte de arranque del sistema AFF A70 o AFF A90 está dañado, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado.</block>
+  <block id="fb8d280a656e08faa8b364869411286a" category="inline-link-macro">restaure el cifrado en el soporte de arranque</block>
+  <block id="06083a1993c377623f1b9c8a4bde3ebf" category="paragraph">Después de arrancar la imagen de recuperación, es necesario <block ref="be52ba9563c0eafd16e999b38353737d" category="inline-link-macro-rx"></block>.</block>
+  <block id="384217cdec726ee67935297452978e96" category="summary">Antes de sustituir el medio de arranque en su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que tiene el dispositivo de arranque de reemplazo correcto, el acceso al firmware del sistema y al software ONTAP, y una copia de seguridad de los datos de configuración esenciales.</block>
+  <block id="408b3fac19f2a23f482ae7a33b300763" category="doc">Requisitos para sustituir el soporte de arranque: AFF A70 y AFF A90</block>
+  <block id="4cc46eaff736b1c1b4344f760a3812e9" category="inline-link-macro">compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque</block>
+  <block id="91afb4a99422cbf0cbccd15e6a2e2602" category="paragraph">Después de revisar los requisitos para reemplazar el soporte de arranque, debe <block ref="91feb26699cc8675dce29ac358c94764" category="inline-link-macro-rx"></block>.</block>
+  <block id="e3a1979416798658cc544e3caa45070c" category="inline-link-macro">inicie la imagen de recuperación</block>
+  <block id="0163271bf5c3aff0aa7865f050229a26" category="paragraph">Después de reemplazar el soporte de arranque, debe <block ref="5a569bc0149d933ce39c87a98c5fb6ae" category="inline-link-macro-rx"></block>.</block>
+  <block id="94b02598e2a9d4bde3dfe5d8a97bce89" category="summary">Apague la controladora de su sistema de almacenamiento AFF A70 o AFF A90 cuando necesite reemplazar el medio de arranque. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
+  <block id="b7e37132f4ff6930e544d75049d65aa9" category="doc">Apague la controladora para sustituir el soporte de arranque, AFF A70 y AFF A90</block>
+  <block id="bbfca713068bba4697c845beb95121c9" category="paragraph">Después de apagar el controlador, debe <block ref="844398b29ea04b019bab02290e44033a" category="inline-link-macro-rx"></block>.</block>
+  <block id="0c24f1f5276131f68f59d013b5140fe2" category="summary">Reinicie las controladoras, verifique el estado del sistema y devuelva la pieza con error a NetApp para completar el paso final del procedimiento de reemplazo del chasis de AFF A70 y AFF A90.</block>
+  <block id="a7d0431e48fc8e27a57e7c9406da1725" category="summary">Reemplace el chasis del sistema AFF A70 o AFF A90 cuando se produzca un error de hardware o actualización que lo requiera. El proceso de sustitución implica la retirada de las unidades de alimentación (PSU), la extracción del chasis existente, la instalación del nuevo y la reinstalación de los componentes del chasis.</block>
+  <block id="ff271b0c96467d97315c4c8bc2a98b8a" category="doc">Prepárese para sustituir el chasis: AFF A70 y AFF A90</block>
+  <block id="6d282e909f145bd004728ddc74c015d2" category="summary">Antes de sustituir el chasis de su sistema AFF A70 o AFF A90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que el resto de componentes del sistema funcionan correctamente, verificar que cuenta con credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.</block>
+  <block id="10e86c29e324a387d895b24857eeedb4" category="doc">Requisitos para sustituir el chasis: AFF A70 y AFF A90</block>
+  <block id="cd9455911023520fcf98b4da7734bf3e" category="inline-link-macro">prepárese para sustituir el chasis</block>
+  <block id="cc76e275a47d9d1dd1c6de11bb2f7b12" category="paragraph">Después de revisar los requisitos para reemplazar el chasis, debe <block ref="b1d5a90c05f55c4ad4ac020285b0e079" category="inline-link-macro-rx"></block>.</block>
+  <block id="586bc4cfcaeebf3b002827cd918b9ff1" category="summary">Apague las controladoras en su sistema de almacenamiento AFF A70 o AFF A90 cuando necesite reemplazar el chasis. Es crucial apagar la controladora con seguridad para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
+  <block id="cfdba73c7c3c1aef6d411979e7eb0c2c" category="paragraph">Apague las controladoras en su sistema de almacenamiento AFF A70 o AFF A90 cuando necesite reemplazar el chasis. Es crucial apagar las controladoras con seguridad para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
+  <block id="a1de9509c1cc526ff2685cc16f15c3c0" category="paragraph">Después de apagar las controladoras, debe hacerlo<block ref="36e3e0df655e652fc33a5dfc009000ae" category="inline-link-macro-rx"></block>.</block>
+  <block id="11e8ff844165c77d350f816362d0ed0a" category="summary">Reemplace la controladora en el sistema AFF A70 o AFF A90 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.</block>
+  <block id="045e51ef9fd14e92bed7263f56f60f6a" category="doc">Sustituya el controlador: AFF A70 y AFF A90</block>
+  <block id="7802e205f19ce9b3c1e4b5875798ebef" category="inline-link-macro">restaure la configuración del sistema</block>
+  <block id="44505b1d85314cbb257a6a2a6bf388ab" category="paragraph">Después de reemplazar el controlador AFF A70 o AFF A90 dañado, es necesario <block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
+  <block id="dfa5103eb07abaac2f8b16bd48e7b453" category="summary">RDevuelve el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A70 o AFF A90 pueda reanudar el funcionamiento normal.</block>
+  <block id="13b0f53aec80ac13170530410c42bc46" category="paragraph">Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A70 o AFF A90 puedan reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).</block>
+  <block id="a61002aab76d792f612bedb7d53fdd4f" category="inline-link-macro">complete el reemplazo de la controladora</block>
+  <block id="8e4a77cdcca9305c0b2b2aaff9ccf95f" category="paragraph">Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe <block ref="d6f5f08e0612b966d919b4ea0b494c53" category="inline-link-macro-rx"></block>realizar un procedimiento.</block>
+  <block id="f186981a4514bcd86930c033d8b52982" category="paragraph">Una vez que haya revisado los requisitos para reemplazar su controlador AFF A70 o AFF A90, debe hacerlo<block ref="5548f0b530c949cbac4afbdb1eb16be4" category="inline-link-macro-rx"></block>.</block>
+  <block id="09d0394dd9f4460ac15da27cea6fffaf" category="summary">Compruebe que las interfaces lógicas informan a su puerto de inicio, realice una comprobación del estado del clúster y, a continuación, devuelva la parte con error a NetApp para completar el paso final del procedimiento de sustitución de las controladoras AFF A70 y AFF A90.</block>
+  <block id="648ac9f5816534afdd3648942217b373" category="inline-link-macro">sustituya el controlador</block>
+  <block id="f7cca63a8d34c4b92e6c512ace430431" category="paragraph">Después de apagar el controlador, debe <block ref="4c59920dffd5894cdc2dc27ddd7fff07" category="inline-link-macro-rx"></block>.</block>
+  <block id="67deb70786a6ab0a5fe6d757258a376d" category="inline-link-macro">devuelva la controladora</block>
+  <block id="144ef5a8d530c9af9dd9a75ed85bd1a6" category="paragraph">Después de restaurar y verificar la configuración del sistema para su sistema AFF A70 o AFF A90, debe hacerlo<block ref="f96992113d4cc080f9d372523b7a919c" category="inline-link-macro-rx"></block>.</block>
+  <block id="49e12ef90b1faa3a315b169542c713b2" category="summary">Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasiados errores de memoria corregibles o que no se pueden corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora dañada, extraerla, sustituir el DIMM y luego reinstalar la controladora.</block>
+  <block id="c6fb1a92a42d034793f0283170857e55" category="doc">Sustituya un DIMM por errores corregibles o que no pueden corregirse: AFF A70 y AFF A90</block>
+  <block id="c5f515f28cb6c1d3c02533b311fba3d8" category="summary">Reemplace una unidad en el sistema AFF A70 o AFF A90 cuando se produzca un error en una unidad o requiera una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema.</block>
+  <block id="000b9b29f1c096063607d874c93f0b4d" category="doc">Sustituir una unidad SSD: AFF A70 y AFF A90</block>
+  <block id="d7b13f1b873e95232ccd8e394ffe5a31" category="summary">Sustituya un módulo de ventilador del sistema AFF A70 o AFF A90 si se produce un error en un ventilador o no está funcionando de forma eficiente, lo que puede afectar a la refrigeración del sistema y al rendimiento general. El proceso de sustitución implica apagar la controladora deteriorada, extraer la controladora, sustituir el ventilador, reinstalar la controladora y devolver la pieza averiada a NetApp.</block>
+  <block id="c9eb9dae2912644361174c87c95e219c" category="paragraph">Sustituya un módulo de ventiladores en su sistema AFF A70 o AFF A90 cuando se produzca un error en un ventilador o no esté funcionando de manera eficiente, ya que esto puede afectar a la refrigeración del sistema y al rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp.</block>
+  <block id="c3c30014589b4b5af30412dba283a2b0" category="paragraph">Agregue un módulo de E/S a su sistema AFF A70 o AFF A90 para mejorar la conectividad de red y ampliar la capacidad de su sistema para gestionar el tráfico de datos.</block>
+  <block id="52406e048549d7615d438e28022d00e0" category="paragraph">Puede agregar un módulo de E/S al sistema cuando haya ranuras vacías disponibles o cuando todas estén completamente ocupadas.</block>
+  <block id="129c4825a4876a3275fe6fde1ef05925" category="paragraph">Los sistemas AFF A70 y AFF A90 ofrecen flexibilidad en la expansión o sustitución de módulos de I/O para mejorar la conectividad y el rendimiento de la red. La adición o sustitución de un módulo de E/S es esencial al actualizar las capacidades de red o al abordar un módulo fallido.</block>
+  <block id="bbf73d5cd427d702187273d0f71f8264" category="summary">Sustituya un módulo de E/S de su sistema AFF A70 o AFF A90 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales. El proceso de sustitución implica apagar la controladora, sustituir el módulo de I/O fallido, reiniciar la controladora y devolver la parte fallida al NetApp.</block>
+  <block id="6469f92d939d5af2ddb7571ff9a54ce1" category="doc">Descripción general de los procedimientos de mantenimiento - AFF A70 y AFF A90</block>
+  <block id="9a14eb4201f018a934225cd84a42221c" category="summary">Reemplace la batería NV en su sistema AFF A70 o AFF A90 cuando la batería comience a perder carga o falla, ya que es responsable de preservar los datos críticos del sistema durante cortes de energía. El proceso de reemplazo implica apagar el controlador dañado, quitar el módulo del controlador, reemplazar la batería NV, reinstalar el módulo del controlador y devolver la pieza fallida a NetApp.</block>
+  <block id="b85925ab6af84e80af54ee558d7cdd7b" category="summary">Sustituya el NVRAM en su sistema AFF A70 o AFF A90 cuando la memoria no volátil falle o necesite una actualización.</block>
+  <block id="aaf0a6c95c867df69992eef6a692ca4b" category="doc">Sustituya el NVRAM - AFF A70 y AFF A90</block>
+  <block id="6ce37dbe2a72695de938ca0373d07a48" category="paragraph">Sustituya el NVRAM en su sistema AFF A70 o AFF A90 cuando la memoria no volátil falle o necesite una actualización. El proceso de sustitución implica apagar la controladora deteriorada, sustituir el módulo NVRAM o NVRAM DIMM, reasignar los discos y devolver la pieza averiada a NetApp.</block>
+  <block id="4397c8568a5da97a4fa9968d07a388d6" category="summary">Reemplace una unidad de fuente de alimentación (PSU) de CA o CC en su sistema AFF A70 o AFF A90 cuando falla o falla, asegurándose de que su sistema continúa recibiendo la alimentación necesaria para un funcionamiento estable. El proceso de sustitución implica desconectar la fuente de alimentación de destino de la fuente de alimentación, desconectar el cable de alimentación, extraer la fuente de alimentación defectuosa e instalar la fuente de alimentación de repuesto y volver a conectarla a la fuente de alimentación.</block>
+  <block id="2529fd3c33c553ca2e8d9592843f4207" category="summary">Reemplace la batería de reloj en tiempo real (RTC), comúnmente conocida como una batería de pila de moneda, en su sistema AFF A70 o AFF A90 para garantizar que los servicios y aplicaciones que dependen de la sincronización de tiempo precisa permanezcan operativos.</block>
+  <block id="074741912fd3881b9c0c739cd18929e2" category="summary">Sustituya el módulo de gestión del sistema en el sistema AFF A70 o AFF A90 cuando presente defectos o que el firmware esté dañado. El proceso de reemplazo implica que se apague la controladora deteriorada, se sustituya el módulo de gestión del sistema con errores, se reinicie la controladora, se actualicen las claves de licencia y se devuelva la parte con error a NetApp.</block>
+  <block id="20b1449f6216ab28919605292500b402" category="doc">Sustituya el módulo de gestión del sistema - AFF A70 y AFF A90</block>
+  <block id="1f2cf1bdc028f501e0052daef27a058a" category="paragraph">Sustituya el módulo de gestión del sistema en el sistema AFF A70 o AFF A90 cuando presente defectos o que el firmware esté dañado. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de gestión del sistema con errores, reiniciar la controladora, actualizar las claves de licencia y devolver la parte con error a NetApp.</block>
+  <block id="cf20ef6c3ad56f51916c660c155d776b" category="summary">El módulo NVRAM consta de NVRAM10 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
+  <block id="939d9449c6d0732b22e0493b628bb896" category="summary">El módulo NVRAM consta de NVRAM11 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.</block>
+  <block id="7edf1f3179339021f055ec2c0cfb3e9d" category="summary">El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo Flash Cache no se puede intercambiar en caliente.</block>
+  <block id="f216f5272a9bf39ccecae542b80d4bba" category="doc">Sustituya el portador del módulo Flash Cache o un módulo de almacenamiento en caché: FAS70 y FAS90</block>
+  <block id="bec3c3d322e61cf4fb9d371c2b8a1230" category="paragraph">El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache SSD integrada en cada módulo de almacenamiento en caché.</block>
+  <block id="d4f47b7acbf893a3c4734bad5b0d3873" category="paragraph">FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo Flash Cache.</block>
+  <block id="c2a4b5850ddc08ee8695cc3a7d6d8f60" category="paragraph">Puede realizar cualquiera de los siguientes procedimientos dependiendo de lo que haya que reemplazar: Todo el portador de módulo de Flash Cache o un módulo de almacenamiento en caché.</block>
+  <block id="025075570cd9bb7535ad91ed4d464db6" category="list-text"><block ref="75c6ecfae5c2dff701c1623adc220334" category="inline-xref-macro-rx"></block></block>
+  <block id="232f8c06b8825cdb1e6d094998bdf9bc" category="section-title">Sustituya el soporte del módulo Flash Cache</block>
+  <block id="74c94db80b288242c7f6674930d713e7" category="paragraph">El portador del módulo Flash Cache está ubicado en la ranura 6 y aloja hasta dos módulos Flash Cache. No es posible intercambiar en caliente el portador del módulo Flash Cache</block>
+  <block id="bebbc1516aa1b9a12fe06d7b34d961eb" category="list-text">Asegúrese de que el sistema de almacenamiento tenga el sistema operativo adecuado para el portador del módulo Flash Cache de reemplazo.</block>
+  <block id="329c099907d0f52c68025a7034cdf53b" category="section-title">Paso 2: Sustituya el portador del módulo Flash Cache</block>
+  <block id="e311fe35e84dae70043a7afea8a3e209" category="paragraph">Realice los pasos siguientes para sustituir el portador del módulo Flash Cache.</block>
+  <block id="6bfea0aef7a0f4d7b6e938f7b8cb92cb" category="list-text">Localice en la ranura 6 el portador del módulo Flash Cache que ha fallado mediante el LED de atención ámbar iluminado en la parte frontal del portador del módulo Flash Cache.</block>
+  <block id="b9d75068f283e47b1871a81e0ae98f88" category="image-alt">Extraiga el soporte del módulo Flash Cache</block>
+  <block id="d02ffa3301373d79bb19ab24899d6b94" category="paragraph">Portador del módulo Flash Cache</block>
+  <block id="7ec745c531dfcccbb03e8cb6ac770325" category="paragraph">Asa de leva portadora del módulo Flash Cache</block>
+  <block id="6320c4570aae84b6f711a0a643c02105" category="paragraph">LED de fallo del portador del módulo Flash Cache</block>
+  <block id="f7ae0ec162944a058c4afe86e4610bb7" category="list-text">Elimine el portador del módulo Flash Cache con errores:</block>
+  <block id="f01b7f35124d8dbf6be7148d34db0f33" category="list-text">Pellizque la pestaña azul que se encuentra en la parte inferior del portador del módulo Flash Cache.</block>
+  <block id="4a6358508c77fa629878a588642ff95b" category="list-text">Saque el portador del módulo Flash Cache del módulo de la controladora y establézcalo en una alfombrilla antiestática.</block>
+  <block id="66a9252526707f1fbb30f10131f9a4c5" category="list-text">Mueva los módulos de almacenamiento en caché al portador del módulo Flash Cache de sustitución:</block>
+  <block id="47b358f21e6762d922bb6e4e2eb6663f" category="list-text">Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo Flash Cache.</block>
+  <block id="085a8eb90d0f9c87674f47de8d745d4c" category="list-text">Instale el módulo de almacenamiento en caché en la misma ranura del soporte del módulo Flash Cache de reemplazo y gire el asa de leva a la posición cerrada en el módulo de almacenamiento en caché para bloquearlo en su sitio.</block>
+  <block id="0de97d6035bb6bac9f3261a3b54caf2b" category="list-text">Instale el portador del módulo Flash Cache de repuesto en el sistema:</block>
+  <block id="ec617cf6645b7b31af4acf4bb6bf5548" category="paragraph">Después de sustituir el portador del módulo Flash Cache, debe reiniciar el módulo de la controladora.</block>
+  <block id="cd8149bfa17c8af4e5f1ee33f2b614e1" category="paragraph">Los módulos Flash Cache (módulos de almacenamiento en caché) están ubicados en la ranura 6-1 o en la ranura 6-2 o en la ranura 6-1 y la ranura 6-2.</block>
+  <block id="c29caa5c6637387a3d824074eeb2985c" category="list-text">Retire el módulo de almacenamiento en caché de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del soporte del módulo Flash Cache.</block>
+  <block id="66a0ca1988f2e1500a8393e213211b91" category="paragraph">Asegúrese de admitir el módulo de almacenamiento en caché cuando lo retire del portador del módulo Flash Cache.</block>
+  <block id="5fbc523d8d2ad241522a15100f23bef2" category="inline-link-macro">Flash Cache</block>
+  <block id="4016d0dfef3c71172a1c22488fbd9043" category="paragraph"><block ref="4016d0dfef3c71172a1c22488fbd9043" category="inline-link-macro-rx"></block></block>
+  <block id="b9d7e088b534bc4204f17a38d0ca2c6d" category="summary">Los módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte delantera del módulo NVRAM11 en la ranura 6 de solo sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
+  <block id="02d42b405553fc829059f9765d456680" category="paragraph">Los módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) se encuentran en la parte frontal del módulo NVRAM11 en la ranura 6 de los sistemas FAS9500. Puede intercambiar en caliente el módulo de almacenamiento en caché de la misma capacidad desde el mismo proveedor o desde el mismo proveedor compatible.</block>
+  <block id="c443492278b59fb4f69d48dc9c1bf136" category="admonition">Si necesita o desea cambiar de forma fría el módulo de Flash Cache, siga los procedimientos para reemplazar un módulo de I/O.</block>
+  <block id="1537c91762ea3d09c062dd8a4f487023" category="paragraph">Para quitar módulos I/O del chasis deficiente, incluidos los módulos NVRAM, siga la secuencia de pasos específica. No tiene que quitar el módulo de Flash Cache, si está presente, del módulo NVRAM al moverlo a un chasis de reemplazo.</block>
+  <block id="b430f11e83c0bcdf88430204506f447c" category="paragraph">Para instalar módulos I/O, incluidos los módulos NVRAM/Flash Cache desde el chasis dañado, siga la secuencia de pasos específica.</block>
+  <block id="c0caee8d791d630286e30c5e81a37e68" category="list-text">Para conectar el cable de las bandejas de unidades NS224 mediante switches de almacenamiento, consulte la<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> para obtener más información. Para modelos de hardware más antiguos, también se puede encontrar información sobre el cableado del switch en la<block ref="c0b67f04541b649189f1a990ae4a004d" category="inline-link-rx"></block>.</block>
+  <block id="d4fa7a653c8bbd17c1100e0ee0b5da36" category="list-text">Para instalar los switches de almacenamiento, consulte<block ref="cd35f6165185d2c70017bfb031f19b89" category="inline-link-rx"></block> .</block>
+  <block id="5b799a4d08d10d5bb45cb3c7b02567ba" category="list-text">Para confirmar el hardware compatible con el modelo de plataforma, como switches y cables de almacenamiento, consulte la<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> .</block>
+  <block id="88b31bba8e7c3dc30d53e07a3939afe0" category="list-text">*Paquete de calificación de disco:* La mejor práctica es tener la versión actual del<block ref="2e664cd4eb21331de01544565a2d83a5" category="inline-link-rx"></block> instalado antes de agregar en caliente un estante.</block>
+  <block id="ae748ebab4dfd9690b144080dee0a021" category="list-text">*Active IQ Config Advisor:* La mejor práctica es ejecutar<block ref="7064c89577900622f24a070c24ebbaa7" category="inline-link-rx"></block> antes y después de agregar en caliente un estante.</block>
+  <block id="fe6c711b5e959d7eb45e9dad280a18ac" category="list-text">*Firmware NSM:* La mejor práctica es tener versiones actuales de<block ref="2e6e5b670045aa9f131e153e1b997791" category="inline-link-rx"></block> y<block ref="fdb117163130a37cd01d2ae31eb75969" category="inline-link-rx"></block> en su sistema de almacenamiento antes de agregar una nueva bandeja.</block>
+  <block id="1c0fa23373954917c0b08b188941f3c3" category="sidebar">Los nuevos sistemas NetApp ASA R2 (ASA A1K, ASA A70, ASA A90, ASA A20, ASA A30 y ASA A50) ofrecen una solución de hardware y software unificada que crea una experiencia simplificada específica para las necesidades de clientes exclusivos de SAN.</block>
+  <block id="34d5f1e610f6b8eaf1a7180026def343" category="sidebar">Apague el controlador</block>
+  <block id="43229c521bba188c3491ed72abe03043" category="sidebar">Módulo de Flash Cache</block>
 </blocks>
