@@ -2,20 +2,22 @@
 permalink: fas-70-90/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace the boot media 
-summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+summary: Antes de sustituir los medios de arranque en el sistema FAS70 o FAS90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto. 
 ---
-= Requisitos de sustitución de soportes de arranque: FAS70 y FAS90
+= Requisitos para sustituir el soporte de arranque: FAS70 y FAS90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos.
+Antes de sustituir los medios de arranque en el sistema FAS70 o FAS90, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto.
+
+Revise los siguientes requisitos.
 
 * Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.
 * Debe copiar `image_xxx.tgz` el archivo en la unidad flash USB para su uso posterior en este procedimiento.
-* Debe sustituir el componente con errores por un componente de FRU de reemplazo que haya recibido NetApp.
+* Debe sustituir el componente con errores por un componente de reemplazo que ha recibido NetApp.
 * Es importante que aplique los comandos en estos pasos en la controladora correcta:
 +
 ** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
@@ -23,3 +25,6 @@ Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes 
 
 
 
+
+.El futuro
+Después de revisar los requisitos para reemplazar el soporte de arranque, debe link:bootmedia-encryption-preshutdown-checks.html["compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque"].

@@ -4,16 +4,14 @@ sidebar: sidebar
 keywords: c80, pre-shutdown checks for onboard encryption keys 
 summary: 'Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF C80, debe comprobar la compatibilidad y el estado de la clave de cifrado. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.' 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C80
+= Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque: AFF C80
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF C80, debe comprobar la compatibilidad y el estado de la clave de cifrado. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
-
-Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.
+Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF C80, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
 
 
 
@@ -194,3 +192,6 @@ Lo necesitará en escenarios de desastres donde podría necesitar una recuperaci
 --
 ====
 
+
+.El futuro
+Después de comprobar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque, debe link:bootmedia-shutdown.html["apague la controladora"].

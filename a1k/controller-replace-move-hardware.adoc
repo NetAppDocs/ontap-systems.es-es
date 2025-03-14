@@ -2,16 +2,16 @@
 permalink: a1k/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: aff a1k, move the controller module hardware 
-summary: Para sustituir un módulo de controladora, debe extraer la controladora con deterioro, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+summary: Reemplace la controladora del sistema AFF A1K cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla. 
 ---
-= Sustituya el módulo del controlador - AFF A1K
+= Sustituya el controlador: AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para sustituir la controladora, debe extraer la controladora deteriorada, mover los componentes FRU al módulo de controladora de reemplazo, instalar el módulo de controladora de reemplazo en el compartimento y, a continuación, arrancar el sistema en modo de mantenimiento.
+Reemplace la controladora del sistema AFF A1K cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.
 
 
 
@@ -222,3 +222,6 @@ NOTE: La hora mostrada es la hora local no siempre GMT y se muestra en modo 24hr
 Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
 
 
+
+.El futuro
+Después de reemplazar el controlador AFF A1K dañado, es necesario link:controller-replace-system-config-restore-and-verify.html["restaure la configuración del sistema"].

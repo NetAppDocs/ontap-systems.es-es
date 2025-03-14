@@ -2,7 +2,7 @@
 permalink: a1k/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
 keywords: aff a1k, how to recable the system, how to reassign disks 
-summary: Reinicie el sistema. 
+summary: Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A1K pueda reanudar el funcionamiento normal. 
 ---
 = Devuelva el controlador - AFF A1K
 :allow-uri-read: 
@@ -11,18 +11,15 @@ summary: Reinicie el sistema.
 
 
 [role="lead"]
-Verifique las conexiones de almacenamiento y red, y luego regrese la controladora.
-
-
-
-== Devuelva la controladora
-
-Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
+Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A1K pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).
 
 [role="tabbed-block"]
 ====
 .Sin cifrado
 --
+Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
+
+.Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap`.
 . Pulse <enter> cuando se detengan los mensajes de la consola.
 +
@@ -36,8 +33,11 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 
 
 --
-.Cifrado incorporado (OKM)
+.Cifrado OKM
 --
+Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
+
+.Pasos
 . Desde el aviso del CARGADOR, introduzca:
 +
 `boot_ontap maint`
@@ -73,8 +73,11 @@ Si la columna _restored_ muestra cualquier cosa que no sea _true_, póngase en c
 
 
 --
-.Gestor de claves externo (EKM)
+.Cifrado EKM
 --
+Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.
+
+.Pasos
 . Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
 . Responda `y` o `n` a las siguientes preguntas:
 +
@@ -120,3 +123,5 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 --
 ====
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

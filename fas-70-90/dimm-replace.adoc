@@ -2,7 +2,7 @@
 permalink: fas-70-90/dimm-replace.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace a dimm 
-summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
+summary: Reemplace un DIMM en su sistema FAS70 o FAS90 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp. 
 ---
 = Sustituya un DIMM - FAS70 y FAS90
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema
 
 
 [role="lead"]
-Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
+Reemplace un DIMM en su sistema FAS70 o FAS90 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.
 
 .Antes de empezar
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
+* Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
 
-Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
 
 

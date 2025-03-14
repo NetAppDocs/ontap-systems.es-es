@@ -2,7 +2,7 @@
 permalink: asa-r2-a1k/controller-replace-shutdown-nomcc.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, shut down the impaired controller 
-summary: Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado. 
+summary: Apague la controladora en el sistema de almacenamiento ASA A1K cuando esté dañado. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema. 
 ---
 = Apague el controlador defectuoso: ASA A1K
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Para apagar el controlador dañado, debe determinar el estado del contr
 
 
 [role="lead"]
-Apague o tome el control de la controladora dañada.
+Apague la controladora en el sistema de almacenamiento ASA A1K cuando esté dañado. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -63,3 +63,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:controller-replace-move-hardware.html["sustituya el controlador"].

@@ -62,6 +62,7 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 ** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
 
 
+. Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
 . Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 

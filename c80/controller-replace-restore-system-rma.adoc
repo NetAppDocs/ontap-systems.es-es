@@ -2,7 +2,7 @@
 permalink: c80/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: c80, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: Compruebe que las interfaces lógicas generan informes a su puerto inicial, realice una comprobación del estado del clúster y devuelva la parte con errores a NetApp para completar el paso final del flujo de trabajo de sustitución de la controladora AFF C80. 
+summary: Compruebe que las interfaces lógicas informan a su puerto de inicio, realice una comprobación del estado del clúster y devuelva la parte con errores a NetApp para completar el paso final del procedimiento de sustitución de la controladora AFF C80. 
 ---
 = Sustitución de controladora completa - AFF C80
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Compruebe que las interfaces lógicas generan informes a su puerto inic
 
 
 [role="lead"]
-Compruebe que las interfaces lógicas generan informes a su puerto inicial, realice una comprobación del estado del clúster y devuelva la parte con errores a NetApp para completar el paso final del flujo de trabajo de sustitución de la controladora AFF C80.
+Compruebe que las interfaces lógicas (LIF) informan a su puerto principal, realice una comprobación del estado del clúster y, a continuación, devuelva la parte fallida a NetApp para completar el paso final del procedimiento de sustitución de la controladora AFF C80.
 
 
 

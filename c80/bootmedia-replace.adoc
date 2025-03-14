@@ -2,7 +2,7 @@
 permalink: c80/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: c80, replace the boot media 
-summary: Los medios de arranque de su sistema AFF C80 almacenan datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado y sustituir el soporte de arranque en el módulo de gestión del sistema. 
+summary: Los medios de arranque de su sistema AFF C80 almacenan datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema. 
 ---
 = Sustituya el soporte de arranque: AFF C80
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Los medios de arranque de su sistema AFF C80 almacenan datos esenciales
 
 
 [role="lead"]
-Los medios de arranque de su sistema AFF C80 almacenan datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado y sustituir el soporte de arranque en el módulo de gestión del sistema.
+Los medios de arranque de su sistema AFF C80 almacenan datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
 
 
 
@@ -137,3 +137,6 @@ La controladora comienza a arrancar en cuanto se vuelve a conectar la alimentaci
 Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
 
 
+
+.El futuro
+Después de reemplazar el soporte de arranque, debe link:bootmedia-recovery-image-boot.html["inicie la imagen de recuperación"].

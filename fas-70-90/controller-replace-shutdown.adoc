@@ -2,7 +2,7 @@
 permalink: fas-70-90/controller-replace-shutdown.html 
 sidebar: sidebar 
 keywords: fas70, fas90, shut down the impaired controller 
-summary: Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado. 
+summary: Apague la controladora en el sistema de almacenamiento FAS70 o FAS90 cuando esté dañado. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema. 
 ---
 = Apague la controladora con deterioro: FAS70 y FAS90
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Para apagar el controlador dañado, debe determinar el estado del contr
 
 
 [role="lead"]
-Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apague la controladora en el sistema de almacenamiento FAS70 o FAS90 cuando esté dañado. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.
 
 [role="tabbed-block"]
 ====
@@ -116,3 +116,5 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 --
 ====
+.El futuro
+Después de apagar el controlador, debe link:controller-replace-move-hardware.html["sustituya el controlador"].

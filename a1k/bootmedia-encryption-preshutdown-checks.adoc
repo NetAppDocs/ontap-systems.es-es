@@ -2,16 +2,16 @@
 permalink: a1k/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff a1k, pre-shutdown checks for onboard encryption keys 
-summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
+summary: Para garantizar la seguridad de los datos en su sistema de almacenamiento de AFF A1K, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes NetApp y antes de apagar la controladora, compruebe si el gestor de claves está activo. 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A1K
+= Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque: AFF A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de apagar la controladora dañada, compruebe si su versión de ONTAP es compatible con cifrado de volúmenes de NetApp (NVE) y si el sistema de gestión de claves está configurado correctamente.
+Para garantizar la seguridad de los datos en su sistema de almacenamiento de AFF A1K, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
 
 
 
@@ -192,3 +192,6 @@ Lo necesitará en escenarios de desastres donde podría necesitar una recuperaci
 --
 ====
 
+
+.El futuro
+Después de comprobar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque, debe link:bootmedia-shutdown.html["apague la controladora"].

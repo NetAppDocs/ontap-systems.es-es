@@ -2,7 +2,7 @@
 permalink: asa-r2-70-90/bootmedia-replace-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a70, asa r2 a90, replace the boot media 
-summary: Para localizar el medio de arranque fallido, elimine el módulo de gestión del sistema antes de poder sustituir el soporte de arranque. 
+summary: El medio de arranque del sistema ASA A70 o ASA A90 almacena datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo de gestión del sistema, la extracción del soporte de arranque defectuoso, la instalación del soporte de arranque de repuesto en el módulo de gestión del sistema y, a continuación, la reinstalación del módulo de gestión del sistema. 
 ---
 = Sustituya el soporte de arranque: ASA A70 y ASA A90
 :allow-uri-read: 
@@ -11,11 +11,11 @@ summary: Para localizar el medio de arranque fallido, elimine el módulo de gest
 
 
 [role="lead"]
-Sustituya el soporte de arranque retirando el módulo de gestión del sistema de la parte posterior del sistema, retirando el soporte de arranque defectuoso, instalando el soporte de arranque de repuesto en el módulo de gestión del sistema y, a continuación, reinstalando el módulo de gestión del sistema.
+El medio de arranque del sistema ASA A70 o ASA A90 almacena datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo de gestión del sistema, la extracción del soporte de arranque defectuoso, la instalación del soporte de arranque de repuesto en el módulo de gestión del sistema y, a continuación, la reinstalación del módulo de gestión del sistema.
 
-.Pasos
 El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
 
+.Pasos
 . En la parte frontal del chasis, utilice los pulgares para empujar con firmeza cada unidad hasta que sienta una parada positiva. De este modo se garantiza que las unidades se encuentren firmemente asentadas en el plano medio del chasis.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidad drw a800 asentada IEPOPS 960]

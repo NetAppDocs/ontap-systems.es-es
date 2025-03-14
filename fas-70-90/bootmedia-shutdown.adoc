@@ -2,16 +2,16 @@
 permalink: fas-70-90/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: fas70, fas90, shut down the controller 
-summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+summary: Apague la controladora en el sistema de almacenamiento FAS70 o FAS90 cuando necesite reemplazar el medio de arranque. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema. 
 ---
-= Apague la controladora con deterioro: FAS70 y FAS90
+= Apague la controladora para sustituir el soporte de arranque: FAS70 y FAS90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apague la controladora en el sistema de almacenamiento FAS70 o FAS90 cuando necesite reemplazar el medio de arranque. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.
 
 [role="tabbed-block"]
 ====
@@ -116,3 +116,5 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 --
 ====
+.El futuro
+Después de apagar el controlador, debe link:bootmedia-replace.html["sustituya el soporte de arranque"].

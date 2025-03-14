@@ -2,7 +2,7 @@
 permalink: fas-70-90/caching-module-hot-swap.html 
 sidebar: sidebar 
 keywords: fas70, fas90, hot swap, replace, Flash Cache module carrier, caching module, Flash Cache 
-summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad de almacenamiento en caché SSD integrada en cada módulo de almacenamiento en caché. Los módulos de almacenamiento en caché pueden intercambiarse en caliente, pero el portador del módulo Flash Cache no se puede intercambiar en caliente.' 
+summary: 'El portador del módulo Flash Cache SSD NVMe en su sistema FAS70 o FAS90 contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache de SSD integrada en cada módulo de almacenamiento en caché.' 
 ---
 = Sustituya el portador del módulo Flash Cache o un módulo de almacenamiento en caché: FAS70 y FAS90
 :allow-uri-read: 
@@ -11,11 +11,11 @@ summary: 'El portador del módulo Flash Cache SSD NVMe contiene uno o dos módul
 
 
 [role="lead"]
-El portador del módulo Flash Cache SSD NVMe contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache SSD integrada en cada módulo de almacenamiento en caché.
+El portador del módulo Flash Cache SSD NVMe en su sistema FAS70 o FAS90 contiene uno o dos módulos Flash Cache (módulos de almacenamiento en caché) con una sola unidad Flash Cache de SSD integrada en cada módulo de almacenamiento en caché.
 
 FAS70 admite 2TB módulos de caché y FAS90 admite 4TB módulos de caché. No se pueden mezclar módulos de almacenamiento en caché de diferente capacidad en el portador del módulo Flash Cache.
 
-Puede realizar cualquiera de los siguientes procedimientos dependiendo de lo que haya que reemplazar: Todo el portador de módulo de Flash Cache o un módulo de almacenamiento en caché.
+Puede realizar cualquiera de los siguientes procedimientos dependiendo de qué componente debe reemplazar: Todo el portador de módulo de Flash Cache o un módulo de almacenamiento en caché.
 
 * <<Sustituya el soporte del módulo Flash Cache>>
 * <<Sustituya el módulo de almacenamiento en caché>>
@@ -229,7 +229,6 @@ Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones
 
 == Sustituya el módulo de almacenamiento en caché
 
-.Antes de empezar
 Los módulos Flash Cache (módulos de almacenamiento en caché) están ubicados en la ranura 6-1 o en la ranura 6-2 o en la ranura 6-1 y la ranura 6-2.
 
 Puede intercambiar en caliente los módulos de caché individuales con módulos de caché de la misma capacidad del mismo proveedor o de otro proveedor compatible.

@@ -2,7 +2,7 @@
 permalink: a1k/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: aff a1k, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
+summary: Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF A1K y confirme que los adaptadores del sistema enumeran todas las rutas a los discos. 
 ---
 = Restaurar y verificar la configuración del sistema - AFF A1K
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Tras completar el reemplazo y el arranque del hardware en modo de mante
 
 
 [role="lead"]
-Después de completar el reemplazo del hardware, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar la configuración del sistema si es necesario.
+Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF A1K y confirme que los adaptadores del sistema enumeran todas las rutas a los discos.
 
 
 
@@ -61,3 +61,6 @@ Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
 
 . Salir del modo de mantenimiento `halt`: .
 
+
+.El futuro
+Después de restaurar y verificar la configuración del sistema para su sistema AFF A1K, necesita link:controller-replace-recable-reassign-disks.html["devuelva la controladora"].

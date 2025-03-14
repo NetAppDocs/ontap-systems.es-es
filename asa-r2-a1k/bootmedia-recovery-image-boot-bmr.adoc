@@ -2,23 +2,31 @@
 permalink: asa-r2-a1k/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, boot the recovery image 
-summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+summary: Restaure la imagen de ONTAP en el soporte de arranque de reemplazo en su sistema ASA A1K. El proceso implica iniciar el proceso de recuperación de arranque desde el aviso de Loader y supervisar el proceso de recuperación hasta que se completa y se reinicia el nodo. 
 ---
-= Recuperación automática de arranque - ASA A1K
+= Restaurar la imagen en el soporte de arranque - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Después de sustituir físicamente el soporte de arranque defectuoso, restaure la imagen ONTAP desde el nodo asociado.
+Después de instalar el nuevo dispositivo multimedia de arranque en el sistema ASA A1K, puede iniciar el proceso de recuperación de medios de arranque automático para restaurar la configuración desde el nodo asociado.
+
+Durante el proceso de recuperación, el sistema comprueba si el cifrado está habilitado y determina el tipo de cifrado de clave que se está usando. Si el cifrado de claves está activado, el sistema le guiará a través de los pasos adecuados para restaurarlo.
 
 .Antes de empezar
 * Determine si Onboard Key Manager (OKM) o Eternal Key Manager (EKM) está configurado mediante uno de los siguientes métodos:
 +
 ** Puede preguntar al cliente o al administrador del sistema si OKM o EKM están activados.
-** Para comprobar si OKM está activado, puede utilizar el `security key-manager onboard show`.
-** Para comprobar si EKM está activado, puede utilizar el `security key-manager external show`.
+** Para comprobar si OKM está activado, utilice el siguiente comando:
++
+`security key-manager onboard show`
+
+** Para comprobar si EKM está habilitado, utilice el siguiente comando:
++
+`security key-manager external show`
+
 
 
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.

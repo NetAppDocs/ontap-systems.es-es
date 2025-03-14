@@ -2,16 +2,18 @@
 permalink: asa-r2-a1k/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa r2 a1k, replace the boot media 
-summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+summary: Antes de sustituir los medios de arranque en su sistema ASA A1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. 
 ---
-= Requisitos de sustitución de soportes de arranque - ASA A1K
+= Requisitos para sustituir el soporte de arranque - ASA A1K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos.
+Antes de sustituir los medios de arranque en su sistema ASA A1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye la verificación de que tiene el soporte de arranque de reemplazo correcto, la confirmación de que no hay puertos de clúster defectuosos en la controladora y la determinación de si está habilitado el administrador de claves incorporado (OKM) o el administrador de claves externo (EKM).
+
+Revise los siguientes requisitos.
 
 * Debe sustituir el medio de arranque con errores por un medio de arranque de reemplazo que recibió desde NetApp.
 * No debe haber puertos de clúster defectuosos en la controladora dañada.
@@ -34,4 +36,4 @@ Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes 
 
 
 .El futuro
-Después de revisar los requisitos de soporte de arranque, usted link:bootmedia-shutdown-bmr.html["apague el controlador defectuoso"].
+Después de revisar los requisitos de soporte de arranque, usted link:bootmedia-shutdown-bmr.html["apague la controladora"].

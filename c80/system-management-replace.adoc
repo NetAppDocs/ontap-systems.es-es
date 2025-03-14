@@ -2,7 +2,7 @@
 permalink: c80/system-management-replace.html 
 sidebar: sidebar 
 keywords: c80, replace the system management module 
-summary: Debe reemplazar . 
+summary: Sustituya el módulo de gestión del sistema en su sistema AFF C80 cuando tenga algún defecto o el firmware esté dañado. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de gestión del sistema con errores, reiniciar la controladora, actualizar las claves de licencia y devolver la parte con error a NetApp. 
 ---
 = Sustituya el módulo de gestión del sistema - AFF C80
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Debe reemplazar .
 
 
 [role="lead"]
+Sustituya el módulo de gestión del sistema en su sistema AFF C80 cuando tenga algún defecto o el firmware esté dañado. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de gestión del sistema con errores, reiniciar la controladora, actualizar las claves de licencia y devolver la parte con error a NetApp.
+
 El módulo de gestión del sistema, ubicado en la parte posterior de la controladora de la ranura 8, contiene componentes integrados para la gestión del sistema y puertos para la gestión externa. El controlador de destino debe apagarse para sustituir un módulo de gestión del sistema defectuoso o para sustituir el soporte de arranque.
 
 El módulo Gestión del sistema tiene los siguientes componentes integrados:
@@ -29,7 +31,7 @@ El módulo Gestión del sistema también contiene los siguientes puertos para la
 
 
 .Antes de empezar
-* Asegúrese de que todos los demás componentes del sistema funcionen correctamente.
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente.
 * Asegúrese de que la controladora asociada pueda hacerse cargo de la controladora deteriorada.
 * Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
 

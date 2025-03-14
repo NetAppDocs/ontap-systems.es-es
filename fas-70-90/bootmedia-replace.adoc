@@ -2,7 +2,7 @@
 permalink: fas-70-90/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace the boot media 
-summary: Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque. 
+summary: datos de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema. 
 ---
 = Sustituya el medio de arranque - FAS70 y FAS90
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Para localizar el medio de arranque con error en el módulo del control
 
 
 [role="lead"]
+Los medios de arranque del sistema FAS70 o FAS90 almacenan datos esenciales del firmware y de configuración. Si el soporte de arranque falla, debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema, retirar el soporte de arranque dañado e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
+
 Debe desconectar el módulo del controlador, extraer el módulo de gestión del sistema de la parte posterior del sistema, retirar el soporte de arranque defectuoso e instalar el soporte de arranque de repuesto en el módulo de gestión del sistema.
 
 
@@ -131,3 +133,6 @@ La controladora comienza a arrancar en cuanto se vuelve a conectar la alimentaci
 Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
 
 
+
+.El futuro
+Después de reemplazar el soporte de arranque, debe link:bootmedia-recovery-image-boot.html["inicie la imagen de recuperación"].

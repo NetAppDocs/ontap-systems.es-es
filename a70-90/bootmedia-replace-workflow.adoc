@@ -11,19 +11,19 @@ summary: Comience a reemplazar el medio de arranque en su sistema de almacenamie
 
 
 [role="lead"]
-Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90 preparando el medio de reemplazo, instalándolo en el sistema, restaurando la imagen de arranque y verificando la funcionalidad del sistema.
+Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90, revisando los requisitos de reemplazo, comprobando el estado de cifrado, apagando la controladora, reemplazando el medio de arranque, iniciando la imagen de recuperación, restaurando el cifrado y verificando la funcionalidad del sistema.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:bootmedia-replace-requirements.html["Revise los requisitos de medios de arranque"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:bootmedia-replace-requirements.html["Revise los requisitos para sustituir el soporte de arranque"]
 [role="quick-margin-para"]
 Revise los requisitos para sustituir el soporte de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-encryption-preshutdown-checks.html["Compruebe la compatibilidad y el estado de la clave de cifrado"]
 [role="quick-margin-para"]
-Verifique si el sistema tiene discos cifrados o habilitados para el gestor de claves de seguridad.
+Determine si el sistema tiene discos cifrados o habilitados para el gestor de claves de seguridad.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-shutdown.html["Apague el controlador dañado"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-shutdown.html["Apague la controladora"]
 [role="quick-margin-para"]
-Apague o asuma el control de la controladora deteriorada para que la controladora en buen estado siga sirviendo datos del almacenamiento de la controladora dañada.
+Apague la controladora en el sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:bootmedia-replace.html["Sustituya el soporte de arranque"]
 [role="quick-margin-para"]

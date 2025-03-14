@@ -11,7 +11,7 @@ summary: Devolver el control de los recursos de almacenamiento a la controladora
 
 
 [role="lead"]
-Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF C80 pueda reanudar el funcionamiento normal.
+Devolver el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF C80 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).
 
 [role="tabbed-block"]
 ====
@@ -161,3 +161,5 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 --
 ====
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

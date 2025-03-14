@@ -2,7 +2,7 @@
 permalink: fas-70-90/bootmedia-recovery-image-boot.html 
 sidebar: sidebar 
 keywords: fas70, fas90, boot the recovery image 
-summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+summary: Después de instalar el nuevo dispositivo multimedia de arranque en el sistema FAS70 o FAS90, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado. 
 ---
 = Inicie la imagen de recuperación - FAS70 y FAS90
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sist
 
 
 [role="lead"]
-Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+Después de instalar el nuevo dispositivo multimedia de arranque en el sistema FAS70 o FAS90, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado.
 
 .Pasos
 . Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
@@ -65,3 +65,6 @@ Después de que el procedimiento de restauración se haya realizado correctament
 *NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
 
+
+.El futuro
+Después de arrancar la imagen de recuperación, es necesario link:bootmedia-encryption-restore.html["restaure el cifrado en el soporte de arranque"].

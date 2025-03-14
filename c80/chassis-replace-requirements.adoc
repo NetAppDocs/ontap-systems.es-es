@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: c80, replace the chassis 
 summary: Antes de sustituir el chasis en su sistema AFF C80, compruebe que todos los demás componentes del sistema funcionen correctamente, asegúrese de tener credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias. 
 ---
-= Requisitos de sustitución del chasis: AFF C80
+= Requisitos para sustituir el chasis - AFF C80
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,12 +15,15 @@ Antes de sustituir el chasis en su sistema AFF C80, compruebe que todos los dem�
 
 El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
 
-Antes de sustituir el chasis, asegúrese de revisar los siguientes requisitos.
+Revise los siguientes requisitos.
 
-* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, póngase en contacto con http://mysupport.netapp.com/["Sitio de soporte de NetApp"^] para obtener ayuda.
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^] para obtener ayuda.
 * Obtenga credenciales de administrador local para ONTAP si no las tiene.
 * Asegúrese de que dispone de las herramientas y el equipo necesarios para la sustitución.
 * Puede usar el procedimiento de reemplazo de chasis con todas las versiones de ONTAP compatibles con el sistema.
 * El procedimiento de sustitución del chasis se escribe suponiendo que va a mover el panel frontal, las unidades NVMe y los módulos de controladora al nuevo chasis, y que el chasis de reemplazo es un nuevo componente de NetApp.
 * El procedimiento de sustitución del chasis es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
 
+
+.El futuro
+Después de revisar los requisitos para reemplazar el chasis, debe link:chassis-replace-prepare.html["prepárese para sustituir el chasis"].

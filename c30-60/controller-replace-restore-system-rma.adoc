@@ -11,25 +11,64 @@ summary: Para restaurar el sistema a su funcionamiento completo, debe verificar 
 
 
 [role="lead"]
-Para restaurar el sistema de almacenamiento a un funcionamiento completo, debe verificar los LIF, comprobar el estado del clúster y devolver la parte con error a NetApp.
+Restaure la configuración de cifrado de almacenamiento de NetApp (si es necesario), instale licencias para la controladora de reemplazo, compruebe que las interfaces lógicas (LIF) están informando a su puerto de inicio, realice una comprobación del estado del clúster, registre el número de serie de la controladora de reemplazo y vuelva a colocar la pieza fallida a NetApp para completar el paso final en el procedimiento de sustitución de las controladoras AFF C30 y C60.
 
 
 
-== Paso 1: Verifique las LIF y compruebe el estado del clúster
+== Paso 1: Instalar las licencias para la controladora de reemplazo en ONTAP
 
-Antes de devolver el nodo de sustitución al servicio, compruebe que las interfaces lógicas estén en sus puertos principales, compruebe el estado del clúster y restablezca la devolución automática.
+Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
+
+.Acerca de esta tarea
+Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función.
+
+Además, el uso de funciones sin licencia en el nodo podría descumplir con las normativas de su acuerdo de licencia, de modo que debe instalar la clave de licencia o las claves de reemplazo en el Lo antes posible. del nodo _reassement_.
+
+Las claves de licencia deben tener el formato de 28 caracteres.
+
+Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
+
+Si el nodo está en una configuración MetroCluster y todos los nodos de un sitio han sido sustituidos, las claves de licencia deben instalarse en el nodo _reader_ o en los nodos antes de llevar a cabo la conmutación al estado.
+
+.Pasos
+. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
++
+
+NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
+
+. Instale cada clave de licencia: `+system license add -license-code license-key, license-key...+`
+. Elimine las licencias antiguas, si lo desea:
++
+.. Comprobar si hay licencias no utilizadas: `license clean-up -unused -simulate`
+.. Si la lista parece correcta, elimine las licencias no utilizadas: `license clean-up -unused`
+
+
+
+
+
+
+== Paso 2: Verifique las LIF, registre el número de serie y compruebe el estado del clúster
+
+Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se encuentran en sus puertos principales y registrar el número de serie del nodo _reader_ si AutoSupport está habilitado y restablecer la devolución automática.
 
 .Pasos
 . Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
 +
-Si alguna de las interfaces lógicas aparece como false, revertiéndela a sus puertos de inicio: `network interface revert -vserver * -lif *`
+Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert -vserver * -lif *`
+
+. Registre el número de serie del sistema con el soporte de NetApp.
++
+** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
+** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
+
 
 . Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
+. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 
 
 
 
-== Paso 2: Devuelve la parte fallida a NetApp
+== Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

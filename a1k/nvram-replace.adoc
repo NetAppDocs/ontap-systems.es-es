@@ -1,8 +1,8 @@
 ---
 permalink: a1k/nvram-replace.html 
 sidebar: sidebar 
-keywords: aff a1k, replace an nvdimm 
-summary: 'El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.' 
+keywords: aff a1k, replace nvram 
+summary: Sustituya el NVRAM en su sistema AFF A1K cuando la memoria no volátil falle o necesite una actualización. 
 ---
 = Sustituya el módulo NVRAM AFF A1K
 :allow-uri-read: 
@@ -11,11 +11,14 @@ summary: 'El módulo NVRAM consta de NVRAM12 y DIMM, y hasta dos módulos Flash 
 
 
 [role="lead"]
-El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con errores, debe quitar el módulo del compartimento, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el compartimento.
+Sustituya el NVRAM en su sistema AFF A1K cuando la memoria no volátil falle o necesite una actualización. El proceso de sustitución implica apagar la controladora deteriorada, sustituir el módulo NVRAM o NVRAM DIMM, reasignar los discos y devolver la pieza averiada a NetApp.
 
-Todos los demás componentes del sistema deben funcionar correctamente; de lo contrario, debe ponerse en contacto con https://support.netapp.com["Soporte de NetApp"].
+El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM.
 
-Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+.Antes de empezar
+* Asegúrese de tener la pieza de repuesto disponible. Debe sustituir el componente con errores con un componente de reemplazo que haya recibido de NetApp.
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
 
 
 
@@ -178,7 +181,7 @@ Lengüetas de bloqueo DIMM
 
 
 
-== Paso 3: Sustituya un DIMM de NVRAM
+== Paso 3: Reemplace el módulo DIMM de NVRAM
 
 Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
 

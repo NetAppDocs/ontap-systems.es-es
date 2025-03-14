@@ -2,7 +2,7 @@
 permalink: fas-70-90/io-module-replace.html 
 sidebar: sidebar 
 keywords: fas70, fas90, replace a pcie card 
-summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas, quitar los módulos SFP y QSFP de las tarjetas antes de quitar la tarjeta vertical, volver a instalar la tarjeta vertical y, a continuación, volver a instalar los módulos SFP y QSFP antes de cablear las tarjetas. 
+summary: Sustituya un módulo de E/S en su sistema FAS70 o FAS90 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales. El proceso de sustitución implica apagar la controladora, sustituir el módulo de I/O fallido, reiniciar la controladora y devolver la parte fallida al NetApp. 
 ---
 = Sustituya el módulo de E/S - FAS70 y FAS90
 :allow-uri-read: 
@@ -11,10 +11,13 @@ summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tar
 
 
 [role="lead"]
-Utilice este procedimiento para sustituir un módulo de E/S fallido.
+Sustituya un módulo de E/S en su sistema FAS70 o FAS90 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales. El proceso de sustitución implica apagar la controladora, sustituir el módulo de I/O fallido, reiniciar la controladora y devolver la parte fallida al NetApp.
 
-* Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
-* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
+
+.Antes de empezar
+* Debe tener la pieza de repuesto disponible.
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionen correctamente. De lo contrario, póngase en contacto con el soporte técnico.
 
 
 
