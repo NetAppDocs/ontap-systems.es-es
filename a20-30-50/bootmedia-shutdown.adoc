@@ -2,16 +2,16 @@
 permalink: a20-30-50/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, shut down the controller 
-summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+summary: Apague la controladora deteriorada del sistema de almacenamiento AFF A20, AFF A30 o AFF A50 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el soporte de arranque. 
 ---
-= Apague el controlador defectuoso: AFF A20, AFF A30 y AFF A50
+= Apague la controladora para sustituir el medio de arranque: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Apague o tome el control de la controladora dañada.
+Apague la controladora deteriorada del sistema de almacenamiento AFF A20, AFF A30 o AFF A50 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el soporte de arranque.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -63,3 +63,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:bootmedia-replace.html["sustituya el soporte de arranque"].

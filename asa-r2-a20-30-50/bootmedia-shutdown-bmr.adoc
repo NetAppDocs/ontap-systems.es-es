@@ -1,7 +1,7 @@
 ---
 permalink: asa-r2-a20-30-50/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, shut down the controller 
+keywords: asa a20, asa a30, asa a50, shut down the controller 
 summary: Debe completar el apagado de la controladora dañada. 
 ---
 = Apague el controlador: ASA A20, ASA A30 y ASA A50
@@ -11,7 +11,7 @@ summary: Debe completar el apagado de la controladora dañada.
 
 
 [role="lead"]
-Debe completar el apagado de la controladora dañada. Apague o tome el control de la controladora dañada.
+Apague la controladora de su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 cuando necesite reemplazar el medio de arranque. Antes de realizar tareas de mantenimiento o sustitución de componentes, es crítico apagar la controladora de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -65,4 +65,4 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 .El futuro
-Después de apagar el controlador defectuoso, link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].
+Después de apagar el controlador defectuoso, usted link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].

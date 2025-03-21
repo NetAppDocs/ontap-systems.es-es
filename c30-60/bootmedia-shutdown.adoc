@@ -2,7 +2,7 @@
 permalink: c30-60/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, shut down the controller 
-summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+summary: Apague la controladora deteriorada en su sistema de almacenamiento AFF C30 o AFF C60 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir los medios de arranque. 
 ---
 = Apague el controlador defectuoso: AFF C30 y AFF C60
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Después de completar las tareas de NVE o NSE, deberá completar el apa
 
 
 [role="lead"]
-Apague o tome el control de la controladora dañada.
+Apague la controladora deteriorada en su sistema de almacenamiento AFF C30 o AFF C60 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir los medios de arranque.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -63,3 +63,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:bootmedia-replace.html["sustituya el soporte de arranque"].

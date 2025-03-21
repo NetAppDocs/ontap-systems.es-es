@@ -2,7 +2,7 @@
 permalink: a20-30-50/bootmedia-replace.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Para localizar el medio de arranque con error en el módulo del controlador, extraiga el Riser 3 en el módulo del controlador antes de poder sustituir el soporte de arranque. 
+summary: Los medios de arranque del sistema AFF A20, AFF A30 o AFF A50 almacenan datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo del controlador, la extracción del soporte de arranque dañado, la instalación del soporte de arranque de reemplazo y, a continuación, la transferencia de la imagen ONTAP al soporte de arranque de reemplazo. 
 ---
 = Sustituya el soporte de arranque: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Para localizar el medio de arranque con error en el módulo del control
 
 
 [role="lead"]
+Los medios de arranque del sistema AFF A20, AFF A30 o AFF A50 almacenan datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo del controlador, la extracción del soporte de arranque dañado, la instalación del soporte de arranque de reemplazo y, a continuación, la transferencia de la imagen ONTAP al soporte de arranque de reemplazo.
+
 Para sustituir el soporte de arranque, debe extraer el controlador deteriorado, extraer el soporte de arranque, instalar el soporte de arranque de repuesto y transferir la imagen de arranque a una unidad flash USB.
 
 
@@ -309,3 +311,6 @@ FUENTE DE ALIMENTACIÓN DE CC
 
 |===
 
+
+.El futuro
+Después de reemplazar el soporte de arranque, debe link:bootmedia-recovery-image-boot.html["inicie la imagen de recuperación"].

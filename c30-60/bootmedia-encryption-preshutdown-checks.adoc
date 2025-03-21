@@ -4,11 +4,14 @@ sidebar: sidebar
 keywords: aff c30, aff c60, pre-shutdown checks for onboard encryption keys 
 summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
 ---
-= Compruebe las claves de cifrado integradas: AFF C30 y AFF C60
+= Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque: AFF C30 y AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
+
+[role="lead"]
+Para garantizar la seguridad de los datos en el sistema de almacenamiento A20, AFF A30 o AFF A50, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
 
 
 
@@ -189,3 +192,6 @@ Lo necesitará en escenarios de desastres donde podría necesitar una recuperaci
 --
 ====
 
+
+.El futuro
+Después de comprobar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque, debe link:bootmedia-shutdown.html["apague la controladora"].

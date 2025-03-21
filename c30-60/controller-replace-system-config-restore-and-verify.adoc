@@ -2,7 +2,7 @@
 permalink: c30-60/controller-replace-system-config-restore-and-verify.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, restore and verify the system configuration, verify and set the ha state of the controller module 
-summary: Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario. 
+summary: Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF C30 o AFF C60 y confirme que los adaptadores del sistema enumeren todas las rutas a los discos. 
 ---
 = Restaurar y verificar la configuración del sistema: AFF C30 y AFF C60
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: Tras completar el reemplazo y el arranque del hardware en modo de mante
 
 
 [role="lead"]
+Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF C30 o AFF C60 y confirme que los adaptadores del sistema enumeren todas las rutas a los discos.
+
 Verifique la configuración de bajo nivel del sistema de la controladora de reemplazo y vuelva a configurar los ajustes del sistema según sea necesario.
 
 
@@ -77,3 +79,6 @@ Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
 `halt`
 
 
+
+.El futuro
+Después de restaurar y verificar la configuración del sistema para su sistema AFF C30 o AFF C60, debe hacerlolink:controller-replace-recable-reassign-disks.html["devuelva la controladora"].

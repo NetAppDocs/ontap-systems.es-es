@@ -2,15 +2,17 @@
 permalink: c30-60/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, replace the boot media 
-summary: Obtenga información sobre los requisitos para sustituir el soporte de arranque. 
+summary: Antes de sustituir el medio de arranque en su sistema AFF C30 o AFF C60, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto. 
 ---
-= Requisitos de soportes de arranque: AFF C30 y AFF C60
+= Requisitos para sustituir el soporte de arranque: AFF C30 y AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Antes de sustituir el medio de arranque en su sistema AFF C30 o AFF C60, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto.
+
 Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos y consideraciones.
 
 
@@ -40,3 +42,6 @@ Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visuali
 Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
+
+.El futuro
+Después de revisar los requisitos para reemplazar el soporte de arranque, debe link:bootmedia-encryption-preshutdown-checks.html["compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque"].

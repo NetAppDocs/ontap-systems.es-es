@@ -20,7 +20,9 @@ Para restaurar el funcionamiento completo del sistema, debe restaurar la configu
 Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
 
 .Acerca de esta tarea
-Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo podría descumplir con las normativas de su acuerdo de licencia, de modo que debe instalar la clave de licencia o las claves de reemplazo en el Lo antes posible. del nodo _reassement_.
+Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función.
+
+Además, el uso de funciones sin licencia en el nodo podría descumplir con las normativas de su acuerdo de licencia, de modo que debe instalar la clave de licencia o las claves de reemplazo en el Lo antes posible. del nodo _reassement_.
 
 .Antes de empezar
 Las claves de licencia deben tener el formato de 28 caracteres.

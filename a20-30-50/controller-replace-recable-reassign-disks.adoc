@@ -2,7 +2,7 @@
 permalink: a20-30-50/controller-replace-recable-reassign-disks.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, how to reboot the system 
-summary: Debe reiniciar la controladora. 
+summary: Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A20, AFF A30 o AFF A50 pueda reanudar el funcionamiento normal. 
 ---
 = Devuelva el controlador: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
@@ -11,11 +11,7 @@ summary: Debe reiniciar la controladora.
 
 
 [role="lead"]
-Devuelva la controladora.
-
-
-
-== Devuelva la controladora
+Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema AFF A20, AFF A30 o AFF A50 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).
 
 Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
 
@@ -23,6 +19,9 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 ====
 .Sin cifrado
 --
+Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
+
+.Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap`.
 . Pulse <enter> cuando se detengan los mensajes de la consola.
 +
@@ -38,6 +37,9 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 --
 .Cifrado incorporado (OKM)
 --
+Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
+
+.Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
 . Introduzca la frase de contraseña de OKM.
@@ -80,6 +82,9 @@ Si la salida muestra resultados (los ID de clave de las claves que no están pre
 --
 .Gestor de claves externo (EKM)
 --
+Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.
+
+.Pasos
 . Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
 . Responda `y` o `n` a las siguientes preguntas:
 +
@@ -126,3 +131,5 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 --
 ====
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

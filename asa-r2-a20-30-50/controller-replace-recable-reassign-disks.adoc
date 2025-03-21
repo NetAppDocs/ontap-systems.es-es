@@ -11,18 +11,15 @@ summary: Debe reiniciar la controladora.
 
 
 [role="lead"]
-Devuelva la controladora.
-
-
-
-== Devuelva la controladora
-
 Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
 
 [role="tabbed-block"]
 ====
 .Sin cifrado
 --
+Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
+
+.Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap`.
 . Pulse <enter> cuando se detengan los mensajes de la consola.
 +
@@ -38,6 +35,9 @@ Restablezca el cifrado si está habilitado y vuelva a poner la controladora en f
 --
 .Cifrado incorporado (OKM)
 --
+Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
+
+.Pasos
 . En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
 . Introduzca la frase de contraseña de OKM.
@@ -80,6 +80,9 @@ Si la salida muestra resultados (los ID de clave de las claves que no están pre
 --
 .Gestor de claves externo (EKM)
 --
+Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.
+
+.Pasos
 . Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
 . Responda `y` o `n` a las siguientes preguntas:
 +

@@ -152,13 +152,16 @@ Hay dos carpetas en el archivo de imagen del servicio descomprimido:
 
 
 .. Copie la carpeta efi en el directorio superior de la unidad flash USB.
+
+
 +
 
 NOTE: Si la imagen de servicio no tiene carpeta efi, consulte link:https://kb.netapp.com/onprem/ontap/hardware/EFI_folder_missing_from_Service_Image_download_file_used_for_boot_device_recovery_for_FAS_and_AFF_models["Falta la carpeta EFI del archivo de descarga de la imagen de servicio utilizada para la recuperación del dispositivo de arranque para los modelos FAS y AFF^"].
 
 +
-La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
++ la unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que está ejecutando el controlador dañado.
 
++
 .. Extraiga la unidad flash USB del ordenador portátil.
 .. Si aún no lo ha hecho, instale el conducto de aire.
 +
@@ -195,12 +198,9 @@ Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositiv
 .. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
 .. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
-
-
 +
 El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
 
-+
 .. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
 +
 El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.

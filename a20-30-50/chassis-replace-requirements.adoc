@@ -2,15 +2,17 @@
 permalink: a20-30-50/chassis-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the chassis 
-summary: Se sustituye un chasis deficiente por el nuevo chasis del mismo modelo que el chasis dañado. 
+summary: Antes de reemplazar el chasis de su sistema AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el chasis de reemplazo correcto y las herramientas necesarias. 
 ---
-= Requisitos de sustitución del chasis: AFF A20, AFF A30 y AFF A50
+= Requisitos para sustituir el chasis: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Antes de reemplazar el chasis de su sistema AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el chasis de reemplazo correcto y las herramientas necesarias.
+
 Antes de sustituir el chasis, asegúrese de revisar los siguientes requisitos y consideraciones.
 
 
@@ -36,3 +38,6 @@ Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de vi
 Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
+
+.El futuro
+Después de revisar los requisitos para reemplazar el chasis, debe hacerlo link:chassis-replace-shutdown.html["apague las controladoras"]
