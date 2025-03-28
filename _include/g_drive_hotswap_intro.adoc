@@ -1,17 +1,6 @@
----
-permalink: asa-r2-a20-30-50/drive-replace.html 
-sidebar: sidebar 
-keywords: asa a20, asa a30, asa a50, replace the drives 
-summary: Sustituya una unidad en el sistema ASA A20, ASA A30 o ASA A50 cuando se produzca un error en una unidad o requiera una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema. 
----
-= Reemplazar una unidad: ASA A20, ASA A30 y ASA A50
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Sustituya una unidad en el sistema ASA A20, ASA A30 o ASA A50 cuando se produzca un error en una unidad o requiera una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema.
 
 Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso.
 
@@ -71,74 +60,5 @@ Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de vi
 
 +
 Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
-
-
-
-.Pasos
-. Puesta a tierra apropiadamente usted mismo.
-. Identifique físicamente la unidad con error.
-+
-Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
-
-+
-
-NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
-
-. Quite la unidad con error:
-+
-image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad NVMe]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image::../media/icon_round_1.png[Número de llamada 1]
- a| 
-Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
-
-
-
- a| 
-image::../media/icon_round_2.png[Número de llamada 2]
- a| 
-Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
-
-
-
- a| 
-image::../media/icon_round_3.png[Número de llamada 3]
- a| 
-Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.
-
-Al extraer una unidad, utilice siempre dos manos para sostener su peso.
-
-
-NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
-
-|===
-. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
-+
-Esto permite al sistema reconocer que se ha quitado una unidad.
-
-. Inserte la unidad de reemplazo:
-+
-.. Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
-.. Empuje suavemente hasta que la unidad se detenga.
-.. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
-+
-Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
-
-
-
-. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
-+
-Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
-
-. Si desea reemplazar otra unidad, repita los pasos 2 a 6.
-. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
-+
-Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
 
 

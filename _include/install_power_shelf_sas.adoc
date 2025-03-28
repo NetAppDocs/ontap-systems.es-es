@@ -1,21 +1,6 @@
----
-permalink: fas-70-90/install-power-hardware.html 
-sidebar: sidebar 
-keywords: fas70, fas90, power controllers 
-summary: Conecte los cables de alimentación y encienda las bandejas y las controladoras. 
----
-= Encienda el sistema de almacenamiento: FAS70 y FAS90
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Después de instalar el hardware de rack para el sistema de almacenamiento FAS70 0r FAS90 e instalar los cables para las controladoras y las bandejas de almacenamiento, debe encender las bandejas de almacenamiento y las controladoras.
-
-
-
-== Paso 1: Encienda la bandeja y asigne el ID de bandeja
 
 Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.
 
@@ -121,35 +106,3 @@ Cuando se enciende una fuente de alimentación, el LED bicolor debe iluminarse e
 
 . Vuelva a colocar la tapa del extremo izquierdo.
 
-
-
-
-== Paso 2: Encienda los controladores
-
-Después de encender las bandejas y asignarles ID únicos, encienda las controladoras de almacenamiento.
-
-.Pasos
-. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando las controladoras estén encendidas.
-+
-.. Configure el puerto de consola serie del portátil a 115.200 baudios con N-8-1.
-+
-
-NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sobre cómo configurar el puerto de la consola de serie.
-
-.. Mediante el cable de consola proporcionado con el sistema de almacenamiento, conecte un extremo del cable de la consola a su portátil y el otro extremo al puerto de la consola serie de la controladora A.
-.. Conecte el portátil al interruptor de la subred de administración.
-
-
-. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
-. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
-+
-** El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
-** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
-** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
-
-
-. Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación.
-
-
-.El futuro
-Después de encender el sistema de almacenamiento FAS70 o FAS90,link:install-complete.html["completar la configuración del sistema"]

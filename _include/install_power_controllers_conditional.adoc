@@ -1,0 +1,28 @@
+= 
+:allow-uri-read: 
+
+
+Después de encender las bandejas y asignarles ID únicos, encienda las controladoras de almacenamiento.
+
+.Pasos
+. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando las controladoras estén encendidas.
++
+.. Configure el puerto de consola serie del portátil a 115.200 baudios con N-8-1.
++
+
+NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sobre cómo configurar el puerto de la consola de serie.
+
+.. Mediante el cable de consola proporcionado con el sistema de almacenamiento, conecte un extremo del cable de la consola a su portátil y el otro extremo al puerto de la consola serie de la controladora A.
+.. Conecte el portátil al interruptor de la subred de administración.
+
+
+. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
+. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
++
+** El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
+** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
+** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
+
+
+. Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación.
+

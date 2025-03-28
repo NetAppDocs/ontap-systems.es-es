@@ -13,8 +13,6 @@ summary: Sustituya un módulo de ventiladores en su sistema AFF C30 o AFF C60 cu
 [role="lead"]
 Sustituya un módulo de ventiladores en su sistema AFF C30 o AFF C60 cuando se produzca un error en un ventilador o no esté funcionando de manera eficiente, ya que esto puede afectar a la refrigeración del sistema y al rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp.
 
-Para sustituir un ventilador, debe retirar la controladora, quitar el ventilador defectuoso, instalar el ventilador de reemplazo y, a continuación, reinstalar la controladora.
-
 .Acerca de esta tarea
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
 

@@ -11,6 +11,8 @@ summary: Debe reiniciar la controladora.
 
 
 [role="lead"]
+Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema ASA A20, ASA A30 o ASA A50 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).
+
 Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
 
 [role="tabbed-block"]
@@ -129,3 +131,5 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 --
 ====
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

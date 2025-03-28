@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/dimm-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace a dimm 
-summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); de lo contrario, se producirá un error en el sistema.' 
+summary: Reemplace un módulo DIMM en su sistema ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp. 
 ---
 = Sustituya un módulo DIMM: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Debe sustituir un DIMM en el módulo del controlador cuando el sistema
 
 
 [role="lead"]
-Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
+Reemplace un módulo DIMM en su sistema ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.
 
 .Antes de empezar
 * Asegúrese de que el resto de componentes del sistema de almacenamiento funcionan correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar».

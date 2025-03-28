@@ -13,8 +13,6 @@ summary: Reemplace un módulo DIMM en su sistema AFF A20, AFF A30 o AFF A50 si s
 [role="lead"]
 Reemplace un módulo DIMM en su sistema AFF A20, AFF A30 o AFF A50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.
 
-Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
-
 .Antes de empezar
 * Asegúrese de que el resto de componentes del sistema de almacenamiento funcionan correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar».
 * Debe sustituir el componente FRU con errores por un componente FRU de reemplazo que haya recibido de su proveedor.

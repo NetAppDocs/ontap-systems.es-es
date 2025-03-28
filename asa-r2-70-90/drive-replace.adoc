@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa r2 a70, asa r2 a90, replace the drives 
 summary: Reemplace una unidad en el sistema ASA A70 o ASA A90 cuando se produzca un error en una unidad o requiera una actualización. Este proceso implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema. 
 ---
-= Sustituya la unidad SSD -ASA A70 y ASA A90
+= Sustituir una unidad SSD: ASA A70 y ASA A90
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -44,7 +44,7 @@ Al sustituir varias unidades de disco, debe esperar 70 segundos entre la extracc
 . Puesta a tierra apropiadamente usted mismo.
 . Identifique físicamente la unidad con error.
 +
-Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y la unidad con error se iluminan.
+Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
 
 +
 
@@ -52,10 +52,38 @@ NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado 
 
 . Quite la unidad con error:
 +
-.. Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
-.. Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad NVMe]
+
++
+[cols="1,4"]
+|===
 
 
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.
+
+Al extraer una unidad, utilice siempre dos manos para sostener su peso.
+
+
+NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
+
+|===
 . Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
 +
 Esto permite al sistema reconocer que se ha quitado una unidad.
@@ -63,7 +91,7 @@ Esto permite al sistema reconocer que se ha quitado una unidad.
 . Inserte la unidad de reemplazo:
 +
 .. Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
-.. Presione hasta que la unidad se detenga.
+.. Empuje suavemente hasta que la unidad se detenga.
 .. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
 +
 Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
