@@ -1,0 +1,74 @@
+---
+permalink: fas50/caching-module-hot-swap.html 
+sidebar: sidebar 
+keywords: fas50, hot swap, replace, Flash Cache 
+summary: 'Puede intercambiar en caliente un módulo Flash Cache NVMe SSD (módulo de caché) de la misma capacidad del mismo proveedor o de otro compatible.' 
+---
+= Intercambio en caliente de un módulo de almacenamiento en caché: FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede intercambiar en caliente un módulo de caché SSD NVMe (módulo Flash Cache) de la misma capacidad del mismo proveedor o de otro compatible.
+
+.Antes de empezar
+Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
+
+* El sistema de almacenamiento debe tener el sistema operativo adecuado para el módulo de caché que está instalando.
+* El módulo de almacenamiento en caché de reemplazo debe tener la misma capacidad que el módulo de almacenamiento en caché con fallos, pero puede ser de un proveedor compatible diferente.
+* El resto de los componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar.
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Localice el módulo de almacenamiento en caché con fallos mediante el LED de atención ámbar iluminado en la parte frontal del módulo de almacenamiento en caché.
++
+Un módulo de almacenamiento en caché puede estar en la bahía de unidades 0 o 23.
+
+. Retire el módulo de almacenamiento en caché:
++
+image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[gráfico de los pasos de sustitución de módulos de almacenamiento en caché fas50]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Pulse el botón de liberación de la cara del módulo para abrir la palanca de leva.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Gire la palanca de leva hacia abajo para desconectar el módulo del plano medio.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Deslice el módulo para extraerlo del compartimento de la unidad con la palanca de leva y sujete el módulo con la otra mano.
+
+Al retirar un módulo, utilice siempre dos manos para soportar su peso.
+
+|===
+. Espere un mínimo de 70 segundos antes de insertar el módulo de almacenamiento en caché de reemplazo.
+. Instale el módulo de almacenamiento en caché de repuesto:
++
+.. Con el mango de leva en la posición abierta, inserte el módulo con ambas manos.
+.. Presione suavemente hasta que el módulo se detenga.
+.. Cierre el asa de la leva para que el módulo quede completamente asentado en el plano medio y el asa encaje en su sitio.
++
+Asegúrese de cerrar la palanca de leva lentamente para que quede alineada correctamente con la cara del módulo.
+
+
+
+. Compruebe que el LED de actividad del módulo (verde) está iluminado.
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"^] la página para obtener más información.
+

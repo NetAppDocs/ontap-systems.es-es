@@ -16,7 +16,7 @@ Las instrucciones de la documentación de ONTAP describen los pasos adicionales 
 +
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^]
 
-* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 * Compruebe que la unidad que desea quitar tenga error.
 +
 Para verificar que la unidad presenta errores, ejecute el `storage disk show -broken` comando. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.

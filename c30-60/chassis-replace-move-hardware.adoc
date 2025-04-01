@@ -20,7 +20,7 @@ Reemplace el chasis del sistema AFF C30 o AFF C60 cuando un fallo de hardware lo
 Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
 
 .Antes de empezar
-El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, debe contactar https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 
 .Pasos
 . En el controlador deteriorado, asegúrese de que el LED NV está apagado.
@@ -124,50 +124,47 @@ Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarl
 
 
 
-== Paso 2: Quite las unidades del chasis dañado
+== Paso 2: Quite los módulos de almacenamiento en caché del chasis dañado
 
-Es necesario quitar todas las unidades y los espacios vacíos para la unidad del chasis dañado de modo que más adelante en el procedimiento pueda instalarlas en el chasis de reemplazo.
+Debe quitar los módulos de almacenamiento en caché y las unidades vacías del chasis dañado de modo que más adelante del procedimiento pueda instalarlos en el chasis de reemplazo.
 
 . Quite suavemente el panel frontal de la parte frontal del sistema de almacenamiento.
-. Quite las unidades y todos los espacios vacíos de las unidades:
+. Retire los módulos de almacenamiento en caché y los espacios vacíos de las unidades:
 +
 
-NOTE: Realizar un seguimiento de en qué bahía de unidad se quitó cada unidad y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.
+NOTE: Realizar un seguimiento de en qué bahía de unidades se ha eliminado cada módulo de almacenamiento en caché y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.
 
 +
-image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad NVMe]
+image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[gráfico de los pasos de sustitución de módulos de almacenamiento en caché fas50]
 
 +
-[cols="1,4"]
+[cols="20%,80%"]
 |===
 
 
  a| 
 image::../media/icon_round_1.png[Número de llamada 1]
  a| 
-Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+Pulse el botón de liberación de la cara del módulo para abrir la palanca de leva.
 
 
 
  a| 
 image::../media/icon_round_2.png[Número de llamada 2]
  a| 
-Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
+Gire la palanca de leva hacia abajo para desconectar el módulo del plano medio.
 
 
 
  a| 
 image::../media/icon_round_3.png[Número de llamada 3]
  a| 
-Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.
+Deslice el módulo para extraerlo del compartimento de la unidad con la palanca de leva y sujete el módulo con la otra mano.
 
-Al extraer una unidad, utilice siempre dos manos para sostener su peso.
-
-
-NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
+Al retirar un módulo, utilice siempre dos manos para soportar su peso.
 
 |===
-. Deje las unidades a un lado en un carro o mesa libre de estática.
+. Aparte los módulos de almacenamiento en caché en un carro o mesa libre de estática.
 
 
 
@@ -237,23 +234,23 @@ NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que
 
 . Vuelva a conectar la controladora según sea necesario, excepto en los cables de alimentación.
 . Repita estos pasos para instalar la segunda controladora en el chasis.
-. Instale las unidades y todos los espacios vacíos de unidad que quitó del chasis dañado en el chasis de reemplazo:
+. Instale los módulos de almacenamiento en caché y las unidades vacías que ha retirado del chasis dañado en el chasis de sustitución:
 +
 
-NOTE: Las unidades y los espacios vacíos de las unidades deben instalarse en las mismas bahías de unidad en el chasis de reemplazo.
+NOTE: Los módulos de almacenamiento en caché y las unidades vacías deben instalarse en las mismas bahías de unidades del chasis de reemplazo.
 
-+
-.. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
-.. Empuje suavemente hasta que la unidad se detenga.
-.. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
+
+
+. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
+. Empuje suavemente hasta que la unidad se detenga.
+. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
 +
 Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
 
-.. Repita el proceso para las unidades restantes.
-
-
-. Instale el panel frontal.
-. Vuelva a conectar los cables de alimentación a las fuentes de alimentación (PSU) de las controladoras.
+. Repita el proceso para las unidades restantes.
++
+.. Instale el panel frontal.
+.. Vuelva a conectar los cables de alimentación a las fuentes de alimentación (PSU) de las controladoras.
 +
 Una vez restaurada la alimentación de un PSU, el LED de estado debe ser verde.
 
@@ -270,8 +267,8 @@ NOTE: Las controladoras comienzan a arrancar tan pronto como se restaure la alim
  a| 
 PSU DE CA
  a| 
-.. Conecte el cable de alimentación a la fuente de alimentación.
-.. Fije el cable de alimentación con el retén del cable de alimentación.
+... Conecte el cable de alimentación a la fuente de alimentación.
+... Fije el cable de alimentación con el retén del cable de alimentación.
 
 
 
@@ -279,18 +276,20 @@ PSU DE CA
  a| 
 FUENTE DE ALIMENTACIÓN DE CC
  a| 
-.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
-.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+... Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+... Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
 
 
 |===
-. Si las controladoras arrancan en el aviso de Loader, reinicie las controladoras:
+.. Si las controladoras arrancan en el aviso de Loader, reinicie las controladoras:
 +
 `boot_ontap`
 
-. Vuelva a activar AutoSupport:
+.. Vuelva a activar AutoSupport:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
 
 
 

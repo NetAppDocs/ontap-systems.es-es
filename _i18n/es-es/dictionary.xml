@@ -8795,7 +8795,6 @@ SFP+ (destino/iniciador)</block>
   <block id="ab7ef1e990b02e4f310f950e86665f24" category="list-text">En la controladora B, conecte los siguientes puertos:</block>
   <block id="9567b57fbc256ab6a2a904d9e65e90fc" category="paragraph">Utilice el<block ref="2b7eb894c1625ebcb138cf06e4e24423" category="inline-link-rx"></block> para registrar los valores que necesita durante el proceso de configuración del clúster. Si se proporciona un valor predeterminado, puede usar dicho valor, o bien puede introducir el que desee.</block>
   <block id="2b613a5cfe94ed4e246fd0b8d8e788d7" category="inline-link-macro">encienda el sistema de almacenamiento</block>
-  <block id="62b1b8fecbe53d21e29b3193b917d52b" category="paragraph">Asegúrese de que el portátil está conectado al puerto de la consola serie y de que los controladores están encendidos. Consulte <block ref="7c573676638f479dced3a24193374cdc" category="inline-link-macro-rx"></block> para obtener instrucciones.</block>
   <block id="c0cca90a0ea793a9983b3bf5d8f21117" category="paragraph">NetApp recomienda usar System Manager para configurar clústeres nuevos. Consulte<block ref="21993ef26df9bd69488ae5f93ea51b95" category="inline-link-rx"></block> para obtener instrucciones de configuración.</block>
   <block id="25e29897c37b7e5f9f9f0d8aac2e8c21" category="list-text">Asegúrese de tener las instrucciones incluidas en el kit de guías.</block>
   <block id="cd5270ea2c99376e2e028058d02bfa65" category="list-text">Comprenda que el flujo de aire a través del sistema de almacenamiento entra desde la parte frontal donde se instalan las tapas de la cubierta protectora o de los extremos y sale de la parte posterior donde se encuentran los puertos.</block>
@@ -9876,16 +9875,11 @@ SFP+ (destino/iniciador)</block>
   <block id="a475b089bd1d54a48dc02d6327ce3723" category="paragraph">El valor de HA-state debe ser _ha_.</block>
   <block id="9c6a064471e1d988a3b10d26ed1c4d09" category="list-text">Si todavía no lo ha hecho, vuelva a conectar el resto del sistema de almacenamiento.</block>
   <block id="90c5817c78a73467a558dc23bd5e4f4c" category="list-text">Repita estos pasos para la otra controladora del chasis.</block>
-  <block id="45d69e7bdfec0647cf3523f57e30a808" category="section-title">Paso 2: Quite las unidades del chasis dañado</block>
-  <block id="c0055725498ec7c6a2d459f6d18aef46" category="paragraph">Es necesario quitar todas las unidades y los espacios vacíos para la unidad del chasis dañado de modo que más adelante en el procedimiento pueda instalarlas en el chasis de reemplazo.</block>
   <block id="dd96419c0010405119a86fda57cc77f4" category="list-text">Quite suavemente el panel frontal de la parte frontal del sistema de almacenamiento.</block>
-  <block id="3e56a6d3defe800cc97429c918a7c4fb" category="list-text">Quite las unidades y todos los espacios vacíos de las unidades:</block>
-  <block id="ba52981b53ce10a301f84e2da386c778" category="admonition">Realizar un seguimiento de en qué bahía de unidad se quitó cada unidad y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.</block>
   <block id="802e81544e7cd56335454cb3f02f6c1a" category="image-alt">Quite la unidad NVMe</block>
   <block id="36c4bb9266e617d3ca8a33eb9502e855" category="paragraph">Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.</block>
   <block id="72b54ea7be3a13b4755dc4521c8d0af6" category="paragraph">Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.</block>
   <block id="0093c88dee6ce91e0bd8ccb1cfbc03ff" category="admonition">Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.</block>
-  <block id="ab32ae446e6fa5de50a5d631bbe01daf" category="list-text">Deje las unidades a un lado en un carro o mesa libre de estática.</block>
   <block id="0649d37403624118b801efa8956dc716" category="section-title">Paso 3: Sustituya el chasis desde el bastidor de equipos o el armario del sistema</block>
   <block id="e5a4b20c56ed46e589289f6e1a9368dd" category="paragraph">Retire el chasis deteriorado del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las unidades, las unidades en blanco y, a continuación, instale el panel frontal.</block>
   <block id="eb8def779f4d3e61a371ec65c0cc0128" category="list-text">Retire los tornillos de los puntos de montaje del chasis deteriorados.</block>
@@ -9903,8 +9897,6 @@ SFP+ (destino/iniciador)</block>
   <block id="a49827c76ee70fdd179847c88075dc56" category="list-text">Empuje firmemente las asas hasta que la controladora entre en contacto con el plano medio y quede completamente asentada en el chasis.</block>
   <block id="3056a592db17bf1d39a65418c696f961" category="list-text">Vuelva a conectar la controladora según sea necesario, excepto en los cables de alimentación.</block>
   <block id="707d1581f04f57894e17cb3cafe9b845" category="list-text">Repita estos pasos para instalar la segunda controladora en el chasis.</block>
-  <block id="a6d6e73e138675b6ffbbb0e4663b2d5d" category="list-text">Instale las unidades y todos los espacios vacíos de unidad que quitó del chasis dañado en el chasis de reemplazo:</block>
-  <block id="4a7738e24d9329241e05c40def3be102" category="admonition">Las unidades y los espacios vacíos de las unidades deben instalarse en las mismas bahías de unidad en el chasis de reemplazo.</block>
   <block id="8434f030a8261109d70a0f1ab5da399d" category="list-text">Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.</block>
   <block id="969b8fc5cc51be52f8dce30f8f2d4b34" category="list-text">Empuje suavemente hasta que la unidad se detenga.</block>
   <block id="1b247863479c60a2779b5eedef888d17" category="list-text">Repita el proceso para las unidades restantes.</block>
@@ -10712,7 +10704,6 @@ SFP+ (destino/iniciador)</block>
   <block id="4572f45ac79ded53bd57f95eaf949d13" category="doc">Requisitos de instalación: AFF C30 y AFF C60</block>
   <block id="2795470282b110353916b87e8a68ea10" category="paragraph">Después de encender su sistema de almacenamiento AFF C80, estará listo para detectar su red de clúster y configurar un clúster de ONTAP.</block>
   <block id="021fad57648b2198deca585e8c317a71" category="paragraph">Después de activar el sistema de almacenamiento FAS70 o FAS90, estará listo para detectar su red de clústeres y configurar un clúster de ONTAP.</block>
-  <block id="4c92eb29f2a257faff3e90e45cf70459" category="paragraph">Un estante DS460C puede pesar hasta 260,4 lbs (181,1 kg). Para levantar el estante de almacenamiento, es posible que necesite hasta cinco personas o un elevador hidráulico. Conserve todos los componentes en la bandeja de almacenamiento (tanto delantera como trasera) para evitar que se desequilibre el peso de bandeja.</block>
   <block id="510996b7cd8e0bf946a50e1f000afbe2" category="paragraph">El SuperRail se puede instalar en un rack estándar de cuatro postes de orificio cuadrado o en un rack estándar de cuatro postes de orificio redondo mediante los soportes adaptadores de orificio redondo a cuadrado.</block>
   <block id="090baac144fae3a90d22bb679e0194a6" category="sidebar">Medios de arranque AFF A20, AFF A30 y AFF A50</block>
   <block id="f923335af94abdb12e15d306f375ccba" category="sidebar">Módulo I/O AFF A20, AFF A30 y AFF A50</block>
@@ -11593,7 +11584,6 @@ SFP+ (destino/iniciador)</block>
   <block id="0d7d91e5c0ba14682d8accd0725bd4f8" category="paragraph">Revise los siguientes requisitos y consideraciones.</block>
   <block id="26bdea20d97a5dc3ed17ac3abb94f903" category="paragraph">Revise los requisitos y las consideraciones del procedimiento de reemplazo de la controladora.</block>
   <block id="b00e817c5e070498acf083d5cdea215d" category="paragraph">Asegúrese de tener un clip o un bolígrafo con punta estrecha para fijar NS224 ID de estante de almacenamiento.</block>
-  <block id="dac54bdee97e00ed11513b711808fbbb" category="list-text">Debe apagar y encender la bandeja (apagar el switch de alimentación de la parte posterior de la bandeja SAS, esperar el tiempo correspondiente y, a continuación, volver a encender el encendido) para que el ID de bandeja surta efecto.</block>
   <block id="7ca755a8f6cc07b6b9e0fb7e1b6c9a09" category="list-text">Conecte primero los cables de alimentación a la bandeja, fíjelos en su sitio con el retén del cable de alimentación, conecte los cables de alimentación a las fuentes de alimentación de diferentes circuitos y, a continuación, encienda el interruptor de alimentación en cada una de las fuentes de alimentación (en la parte posterior de la bandeja).</block>
   <block id="58664d0a6ee33336810fe2050bd807f7" category="paragraph">La bandeja se enciende y arranca automáticamente cuando se enciende.</block>
   <block id="ba79a134cbfbf535ef0d30ec122fd9fb" category="list-text">Retire la tapa del extremo izquierdo para acceder al botón naranja de ID de la bandeja de la placa frontal.</block>
@@ -11610,7 +11600,6 @@ SFP+ (destino/iniciador)</block>
   <block id="7c72724f0b6450fb95e7722b18d2e78f" category="summary">Antes de reemplazar el chasis de su sistema AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el chasis de reemplazo correcto y las herramientas necesarias.</block>
   <block id="6c5e82deb6f3de231e3eb286f77e492f" category="paragraph">Después de revisar los requisitos para reemplazar el chasis, debe <block ref="5ad1268d806d8db9e0e59370c95dfac1" category="inline-link-macro-rx"></block>.</block>
   <block id="e7eea0ad5ba5d4f18a6414b3197206c3" category="summary">Comience a sustituir el chasis de su sistema de almacenamiento AFF A20, AFF A30 o AFF A50 revisando los requisitos de reemplazo, apagando las controladoras, reemplazando el chasis y verificando el funcionamiento del sistema.</block>
-  <block id="dcde20e17b1c5c80f1f980da5150736e" category="list-text">La pantalla de ID de bandeja en la parte frontal del chasis del sistema no se ilumina. El ID de bandeja interna del sistema está fijado en 00.</block>
   <block id="b299bf8f9276ecc9c20cd1ae118c9799" category="list-text">Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación. :a20-30-50!:</block>
   <block id="12c8eb3808a13f0adea4f2c3d86acb4c" category="image-alt">Icono de precaución de peso AFF A20 A30 A50 y C30 y C60</block>
   <block id="90c51f2e3ac0e73e60b00bd0eba8b946" category="doc">Añada un módulo I/O: AFF A20, AFF A30 y AFF A50</block>
@@ -11710,4 +11699,181 @@ SFP+ (destino/iniciador)</block>
   <block id="9f4af5ab487f7477da2dd13bdd9a635c" category="paragraph">Conecte las bandejas de unidades dentro de la pila dos entre sí, utilizando el gráfico de referencia.</block>
   <block id="5314841cf1990f9c696f41eaf702eb4f" category="image-alt">el controlador de detección automática drw selecciona ieops 1849</block>
   <block id="4c871f3eceeb63ae32259cd45a0be767" category="list-text">Haga clic en Red en el panel izquierdo, haga clic con el botón derecho y seleccione Actualizar.</block>
+  <block id="08308f65214c45c04131a1ad77f35101" category="list-text">El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block> antes de continuar con este procedimiento.</block>
+  <block id="6c9f2761d7d74eb3a979daf442af39b5" category="paragraph">Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, debe contactar<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block> antes de continuar con este procedimiento.</block>
+  <block id="452dbbce25fd2a411a98a68c759a30a7" category="paragraph">El valor de HA-state debe ser _ha_. El valor para HA-state puede ser uno de los siguientes: *** _Ha_ *** _mcc_ (no admitido en ASA)</block>
+  <block id="944a42cded90e80d0304a07ec28b9a33" category="section-title">Paso 2: Quite los módulos de almacenamiento en caché del chasis dañado</block>
+  <block id="d7906265ec3e4443fc6dc14ccbf13357" category="paragraph">Debe quitar los módulos de almacenamiento en caché y las unidades vacías del chasis dañado de modo que más adelante del procedimiento pueda instalarlos en el chasis de reemplazo.</block>
+  <block id="54418dee1efbdcdf7f7e4f53c224f259" category="list-text">Retire los módulos de almacenamiento en caché y los espacios vacíos de las unidades:</block>
+  <block id="a4453fe1e94237d231fc2f4878753194" category="admonition">Realizar un seguimiento de en qué bahía de unidades se ha eliminado cada módulo de almacenamiento en caché y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.</block>
+  <block id="4feff098827182c526ab95ef83e78f24" category="image-alt">gráfico de los pasos de sustitución de módulos de almacenamiento en caché fas50</block>
+  <block id="9a4b2d8c6321f069d147bd3a6aab1771" category="paragraph">Pulse el botón de liberación de la cara del módulo para abrir la palanca de leva.</block>
+  <block id="078ab15ebb81d82e85799292435daed5" category="paragraph">Gire la palanca de leva hacia abajo para desconectar el módulo del plano medio.</block>
+  <block id="3696cc02cc4e1d6727f9f15be51f46c4" category="paragraph">Deslice el módulo para extraerlo del compartimento de la unidad con la palanca de leva y sujete el módulo con la otra mano.</block>
+  <block id="12399a516954dd0843cdcb19410dd141" category="paragraph">Al retirar un módulo, utilice siempre dos manos para soportar su peso.</block>
+  <block id="9222b175cf0c7af5a9ebb98fd1fd266f" category="list-text">Aparte los módulos de almacenamiento en caché en un carro o mesa libre de estática.</block>
+  <block id="fb042e101845ff5cfb8e58953697dd25" category="list-text">Instale los módulos de almacenamiento en caché y las unidades vacías que ha retirado del chasis dañado en el chasis de sustitución:</block>
+  <block id="08a3990a102599592f1bfa837fdb4b59" category="admonition">Los módulos de almacenamiento en caché y las unidades vacías deben instalarse en las mismas bahías de unidades del chasis de reemplazo.</block>
+  <block id="7efc069c2d6033d673e36b12fe42467a" category="paragraph">Debe revisar los requisitos y consideraciones del procedimiento de reemplazo de la controladora.</block>
+  <block id="8e02634dbf9dfd6114030109a952c94d" category="list-text">El resto de los componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block> antes de continuar.</block>
+  <block id="cb4319361e919e892411df69baf2763b" category="paragraph">Para sustituir un ventilador, debe retirar la controladora, quitar el ventilador defectuoso, instalar el ventilador de reemplazo y, a continuación, reinstalar la controladora.</block>
+  <block id="1ceae8e0ff0bec3c4a785784e13c38e0" category="paragraph">Utilice este procedimiento para sustituir un módulo de E/S fallido.</block>
+  <block id="72cad785e17debea8fb89d72f80450e0" category="paragraph">Para sustituir la batería NV, debe quitar el controlador, quitar la batería defectuosa, instalar la batería de reemplazo y luego reinstalar el controlador.</block>
+  <block id="837c47c934f14522b94248f34ec495be" category="paragraph">Debe sustituir la batería del reloj en tiempo real (RTC) de la controladora para que los servicios y las aplicaciones de su sistema de almacenamiento que dependen de la sincronización de tiempo precisa sigan funcionando.</block>
+  <block id="55eba7ecf8d7b61636e734c095e4ed8c" category="paragraph">Asegúrese de que el portátil está conectado al puerto de la consola serie y de que los controladores están encendidos.</block>
+  <block id="91860a8cf69554e12c3e3a5720821c5a" category="list-text">Debe apagar y encender la bandeja (apagar el switch de alimentación en cada uno de los suministros de alimentación de la bandeja SAS, esperar el tiempo adecuado y, a continuación, volver a encender el encendido) para que el ID de bandeja surta efecto.</block>
+  <block id="f5afd4b6c78c970d9b9f36473a81eb43" category="paragraph">Un estante DS460C puede pesar hasta 260,4 lbs (181,1 kg). Para levantar la bandeja de almacenamiento, es posible que necesite hasta cinco personas o un elevador hidráulico. Conserve todos los componentes en la bandeja de almacenamiento (tanto delantera como trasera) para evitar que se desequilibre el peso de bandeja.</block>
+  <block id="33ae25491bd1a8a3daa58c3e044ddc6f" category="doc">Devuelva la pieza fallida a NetApp - FAS50</block>
+  <block id="cb898608072ab3625e9f94c0f82cbc2f" category="paragraph">Si un componente del sistema FAS50 falla, devuelva la parte averiada a NetApp. Consulte<block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block> la página para obtener más información.</block>
+  <block id="ddcc1fe805cfc4158d50ee0c9f6ad59c" category="doc">Vuelva a instalar el controlador - FAS50</block>
+  <block id="739ec770fb0f54d0a185f727d0e59411" category="doc">Retire el controlador - FAS50</block>
+  <block id="0277d6392a2af9f708f9e4369e630a19" category="summary">Para garantizar la seguridad de los datos en su sistema de almacenamiento FAS50, debe verificar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.</block>
+  <block id="f1079072d592c82515d925fae16c5721" category="doc">Compruebe las claves de cifrado integradas - FAS50</block>
+  <block id="0c7c2005d76982e23553fd1d3514150c" category="summary">Restaure el cifrado en el soporte de arranque de reemplazo del sistema FAS50 para garantizar una protección de datos continua. El proceso de sustitución implica verificar la disponibilidad de claves, volver a aplicar la configuración de cifrado y confirmar el acceso seguro a sus datos.</block>
+  <block id="0151d2e25a624c9dbf01c9da862a2efb" category="doc">Restaurar cifrado - FAS50</block>
+  <block id="16d1af605f4fcd33a64f8a2ed880330e" category="summary">Después de instalar el nuevo dispositivo multimedia de arranque en el sistema FAS50, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado.</block>
+  <block id="d21d0e8ba826df129a1cd71f29ee4d5e" category="doc">Inicie la imagen de recuperación - FAS50</block>
+  <block id="56429bb6d74550cd9c5360f41397c6de" category="summary">Antes de sustituir los medios de arranque en su sistema FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto.</block>
+  <block id="aeba6c8bbaea20952c636da581b7a8c2" category="doc">Requisitos de sustitución de soportes de arranque - FAS50</block>
+  <block id="062f7c310d8631c5c060416fd38b1228" category="doc">Flujo de trabajo de sustitución de soportes de arranque - FAS50</block>
+  <block id="1d7e5e0e3df76ac9dc695510c92b0468" category="paragraph">Siga estos pasos del flujo de trabajo para sustituir el soporte de arranque.</block>
+  <block id="bd898a77e63b1dd4978b864491e6c7b0" category="summary">Los medios de arranque del sistema FAS50 almacenan datos esenciales de configuración y firmware. El proceso de sustitución implica la extracción del módulo del controlador, la extracción del soporte de arranque dañado, la instalación del soporte de arranque de reemplazo y, a continuación, la transferencia de la imagen ONTAP al soporte de arranque de reemplazo.</block>
+  <block id="719e92c119e580be0fedfe1616953620" category="doc">Sustituya el soporte de arranque - FAS50</block>
+  <block id="c518e6003337d8c1efff7e119d9365d2" category="summary">Apague la controladora deteriorada en su sistema de almacenamiento FAS50 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el soporte de arranque.</block>
+  <block id="079acc3f3f4418c4b4c1010b6fa2edff" category="doc">Apague el controlador para sustituir el soporte de arranque - FAS50</block>
+  <block id="5f8c2ad1061532c9035fde45699f108c" category="summary">Puede intercambiar en caliente un módulo Flash Cache NVMe SSD (módulo de caché) de la misma capacidad del mismo proveedor o de otro compatible.</block>
+  <block id="3645f29f6c8c221f20d7813f0fa26a50" category="doc">Intercambio en caliente de un módulo de almacenamiento en caché: FAS50</block>
+  <block id="375300c4c74d065b6e97b93cfb47065f" category="paragraph">Puede intercambiar en caliente un módulo de caché SSD NVMe (módulo Flash Cache) de la misma capacidad del mismo proveedor o de otro compatible.</block>
+  <block id="8ebd59de86e8c4e921b201cca97c0308" category="list-text">El sistema de almacenamiento debe tener el sistema operativo adecuado para el módulo de caché que está instalando.</block>
+  <block id="b8c60af649b796482380a3f6a76bbe83" category="list-text">El resto de los componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block> antes de continuar.</block>
+  <block id="cc2fe3a3c64e24b07aa04c80f9e847e5" category="list-text">Localice el módulo de almacenamiento en caché con fallos mediante el LED de atención ámbar iluminado en la parte frontal del módulo de almacenamiento en caché.</block>
+  <block id="a2a6e52f9ed0f0942796917dad1d8983" category="paragraph">Un módulo de almacenamiento en caché puede estar en la bahía de unidades 0 o 23.</block>
+  <block id="62e950648d145fe8127106ed64a26ffc" category="list-text">Espere un mínimo de 70 segundos antes de insertar el módulo de almacenamiento en caché de reemplazo.</block>
+  <block id="c212e76764548ecbad1eec55aa51a425" category="list-text">Con el mango de leva en la posición abierta, inserte el módulo con ambas manos.</block>
+  <block id="654ae1f780a7bf81f96af9189ef4e099" category="list-text">Presione suavemente hasta que el módulo se detenga.</block>
+  <block id="f4766f330ca30e7a625e2b5dbae44be1" category="list-text">Cierre el asa de la leva para que el módulo quede completamente asentado en el plano medio y el asa encaje en su sitio.</block>
+  <block id="dc327f7dba7a06bc6de0e2276d46d0a4" category="paragraph">Asegúrese de cerrar la palanca de leva lentamente para que quede alineada correctamente con la cara del módulo.</block>
+  <block id="b99f6dafb7ef9e4ba4319aeb859a0f74" category="list-text">Compruebe que el LED de actividad del módulo (verde) está iluminado.</block>
+  <block id="69013c48c40dc96bdb9016813612271b" category="summary">Compruebe el estado de alta disponibilidad del chasis y luego devuelva la pieza con error a NetApp para completar el paso final del procedimiento de reemplazo del chasis FAS50.</block>
+  <block id="71ca5fa859d5d656d350997252618cfd" category="doc">Sustitución completa del chasis - FAS50</block>
+  <block id="c39f2ee0c21b22242c863103ccffba7b" category="summary">Reemplace el chasis de su sistema FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
+  <block id="f7fd8733f7a1cdfb735457344642d65a" category="doc">Sustituya el chasis - FAS50</block>
+  <block id="43c0e4ff98cea4dff4c5c25388cd5bdb" category="paragraph">Después de reemplazar el chasis dañado FAS50 y reinstalar los componentes en él, debe <block ref="e567761f3b9d650307e1ffbce9c62dc9" category="inline-link-macro-rx"></block>.</block>
+  <block id="92b1dd9a60c1d18f7606ce281d72ad2d" category="summary">Antes de reemplazar el chasis de su sistema FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el chasis de reemplazo correcto y las herramientas necesarias.</block>
+  <block id="b6658ca07f1d7034f64ec87009aff148" category="doc">Requisitos de sustitución del chasis - FAS50</block>
+  <block id="d5558ef85c97f84228e8ede4f9fe68a6" category="summary">Apague las controladoras en su sistema de almacenamiento FAS50 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el chasis.</block>
+  <block id="975d6c51bb7949ae1d3665c5ddf83cd9" category="doc">Apague los controladores - FAS50</block>
+  <block id="9d9651f97ee43fc1894d70b8fca0c55f" category="doc">Flujo de trabajo de sustitución de chasis - FAS50</block>
+  <block id="64e923d27d8f20b1c39e996784b889e8" category="paragraph">Siga estos pasos del flujo de trabajo para sustituir el chasis.</block>
+  <block id="d46dfcea882ba1b154e777304a052dbb" category="paragraph">La sustitución del chasis incluye mover los espacios vacíos de la unidad, los módulos de almacenamiento en caché, las controladoras (con las fuentes de alimentación) y el bisel del chasis dañado al nuevo chasis, e intercambiar el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.</block>
+  <block id="f8ab9ad62f54fefd22c0d90bef055198" category="summary">Reemplace la controladora del sistema FAS50 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica retirar la controladora dañada, mover los componentes a la controladora de reemplazo, instalar la controladora de reemplazo y reiniciarla.</block>
+  <block id="b8642444bf8dd9a7f955ef4d53c42954" category="doc">Sustituya el controlador - FAS50</block>
+  <block id="38ebe64559125444b42957c926d9309b" category="paragraph">Después de reemplazar el controlador FAS50 dañado, debe hacerlo<block ref="ba0281d4e0b6e4cebf5e13fd7e583c92" category="inline-link-macro-rx"></block>.</block>
+  <block id="f47617ad2fb9ec35e7f692f630cf213c" category="summary">Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema FAS50 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).</block>
+  <block id="f82377f16c8e20dd1aa1d107e057ab26" category="doc">Devuelva el controlador - FAS50</block>
+  <block id="94346bd4e393d4a734081b75a7200d5c" category="doc">Requisitos de sustitución de controladoras - FAS50</block>
+  <block id="18850df12d6d3905c171cf3b41eb6ff7" category="summary">Para completar la controladora de reemplazo del sistema FAS50, restaure primero la configuración de cifrado de almacenamiento de NetApp (si es necesario) e instale las licencias requeridas en la controladora nueva. A continuación, confirme que las interfaces lógicas (LIF) informan a sus puertos principales y realizan una comprobación del estado del clúster. Finalmente, registre el número de serie de la nueva controladora y luego devuelva la pieza fallida a NetApp.</block>
+  <block id="6a9ca21da69005485aa97597c969ab06" category="doc">Sustitución completa del controlador - FAS50</block>
+  <block id="73b625912eebd490af94249495a8a3ff" category="summary">Apague la controladora deteriorada en su sistema de almacenamiento FAS50 para evitar pérdida de datos y garantizar la estabilidad del sistema al sustituir la controladora.</block>
+  <block id="47a8a5d1c629f2781c2ebb30539303b9" category="doc">Apague el controlador averiado - FAS50</block>
+  <block id="49945f2cad4c9c368059dd754d754f6a" category="summary">Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento FAS50 y confirme que los adaptadores del sistema enumeran todas las rutas a los discos.</block>
+  <block id="c8401b5380a5df9e9eb71687aa5cbf9f" category="doc">Restaurar y verificar la configuración del sistema - FAS50</block>
+  <block id="2c4ddbd4f1c1216183f0c5bd566a6763" category="paragraph">Después de restaurar y verificar la configuración del sistema para su sistema FAS50, debe hacerlo<block ref="f96992113d4cc080f9d372523b7a919c" category="inline-link-macro-rx"></block>.</block>
+  <block id="5f4615774f4a50ce4e2b4677a17e8e75" category="doc">Flujo de trabajo de reemplazo de controlador - FAS50</block>
+  <block id="fdfa46ff546c241fb59ecec0b3caccd1" category="paragraph">Siga estos pasos del flujo de trabajo para sustituir la controladora.</block>
+  <block id="72b60d2ae609d3cbfaf3bd48263c8ae5" category="summary">Reemplace un DIMM en su sistema FAS50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.</block>
+  <block id="83182c55d59f50af3178dc292ed9f781" category="doc">Sustituya un DIMM - FAS50</block>
+  <block id="b12e36ec5c23c2b057b2d1aff5582fd9" category="summary">Reemplace un módulo de ventilador en su sistema FAS50 cuando un ventilador falla o no está funcionando eficientemente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp.</block>
+  <block id="14c5b0713d5ac9cac842b3b9d9f1c6e9" category="doc">Sustituya un módulo de ventilador - FAS50</block>
+  <block id="c553f0c394c115c59a3770645eef6aac" category="summary">Mantener el hardware de FAS50</block>
+  <block id="aedcdd21a0c77de5f96885987dfadefb" category="doc">Mantener el hardware de FAS50</block>
+  <block id="b58ab625a31715db771c75c8ea90990d" category="paragraph">Para los sistemas de almacenamiento FAS50, puede realizar procedimientos de mantenimiento en los componentes siguientes.</block>
+  <block id="24b87f9884757dfe5ebe74a987ca5489" category="doc">Conecte el cable de la tornillería - FAS50</block>
+  <block id="176d935f21584d13a73cc2fee6d2006f" category="paragraph">Después de instalar el hardware del sistema de almacenamiento FAS50, conecte los cables de las controladoras a la red y a las bandejas.</block>
+  <block id="e7bd234f89aa10fe2a25ab70f1881386" category="example-title">FAS50 con un módulo I/O de 40/100 GbE con 2 puertos</block>
+  <block id="ab0929853066bc5afff8f565bc7e138d" category="image-alt">diagrama de cableado de clúster sin switches de fas50 usando un módulo de 100gbe io</block>
+  <block id="f5e2edd1a08f37ae784f4706be49b73d" category="admonition">El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 40/100 GbE.</block>
+  <block id="587bed5e1b1013acb3b0cad78e0dc97f" category="inline-image-macro">fas50 diagrama de cableado de clúster conmutado con un módulo de 100gbe io</block>
+  <block id="5af61e2d32561bdfd725b4ff1abad33d" category="paragraph"><block ref="5af61e2d32561bdfd725b4ff1abad33d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30116aad52f0bad698fa0cb2a523a7d2" category="example-title">FAS50 con un módulo I/O de 10/25 GbE con 4 puertos</block>
+  <block id="83ed0059cf7b8565a69e40d218194766" category="image-alt">cable de fas50 a switches de red host ethernet 10/25gbe</block>
+  <block id="97999a10174c7270f80d69a61f881c34" category="example-title">FAS50 con un módulo de I/O FC de 4 puertos de 64 Gb/s.</block>
+  <block id="4af0635b9b0fa01d90348d64d44ac5a7" category="paragraph">Los siguientes procedimientos muestran cómo cablear las controladoras a una o dos bandejas DS460C.</block>
+  <block id="0d4ae2c19fb1eec9c73a9ba31cf7b80f" category="list-text">Los ejemplos de cableado muestran bandejas DS460C; sin embargo, se admiten bandejas SAS adicionales, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="dc59d157ac5f286eedfff99a1bb61862" category="inline-link-macro">Instale y conecte los estantes de cables para una nueva instalación del sistema</block>
+  <block id="016ce9a551ae5a3866c3feb9f430f867" category="inline-link-macro">Guías de cableado SAS, hojas de trabajo y ejemplos de descripción general</block>
+  <block id="41f30de602f778bd37fd94cde0e93d98" category="paragraph">El cableado de otras bandejas SAS compatibles es similar. Consulte <block ref="c0d7aa9ee22aab3ecf7bf0fe7732f94e" category="inline-link-macro-rx"></block>. También puede consultar <block ref="f178d666cc0e8ba0d12eda1a67319fdb" category="inline-link-macro-rx"></block>.</block>
+  <block id="0bf36a9d3e5241c7c2a803cca8393af0" category="list-text">Para obtener el número máximo de bandejas compatibles con el sistema de almacenamiento y todas las opciones de cableado, como ópticas y conectadas por switch, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="72d885b36f3dabe9e44ce371442073d6" category="list-text">Utilice los cables de almacenamiento incluidos con el sistema de almacenamiento, que pueden ser el siguiente tipo de cable:</block>
+  <block id="72f4035027f2f7ca82b0a522cc86f866" category="open-title">Opción 1: Una bandeja DS460C</block>
+  <block id="1475db94c866c1134ab5b90020f91d8e" category="paragraph">Conecte mediante cable cada controladora a cada módulo de IOM12 de la bandeja DS460C.</block>
+  <block id="4148c23baf0acb2d5a889bf39e98d451" category="list-text">Conecte el cable del controlador A del puerto 3a al puerto IOMA 1.</block>
+  <block id="83622a8ebd61bb324e46d859d063a629" category="list-text">Cable del controlador del puerto A 3D al puerto IOMB 3.</block>
+  <block id="e9c2e0916e87c8e70c3f414d7a2a3171" category="inline-image-macro">La controladora A dispone de los puertos 3a y 3D cableados a una bandeja DS460C</block>
+  <block id="ad272dab205763d50bc64eb8ffbaab6a" category="paragraph"><block ref="ad272dab205763d50bc64eb8ffbaab6a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="65b2202bf59d69d19c408dfe2eb87eb4" category="list-text">Conecte el cable del puerto B del controlador 3a al puerto IOMB 1.</block>
+  <block id="e8849143d50daef61f19b6d8a620b759" category="list-text">Conecte el cable del puerto B del controlador 3D al puerto IOMA 3.</block>
+  <block id="ef1647c46666dea72c87973140aae982" category="inline-image-macro">Controladora B con los puertos 3a y 3D cableados a una bandeja DS460C</block>
+  <block id="e4c4ceb79fe5729418dba70f3d3a4b6f" category="paragraph"><block ref="e4c4ceb79fe5729418dba70f3d3a4b6f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fd4b8702e1fece6900211aed1df08297" category="open-title">Opción 2: Dos bandejas DS460C</block>
+  <block id="d5b0fb86b04fadb04b2c1aabdc682124" category="paragraph">Conecte cada controladora a los módulos IOM12 en ambas bandejas DS460C.</block>
+  <block id="92b6981d91e56c51ed8cd81ceb0c2725" category="list-text">Conecte el cable de las conexiones de bandeja a bandeja:</block>
+  <block id="4a433061aeb5f5489a4f6f2c6998431e" category="list-text">Bandeja de cables 1 Puerto IOMA 3 a Bandeja 2 Puerto IOMA 1.</block>
+  <block id="953e03d7a579b26571697352f2be0e05" category="list-text">Bandeja de cables 1 Puerto IOMB 3 a Bandeja 2 Puerto IOMB 1.</block>
+  <block id="123ab7e1c9141cb0b7e7b712d202404a" category="inline-image-macro">conecte el cable entre la bandeja y la bandeja</block>
+  <block id="5b5c504f96f7bd830b1746878c952c52" category="paragraph"><block ref="5b5c504f96f7bd830b1746878c952c52" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="32711258ec649d276f0febe359183174" category="list-text">Conecte la controladora A a las bandejas:</block>
+  <block id="8a077fe26258a791808f6c79d3bb7497" category="list-text">Conecte por cable el puerto A 3a a el puerto IOMA 1 de la bandeja 1.</block>
+  <block id="3b49545c9e32c779ba99005b8bdb4459" category="list-text">Conecte el cable del controlador A del puerto 3D al puerto 3 de IOMB de la bandeja 2.</block>
+  <block id="262e032c06dfbe5a4f5e5984c10f93a8" category="inline-image-macro">De la controladora A, los puertos 3a y 3D, cableados a dos bandejas DS460C</block>
+  <block id="f55c64664eae8ba733b8672a7ff524f8" category="paragraph"><block ref="f55c64664eae8ba733b8672a7ff524f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7a6143a096aca12e23bfad9f1d41fe20" category="list-text">Conecte la controladora B a las bandejas:</block>
+  <block id="0b811f09e9eac5e37e239a12858a54c1" category="list-text">Conecte el cable del controlador B del puerto 3a al puerto 1 de IOMB de la bandeja 1.</block>
+  <block id="01c7cda26a7b465d1c56f741d328e967" category="list-text">Conecte el cable del controlador B, puerto 3D a la bandeja 2, puerto IOMA 3.</block>
+  <block id="60fee2ee2c3e768d10719c680fb38afb" category="inline-image-macro">Los puertos 3a y 3D de la controladora B cableados a dos bandejas DS460C</block>
+  <block id="7a2d0d2a1e1f5dc3d5184332fb23afba" category="paragraph"><block ref="7a2d0d2a1e1f5dc3d5184332fb23afba" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c7a75f3a015710392a8467c08fd9862a" category="doc">Configuración y configuración completas del sistema de almacenamiento: FAS50</block>
+  <block id="c63c71562f3b83fe3a2793ff2deb8fd5" category="paragraph">Después de encender el sistema de almacenamiento FAS50, estará listo para detectar su red de clúster y configurar un clúster de ONTAP.</block>
+  <block id="a48dcb52a80835a67657f668af54582e" category="doc">Instale la tornillería - FAS50</block>
+  <block id="986b47fd733e9cbf32255b28864ed238" category="paragraph">Después de preparar la instalación del sistema de almacenamiento FAS50, instale el hardware para el sistema de almacenamiento. En primer lugar, instale los kits de guías. A continuación, instale y proteja su sistema de almacenamiento en un armario o rack de telecomunicaciones.</block>
+  <block id="4f71d9bde1ecffc22f8c526c10e5381e" category="doc">Flujo de trabajo de instalación y configuración - FAS50</block>
+  <block id="1974af6df768391cf88c40aec678571e" category="paragraph">Para instalar y configurar el sistema de almacenamiento FAS50, debe revisar los requisitos de instalación, preparar el sitio, instalar y cablear los componentes de hardware, encender el sistema de almacenamiento y configurar el clúster de ONTAP.</block>
+  <block id="dbcb2bc4d50c0b367ad35ab35049f6cf" category="doc">Encienda el sistema de almacenamiento: FAS50</block>
+  <block id="58a9bceae382f9146952eb764c24eaa4" category="paragraph">Después de conectar las controladoras a la red y las bandejas del sistema de almacenamiento FAS50, encienda las bandejas y las controladoras.</block>
+  <block id="c5c54b199e1cae61ce9f1f8df4d64ad2" category="list-text">La pantalla de ID de bandeja en la parte frontal del chasis del sistema no se ilumina.</block>
+  <block id="21b1424b1e644de7e738b04ffc32d5fb" category="list-text">Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación. :fas50-a20-30-50!:</block>
+  <block id="64edc211ab70498201f3acbe712ec6a4" category="summary">Prepárate para instalar tu plataforma FAS50.</block>
+  <block id="ba721f2e06c40252a394b51ea95142e3" category="doc">Prepárese para instalar - FAS50</block>
+  <block id="e20b24ffe711fbb4211c8b7f51f10949" category="paragraph">Prepárese para instalar su sistema de almacenamiento FAS50 preparando el sitio, desempaquetando las cajas y comparando el contenido de las cajas con la hoja de embalaje, y registrando el sistema de almacenamiento para acceder a los beneficios de soporte.</block>
+  <block id="bf6f76951a411b87fee677094547f5d4" category="doc">Requisitos de instalación - FAS50</block>
+  <block id="f3239a5f1291696246e54607fd3b9a01" category="paragraph">Revise los requisitos del sistema de almacenamiento FAS50.</block>
+  <block id="e56a8d138f62f4590eed5655df5c011f" category="paragraph">El sistema de almacenamiento puede pesar hasta 24,4 kg (53,8 lb). Para levantar el sistema de almacenamiento, se necesitan dos personas o un elevador hidráulico.</block>
+  <block id="9c48a8da7b0db1cca470b9010947185e" category="image-alt">FAS50 icono de advertencia de peso</block>
+  <block id="af0319de88f3ed43d4ee4fb8b670c558" category="paragraph">Un estante DS460C puede pesar hasta 260,4 lbs (181,1 kg). Para levantar el estante, es posible que necesite hasta cinco personas o un elevador hidráulico. Mantenga todos los componentes en la bandeja (tanto delantera como trasera) para evitar desequilibrar el peso de la bandeja.</block>
+  <block id="7b153c13ff10bb5ce6fd48c3d66f3a2d" category="summary">Agregue un módulo de E/S a su sistema FAS50 para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos.</block>
+  <block id="26f561223ab76238a005189688efb525" category="doc">Agregar un módulo de E/S - FAS50</block>
+  <block id="472113a5add68b7f9bf4dce6d45207dd" category="paragraph">Puede añadir un módulo de I/O a los sistemas de almacenamiento FAS50 cuando haya ranuras disponibles o cuando todas estén completamente ocupadas.</block>
+  <block id="0da13ed47030f4f6aff66ca53e9ab7bd" category="summary">Los sistemas FAS50 ofrecen flexibilidad en la expansión o sustitución de módulos de I/O para mejorar la conectividad de red y el rendimiento. La adición o sustitución de un módulo de E/S es esencial al actualizar las capacidades de red o al abordar un módulo fallido.</block>
+  <block id="9f6e0871bc1f665d9d55adeaef141285" category="doc">Descripción general de ADD y SUSTITUIR UN MÓDULO DE E/S - FAS50</block>
+  <block id="74be49eeaaab5e0816ef02fff20cac31" category="summary">Sustituya un módulo de E/S en su sistema FAS50 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales. El proceso de sustitución implica apagar la controladora, sustituir el módulo de I/O fallido, reiniciar la controladora y devolver la parte fallida al NetApp.</block>
+  <block id="c65fcc9bc376acee1b7dc4604e426776" category="doc">Sustituya un módulo de E/S - FAS50</block>
+  <block id="c296ba9a8987d716f7c569e3d75c754e" category="summary">Mantener el hardware de sus sistemas de almacenamiento FAS50 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.</block>
+  <block id="651d5528b03e26465b5710deab4b18d5" category="doc">Descripción general del mantenimiento de hardware - FAS50</block>
+  <block id="92bf596899ecc2dd428dae4ead6350e9" category="paragraph">Los procedimientos de mantenimiento suponen que los sistemas FAS50 ya se han puesto en marcha como nodos de almacenamiento en el entorno de ONTAP.</block>
+  <block id="0c2720f00fff80891cbfa57fc6b79952" category="paragraph"><block ref="0c2720f00fff80891cbfa57fc6b79952" category="inline-link-macro-rx"></block></block>
+  <block id="c83ef2561162a9d1f0f9a046b5027a5f" category="paragraph">Un módulo de almacenamiento en caché (módulo Flash Cache) utiliza SSD de alta velocidad para almacenar datos a los que se accede con frecuencia y acelerar la recuperación.</block>
+  <block id="99345c0fa01397fc4834fca8d86e6924" category="summary">Reemplace la batería NV en su sistema FAS50 cuando la batería comience a perder carga o falla, ya que es responsable de preservar los datos críticos del sistema durante cortes de energía. El proceso de reemplazo implica apagar el controlador dañado, quitar el módulo del controlador, reemplazar la batería NV, reinstalar el módulo del controlador y devolver la pieza fallida a NetApp.</block>
+  <block id="ee30a6d4bd29182df174caa70edbbdf0" category="doc">Sustituya la batería de NV - FAS50</block>
+  <block id="8847128a12be40ae1b08a6092e93aa11" category="summary">Reemplace una fuente de alimentación (PSU) de CA o CC en su sistema FAS50 cuando falla o falla, asegurándose de que su sistema continúa recibiendo la alimentación necesaria para un funcionamiento estable. El proceso de sustitución implica desconectar la fuente de alimentación defectuosa de la fuente de alimentación, desconectar el cable de alimentación, sustituir la fuente de alimentación defectuosa y volver a conectarla a la fuente de alimentación.</block>
+  <block id="bfae144eadfeb10d9deaca4eda74d8ca" category="doc">Sustituya una fuente de alimentación - FAS50</block>
+  <block id="ac8a37f8b37d0c6890e6847a1c6e4f90" category="summary">Reemplace la batería de reloj en tiempo real (RTC), comúnmente conocida como una batería de pila de moneda, en su sistema FAS50 para garantizar que los servicios y aplicaciones que dependen de la sincronización de tiempo precisa permanezcan operativos.</block>
+  <block id="cd9bb4588a19b474bb2eea89a70d69b9" category="doc">Sustituya la batería del reloj en tiempo real - FAS50</block>
+  <block id="d85e5cacacd757755e3d09416d2a8bf8" category="sidebar">FAS50</block>
+  <block id="89c74f56d3077d699f62355b846ecb58" category="sidebar">Sistemas FAS50</block>
+  <block id="d45586db6404e164f2c1f5e7cee53a63" category="sidebar">FAS50 Instalación y configuración</block>
+  <block id="e4a119c627ab5c9085b1bc8cdd861028" category="sidebar">FAS50 Mantener</block>
+  <block id="b27b643308a11f640602b0b02c8a2b53" category="sidebar">FAS50 Medio de arranque</block>
+  <block id="58a129a196d2bcb0ede5faa90327004e" category="sidebar">FAS50 Chasis</block>
+  <block id="e05691d9a469c6dfe5333a08214cfeee" category="sidebar">Módulo de controlador FAS50</block>
+  <block id="58a7a102daa03629c6548f4b567a8bdc" category="sidebar">MÓDULO DE I/O FAS50</block>
 </blocks>

@@ -1,0 +1,96 @@
+---
+section: fas50
+title: Sistemas FAS50
+entries:
+- title: Instalar y configurar
+  pdf-filename: FAS50 Instalación y configuración
+  entries:
+  - title: Instale el flujo de trabajo
+    url: "/fas50/install-overview.html"
+  - title: Revise los requisitos
+    url: "/fas50/install-requirements.html"
+  - title: Prepárese para la instalación
+    url: "/fas50/install-prepare.html"
+  - title: Instale el hardware
+    url: "/fas50/install-hardware.html"
+  - title: Hardware del cable
+    url: "/fas50/install-cable.html"
+  - title: Encienda el sistema
+    url: "/fas50/install-power-hardware.html"
+  - title: Completar la configuración del sistema
+    url: "/fas50/install-complete.html"
+- title: Mantener
+  pdf-filename: FAS50 Mantener
+  entries:
+  - title: Información general de mantenimiento
+    url: "/fas50/maintain-overview.html"
+  - title: Soporte de arranque
+    pdf-filename: FAS50 Medio de arranque
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/fas50/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/fas50/bootmedia-replace-requirements.html"
+    - title: Compruebe las claves de cifrado
+      url: "/fas50/bootmedia-encryption-preshutdown-checks.html"
+    - title: Apague el controlador dañado
+      url: "/fas50/bootmedia-shutdown.html"
+    - title: Sustituir el soporte de arranque
+      url: "/fas50/bootmedia-replace.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas50/bootmedia-recovery-image-boot.html"
+    - title: Restaure el cifrado
+      url: "/fas50/bootmedia-encryption-restore.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas50/bootmedia-complete-rma.html"
+  - title: Módulo de almacenamiento en caché
+    url: "/fas50/caching-module-hot-swap.html"
+  - title: Chasis
+    pdf-filename: FAS50 Chasis
+    entries:
+    - title: Flujo de trabajo de sustitución del chasis
+      url: "/fas50/chassis-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/fas50/chassis-replace-requirements.html"
+    - title: Apague las controladoras
+      url: "/fas50/chassis-replace-shutdown.html"
+    - title: Sustituya el chasis
+      url: "/fas50/chassis-replace-move-hardware.html"
+    - title: Reemplazo completo de chasis
+      url: "/fas50/chassis-replace-complete-system-restore-rma.html"
+  - title: Controladora
+    pdf-filename: Módulo de controlador FAS50
+    entries:
+    - title: Flujo de trabajo de sustitución de controladoras
+      url: "/fas50/controller-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/fas50/controller-replace-requirements.html"
+    - title: Apague el controlador dañado
+      url: "/fas50/controller-replace-shutdown.html"
+    - title: Sustituya la controladora
+      url: "/fas50/controller-replace-move-hardware.html"
+    - title: Restaure la configuración del sistema
+      url: "/fas50/controller-replace-system-config-restore-and-verify.html"
+    - title: Proporcione a la controladora
+      url: "/fas50/controller-replace-recable-reassign-disks.html"
+    - title: Reemplazo completo de controladoras
+      url: "/fas50/controller-replace-restore-system-rma.html"
+  - title: DIMM
+    url: "/fas50/dimm-replace.html"
+  - title: Ventilador
+    url: "/fas50/fan-replace.html"
+  - title: Módulo de I/O.
+    pdf-filename: MÓDULO DE I/O FAS50
+    entries:
+    - title: Descripción general del módulo I/O.
+      url: "/fas50/io-module-overview.html"
+    - title: Agregue módulo de E/S.
+      url: "/fas50/io-module-add.html"
+    - title: Sustituya el módulo de E/S.
+      url: "/fas50/io-module-replace.html"
+  - title: Batería de NV
+    url: "/fas50/nvdimm-battery-replace.html"
+  - title: Suministro de alimentación
+    url: "/fas50/power-supply-replace.html"
+  - title: Batería del reloj en tiempo real
+    url: "/fas50/rtc-battery-replace.html"

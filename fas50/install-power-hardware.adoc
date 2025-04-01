@@ -1,0 +1,162 @@
+---
+permalink: fas50/install-power-hardware.html 
+sidebar: sidebar 
+keywords: fas50, power controllers 
+summary: Conecte los cables de alimentación y encienda las bandejas y las controladoras. 
+---
+= Encienda el sistema de almacenamiento: FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de conectar las controladoras a la red y las bandejas del sistema de almacenamiento FAS50, encienda las bandejas y las controladoras.
+
+
+
+== Paso 1: Encienda la bandeja y asigne el ID de bandeja
+
+Cada bandeja se distingue por un ID de bandeja único. Este ID garantiza que la bandeja sea distinta dentro de la configuración del sistema de almacenamiento.
+
+.Acerca de esta tarea
+* Un ID de bandeja válido es de 01 a 99.
++
+Si tiene bandejas internas (almacenamiento), que se integran en las controladoras, se les asigna un ID de bandeja fijo de 00.
+
+* Debe apagar y encender la bandeja (apagar el switch de alimentación en cada uno de los suministros de alimentación de la bandeja SAS, esperar el tiempo adecuado y, a continuación, volver a encender el encendido) para que el ID de bandeja surta efecto.
+
+
+.Pasos
+. Conecte primero los cables de alimentación a la bandeja, fíjelos en su sitio con el retén del cable de alimentación, conecte los cables de alimentación a las fuentes de alimentación de diferentes circuitos y, a continuación, encienda el interruptor de alimentación en cada una de las fuentes de alimentación (en la parte posterior de la bandeja).
++
+La bandeja se enciende y arranca automáticamente cuando se enciende.
+
+. Retire la tapa del extremo izquierdo para acceder al botón naranja de ID de la bandeja de la placa frontal.
++
+image::../media/drw_shelf_id_sas_ieops-2187.svg[Cambie el ID de la bandeja sas]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Tapa final de estante
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Número de referencia 2]
+ a| 
+Placa frontal de la bandeja
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Número de referencia 3]
+ a| 
+Botón de ID de bandeja
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Número de referencia 4]
+ a| 
+Número de ID de la bandeja
+
+|===
+. Cambie la primera cantidad de ID de bandeja:
++
+.. Mantenga presionado el botón de ID de la bandeja hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
++
+Este número puede tardar hasta 15 segundos en parpadear. De este modo se activa el modo de programación del identificador de bandeja.
+
++
+
+NOTE: Si el ID tarda más de 15 segundos en parpadear, mantenga presionado el botón de ID de bandeja otra vez, asegurándose de presionarlo por completo.
+
+.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
++
+Cada duración de la prensa y la liberación puede ser de un segundo.
+
++
+El primer número continúa parpadeando.
+
+
+
+. Cambie el segundo número de ID de bandeja:
++
+.. Mantenga presionado el botón hasta que el primer número de la pantalla digital parpadee.
++
+Este número puede tardar hasta tres segundos en parpadear.
+
++
+El primer número de la pantalla digital deja de parpadear.
+
+.. Presione y suelte el botón de ID de la bandeja para avanzar el número hasta que alcance el número deseado de 0 a 9.
++
+El segundo número continúa parpadeando.
+
+
+
+. Bloquee el número deseado y salga del modo de programación manteniendo presionado el botón de ID de la bandeja hasta que el segundo número deje de parpadear.
++
+El número puede tardar hasta tres segundos en dejar de parpadear.
+
++
+Ambos números de la pantalla digital comienzan a parpadear y el LED ámbar se enciende después de unos cinco segundos, para alertarle de que el ID de bandeja pendiente aún no ha aplicado.
+
+. Apague y encienda la bandeja durante al menos 10 segundos para que el ID de bandeja quede registrado.
++
+.. Apague el interruptor de alimentación en cada una de las fuentes de alimentación.
+.. Espere 10 segundos.
+.. Encienda el interruptor de alimentación en cada una de las fuentes de alimentación para completar el ciclo de alimentación.
++
+Cuando se enciende una fuente de alimentación, el LED bicolor debe iluminarse en verde.
+
+
+
+. Vuelva a colocar la tapa del extremo izquierdo.
+
+
+
+
+== Paso 2: Encienda los controladores
+
+Después de encender las bandejas y asignarles ID únicos, encienda las controladoras de almacenamiento.
+
+.Pasos
+. Conecte el portátil al puerto de la consola de serie. Esto le permitirá supervisar la secuencia de arranque cuando las controladoras estén encendidas.
++
+.. Configure el puerto de consola serie del portátil a 115.200 baudios con N-8-1.
++
+
+NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sobre cómo configurar el puerto de la consola de serie.
+
+.. Mediante el cable de consola proporcionado con el sistema de almacenamiento, conecte un extremo del cable de la consola a su portátil y el otro extremo al puerto de la consola serie de la controladora A.
+.. Conecte el portátil al interruptor de la subred de administración.
++
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Conexiones de la consola]
+
+
+
+. Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
+. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
++
+image::../media/drw_psu_layout_1_ieops-1886.svg[Diagrama de conexión de alimentación del sistema de almacenamiento de A20, A30 o A50]
+
++
+** El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
+** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
+** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
+** La pantalla de ID de bandeja en la parte frontal del chasis del sistema no se ilumina.
+
+
+. Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación. :fas50-a20-30-50!:
+
+
+.El futuro
+Después de encender el sistema de almacenamiento,link:install-complete.html["completar la configuración del sistema"]

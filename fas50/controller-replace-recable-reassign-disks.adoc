@@ -1,0 +1,135 @@
+---
+permalink: fas50/controller-replace-recable-reassign-disks.html 
+sidebar: sidebar 
+keywords: fas50, how to reboot the system 
+summary: 'Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema FAS50 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).' 
+---
+= Devuelva el controlador - FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Devuelva el control de los recursos de almacenamiento a la controladora de reemplazo para que su sistema FAS50 pueda reanudar el funcionamiento normal. El procedimiento de devolución varía según el tipo de cifrado utilizado por el sistema: Sin cifrado, cifrado del gestor de claves integrado (OKM) o cifrado del gestor de claves externo (EKM).
+
+Restablezca el cifrado si está habilitado y vuelva a poner la controladora en funcionamiento normal.
+
+[role="tabbed-block"]
+====
+.Sin cifrado
+--
+Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
+
+.Pasos
+. En el símbolo del sistema Loader, introduzca `boot_ontap`.
+. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+** Si ve la petición de datos _login_, vaya al siguiente paso al final de esta sección.
+** Si ve _Waiting for giveback_, pulse la clave <enter>, inicie sesión en el nodo partner y vaya al paso siguiente al final de esta sección.
+
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+.Cifrado incorporado (OKM)
+--
+Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
+
+.Pasos
+. En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
+. Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
+. Introduzca la frase de contraseña de OKM.
++
+
+NOTE: Se le pedirá dos veces la frase de contraseña.
+
+. Introduzca los datos de la clave de backup cuando se le solicite.
+. En el menú de inicio, introduzca la opción `1` para el arranque normal.
+. Pulse <enter> cuando aparezca _Waiting for giveback_.
+. Mueva el cable de la consola al nodo asociado e inicie sesión como `admin`.
+. Devolver solo los agregados de CFO (el agregado raíz): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
++
+** Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+
+. Espere 5 minutos después de que se complete el informe de devolución y compruebe el estado de la conmutación por error y el estado de la devolución: `storage failover show` Y `storage failover show-giveback`.
+. Sincronizar y verificar el estado de las claves:
++
+.. Vuelva a mover el cable de la consola a la controladora de reemplazo.
+.. Sincronizar claves que faltan: `security key-manager onboard sync`
++
+
+NOTE: Se le pedirá la clave de acceso de OKM para todo el clúster.
+
+.. Compruebe el estado de las claves: `security key-manager key query -restored _false_`
++
+La salida no debe mostrar resultados cuando se sincroniza correctamente.
+
++
+Si la salida muestra resultados (los ID de clave de las claves que no están presentes en la tabla de claves internas del sistema), póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+.Gestor de claves externo (EKM)
+--
+Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal.
+
+.Pasos
+. Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
+. Responda `y` o `n` a las siguientes preguntas:
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/client.crt? {s/n}
+
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/client.key? {s/n}
+
++
+¿Tiene una copia del archivo /cfcard/kmip/certs/ca.pem? {s/n}
+
++
+O.
+
++
+¿Tiene una copia del archivo /cfcard/kmip/servers.cfg? {s/n}
+
++
+¿Conoce la dirección del servidor KMIP? {s/n}
+
++
+¿Conoce el puerto KMIP? {s/n}
+
++
+
+NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] si tiene problemas.
+
+. Proporcione la información para:
++
+** El contenido del archivo del certificado de cliente (client.crt)
+** Contenido del archivo de clave de cliente (client.key)
+** El contenido del archivo de CA (CA.pem) del servidor KMIP
+** La dirección IP del servidor KMIP
+** El puerto del servidor KMIP
+
+
+. Una vez que el sistema se procesa, verá el menú de inicio. Seleccione '1' para el arranque normal.
+. Compruebe el estado de toma de control: `storage failover show`
+. Asegúrese de que los volcados de memoria del nodo reparado se guarden en el modo avanzado `set -privilege advanced` y luego `run local partner nosavecore`.
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+. Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+--
+====
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

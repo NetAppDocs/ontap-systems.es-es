@@ -21,6 +21,7 @@ Revise los requisitos y las consideraciones del procedimiento de reemplazo de la
 
 * Todas las bandejas deben funcionar correctamente.
 * El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
+* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
 * Debe sustituir una controladora por una controladora del mismo tipo de modelo. No se puede actualizar el sistema simplemente reemplazando la controladora.
 * No es posible cambiar ninguna unidad o bandeja como parte de este procedimiento.
 * Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.

@@ -14,7 +14,7 @@ summary: 'Reemplace la batería de reloj en tiempo real (RTC), comúnmente conoc
 Reemplace la batería de reloj en tiempo real (RTC), comúnmente conocida como una batería de pila de moneda, en su sistema AFF C30 o AFF C60 para garantizar que los servicios y aplicaciones que dependen de la sincronización de tiempo precisa permanezcan operativos.
 
 .Antes de empezar
-El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 
 .Acerca de esta tarea
 * Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
@@ -31,8 +31,12 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 == Paso 1: Apague el controlador dañado
 
-Apague o tome el control de la controladora dañada.
+Apague o retome el controlador dañado utilizando una de las siguientes opciones.
 
+[role="tabbed-block"]
+====
+.Opción 1: La mayoría de los sistemas
+--
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -84,6 +88,54 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 |===
 
 
+--
+.Opción 2: La controladora se encuentra en un MetroCluster
+--
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+* Debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en un estado habilitado y normal (`metrocluster node show`).
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya a la siguiente sección.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+
+Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+
+|===
+
+
+--
+====
 
 
 == Paso 2: Retire la controladora
@@ -91,7 +143,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
 
 .Antes de empezar
-El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, debe contactar https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 
 .Pasos
 . En el controlador deteriorado, asegúrese de que el LED NV está apagado.

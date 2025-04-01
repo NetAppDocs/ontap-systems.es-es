@@ -1,0 +1,96 @@
+---
+permalink: fas50/maintain-overview.html 
+sidebar: sidebar 
+keywords: aff a20 aff a30 aff a50 maintenance, maintenance, repairing a20 aff a30 aff a50, replace a20 aff a30 aff a50 components 
+summary: Mantener el hardware de sus sistemas de almacenamiento FAS50 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos. 
+---
+= Descripción general del mantenimiento de hardware - FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mantener el hardware de sus sistemas de almacenamiento FAS50 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.
+
+Los procedimientos de mantenimiento suponen que los sistemas FAS50 ya se han puesto en marcha como nodos de almacenamiento en el entorno de ONTAP.
+
+
+
+== Componentes del sistema
+
+Para los sistemas de almacenamiento FAS50, puede realizar procedimientos de mantenimiento en los componentes siguientes.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Soporte de arranque"]
+ a| 
+Los medios de arranque almacenan un conjunto primario y secundario de archivos de imagen ONTAP, así como la información de configuración del sistema que utiliza el sistema cuando se inicia.
+
+
+
+ a| 
+link:caching-module-hot-swap.html["Módulo de almacenamiento en caché"]
+ a| 
+Un módulo de almacenamiento en caché (módulo Flash Cache) utiliza SSD de alta velocidad para almacenar datos a los que se accede con frecuencia y acelerar la recuperación.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chasis"]
+ a| 
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controladora"]
+ a| 
+Una controladora consta de una placa, un firmware y un software. Controla las unidades y ejecuta el software del sistema operativo ONTAP.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Un módulo de memoria dual en línea (DIMM) es un tipo de memoria del ordenador. Se instalan para agregar memoria del sistema a una placa base de la controladora.
+
+
+
+ a| 
+link:fan-replace.html["Ventilador"]
+ a| 
+Un ventilador enfría la controladora y las unidades.
+
+
+
+ a| 
+link:io-module-overview.html["Módulo de I/O."]
+ a| 
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["Batería de NV"]
+ a| 
+La batería de la memoria no volátil (NV) es responsable de suministrar alimentación a los componentes de NVMEM mientras los datos en tránsito se separan a la memoria flash tras un corte de alimentación.
+
+
+
+ a| 
+link:power-supply-replace.html["Suministro de alimentación"]
+ a| 
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Batería del reloj en tiempo real"]
+ a| 
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+|===
