@@ -142,14 +142,21 @@ NOTE: Consulte la ayuda en línea de su portátil para obtener instrucciones sob
 
 .. Mediante el cable de consola proporcionado con el sistema de almacenamiento, conecte un extremo del cable de la consola a su portátil y el otro extremo al puerto de la consola serie de la controladora A.
 .. Conecte el portátil al interruptor de la subred de administración.
++
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Conexiones de la consola]
+
 
 
 . Asigne una dirección TCP/IP al equipo portátil, utilizando una que se encuentre en la subred de administración.
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 +
+image::../media/drw_psu_layout_1_ieops-1886.svg[Diagrama de conexión de alimentación del sistema de almacenamiento de A20, A30 o A50]
+
++
 ** El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
 ** Los LED parpadean y los ventiladores se inician, lo que indica que las controladoras se están encendiendo.
 ** Los ventiladores pueden ser muy ruidosos cuando se ponen en marcha por primera vez. El ruido del ventilador durante el arranque es normal.
+** La pantalla de ID de bandeja en la parte frontal del chasis del sistema no se ilumina.
 
 
 . Asegure los cables de alimentación con el dispositivo de seguridad de cada fuente de alimentación.

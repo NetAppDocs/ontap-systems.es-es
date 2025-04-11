@@ -45,10 +45,10 @@ El estado de alta disponibilidad debe ser el mismo para todos los componentes.
 
 . Si el estado del sistema que se muestra en la controladora no coincide con la configuración del sistema de almacenamiento, defina el `HA` estado para la controladora:
 +
-`ha-config modify controller ha-state`
+`ha-config modify controller ha`
 
 +
-El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 
 +
 ** `ha`
@@ -81,4 +81,4 @@ Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
 
 
 .El futuro
-Después de restaurar y verificar la configuración del sistema para su sistema AFF C30 o AFF C60, debe hacerlolink:controller-replace-recable-reassign-disks.html["devuelva la controladora"].
+Después de restaurar y verificar la configuración del sistema, es necesario link:controller-replace-recable-reassign-disks.html["devuelva la controladora"].

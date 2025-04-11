@@ -2,15 +2,17 @@
 permalink: fas50/controller-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas50, prerequisite, replace the controller module 
-summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+summary: Antes de sustituir la controladora en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto. 
 ---
-= Requisitos de sustitución de controladoras - FAS50
+= Requisitos para sustituir el controlador - FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Antes de sustituir la controladora en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.
+
 Revise los requisitos y las consideraciones del procedimiento de reemplazo de la controladora.
 
 
@@ -47,3 +49,6 @@ Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de vi
 Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
+
+.El futuro
+Después de haber revisado los requisitos para reemplazar el controlador dañado, debe link:controller-replace-shutdown.html["apague el controlador defectuoso"].

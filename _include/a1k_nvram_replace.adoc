@@ -30,11 +30,20 @@ Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los
 
 
 .Pasos
-. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
 
-. Desactive la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback false`
+
 +
 
 NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
@@ -63,9 +72,11 @@ Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
  a| 
 Solicitud del sistema o solicitud de contraseña
  a| 
-Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+Retome o detenga el controlador dañado del controlador en buen estado:
 
-Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
 
@@ -76,15 +87,27 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 * Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
-* Debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en un estado habilitado y normal (`metrocluster node show`).
+* Debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en un estado habilitado y normal:
++
+`metrocluster node show`
+
 
 
 .Pasos
-. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
 
-. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado:
++
+`storage failover modify –node local -auto-giveback false`
+
 . Lleve la controladora dañada al aviso DEL CARGADOR:
 +
 [cols="1,2"]
@@ -109,9 +132,11 @@ Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
  a| 
 Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
  a| 
-Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+Retome o detenga el controlador dañado del controlador en buen estado:
 
-Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
 
@@ -120,8 +145,14 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
-== Paso 2: Sustituya el módulo NVRAM
+== Paso 2: Reemplace el módulo NVRAM o NVRAM DIMM
 
+Sustituya el módulo NVRAM o los DIMM de NVRAM con la siguiente opción adecuada.
+
+[role="tabbed-block"]
+====
+.Opción 1: Sustituya el módulo NVRAM
+--
 Para sustituir el módulo NVRAM, búsquelo en la ranura 4/5 del compartimento y siga la secuencia específica de pasos.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -168,10 +199,9 @@ Lengüetas de bloqueo DIMM
 . Gire la bandeja de gestión de cables hasta la posición cerrada.
 
 
-
-
-== Paso 3: Reemplace el módulo DIMM de NVRAM
-
+--
+.Opción 2: Sustituya el módulo DIMM de NVRAM
+--
 Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -214,9 +244,11 @@ NOTE: Consulte la etiqueta de asignación de FRU en el lateral del módulo NVRAM
 . Gire la bandeja de gestión de cables hasta la posición cerrada.
 
 
+--
+====
 
 
-== Paso 4: Reinicie el controlador
+== Paso 3: Reinicie el controlador
 
 Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
 
@@ -228,7 +260,7 @@ Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
 
 
 
-== Paso 5: Reasignar discos
+== Paso 4: Reasignar discos
 
 Debe confirmar el cambio de ID del sistema al arrancar la controladora y luego verificar que se haya implementado el cambio.
 
@@ -331,6 +363,6 @@ dr-group-id            cluster node           configuration-state
 
 
 
-== Paso 6: Devuelva la pieza que falló a NetApp
+== Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

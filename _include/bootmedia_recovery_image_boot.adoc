@@ -15,7 +15,7 @@ La imagen se descarga desde la unidad flash USB.
 .Opción 1: ONTAP 9.16,0 o anterior
 --
 .. En el controlador defectuoso, pulse `Y` cuando vea `Do you want to restore the backup configuration now?`
-.. En el controlador dañado, pulse `Y` cuando se le solicite sobrescribir _/etc/ssh/ssh_HOST_ecdsa_KEY_.
+.. Si se le solicita en el controlador defectuoso, pulse `Y` para sobrescribir _/etc/ssh/ssh_HOST_ecdsa_KEY_.
 .. En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado `set -privilege advanced`: .
 .. En la controladora asociada en buen estado, ejecute el comando restore backup `system node restore-backup -node local -target-address impaired_node_IP_address`: .
 +

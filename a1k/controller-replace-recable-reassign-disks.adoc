@@ -79,7 +79,7 @@ Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal
 
 .Pasos
 . Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
-. Responda `y` o `n` a las siguientes preguntas:
+. Si aparecen estas preguntas, responda `y` o `n` según corresponda:
 +
 ¿Tiene una copia del archivo /cfcard/kmip/certs/client.crt? {s/n}
 
@@ -88,9 +88,6 @@ Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal
 
 +
 ¿Tiene una copia del archivo /cfcard/kmip/certs/ca.pem? {s/n}
-
-+
-O.
 
 +
 ¿Tiene una copia del archivo /cfcard/kmip/servers.cfg? {s/n}

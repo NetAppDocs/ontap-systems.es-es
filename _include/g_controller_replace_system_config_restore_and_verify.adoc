@@ -34,10 +34,10 @@ El estado de alta disponibilidad debe ser el mismo para todos los componentes.
 
 . Si el estado del sistema que se muestra en la controladora no coincide con la configuración del sistema de almacenamiento, defina el `HA` estado para la controladora:
 +
-`ha-config modify controller ha-state`
+`ha-config modify controller ha`
 
 +
-El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 
 +
 ** `ha`

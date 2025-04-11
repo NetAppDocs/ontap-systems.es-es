@@ -26,9 +26,9 @@ NOTE: Si ve _PERSONALITY MISMATCH_ póngase en contacto con el servicio de atenc
 +
 El estado de alta disponibilidad debe ser el mismo para todos los componentes.
 
-. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
+. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado del módulo del controlador: `ha-config modify controller ha`
 +
-El valor de la condición de alta disponibilidad puede ser uno de los siguientes:
+El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 
 +
 ** `ha`

@@ -40,7 +40,7 @@ La pantalla muestra el siguiente mensaje:
 
 . Supervise el proceso de recuperación de instalación de medios de arranque.
 +
-El proceso finaliza y muestra el `Installation complete.` mensaje.
+El proceso finaliza y muestra el `Installation complete` mensaje.
 
 . El sistema comprueba el tipo de cifrado y cifrado y muestra uno de los dos mensajes. En función del mensaje que se muestre, realice una de las siguientes acciones:
 +
@@ -335,7 +335,10 @@ kmip2_client: Successfully imported the keys from external key server: xxx.xxx.x
 Successfully recovered keymanager secrets.
 ....
 =====
-*** Si la clave no se restaura correctamente, el sistema se detendrá e indicará que no se pudo restaurar. Se muestran los mensajes de error y advertencia. Vuelva a ejecutar el proceso de recuperación introduciendo `boot_recovery -partner`.
+*** Si la clave no se restaura correctamente, el sistema se detendrá e indicará que no se pudo restaurar. Se muestran los mensajes de error y advertencia. Vuelva a ejecutar el proceso de recuperación:
++
+`boot_recovery -partner`
+
 +
 .Muestre un ejemplo de mensajes de error y advertencia de recuperación de claves
 [%collapsible]
@@ -365,7 +368,7 @@ LOADER-B>
 .. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar en línea y operativo.
 .. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
 +
-`storage failover giveback -ofnode _impaired_node_name_`.
+`storage failover giveback -ofnode _impaired_node_name_`
 
 
 
@@ -375,10 +378,10 @@ LOADER-B>
 
 . Si la devolución automática está desactivada, vuelva a habilitarla:
 +
-`storage failover modify -node local -auto-giveback true`.
+`storage failover modify -node local -auto-giveback true`
 
 . Si AutoSupport está habilitado, restaure la creación automática de casos:
 +
-`system node autosupport invoke -node * -type all -message MAINT=END`.
+`system node autosupport invoke -node * -type all -message MAINT=END`
 
 

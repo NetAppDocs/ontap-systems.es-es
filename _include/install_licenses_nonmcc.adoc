@@ -4,15 +4,17 @@
 
 Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
 
-.Acerca de esta tarea
-Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función.
+.Antes de empezar
+Si su sistema estaba ejecutando inicialmente ONTAP 9.10,1 o posterior, utilice el procedimiento documentado en  https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system#Internal_Notes^["Proceso posterior al reemplazo de la placa base para actualizar las licencias en las plataformas ONTAP"]. Si no está seguro de la versión inicial de ONTAP para su sistema, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener más información.
 
+.Acerca de esta tarea
+* Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función.
++
 Además, el uso de funciones sin licencia en el nodo podría descumplir con las normativas de su acuerdo de licencia, de modo que debe instalar la clave de licencia o las claves de reemplazo en el Lo antes posible. del nodo _reassement_.
 
-.Antes de empezar
-Las claves de licencia deben tener el formato de 28 caracteres.
+* Las claves de licencia deben tener el formato de 28 caracteres.
+* Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
 
-Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
 
 .Pasos
 . Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.

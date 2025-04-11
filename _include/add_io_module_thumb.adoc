@@ -20,7 +20,7 @@ Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . En el controlador deteriorado, retire el módulo de supresión de E/S de la ranura de destino.
 +
-Las ranuras de E/S no utilizadas deben tener instalado un módulo de borrado para evitar posibles problemas térmicos.
+Las ranuras de E/S no utilizadas deben tener instalado un módulo de borrado para evitar posibles problemas térmicos y para cumplir con la normativa EMC.
 
 +
 image::../media/drw_g_io_blanking_module_replace_ieops-1901.svg[Retire un módulo de supresión de E/S.]
@@ -61,7 +61,7 @@ Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y co
 +
 Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
 
-. Devuelva la controladora afectada desde la controladora asociada: `storage failover giveback -ofnode _impaired_node_name_`
+. Devuelva la controladora deteriorada del controlador en buen estado: `storage failover giveback -ofnode _impaired_node_name_`
 . Repita estos pasos para agregar un módulo de E/S a la otra controladora.
 . Restaure la devolución automática del control desde la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback _true_`
 . Si AutoSupport está habilitado, restaure (desactive la supresión) la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
@@ -144,10 +144,10 @@ Si instaló un módulo de I/O de almacenamiento, instale las bandejas NS224 y co
 +
 Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
 
-. Devuelva la controladora afectada desde la controladora asociada: `storage failover giveback -ofnode _impaired_node_name_`
+. Devuelva la controladora deteriorada del controlador en buen estado: `storage failover giveback -ofnode _impaired_node_name_`
 . Restaure la devolución automática del control desde la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback _true_`
-. Si AutoSupport está habilitado, restaure (anule la supresión) la creación automática de casos: System node AutoSupport invoke -node * -type all -message MAINT=END
-. Si instaló un módulo NIC, especifique el modo de uso para cada puerto como _network_: `storage port modify -node *_<node name>_ -port *_<port name>_ -mode network`
+. Si AutoSupport está habilitado, restaure (desactive la supresión) la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+. Si instaló un módulo NIC, especifique el modo de uso para cada puerto como _network_: `storage port modify -node _node_name_ -port _port_name_ -mode _network_`
 . Repita estos pasos para la otra controladora.
 
 

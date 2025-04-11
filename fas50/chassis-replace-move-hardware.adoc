@@ -2,7 +2,7 @@
 permalink: fas50/chassis-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: fas50, move hardware components, replace the chassis 
-summary: 'Reemplace el chasis de su sistema FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.' 
+summary: 'Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.' 
 ---
 = Sustituya el chasis - FAS50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Reemplace el chasis de su sistema FAS50 cuando un fallo de hardware lo
 
 
 [role="lead"]
-Reemplace el chasis de su sistema FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.
+Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras, quitar todos los módulos de almacenamiento en caché y espacios vacíos de unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.
 
 
 
@@ -132,7 +132,7 @@ Debe quitar los módulos de almacenamiento en caché y las unidades vacías del 
 . Retire los módulos de almacenamiento en caché y los espacios vacíos de las unidades:
 +
 
-NOTE: Realizar un seguimiento de en qué bahía de unidades se ha eliminado cada módulo de almacenamiento en caché y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.
+NOTE: Realizar un seguimiento de la bahía de unidad de la que se ha extraído cada módulo de almacenamiento en caché porque deben instalarse en las mismas bahías de unidades del chasis de reemplazo.
 
 +
 image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[gráfico de los pasos de sustitución de módulos de almacenamiento en caché fas50]

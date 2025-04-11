@@ -22,11 +22,20 @@ Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los
 
 
 .Pasos
-. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
 
-. Desactive la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback false`
+
 +
 
 NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
@@ -55,9 +64,11 @@ Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
  a| 
 Solicitud del sistema o solicitud de contraseña
  a| 
-Retome o detenga el controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+Retome o detenga el controlador dañado del controlador en buen estado:
 
-Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
 . Si el sistema solo tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y, a continuación, desenchufe los cables de alimentación de la controladora dañada de la fuente de alimentación.

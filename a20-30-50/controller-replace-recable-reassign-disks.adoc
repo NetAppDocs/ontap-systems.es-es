@@ -86,7 +86,7 @@ Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal
 
 .Pasos
 . Si el volumen raíz está cifrado con External Key Manager y el cable de la consola está conectado al nodo de reemplazo, introduzca `boot_ontap menu` y seleccione la opción `11`.
-. Responda `y` o `n` a las siguientes preguntas:
+. Si aparecen estas preguntas, responda `y` o `n` según corresponda:
 +
 ¿Tiene una copia del archivo /cfcard/kmip/certs/client.crt? {s/n}
 
@@ -95,9 +95,6 @@ Restablezca el cifrado y vuelva a poner la controladora en funcionamiento normal
 
 +
 ¿Tiene una copia del archivo /cfcard/kmip/certs/ca.pem? {s/n}
-
-+
-O.
 
 +
 ¿Tiene una copia del archivo /cfcard/kmip/servers.cfg? {s/n}
@@ -132,4 +129,4 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 --
 ====
 .El futuro
-Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.
+Después de transferir la propiedad de los recursos de almacenamiento a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]proceder.
