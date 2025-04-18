@@ -17,7 +17,7 @@ Para sustituir el módulo del controlador dañado, debe apagar el controlador da
 Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
 
 * Todas las bandejas de unidades deben funcionar correctamente.
-* Si el sistema es un sistema FlexArray o tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.
+* Si el sistema tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.
 * Si su sistema está en un par ha, el controlador en buen estado debe ser capaz de tomar el controlador que se va a sustituir (denominado en este procedimiento el "'controlador dañado'").
 * Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
 +

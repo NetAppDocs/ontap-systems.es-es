@@ -1,17 +1,6 @@
----
-permalink: asa-r2-a20-30-50/bootmedia-controller-reinstall.html 
-sidebar: sidebar 
-keywords: asa a20, asa a30, asa a50, remove controller 
-summary: 'Debe sustituir el módulo del controlador cuando el sistema registre un número cada vez mayor de códigos de corrección de errores corregibles (ECC); si no lo hace, se producirá una alarma en el sistema.' 
----
-= Vuelva a instalar el controlador: ASA A20, ASA A30 y ASA A50
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Vuelva a instalar la controladora en el chasis y reiníciela.
 
 .Acerca de esta tarea
 La siguiente ilustración muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de una controladora) al reinstalar la controladora y se puede utilizar como referencia para el resto de los pasos de reinstalación de la controladora.
@@ -68,6 +57,40 @@ NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que
 +
 
 NOTE: La controladora de reemplazo recibe alimentación de la controladora en buen estado y comienza a arrancar tan pronto como se coloca completamente en el chasis.
+
+
+
+. Lleve el controlador al símbolo del SISTEMA de Loader pulsando CTRL-C para cancelar EL ARRANQUE AUTOMÁTICO.
+. Establezca la hora y la fecha en la controladora:
++
+Asegúrese de que se encuentra en el aviso de Loader DE la controladora.
+
++
+.. Muestre la fecha y la hora del controlador:
++
+`show date`
+
++
+
+NOTE: La hora y la fecha por defecto están en GMT. Tiene la opción de mostrar en la hora local y en el modo 24hr.
+
+.. Establezca la hora actual en GMT:
++
+`set time hh:mm:ss`
+
++
+Puede obtener el GMT actual del nodo Healthy:
+
++
+`date -u`
+
+.. Establezca la fecha actual en GMT:
++
+`set date mm/dd/yyyy`
+
++
+Puede obtener el GMT actual del nodo Healthy: +
+`date -u`
 
 
 

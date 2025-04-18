@@ -290,6 +290,10 @@ Alinee la parte posterior de la controladora con la apertura del chasis y empuje
 NOTE: No inserte por completo la controladora en el chasis hasta que se le indique hacerlo.
 
 . Conecte el cable de la consola al puerto de la consola del controlador y al portátil para que el portátil reciba los mensajes de la consola cuando se reinicie el controlador.
++
+
+NOTE: No conecte ningún otro cable o cable de alimentación en este momento.
+
 . Coloque completamente la controladora en el chasis:
 +
 .. Empuje firmemente las asas hasta que el controlador se encuentre con el plano medio y quede completamente asentado.
@@ -300,41 +304,7 @@ NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que
 .. Gire las asas del controlador hacia arriba y bloquéelas en su lugar con las lengüetas.
 +
 
-NOTE: El controlador comienza a arrancar tan pronto como está completamente asentado en el chasis.
-
-
-
-. Lleve el controlador al símbolo del SISTEMA de Loader pulsando CTRL-C para cancelar EL ARRANQUE AUTOMÁTICO.
-. Establezca la hora y la fecha en la controladora:
-+
-Asegúrese de que se encuentra en el aviso de Loader DE la controladora.
-
-+
-.. Muestre la fecha y la hora del controlador:
-+
-`show date`
-
-+
-
-NOTE: La hora y la fecha por defecto están en GMT. Tiene la opción de mostrar en la hora local y en el modo 24hr.
-
-.. Establezca la hora actual en GMT:
-+
-`set time hh:mm:ss`
-
-+
-Puede obtener el GMT actual del nodo Healthy:
-
-+
-`date -u`
-
-.. Establezca la fecha actual en GMT:
-+
-`set date mm/dd/yyyy`
-
-+
-Puede obtener el GMT actual del nodo Healthy: +
-`date -u`
+NOTE: La controladora de reemplazo recibe alimentación de la controladora en buen estado y comienza a arrancar tan pronto como se coloca completamente en el chasis.
 
 
 

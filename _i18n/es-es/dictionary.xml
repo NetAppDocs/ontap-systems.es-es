@@ -173,7 +173,6 @@
   <block id="1c91d351b95f21de02a1d9bc700d73d0" category="list-text"><block ref="1c91d351b95f21de02a1d9bc700d73d0" category="inline-link-macro-rx"></block></block>
   <block id="74d5da85ba7d8689117200b9e72fda0c" category="paragraph">Un PDF imprimible de instrucciones paso a paso con enlaces directos a contenido adicional.</block>
   <block id="0de8a61be1d2a676a9eb73aeea6bcf76" category="inline-link-macro">Pasos de vídeo</block>
-  <block id="ddd1a9511bc4cec117e8b939fbe7f2cc" category="list-text"><block ref="ddd1a9511bc4cec117e8b939fbe7f2cc" category="inline-link-macro-rx"></block></block>
   <block id="50c37789175e52f0eff7f1b127fff4c3" category="paragraph">Instrucciones paso a paso de vídeo.</block>
   <block id="596bcca65aca56bacb3df39265f83dfb" category="summary">Para sustituir el chasis, debe apagar las controladoras.</block>
   <block id="7406636825b302f07932b3580dc3aa5b" category="doc">Apague las controladoras AFF A200</block>
@@ -980,10 +979,8 @@
   <block id="741c2196cc7abcf971992d4e656da7ea" category="paragraph">En este ejemplo, Node_B_1 es el nodo antiguo, con el ID de sistema antiguo de 118073209:</block>
   <block id="2aa94dd7242f16ec9126f4d25ad06195" category="list-text">Vea el nuevo ID del sistema en el símbolo del sistema del modo de mantenimiento en el nodo dañado:<block ref="63328c72194085e2f8ff497b866f6d24" prefix=" " category="inline-code"></block></block>
   <block id="761dab2a2eaf4e205d39d0acc4925d17" category="paragraph">En este ejemplo, el nuevo ID del sistema es 118065481:</block>
-  <block id="73a7440753d817323876d5857eb4a3f7" category="list-text">Reasignar la propiedad de disco (para sistemas FAS) o la propiedad de LUN (para sistemas FlexArray) utilizando la información de ID del sistema obtenida del comando Disk show:<block ref="c59d47aa9e91bfb7b5c45feb4846c496" prefix=" " category="inline-code"></block></block>
   <block id="aab7ee705a771085da41cf3f32f1aebe" category="paragraph">En el caso del ejemplo anterior, el comando es:<block ref="655dddb3fabb311af9cfc11782afaecd" prefix=" " category="inline-code"></block></block>
   <block id="1d1227c1811174bd93682bbcc9fdce3c" category="paragraph">Usted puede responder<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> cuando se le solicite continuar.</block>
-  <block id="a3437746fcb93fe85bd0d8ade510007d" category="list-text">Compruebe que los discos (o LUN de FlexArray) se han asignado correctamente:<block ref="bdf99381eed86756b3f0c3a159c50f5c" prefix=" " category="inline-code"></block></block>
   <block id="21d6dd74cdb7e164685f5da4f2e76256" category="paragraph">Compruebe que los discos que pertenecen al nodo _regrisage_ muestran el nuevo ID del sistema para el nodo _regrisage_. En el siguiente ejemplo, los discos propiedad del sistema-1 ahora muestran el nuevo ID del sistema, 118065481:</block>
   <block id="b06003538a02608d68f5e58756344017" category="list-text">Compruebe que se han guardado los núcleo:<block ref="99a27805d60e05546da1e515902b0e95" prefix=" " category="inline-code"></block></block>
   <block id="83d65805f786049104c0e0050c82696b" category="paragraph">Si el resultado del comando indica que savecore está en curso, espere a que savecore se complete antes de emitir el retorno. Puede controlar el progreso del savecore mediante el<block ref="50e72fa0e8e1eabc4606aa72308bac22" prefix=" " category="inline-code"></block>.&lt;/info&gt;.</block>
@@ -1168,7 +1165,6 @@
   <block id="8b17a499d11a023f3c1bc067c1145260" category="list-text">Dirija su navegador a la dirección IP de gestión de nodos.</block>
   <block id="ec15ae659445c6b6db2f5a726a8eac48" category="admonition">El formato de la dirección es +https://x.x.x.x.+</block>
   <block id="58599a78c7345fe9e241e0a8a135d733" category="list-text">Configure el sistema con los datos recogidos en la _Guía de configuración de ONTAP_ de NetApp.</block>
-  <block id="2cbabd3028fd0cb6f4a57144ace2ee33" category="list-text">Si el sistema es un sistema FlexArray o tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.</block>
   <block id="0012bcaadb56ca5543ace124a6a404f9" category="list-text">Si su sistema está en un par de alta disponibilidad, el nodo en buen estado debe ser capaz de tomar el nodo que se va a sustituir (denominado en este procedimiento el «'nodo dañado''').</block>
   <block id="82bbfcee09add33fd33001d4761a8949" category="inline-link">Elección del procedimiento de recuperación correcto</block>
   <block id="07915727e4f5cb3e1172a8852c17c2bb" category="list-text">Si su sistema está en una configuración MetroCluster, debe revisar la sección<block ref="dbcae02c495cc3db61b37ce85396171e" category="inline-link-rx"></block> para determinar si debe utilizar este procedimiento.</block>
@@ -4137,10 +4133,8 @@
   <block id="61d8e9a7a07046b6b9e05b542a18b6b8" category="paragraph">Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte superior de la tarjeta vertical y la tarjeta vertical se asienta directamente en el módulo del controlador.</block>
   <block id="45d542d338f0ff3b68658673f347e069" category="list-text">Vuelva a insertar todos los módulos SFP que se hayan extraído de las tarjetas PCIe.</block>
   <block id="320003b122e9ced04801080d4fca8abd" category="list-text"><block ref="320003b122e9ced04801080d4fca8abd" category="inline-link-macro-rx"></block></block>
-  <block id="604b91e7007f6b52b608d188580ff582" category="list-text"><block ref="604b91e7007f6b52b608d188580ff582" category="inline-link-macro-rx"></block></block>
   <block id="1ab25fd464770ca38598dbf7e3aa872c" category="doc">Vídeo de instalación y configuración: AFF A700s</block>
   <block id="0e77f42d7c64a07ce718d60dd8e6bd46" category="inline-link-macro">Vídeo de configuración de AFF A700s</block>
-  <block id="ad95e5b69f87474809f8228af5e2fbe2" category="paragraph"><block ref="ad95e5b69f87474809f8228af5e2fbe2" category="inline-link-macro-rx"></block></block>
   <block id="a042d62f38b129b2b0a14f9ad8ef93fa" category="doc">Presentación en PDF de instalación y configuración - AFF A700s</block>
   <block id="a6f8184cf42c02441138be75b0c4c9da" category="inline-link-macro">Instrucciones de instalación y configuración de AFF A700s</block>
   <block id="b32a57c06a6b6572f324185a0b81d90c" category="paragraph"><block ref="b32a57c06a6b6572f324185a0b81d90c" category="inline-link-macro-rx"></block></block>
@@ -4560,24 +4554,20 @@
   <block id="6abcd38b98db86440d4e33f853945773" category="doc">Restauración completa del sistema: FAS2600</block>
   <block id="478fc4fb96b68e7639f1b8b60636da7c" category="doc">Sustituya la batería de NVMEM - FAS2600</block>
   <block id="c8ce5afe6808111cafcf57c11a22b941" category="inline-link-macro">Vídeo de reemplazo de la batería NVMEM FAS2600 de AFF</block>
-  <block id="42eb4da4054bc83a79fd36f832504d55" category="paragraph"><block ref="42eb4da4054bc83a79fd36f832504d55" category="inline-link-macro-rx"></block></block>
   <block id="32ab532730861844c01e0b025a4708f5" category="doc">Descripción general de la sustitución del módulo de controladora - FAS2600</block>
   <block id="d2efa0c31f219abbc043377bfd4ffa3b" category="doc">Arranque la imagen de recuperación - FAS2600</block>
   <block id="49ba302fbc53429009e579494e0457be" category="list-text"><block ref="49ba302fbc53429009e579494e0457be" category="inline-link-macro-rx"></block></block>
   <block id="c66eef3fd6b2a7fdd9b6e9fbe927aa2f" category="doc">Vídeo de instalación y configuración: FAS2600</block>
   <block id="7d529e0ab83dded43342f45ed2a098bd" category="inline-link-macro">Vídeo de configuración de FAS2600 de AFF</block>
-  <block id="5f3f6cd3a4d5edc50129f46b603aa9c2" category="paragraph"><block ref="5f3f6cd3a4d5edc50129f46b603aa9c2" category="inline-link-macro-rx"></block></block>
   <block id="f8775be935fb9d9effeb8c290b2531ef" category="doc">Presentación PDF de instalación y configuración - FAS2600</block>
   <block id="4707af501257324eebcc0182dcfed521" category="inline-link-macro">Instrucciones de instalación y configuración de FAS2600</block>
   <block id="e968d995195c5befd8e63072a29d7a87" category="paragraph">Puede usar la presentación en PDF para instalar y configurar el sistema nuevo. La <block ref="7bcaada228bfef0bb9707c307be17530" category="inline-link-macro-rx"></block> proporciona instrucciones paso a paso con enlaces directos a contenido adicional.</block>
   <block id="fd21bfdd90e6f071c007ad1c32523fc2" category="doc">Información general sobre el reemplazo del chasis - FAS2600</block>
   <block id="9d74ba2bcb476d63733debafcde443ea" category="doc">Sustituya un DIMM - FAS2600</block>
   <block id="c217f888de7cccc4e5f27065cb754354" category="inline-link-macro">Vídeo de sustitución de DIMM del FAS2600 de AFF</block>
-  <block id="e3d9e54e0daad2e60e36e8b370fec883" category="paragraph"><block ref="e3d9e54e0daad2e60e36e8b370fec883" category="inline-link-macro-rx"></block></block>
   <block id="cc0229491324372575d8e9833b910f02" category="list-text">Vuelva a comprobar el LED de NVMEM.</block>
   <block id="017630cf9ee2c9c60d9112bb45f305ca" category="doc">Sustituya el hardware del módulo de la controladora - FAS2600</block>
   <block id="5b9bf9643d348558871bac7550eb6bf2" category="inline-link-macro">Vídeo de sustitución de la controladora FAS2600 AFF</block>
-  <block id="bfc5f4fff0a27940b1f4676800d974c4" category="paragraph"><block ref="bfc5f4fff0a27940b1f4676800d974c4" category="inline-link-macro-rx"></block></block>
   <block id="86b067a1faa816ad3c0a245cc1e409ad" category="section-title">Paso 5: Mueva el módulo de almacenamiento en caché</block>
   <block id="f5f4db4cbf741ec589cd881a641a1a02" category="paragraph">Para mover un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, búsquelo y muévalos de la controladora antigua a la controladora de sustitución y siga la secuencia específica de pasos.</block>
   <block id="482f9dcd012d730126a9c52d8eac49ab" category="paragraph">Debe tener el nuevo módulo de controlador preparado para poder mover el módulo de almacenamiento en caché directamente desde el módulo de controlador anterior a la ranura correspondiente en el nuevo. Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.</block>
@@ -4591,7 +4581,6 @@
   <block id="1ab6b8fc7d00d8cf418a98c2a06619a5" category="doc">Restaurar y verificar la configuración - FAS2600</block>
   <block id="04a9405b6945cd62aebba48163e7663f" category="doc">Cambie un suministro de alimentación: FAS2600</block>
   <block id="7030094db64cfe33a24436a2528348b6" category="inline-link-macro">Vídeo de reemplazo del suministro de alimentación FAS2600 de AFF</block>
-  <block id="e85e66f99bf70a0cd52615d346aa4f9f" category="paragraph"><block ref="e85e66f99bf70a0cd52615d346aa4f9f" category="inline-link-macro-rx"></block></block>
   <block id="02b2ef9566494498645accc0aa3742ef" category="doc">Sustituya el medio de arranque - FAS2600</block>
   <block id="36ca3aba3a7a15053f83817ea55948cc" category="doc">Recuperar el sistema y reasignar discos - FAS2600</block>
   <block id="54460a9998b0b0517a52cc21d98c7497" category="paragraph">Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. En un sistema independiente, debe reasignar manualmente el ID a los discos. Debe utilizar el procedimiento correcto para su configuración.</block>
@@ -4599,7 +4588,6 @@
   <block id="0443683677e40fa41815d2d7edef042b" category="doc">Apague la controladora - FAS2600</block>
   <block id="a618373732a54299b15020c4fdcc9ff7" category="doc">Sustituya el módulo de almacenamiento en caché - FAS2600</block>
   <block id="f6f6b5bb4c3c117ebfdad565e3beb0c3" category="inline-link-macro">Vídeo de sustitución del módulo de almacenamiento en caché FAS2600 de AFF</block>
-  <block id="083781fc87756a032121b806b4d18a92" category="paragraph"><block ref="083781fc87756a032121b806b4d18a92" category="inline-link-macro-rx"></block></block>
   <block id="b6ea0c6054b7f5b7832dafbb8468dc0f" category="paragraph">Retome o detenga el controlador dañado:</block>
   <block id="4571f480b4cb6246b64d91e6cacdf34c" category="list-text">Para un par de alta disponibilidad, tome el control dañado del controlador sano:<block ref="64d2ac6bbd59fb854ec2bed7b2dbe259" prefix=" " category="inline-code"></block></block>
   <block id="07b824a16e2eac6bafd600bdf983d340" category="list-text">Para un sistema independiente:<block ref="2308db6fcf8117c1cd5dcfc41df419ba" prefix=" " category="inline-code"></block></block>
@@ -5098,7 +5086,6 @@
   <block id="11cd58ab2810de65be01109093020b63" category="list-text">La controladora de sustitución es el propietario actual de los discos del sitio de recuperación ante desastres.</block>
   <block id="7285c4012d903a86f08da4d4eb643a35" category="paragraph">Consulte<block ref="1c9dcde47ee822b3ac120aae2f296f05" category="inline-link-rx"></block> si quiere más información.</block>
   <block id="0721343ac8e5e32a5122775fda62e4d0" category="doc">Restaurar y verificar la configuración - AFF A900</block>
-  <block id="b37eeea92bef8e254a5c7650e7002788" category="doc">Pasos detallados - AFF 900</block>
   <block id="c85d51015376017bfac06d7a393d65a8" category="paragraph">Almacenamiento NVME,</block>
   <block id="1450e01f2144c582867e61a2ce391ade" category="paragraph">Cable de switches de red 25 GbE:</block>
   <block id="562006e5bc5a05872c89072601752baa" category="paragraph">Puertos de las ranuras A3 y B3 (e3a y e3c) y A9 y B9 (e9a y e9c) a los switches de red de 25 GbE.</block>
@@ -9901,7 +9888,6 @@ SFP+ (destino/iniciador)</block>
   <block id="07e9b2c4f45f1b16bcc15da0757a3cab" category="admonition">No inserte por completo la controladora en el chasis hasta que se le indique hacerlo.</block>
   <block id="ef25353e4e6a2996c8c58db66688c4b4" category="list-text">Conecte el cable de la consola al puerto de la consola del controlador y al portátil para que el portátil reciba los mensajes de la consola cuando se reinicie el controlador.</block>
   <block id="b5286ddd59d2d1bedeafbeaffb7de288" category="list-text">Coloque completamente la controladora en el chasis:</block>
-  <block id="28b7fea1449f9a616376a90e478d67b0" category="admonition">El controlador comienza a arrancar tan pronto como está completamente asentado en el chasis.</block>
   <block id="f34b6cfc50a1739d51d949fcdd369dad" category="list-text">Lleve el controlador al símbolo del SISTEMA de Loader pulsando CTRL-C para cancelar EL ARRANQUE AUTOMÁTICO.</block>
   <block id="316bb85cd1ab9a7f0cc40325c5827a6d" category="list-text">Establezca la hora y la fecha en la controladora:</block>
   <block id="1e5698196a8490bf6290a21eeb883524" category="paragraph">Asegúrese de que se encuentra en el aviso de Loader DE la controladora.</block>
@@ -11911,4 +11897,19 @@ SFP+ (destino/iniciador)</block>
   <block id="3034b89fc8e6fc3ae99585d8f1eab80e" category="doc">Requisitos para sustituir el controlador - FAS50</block>
   <block id="5c15054b184102da84361b1cd1e81384" category="paragraph">Añada un módulo de I/O a su sistema de almacenamiento FAS50 para mejorar la conectividad de red y ampliar la capacidad de su sistema para gestionar el tráfico de datos.</block>
   <block id="9bb6ca48b5f448262155e3c3811e7d6e" category="paragraph">Puede añadir un módulo de E/S al sistema de almacenamiento FAS50 cuando hay ranuras disponibles o cuando todas las ranuras están completamente ocupadas (eliminando un módulo de E/S existente e instalando una nueva en su lugar).</block>
+  <block id="b9aaf4b8305c7a34a4b30da6df50ebc5" category="list-text">Reasigne la propiedad de disco (para sistemas FAS) mediante la información de ID de sistema obtenida del comando disk show:<block ref="c59d47aa9e91bfb7b5c45feb4846c496" prefix=" " category="inline-code"></block></block>
+  <block id="2dcdf3018c4d483d8c38e450dbdf5944" category="list-text">Si el sistema tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.</block>
+  <block id="1253bf6221482d606a7719ba415d9176" category="admonition">No conecte ningún otro cable o cable de alimentación en este momento.</block>
+  <block id="c69071436bdfe1b2f2edc29969a29980" category="admonition">La controladora de reemplazo recibe alimentación de la controladora en buen estado y comienza a arrancar tan pronto como se coloca completamente en el chasis.</block>
+  <block id="5cb4dbca31ce772b17987c15a725b52e" category="list-text">Devolver al nodo a su funcionamiento normal:</block>
+  <block id="257315f653a5868c10e8897449aa264f" category="list-text">Restaure la devolución automática del control desde la consola de la controladora en buen estado:</block>
+  <block id="b9adb77861a7f27800ce914be076df5d" category="list-text"><block ref="b9adb77861a7f27800ce914be076df5d" category="inline-link-macro-rx"></block></block>
+  <block id="ec3558cc556230de3472d8f669055445" category="paragraph"><block ref="ec3558cc556230de3472d8f669055445" category="inline-link-macro-rx"></block></block>
+  <block id="2b1f12b6c48af6da013ad7ca0b3e507d" category="doc">Pasos detallados - AFF A900</block>
+  <block id="b8a400661d0d8f4681160e3984f8fe0e" category="paragraph"><block ref="b8a400661d0d8f4681160e3984f8fe0e" category="inline-link-macro-rx"></block></block>
+  <block id="c17ceb181c73449b45e8ac62b23f0788" category="paragraph"><block ref="c17ceb181c73449b45e8ac62b23f0788" category="inline-link-macro-rx"></block></block>
+  <block id="7d3ad47a619f98568e42b3c81d3fc66e" category="paragraph"><block ref="7d3ad47a619f98568e42b3c81d3fc66e" category="inline-link-macro-rx"></block></block>
+  <block id="3f6b8f5ed334d33d55220057f3840983" category="paragraph"><block ref="3f6b8f5ed334d33d55220057f3840983" category="inline-link-macro-rx"></block></block>
+  <block id="13ac941ecf968dc28151bce5851fd7a9" category="paragraph"><block ref="13ac941ecf968dc28151bce5851fd7a9" category="inline-link-macro-rx"></block></block>
+  <block id="f9314d663ff89799d6d255ab7e3ca079" category="paragraph"><block ref="f9314d663ff89799d6d255ab7e3ca079" category="inline-link-macro-rx"></block></block>
 </blocks>

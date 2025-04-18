@@ -2,22 +2,22 @@
 :allow-uri-read: 
 
 
-Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
+Después de sustituir un módulo de I/O, debe reiniciar la controladora.
 
 .Pasos
-. Desde el aviso del CARGADOR, reinicie el nodo:
+. Reinicie la controladora desde el aviso del CARGADOR:
 +
 `bye`
 
 +
 
-NOTE: De este modo, se reinicializa el módulo de I/O y otros componentes, y se reinicia el nodo.
+NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
 
-. Devuelva la controladora de la controladora asociada:
+. Devolver al nodo a su funcionamiento normal:
 +
 `storage failover giveback -ofnode _impaired_node_name_`
 
-. Desde el nodo en buen estado, restaure la devolución automática si la deshabilitó:
+. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
 +
 `storage failover modify -node local -auto-giveback _true_`
 
