@@ -54,7 +54,7 @@ En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si 
 +
 [cols="1,2,1,2"]
 |===
-| Tipo de cable... | Número de pieza y longitud | Tipo de conector | Durante... 
+| Tipo de cable... | Número de pieza y longitud | Tipo de conector | Durante... .2 o posterior 
 
 
  a| 
@@ -62,7 +62,7 @@ Cable de 25 GbE
  a| 
 X66240A-05 (112-00595), 0,5 m;
 
-X66240-2 (112-00573), 2 m
+X66240-2 (112-00573), 2m 3 o posterior
  a| 
 image:../media/oie_cable100_gbe_qsfp28.png["Conector QSFP28 de 100 GbE"]
  a| 
@@ -76,31 +76,28 @@ X66240A-2 (112-00598), 2 m;
 X66240A-5 (112-00600), 5 m
  a| 
 SQL Server
-
-
-
  a| 
 Cable de 100 GbE
  a| 
 X66211-2 (112-00574), 2 m;
 
 X66211-5 (112-00576), 5 m
+
+
+
  a| 
 Reducida
-
-
-
  a| 
 RJ-45 (dependiente del pedido)
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_rj45.png["Conector de cable RJ-45"]
+
+
+
  a| 
 Red de gestión (BMC y puerto de llave inglesa) y datos Ethernet (e0a y e0b)
-
-
-
  a| 
 Fibre Channel
  a| 
@@ -113,29 +110,27 @@ X66250-15 (112-00346) 15 m;
 X66250-30 (112-00347) 30m
  a| 
 image:../media/oie_cable_fc_optical.png["Cable óptico de canal de fibra de la OIE"]
+
+
+
  a| 
-
-
-
  a| 
 Cable de consola Micro-USB
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_micro_usb.png["Conector micro USB"]
+
+
+
  a| 
 Conexión de consola durante la configuración del software
-
-
-
  a| 
 Cables de alimentación
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_power.png["Cables de alimentación"]
- a| 
-Encendido del sistema
 
 |===
 . Revise la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"^] y recopilar la información necesaria que aparece en esa guía.
@@ -327,11 +322,11 @@ video::3f92e625-a19c-4d10-9028-ac68017fbf57[panopto]
 .Pasos
 . Conecte el cable de la controladora A a la bandeja.
 +
-image:../media/drw_affa250_1shelf_cabling_a.png["Cableado de la controladora A."]
+image:../media/drw_affa250_1shelf_cabling_a.png["Cableado del controlador 1"]
 
 . Conecte el cable de la controladora B a la bandeja.
 +
-image:../media/drw_affa250_1shelf_cabling_b.png["Cableado de la controladora B."]
+image:../media/drw_affa250_1shelf_cabling_b.png["Cableado del controlador 2"]
 
 
 
@@ -364,12 +359,11 @@ Consulte la ayuda en línea de su portátil para obtener más información.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
-image::../media/drw_autodiscovery_controler_select.png[Seleccione un icono de ONTAP]
+image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Seleccione un icono de ONTAP]
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en *Red* en el panel izquierdo.
-.. Haga clic con el botón derecho del ratón y seleccione *Actualizar*.
+.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 

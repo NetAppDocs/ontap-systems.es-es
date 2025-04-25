@@ -13,7 +13,7 @@ summary: Antes de sustituir la controladora en su sistema ASA A20, ASA A30 o ASA
 [role="lead"]
 Antes de sustituir la controladora en su sistema ASA A20, ASA A30 o ASA A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.
 
-Revise los requisitos y las consideraciones del procedimiento de reemplazo de la controladora.
+Debe revisar los requisitos y consideraciones del procedimiento de reemplazo de la controladora.
 
 
 
@@ -21,7 +21,6 @@ Revise los requisitos y las consideraciones del procedimiento de reemplazo de la
 
 * Todas las bandejas deben funcionar correctamente.
 * El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
-* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
 * Debe sustituir una controladora por una controladora del mismo tipo de modelo. No se puede actualizar el sistema simplemente reemplazando la controladora.
 * No es posible cambiar ninguna unidad o bandeja como parte de este procedimiento.
 * Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.

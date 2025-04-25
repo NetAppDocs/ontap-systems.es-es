@@ -479,13 +479,10 @@ NO enchufe los cables de alimentación en este momento.
 
 Debe cablear las controladoras a las bandejas con los puertos de almacenamiento internos. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo. Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
 
+.Antes de empezar
+* Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
+* Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
-
-=== Opción 1: Conectar el almacenamiento en una pareja de alta disponibilidad con bandejas de unidades externas
-
-Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
-
-Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable.
 
 image::../media/oie_cable_pull_tab_down.png[Conector de cable con lengüeta en la parte inferior]
 
@@ -539,12 +536,15 @@ Conecte cada nodo a IOM B en la pila
 
 ** Controladora 1: Puerto 0a a puerto IOM B 1 en la primera bandeja de unidades en la pila.
 ** Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila.
+
+
 image:../media/oie_cable_mini_sas_hd_to_mini_sas_hd.png["Conector mini-SAS a mini-SAS"]     Cables HD Mini-SAS a mini-SAS HD
 
-
 |===
-+
-Si posee más de un paquete de bandeja de unidades, consulte _Guía de instalación y cableado_ para el tipo de bandeja de unidades.
+
+
+
+NOTE: Para obtener más información sobre el cableado SAS y hojas de cálculo, consulte link:../sas3/overview-cabling-rules-examples.html["Información general sobre las reglas, hojas de trabajo y ejemplos de cableado SAS: Bandejas con módulos IOM12"]
 
 . Para completar la configuración del sistema, consulte <<Paso 5: Pasos completos para la instalación y la configuración del sistema>>
 
@@ -585,12 +585,11 @@ Consulte la ayuda en línea de su portátil para obtener más información.
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
-image::../media/drw_autodiscovery_controler_select.png[Seleccione un icono de ONTAP]
+drw_autodiscovery_controler_select_ieops-1849.svg[Seleccione un icono de ONTAP]
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en red en el panel izquierdo.
-.. Haga clic con el botón derecho del ratón y seleccione Actualizar.
+.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 
