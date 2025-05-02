@@ -13,6 +13,9 @@ summary: Conecte mediante cable cada bandeja NS224 que esté añadiendo en calie
 [role="lead"]
 Conecte mediante cable cada bandeja NS224 que esté añadiendo en caliente de modo que cada bandeja tenga dos conexiones a cada controladora del par de alta disponibilidad.
 
+.Acerca de esta tarea
+El sistema de hardware puede ser compatible tanto con bandejas NS224 con módulos NSM100 como con bandejas NS224 con módulos NSM100B. Para comprobar la compatibilidad y los nombres de puerto de su hardware y estantes, consulte el https://hwu.netapp.com["Hardware Universe de NetApp"].
+
 .Conecte el cable de la bandeja a ASA A1K
 [%collapsible]
 ====
@@ -50,7 +53,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se destaca el cableado de la segunda bandeja de la pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Cableado para ASA A1K con dos bandejas y dos módulos I/O.]
+image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Cableado para AFF/ASA A1K con dos bandejas y dos módulos IO]
 
 
 
@@ -64,7 +67,7 @@ image::../media/drw_ns224_vino_m_2shelves_2cards_ieops-1642.svg[Cableado para AS
 En la siguiente ilustración se destaca el cableado de la tercera bandeja de la pareja de alta disponibilidad con tres módulos I/O compatibles con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Cableado para ASA A1K con tres bandejas y tres módulos de I/O.]
+image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Cableado para AFF/ASA A1K con tres bandejas y tres módulos IO]
 
 
 
@@ -78,7 +81,7 @@ image::../media/drw_ns224_vino_m_3shelves_3cards_ieops-1643.svg[Cableado para AS
 En la siguiente ilustración se destaca el cableado de la tercera bandeja de la pareja de alta disponibilidad con cuatro módulos I/O compatibles con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Cableado para ASA A1K con tres bandejas y cuatro módulos de I/O.]
+image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Cableado para AFF/ASA A1K con tres bandejas y cuatro módulos IO]
 
 
 
@@ -92,10 +95,225 @@ image::../media/drw_ns224_vino_m_3shelves_4cards_ieops-1644.svg[Cableado para AS
 En la siguiente ilustración se destaca el cableado de la cuarta bandeja de la pareja de alta disponibilidad con cuatro módulos I/O compatibles con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Cableado para ASA A1K con cuatro bandejas y cuatro módulos de I/O.]
+image::../media/drw_ns224_vino_m_4shelves_4cards_ieops-1645.svg[Cableado para AFF/ASA A1K con cuatro bandejas y cuatro módulos IO]
 
 
 
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
+
+====
+.Conecte el cable de la bandeja a ASA A20
+[%collapsible]
+====
+Es posible agregar en caliente un máximo de una bandeja NS224 a un par de alta disponibilidad de ASA A20 cuando se necesite almacenamiento adicional (a la bandeja interna).
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Acerca de esta tarea
+* En este procedimiento se asume que su par de alta disponibilidad solo tiene almacenamiento interno (no hay bandejas externas) y que se puede agregar en caliente a una bandeja adicional.
+* Este procedimiento aborda los siguientes escenarios de adición en caliente:
++
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con un módulo I/O compatible con RoCE en cada controladora.
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora.
+
+
+* Estos sistemas son compatibles con bandejas NS224 con módulos NSM100 y bandejas NS224 con módulos NSM100B. Para asegurarse de conectar los controladores a los puertos correctos, sustituya la “X” de cada diagrama por el número de puerto correcto para su módulo:
++
+[cols="1,4"]
+|===
+| Tipo de módulo | Etiquetado de puertos 
+
+
+ a| 
+NSM100
+ a| 
+«0»
+
+ej. e0a
+
+
+
+ a| 
+NSM100B
+ a| 
+«1»
+
+ej. e1a
+
+|===
+
+
+.Pasos
+. Si va a añadir en caliente una bandeja con un conjunto de puertos compatibles con RoCE (un módulo de I/O compatible con RoCE) en cada módulo de controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
++
+De lo contrario, vaya al paso siguiente.
+
++
+
+NOTE: En este paso se supone que se ha instalado el módulo de I/O compatible con RoCE en la ranura 3.
+
++
+.. Bandeja de cables NSM A puerto EXA a la controladora A 3 puerto A (E3A).
+.. Bandeja de cables NSM A puerto EXB a ranura 3 de la controladora B puerto b (E3b).
+.. Bandeja de cables Puerto NSM B EXA a ranura 3 de la controladora B, puerto A (E3A).
+.. Bandeja de cables NSM B port EXB a la controladora A ranura 3 puerto b (E3b).
++
+En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante un módulo de I/o compatible con roce en cada módulo de la controladora:
+
++
+image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Cableado para AFF/ASA A20 con una bandeja y un módulo I/O.]
+
+
+
+. Si va a añadir en caliente una bandeja con dos conjuntos de puertos compatibles con RoCE (dos módulos de I/O compatibles con RoCE) en cada módulo de controladora, complete los siguientes pasos secundarios.
++
+.. Conecte el cable de NSM A port EXA a la controladora A ranura 3 puerto A (E3A).
+.. Conecte el cable del puerto A de NSM al puerto b (e1b) de la ranura 1 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXA al puerto A (E3A) de la ranura 3 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXB al puerto b de la ranura 1 de la controladora A (e1b).
+
+
+
+
+En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente con dos módulos I/O compatibles con RoCE en cada módulo de controladora:
+
+image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Cableado para AFF/ASA A20 con una bandeja y dos módulos IO]
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
+
+====
+.Conecte el cable de la bandeja a ASA A30 o ASA A50
+[%collapsible]
+====
+Puede agregar en caliente hasta dos bandejas NS224 a un par de alta disponibilidad ASA A30 o A50 cuando se necesite almacenamiento adicional (a la bandeja interna).
+
+.Antes de empezar
+* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
+* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
+
+
+.Acerca de esta tarea
+* En este procedimiento se asume que su pareja de alta disponibilidad solo tiene almacenamiento interno (sin bandejas externas) y que se puede agregar en caliente hasta dos bandejas adicionales y dos módulos de I/O compatibles con RoCE en cada controladora.
+* Este procedimiento aborda los siguientes escenarios de adición en caliente:
++
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con un módulo I/O compatible con RoCE en cada controladora.
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora.
+** Adición en caliente de la segunda bandeja a una pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora.
+
+
+* Estos sistemas son compatibles con bandejas NS224 con módulos NSM100 y bandejas NS224 con módulos NSM100B. Para asegurarse de conectar los controladores a los puertos correctos, sustituya la “X” de cada diagrama por el número de puerto correcto para su módulo:
++
+[cols="1,4"]
+|===
+| Tipo de módulo | Etiquetado de puertos 
+
+
+ a| 
+NSM100
+ a| 
+«0»
+
+ej. e0a
+
+
+
+ a| 
+NSM100B
+ a| 
+«1»
+
+ej. e1a
+
+|===
+
+
+.Pasos
+. Si va a añadir en caliente una bandeja con un conjunto de puertos compatibles con RoCE (un módulo de I/O compatible con RoCE) en cada módulo de controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
++
+De lo contrario, vaya al paso siguiente.
+
++
+
+NOTE: En este paso se supone que se ha instalado el módulo de I/O compatible con RoCE en la ranura 3.
+
++
+.. Bandeja de cables NSM A puerto EXA a la controladora A 3 puerto A (E3A).
+.. Bandeja de cables NSM A puerto EXB a ranura 3 de la controladora B puerto b (E3b).
+.. Bandeja de cables Puerto NSM B EXA a ranura 3 de la controladora B, puerto A (E3A).
+.. Bandeja de cables NSM B port EXB a la controladora A ranura 3 puerto b (E3b).
++
+En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante un módulo de I/o compatible con roce en cada módulo de la controladora:
+
++
+image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Cableado para AFF/ASA A30,452px,AFF/ASA A50]
+
+
+
+. Si va a añadir una o dos bandejas en caliente usando dos conjuntos de puertos compatibles con roce (dos módulos de I/o compatibles con roce) en cada módulo de la controladora, complete los subpasos aplicables.
++
+
+NOTE: En este paso se supone que se han instalado los módulos I/O compatibles con RoCE en las ranuras 3 y 1.
+
++
+[cols="1,3"]
+|===
+| Bandejas | Cableado 
+
+
+ a| 
+Bandeja 1
+ a| 
+.. Conecte el cable de NSM A port EXA a la controladora A ranura 3 puerto A (E3A).
+.. Conecte el cable del puerto A de NSM al puerto b (e1b) de la ranura 1 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXA al puerto A (E3A) de la ranura 3 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXB al puerto b de la ranura 1 de la controladora A (e1b).
+.. Si va a añadir una segunda estantería en caliente, complete los subpasos "Shelf 2"; en caso contrario, vaya al paso 3.
+
+
+En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente con dos módulos I/O compatibles con RoCE en cada módulo de controladora:
+
+image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Cableado para AFF/ASA A30,452px,AFF/ASA A50]
+
+
+
+ a| 
+Estante 2
+ a| 
+.. Conecte el cable de NSM A port EXA a la controladora A ranura 1 puerto A (e1a).
+.. Conecte el cable del puerto A de NSM al puerto b (E3b) de la ranura 3 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXA al puerto A (e1a) de la ranura 1 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXB al puerto b de la ranura 3 de la controladora A (E3b).
+.. Vaya al paso 3.
+
+
+En la siguiente ilustración, se muestra el cableado para dos bandejas añadidas en caliente mediante dos módulos I/O compatibles con RoCE en cada módulo de controladora:
+
+image::../media/drw_ns224_g_2shelf_2card_ieops-2003.svg[Cableado para AFF A30/ASA,452px,AFF/ASA A50]
+
+|===
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
 +
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
@@ -148,7 +366,7 @@ NOTE: En este paso se supone que se ha instalado el módulo de I/O compatible co
 En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante un módulo de I/o compatible con roce en cada módulo de la controladora:
 
 +
-image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Cableado para ASA A70 o A90, con una bandeja y un módulo I/O.]
+image::../media/drw_ns224_vino_i_1shelf_1card_ieops-1639.svg[Cableado para AFF/ASA A70 o A90 con una bandeja y un módulo I/O.]
 
 
 
@@ -175,7 +393,7 @@ Bandeja 1
 
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente con dos módulos I/O compatibles con RoCE en cada módulo de controladora:
 
-image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Cableado para ASA A70 o A90, con una bandeja y dos módulos IO]
+image::../media/drw_ns224_vino_i_1shelf_2cards_ieops-1640.svg[Cableado para AFF/ASA A70 o A90 con una bandeja y dos módulos IO]
 
 
 
@@ -191,7 +409,7 @@ Estante 2
 
 En la siguiente ilustración, se muestra el cableado para dos bandejas añadidas en caliente mediante dos módulos I/O compatibles con RoCE en cada módulo de controladora:
 
-image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Cableado para ASA A70 o A90 con dos bandejas y dos módulos IO]
+image::../media/drw_ns224_vino_i_2shelves_2cards_ieops-1641.svg[Cableado para AFF/ASA A70 o A90 con dos bandejas y dos módulos IO]
 
 |===
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
@@ -209,7 +427,7 @@ De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
 .Conecte el cable de la bandeja a ASA A250 o ASA C250
 [%collapsible]
 ====
-Cuando se necesita almacenamiento adicional, puede agregar en caliente un máximo de una bandeja NS224 a un par AFF A250 o AFF C250 de alta disponibilidad.
+Cuando se necesita almacenamiento adicional, puede agregar en caliente un máximo de una bandeja NS224 a un par ASA A250 o ASA C250 de alta disponibilidad.
 
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
@@ -228,7 +446,7 @@ Una vez visto desde la parte posterior del chasis de la plataforma, el puerto pa
 .. Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B (e1a).
 .. Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1. + la siguiente ilustración muestra el cableado de las bandejas cuando se completa.
 +
-image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Cableado para un AFF A250 C250 o FAS500f con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
+image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Cableado para un AFF/ASA A250 C250 o FAS500f con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
 
 
 
@@ -247,7 +465,7 @@ De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
 .Conecte el cable de la bandeja a ASA A400 o ASA C400
 [%collapsible]
 ====
-La forma de conectar la red de una bandeja NS224 por una adición en caliente depende de si tiene un par de alta disponibilidad AFF A400 o AFF C400.
+La forma de conectar la red de una bandeja NS224 por una adición en caliente depende de si tiene un par de alta disponibilidad ASA A400 o ASA C400.
 
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
@@ -273,7 +491,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente mediante un conjunto de puertos compatibles con RoCE de cada controladora:
 
 +
-image::../media/drw_ns224_a400_1shelf.png[Cableado para un AFF A400 con una bandeja NS224 y un conjunto de puertos integrados]
+image::../media/drw_ns224_a400_1shelf.png[Cableado para un AFF/ASA A400 con una bandeja NS224 y un conjunto de puertos internos]
 
 
 
@@ -311,7 +529,7 @@ Estante 2
 En la siguiente ilustración, se muestra el cableado de dos bandejas añadidas en caliente:
 
 +
-image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Cableado para un AFF A400 con dos bandejas NS224 y un conjunto de puertos internos y un conjunto de puertos en tarjetas PCIe]
+image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Cableado para un /ASA A400 con dos bandejas NS224 y un conjunto de puertos internos y un conjunto de puertos en tarjetas PCIe]
 
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
 +
@@ -341,7 +559,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente mediante un conjunto de puertos compatibles con RoCE de cada controladora:
 
 +
-image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Cableado para un AFF C400 con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
+image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Cableado para un AFF/ASA C400 con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
 
 
 
@@ -379,7 +597,7 @@ Estante 2
 En la siguiente ilustración, se muestra el cableado de dos bandejas añadidas en caliente:
 
 +
-image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Cableado para un AFF C400 con dos bandejas NS224 y dos conjuntos de puertos de tarjeta PCIe]
+image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Cableado para un AFF/ASA C400 con dos bandejas NS224 y dos conjuntos de puertos de tarjeta PCIe]
 
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
 +
@@ -396,7 +614,7 @@ De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
 .Conecte el cable de la bandeja a ASA A800 o ASA C800
 [%collapsible]
 ====
-La forma de conectar el cable de una bandeja NS224 en un par de alta disponibilidad AFF A800 o AFF C800 depende del número de bandejas añadidas en caliente y de la cantidad de conjuntos de puertos compatibles con RoCE (uno o dos) que se usan en las controladoras.
+La forma de conectar el cable de una bandeja NS224 en un par de alta disponibilidad ASA A800 o ASA C800 depende del número de bandejas añadidas en caliente y de la cantidad de conjuntos de puertos compatibles con RoCE (uno o dos) que se usan en las controladoras.
 
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
@@ -422,7 +640,7 @@ NOTE: Este paso supone que se instaló la tarjeta PCIe compatible con roce en la
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente usando una tarjeta PCIe compatible con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Cableado para un AFF A800 o AFF C800 con una bandeja NS224 y una tarjeta PCIe]
+image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Cableado para un AFF/ASA A800 o AFF/ASA C800 con una bandeja NS224 y una tarjeta PCIe]
 
 
 
@@ -487,7 +705,7 @@ De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.
 .Conecte el cable de la bandeja a ASA A900
 [%collapsible]
 ====
-Cuando se necesita almacenamiento adicional, puede añadir hasta tres bandejas de unidades NS224 adicionales (con un total de cuatro bandejas) a un par de alta disponibilidad A900 de AFF.
+Cuando se necesita almacenamiento adicional, puede añadir hasta tres bandejas de unidades NS224 adicionales (con un total de cuatro bandejas) a un par de alta disponibilidad A900 de ASA.
 
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
@@ -514,7 +732,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado de la segunda bandeja (y la primera bandeja).
 
 +
-image::../media/drw_ns224_a900_2shelves.png[Cableado para un AFF A900 con dos bandejas NS224 y dos módulos IO]
+image::../media/drw_ns224_a900_2shelves.png[Cableado para un AFF/ASA A900 con dos bandejas NS224 y dos módulos IO]
 
 
 
@@ -531,7 +749,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado de la tercera bandeja.
 
 +
-image::../media/drw_ns224_a900_3shelves.png[Cableado para un AFF A900 con tres bandejas NS224 y cuatro módulos I/O.]
+image::../media/drw_ns224_a900_3shelves.png[Cableado para un AFF/ASA A900 con tres bandejas NS224 y cuatro módulos IO]
 
 
 
@@ -548,7 +766,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado de la cuarta bandeja.
 
 +
-image::../media/drw_ns224_a900_4shelves.png[Cableado para un AFF A900 con cuatro bandejas NS224 y cuatro módulos I/O.]
+image::../media/drw_ns224_a900_4shelves.png[Cableado para un AFF/ASA A900 con cuatro bandejas NS224 y cuatro módulos IO]
 
 
 

@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-Cuando se necesita almacenamiento adicional, puede agregar en caliente un máximo de una bandeja NS224 a un par AFF A250 o AFF C250 de alta disponibilidad.
-
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
 * Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
@@ -21,7 +19,7 @@ Una vez visto desde la parte posterior del chasis de la plataforma, el puerto pa
 .. Conecte el puerto NSM B de la bandeja de cables e0a al puerto a de la ranura de la controladora B (e1a).
 .. Conecte el puerto e0b NSM B de la bandeja a la controladora, puerto b (e1b) de la ranura 1. + la siguiente ilustración muestra el cableado de las bandejas cuando se completa.
 +
-image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Cableado para un AFF A250 C250 o FAS500f con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
+image::../media/drw_ns224_a250_c250_f500f_1shelf_ieops-1824.svg[Cableado para un AFF/ASA A250 C250 o FAS500f con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
 
 
 

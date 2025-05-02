@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-La forma de conectar el cable de una bandeja NS224 en un par de alta disponibilidad AFF A800 o AFF C800 depende del número de bandejas añadidas en caliente y de la cantidad de conjuntos de puertos compatibles con RoCE (uno o dos) que se usan en las controladoras.
-
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
 * Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
@@ -28,7 +26,7 @@ NOTE: Este paso supone que se instaló la tarjeta PCIe compatible con roce en la
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente usando una tarjeta PCIe compatible con RoCE en cada controladora:
 
 +
-image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Cableado para un AFF A800 o AFF C800 con una bandeja NS224 y una tarjeta PCIe]
+image::../media/drw_ns224_a800_c800_1shelf_IEOPS-964.svg[Cableado para un AFF/ASA A800 o AFF/ASA C800 con una bandeja NS224 y una tarjeta PCIe]
 
 
 

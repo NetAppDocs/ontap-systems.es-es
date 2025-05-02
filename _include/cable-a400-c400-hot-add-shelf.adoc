@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-La forma de conectar la red de una bandeja NS224 por una adición en caliente depende de si tiene un par de alta disponibilidad AFF A400 o AFF C400.
-
 .Antes de empezar
 * Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
 * Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
@@ -28,7 +26,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente mediante un conjunto de puertos compatibles con RoCE de cada controladora:
 
 +
-image::../media/drw_ns224_a400_1shelf.png[Cableado para un AFF A400 con una bandeja NS224 y un conjunto de puertos integrados]
+image::../media/drw_ns224_a400_1shelf.png[Cableado para un AFF/ASA A400 con una bandeja NS224 y un conjunto de puertos internos]
 
 
 
@@ -66,7 +64,7 @@ Estante 2
 En la siguiente ilustración, se muestra el cableado de dos bandejas añadidas en caliente:
 
 +
-image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Cableado para un AFF A400 con dos bandejas NS224 y un conjunto de puertos internos y un conjunto de puertos en tarjetas PCIe]
+image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Cableado para un /ASA A400 con dos bandejas NS224 y un conjunto de puertos internos y un conjunto de puertos en tarjetas PCIe]
 
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
 +
@@ -96,7 +94,7 @@ De lo contrario, vaya al paso siguiente.
 En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente mediante un conjunto de puertos compatibles con RoCE de cada controladora:
 
 +
-image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Cableado para un AFF C400 con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
+image::../media/drw_ns224_c400_1shelf_IEOPS-985.svg[Cableado para un AFF/ASA C400 con una bandeja NS224 y un conjunto de puertos de tarjeta PCIe]
 
 
 
@@ -134,7 +132,7 @@ Estante 2
 En la siguiente ilustración, se muestra el cableado de dos bandejas añadidas en caliente:
 
 +
-image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Cableado para un AFF C400 con dos bandejas NS224 y dos conjuntos de puertos de tarjeta PCIe]
+image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Cableado para un AFF/ASA C400 con dos bandejas NS224 y dos conjuntos de puertos de tarjeta PCIe]
 
 . Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
 +

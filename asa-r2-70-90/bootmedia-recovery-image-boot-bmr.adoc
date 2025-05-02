@@ -16,19 +16,6 @@ Después de instalar el nuevo dispositivo multimedia de arranque en el sistema A
 Durante el proceso de recuperación, el sistema comprueba si el cifrado está habilitado y determina el tipo de cifrado de clave que se está usando. Si el cifrado de claves está activado, el sistema le guiará a través de los pasos adecuados para restaurarlo.
 
 .Antes de empezar
-* Determine si Onboard Key Manager (OKM) o Eternal Key Manager (EKM) está configurado mediante uno de los siguientes métodos:
-+
-** Puede preguntar al cliente o al administrador del sistema si OKM o EKM están activados.
-** Para comprobar si OKM está activado, utilice el siguiente comando:
-+
-`security key-manager onboard show`
-
-** Para comprobar si EKM está habilitado, utilice el siguiente comando:
-+
-`security key-manager external show`
-
-
-
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +

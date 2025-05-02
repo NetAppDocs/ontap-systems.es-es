@@ -17,13 +17,6 @@ Revise los siguientes requisitos.
 
 * Debe sustituir el medio de arranque con errores por un medio de arranque de reemplazo que recibió desde NetApp.
 * No debe haber puertos de clúster defectuosos en la controladora dañada.
-* Determine si Onboard Key Manager (OKM) o Eternal Key Manager (EKM) está configurado mediante uno de los siguientes métodos:
-+
-** Puede preguntar al administrador del sistema si OKM o EKM están activados.
-** Para comprobar si OKM está activado, puede utilizar el `security key-manager onboard show`.
-** Para comprobar si EKM está activado, puede utilizar el `security key-manager external show`.
-
-
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +

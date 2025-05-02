@@ -132,6 +132,8 @@ NOTE: Mover un cable no requiere tiempo de espera entre desconectar el cable de 
 . Vuelva a conectar las conexiones de la bandeja existente en dos conjuntos de puertos compatibles con RoCE en ranuras diferentes, según corresponda al modelo de plataforma.
 
 
+* Para sistemas AFF:
++
 [role="tabbed-block"]
 ====
 .AFF A1K
@@ -141,22 +143,22 @@ Realice una de las siguientes acciones si va a añadir una segunda bandeja o una
 
 NOTE: Si cuenta con un par de alta disponibilidad AFF A1K y está agregando una tercera bandeja en caliente y instalando un tercer o cuarto módulo de I/O compatible con RoCE en cada controladora, la tercera bandeja solo se cableará a los módulos de I/O del tercer o tercer y cuarto. No es necesario volver a conectar ninguna bandeja existente.
 
-* Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 11 y la ranura 10 de cada controladora.
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 11 y la ranura 10 de cada controladora.
 +
 Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 11 de cada controladora.
 
 +
-.. En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 10, puerto b (e10b).
-.. Repita el mismo cable y mueva la controladora B.
+... En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 10, puerto b (e10b).
+... Repita el mismo cable y mueva la controladora B.
 
 
-* Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 9 y la ranura 8 de cada controladora.
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 9 y la ranura 8 de cada controladora.
 +
 En los subpasos se supone que la tercera bandeja se conecta mediante cable a un módulo I/O compatible con RoCE en la ranura 9 de cada controladora.
 
 +
-.. En la controladora A, mueva el cable de la ranura 9, puerto b (e9b), a la ranura 8, puerto b (e8b).
-.. Repita el mismo cable y mueva la controladora B.
+... En la controladora A, mueva el cable de la ranura 9, puerto b (e9b), a la ranura 8, puerto b (e8b).
+... Repita el mismo cable y mueva la controladora B.
 
 
 
@@ -168,8 +170,8 @@ Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de
 
 Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 11 de cada controladora.
 
-. En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 8, puerto b (e8b).
-. Repita el mismo cable y mueva la controladora B.
+.. En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 8, puerto b (e8b).
+.. Repita el mismo cable y mueva la controladora B.
 
 
 --
@@ -179,8 +181,8 @@ Si va a agregar en caliente una segunda bandeja, vuelva a conectar la primera ba
 
 Los subpasos dan por sentado que la bandeja existente se cableó a tarjetas PCIe compatibles con roce en la ranura 5 de cada controladora.
 
-. En la controladora A, mueva el cable de la ranura 5, puerto b (e5b), a la ranura 3, puerto b (e3b).
-. Repita el mismo cable y mueva la controladora B.
+.. En la controladora A, mueva el cable de la ranura 5, puerto b (e5b), a la ranura 3, puerto b (e3b).
+.. Repita el mismo cable y mueva la controladora B.
 
 
 --
@@ -190,8 +192,8 @@ Si va a agregar en caliente una segunda bandeja, vuelva a conectar la primera ba
 
 Los subpasos dan por sentado que la bandeja existente se cableó a módulos de I/o compatibles con roce en la ranura 3 de cada controladora.
 
-. En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 7, puerto b (e7b).
-. Repita el mismo cable y mueva la controladora B.
+.. En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 7, puerto b (e7b).
+.. Repita el mismo cable y mueva la controladora B.
 
 
 --
@@ -199,7 +201,7 @@ Los subpasos dan por sentado que la bandeja existente se cableó a módulos de I
 --
 Si añade una segunda bandeja en caliente, según el modelo de plataforma, realice una de las siguientes acciones:
 
-* En el AFF A400:
+** En el AFF A400:
 +
 Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE, e0c/e0d internos y en la ranura 5, en cada controladora.
 
@@ -207,11 +209,11 @@ Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles
 En los subpasos se asume que la bandeja existente se cablea a los puertos integrados compatibles con RoCE e0c/e0d en cada controladora.
 
 +
-.. En la controladora A, mueva el cable del puerto e0d a la ranura 5 puerto b (e5b).
-.. Repita el mismo cable y mueva la controladora B.
+... En la controladora A, mueva el cable del puerto e0d a la ranura 5 puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
 
 
-* En el AFF C400:
+** En el AFF C400:
 +
 Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE en la ranura 4 y la ranura 5, en cada controladora.
 
@@ -219,8 +221,8 @@ Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles
 Los subpasos suponen que la bandeja existente está cableada a puertos compatibles con RoCE en la ranura 4 de cada controladora.
 
 +
-.. En el controlador A, mueva el cable de la ranura 4, puerto a (e4a), a la ranura 5, puerto b (e5b).
-.. Repita el mismo cable y mueva la controladora B.
+... En el controlador A, mueva el cable de la ranura 4, puerto a (e4a), a la ranura 5, puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
 
 
 
@@ -230,22 +232,22 @@ Los subpasos suponen que la bandeja existente está cableada a puertos compatibl
 --
 Realice una de las siguientes acciones si va a añadir una segunda bandeja o una cuarta bandeja en caliente.
 
-* Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 2 y la ranura 10 de cada controladora.
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 2 y la ranura 10 de cada controladora.
 +
 Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 2 de cada controladora.
 
 +
-.. En la controladora A, mueva el cable de la ranura 2, puerto b (e2b), a la ranura 10, puerto b (e10b).
-.. Repita el mismo cable y mueva la controladora B.
+... En la controladora A, mueva el cable de la ranura 2, puerto b (e2b), a la ranura 10, puerto b (e10b).
+... Repita el mismo cable y mueva la controladora B.
 
 
-* Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 1 y la ranura 11 de cada controladora.
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 1 y la ranura 11 de cada controladora.
 +
 En los subpasos se supone que la tercera bandeja se conecta mediante cable a un módulo I/O compatible con RoCE en la ranura 1 de cada controladora.
 
 +
-.. En la controladora A, mueva el cable de la ranura 1, puerto b (e1b), a la ranura 11, puerto b (e11b).
-.. Repita el mismo cable y mueva la controladora B.
+... En la controladora A, mueva el cable de la ranura 1, puerto b (e1b), a la ranura 11, puerto b (e11b).
+... Repita el mismo cable y mueva la controladora B.
 
 
 
@@ -257,12 +259,138 @@ Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de
 
 Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 3 de cada controladora.
 
-. En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 1, puerto b (e1b).
-. Repita el mismo cable y mueva la controladora B.
+.. En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 1, puerto b (e1b).
+.. Repita el mismo cable y mueva la controladora B.
 
 
 --
 ====
+
+
+* Para sistemas ASA:
++
+[role="tabbed-block"]
+====
+.ASA A1K
+--
+Realice una de las siguientes acciones si va a añadir una segunda bandeja o una cuarta bandeja en caliente.
+
+
+NOTE: Si cuenta con un par de alta disponibilidad ASA A1K y está agregando una tercera bandeja en caliente y instalando un tercer o cuarto módulo de I/O compatible con RoCE en cada controladora, la tercera bandeja solo se cableará a los módulos de I/O del tercer o tercer y cuarto. No es necesario volver a conectar ninguna bandeja existente.
+
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 11 y la ranura 10 de cada controladora.
++
+Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 11 de cada controladora.
+
++
+... En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 10, puerto b (e10b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 9 y la ranura 8 de cada controladora.
++
+En los subpasos se supone que la tercera bandeja se conecta mediante cable a un módulo I/O compatible con RoCE en la ranura 9 de cada controladora.
+
++
+... En la controladora A, mueva el cable de la ranura 9, puerto b (e9b), a la ranura 8, puerto b (e8b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+--
+.ASA A70 o ASA A90
+--
+Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 11 y la ranura 8 de cada controladora.
+
+Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 11 de cada controladora.
+
+.. En la controladora A, mueva el cable de la ranura 11, puerto b (e11b), a la ranura 8, puerto b (e8b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+--
+.ASA A800 o ASA C800
+--
+Si va a agregar en caliente una segunda bandeja, vuelva a conectar la primera bandeja entre los dos conjuntos de puertos compatibles con RoCE de la ranura 5 y la ranura 3 de cada controladora.
+
+Los subpasos dan por sentado que la bandeja existente se cableó a tarjetas PCIe compatibles con roce en la ranura 5 de cada controladora.
+
+.. En la controladora A, mueva el cable de la ranura 5, puerto b (e5b), a la ranura 3, puerto b (e3b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+--
+.ASA A400 o ASA C400
+--
+Si añade una segunda bandeja en caliente, según el modelo de plataforma, realice una de las siguientes acciones:
+
+** En el ASA A400:
++
+Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE, e0c/e0d internos y en la ranura 5, en cada controladora.
+
++
+En los subpasos se asume que la bandeja existente se cablea a los puertos integrados compatibles con RoCE e0c/e0d en cada controladora.
+
++
+... En la controladora A, mueva el cable del puerto e0d a la ranura 5 puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** En el ASA C400:
++
+Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE en la ranura 4 y la ranura 5, en cada controladora.
+
++
+Los subpasos suponen que la bandeja existente está cableada a puertos compatibles con RoCE en la ranura 4 de cada controladora.
+
++
+... En el controlador A, mueva el cable de la ranura 4, puerto a (e4a), a la ranura 5, puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+--
+.ASA A900
+--
+Realice una de las siguientes acciones si va a añadir una segunda bandeja o una cuarta bandeja en caliente.
+
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 2 y la ranura 10 de cada controladora.
++
+Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 2 de cada controladora.
+
++
+... En la controladora A, mueva el cable de la ranura 2, puerto b (e2b), a la ranura 10, puerto b (e10b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 1 y la ranura 11 de cada controladora.
++
+En los subpasos se supone que la tercera bandeja se conecta mediante cable a un módulo I/O compatible con RoCE en la ranura 1 de cada controladora.
+
++
+... En la controladora A, mueva el cable de la ranura 1, puerto b (e1b), a la ranura 11, puerto b (e11b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+--
+.ASA A30 o ASA A50
+--
+Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 3 y la ranura 1 de cada controladora.
+
+Los subpasos suponen que la bandeja existente se conecta mediante cable a un módulo de I/O compatible con RoCE en la ranura 3 de cada controladora.
+
+.. En la controladora A, mueva el cable de la ranura 3, puerto b (e3b), a la ranura 1, puerto b (e1b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+--
+====
+
+
 . Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
