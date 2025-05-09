@@ -9787,7 +9787,6 @@ SFP+ (destino/iniciador)</block>
   <block id="72b54ea7be3a13b4755dc4521c8d0af6" category="paragraph">Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.</block>
   <block id="0093c88dee6ce91e0bd8ccb1cfbc03ff" category="admonition">Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.</block>
   <block id="0649d37403624118b801efa8956dc716" category="section-title">Paso 3: Sustituya el chasis desde el bastidor de equipos o el armario del sistema</block>
-  <block id="e5a4b20c56ed46e589289f6e1a9368dd" category="paragraph">Retire el chasis deteriorado del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las unidades, las unidades en blanco y, a continuación, instale el panel frontal.</block>
   <block id="eb8def779f4d3e61a371ec65c0cc0128" category="list-text">Retire los tornillos de los puntos de montaje del chasis deteriorados.</block>
   <block id="16e252393218a73fc25b829675a86fce" category="paragraph">Aparte los tornillos para utilizarlos más adelante en este procedimiento.</block>
   <block id="433916ec8110bbee1005399f55ede944" category="admonition">Si el sistema de almacenamiento se envió a un armario del sistema de NetApp, debe quitar los tornillos adicionales en la parte posterior del chasis para poder quitar el chasis.</block>
@@ -11808,7 +11807,6 @@ SFP+ (destino/iniciador)</block>
   <block id="64013ec345bda7b07597c5bf34eac5fe" category="open-title">Opción 1: Bandejas NS224</block>
   <block id="8a978cde5ab4fac3e67487580bc3a51a" category="open-title">Opción 2: Bandejas SAS</block>
   <block id="2cc2225989c416fa40923a89f7f8d99c" category="doc">Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque - FAS50</block>
-  <block id="e65767537c6f00cc3bec96359db6404a" category="summary">Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
   <block id="aa7129f47a0b0a00e74ba4024fe7ba35" category="paragraph">Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras, quitar todos los módulos de almacenamiento en caché y espacios vacíos de unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
   <block id="d3f6a519d78eb3e642c0549ced5f8f2f" category="summary">Antes de sustituir la controladora en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, verificar que tiene el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.</block>
   <block id="3034b89fc8e6fc3ae99585d8f1eab80e" category="doc">Requisitos para sustituir el controlador - FAS50</block>
@@ -11934,4 +11932,23 @@ SFP+ (destino/iniciador)</block>
   <block id="18b75697f84707c97e051581b495caae" category="list-text">En el ASA A400:</block>
   <block id="f08c247bf18a7d50e52f66010faca66f" category="list-text">En el ASA C400:</block>
   <block id="2aba7ab5e3f8f696965da4208fe4dd23" category="open-title">ASA A30 o ASA A50</block>
+  <block id="e3fb1d8bd564bfe9f807ba42e5cd7b33" category="paragraph">Pulse el botón de liberación de la cara del módulo de almacenamiento en caché para abrir el asa de la leva.</block>
+  <block id="06269d1797937a16e290698098cc8abd" category="paragraph">Gire la palanca de leva hacia abajo para desconectar el módulo de almacenamiento en caché del plano medio.</block>
+  <block id="469c355b09315b0a1d1690c1923180a4" category="paragraph">Deslice el módulo de almacenamiento en caché fuera del compartimento de la unidad con el asa de leva y apoye el módulo de almacenamiento en caché con la otra mano.</block>
+  <block id="e84b84ef6157f4a35245509c8a7fa353" category="paragraph">Al extraer un módulo de almacenamiento en caché, utilice siempre dos manos para soportar su peso.</block>
+  <block id="feec4c6e74f9f529edb4ef65e2cc4efc" category="paragraph">Retire el chasis deteriorado del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las controladoras, instale los módulos de almacenamiento en caché y las unidades vacías y, a continuación, instale el panel frontal.</block>
+  <block id="19b2479c4fb73cb4e1e7a5cd66cd9fa9" category="list-text">Con el mango de leva en la posición abierta, utilice ambas manos para insertar el módulo de almacenamiento en caché.</block>
+  <block id="5b42dc5254df979588b011980c1a8adc" category="list-text">Presione suavemente hasta que se detenga el módulo de almacenamiento en caché.</block>
+  <block id="73e8bab771e1e37a562d7cdbeb444153" category="list-text">Cierre el asa de la leva para que el módulo de almacenamiento en caché quede completamente asentado en el plano medio y el asa encaje en su sitio.</block>
+  <block id="82a8073ecc9994385ee15cd53ba7d96a" category="paragraph">Asegúrese de cerrar lentamente el asa de la leva para que se alinee correctamente con la cara del módulo de almacenamiento en caché.</block>
+  <block id="0c1eef5d5ee997a38d2bb1303bcee89d" category="list-text">Repita el proceso con el módulo de almacenamiento en caché restante, si es necesario.</block>
+  <block id="45d69e7bdfec0647cf3523f57e30a808" category="section-title">Paso 2: Quite las unidades del chasis dañado</block>
+  <block id="c0055725498ec7c6a2d459f6d18aef46" category="paragraph">Es necesario quitar todas las unidades y los espacios vacíos para la unidad del chasis dañado de modo que más adelante en el procedimiento pueda instalarlas en el chasis de reemplazo.</block>
+  <block id="3e56a6d3defe800cc97429c918a7c4fb" category="list-text">Quite las unidades y todos los espacios vacíos de las unidades:</block>
+  <block id="ba52981b53ce10a301f84e2da386c778" category="admonition">Realizar un seguimiento de en qué bahía de unidad se quitó cada unidad y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.</block>
+  <block id="ab32ae446e6fa5de50a5d631bbe01daf" category="list-text">Deje las unidades a un lado en un carro o mesa libre de estática.</block>
+  <block id="17df5870a90dff11dc4f027f001751a7" category="section-title">Paso 2: Sustituya el chasis desde el bastidor de equipos o el armario del sistema</block>
+  <block id="277a5698809db74260fd2ddda1e6acd9" category="paragraph">Retire el chasis deficiente del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las unidades, las unidades en blanco y, a continuación, instale el panel frontal.</block>
+  <block id="a6d6e73e138675b6ffbbb0e4663b2d5d" category="list-text">Instale las unidades y todos los espacios vacíos de unidad que quitó del chasis dañado en el chasis de reemplazo:</block>
+  <block id="4a7738e24d9329241e05c40def3be102" category="admonition">Las unidades y los espacios vacíos de las unidades deben instalarse en las mismas bahías de unidad en el chasis de reemplazo.</block>
 </blocks>

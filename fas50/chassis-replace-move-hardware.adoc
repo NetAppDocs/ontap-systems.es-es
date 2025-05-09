@@ -2,7 +2,7 @@
 permalink: fas50/chassis-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: fas50, move hardware components, replace the chassis 
-summary: 'Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), extraer los módulos de caché, instalar el chasis de reemplazo y reinstalar los componentes del chasis.' 
+summary: Reemplace el chasis del sistema de almacenamiento FAS50 cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar las controladoras, quitar todos los módulos de almacenamiento en caché y espacios vacíos de unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis. 
 ---
 = Sustituya el chasis - FAS50
 :allow-uri-read: 
@@ -145,23 +145,23 @@ image::../media/drw_fas50_flash_cache_module_replace_ieops-2173.svg[gráfico de 
  a| 
 image::../media/icon_round_1.png[Número de llamada 1]
  a| 
-Pulse el botón de liberación de la cara del módulo para abrir la palanca de leva.
+Pulse el botón de liberación de la cara del módulo de almacenamiento en caché para abrir el asa de la leva.
 
 
 
  a| 
 image::../media/icon_round_2.png[Número de llamada 2]
  a| 
-Gire la palanca de leva hacia abajo para desconectar el módulo del plano medio.
+Gire la palanca de leva hacia abajo para desconectar el módulo de almacenamiento en caché del plano medio.
 
 
 
  a| 
 image::../media/icon_round_3.png[Número de llamada 3]
  a| 
-Deslice el módulo para extraerlo del compartimento de la unidad con la palanca de leva y sujete el módulo con la otra mano.
+Deslice el módulo de almacenamiento en caché fuera del compartimento de la unidad con el asa de leva y apoye el módulo de almacenamiento en caché con la otra mano.
 
-Al retirar un módulo, utilice siempre dos manos para soportar su peso.
+Al extraer un módulo de almacenamiento en caché, utilice siempre dos manos para soportar su peso.
 
 |===
 . Aparte los módulos de almacenamiento en caché en un carro o mesa libre de estática.
@@ -171,7 +171,7 @@ Al retirar un módulo, utilice siempre dos manos para soportar su peso.
 
 == Paso 3: Sustituya el chasis desde el bastidor de equipos o el armario del sistema
 
-Retire el chasis deteriorado del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las unidades, las unidades en blanco y, a continuación, instale el panel frontal.
+Retire el chasis deteriorado del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las controladoras, instale los módulos de almacenamiento en caché y las unidades vacías y, a continuación, instale el panel frontal.
 
 . Retire los tornillos de los puntos de montaje del chasis deteriorados.
 +
@@ -239,18 +239,18 @@ NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que
 
 NOTE: Los módulos de almacenamiento en caché y las unidades vacías deben instalarse en las mismas bahías de unidades del chasis de reemplazo.
 
-
-
-. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
-. Empuje suavemente hasta que la unidad se detenga.
-. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
 +
-Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
-
-. Repita el proceso para las unidades restantes.
+.. Con el mango de leva en la posición abierta, utilice ambas manos para insertar el módulo de almacenamiento en caché.
+.. Presione suavemente hasta que se detenga el módulo de almacenamiento en caché.
+.. Cierre el asa de la leva para que el módulo de almacenamiento en caché quede completamente asentado en el plano medio y el asa encaje en su sitio.
 +
-.. Instale el panel frontal.
-.. Vuelva a conectar los cables de alimentación a las fuentes de alimentación (PSU) de las controladoras.
+Asegúrese de cerrar lentamente el asa de la leva para que se alinee correctamente con la cara del módulo de almacenamiento en caché.
+
+.. Repita el proceso con el módulo de almacenamiento en caché restante, si es necesario.
+
+
+. Instale el panel frontal.
+. Vuelva a conectar los cables de alimentación a las fuentes de alimentación (PSU) de las controladoras.
 +
 Una vez restaurada la alimentación de un PSU, el LED de estado debe ser verde.
 
@@ -267,8 +267,8 @@ NOTE: Las controladoras comienzan a arrancar tan pronto como se restaure la alim
  a| 
 PSU DE CA
  a| 
-... Conecte el cable de alimentación a la fuente de alimentación.
-... Fije el cable de alimentación con el retén del cable de alimentación.
+.. Conecte el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación con el retén del cable de alimentación.
 
 
 
@@ -276,20 +276,18 @@ PSU DE CA
  a| 
 FUENTE DE ALIMENTACIÓN DE CC
  a| 
-... Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
-... Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
 
 
 |===
-.. Si las controladoras arrancan en el aviso de Loader, reinicie las controladoras:
+. Si las controladoras arrancan en el aviso de Loader, reinicie las controladoras:
 +
 `boot_ontap`
 
-.. Vuelva a activar AutoSupport:
+. Vuelva a activar AutoSupport:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
-
-
 
 
 
