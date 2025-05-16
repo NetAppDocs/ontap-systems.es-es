@@ -133,20 +133,29 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 
 == Paso 3: Reinicie el controlador
 
-Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
+Después de sustituir un módulo de I/O, debe reiniciar la controladora.
 
 .Pasos
-. Desde el prompt de Loader, reinicie el nodo:`bye`
+. Reinicie la controladora desde el aviso del CARGADOR:
++
+`bye`
+
 +
 
-NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
+NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
 
+. Devolver al nodo a su funcionamiento normal:
 +
+`storage failover giveback -ofnode _impaired_node_name_`
 
-NOTE: Asegúrese de salir del modo de mantenimiento después de completar la conversión.
+. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback _true_`
 
-. Devolver al nodo a su funcionamiento normal: `storage failover giveback -ofnode impaired_node_name`
-. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 

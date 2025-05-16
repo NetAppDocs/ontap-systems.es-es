@@ -17,15 +17,33 @@ Apague o tome el control de la controladora dañada.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
-.Antes de empezar
-Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+.Acerca de esta tarea
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, link:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["estado del quórum"] de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
 
 .Pasos
-. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-El siguiente comando de la AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
 
-. Deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify –node local -auto-giveback false`
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilite la devolución automática de la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback false`
+
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
 . Lleve la controladora dañada al aviso DEL CARGADOR:
 +
 [cols="1,2"]
@@ -41,18 +59,20 @@ Vaya al paso siguiente.
 
 
  a| 
-`Waiting for giveback...`
+Esperando devolución...
  a| 
 Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
 
 
 
  a| 
-Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+Solicitud del sistema o solicitud de contraseña
  a| 
-Detenga o tome el control del controlador dañado del controlador en buen estado: `storage failover takeover -ofnode _impaired_node_name_`
+Retome o detenga el controlador dañado del controlador en buen estado:
 
-Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, a continuación, responda `y`.
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
 
@@ -112,15 +132,29 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 
 == Paso 3: Reinicie el controlador
 
-Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
+Después de sustituir un módulo de I/O, debe reiniciar la controladora.
 
 .Pasos
-. Desde el aviso del CARGADOR, reinicie el nodo: `bye`
+. Reinicie la controladora desde el aviso del CARGADOR:
 +
-De este modo, se reinicializan las tarjetas de I/O y otros componentes y se reinicia el nodo.
+`bye`
 
-. Devolver al nodo a su funcionamiento normal: `storage failover giveback -ofnode impaired_node_name`
-. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
++
+
+NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
+
+. Devolver al nodo a su funcionamiento normal:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 
