@@ -314,7 +314,13 @@ Este procedimiento muestra cómo conectar los cables de las controladoras a una 
 
 .Acerca de esta tarea
 * Para conocer el número máximo de bandejas compatibles con el sistema de almacenamiento y todas las opciones de cableado, como ópticas y conectadas por switch, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
-* Se conectó mediante cable cada controladora a cada módulo NSM100B de la bandeja NS224 utilizando los cables de almacenamiento incluidos con el sistema de almacenamiento, que pueden ser el siguiente tipo de cables:
+* El procedimiento de cableado de la estantería NS224 muestra módulos NSM100B en lugar de módulos NSM100. El cableado es el mismo independientemente del tipo de módulo NSM utilizado; solo varían los nombres de los puertos:
++
+** Los módulos NSM100B utilizan los puertos e1a y e1b en un módulo de E/S en la ranura 1.
+** Los módulos NSM100 utilizan puertos integrados (integrados) e0a y e0b.
+
+
+* Conecte cada controlador a cada módulo NSM en el estante NS224 utilizando los cables de almacenamiento que vienen con su sistema de almacenamiento, que pueden ser del siguiente tipo de cable:
 +
 *100 GbE QSFP28 cables de cobre*
 

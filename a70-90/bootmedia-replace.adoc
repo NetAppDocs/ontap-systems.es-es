@@ -24,10 +24,12 @@ El soporte de arranque se encuentra dentro del módulo de gestión del sistema y
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
 
 . Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Desconecte la alimentación del módulo del controlador tirando del módulo del controlador hacia fuera unas tres pulgadas:
+. Desconecte las fuentes de alimentación del controlador.
 +
-.. Presione ambos pestillos de bloqueo del módulo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
-.. Extraiga el módulo del controlador unas 3 pulgadas del chasis para desconectar la alimentación.
+
+NOTE: Si el sistema tiene alimentación de CC, desconecte el bloque de alimentación de las PSU.
+
++
 .. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
 .. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
 .. Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.
@@ -120,17 +122,10 @@ La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutan
 +
 Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
 
-. Vuelva a conectar la alimentación al módulo del controlador:
+. Conecte los cables de alimentación en las fuentes de alimentación. El controlador se reinicia tan pronto como se restablece la energía.
 +
-.. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
-+
-Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
 
-.. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
-+
-La controladora comienza a arrancar en cuanto se vuelve a conectar la alimentación al sistema.
-
-
+NOTE: Si tiene fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación.
 
 . Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
 +

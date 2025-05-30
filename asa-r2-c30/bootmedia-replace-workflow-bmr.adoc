@@ -1,0 +1,34 @@
+---
+permalink: asa-r2-c30/bootmedia-replace-workflow-bmr.html 
+sidebar: sidebar 
+keywords: asa c30, replace the boot media 
+summary: Comience a reemplazar el medio de arranque en su sistema de almacenamiento ASA C30 revisando los requisitos de reemplazo, apagando el controlador dañado, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema. 
+---
+= Flujo de trabajo de sustitución de soportes de arranque: ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Comience a reemplazar el medio de arranque en su sistema de almacenamiento ASA C30 revisando los requisitos de reemplazo, apagando el controlador dañado, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:bootmedia-replace-requirements-bmr.html["Revise los requisitos de medios de arranque"]
+[role="quick-margin-para"]
+Revise los requisitos para la sustitución de medios de arranque.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-shutdown-bmr.html["Apague el controlador dañado"]
+[role="quick-margin-para"]
+Apague o asuma el control de la controladora deteriorada para que la controladora en buen estado siga sirviendo datos del almacenamiento de la controladora dañado.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-replace-bmr.html["Sustituya el soporte de arranque"]
+[role="quick-margin-para"]
+Retire el soporte de arranque defectuoso del controlador defectuoso e instale el soporte de arranque de repuesto.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen en el soporte de arranque"]
+[role="quick-margin-para"]
+Restaure la imagen ONTAP desde la controladora en buen estado.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:bootmedia-complete-rma-bmr.html["Devuelve la pieza que ha fallado a NetApp"]
+[role="quick-margin-para"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.

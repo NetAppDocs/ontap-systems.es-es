@@ -13,7 +13,7 @@ summary: Para sustituir un módulo de E/S, debe desconectar los cables del módu
 [role="lead"]
 Añada un módulo I/O a su sistema ASA A20, ASA A30 o ASA A50 para mejorar la conectividad de la red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
 
-Puede añadir un módulo de I/O a los sistemas de almacenamiento ASA A20, ASA A30 y ASA A50 cuando haya ranuras disponibles o cuando todas estén completamente ocupadas.
+Puede agregar un módulo de E/S a su sistema de almacenamiento ASA C30 si hay ranuras disponibles. Si todas las ranuras están ocupadas, puede reemplazar un módulo existente para agregar uno nuevo.
 
 .Acerca de esta tarea
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azules) para ayudar a localizar físicamente el sistema de almacenamiento asociado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
@@ -24,7 +24,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
-== Paso 1: Apague el módulo del controlador defectuoso
+== Paso 1: Apague el controlador dañado
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 

@@ -1,0 +1,298 @@
+---
+permalink: asa-r2-c30/chassis-replace-move-hardware.html 
+sidebar: sidebar 
+keywords: asa c30, move hardware components, replace the chassis 
+summary: 'Reemplace el chasis de su sistema de almacenamiento ASA C30 cuando una falla de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.' 
+---
+= Sustituya el chasis - ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplace el chasis de su sistema de almacenamiento ASA C30 cuando una falla de hardware lo requiera. El proceso de sustitución implica retirar las controladoras y las unidades de suministro de alimentación (PSU), quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.
+
+
+
+== Paso 1: Quite la controladora
+
+Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
+
+.Antes de empezar
+Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, debe contactar https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+.Pasos
+. En el controlador deteriorado, asegúrese de que el LED NV está apagado.
++
+Cuando el LED NV está apagado, la separación se completa y es seguro retirar el controlador defectuoso.
+
++
+
+NOTE: Si el LED NV parpadea (verde), la separación está en curso. Debe esperar a que se apague el LED NV. Sin embargo, si el parpadeo continúa durante más de cinco minutos, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El LED NV se encuentra junto al icono de NV de la controladora.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Ubicación del LED de estado de NV]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Icono de NV y LED en el controlador
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del controlador dañado:
++
+
+NOTE: Las fuentes de alimentación (PSU) no tienen un interruptor de alimentación.
+
++
+[cols="1,2"]
+|===
+| Si va a desconectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Abra el retén del cable de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación de CC D-SUB.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+|===
+. Desconecte todos los cables del controlador dañado.
++
+Mantenga un registro de dónde se conectaron los cables.
+
+. Retire el controlador deteriorado:
++
+En la siguiente ilustración, se muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de la controladora) al quitar una controladora:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[asa la operación de la controladora para quitar una controladora]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del controlador, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para desalojar el controlador del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera del controlador y luego siente algo de resistencia, siga tirando.
+
+** Deslice el controlador para sacarlo del chasis mientras sostiene la parte inferior del controlador y colóquelo en una superficie plana y estable.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
+
+|===
+. Repita estos pasos para la otra controladora del chasis.
+
+
+
+
+== Paso 2: Quite las unidades del chasis dañado
+
+Es necesario quitar todas las unidades y los espacios vacíos para la unidad del chasis dañado de modo que más adelante en el procedimiento pueda instalarlas en el chasis de reemplazo.
+
+. Quite suavemente el panel frontal de la parte frontal del sistema de almacenamiento.
+. Quite las unidades y todos los espacios vacíos de las unidades:
++
+
+NOTE: Realizar un seguimiento de en qué bahía de unidad se quitó cada unidad y unidad vacía porque deben instalarse en las mismas bahías de unidades en el chasis de reemplazo.
+
++
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad NVMe]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva y sujete la unidad con la otra mano.
+
+Al extraer una unidad, utilice siempre dos manos para sostener su peso.
+
+
+NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
+
+|===
+. Deje las unidades a un lado en un carro o mesa libre de estática.
+
+
+
+
+== Paso 2: Sustituya el chasis desde el bastidor de equipos o el armario del sistema
+
+Retire el chasis deficiente del rack de equipos o del armario del sistema, instale el chasis de reemplazo, instale las unidades, las unidades en blanco y, a continuación, instale el panel frontal.
+
+. Retire los tornillos de los puntos de montaje del chasis deteriorados.
++
+Aparte los tornillos para utilizarlos más adelante en este procedimiento.
+
++
+
+NOTE: Si el sistema de almacenamiento se envió a un armario del sistema de NetApp, debe quitar los tornillos adicionales en la parte posterior del chasis para poder quitar el chasis.
+
+. Con ayuda de dos personas o un elevador mecánico, retire el chasis deteriorado del bastidor del equipo o del armario del sistema deslizándolo por los rieles y, a continuación, déjelo a un lado.
+. Con la ayuda de dos personas, instale el chasis de reemplazo en el bastidor del equipo o el armario del sistema deslizándolo sobre los rieles.
+. Fije la parte delantera del chasis de repuesto al bastidor del equipo o al armario del sistema con los tornillos que ha retirado del chasis dañado.
+
+
+
+
+== Paso 4: Instale las controladoras
+
+Instale las controladoras en el chasis de reemplazo y reiniciarlas.
+
+.Acerca de esta tarea
+La siguiente ilustración muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de una controladora) al instalar una controladora, y puede utilizarse como referencia para el resto de los pasos de instalación de la controladora.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[operación de manija del controlador para instalar un controlador]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si giró las asas del controlador en posición vertical (junto a las pestañas) para alejarlas del camino, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Empuje las asas para volver a insertar el controlador en el chasis y empuje hasta que el controlador quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas de bloqueo.
+
+|===
+. Inserte una de las controladoras en el chasis:
++
+.. Alinee la parte posterior de la controladora con la apertura del chasis.
+.. Empuje firmemente las asas hasta que la controladora entre en contacto con el plano medio y quede completamente asentada en el chasis.
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que podría dañar los conectores.
+
+.. Gire las asas del controlador hacia arriba y bloquéelas en su lugar con las lengüetas.
+
+
+. Vuelva a conectar la controladora según sea necesario, excepto en los cables de alimentación.
+. Repita estos pasos para instalar la segunda controladora en el chasis.
+. Instale las unidades y todos los espacios vacíos de unidad que quitó del chasis dañado en el chasis de reemplazo:
++
+
+NOTE: Las unidades y los espacios vacíos de las unidades deben instalarse en las mismas bahías de unidad en el chasis de reemplazo.
+
++
+.. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
+.. Empuje suavemente hasta que la unidad se detenga.
+.. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
+
+.. Repita el proceso para las unidades restantes.
+
+
+. Instale el panel frontal.
+. Vuelva a conectar los cables de alimentación a las fuentes de alimentación (PSU) de las controladoras.
++
+Una vez restaurada la alimentación de un PSU, el LED de estado debe ser verde.
+
++
+
+NOTE: Las controladoras comienzan a arrancar tan pronto como se restaure la alimentación.
+
++
+[cols="1,2"]
+|===
+| Si va a volver a conectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Conecte el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación con el retén del cable de alimentación.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+
+
+|===
+. Si las controladoras arrancan en el aviso de Loader, reinicie las controladoras:
++
+`boot_ontap`
+
+. Vuelva a activar AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+.El futuro
+Después de reemplazar el chasis dañado y volver a instalar los componentes en él, debe link:chassis-replace-complete-system-restore-rma.html["complete el reemplazo del chasis"].

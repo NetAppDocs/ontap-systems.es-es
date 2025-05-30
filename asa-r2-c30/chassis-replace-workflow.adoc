@@ -1,0 +1,30 @@
+---
+permalink: asa-r2-c30/chassis-replace-workflow.html 
+sidebar: sidebar 
+keywords: asa c30, replace the chassis workflow 
+summary: Reemplazar el chasis de su sistema de almacenamiento ASA C30 consiste en revisar los requisitos de reemplazo, apagar los controladores, reemplazar el chasis y verificar las operaciones del sistema. 
+---
+= Flujo de trabajo de reemplazo de chasis - ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplazar el chasis de su sistema de almacenamiento ASA C30 consiste en revisar los requisitos de reemplazo, apagar los controladores, reemplazar el chasis y verificar las operaciones del sistema.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:chassis-replace-requirements.html["Revise los requisitos de reemplazo del chasis"]
+[role="quick-margin-para"]
+Revise los requisitos para reemplazar el chasis.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:chassis-replace-shutdown.html["Apague las controladoras"]
+[role="quick-margin-para"]
+Apague las controladoras para poder realizar el mantenimiento del chasis.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:chassis-replace-move-hardware.html["Sustituya el chasis"]
+[role="quick-margin-para"]
+Reemplace el chasis moviendo las unidades y cualquier unidad en blanco, los controladores (con las fuentes de alimentación) y el marco del chasis dañado al nuevo chasis, y reemplazando el chasis dañado con el nuevo chasis del mismo modelo que el chasis dañado.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:chassis-replace-complete-system-restore-rma.html["Reemplazo completo de chasis"]
+[role="quick-margin-para"]
+Compruebe el estado HA del chasis y devuelva la parte fallida a NetApp.

@@ -1,0 +1,38 @@
+---
+permalink: asa-r2-c30/controller-replace-workflow.html 
+sidebar: sidebar 
+keywords: asa c30, replace the controller workflow 
+summary: Para comenzar a sustituir la controladora en su sistema de almacenamiento ASA C30, apague la controladora dañada. Para ello, quite y sustituya la controladora, restaure la configuración del sistema y devuelva el control de los recursos de almacenamiento a la controladora de reemplazo. 
+---
+= Flujo de trabajo de reemplazo de controlador: ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para comenzar a sustituir la controladora en su sistema de almacenamiento ASA C30, apague la controladora dañada. Para ello, quite y sustituya la controladora, restaure la configuración del sistema y devuelva el control de los recursos de almacenamiento a la controladora de reemplazo.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:controller-replace-requirements.html["Revise los requisitos de reemplazo de la controladora"]
+[role="quick-margin-para"]
+Para sustituir la controladora, debe cumplir ciertos requisitos.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:controller-replace-shutdown.html["Apague el controlador dañado"]
+[role="quick-margin-para"]
+Apague o asuma el control de la controladora deteriorada para que la controladora en buen estado siga sirviendo datos del almacenamiento de la controladora dañado.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:controller-replace-move-hardware.html["Sustituya el controlador"]
+[role="quick-margin-para"]
+Al sustituir la controladora, se quita la controladora dañada, se mueven los componentes de FRU a la controladora de reemplazo, se instala la controladora de reemplazo en el chasis, se establece la hora y la fecha, y luego se vuelve a cablear.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:controller-replace-system-config-restore-and-verify.html["Restaurar y verificar la configuración del sistema"]
+[role="quick-margin-para"]
+Compruebe la configuración de bajo nivel del sistema de la controladora de reemplazo y vuelva a configurar los ajustes del sistema si es necesario.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:controller-replace-recable-reassign-disks.html["Devuelva la controladora"]
+[role="quick-margin-para"]
+Transfiera la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]link:controller-replace-restore-system-rma.html["Reemplazo completo de controladoras"]
+[role="quick-margin-para"]
+Verifique las LIF, compruebe el estado del clúster y devuelva la parte fallida a NetApp.

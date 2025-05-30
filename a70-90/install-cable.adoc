@@ -140,6 +140,15 @@ Los siguientes procedimientos de cableado muestran cómo conectar las controlado
 
 Para conocer la cantidad máxima de bandejas compatibles con el sistema de almacenamiento y todas las opciones de cableado, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
 
+.Acerca de esta tarea
+Los sistemas de almacenamiento AFF A70 y 90 admiten estanterías NS224 con el módulo NSM100 o NSM100B. Las principales diferencias entre los módulos son:
+
+* Los módulos de estante NSM100 utilizan puertos integrados e0a y e0b.
+* Los módulos de estante NSM100B utilizan los puertos e1a y e1b en la ranura 1.
+
+
+El siguiente ejemplo de cableado muestra los módulos NSM100 en los estantes NS224 cuando se hace referencia a los puertos del módulo de estante.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Una bandeja de almacenamiento NS224

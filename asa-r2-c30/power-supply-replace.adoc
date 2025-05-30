@@ -1,0 +1,193 @@
+---
+permalink: asa-r2-c30/power-supply-replace.html 
+sidebar: sidebar 
+keywords: asa c30, replace a power supply 
+summary: 'Reemplace una unidad de fuente de alimentación (PSU) de CA o CC en su sistema de almacenamiento ASA C30 cuando falle o se vuelva defectuoso, lo que garantiza que su sistema continúe recibiendo la energía necesaria para un funcionamiento estable. El proceso de sustitución implica desconectar la fuente de alimentación defectuosa de la fuente de alimentación, desconectar el cable de alimentación, sustituir la fuente de alimentación defectuosa y volver a conectarla a la fuente de alimentación.' 
+---
+= Sustituya una fuente de alimentación: ASA C30
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplace una unidad de fuente de alimentación (PSU) de CA o CC en su sistema de almacenamiento ASA C30 cuando falle o se vuelva defectuoso, lo que garantiza que su sistema continúe recibiendo la energía necesaria para un funcionamiento estable. El proceso de sustitución implica desconectar la fuente de alimentación defectuosa de la fuente de alimentación, desconectar el cable de alimentación, sustituir la fuente de alimentación defectuosa y volver a conectarla a la fuente de alimentación.
+
+.Acerca de esta tarea
+* Este procedimiento se escribe para sustituir una fuente de alimentación por vez.
++
+Las PSU son redundantes e intercambiables en caliente.
+
+* IMPORTANTE: No mezcle las PSU con diferentes clasificaciones de eficiencia o tipos de entrada diferentes. Sustituya siempre como por ejemplo.
+* Utilice el procedimiento adecuado para su tipo de PSU: CA o CC.
+* Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
++
+Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
+[role="tabbed-block"]
+====
+.Opción 1: Sustituya una fuente de alimentación de CA
+--
+Para sustituir una fuente de alimentación de CA, lleve a cabo los siguientes pasos.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación defectuosa en función de los mensajes de error de la consola o a través del LED rojo de atención de la fuente de alimentación.
+. Desconecte el cable de alimentación de la PSU abriendo el retén del cable de alimentación y, a continuación, desenchufe el cable de alimentación de la PSU.
++
+
+NOTE: Las PSU no disponen de un interruptor de alimentación.
+
+. Retire la PSU:
++
+image::../media/drw_g_t_psu_replace_ieops-1899.svg[Sustituya la fuente de alimentación de CA]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Gire el asa de la fuente de alimentación hacia arriba hasta su posición horizontal y, a continuación, sujétela.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Con el pulgar, presione la pestaña azul para liberar la PSU del controlador.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Saque la PSU de la controladora mientras usa la otra mano para sostener su peso.
+
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para sostenerlo cuando lo retire del controlador, de modo que no se salga repentinamente del controlador y le dañe.
+
+|===
+. Instale la fuente de alimentación de repuesto:
++
+.. Con ambas manos, apoye y alinee los bordes de la PSU con la abertura del controlador.
+.. Empuje suavemente la PSU dentro del controlador hasta que la lengüeta de bloqueo encaje en su lugar.
++
+Una fuente de alimentación sólo se acoplará correctamente con el conector interno y se bloqueará de una manera.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la PSU en el controlador.
+
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
+
+
+. Vuelva a conectar el cable de alimentación a la PSU y fije el cable de alimentación con el retén del cable de alimentación.
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"^] la página para obtener más información.
+
+
+--
+.Opción 2: Sustituya una fuente de alimentación de CC
+--
+Para sustituir una fuente de alimentación de CC, lleve a cabo los siguientes pasos.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Identifique la fuente de alimentación defectuosa en función de los mensajes de error de la consola o a través del LED rojo de atención de la fuente de alimentación.
+. Desconecte la fuente de alimentación:
++
+
+NOTE: Las PSU no disponen de un interruptor de alimentación.
+
++
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación de CC D-SUB.
++
+La ilustración y la tabla del paso 4 muestran los dos tornillos de mariposa (elemento n.o 1) y el conector del cable de alimentación de CC D-SUB (elemento n.o 2).
+
+.. Desenchufe el cable de la fuente de alimentación y déjelo a un lado.
+
+
+. Retire la PSU:
++
+.. Gire el asa hacia arriba, a su posición horizontal y, a continuación, sujételo.
+.. Con el pulgar, presione la lengüeta de terracota para liberar el mecanismo de bloqueo.
+.. Saque la PSU de la controladora mientras usa la otra mano para sostener su peso.
++
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para apoyarlo al retirarlo del controlador de modo que no se salga del controlador y le dañe.
+
++
+image::../media/drw_dcpsu_remove-replace-generic_IEOPS-788.svg[Retire una fuente de alimentación de CC]
+
+
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Tornillos de mariposa
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Conector del cable de alimentación de CC D-SUB
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Asa de la fuente de alimentación
+
+
+
+ a| 
+image::../media/icon_round_4.png[Número de llamada 4]
+ a| 
+Lengüeta de bloqueo de PSU de terracota
+
+|===
+. Inserte la PSU de sustitución:
++
+.. Con ambas manos, apoye y alinee los bordes de la PSU con la abertura del controlador.
+.. Deslice suavemente la PSU en la controladora hasta que la lengüeta de bloqueo haga clic en su lugar.
++
+Una fuente de alimentación debe acoplarse correctamente con el conector interno y el mecanismo de bloqueo. Repita este paso si considera que la fuente de alimentación no está correctamente colocada.
+
++
+
+NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al deslizar la PSU en el controlador.
+
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
+
+
+. Vuelva a conectar el cable de alimentación de CC D-SUB:
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
++
+.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+
+
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"^] la página para obtener más información.
+
+
+--
+====
