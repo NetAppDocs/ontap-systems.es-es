@@ -16,7 +16,7 @@ Para sustituir el soporte de arranque, debe retirar el módulo del controlador d
 
 == Paso 1: Extraiga el módulo del controlador
 
-[role="lead"]
+.Pasos
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -48,8 +48,6 @@ Botón de liberación de la cubierta del módulo del controlador
 
 Localice el medio de arranque en el módulo del controlador, que se encuentra debajo de la tarjeta intermedia y siga las instrucciones para reemplazarlo.
 
-.Animación: Reemplace el soporte de arranque
-video::10a29a01-a86e-451c-b05a-af4701726f57[panopto]
 image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Sustituya el soporte de arranque"]
 
 [cols="1,2"]
@@ -126,19 +124,10 @@ Consulte https://kb.netapp.com/onprem/ontap/os/Which_ONTAP_image_should_I_downlo
 NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
 
 +
-Hay dos carpetas en el archivo de imagen del servicio descomprimido:
+La unidad flash USB debe tener la misma versión de imagen de servicio (BIOS) que la que ejecuta el controlador dañado.
 
 +
-** `boot`
-** `efi`
-+
-... Copie el `efi` En el directorio superior de la unidad flash USB.
-+
-La unidad flash USB debe tener la carpeta efi y la misma versión de la imagen de servicio (BIOS) de la que se ejecuta el controlador dañado.
-
-... Extraiga la unidad flash USB del ordenador portátil.
-
-
+.. Extraiga la unidad flash USB del ordenador portátil.
 
 
 . Instale el módulo del controlador:

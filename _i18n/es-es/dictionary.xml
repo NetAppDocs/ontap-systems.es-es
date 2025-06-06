@@ -8937,8 +8937,6 @@ SFP+ (destino/iniciador)</block>
   <block id="789b5a8a8cbbdce99d0cd8864ee0122a" category="doc">Apague la controladora con deterioro: FAS70 y FAS90</block>
   <block id="2902ee20441450339d3c624a2432953d" category="list-text"><block ref="402920e7db99056d01d15836c97d7e6e" category="inline-xref-macro-rx"></block></block>
   <block id="0ead7a2e2db558cfd790c55a9c76462e" category="list-text">Confirme que el resto de los componentes funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.</block>
-  <block id="fd39955a756e9aaa81ca55b2791f9b72" category="example-title">Opción 1 de la mayoría de sistemas</block>
-  <block id="d4373786f422d4c41e16fcb4a1e26b83" category="example-title">Configuración de MetroCluster de la opción 2</block>
   <block id="1cc5afe23260cb08d578b3171ed8bb0d" category="paragraph">Núm.s de ranura del módulo de caché</block>
   <block id="9c7e22c30b9aa93d97efb0ef5d7ccaa8" category="list-text">Gire la lengüeta para separarla del módulo.</block>
   <block id="21c6d5df7d87902fb54560352086c7e1" category="list-text">Pellizque la lengüeta Terra Cotta en la parte superior del módulo de caché y gire el asa de la leva lejos del módulo de caché.</block>
@@ -11249,7 +11247,6 @@ SFP+ (destino/iniciador)</block>
   <block id="35ac4e474d14cd3235380c2e767e83a3" category="paragraph">Sustituya la NVRAM en su sistema FAS70 o FAS90 cuando la memoria no volátil falle o necesite una actualización. El proceso de sustitución implica apagar la controladora deteriorada, sustituir el módulo NVRAM o NVRAM DIMM, reasignar los discos y devolver la pieza averiada a NetApp.</block>
   <block id="a7188c3f4745ef552e2d05d7b35f5f28" category="summary">Reemplace la batería de reloj en tiempo real (RTC), comúnmente conocida como una batería de pila de moneda, en su sistema FAS70 o FAS90 para garantizar que los servicios y aplicaciones que dependen de la sincronización de tiempo precisa permanezcan operativos.</block>
   <block id="2ffef1288a7f6acf62a54035268660b1" category="summary">Reemplace el módulo de gestión del sistema en su sistema FAS70 o FAS90 cuando se produzca un defecto o su firmware esté dañado. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de gestión del sistema con errores, reiniciar la controladora, actualizar las claves de licencia y devolver la parte con error a NetApp.</block>
-  <block id="5058f1af8388633f609cadb75a75dc9d" category="paragraph">.</block>
   <block id="83755d1a8b686dba4bc8143c0cb7f397" category="doc">Flujo de trabajo de sustitución de soportes de arranque: AFF A1K</block>
   <block id="25602a3f0e04b149a4c958bcec65c371" category="summary">Los medios de arranque de su sistema AFF A1K almacenan datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo de gestión del sistema, la extracción del soporte de arranque dañado, la instalación del soporte de arranque de reemplazo y, a continuación, la transferencia de la imagen ONTAP al soporte de arranque de reemplazo.</block>
   <block id="b33207f5d0f2655fdef88d9bbf915f24" category="summary">Apague la controladora deteriorada en su sistema de almacenamiento AFF A1K para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el soporte de arranque.</block>
@@ -11913,9 +11910,6 @@ SFP+ (destino/iniciador)</block>
   <block id="e772ad168b6f97f132982a96392cd046" category="example-title">Reemplace la fuente de alimentación de CA para NS224</block>
   <block id="0dcc8efe101bb5e6350d650ce519cbfa" category="video-title">Intercambie en caliente una fuente de alimentación de CA en una bandeja NS224</block>
   <block id="40f990da8c57e47c36081d4d612c9817" category="list-text">Desconecte los cables de alimentación de las fuentes de alimentación y luego extraiga el módulo del controlador unos centímetros del frente del sistema.</block>
-  <block id="5330c5fb5d366be53452014b9ecf03a7" category="paragraph">+ .. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo. .. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo. .. Pulse el botón de leva de gestión del sistema. .. Gire el pestillo de la leva hacia abajo hasta el tope. .. Retire el módulo de gestión del sistema de la carcasa enganchando el dedo en la abertura de la palanca de leva y tirando del módulo para sacarlo de la carcasa. .. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque. . Retire el soporte de arranque del módulo de gestión:</block>
-  <block id="42daa41b8c19102ddb14e0889d7abbb4" category="paragraph">+ imagen::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Gráfico de reemplazo de medios de arranque]</block>
-  <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
   <block id="193d35b8a9ac476b4099d10d04a128a6" category="list-text">Vuelva a colocar y bloquee con cuidado el módulo controlador en la parte frontal del sistema.</block>
   <block id="c65e5ab2ccd40a14e7dbaad19aa0c504" category="list-text">Desconecte los cables de alimentación de las fuentes de alimentación del controlador y luego tire del módulo del controlador, en la parte frontal del sistema, unos centímetros hacia afuera.</block>
   <block id="2a111f85cafe27d96d705414a1545f34" category="list-text">Vuelva a conectar los cables de alimentación a la fuente de alimentación y vuelva a colocar y bloquear con cuidado el módulo del controlador en la parte frontal del sistema.</block>
@@ -11926,7 +11920,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b4f9b4ed219fb6f91477aff5ebef3453" category="admonition">Si tiene fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación.</block>
   <block id="4efb9ea6af03bf03e0cdc2a4164ea43c" category="list-text">Conecte el cable de la consola al puerto de la consola del módulo de controlador de reemplazo y vuelva a conectarlo al portátil para que reciba mensajes de la consola cuando se reinicie.</block>
   <block id="fde22c7ade0121628e0502770ed5326e" category="list-text">Conecte las fuentes de alimentación. El controlador arranca con el indicador LOADER en cuanto se restablece la alimentación.</block>
-  <block id="ea1ad38d91c2e87ef2e9571bd55654fd" category="list-text">ONTAP 9.17.1</block>
   <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
   <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">Los sistemas de almacenamiento AFF A1K admiten estanterías NS224 con el módulo NSM100 o NSM100B. Las principales diferencias entre los módulos son:</block>
   <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">Los módulos de estante NSM100 utilizan puertos integrados e0a y e0b.</block>
@@ -12019,4 +12012,9 @@ SFP+ (destino/iniciador)</block>
   <block id="b4a3b44dc7350cb88f59a4a2eb7dda1d" category="sidebar">Chasis ASA C30</block>
   <block id="cb330090f109eb2fa5d8e0cb697b8627" category="sidebar">Módulo de controlador ASA C30</block>
   <block id="d6cf13e3e73df787bea3a13aaa745efd" category="sidebar">Módulo de I/O ASA C30</block>
+  <block id="8acf9575f7f79494b7321c6428846a4b" category="paragraph">Reemplace el medio de arranque.</block>
+  <block id="8fdc5ec3ff56b023a707d257557cb7c1" category="paragraph">Los sistemas de almacenamiento FAS70 y FAS90 admiten estantes DS212C, DS224C, DS460C y NS224 con el módulo NSM100 o NSM100B.</block>
+  <block id="cb1d7f2de7963108d3fe1b590a415523" category="paragraph">Las principales diferencias entre los módulos NS224 son:</block>
+  <block id="a1c52b2edb23bc93318c0b82dc9baead" category="paragraph">El siguiente ejemplo de cableado NS224 muestra módulos NSM100 en los estantes NS224 cuando se hace referencia a los puertos de los módulos de estante.</block>
+  <block id="29cc4b807f94b06bddae2e11c6a56c1e" category="paragraph">La unidad flash USB debe tener la misma versión de imagen de servicio (BIOS) que la que ejecuta el controlador dañado.</block>
 </blocks>

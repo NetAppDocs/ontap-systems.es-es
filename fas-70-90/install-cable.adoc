@@ -142,6 +142,17 @@ Para conocer la cantidad máxima de bandejas compatibles con el sistema de almac
 
 Para obtener información adicional sobre el cableado de las bandejas SAS, consulte link:https://docs.netapp.com/us-en/ontap-systems/sas3/install-cabling-rules.html["Reglas y conceptos de cableado SAS: Bandejas con módulos IOM12/IOM12B"].
 
+.Acerca de esta tarea
+Los sistemas de almacenamiento FAS70 y FAS90 admiten estantes DS212C, DS224C, DS460C y NS224 con el módulo NSM100 o NSM100B.
+
+Las principales diferencias entre los módulos NS224 son:
+
+* Los módulos de estante NSM100 utilizan puertos integrados e0a y e0b.
+* Los módulos de estante NSM100B utilizan los puertos e1a y e1b en la ranura 1.
+
+
+El siguiente ejemplo de cableado NS224 muestra módulos NSM100 en los estantes NS224 cuando se hace referencia a los puertos de los módulos de estante.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Una bandeja de almacenamiento NS224
