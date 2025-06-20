@@ -10,7 +10,8 @@ summary: Debe localizar el soporte de arranque en la controladora y seguir las i
 :imagesdir: ../media/
 
 
-Para sustituir el soporte de arranque, debe retirar el módulo del controlador dañado, instalar el soporte de arranque de repuesto y transferir la imagen de inicio a una unidad flash USB.
+[role="lead"]
+Debe quitar y abrir el módulo del controlador dañado, ubicar y reemplazar el medio de arranque en el controlador, transferir la imagen de arranque a una unidad USB, insertar la unidad USB en el controlador y luego arrancar el controlador.
 
 
 
@@ -118,18 +119,7 @@ Consulte https://kb.netapp.com/onprem/ontap/os/Which_ONTAP_image_should_I_downlo
 
 
 
-. Descomprima la imagen descargada.
-+
-
-NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
-
-+
-La unidad flash USB debe tener la misma versión de imagen de servicio (BIOS) que la que ejecuta el controlador dañado.
-
-+
-.. Extraiga la unidad flash USB del ordenador portátil.
-
-
+. Extraiga la unidad flash USB del ordenador portátil.
 . Instale el módulo del controlador:
 +
 .. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
@@ -145,14 +135,9 @@ Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositiv
 
 . Empuje completamente el módulo del controlador en el sistema, asegurándose de que el mango de la leva borra la unidad flash USB, empuje firmemente el asa de la leva para terminar de colocar el módulo del controlador, empuje el asa de la leva hasta la posición cerrada y, a continuación, apriete el tornillo de mano.
 +
-La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
-
-. Interrumpa el proceso de arranque para que se detenga en el símbolo del SISTEMA DEL CARGADOR pulsando Ctrl-C cuando vea iniciando AUTOBOOT, pulse Ctrl-C para cancelar....
-+
-Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
-
-. En el caso de los sistemas con una controladora en el chasis, vuelva a conectar la alimentación y encienda las fuentes de alimentación.
-+
-El sistema empieza a arrancar y se detiene en el aviso del CARGADOR.
+El controlador comienza a arrancar tan pronto como está completamente instalado en el chasis y se detiene en el mensaje LOADER.
 
 
+
+.El futuro
+Después de reemplazar el soporte de arranque, debe link:bootmedia-recovery-image-boot.html["inicie la imagen de recuperación"].

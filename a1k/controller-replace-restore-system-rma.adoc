@@ -11,66 +11,25 @@ summary: 'Compruebe que las interfaces lógicas (LIF) informan a su puerto princ
 
 
 [role="lead"]
-Para completar la sustitución de la controladora del sistema AFF A1K, primero restaure la configuración de cifrado del almacenamiento de NetApp (si es necesario) e instale las licencias requeridas en la controladora nueva. A continuación, confirme que las interfaces lógicas (LIF) informan a sus puertos principales y realizan una comprobación del estado del clúster. Finalmente, registre el número de serie de la nueva controladora y luego devuelva la pieza fallida a NetApp.
+Para completar el reemplazo de la controladora de su sistema AFF A1K, primero restaure la configuración de cifrado de almacenamiento de NetApp (si es necesario). A continuación, confirme que las interfaces lógicas (LIF) informan a sus puertos principales y realizan una comprobación del estado del clúster. Finalmente, devuelva la pieza defectuosa a NetApp.
 
 
 
-== Paso 1: Instalar las licencias para la controladora de reemplazo en ONTAP
+== Paso 1: Verifique las LIF y compruebe el estado del clúster
 
-Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
-
-.Antes de empezar
-Si su sistema estaba ejecutando inicialmente ONTAP 9.10,1 o posterior, utilice el procedimiento documentado en  https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system#Internal_Notes^["Proceso posterior al reemplazo de la placa base para actualizar las licencias en las plataformas ONTAP"]. Si no está seguro de la versión inicial de ONTAP para su sistema, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener más información.
-
-.Acerca de esta tarea
-* Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo _reader_. Sin embargo, si el nodo dañado era el único nodo del clúster con una licencia de la función, no se permiten cambios de configuración en la función.
-+
-Además, el uso de funciones sin licencia en el nodo podría descumplir con las normativas de su acuerdo de licencia, de modo que debe instalar la clave de licencia o las claves de reemplazo en el Lo antes posible. del nodo _reassement_.
-
-* Las claves de licencia deben tener el formato de 28 caracteres.
-* Dispone de un período de gracia de 90 días para instalar las claves de licencia. Una vez transcurrido el período de gracia, se invalidarán todas las licencias antiguas. Después de instalar una clave de licencia válida, dispone de 24 horas para instalar todas las claves antes de que finalice el período de gracia.
-* Si el nodo está en una configuración MetroCluster y todos los nodos de un sitio han sido sustituidos, las claves de licencia deben instalarse en el nodo _reader_ o en los nodos antes de llevar a cabo la conmutación al estado.
-
-
-.Pasos
-. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
-+
-
-NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
-
-. Instale cada clave de licencia: `+system license add -license-code license-key, license-key...+`
-. Elimine las licencias antiguas, si lo desea:
-+
-.. Comprobar si hay licencias no utilizadas: `license clean-up -unused -simulate`
-.. Si la lista parece correcta, elimine las licencias no utilizadas: `license clean-up -unused`
-
-
-
-
-
-
-== Paso 2: Verifique las LIF, registre el número de serie y compruebe el estado del clúster
-
-Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se encuentran en sus puertos principales y registrar el número de serie del nodo _reader_ si AutoSupport está habilitado y restablecer la devolución automática.
+Antes de devolver el nodo de sustitución al servicio, compruebe que las interfaces lógicas estén en sus puertos principales, compruebe el estado del clúster y restablezca la devolución automática.
 
 .Pasos
 . Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
 +
-Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert -vserver * -lif *`
-
-. Registre el número de serie del sistema con el soporte de NetApp.
-+
-** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
-** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
-
+Si alguna de las interfaces lógicas aparece como false, revertiéndela a sus puertos de inicio: `network interface revert -vserver * -lif *`
 
 . Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
-. Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 . Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
 
 
 
 
-== Paso 3: Devuelva la pieza que falló a NetApp
+== Paso 2: Devuelve la parte fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

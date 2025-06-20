@@ -230,10 +230,10 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 
 . Utilice la animación o la ilustración para completar el cableado entre las controladoras y los switches:
 +
-.Animación: Cableado de clúster sin switches de dos nodos
+.Animación: cableado de clúster sin conmutador de dos nodos
 video::da08295f-ba8c-4de7-88c3-ae7c0170408d[panopto]
 +
-image::../media/drw_9500_tnsc_network_cabling.svg[cableado de red drw 9500 tnsc]
+image::../media/drw_9500_tnsc_network_cabling.svg[Diagrama de cableado de red TNSC]
 
 +
 [cols="20%,80%"]
@@ -322,10 +322,10 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 
 . Utilice la animación o la ilustración para completar el cableado entre las controladoras y los switches:
 +
-.Animación: Cableado de clúster conmutado
+.Cableado de clúster conmutado de animación
 video::3ad3f118-8339-4683-865f-ae7c0170400c[panopto]
 +
-image::../media/drw_9500_switched_network_cabling.svg[cableado de red conmutada drw 9500]
+image::../media/drw_9500_switched_network_cabling.svg[Cableado de red de clúster conmutado]
 
 +
 [cols="20%,80%"]
@@ -422,10 +422,10 @@ NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no 
 
 . Utilice la siguiente animación o dibujos para cablear las controladoras a tres (una pila de una bandeja de unidades y una pila de dos bandejas de unidades) bandejas de unidades DS224C.
 +
-.Animación: Cableado de las estanterías de la unidad
+.Animación Conecte los estantes de sus unidades
 video::c958aae6-9d08-4d3d-a213-ae7c017040cd[panopto]
 +
-image::../media/drw_9500_sas_shelf_cabling.svg[cableado de bandejas sas drw 9500]
+image::../media/drw_9500_sas_shelf_cabling.svg[Cableado de estantería SAS]
 
 +
 [cols="20%,80%"]
@@ -434,13 +434,13 @@ image::../media/drw_9500_sas_shelf_cabling.svg[cableado de bandejas sas drw 9500
 
 
  a| 
-image::../media/icon_square_1_blue.png[icono cuadrado 1 azul]
+image::../media/icon_square_1_blue.png[Icono de llamada 1]
  a| 
 Conecte la pila de la bandeja de unidades uno a las controladoras, mediante el gráfico como referencia.
 
 * Cable Mini-SAS*
 
-image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[cable de la oie mini sas hd a mini sas hd]
+image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Cable de disco duro mini-SAS]
 
 
 
@@ -451,7 +451,7 @@ Conecte las bandejas de unidades dentro de la pila dos entre sí, utilizando el 
 
 * Cable Mini-SAS*
 
-image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[cable de la oie mini sas hd a mini sas hd]
+image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Cable de disco duro mini-SAS]
 
 
 
@@ -462,7 +462,7 @@ Conecte la pila de la bandeja de unidades dos a las controladoras con el gráfic
 
 * Cable Mini-SAS*
 
-image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[cable de la oie mini sas hd a mini sas hd]
+image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Cable de disco duro mini-SAS]
 
 |===
 
@@ -481,10 +481,10 @@ Si tiene la detección de red habilitada en el portátil, puede completar la con
 
 . Use la animación o el dibujo siguientes para establecer uno o varios ID de bandeja de unidades:
 +
-.Animación: Defina su ID de bandeja&#8217;s.
+.Animación Establezca los ID de su estante
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_power-on_set_shelf_ID_set.svg[drw enciende el conjunto de ID de bandeja]
+image::../media/drw_power-on_set_shelf_ID_set.svg[Encender y configurar la identificación del estante]
 
 +
 [cols="20%,80%"]
@@ -533,10 +533,10 @@ Espere 10 segundos para el LED ámbar (!) Para aparecer, apague y encienda la ba
 |===
 . Encienda los switches de alimentación de las fuentes de alimentación a ambos nodos.
 +
-.Animación: Active la alimentación de los controladores
+.Animación Encienda los controladores.
 video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
 +
-image::../media/drw_9500_power-on.svg[encendido del drw 9500]
+image::../media/drw_9500_power-on.svg[Encienda el sistema]
 
 +
 
@@ -548,10 +548,10 @@ Consulte la ayuda en línea de su portátil para obtener más información.
 
 . Utilice la siguiente animación para conectar el portátil al conmutador de administración.
 +
-.Animación: Conecte el portátil al conmutador de administración
+.Animación Conecte su computadora portátil al conmutador de administración
 video::d61f983e-f911-4b76-8b3a-ab1b0066909b[panopto]
 +
-image::../media/dwr_laptop_to_switch_only.svg[ordenador portátil dwr sólo para cambiar]
+image::../media/dwr_laptop_to_switch_only.svg[Cableado de computadora portátil a conmutador]
 
 . Seleccione un icono de ONTAP que aparece para detectar:
 +
@@ -605,17 +605,17 @@ NOTE: Consulte la ayuda en línea del portátil o de la consola para saber cómo
 
 .. Conecte el cable de consola al portátil o a la consola mediante el cable de consola incluido con el sistema y, a continuación, conecte el portátil al conmutador de la subred de administración.
 +
-image::../media/drw_9500_cable_console_switch_controller.svg[controlador de conmutador de consola de cable drw 9500]
+image::../media/drw_9500_cable_console_switch_controller.svg[Consola para cambiar la conexión]
 
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 
 
 . Utilice la animación siguiente para establecer uno o varios ID de bandeja de unidades:
 +
-.Animación: Defina su ID de bandeja&#8217;s.
+.Animación Establezca los ID de su estante
 video::95a29da1-faa3-4ceb-8a0b-ac7600675aa6[panopto]
 +
-image::../media/drw_power-on_set_shelf_ID_set.svg[drw enciende el conjunto de ID de bandeja]
+image::../media/drw_power-on_set_shelf_ID_set.svg[Encender y configurar la identificación del estante]
 
 +
 [cols="20%,80%"]
@@ -664,10 +664,10 @@ Espere 10 segundos para el LED ámbar (!) Para aparecer, apague y encienda la ba
 |===
 . Encienda los switches de alimentación de las fuentes de alimentación a ambos nodos.
 +
-.Animación: Active la alimentación de los controladores
+.Animación Encienda los controladores.
 video::a905e56e-c995-4704-9673-adfa0005a891[panopto]
 +
-image::../media/drw_9500_power-on.svg[encendido del drw 9500]
+image::../media/drw_9500_power-on.svg[Encienda el sistema]
 
 +
 

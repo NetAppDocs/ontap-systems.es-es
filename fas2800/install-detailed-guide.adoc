@@ -233,17 +233,18 @@ Switches de red host
 
 image::../media/oie_cable_pull_tab_down.png[Tire de la dirección de la pestaña]
 
+Puede utilizar la animación correspondiente o los pasos detallados de la tabla para cablear sus controladores a su red.
+
+.Animación: Cableado de clústeres sin switches de dos nodos
+video::90577508-fa79-46cf-b18a-afe8016325af[panopto]
+.Animación: Cableado de clúster conmutado
+video::6553a3db-57dd-4247-b34a-afe8016315d4[panopto]
 [role="tabbed-block"]
 ====
 .Opción 1: Conecte el cable de un clúster sin switch de dos nodos
 --
 Conecte mediante cable las conexiones de red y los puertos de interconexión de clúster para un clúster sin switches de dos nodos.
 
-.Acerca de esta tarea
-Use la animación o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches.
-
-.Animación: Cableado de clústeres sin switches de dos nodos
-video::90577508-fa79-46cf-b18a-afe8016325af[panopto]
 .Pasos
 . Conecte mediante cable los puertos de interconexión del clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster:
 +
@@ -320,11 +321,6 @@ IMPORTANT: NO enchufe los cables de alimentación.
 --
 Conecte mediante cable las conexiones de red y los puertos de interconexión de clúster para un clúster conmutado.
 
-.Acerca de esta tarea
-Use la animación o las instrucciones paso a paso para completar el cableado entre las controladoras y los switches.
-
-.Animación: Cableado de clúster conmutado
-video::6553a3db-57dd-4247-b34a-afe8016315d4[panopto]
 .Pasos
 . Conecte mediante cable los puertos de interconexión del clúster e0a a e0a y e0b a e0b con el cable de interconexión del clúster:
 +
@@ -446,31 +442,29 @@ video::b2a7549d-8141-47dc-9e20-afe8016f4386[panopto]
 .. El puerto 1 de IOM A al puerto 3 del IOM A en la bandeja directamente debajo.
 .. El puerto 1 de IOM B al puerto 3 del IOM B de la bandeja directamente debajo.
 +
-image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Conector mini SAS a mini SAS]
+image::../media/drw_2800_shelf-to-shelf_cabling_IEOPS-895.svg[Cableado de estante a estante]
 
 
 
+. Conecte el cable de la controladora A a las bandejas de unidades.
++
+.. Controladora A del puerto 0A al puerto IOM B 1 en la primera bandeja de unidades de la pila.
+.. Controladora A puerto 0b1 a IOM A puerto 3 en la última bandeja de unidades de la pila.
++
+image::../media/dwr-2800_controller1-to shelves_IEOPS-896.svg[Conexión del controlador A al estante]
 
 
-* MINI-SAS HD a mini-SAS HD cables *
 
-+ imagen::./media/drw_2800_shelf-to-shelf_cabling_IEOPS-895.svg[Cableado de bandeja a bandeja]
+. Conecte la controladora B a las bandejas de unidades.
++
+.. De la controladora B, el puerto 0A al IOM A 1 en la primera bandeja de unidades de la pila.
+.. Controladora B puerto 0b1 a puerto IOM B 3 en la última bandeja de unidades de la pila.
 
-+ . Conecte el cable de la controladora A a las bandejas de unidades. .. Controladora A del puerto 0A al puerto IOM B 1 en la primera bandeja de unidades de la pila. .. Controladora A puerto 0b1 a IOM A puerto 3 en la última bandeja de unidades de la pila.
 
-+ imagen::../media/ie_cable_mini_sas_hd_to_mini_sas_hd.svg[Conector Mini SAS a mini SAS]
++
+image::../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[Conexión del controlador B al estante]
 
-* MINI-SAS HD a mini-SAS HD cables *
 
-+ IMAGEN:../media/dwr-2800_controller1-to shelves_IEOPS-896.svg[Controlador A a la conexión de la bandeja]
-
-+ . Conecte la controladora B a las bandejas de unidades. .. De la controladora B, el puerto 0A al IOM A 1 en la primera bandeja de unidades de la pila. .. Controladora B puerto 0b1 a puerto IOM B 3 en la última bandeja de unidades de la pila.
-
-+ imagen::../media/ie_cable_mini_sas_hd_to_mini_sas_hd.svg[Conector Mini SAS a mini SAS]
-
-* MINI-SAS HD a mini-SAS HD cables *
-
-+ IMAGEN:../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[Conexión del controlador B a la bandeja]
 
 
 
@@ -478,6 +472,10 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Conector mini SAS a min
 
 Complete la instalación y la configuración del sistema de almacenamiento mediante la opción 1: Si la detección de red está habilitada o la opción 2: Si la detección de red no está habilitada.
 
+Utilice la siguiente animación en cualquier opción donde se requiera configurar el ID del estante:
+
+.Animación: Configure los identificadores de las bandejas de unidades
+video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 [role="tabbed-block"]
 ====
 .Opción 1: Si la detección de red está activada
@@ -485,10 +483,7 @@ Complete la instalación y la configuración del sistema de almacenamiento media
 Si la detección de red está activada en el portátil, complete la configuración y la instalación del sistema de almacenamiento mediante la detección automática de clústeres.
 
 .Pasos
-. Use la siguiente animación para encender la alimentación de la bandeja y establecer los ID de bandeja.
-+
-.Animación: Configure los identificadores de las bandejas de unidades
-video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
+. Encienda el estante y configure los identificadores del estante utilizando la animación al comienzo de este paso.
 . Encienda las controladoras
 +
 .. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
@@ -560,10 +555,7 @@ image::../media/drw_2800_laptop_to_switch_to_controller_IEOPS-1084.svg[Ordenador
 .. Asigne una dirección TCP/IP al portátil o consola, utilizando una que esté en la subred de gestión.
 
 
-. Utilice la animación siguiente para establecer uno o varios ID de bandeja de unidades:
-+
-.Animación: Configure los identificadores de las bandejas de unidades
-video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
+. Encienda el estante y configure los identificadores del estante usando la animación al comienzo de este paso.
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 . Encienda los switches de alimentación en ambos nodos.
 +
