@@ -3546,7 +3546,6 @@
   <block id="319d072de0a7eb80654d8506bc74de47" category="paragraph">Los cajones de unidad DCM2 se distinguen por una banda azul y una etiqueta "DCM2":</block>
   <block id="d5240bafd6bf54bcb59e9a9f899b324e" category="section-title">Prepare para sustituir un cajón de unidades</block>
   <block id="38cd7f0eca6a82b183b0f9dc3599583a" category="paragraph">Antes de sustituir un cajón de unidades, debe asegurarse de actualizar IOM12 FW si es necesario, y detener el par de alta disponibilidad, lo que le permite conservar los agregados de datos en la bandeja o tiene la opción de mantener el par de alta disponibilidad en funcionamiento. lo que requiere que mueva todos los datos de los agregados de datos que residen en las unidades de disco, desconectar y eliminar los agregados de datos. Sin embargo, si la bandeja contiene un agregado raíz, debe detener la pareja de alta disponibilidad. Por último, se debe apagar la bandeja.</block>
-  <block id="fca3ffea6534176432f58b5a22ed22e1" category="list-title">pasos</block>
   <block id="f1d6fcc8467c66247fc38fc5bb1e448c" category="list-text">Determine si al reemplazar el cajón de unidades con error, la bandeja tiene una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2.</block>
   <block id="bb92ef0e860f1f3c67a9c3a453b2781c" category="list-text">Si la bandeja tendrá una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2, debe actualizar el firmware IOM12 a la versión 0300 o posterior; de lo contrario, vaya al paso siguiente.</block>
   <block id="62f67af3803932031f11d177b5600361" category="list-text">Si la bandeja contiene el agregado raíz de una de las controladoras del par de alta disponibilidad, o si decide detener el par de alta disponibilidad (en lugar de mantener el par de alta disponibilidad en funcionamiento), realice los siguientes subpasos; de lo contrario, vaya al siguiente paso.</block>
@@ -3557,7 +3556,6 @@
   <block id="4bd0b0c2b519de54df41bc77088d8182" category="list-text">Vaya a la sección, <block ref="f9b764c55080d7cf77ed91e890c43565" category="inline-xref-macro-rx"></block>.</block>
   <block id="eb1a8e53bca0fcb026633a23b562bfff" category="list-text">Si decide mantener el par de alta disponibilidad en funcionamiento, complete los siguientes subpasos:</block>
   <block id="1aea84d8e76217145d77f4dd7efe6f8f" category="admonition">Si se intenta sustituir un cajón con agregados en la bandeja de discos, se podría producir una interrupción del sistema con un evento de pánico de varios discos.</block>
-  <block id="ea0b163daac6d7d1dbcf0110733b7a5c" category="list-text">Mover todos los datos de los agregados de datos que residen en las unidades de disco.</block>
   <block id="a3285b442e65f70add01ba5f44551d15" category="paragraph">Los datos incluyen volúmenes y LUN, pero no están limitados a ellos.</block>
   <block id="cf798cab97b54ad5fe43c91a959754ca" category="list-text">Desmenuar y eliminar los agregados para permitir que las unidades de disco se conviertan en repuestos:</block>
   <block id="19613506a0ea4d74ae9e654ba0e170e6" category="paragraph">Pueden introducirse comandos desde el shell en clúster de cualquiera de las controladoras.</block>
@@ -10073,7 +10071,6 @@ SFP+ (destino/iniciador)</block>
   <block id="d16a227aab66041a81c6f88b290eb486" category="section-title">Paso 1: Conecte los cables de las conexiones del clúster/alta disponibilidad</block>
   <block id="134e0586a0879fa097abfb47d5e64dbe" category="open-title">Cableado de clúster sin switches</block>
   <block id="ee68cf12a16ca46d58bedd8cf9051f32" category="example-title">AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos</block>
-  <block id="1de8dab1beab3d5ee0495c66a3c814b7" category="paragraph">Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.</block>
   <block id="a8d16746fb80901317600cba36862a10" category="list-text">Conectar las conexiones de interconexión de clúster/alta disponibilidad:</block>
   <block id="6780657f10ef4bbe5e784f3b1e7777e3" category="admonition">El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en los módulos de I/O en las ranuras 2 y 4). Los puertos son 40/100 GbE.</block>
   <block id="efe3bfda2c730f42fd2741bc4722e6f0" category="list-text">Conecte el cable del controlador A del puerto E2A al puerto E2A de la controladora B.</block>
@@ -10544,7 +10541,6 @@ SFP+ (destino/iniciador)</block>
   <block id="b3fb7cc55fec6d7df9078e2ee7739718" category="paragraph">Cuando se inserta correctamente, el módulo DIMM entra fácilmente pero encaja firmemente en la ranura. De lo contrario, vuelva a insertar el DIMM.</block>
   <block id="7e08ee4b466dc677d31c40c8b0488339" category="list-text">Compruebe visualmente el módulo DIMM para asegurarse de que está alineado uniformemente y completamente insertado en la ranura.</block>
   <block id="34f650ca44fabe66ff7e4095a137da22" category="list-text">Asegúrese de que el resto de componentes del sistema de almacenamiento funcionan correctamente. De lo contrario, póngase en contacto<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block> antes de continuar».</block>
-  <block id="54d890bf92693607c99bccb67f9933f5" category="paragraph">Conecte los cables de las controladoras para crear las conexiones del clúster ONTAP.</block>
   <block id="d48b3cfe096b47bcb7f13e683c934beb" category="paragraph">Conecte las controladoras a la red host Ethernet o FC.</block>
   <block id="bb8661c49545cac68358046e25b8f950" category="open-title">Cableado del host Ethernet</block>
   <block id="3c90cea8d34e6c024dcfcf7fbe2bc396" category="example-title">AFF A20, A30 o AFF A50 con un módulo I/O de 10/25 GbE de 4 puertos</block>
@@ -11729,7 +11725,6 @@ SFP+ (destino/iniciador)</block>
   <block id="db424e93139f05b40145c02ca1496dab" category="image-alt">Reemplace la batería NVDIMM</block>
   <block id="f01c12d2b181f3fa692e46f31483240d" category="list-text">Asegúrese de que las clavijas guía del armario o del bastidor de telecomunicaciones estén aisladas en las ranuras de guía del chasis.</block>
   <block id="0ce45b8799d32fa93b50aed5301e827b" category="list-text">Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila. + <block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block> MINI-SAS HD a mini-SAS HD cables</block>
-  <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">Los procedimientos de cableado de red clúster/alta disponibilidad y host muestran configuraciones comunes.</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">Si no se muestra aquí la configuración, vaya a <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> para obtener información completa de prioridad de ranura y configuración para cablear el sistema de almacenamiento.</block>
   <block id="2e169c8e6f4cc1f6315545b46d7284a2" category="inline-image-macro">Cable fc de 64 GB</block>
   <block id="0bf370304560205688213d22ba637c07" category="paragraph"><block ref="0bf370304560205688213d22ba637c07" category="inline-image-macro-rx" type="image"></block></block>
@@ -12021,4 +12016,15 @@ SFP+ (destino/iniciador)</block>
   <block id="bcbe9ce5b2d50ad0b254f40cda6fc7e1" category="image-alt">Encender y configurar la identificación del estante</block>
   <block id="43f978a7787080590a53cc2abdd637c9" category="image-alt">Reemplace el módulo LED</block>
   <block id="a54c219a955221bc0586ab22f8a07401" category="image-alt">Reemplace la batería RTC</block>
+  <block id="14d4a75ecbe13082ebd840dc7d091f2c" category="section-title">Paso 4: Instalar los controladores y las unidades</block>
+  <block id="7aa6db479f57ead7ac39225f410bdf2d" category="paragraph">Instale los controladores y las unidades en el chasis de reemplazo y reinicie los controladores.</block>
+  <block id="3dbc14ba753f9b6deb52fc17f8c85cec" category="paragraph">Reemplace el chasis del sistema AFF A20, AFF A30 o AFF A50 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica quitar los controladores, quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
+  <block id="fde22ae5f3a1cc39c61853ffe9a68675" category="paragraph">Cree las conexiones del clúster de ONTAP. En el caso de clústeres sin switch, conecte las controladoras entre sí. En el caso de los clústeres con switches, conecte las controladoras a los switches de red de clúster.</block>
+  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">Los ejemplos de cableado de clúster/HA muestran configuraciones comunes.</block>
+  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">Los ejemplos de cableado de red host muestran configuraciones comunes.</block>
+  <block id="6ce95ae69a1e0ed801b4369491228162" category="paragraph">Reemplace el chasis del sistema ASA A20, ASA A30 o ASA A50 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica quitar los controladores, quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
+  <block id="d756679882bcf80d5a80fd42020d0f25" category="paragraph">Reemplace el chasis de su sistema de almacenamiento ASA C30 cuando una falla de hardware lo requiera. El proceso de reemplazo implica quitar los controladores, quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
+  <block id="72dc238e73081e826d88e29df24b4c58" category="paragraph">Reemplace el chasis del sistema AFF C30 o AFF C60 cuando un fallo de hardware lo requiera. El proceso de reemplazo implica quitar los controladores, quitar las unidades, instalar el chasis de reemplazo y reinstalar los componentes del chasis.</block>
+  <block id="149eed3e03e259c4e52b1de45a4fe3e9" category="paragraph">Para reemplazar un cajón de unidades en un estante, puede detener todo el sistema de almacenamiento (par de alta disponibilidad), lo que le permite conservar los agregados de datos en el estante. Como alternativa, puede mantener el par de alta disponibilidad en funcionamiento, lo que requiere mover todos los datos de los agregados de datos en las unidades de disco del estante y, a continuación, desconectarlos y eliminarlos. Si el estante contiene un agregado raíz, debe detener el par de alta disponibilidad.</block>
+  <block id="12e16a41f9ae5c97288e4e9e78b0bbf6" category="list-text">Mueva todos los datos de los agregados de datos ubicados en todas las unidades de disco en el estante.</block>
 </blocks>

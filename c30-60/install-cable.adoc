@@ -17,10 +17,6 @@ Después de instalar el hardware del sistema de almacenamiento AFF C30 o AFF C60
 Póngase en contacto con el administrador de red para obtener información sobre cómo conectar el sistema de almacenamiento a los switches de red.
 
 .Acerca de esta tarea
-* Los procedimientos de cableado de red clúster/alta disponibilidad y host muestran configuraciones comunes.
-+
-Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información completa de prioridad de ranura y configuración para cablear el sistema de almacenamiento.
-
 * Los gráficos de cableado tienen iconos de flecha que muestran la orientación correcta (hacia arriba o hacia abajo) de la lengüeta extraíble del conector de cable al insertar un conector en un puerto.
 +
 Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, vuelva a convertirlo y vuelva a intentarlo.
@@ -35,8 +31,15 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Dirección de la len
 
 == Paso 1: Conecte los cables de las conexiones del clúster/alta disponibilidad
 
-Conecte los cables de las controladoras entre sí para crear las conexiones del clúster de ONTAP.
+Cree las conexiones del clúster de ONTAP. En el caso de clústeres sin switch, conecte las controladoras entre sí. En el caso de los clústeres con switches, conecte las controladoras a los switches de red de clúster.
 
+[NOTE]
+====
+Los ejemplos de cableado de clúster/HA muestran configuraciones comunes.
+
+Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información completa de prioridad de ranura y configuración para cablear el sistema de almacenamiento.
+
+====
 [role="tabbed-block"]
 ====
 .Cableado de clúster sin switches
@@ -168,6 +171,13 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[C
 
 Conecte las controladoras a la red host Ethernet o FC.
 
+[NOTE]
+====
+Los ejemplos de cableado de red host muestran configuraciones comunes.
+
+Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información completa de prioridad de ranura y configuración para cablear el sistema de almacenamiento.
+
+====
 [role="tabbed-block"]
 ====
 .Cableado del host Ethernet
