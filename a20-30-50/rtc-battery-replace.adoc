@@ -401,6 +401,18 @@ FUENTE DE ALIMENTACIÓN DE CC
 
 
 |===
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Si AutoSupport está habilitado, restaure (desactive) la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 
@@ -412,21 +424,31 @@ NOTE: Después de reemplazar la batería de RTC, insertar la controladora y ence
 `RTC date/time error. Reset date/time to default`
 `RTC power failure error` Estos mensajes son esperados y puede continuar con este procedimiento.
 
-. En la controladora en buen estado, compruebe la fecha y la hora con `cluster date show` el comando.
+. En el controlador en buen estado, verifique la fecha y la hora:
++
+`cluster date show`
+
 +
 
 NOTE: Si el sistema de almacenamiento se detiene en el menú de arranque, seleccione la opción  `Reboot node`y responda _y_ cuando se le solicite, a continuación, arranque en Loader pulsando _Ctrl-C_.
 
-. En el controlador afectado, en el aviso de Loader, compruebe la hora y la fecha: `cluster date show`
+. En el controlador dañado, en el indicador LOADER, verifique la hora y la fecha:
 +
-.. Si es necesario, modifique la fecha: `set date _mm/dd/yyyy_`
-.. Si es necesario, ajuste la hora, en GMT: `set time hh:mm:ss`
+`cluster date show`
+
++
+.. Si es necesario, modifique la fecha:
++
+`set date _mm/dd/yyyy_`
+
+.. Si es necesario, configure la hora, en GMT:
++
+`set time hh:mm:ss`
+
 .. Confirme la fecha y la hora.
 
 
 . En el aviso de Loader, introduzca `bye` para reinicializar los módulos de I/O y otros componentes y dejar que se reinicie la controladora.
-. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
-. Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
 
 
 

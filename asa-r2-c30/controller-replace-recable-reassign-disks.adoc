@@ -51,8 +51,8 @@ NOTE: Se le pedirá dos veces la frase de contraseña.
 . Mueva el cable de la consola al nodo asociado e inicie sesión como `admin`.
 . Devolver solo los agregados de CFO (el agregado raíz): `storage failover giveback -fromnode local -only-cfo-aggregates _true_`
 +
-** Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
+NOTE: Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
 
 . Espere 5 minutos después de que se complete el informe de devolución y compruebe el estado de la conmutación por error y el estado de la devolución: `storage failover show` Y `storage failover show-giveback`.
 . Sincronizar y verificar el estado de las claves:

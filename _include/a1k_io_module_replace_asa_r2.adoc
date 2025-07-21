@@ -143,13 +143,13 @@ Después de sustituir un módulo de I/O, debe reiniciar la controladora.
 
 NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
 
-. Devolver al nodo a su funcionamiento normal:
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
 +
 `storage failover giveback -ofnode _impaired_node_name_`
 
 . Restaure la devolución automática del control desde la consola de la controladora en buen estado:
 +
-`storage failover modify -node local -auto-giveback _true_`
+`storage failover modify -node local -auto-giveback true`
 
 . Si AutoSupport está habilitado, restaure la creación automática de casos:
 +
