@@ -4,25 +4,14 @@ sidebar: sidebar
 keywords: change, shelf, id, system, ontap, run, hot-add, ontap, controller, module, available, serve, data, unown, spare, offline, aggregate 
 summary: 'Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También es posible cambiar un ID de bandeja cuando ONTAP está activo y en ejecución \(los módulos de controladora están disponibles para servir datos\) y todas las unidades de la bandeja son propiedad de la bandeja, piezas de repuesto o parte de un agregado(s\) apagado.' 
 ---
-= Cambiar un ID de bandeja - bandejas con módulos IOM12/IOM12B
+= Cambiar la identificación de un estante: DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También puede cambiar un ID de bandeja cuando ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos) y todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
-
-.Antes de empezar
-* Si ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos), debe haber verificado que todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
-+
-Es posible verificar el estado de las unidades mediante el `storage disk show -shelf _shelf_number_` comando. El resultado de la columna Container Type debe mostrar el texto de repuesto o roto si es una unidad con error. Además, las columnas Nombre de contenedor y propietario deben tener un guión.
-
-* Puede verificar los ID de bandeja que ya están en uso en el sistema ejecutando Active IQ Config Advisor o mediante el `storage shelf show -fields shelf-id` comando.
-+
-https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargas de NetApp: Config Advisor"]
-
-
+Puede cambiar el ID de un estante en un sistema con módulos IOM12/IOM12B cuando ONTAP aún no se esté ejecutando o al añadir un estante en caliente antes de cablearlo al sistema. También puede cambiar el ID de un estante cuando ONTAP esté en funcionamiento (los módulos del controlador estén disponibles para servir datos) y todas las unidades del estante no tengan propietario, sean de repuesto o formen parte de agregados fuera de línea.
 
 .Acerca de esta tarea
 * Un ID de bandeja válido tiene un valor de 00 a 99.
@@ -34,6 +23,14 @@ Si dispone de una plataforma con almacenamiento interno, los ID de bandeja deben
 +
 La cantidad de tiempo que espera antes de volver a encender la alimentación depende del estado de ONTAP, como se describe más adelante en este procedimiento.
 
+
+
+.Antes de empezar
+* Si ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos), debe haber verificado que todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.
++
+Es posible verificar el estado de las unidades mediante el `storage disk show -shelf _shelf_number_` comando. El resultado de la columna Container Type debe mostrar el texto de repuesto o roto si es una unidad con error. Además, las columnas Nombre de contenedor y propietario deben tener un guión.
+
+* Puede verificar los identificadores de estantes que ya están en uso en su sistema ejecutando Active IQ Config Advisor o utilizando el  `storage shelf show -fields shelf-id` Comando. Puedes  https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargue y acceda al Active IQ Config Advisor"] en el sitio de soporte de NetApp .
 
 
 .Pasos

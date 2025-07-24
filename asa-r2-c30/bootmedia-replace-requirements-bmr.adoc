@@ -13,15 +13,8 @@ summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamien
 [role="lead"]
 Antes de reemplazar el medio de arranque en su sistema de almacenamiento ASA C30, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
 
-
-
-== Requisitos
-
 * Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
-* El puerto e0S (llave e0M) de la controladora dañada no puede estar defectuoso.
-+
-El puerto e0S se utiliza para la recuperación automática del arranque.
-
+* El puerto e0S (llave e0M) se utiliza para la comunicación entre los dos controladores durante el proceso de recuperación de arranque automático. Asegúrese de que el puerto e0S del controlador dañado funcione correctamente.
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
@@ -31,24 +24,11 @@ El puerto e0S se utiliza para la recuperación automática del arranque.
 ** Archivo /cfcard/kmip/certs/ca.pem.
 
 
-
-
-
-
-== Consideraciones
-
-* Es importante que aplique los comandos en estos pasos en la controladora correcta:
+* Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
 +
-** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
-** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+** El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+** El _controlador saludable_ es el socio HA del controlador dañado.
 
-
-* Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
-+
-Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
-
-+
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
 

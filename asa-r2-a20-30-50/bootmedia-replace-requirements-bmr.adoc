@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the boot media 
-summary: 'Antes de sustituir el medio de arranque en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50, asegúrese de cumplir con los requisitos y consideraciones necesarios para que se realice un reemplazo correcto. Esto incluye la verificación de que tiene el soporte de arranque de reemplazo correcto, la confirmación de que el puerto e0S (llave e0M) de la controladora dañada no es defectuoso y determinar si está habilitado el administrador de claves incorporado (OKM) o el administrador de claves externo (EKM).' 
+summary: 'Antes de reemplazar el medio de arranque de su sistema de almacenamiento ASA A20, ASA A30 o ASA A50, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.' 
 ---
 = Requisitos para sustituir el medio de arranque: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,17 +11,12 @@ summary: 'Antes de sustituir el medio de arranque en su sistema de almacenamient
 
 
 [role="lead"]
-Antes de sustituir el medio de arranque en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50, asegúrese de cumplir con los requisitos y consideraciones necesarios para que se realice un reemplazo correcto. Esto incluye la verificación de que tiene el soporte de arranque de reemplazo correcto, la confirmación de que el puerto e0S (llave e0M) de la controladora dañada no es defectuoso y determinar si está habilitado el administrador de claves incorporado (OKM) o el administrador de claves externo (EKM).
+Antes de reemplazar el medio de arranque de su sistema de almacenamiento ASA A20, ASA A30 o ASA A50, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
 
-
-
-== Requisitos
+Revise los siguientes requisitos.
 
 * Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
-* El puerto e0S (llave e0M) de la controladora dañada no puede estar defectuoso.
-+
-El puerto e0S se utiliza para la recuperación automática del arranque.
-
+* El puerto e0S (llave e0M) se utiliza para la comunicación entre los dos controladores durante el proceso de recuperación de arranque automático. Asegúrese de que el puerto e0S del controlador dañado funcione correctamente.
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
@@ -31,24 +26,11 @@ El puerto e0S se utiliza para la recuperación automática del arranque.
 ** Archivo /cfcard/kmip/certs/ca.pem.
 
 
-
-
-
-
-== Consideraciones
-
-* Es importante que aplique los comandos en estos pasos en la controladora correcta:
+* Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
 +
-** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
-** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+** El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+** El _controlador saludable_ es el socio HA del controlador dañado.
 
-
-* Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
-+
-Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
-
-+
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
 

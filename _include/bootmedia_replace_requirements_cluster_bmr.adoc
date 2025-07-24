@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Revise los siguientes requisitos.
+
+* Debe sustituir el medio de arranque con errores por un medio de arranque de reemplazo que recibió desde NetApp.
+* Los puertos del clúster se utilizan para la comunicación entre los dos controladores durante el proceso de recuperación de arranque automático. Asegúrese de que los puertos del clúster del controlador dañado funcionen correctamente.
+* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para EKM, necesita copias de los siguientes archivos del nodo asociado:
++
+** /cfcard/kmip/servers.cfg
+** /cfcard/kmip/certs/client.crt
+** /cfcard/kmip/certs/cliente.clave
+** /cfcard/kmip/certs/CA.pem
+
+
+* Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
++
+** El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+** El _controlador saludable_ es el socio HA del controlador dañado.
+
+
+

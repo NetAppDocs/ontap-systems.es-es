@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b, concepts 
 summary: 'Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de pares de alta disponibilidad y de controladoras individuales (para plataformas compatibles).' 
 ---
-= Reglas y conceptos de cableado SAS: Bandejas con módulos IOM12/IOM12B
+= Reglas y conceptos de cableado SAS: DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: 'Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en c
 Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de par de alta disponibilidad y de controlador único (para plataformas compatibles) aplicando las reglas de cableado SAS: Reglas de configuración, reglas de numeración de ranuras de controladoras, reglas de conexión de bandeja a bandeja, reglas de conexión de controladora a pila y, si procede, reglas de cables ópticos mini-SAS HD.
 
 
-NOTE: Las reglas de cableado SAS respecto a las reglas de numeración de las ranuras de la controladora, las reglas de conexión de bandeja a bandeja y las reglas de conexión de controladora a pila descritas en esta guía son las mismas reglas que se aplican a todas las bandejas de discos SAS, ya tengan módulos IOM12/IOM12B, IOM6 o IOM3. Sin embargo, la información de esta guía es específica de las características únicas de las bandejas de discos con módulos IOM12/IOM12B y su uso en las configuraciones compatibles.
+NOTE: Las reglas de cableado SAS descritas en esta guía, relativas a la numeración de ranuras de controlador, las reglas de conexión entre estantes y las reglas de conexión entre controlador y pila, son las mismas que se aplican a todas las bandejas de discos SAS, independientemente de si tienen módulos IOM12 o IOM12B. Sin embargo, la información de esta guía se centra en las características únicas de las bandejas de discos con módulos IOM12/IOM12B y su uso en las configuraciones compatibles.
 
 Las reglas de cableado SAS con respecto a las reglas de configuración y las reglas de cable óptico mini-SAS HD SAS descritas en esta guía son específicas de las bandejas de discos con módulos IOM12/IOM12B.
 
@@ -33,9 +33,6 @@ Debe evitar desviarse de las reglas; las desviaciones pueden reducir la confiabi
 == Reglas de configuración
 
 Las bandejas de discos con módulos IOM12/IOM12B son compatibles con tipos específicos de configuraciones de par de alta disponibilidad y de controladora única.
-
-
-NOTE: Las plataformas FAS25XX no se tratan en este contenido.
 
 [NOTE]
 ====

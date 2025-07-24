@@ -1,0 +1,283 @@
+---
+permalink: fas50/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: fas50, replace the boot media 
+summary: El medio de arranque de su sistema de almacenamiento FAS50 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica retirar el módulo controlador, retirar el medio de arranque dañado, instalar el nuevo medio de arranque y, finalmente, reinstalar el módulo controlador. 
+---
+= Reemplace el medio de arranque para la recuperación de arranque automatizada - FAS50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El medio de arranque de su sistema de almacenamiento FAS50 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica retirar el módulo controlador, retirar el medio de arranque dañado, instalar el nuevo medio de arranque y, finalmente, reinstalar el módulo controlador.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+
+
+== Acerca de esta tarea
+
+Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
+
+Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
+== Paso 1: Quite la controladora
+
+Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
+
+.Antes de empezar
+Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionan correctamente; de lo contrario, debe contactar https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+.Pasos
+. En el controlador deteriorado, asegúrese de que el LED NV está apagado.
++
+Cuando el LED NV está apagado, la separación se completa y es seguro retirar el controlador defectuoso.
+
++
+
+NOTE: Si el LED NV parpadea (verde), la separación está en curso. Debe esperar a que se apague el LED NV. Sin embargo, si el parpadeo continúa durante más de cinco minutos, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
++
+El LED NV se encuentra junto al icono de NV de la controladora.
+
++
+image::../media/drw_g_nvmem_led_ieops-1839.svg[Ubicación del LED de estado de NV]
+
+
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Icono de NV y LED en el controlador
+
+|===
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte la alimentación del controlador dañado:
++
+
+NOTE: Las fuentes de alimentación (PSU) no tienen un interruptor de alimentación.
+
++
+[cols="1,2"]
+|===
+| Si va a desconectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Abra el retén del cable de alimentación.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Desenrosque los dos tornillos de mariposa del conector del cable de alimentación de CC D-SUB.
+.. Desconecte el cable de alimentación de la fuente de alimentación y déjelo a un lado.
+
+
+|===
+. Desconecte todos los cables del controlador dañado.
++
+Mantenga un registro de dónde se conectaron los cables.
+
+. Retire el controlador deteriorado:
++
+En la siguiente ilustración, se muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de la controladora) al quitar una controladora:
+
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[asa la operación de la controladora para quitar una controladora]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del controlador, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para desalojar el controlador del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera del controlador y luego siente algo de resistencia, siga tirando.
+
+** Deslice el controlador para sacarlo del chasis mientras sostiene la parte inferior del controlador y colóquelo en una superficie plana y estable.
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
+
+|===
+. Coloque el controlador sobre una alfombrilla antiestática.
+. Abra la cubierta del controlador girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Para sustituir el medio de arranque, búsquelo dentro de la controladora y siga la secuencia de pasos específica.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el soporte de arranque:
++
+image::../media/drw_g_boot_media_replace_ieops-1872.svg[Gráfico de sustitución de soporte de arranque]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Ubicación del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Presione la pestaña azul hacia abajo para soltar el extremo derecho del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el extremo derecho del soporte de arranque en un ángulo ligero para conseguir un buen agarre a lo largo de los laterales del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Número de llamada 4]
+ a| 
+Tire suavemente del extremo izquierdo del soporte de arranque para extraerlo de su toma.
+
+|===
+. Instale el soporte de arranque de repuesto:
++
+.. Retire el soporte de arranque de su paquete.
+.. Deslice el extremo de la toma del soporte de arranque en su toma.
+.. En el extremo opuesto del soporte de arranque, presione y mantenga presionada la lengüeta azul (en la posición abierta), presione suavemente hacia abajo ese extremo del soporte de arranque hasta que se detenga, y luego suelte la pestaña para bloquear el soporte de arranque en su lugar.
+
+
+
+
+
+
+== Paso 3: Vuelva a instalar el controlador
+
+Vuelva a instalar la controladora en el chasis y reiníciela.
+
+.Acerca de esta tarea
+La siguiente ilustración muestra el funcionamiento de las asas de la controladora (desde el lado izquierdo de una controladora) al reinstalar la controladora y se puede utilizar como referencia para el resto de los pasos de reinstalación de la controladora.
+
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[operación de manija del controlador para instalar un controlador]
+
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si giró las asas del controlador en posición vertical (junto a las pestañas) para alejarlas mientras realizaba el mantenimiento del controlador, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Empuje las asas para volver a insertar el controlador en el chasis hasta la mitad y, a continuación, cuando se le indique, empuje hasta que el controlador esté completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas de bloqueo.
+
+|===
+.Pasos
+. Cierre la cubierta del controlador y gire el tornillo de mariposa hacia la derecha hasta que se apriete.
+. Inserte la controladora a la mitad en el chasis.
++
+Alinee la parte posterior de la controladora con la apertura del chasis y empuje suavemente la controladora con las asas.
+
++
+
+NOTE: No inserte por completo la controladora en el chasis hasta que se le indique hacerlo más adelante en este procedimiento.
+
+. Vuelva a conectar los cables a la controladora; sin embargo, no conecte el cable de alimentación al suministro de alimentación (PSU) en este momento.
++
+
+NOTE: Asegúrese de que el cable de la consola está conectado a la controladora porque desea capturar y registrar la secuencia de arranque más adelante en el procedimiento de sustitución de medios de arranque cuando coloque completamente la controladora en el chasis y comience a arrancar.
+
+. Coloque completamente la controladora en el chasis:
++
+.. Empuje firmemente las asas hasta que el controlador se encuentre con el plano medio y quede completamente asentado.
++
+No ejerza demasiada fuerza al deslizar el controlador en el chasis, ya que podría dañar los conectores.
+
++
+
+NOTE: La controladora arranca en el símbolo del sistema DE Loader cuando está completamente instalada en el chasis. Obtiene su poder del controlador asociado.
+
+.. Gire las asas del controlador hacia arriba y bloquéelas en su lugar con las lengüetas.
+
+
+. Vuelva a conectar el cable de alimentación a la PSU de la controladora afectada.
++
+Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+
++
+[cols="1,2"]
+|===
+| Si va a volver a conectar un... | Realice lo siguiente... 
+
+
+ a| 
+PSU DE CA
+ a| 
+.. Conecte el cable de alimentación a la fuente de alimentación.
+.. Fije el cable de alimentación con el retén del cable de alimentación.
+
+
+
+
+ a| 
+FUENTE DE ALIMENTACIÓN DE CC
+ a| 
+.. Conecte el conector del cable de alimentación de CC D-SUB a la PSU.
+.. Apriete los dos tornillos de mariposa para fijar el conector del cable de alimentación de CC D-SUB a la PSU.
+
+
+|===
+
+
+.El futuro
+Después de sustituir físicamente el soporte de arranque defectuoso, link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen ONTAP desde el nodo del partner"].

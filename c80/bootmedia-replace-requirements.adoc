@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff c80, replace the boot media 
 summary: Antes de sustituir los medios de arranque en su sistema AFF C80, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto. 
 ---
-= Requisitos para sustituir el soporte de arranque - AFF C80
+= Requisitos para la recuperación manual del medio de arranque - AFF C80
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,17 +13,22 @@ summary: Antes de sustituir los medios de arranque en su sistema AFF C80, asegú
 [role="lead"]
 Antes de sustituir los medios de arranque en su sistema AFF C80, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto.
 
-Revise los siguientes requisitos.
-
-* Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.
-* Debe copiar `image_xxx.tgz` el archivo en la unidad flash USB para su uso posterior en este procedimiento.
-* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
-* Es importante que aplique los comandos en estos pasos en la controladora correcta:
-+
-** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
-** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+.unidad flash USB
+* Asegúrese de tener una unidad flash USB formateada en FAT32.
+* El USB debe tener suficiente capacidad de almacenamiento para contener el  `image_xxx.tgz` archivo.
 
 
+.Preparación de archivos
+Copiar el  `image_xxx.tgz` Archivo a la memoria USB. Este archivo se usará al transferir la imagen de ONTAP mediante la memoria USB.
+
+.Reemplazo de componentes
+Reemplace el componente fallado con el componente de reemplazo proporcionado por NetApp.
+
+.Identificación del controlador
+Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
+
+* El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+* El _controlador saludable_ es el socio HA del controlador dañado.
 
 
 .El futuro

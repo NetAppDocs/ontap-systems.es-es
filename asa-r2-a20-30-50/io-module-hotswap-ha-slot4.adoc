@@ -1,0 +1,298 @@
+---
+permalink: asa-r2-a20-30-50/io-module-hotswap-ha-slot4.html 
+sidebar: sidebar 
+keywords: asa a20, asa a30, asa a50, hotswap a cluster ha card 
+summary: 'El módulo de E/S de clúster y alta disponibilidad (HA) admite interconexiones para agrupamiento en clústeres y alta disponibilidad. Puede intercambiar el módulo en caliente en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 cuando falla.' 
+---
+= Intercambio en caliente del módulo de E/S utilizado para el tráfico de clúster y HA: ASA A20, ASA A30 y ASA A50
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El módulo de E/S de clúster y alta disponibilidad (HA) admite interconexiones para agrupamiento en clústeres y alta disponibilidad. Puede intercambiar el módulo en caliente en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 cuando falle y si su sistema de almacenamiento cumple con los requisitos específicos.
+
+El proceso de intercambio en caliente implica preparar el sistema de almacenamiento y la ranura 4 del módulo de E/S para que sea seguro quitar el módulo fallido, intercambiar en caliente el módulo fallido por uno equivalente, poner en línea el módulo de reemplazo, restaurar el sistema de almacenamiento a su funcionamiento normal y devolver el módulo fallido a NetApp.
+
+.Antes de empezar
+* Su sistema de almacenamiento debe cumplir todos los siguientes requisitos para poder utilizar este procedimiento.
++
+
+NOTE: Si su sistema de almacenamiento no cumple con todos los requisitos siguientes, deberá utilizar el link:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"] .
+
++
+** Su sistema de almacenamiento debe ejecutar ONTAP 9.17.1 o posterior.
+** El módulo de E/S que falló debe ser un módulo de E/S de clúster y HA en la ranura 4, y debe reemplazarlo por otro módulo de E/S de clúster y HA. No se puede cambiar el tipo de módulo de E/S.
+** La configuración de su sistema de almacenamiento debe tener solo un clúster y un módulo de E/S de HA ubicados en la ranura 4, no dos clústeres y módulos de E/S de HA.
+** Su sistema de almacenamiento debe ser una configuración de clúster de dos nodos (conmutados o sin conmutador).
+** El controlador con el clúster y el módulo de E/S de alta disponibilidad fallidos (el controlador dañado) ya debe haber asumido el control del controlador asociado en buen estado. La asumida debería haberse realizado automáticamente si el módulo de E/S falla.
++
+En clústeres de dos nodos, el sistema de almacenamiento no puede discernir qué controlador tiene el módulo de E/S fallido, por lo que cualquiera de ellos podría iniciar la sustitución. El procedimiento de intercambio en caliente del clúster y del módulo de E/S de alta disponibilidad solo se admite cuando el controlador con el módulo de E/S fallido (el controlador dañado) ha sustituido al controlador en buen estado.
+
++
+Puede verificar que el controlador dañado tomó control exitosamente del controlador saludable ingresando el  `storage failover show` dominio.
+
++
+Si no está seguro de qué controlador tiene el módulo de E/S fallido, comuníquese con  https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] .
+
+
+
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+.Acerca de esta tarea
+* El intercambio en caliente del clúster y del módulo de E/S de HA significa que no es necesario realizar una toma de control manual; el controlador dañado (el controlador con el clúster y el módulo de E/S de HA fallidos) ha tomado el control automáticamente del controlador en buen estado.
++
+Cuando el controlador dañado ha tomado el control del controlador saludable, la única forma de recuperarse sin una interrupción es intercambiar el módulo en caliente.
+
+* Es fundamental aplicar los comandos al controlador correcto cuando se intercambian en caliente el clúster y el módulo de E/S de HA:
++
+** El _controlador dañado_ es el controlador en el que está intercambiando en caliente el clúster y el módulo de E/S de alta disponibilidad y es el controlador que ha tomado el control del controlador en buen estado.
+** El _controlador saludable_ es el socio de HA del controlador dañado y es el controlador que fue tomado por el controlador dañado.
+
+
+* Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
++
+Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
+
+
+== Paso 1: Prepare el sistema de almacenamiento y la ranura del módulo de E/S 4
+
+Prepare el sistema de almacenamiento y la ranura del módulo de E/S 4 para que sea seguro quitar el clúster fallido y el módulo de E/S de alta disponibilidad:
+
+. Puesta a tierra apropiadamente usted mismo.
+. Desconecte el cableado del clúster fallido y del módulo de E/S de HA.
++
+Asegúrese de etiquetar los cables para que más adelante en este procedimiento pueda volver a conectarlos a los mismos puertos.
+
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Por ejemplo, el siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilitar la devolución automática desde la consola del controlador dañado:
++
+`storage failover modify -node local -auto-giveback false`
+
++
+
+NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
+
+. Prepare el clúster fallido y el módulo HA en la ranura 4 para su extracción quitándolos del servicio y apagándolos:
++
+`system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
+
++
+
+NOTE: Cuando veas _¿Quieres continuar?_, introduce  `y` .
+
++
+Por ejemplo, el siguiente comando prepara el módulo en la ranura 4 del nodo 2 (el controlador dañado) para su eliminación y muestra un mensaje que indica que es seguro eliminarlo:
+
++
+[listing]
+----
+node2::> system controller slot module remove -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered off for removal.
+
+Do you want to continue? {y|n}: y
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+. Verifique que el clúster fallido y el módulo HA en la ranura 4 estén apagados:
++
+`system controller slot module show`
+
++
+La salida debería mostrar  `_powered-off_` en la columna de estado del módulo fallido en la ranura 4.
+
+
+
+
+
+== Paso 2: Reemplace el clúster fallido y el módulo de E/S de alta disponibilidad
+
+Reemplace el clúster fallido y el módulo de E/S de alta disponibilidad en la ranura 4 con un módulo de E/S equivalente:
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el clúster fallido y el módulo de E/S de alta disponibilidad del controlador dañado:
++
+image::../media/drw_g_io_module_hotswap_slot4_ieops-2366.svg[Clúster de intercambio en caliente y módulo de E/S ha en la ranura 4]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Gire el tornillo de apriete manual del módulo de E/S hacia la izquierda para aflojarlo.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Extraiga el módulo de E/S del controlador utilizando la pestaña de la etiqueta del puerto a la izquierda y el tornillo de mariposa a la derecha.
+
+|===
+. Instale el clúster de reemplazo y el módulo de E/S HA en la ranura 4:
++
+.. Alinee el módulo de E/S con los bordes de la ranura.
+.. Empuje suavemente el módulo de E/S hasta el fondo de la ranura, asegurándose de colocarlo correctamente en el conector.
++
+Puede utilizar la pestaña de la izquierda y el tornillo de mariposa de la derecha para empujar el módulo de E/S.
+
+.. Gire el tornillo de mariposa hacia la derecha para apretarlo.
+
+
+. Conecte el clúster y el módulo de E/S HA.
+
+
+
+
+== Paso 3: Ponga en línea el clúster de reemplazo y el módulo de E/S de HA
+
+Coloque el clúster de reemplazo y el módulo de E/S HA en la ranura 4 en línea, verifique que los puertos del módulo se hayan inicializado correctamente, verifique que la ranura 4 esté encendida y luego verifique que el módulo esté en línea y sea reconocido.
+
+. Ponga en línea el clúster de reemplazo y el módulo de E/S de alta disponibilidad:
++
+`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
+
++
+
+NOTE: Cuando veas _¿Quieres continuar?_, introduce  `y` .
+
++
+La salida debe confirmar que el clúster y el módulo de E/S de HA se pusieron en línea correctamente (se encendieron, se inicializaron y se pusieron en servicio).
+
++
+Por ejemplo, el siguiente comando pone en línea la ranura 4 del nodo 2 (el controlador dañado) y muestra un mensaje que indica que el proceso fue exitoso:
+
++
+[listing]
+----
+node2::> system controller slot module insert -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered on and initialized.
+
+Do you want to continue? {y|n}: `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+. Verifique que cada puerto del clúster y el módulo de E/S de HA se hayan inicializado correctamente:
++
+`event log show -event \*hotplug.init*`
+
++
+
+NOTE: Podrían pasar varios minutos hasta que se realicen las actualizaciones de firmware y la inicialización del puerto necesarias.
+
++
+La salida debe mostrar un evento EMS hotplug.init.success registrado para cada puerto en el clúster y el módulo de E/S de HA con  `_hotplug.init.success:_` en el  `_Event_` columna.
+
++
+Por ejemplo, la siguiente salida muestra que la inicialización fue exitosa para los puertos e4b y e4a del módulo de E/S de HA y del clúster:
+
++
+[listing]
+----
+node2::> event log show -event *hotplug.init*
+
+Time                Node             Severity      Event
+
+------------------- ---------------- ------------- ---------------------------
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4b" in slot 4 succeeded
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4a" in slot 4 succeeded
+
+2 entries were displayed.
+----
+. Verifique que la ranura 4 del módulo de E/S esté encendida y lista para funcionar:
++
+`system controller slot module show`
+
++
+La salida debe mostrar el estado de la ranura 4 como  `_powered-on_` y por lo tanto está listo para el funcionamiento del clúster de reemplazo y del módulo de E/S HA.
+
+. Verifique que el clúster de reemplazo y el módulo de E/S de HA estén en línea y sean reconocidos.
++
+Ingrese el comando desde la consola del controlador dañado:
+
++
+`system controller config show -node local -slot4`
+
++
+Si el clúster de reemplazo y el módulo de E/S de HA se pusieron en línea correctamente y se reconocen, la salida muestra información del módulo de E/S, incluida información del puerto, para la ranura 4.
+
++
+Por ejemplo, debería ver un resultado similar al siguiente:
+
++
+[listing]
+----
+node2::> system controller config show -node local -slot 4
+
+Node: node2
+Sub- Device/
+Slot slot Information
+---- ---- -----------------------------
+   4    - Dual 40G/100G Ethernet Controller CX6-DX
+                  e4a MAC Address: d0:39:ea:59:69:74 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2807GJFM-B
+                  e4b MAC Address: d0:39:ea:59:69:75 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2809G26F-A
+                  Device Type:        CX6-DX PSID(NAP0000000027)
+                  Firmware Version:   22.44.1700
+                  Part Number:        111-05341
+                  Hardware Revision:  20
+                  Serial Number:      032403001370
+----
+
+
+
+
+== Paso 4: Restaurar el sistema de almacenamiento a su funcionamiento normal
+
+Restaure su sistema de almacenamiento a su funcionamiento normal devolviendo almacenamiento al controlador en buen estado, restaurando la devolución automática y volviendo a habilitar la creación automática de casos de AutoSupport .
+
+.Pasos
+. Devuelva el controlador saludable (el controlador que fue tomado) a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _healthy_node_name_`
+
+. Restaurar la devolución automática desde la consola del controlador dañado (el controlador que tomó el control del controlador sano):
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -27,16 +27,9 @@ Revise los siguientes requisitos y consideraciones.
 
 == Consideraciones
 
-* *El procedimiento de reemplazo del chasis es disruptivo.* En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+* El procedimiento de sustitución del chasis es disruptivo. En el caso de un clúster de dos nodos, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
 * Es posible usar el procedimiento de reemplazo de chasis con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
 * El procedimiento de sustitución del chasis se escribe suponiendo que va a mover el panel frontal, las unidades, los espacios vacíos de unidad y las controladoras al nuevo chasis.
-* Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
-+
-Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
-
-+
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
-
 
 
 .El futuro

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: i/o activity, power, off, shelf, replacing, replace, drive, drawer, disk, replace a drive drawer in a ds460c disk shelf, dcm2, dcm 
 summary: 'El reemplazo de un cajón de unidades de una bandeja requiere detener todo el sistema de almacenamiento (par de alta disponibilidad), lo que permite mantener los agregados de datos en la bandeja o tener la opción de mantener el par de alta disponibilidad en funcionamiento, lo que requiere que mueva todos los datos de los agregados de datos que residen en las unidades de disco, desconectar y eliminar los agregados de datos. Sin embargo, si la bandeja contiene un agregado raíz, debe detener la pareja de alta disponibilidad.' 
 ---
-= Reemplace un cajón de unidades en una bandeja de discos DS460C - bandejas con módulos IOM12/IOM12B
+= Reemplazar un cajón de unidad - DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: 'El reemplazo de un cajón de unidades de una bandeja requiere detener 
 
 [role="lead"]
 Para reemplazar un cajón de unidades en un estante, puede detener todo el sistema de almacenamiento (par de alta disponibilidad), lo que le permite conservar los agregados de datos en el estante. Como alternativa, puede mantener el par de alta disponibilidad en funcionamiento, lo que requiere mover todos los datos de los agregados de datos en las unidades de disco del estante y, a continuación, desconectarlos y eliminarlos. Si el estante contiene un agregado raíz, debe detener el par de alta disponibilidad.
+
+Este procedimiento se aplica a estantes con módulos IOM12 o IOM12B.
 
 .Antes de empezar
 Necesita estos elementos para este procedimiento:
@@ -27,20 +29,20 @@ NOTE: *Posible daño de hardware:* para evitar daños por descarga electrostáti
 
 
 .Acerca de esta tarea
-* Este procedimiento se aplica a las bandejas que tienen cajones de unidades DCM y/o cajones de unidades DCM2. (Las bandejas también tendrán dos módulos IOM12 o dos módulos IOM12B).
+* Este procedimiento se aplica a estanterías con cajones para unidades DCM y/o cajones para unidades DCM2 o DCM3. (Las estanterías también tendrán dos módulos IOM12 o IOM12B).
 +
-Cuando falla un cajón de unidad de DCM o DCM2, recibe un cajón de unidad de DCM o DCM2 para reemplazarlo.
+Cuando falla un cajón de unidad DCM, DCM2 o DCM3, recibirá un cajón de unidad DCM, DCM2 o DCM3 para reemplazarlo.
 
 
 
 [NOTE]
 ====
-Si se sustituye un cajón de unidades con error, la bandeja tiene una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2, Debe actualizar el firmware IOM12 a la versión 0300 o posterior, ya que los módulos IOM12 requieren una versión de FW compatible con los cajones de unidades DCM2.
+Cuando reemplace un cajón de unidad defectuoso con un cajón de unidad DCM2 o DCM3 más nuevo, asegúrese de que el software ONTAP y el firmware del módulo IOM12 o IOM12B estén ejecutando las versiones mínimas requeridas para admitir los cajones DCM2 o DCM3.
 
 La actualización IOM12 FW se puede realizar antes o después de sustituir un cajón de unidades. Este procedimiento incluye la actualización del FW como parte de la preparación para el procedimiento de sustitución del cajón.
 
 ====
-* Los cajones de unidades DCM y los cajones de unidades DCM2 pueden distinguirse por su apariencia:
+* Los cajones de unidad DCM, DCM2 y DCM3 se pueden distinguir por su apariencia:
 +
 Los cajones de la unidad DCM son los siguientes:
 
@@ -53,22 +55,41 @@ Los cajones de unidad DCM2 se distinguen por una banda azul y una etiqueta "DCM2
 +
 image::../media/dcm2.png[Vista frontal de una bandeja de unidades DCM2]
 
++
+Los cajones de la unidad DCM3 se distinguen por una franja azul y gris y la etiqueta "DCM3":
+
++
+image::../media/drw_dcm3_ieops-2176.svg[Vista frontal de un estante de unidad DCM3]
 
 
 
 
-== Prepare para sustituir un cajón de unidades
 
-Antes de sustituir un cajón de unidades, debe asegurarse de actualizar IOM12 FW si es necesario, y detener el par de alta disponibilidad, lo que le permite conservar los agregados de datos en la bandeja o tiene la opción de mantener el par de alta disponibilidad en funcionamiento. lo que requiere que mueva todos los datos de los agregados de datos que residen en las unidades de disco, desconectar y eliminar los agregados de datos. Sin embargo, si la bandeja contiene un agregado raíz, debe detener la pareja de alta disponibilidad. Por último, se debe apagar la bandeja.
+== Paso 1: Prepárese para reemplazar un cajón de unidad
+
+Antes de reemplazar un cajón de unidades, asegúrese de actualizar el firmware de IOM y ONTAP si es necesario, y detenga el par de alta disponibilidad (HA), lo que le permite mantener los agregados de datos en el estante, o bien manténgalo en funcionamiento, lo que requiere transferir todos los datos de los agregados de datos que residen en las unidades de disco. A continuación, debe desconectar y eliminar los agregados de datos. Sin embargo, si el estante contiene un agregado raíz, debe detener el par de alta disponibilidad. Por último, debe apagar el estante.
 
 .Pasos
 . Determine si al reemplazar el cajón de unidades con error, la bandeja tiene una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2.
-. Si la bandeja tendrá una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2, debe actualizar el firmware IOM12 a la versión 0300 o posterior; de lo contrario, vaya al paso siguiente.
+. Determine si necesitará actualizar el firmware de su IOM:
 +
-Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
+** Si la bandeja tendrá una combinación de módulos IOM12 y cualquier número de cajones de unidades DCM2, debe actualizar el firmware IOM12 a la versión 0300 o posterior; de lo contrario, vaya al paso siguiente.
+** Si el estante tendrá una combinación de módulos IOM12 y cualquier cantidad de cajones de unidad DCM3, debe actualizar el firmware IOM12 a la versión 0401 o posterior.
+** Si el estante tendrá una combinación de módulos IOM12B y cualquier cantidad de cajones de unidad DCM3, debe actualizar el firmware del IOM12B a la versión 0202 o posterior.
+
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
+Si es necesario, puede ir al sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar versiones actuales del firmware del estante de discos"] . De lo contrario, vaya al siguiente paso.
+
+. Si su estante tendrá una combinación de módulos IOM12 o IOM12B con cualquier cantidad de cajones de unidad DCM3, su sistema debe ejecutar las siguientes versiones mínimas de ONTAP:
++
+** ONTAP 9.17.1RC1
+** ONTAP 9.16.1P3
+** ONTAP 9.15.1P11
+** ONTAP 9.14.1P13
+** ONTAP 9.13.1P16
+** ONTAP 9.12.1P18
+
 
 . Si la bandeja contiene el agregado raíz de una de las controladoras del par de alta disponibilidad, o si decide detener el par de alta disponibilidad (en lugar de mantener el par de alta disponibilidad en funcionamiento), realice los siguientes subpasos; de lo contrario, vaya al siguiente paso.
 +
@@ -79,7 +100,7 @@ NOTE: Los agregados de datos pueden permanecer en la bandeja cuando se detenga l
 .. Detenga ambas controladoras de la pareja de alta disponibilidad.
 .. Compruebe que su pareja de alta disponibilidad ha detenido consultando la consola del sistema de almacenamiento.
 .. Apague la bandeja.
-.. Vaya a la sección, <<Quite las cadenas para cables>>.
+.. Ir a la sección, <<remove_cable_chains,Quite las cadenas para cables>> .
 
 
 . Si decide mantener el par de alta disponibilidad en funcionamiento, complete los siguientes subpasos:
@@ -122,12 +143,19 @@ NOTE: Si tiene unidades de disco con fallos en la bandeja, `broken` aparece en l
 
 
 
-== Quite las cadenas para cables
+== Paso 2: Retire las cadenas de cable
 
 Las cadenas para cables izquierda y derecha de cada cajón de unidades de la bandeja de unidades DS460C permiten que los cajones se deslice hacia adentro y hacia afuera. Para poder quitar un cajón de unidades, es necesario quitar ambas cadenas para cables.
 
+.Acerca de esta tarea
+Cada cajón de unidades tiene cadenas para cables izquierda y derecha. Los extremos metálicos de las cadenas para cables se deslizan en los soportes verticales y horizontales correspondientes dentro de la carcasa, de la siguiente manera:
+
+* Los soportes verticales izquierdo y derecho conectan la cadena de cables al plano medio del gabinete.
+* Los soportes horizontales izquierdo y derecho conectan la cadena de cables con el cajón individual.
+
+
 .Antes de empezar
-* Completó la <<Prepare para sustituir un cajón de unidades>> Pasos para que la pareja de alta disponibilidad esté detenida o haya movido todos los datos de los agregados de datos que residen en las unidades de disco y haya interrumpido y eliminado los agregados de datos para permitir que las unidades de disco se conviertan en repuestos.
+* Has completado el <<prepare_to_replace_drive_drawer,Prepare para sustituir un cajón de unidades>> pasos para que su par HA se detenga o haya movido todos los datos de los agregados de datos que residen en las unidades de disco, y haya desconectado y eliminado los agregados de datos para permitir que las unidades de disco se conviertan en repuestos.
 * Encendió la bandeja.
 * Ha obtenido los siguientes elementos:
 +
@@ -139,13 +167,6 @@ NOTE: *Posibles daños en el hardware:* para evitar daños por descarga electros
 ** Linterna
 
 
-
-
-.Acerca de esta tarea
-Cada cajón de unidades tiene cadenas para cables izquierda y derecha. Los extremos metálicos de las cadenas para cables se deslizan en los soportes verticales y horizontales correspondientes dentro de la carcasa, de la siguiente manera:
-
-* Los soportes verticales izquierdo y derecho conectan la cadena de cables al plano medio del gabinete.
-* Los soportes horizontales izquierdo y derecho conectan la cadena de cables con el cajón individual.
 
 
 .Pasos
@@ -270,7 +291,7 @@ La figura muestra el anillo naranja del soporte horizontal que se está empujand
 
 
 
-== Quite un cajón de unidad
+== Paso 3: Retire el cajón de la unidad
 
 Después de quitar las cadenas para cables derecha e izquierda, es posible quitar el cajón de unidades de la bandeja de unidades. Para extraer un cajón de unidad, es necesario deslizar la parte del cajón hacia fuera, extraer las unidades y extraer el cajón de la unidad.
 
@@ -325,7 +346,7 @@ image:../media/icon_round_1.png["Número de llamada 1"]
 
 
 
-== Instale un cajón de unidades
+== Paso 4: Instalar un cajón de unidad
 
 La instalación de un cajón de unidades en una bandeja de unidades implica deslizar el cajón en la ranura vacía, instalar las unidades y reemplazar el embellecedor frontal.
 
@@ -421,7 +442,7 @@ NOTE: *Riesgo de avería del equipo:* Asegúrese de cerrar completamente el caj�
 
 
 
-== Conecte las cadenas para cables
+== Paso 5: Conecte las cadenas de cable
 
 El paso final en la instalación de un cajón de unidades está conectando las cadenas para cables izquierda y derecha de reemplazo a la bandeja de unidades. Al conectar una cadena de cables, invierta el orden que utilizó al desconectar la cadena de cables. Debe insertar el conector horizontal de la cadena en el soporte horizontal de la carcasa antes de insertar el conector vertical de la cadena en el soporte vertical de la carcasa.
 
@@ -549,11 +570,5 @@ image:../media/icon_round_1.png["Número de llamada 1"]
 
 
 . Si había detenido la pareja de alta disponibilidad, arranque ONTAP en ambas controladoras; de lo contrario, vaya al siguiente paso.
-. Si había movido datos de la bandeja y eliminado los agregados de datos, ahora puede usar los discos de reserva de la bandeja para crear un agregado o expandirse.
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Flujo de trabajo de creación de agregados"]
-
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Flujo de trabajo de ampliación de agregados"]
-
+. Si ha movido datos del estante y eliminado los agregados de datos, ahora puede usar los discos de repuesto del estante para crear o expandir agregados. Para obtener más información sobre estos procedimientos, consulte  https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-creation-workflow-concept.html["Flujo de trabajo de creación de agregados"] y  https://docs.netapp.com/us-en/ontap/disks-aggregates/aggregate-expansion-workflow-concept.html["Flujo de trabajo de ampliación de agregados"] .
 

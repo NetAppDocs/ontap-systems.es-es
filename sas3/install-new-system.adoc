@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, cabling, cable, disk, shelves, shelf, iom12, module, system, installation, system, ha, pair, single-controller, configuration, cabinet, rack, requirement, install and cable disk shelves with iom12 modules for a new system installation, requirements for installing and cabling disk shelves with iom12 modules for a new system installation, considerations for installing and cabling disk shelves with iom12 modules for a new system installation, install disk shelves with iom12 modules for a new system installation, cable disk shelves with iom12 modules for a new system installation, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
 summary: Si su nuevo sistema, una pareja de alta disponibilidad o la configuración de una única controladora, no viene instalada en un armario, debe instalar y cablear las bandejas de discos de un rack. 
 ---
-= Instalación y cableado de las bandejas para una instalación nueva del sistema - estantes con módulos IOM12/IOM12B
+= Instalación y cableado de estantes: DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,36 +13,7 @@ summary: Si su nuevo sistema, una pareja de alta disponibilidad o la configuraci
 [role="lead"]
 Si su nuevo sistema, una pareja de alta disponibilidad o una configuración de controladora única, no viene instalada en un armario, puede instalar y cablear las bandejas de discos de un rack.
 
-
-
-== Requisitos para la instalación y cableado de bandejas de discos con módulos IOM12/IOM12B para una instalación de sistemas nueva
-
-Debe cumplir ciertos requisitos antes de instalar y cablear las bandejas de discos.
-
-* Debe tener las instrucciones de instalación y configuración para su modelo de plataforma.
-+
-Las instrucciones de instalación y configuración abordan el procedimiento completo para la instalación, configuración y configuración del sistema. Solo debe utilizar este procedimiento (_Install y cablear las bandejas de cables para una instalación de sistema nueva_) junto con las instrucciones de instalación y configuración de la plataforma si necesita información detallada sobre la instalación o el cableado de las bandejas de discos al sistema de almacenamiento.
-
-+
-Para obtener instrucciones de instalación y configuración, vaya a la documentación del modelo de la plataforma.
-
-+
-link:../index.html["Documentación de los sistemas AFF y FAS"]
-
-* Las bandejas de discos y las controladoras no deben estar encendidas en este momento.
-* Si utiliza cables ópticos mini-SAS HD SAS, debe haber cumplido las reglas de link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"].
-
-
-
-
-== Consideraciones sobre la instalación y cableado de bandejas de discos con módulos IOM12/IOM12B para una instalación de sistemas nueva
-
-Antes de instalar y cablear las bandejas de discos, debe familiarizarse con los aspectos y las prácticas recomendadas para este procedimiento.
-
-
-
-=== Consideraciones generales
-
+.Acerca de esta tarea
 * Las bandejas de discos con módulos IOM12/IOM12B se envían con ID de bandeja predefinidos en 00.
 +
 
@@ -51,70 +22,63 @@ NOTE: Si tiene una pareja de alta disponibilidad con al menos dos pilas, la band
 +
 Debe definir ID de bandeja para que sean únicos en las configuraciones de par de alta disponibilidad o de controladora única. Puede establecer ID de bandeja manualmente o tener asignados automáticamente a todas las bandejas de discos en el par de alta disponibilidad o en la configuración de una sola controladora por medio de un comando en modo de mantenimiento. Se proporcionan instrucciones para ambos métodos.
 
-* Las bandejas de discos que contienen los agregados raíz pueden identificarse mediante las etiquetas del cuadro de la bandeja de discos y del chasis de la bandeja de discos.
+* Puede identificar los estantes de discos que contienen los agregados raíz mediante las etiquetas en la caja del estante de discos y en el chasis del estante de discos.
 +
 Las etiquetas muestran el número de pila; por ejemplo, *bucle o pila #: 1* y *bucle o pila #: 2*. Las bandejas de discos que no contienen los agregados raíz solo muestran el número de serie de la bandeja de discos en las etiquetas.
 
-* Si en la instalación y configuración del sistema no configura el sistema para que utilice la asignación automática de propiedad de disco, deberá asignar manualmente la propiedad de disco.
+* Si durante la configuración del sistema no se configura para usar la asignación automática de propiedad del disco, deberá asignarla manualmente.
 * La ruta de control alternativa en banda (IBACP) se activa automáticamente.
 +
 IBACP no es compatible con las configuraciones de alta disponibilidad o de ruta única.
 
 
 
+.Antes de empezar
+Debe cumplir ciertos requisitos y familiarizarse con las mejores prácticas y consideraciones para este procedimiento antes de instalar y cablear los estantes de discos.
 
-
-=== Consideraciones sobre prácticas recomendadas
-
-* La práctica recomendada es tener instalada la versión actual del paquete de cualificación de disco (DQP).
+* Obtenga las instrucciones de instalación y configuración para su modelo de plataforma.
 +
-Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
+Las instrucciones de instalación y configuración describen el procedimiento completo para la instalación, configuración y configuración de su sistema. Utilice este procedimiento junto con las instrucciones de instalación y configuración de la plataforma únicamente si necesita información detallada sobre la instalación o el cableado de las bandejas de discos a su sistema de almacenamiento.
 
 +
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
+Las instrucciones de instalación y configuración se pueden encontrar navegando a su plataforma en el link:../index.html["Documentación de los sistemas AFF y FAS"] .
 
-* La práctica recomendada es descargar y ejecutar Config Advisor después de una instalación nueva del sistema.
+* Las bandejas de discos y las controladoras no deben estar encendidas en este momento.
+* *Mejor práctica*: Asegúrese de que su sistema pueda reconocer y utilizar las unidades de disco recién calificadas  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["descargando la versión actual del Paquete de Calificación de Disco (DQP)"^] .
 +
-Si se ejecuta Config Advisor después de la instalación de un sistema nuevo, es posible verificar que las conexiones SAS se han cableado correctamente y que los ID de bandeja son únicos en la configuración de par de alta disponibilidad o de controladora única.
+Esto le permite evitar mensajes de eventos del sistema sobre información de disco inactualizada. También evita la posible interrupción de la partición del disco debido a que no se reconocen las unidades. El DQP le notifica sobre el firmware de la unidad de disco inactualizado.
 
+* *Mejor práctica*: Verifique que las conexiones SAS estén cableadas correctamente y que los IDS de estante sean únicos dentro del par HA o la configuración de un solo controlador.  https://mysupport.netapp.com/site/tools["Descargar y ejecutar Config Advisor"^] después de una nueva instalación del sistema.
 +
 Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las acciones correctivas proporcionadas.
 
 +
 Se necesita acceso a la red para descargar Config Advisor.
 
+* Familiarícese con las consideraciones para manipular correctamente los cables SAS:
 +
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
-
-
-
-
-
-=== Consideraciones sobre la manipulación del cable SAS
-
-* Inspeccione visualmente el puerto SAS para comprobar la orientación correcta del conector antes de enchufarlo.
+** Si utiliza cables ópticos mini-SAS HD SAS, debe haber cumplido las reglas de link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"].
+** Inspeccione visualmente el puerto SAS para comprobar la orientación correcta del conector antes de enchufarlo.
 +
 Los conectores del cable SAS están codificados. Cuando se orienta correctamente a un puerto SAS, el conector hace clic en su lugar y si la bandeja de discos se enciende en ese momento, el LED LNK de puerto SAS de la bandeja de discos se ilumina en verde. En el caso de las bandejas de discos, inserte un conector de cable SAS con la pestaña extraíble orientada hacia abajo (en la parte inferior del conector).
 
 +
 En el caso de las controladoras, la orientación de los puertos SAS puede variar en función del modelo de plataforma. Por lo tanto, la orientación correcta del conector del cable SAS varía.
 
-* Para evitar un rendimiento degradado, no gire, pliegue, pellizque ni pellizque los cables.
+** Para evitar un rendimiento degradado, no gire, pliegue, pellizque ni pellizque los cables.
 +
 Los cables tienen un radio de pliegue mínimo. Las especificaciones del fabricante del cable definen el radio de pliegue mínimo; sin embargo, una guía general para el radio de pliegue mínimo es 10 veces el diámetro del cable.
 
-* El uso de envolturas de velcro en lugar de envolturas de amarre para embalar y asegurar los cables del sistema permite realizar ajustes más sencillos de los cables.
+** *Mejor práctica*: Use envolturas de velcro en lugar de bridas para agrupar y asegurar los cables del sistema y así permitir ajustes más fáciles de los cables.
 
 
-
-
-=== Consideraciones sobre el manejo de la unidad DS460C
-
-* Las unidades se agrupan por separado del chasis de la bandeja.
+* Familiarícese con las consideraciones para manipular correctamente las unidades DS460C:
++
+** Las unidades se agrupan por separado del chasis de la bandeja.
 +
 Debe realizar un inventario de las unidades junto con el resto del equipo del sistema recibido.
 
-* Después de desempaquetar las unidades, debería guardar el material de embalaje para usarlo en el futuro.
+** Después de desempaquetar las unidades, debería guardar el material de embalaje para usarlo en el futuro.
 +
 
 CAUTION: *Posible pérdida de acceso a los datos:* Si en el futuro, es posible mover la bandeja a una parte diferente del centro de datos o transportar la bandeja a una ubicación diferente, es necesario quitar las unidades de los cajones de unidades para evitar posibles daños en los cajones y las unidades.
@@ -123,7 +87,7 @@ CAUTION: *Posible pérdida de acceso a los datos:* Si en el futuro, es posible m
 
 NOTE: Mantenga las unidades de disco en su bolsa ESD hasta que esté listo para instalarlas.
 
-* Cuando manipule las unidades, utilice siempre una muñequera ESD conectada a tierra a una superficie sin pintar en el chasis del gabinete de almacenamiento para evitar descargas estáticas.
+** Cuando manipule las unidades, utilice siempre una muñequera ESD conectada a tierra a una superficie sin pintar en el chasis del gabinete de almacenamiento para evitar descargas estáticas.
 +
 Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en el chasis de la caja de almacenamiento antes de manejar la unidad de disco.
 
@@ -131,7 +95,9 @@ Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en 
 
 
 
-== Instale las bandejas de discos con módulos IOM12/IOM12B para una instalación nueva del sistema
+
+
+== Paso 1: Instalar estantes de discos para una nueva instalación del sistema
 
 Las bandejas de discos se instalan en un rack utilizando los kits de montaje en rack que se incluyen con las bandejas de discos.
 
@@ -142,27 +108,24 @@ NOTE: Si va a instalar varias bandejas de discos, debe instalarlas desde la part
 
 +
 
-NOTE: No monte la bandeja de discos en un rack de tipo telco; el peso de la bandeja de discos puede hacer que se desplome en el rack por su propio peso.
+CAUTION: No monte la bandeja de discos en un rack de tipo telco; el peso de la bandeja de discos puede hacer que se desplome en el rack por su propio peso.
 
 . Instale y asegure la bandeja de discos en los soportes de soporte y el rack mediante el folleto de instalación incluido con el kit.
 +
 Para que una bandeja de discos sea más ligera y fácil de maniobrar, quite las fuentes de alimentación y los módulos de I/o (IOM).
 
 +
-Para las bandejas de discos DS460C, aunque las unidades se empaquetan por separado, que hace que la bandeja sea más ligera, una bandeja DS460C vacía sigue pesa aproximadamente 132 lb (60 kg); por lo tanto, tenga la siguiente precaución al mover una bandeja.
+
+CAUTION: Aunque las unidades de los estantes DS460C se empaquetan por separado, lo que los hace más ligeros, un estante DS460C vacío pesa aproximadamente 60 kg (132 lb). Se recomienda utilizar un elevador mecánico o cuatro personas usando las asas para moverlo con seguridad.
 
 +
-
-CAUTION: Se recomienda utilizar un elevador mecánico o cuatro personas utilizando las asas de elevación para mover de forma segura un estante DS460C vacío.
-
-+
-El envío DS460C se ha envasado con cuatro asas de elevación desmontables (dos por cada lado). Para utilizar las asas de elevación, las instala insertando las pestañas de las asas en las ranuras del lateral de la bandeja y empujando hacia arriba hasta que encajen en su lugar. A continuación, conforme deslice la bandeja de discos sobre los raíles, separe un conjunto de asas cada vez mediante el pestillo de pulgar. La siguiente ilustración muestra cómo acoplar un asa de elevación.
+El envío del DS460C incluye cuatro asas de elevación desmontables (dos para cada lado). Para usarlas, instálelas insertando las pestañas en las ranuras laterales del estante y empujando hacia arriba hasta que encajen. A continuación, al deslizar el estante del disco sobre los rieles, retire las asas una a una utilizando el pestillo. La siguiente ilustración muestra cómo instalar una asa de elevación.
 
 +
 image::../media/drw_ds460c_handles.gif[Instalación de las asas de elevación]
 
 . Vuelva a instalar todas las fuentes de alimentación y los IOM que quitó antes de instalar la bandeja de discos en el rack.
-. Si va a instalar una bandeja de discos DS460C, instale las unidades en los cajones de unidades; de lo contrario, vaya al siguiente paso.
+. Si va a instalar un estante de discos DS460C, instale las unidades en sus respectivos cajones. De lo contrario, continúe con el siguiente paso.
 +
 [NOTE]
 ====
@@ -172,7 +135,7 @@ Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en 
 
 ====
 +
-Si adquirió una bandeja parcialmente llena, lo que significa que la bandeja tiene menos de 60 unidades compatibles, para cada cajón instale las unidades de la siguiente manera:
+Si compró un estante parcialmente poblado, lo que significa que el estante tiene menos de las 60 unidades que admite, instale las unidades en cada cajón de la siguiente manera:
 
 +
 ** Instale las primeras cuatro unidades en las ranuras delanteras (0, 3, 6 y 9).
@@ -213,19 +176,12 @@ Debe asegurarse de que las ranuras 0, 3, 6 y 9 de cada cajón contengan unidades
 
 ... Empuje con cuidado el cajón de la unidad de nuevo dentro de la carcasa.
 +
-|===
-
-
- a| 
 image:../media/2860_dwg_e2860_de460c_gentle_close.gif["Cierre suavemente el cajón"]
 
-
-
- a| 
++
 
 CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el cajón lentamente para evitar que el cajón se arreste y cause daños a la matriz de almacenamiento.
 
-|===
 ... Cierre el cajón de mando empujando ambas palancas hacia el centro.
 ... Repita estos pasos para cada cajón de la bandeja de discos.
 ... Conecte el panel frontal.
@@ -241,15 +197,26 @@ NOTE: No encienda las bandejas de discos en este momento.
 
 
 
-== Cablee las bandejas de discos con módulos IOM12/IOM12B para una nueva instalación del sistema
+== Paso 2: Estantes de discos de cables para la instalación de un nuevo sistema
 
 Se cablean las conexiones SAS de la bandeja de discos--de la bandeja a la bandeja (según corresponda) y de la controladora a la bandeja- para establecer la conectividad del almacenamiento del sistema.
 
-.Antes de empezar
-Debe haber cumplido los requisitos de <<Requisitos para la instalación y cableado de bandejas de discos con módulos IOM12/IOM12B para una instalación de sistemas nueva>> e instalar las bandejas de discos en el rack.
-
 .Acerca de esta tarea
 Después de conectar las bandejas de discos, encender las bandejas, establecer los ID de bandeja y completar la configuración y la configuración del sistema.
+
+.Antes de empezar
+Debe haber cumplido los siguientes requisitos e instalado los estantes de discos en el rack.
+
+* Debe tener las instrucciones de instalación y configuración para su modelo de plataforma.
++
+Las instrucciones de instalación y configuración describen el procedimiento completo para la instalación, configuración y configuración de su sistema. Utilice este procedimiento junto con las instrucciones de instalación y configuración de la plataforma únicamente si necesita información detallada sobre la instalación o el cableado de las bandejas de discos a su sistema de almacenamiento.
+
++
+Las instrucciones de instalación y configuración se pueden encontrar navegando a su plataforma en el link:../index.html["Documentación de los sistemas AFF y FAS"] .
+
+* Las bandejas de discos y las controladoras no deben estar encendidas en este momento.
+* Si utiliza cables ópticos mini-SAS HD SAS, debe haber cumplido las reglas de link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"].
+
 
 .Pasos
 . Conecte mediante cable las conexiones de bandeja a bandeja dentro de cada pila si la pila tiene más de una bandeja de discos; de lo contrario, vaya al siguiente paso:
@@ -408,12 +375,9 @@ Puede utilizar el carácter comodín para asignar más de un disco a la vez.
 
 
 
-. Descargue y ejecute Config Advisor según las instrucciones de instalación y configuración para su modelo de plataforma con el fin de comprobar que las conexiones SAS se han cableado correctamente y que no hay ID de bandeja duplicados en el sistema.
+. Verifique que las conexiones SAS estén cableadas correctamente y que no haya identificaciones de estante duplicadas dentro del sistema.  https://mysupport.netapp.com/site/tools["Descargar y ejecutar Config Advisor"^] según lo indicado en las instrucciones de instalación y configuración para su modelo de plataforma.
 +
 Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las acciones correctivas proporcionadas.
-
-+
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
 
 +
 También puede ejecutar el `storage shelf show -fields shelf-id` Comando para ver una lista de los ID de bandeja que ya se están utilizando (y duplicados si están presentes) en el sistema.
@@ -426,11 +390,11 @@ En el resultado, «'en banda'» se muestra en la lista como «'activo'» para ca
 
 
 
-== Mueva o transporte las estanterías DS460C
+== (Opcional) Paso 3: Mover o transportar los estantes del DS460C
 
-Si en el futuro, mueve las bandejas DS460C a una parte diferente del centro de datos o transporta las bandejas a una ubicación diferente, debe quitar las unidades de los cajones de unidades para evitar daños a los cajones y las unidades.
+Si en el futuro traslada los estantes DS460C a una parte diferente del centro de datos o transporta los estantes a una ubicación diferente, deberá quitar las unidades de los cajones de unidades para evitar posibles daños en los cajones de unidades y en las unidades.
 
-* Si al instalar las bandejas DS460C como parte de la instalación de su nuevo sistema, ha guardado los materiales de embalaje de la unidad, utilice estos para volver a empaquetar las unidades antes de moverlas.
+* Si guardó los materiales de embalaje de la unidad cuando instaló los estantes DS460C como parte de la instalación del nuevo sistema, utilícelos para volver a empaquetar las unidades antes de moverlas.
 +
 Si no ha guardado los materiales de embalaje, debe colocar las unidades en superficies acolchadas o utilizar un embalaje acolchado alternativo. No coloque nunca unidades entre sí.
 

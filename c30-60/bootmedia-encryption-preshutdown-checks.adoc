@@ -2,9 +2,9 @@
 permalink: c30-60/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, pre-shutdown checks for onboard encryption keys 
-summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
+summary: Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF C30 o AFF C60, debe verificar la compatibilidad y el estado de la clave de cifrado en su medio de arranque. Compruebe si su versión de ONTAP es compatible con NetApp Volume Encryption y, antes de apagar la controladora, compruebe si el administrador de claves está activo. 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque: AFF C30 y AFF C60
+= Comprobar la compatibilidad con cifrado para la recuperación manual de medios de arranque - AFF C30 y AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

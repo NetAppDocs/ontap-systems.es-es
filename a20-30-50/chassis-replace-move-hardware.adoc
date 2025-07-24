@@ -15,6 +15,16 @@ Reemplace el chasis del sistema AFF A20, AFF A30 o AFF A50 cuando un fallo de ha
 
 
 
+== Acerca de esta tarea
+
+Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
+
+Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
 == Paso 1: Quite la controladora
 
 Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.

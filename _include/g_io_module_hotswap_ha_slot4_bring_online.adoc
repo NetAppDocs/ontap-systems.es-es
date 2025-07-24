@@ -1,0 +1,105 @@
+= 
+:allow-uri-read: 
+
+
+Coloque el clúster de reemplazo y el módulo de E/S HA en la ranura 4 en línea, verifique que los puertos del módulo se hayan inicializado correctamente, verifique que la ranura 4 esté encendida y luego verifique que el módulo esté en línea y sea reconocido.
+
+. Ponga en línea el clúster de reemplazo y el módulo de E/S de alta disponibilidad:
++
+`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
+
++
+
+NOTE: Cuando veas _¿Quieres continuar?_, introduce  `y` .
+
++
+La salida debe confirmar que el clúster y el módulo de E/S de HA se pusieron en línea correctamente (se encendieron, se inicializaron y se pusieron en servicio).
+
++
+Por ejemplo, el siguiente comando pone en línea la ranura 4 del nodo 2 (el controlador dañado) y muestra un mensaje que indica que el proceso fue exitoso:
+
++
+[listing]
+----
+node2::> system controller slot module insert -node node2 -slot 4
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 4 of node node2 will be powered on and initialized.
+
+Do you want to continue? {y|n}: `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+. Verifique que cada puerto del clúster y el módulo de E/S de HA se hayan inicializado correctamente:
++
+`event log show -event \*hotplug.init*`
+
++
+
+NOTE: Podrían pasar varios minutos hasta que se realicen las actualizaciones de firmware y la inicialización del puerto necesarias.
+
++
+La salida debe mostrar un evento EMS hotplug.init.success registrado para cada puerto en el clúster y el módulo de E/S de HA con  `_hotplug.init.success:_` en el  `_Event_` columna.
+
++
+Por ejemplo, la siguiente salida muestra que la inicialización fue exitosa para los puertos e4b y e4a del módulo de E/S de HA y del clúster:
+
++
+[listing]
+----
+node2::> event log show -event *hotplug.init*
+
+Time                Node             Severity      Event
+
+------------------- ---------------- ------------- ---------------------------
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4b" in slot 4 succeeded
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e4a" in slot 4 succeeded
+
+2 entries were displayed.
+----
+. Verifique que la ranura 4 del módulo de E/S esté encendida y lista para funcionar:
++
+`system controller slot module show`
+
++
+La salida debe mostrar el estado de la ranura 4 como  `_powered-on_` y por lo tanto está listo para el funcionamiento del clúster de reemplazo y del módulo de E/S HA.
+
+. Verifique que el clúster de reemplazo y el módulo de E/S de HA estén en línea y sean reconocidos.
++
+Ingrese el comando desde la consola del controlador dañado:
+
++
+`system controller config show -node local -slot4`
+
++
+Si el clúster de reemplazo y el módulo de E/S de HA se pusieron en línea correctamente y se reconocen, la salida muestra información del módulo de E/S, incluida información del puerto, para la ranura 4.
+
++
+Por ejemplo, debería ver un resultado similar al siguiente:
+
++
+[listing]
+----
+node2::> system controller config show -node local -slot 4
+
+Node: node2
+Sub- Device/
+Slot slot Information
+---- ---- -----------------------------
+   4    - Dual 40G/100G Ethernet Controller CX6-DX
+                  e4a MAC Address: d0:39:ea:59:69:74 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2807GJFM-B
+                  e4b MAC Address: d0:39:ea:59:69:75 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2809G26F-A
+                  Device Type:        CX6-DX PSID(NAP0000000027)
+                  Firmware Version:   22.44.1700
+                  Part Number:        111-05341
+                  Hardware Revision:  20
+                  Serial Number:      032403001370
+----
+

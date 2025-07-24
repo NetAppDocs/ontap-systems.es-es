@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: hot-swap, fail, power, supply, ds460c, ds224c, ds212c, disk, shelf-nondisruptively, shelf, nondisruptive, system, power, i/o, progress, hot-swap a power supply 
 summary: Es posible intercambiar en caliente un suministro de alimentación con fallos en una bandeja de discos DS460C, DS224C o DS212C. 
 ---
-= Fuente de alimentación a intercambiable en caliente: Estantes con módulos IOM12/IOM12B
+= Intercambio en caliente de una fuente de alimentación: DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,28 +13,19 @@ summary: Es posible intercambiar en caliente un suministro de alimentación con 
 [role="lead"]
 Es posible intercambiar en caliente un suministro de alimentación con fallos en una bandeja de discos DS460C, DS224C o DS212C.
 
-.Antes de empezar
-Todos los demás componentes del sistema, incluida la otra fuente de alimentación, deben funcionar correctamente.
+Este procedimiento se aplica a estantes con módulos IOM12 o IOM12B.
 
-.Acerca de esta tarea
+.Antes de empezar
+* Todos los demás componentes del sistema, incluida la otra fuente de alimentación, deben funcionar correctamente.
 * Si va a sustituir más de un suministro de alimentación, debe hacerlo uno por vez para que la bandeja de discos mantenga alimentación.
 * Para minimizar la interrupción del flujo de aire de la bandeja de discos, debe sustituir un suministro de alimentación en los dos minutos posteriores a la eliminación.
 * Utilice siempre dos manos al extraer, instalar o transportar una fuente de alimentación para soportar su peso.
-* La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
-+
-Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
-
+* *Práctica recomendada*: Asegúrese de que su sistema tenga las versiones actuales del firmware de la bandeja de discos (IOM) y del firmware de la unidad de disco antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS. Puede visitar el sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar el firmware del estante de discos"] y  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargar el firmware de la unidad de disco"] .
 * Si es necesario, puede encender los LED de ubicación (azul) de la bandeja de discos para ayudar a localizar físicamente la bandeja de discos afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
 +
 Una bandeja de discos tiene tres LED de ubicación: Una en el panel de pantalla del operador y otra en cada IOM de bandeja. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
 
-* Si es necesario, puede consultar la sección LED de bandeja de discos de supervisión para obtener información sobre el significado y la ubicación de los LED de bandeja de discos en el panel de visualización del operador y los componentes FRU.
+* Si es necesario, puede consultar el link:/sas3/service-monitor-leds.html#operator-display-panel-leds["Monitoreo de los LED del estante del disco"] Guía para obtener información sobre el significado y la ubicación de los LED del estante de discos en el panel de visualización del operador y los componentes FRU.
 
 
 .Pasos
@@ -60,17 +51,17 @@ image::../media/drw_2600_psu.gif[Apertura de la palanca de leva de la fuente de 
 
 . Utilice el asa de leva para extraer la fuente de alimentación de la bandeja de discos.
 +
-Si tiene una bandeja de discos DS224C o DS212C, a medida que quita el suministro de alimentación, un colgajo entra en su lugar para bloquear el compartimento vacío, lo que ayuda a mantener el flujo de aire y la refrigeración.
+Si tiene una bandeja de discos DS224C o DS212C, al retirar la fuente de alimentación, una tapa se abre para bloquear la bahía vacía. Esto ayuda a mantener el flujo de aire y la refrigeración.
 
 +
 
 NOTE: Cuando manipule una fuente de alimentación, utilice siempre dos manos para sostener su peso.
 
 . Asegúrese de que el interruptor de encendido/apagado de la nueva fuente de alimentación esté en la posición de apagado.
-. Con dos manos, con el mango de leva de la nueva fuente de alimentación en posición abierta, sujete y alinee los bordes de la nueva fuente de alimentación con la abertura de la bandeja de discos y, a continuación, empuje firmemente la nueva fuente de alimentación hasta que se ajuste al plano medio.
+. Con la manija de leva de la nueva fuente de alimentación abierta, use las dos manos para sujetar y alinear los bordes de la nueva fuente de alimentación con la abertura en la bandeja del disco. Luego, empuje firmemente la nueva fuente de alimentación hasta que toque el plano medio.
 +
 
-NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación hacia la bandeja de discos, ya que podría dañar los conectores.
+CAUTION: No ejerza demasiada fuerza al deslizar la fuente de alimentación hacia la bandeja de discos, ya que podría dañar los conectores.
 
 . Cierre el asa de la leva de forma que el pestillo encaje en la posición de bloqueo y la fuente de alimentación esté completamente asentada.
 . Vuelva a conectar el cable de alimentación y encienda la nueva fuente de alimentación:
@@ -79,7 +70,7 @@ NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación hacia la
 .. Vuelva a conectar el cable de alimentación a la fuente de alimentación y asegure el cable de alimentación con el retenedor del cable de alimentación.
 .. Encienda el interruptor de alimentación.
 +
-El LED de alimentación (verde) de la fuente de alimentación y el LED de atención (ámbar) se iluminan y, a continuación, en 40 segundos, el LED de atención (ámbar) se apaga.
+El LED de encendido (verde) y el LED de atención (ámbar) de la fuente de alimentación se iluminan. Transcurridos 40 segundos, el LED de atención (ámbar) se apaga.
 
 
 

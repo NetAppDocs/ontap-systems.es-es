@@ -24,7 +24,22 @@ entries:
   entries:
   - title: Información general de mantenimiento
     url: "/c30-60/maintain-overview.html"
-  - title: Soporte de arranque
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medios de arranque AFF C30 y AFF C60
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/c30-60/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/c30-60/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador dañado
+      url: "/c30-60/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/c30-60/bootmedia-replace-bmr.html"
+    - title: Imagen de recuperación de arranque
+      url: "/c30-60/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/c30-60/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
     pdf-filename: Medios de arranque AFF C30 y AFF C60
     entries:
     - title: Flujo de trabajo de sustitución de medios de arranque
@@ -86,6 +101,8 @@ entries:
       url: "/c30-60/io-module-overview.html"
     - title: Agregue módulo de E/S.
       url: "/c30-60/io-module-add.html"
+    - title: Módulo de alta disponibilidad/clúster de intercambio en caliente
+      url: "/c30-60/io-module-hotswap-ha-slot4.html"
     - title: Sustituya el módulo de E/S.
       url: "/c30-60/io-module-replace.html"
   - title: Batería de NV

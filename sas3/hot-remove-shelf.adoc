@@ -4,16 +4,36 @@ sidebar: sidebar
 keywords: hot-remove, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, i/o, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
 summary: 'Puede quitar en caliente una bandeja de discos con módulos IOM12 (sin interrupciones, quite una bandeja de discos de un sistema que está encendido y hay I/o en curso) cuando necesite mover o sustituir la bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.' 
 ---
-= Desmonte en caliente una bandeja - estantes con módulos IOM12/IOM12B
+= Quitar un estante en caliente - DS212C, DS224C y DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede quitar en caliente una bandeja de discos con módulos IOM12/IOM12B (retire sin interrupciones una bandeja de discos de un sistema encendido y hay operaciones de I/o en curso) cuando necesite mover o sustituir una bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.
+Puede extraer en caliente un estante de discos con módulos IOM12 o IOM12B (extraer sin interrupciones un estante de discos de un sistema encendido con E/S en curso) cuando necesite mover o reemplazar un estante de discos. Puede extraer en caliente uno o más estantes de discos desde cualquier lugar dentro de una pila de estantes de discos o extraer una pila de estantes de discos.
+
+.Acerca de esta tarea
+* Si va a extraer una bandeja de discos en activo de una pila (pero manteniendo la pila), puede volver a admitir y verificar una ruta por vez (ruta A y, a continuación, ruta B) para omitir la bandeja de discos que va a quitar para mantener siempre la conectividad de ruta única de las controladoras a la pila.
++
+
+NOTE: Si no mantiene la conectividad de una ruta única desde las controladoras hasta la pila al volver a colocar la pila para omitir la bandeja de discos que va a quitar, podría fallar el sistema con una situación de pánico de varios discos.
+
+* * Posible daño a la bandeja:* Si está retirando una bandeja DS460C y la está moviendo a una parte diferente del centro de datos o transportándola a una ubicación diferente, consulte la sección “Mover o transportar DS460C estantes” al final de este procedimiento.
+
 
 .Antes de empezar
+* *Mejor práctica*: elimine la propiedad de la unidad de disco después de quitar los agregados de las unidades de disco en los estantes de discos que está quitando.
++
+Al eliminar la información de propiedad de una unidad de disco de repuesto, la unidad de disco se puede integrar correctamente en otro nodo (según sea necesario).
+
+
+
+[NOTE]
+====
+Debe desactivar la asignación automática de propiedad de disco antes de eliminar la propiedad de las unidades de disco. Vuelva a activar esta función al finalizar este procedimiento. Para obtener más información sobre los agregados de disco, consulte  https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"^] .
+
+====
 * Su sistema debe ser una configuración de alta disponibilidad multivía, alta disponibilidad de tres rutas, multivía, alta disponibilidad de cuatro rutas o cuádruples.
 +
 En el caso de plataformas con almacenamiento interno, el almacenamiento externo debe cablearse como alta disponibilidad multivía, alta disponibilidad de tres vías o multivía.
@@ -24,38 +44,19 @@ NOTE: Para un sistema de controladoras únicas FAS2600 de la serie FAS2600 que t
 
 * El sistema no puede tener mensajes de error de cableado SAS.
 +
-Puede descargar y ejecutar Active IQ Config Advisor para ver cualquier mensaje de error de cableado SAS y las acciones correctivas que debe tomar.
-
-+
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
+Para ver los mensajes de error de cableado SAS y las acciones correctivas que debe tomar, descargue y ejecute el archivo  https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"^] .
 
 * La configuración de parejas de ALTA DISPONIBILIDAD no puede estar en estado de toma de control.
 * Debe haber quitado todos los agregados de las unidades de disco (las unidades de disco deben ser repuestos) en las bandejas de discos que va a quitar.
 +
 
-NOTE: Si se intenta realizar este procedimiento con agregados en la bandeja de discos que se está quitando, se podría conmutar el sistema con una alerta de varios discos.
+CAUTION: Si se intenta realizar este procedimiento con agregados en la bandeja de discos que se está quitando, se podría conmutar el sistema con una alerta de varios discos.
 
 +
 Puede utilizar el `storage aggregate offline -aggregate _aggregate_name_` y, a continuación, el `storage aggregate delete -aggregate _aggregate_name_` comando.
 
 * Si va a quitar una o varias bandejas de discos de una pila, debe haber calculado la distancia para omitir las bandejas de discos que se van a quitar; por lo tanto, si los cables actuales no son lo suficientemente largos, necesitará tener cables más largos disponibles.
-
-
-.Acerca de esta tarea
-* *Mejor práctica:* la mejor práctica es eliminar la propiedad de las unidades de disco después de quitar los agregados de las unidades de disco de las bandejas de discos que va a quitar.
-+
-Al eliminar la información de propiedad de una unidad de disco de repuesto, la unidad de disco se puede integrar correctamente en otro nodo (según sea necesario).
-
-
-
-[NOTE]
-====
-El procedimiento para eliminar la propiedad de unidades de disco requiere deshabilitar la asignación automática de propiedad de disco. Al final de este procedimiento, se vuelve a habilitar la asignación automática de propiedad de disco.
-
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Descripción general de discos y agregados"^]
-
-====
-* En el caso de un sistema Clustered ONTAP con más de dos nodos, lo más recomendable es haber reasignado épsilon a un par de alta disponibilidad distinto del que se somete a labores de mantenimiento planificadas.
+* *Mejor práctica*: Para un sistema ONTAP en clúster que tenga más de dos nodos, reasigne epsilon a un par de alta disponibilidad que no sea el que se encuentra en mantenimiento planificado.
 +
 La reasignación de configuración épsilon minimiza el riesgo de errores imprevistos que afectan a todos los nodos de un sistema Clustered ONTAP. Puede seguir estos pasos para determinar el nodo que contiene épsilon y reasignar épsilon si es necesario:
 
@@ -70,12 +71,6 @@ El nodo que muestra épsilon `true` en la `Epsilon` columna. (Los nodos que no m
 .. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
 
 
-* Si va a extraer una bandeja de discos en activo de una pila (pero manteniendo la pila), puede volver a admitir y verificar una ruta por vez (ruta A y, a continuación, ruta B) para omitir la bandeja de discos que va a quitar para mantener siempre la conectividad de ruta única de las controladoras a la pila.
-+
-
-NOTE: Si no mantiene la conectividad de una ruta única desde las controladoras hasta la pila al volver a colocar la pila para omitir la bandeja de discos que va a quitar, podría fallar el sistema con una situación de pánico de varios discos.
-
-* * Posible daño a la bandeja:* Si está retirando una bandeja DS460C y la está moviendo a una parte diferente del centro de datos o transportándola a una ubicación diferente, consulte la sección “Mover o transportar DS460C estantes” al final de este procedimiento.
 
 
 .Pasos

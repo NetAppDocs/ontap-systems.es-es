@@ -2,45 +2,33 @@
 permalink: a20-30-50/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: Antes de sustituir el medio de arranque en su sistema AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto. 
+summary: Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto. 
 ---
-= Requisitos para sustituir el medio de arranque: AFF A20, AFF A30 y AFF A50
+= Requisitos para la recuperación manual de medios de arranque: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el medio de arranque en su sistema AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo correcto. Esto incluye asegurarse de que tiene una unidad flash USB con la cantidad adecuada de almacenamiento y verificar que tiene el dispositivo de arranque de reemplazo correcto.
+Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 o AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto.
 
-Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos y consideraciones.
-
-
-
-== Requisitos
-
-* Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz`.
-* Debe copiar `image_xxx.tgz` el archivo en la unidad flash USB para su uso posterior en este procedimiento.
-* Debe sustituir el componente con fallos por un componente FRU de reemplazo con la misma capacidad que recibió de su proveedor.
+.unidad flash USB
+* Asegúrese de tener una unidad flash USB formateada en FAT32.
+* El USB debe tener suficiente capacidad de almacenamiento para contener el  `image_xxx.tgz` archivo.
 
 
+.Preparación de archivos
+Copiar el  `image_xxx.tgz` Archivo a la memoria USB. Este archivo se usará al transferir la imagen de ONTAP mediante la memoria USB.
 
+.Reemplazo de componentes
+Reemplace el componente fallado con el componente de reemplazo proporcionado por NetApp.
 
-== Consideraciones
+.Identificación del controlador
+Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
 
-* Es importante que aplique los comandos en estos pasos en la controladora correcta:
-+
-** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
-** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
-
-
-* Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
-+
-Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
-
-+
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
-
+* El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+* El _controlador saludable_ es el socio HA del controlador dañado.
 
 
 .El futuro

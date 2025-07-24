@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Restaure su sistema de almacenamiento a su funcionamiento normal devolviendo almacenamiento al controlador en buen estado, restaurando la devolución automática y volviendo a habilitar la creación automática de casos de AutoSupport .
+
+.Pasos
+. Devuelva el controlador saludable (el controlador que fue tomado) a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _healthy_node_name_`
+
+. Restaurar la devolución automática desde la consola del controlador dañado (el controlador que tomó el control del controlador sano):
++
+`storage failover modify -node local -auto-giveback _true_`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+

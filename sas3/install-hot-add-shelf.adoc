@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: hot-add, disk, shelves, shelf, iom12, exist, stack, module, sas, hba, onboard, sas, port, controller, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
 summary: Puede añadir en caliente una o varias bandejas de discos con módulos IOM12/IOM12B a una pila existente de bandejas de discos con módulos IOM12/IOM12B o añadir en caliente una pila de una o varias bandejas de discos con módulos IOM12/IOM12B directamente a un HBA SAS o un puerto SAS integrado en la controladora. 
 ---
-= Hot-add a shelf - estantería con módulos IOM12/IOM12B
+= Estantes de adición en caliente: DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,31 +13,17 @@ summary: Puede añadir en caliente una o varias bandejas de discos con módulos 
 [role="lead"]
 Puede añadir en caliente una o varias bandejas de discos con módulos IOM12/IOM12B a una pila existente de bandejas de discos con módulos IOM12/IOM12B o añadir en caliente una pila de una o varias bandejas de discos con módulos IOM12/IOM12B directamente a un HBA SAS o un puerto SAS integrado en la controladora.
 
-.Acerca de esta tarea
-No se puede utilizar este procedimiento para mezclar una pila: Añadir en caliente una bandeja con módulos IOM12/IOM12B a una pila de bandejas que tienen módulos IOM6. Si necesita mezclar una pila, utilice link:iom12-hot-add-mix.html["Añada en caliente bandejas IOM12 a una pila de bandejas IOM6"].
+.Antes de empezar
+Debe cumplir ciertos requisitos y familiarizarse con las mejores prácticas y consideraciones para este procedimiento antes de agregar estantes de discos en caliente.
 
-
-
-== Requisitos para bandejas de discos con adición en caliente con módulos IOM12/IOM12B
-
-El sistema debe cumplir ciertos requisitos antes de añadir en caliente bandejas de discos con módulos IOM12/IOM12B.
-
-
-
-=== Estado del sistema
-
-* El sistema y la versión de ONTAP deben admitir las bandejas de discos que añade en caliente, incluidos los IOM, las unidades de disco y los cables SAS.
+* Asegúrese de que su sistema cumpla con ciertos requisitos antes de agregar en caliente estantes de discos con módulos IOM12/IOM12B:
 +
-https://hwu.netapp.com["Hardware Universe de NetApp"^]
-
-* El sistema debe tener una cantidad inferior a la cantidad máxima de unidades de disco compatibles y, al menos, la cantidad de bandejas de discos que haya pensado añadir en caliente.
+** Su sistema y la versión de ONTAP deben ser compatibles con las bandejas de discos que está agregando en caliente, incluyendo los módulos de E/S, las unidades de disco y los cables SAS. Puede ver qué versión de ONTAP necesita para sus bandejas en  https://hwu.netapp.com["Hardware Universe de NetApp"^] .
+** El sistema debe tener una cantidad inferior a la cantidad máxima de unidades de disco compatibles y, al menos, la cantidad de bandejas de discos que haya pensado añadir en caliente.
 +
-No es posible superar la cantidad máxima de unidades de disco admitidas por el sistema después de añadir bandejas de discos en activo.
+No puede haber excedido el número máximo de unidades de disco compatibles con su sistema después de agregar bandejas de discos en caliente. Puede ver cuántas bandejas admite su sistema en  https://hwu.netapp.com["Hardware Universe de NetApp"^]
 
-+
-https://hwu.netapp.com["Hardware Universe de NetApp"^]
-
-* Si va a añadir en caliente una pila de una o varias bandejas de discos (directamente a las controladoras de la plataforma), el sistema debe tener suficientes puertos HBA SAS PCI SAS o integrados, o una combinación de ambos.
+** Si va a añadir en caliente una pila de una o varias bandejas de discos (directamente a las controladoras de la plataforma), el sistema debe tener suficientes puertos HBA SAS PCI SAS o integrados, o una combinación de ambos.
 +
 [NOTE]
 ====
@@ -46,117 +32,76 @@ Si necesita instalar otro HBA PCI SAS adicional, la práctica recomendada es usa
 Se admite el uso de HBA SAS de 6 GB o una combinación de HBA SAS de 6 GB y HBA SAS de 12 GB; sin embargo, las conexiones del módulo IOM12 con HBA SAS de 6 GB se negocian hasta 6 Gbs, lo que resulta en un rendimiento inferior.
 
 ====
-* El sistema no puede tener mensajes de error de cableado SAS.
+** El sistema no puede tener mensajes de error de cableado SAS.
 +
-Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han cableado correctamente.
+Verifique que sus conexiones SAS estén cableadas correctamente  https://mysupport.netapp.com/site/tools["Descargar y ejecutar Config Advisor"^] .
 
 +
 Debe corregir todos los errores de cableado mediante las acciones correctivas proporcionadas por los mensajes de error.
 
+
+
+* Familiarícese con los requisitos y consideraciones para el uso de cables ópticos SAS mini-SAS HD:
 +
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
-
-
-
-
-
-=== Uso de cables ópticos mini-SAS HD SAS
-
-* Si utiliza cables ópticos mini-SAS HD SAS o una combinación de cables ópticos mini-SAS HD SAS y cables de cobre SAS en la pila de bandejas de discos, debe haber cumplido las reglas en link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"].
-* Si va a añadir en caliente una bandeja de discos con cables ópticos mini-SAS HD SAS a una pila de bandejas de discos conectadas con cables de cobre SAS, puede tener temporalmente ambos tipos de cables en la pila.
+** Si utiliza cables ópticos mini-SAS HD SAS o una combinación de cables ópticos mini-SAS HD SAS y cables de cobre SAS en la pila de bandejas de discos, debe haber cumplido las reglas en link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"].
+** Si va a añadir en caliente una bandeja de discos con cables ópticos mini-SAS HD SAS a una pila de bandejas de discos conectadas con cables de cobre SAS, puede tener temporalmente ambos tipos de cables en la pila.
 +
 Después de añadir en caliente la bandeja de discos, debe sustituir los cables de cobre SAS por el resto de las conexiones de bandeja a bandeja en la pila y de controladora a pila para que la pila cumpla las reglas en link:install-cabling-rules.html#mini-sas-hd-sas-optical-cable-rules["Reglas de cable óptico SAS HD Mini-SAS"]. Esto significa que debe haber solicitado el número adecuado de cables ópticos mini-SAS HD SAS.
 
 
 
-
-
-== Consideraciones sobre las bandejas de discos con adición en caliente con módulos IOM12/IOM12B
-
-Antes de añadir bandejas de discos en activo, deberá familiarizarse con los aspectos y las prácticas recomendadas de este procedimiento.
-
-
-
-=== Consideraciones generales
-
-* Si va a añadir en caliente una bandeja de discos con módulos IOM12/IOM12B a una pila existente (de bandejas de discos con módulos IOM12/IOM12B), puede añadir en caliente la bandeja de discos al final (la primera o la última bandeja de discos lógica) de la pila.
+* Familiarícese con las consideraciones generales para completar este procedimiento:
++
+** Si va a añadir en caliente una bandeja de discos con módulos IOM12/IOM12B a una pila existente (de bandejas de discos con módulos IOM12/IOM12B), puede añadir en caliente la bandeja de discos al final (la primera o la última bandeja de discos lógica) de la pila.
 +
 Para configuraciones de ruta única y alta disponibilidad, según corresponda a los sistemas AFF A200, AFF A220, serie FAS2600 y FAS2700, debe añadir en caliente bandejas de discos al final de la pila que no tenga conexiones a la controladora.
 
-* Las bandejas de discos con módulos IOM12/IOM12B deben estar en su propia pila única; no se pueden añadir a una pila que tenga bandejas con módulos IOM6 o módulos IOM3.
-* En este procedimiento se asume que la configuración utiliza una ACP en banda.
+** Los estantes de discos con módulos IOM12/IOM12B deben estar en su propia pila única.
+** En este procedimiento se asume que la configuración utiliza una ACP en banda.
 +
 En el caso de configuraciones que tienen ACP en banda habilitado, ACP en banda se habilita automáticamente en bandejas de discos añadidas de forma activa. En el caso de configuraciones en las que ACP en banda no está habilitado, las bandejas de discos añadidas en activo funcionan sin ninguna funcionalidad ACP.
 
-* No se admite la consolidación de pilas no disruptiva.
+** No se admite la consolidación de pilas no disruptiva.
 +
 No puede utilizar este procedimiento para añadir bandejas de discos en activo que se quitaron en caliente de otra pila en el mismo sistema cuando el sistema esté encendido y sirviendo datos (se está realizando una I/o).
 
 
 
-
-
-=== Consideraciones sobre prácticas recomendadas
-
-* La práctica recomendada es tener instalada la versión actual del paquete de cualificación de disco (DQP) antes de añadir en caliente una bandeja de discos.
+* *Mejor práctica*: Asegúrese de que su sistema pueda reconocer y utilizar las unidades de disco recién calificadas  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["descargando la versión actual del Paquete de Calificación de Disco (DQP)"^] .
 +
-Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
+Esto le permite evitar mensajes de eventos del sistema sobre información de disco inactualizada. También evita la posible interrupción de la partición del disco debido a que no se reconocen las unidades. El DQP le notifica sobre el firmware de la unidad de disco inactualizado.
 
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
-
-* La práctica recomendada es ejecutar Config Advisor antes y después de añadir una bandeja de discos en activo.
-+
-La ejecución de Config Advisor antes de añadir una bandeja de discos en activo proporciona una copia Snapshot de la conectividad SAS, verifica las versiones del firmware de la bandeja de discos (IOM) y permite verificar los ID de bandeja que ya se están usando en el sistema. Si se ejecuta Config Advisor después de añadir una bandeja de discos en activo, es posible verificar que las conexiones SAS se han cableado correctamente y que los ID de bandeja son únicos en la configuración de par de alta disponibilidad o de controladora individual.
-
+* *Mejor práctica*: Verifique las versiones de firmware del estante de discos (IOM), los identificadores del estante que ya utiliza su sistema y obtenga una instantánea de la conectividad SAS  https://mysupport.netapp.com/site/tools["Descargar y ejecutar Config Advisor"^] Antes de añadir un estante de discos en caliente, también debe verificar que las conexiones SAS estén correctamente cableadas y que los identificadores de los estantes sean únicos dentro del par de alta disponibilidad o la configuración de un solo controlador. Para ello, ejecute Config Advisor después de añadir un estante de discos en caliente.
 +
 Si se genera algún error de cableado SAS o ID de bandeja duplicado, siga las acciones correctivas proporcionadas.
 
 +
 Se necesita acceso a la red para descargar Config Advisor.
 
+* *Práctica recomendada*: Asegúrese de que su sistema tenga las versiones actuales del firmware de la bandeja de discos (IOM) y del firmware de la unidad de disco antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS. Puede visitar el sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar el firmware del estante de discos"] y  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargar el firmware de la unidad de disco"] .
+* Familiarícese con las consideraciones para manipular correctamente los cables SAS:
 +
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
-
-* La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
-+
-Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"^]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"^]
-
-
-
-
-
-=== Consideraciones sobre la manipulación del cable SAS
-
-* Inspeccione visualmente el puerto SAS para comprobar la orientación correcta del conector antes de enchufarlo.
+** Inspeccione visualmente el puerto SAS para comprobar la orientación correcta del conector antes de enchufarlo.
 +
 Los conectores del cable SAS están codificados. Cuando se orienta correctamente a un puerto SAS, el conector hace clic en su lugar y si la bandeja de discos se enciende en ese momento, el LED LNK de puerto SAS de la bandeja de discos se ilumina en verde. En el caso de las bandejas de discos, inserte un conector de cable SAS con la pestaña extraíble orientada hacia abajo (en la parte inferior del conector).
 
 +
 En el caso de las controladoras, la orientación de los puertos SAS puede variar en función del modelo de plataforma. Por lo tanto, la orientación correcta del conector del cable SAS varía.
 
-* Para evitar un rendimiento degradado, no gire, pliegue, pellizque ni pellizque los cables.
+** Para evitar un rendimiento degradado, no gire, pliegue, pellizque ni pellizque los cables.
 +
 Los cables tienen un radio de pliegue mínimo. Las especificaciones del fabricante del cable definen el radio de pliegue mínimo; sin embargo, una guía general para el radio de pliegue mínimo es 10 veces el diámetro del cable.
 
-* El uso de envolturas de velcro en lugar de envolturas de amarre para embalar y asegurar los cables del sistema permite realizar ajustes más sencillos de los cables.
+** El uso de envolturas de velcro en lugar de envolturas de amarre para embalar y asegurar los cables del sistema permite realizar ajustes más sencillos de los cables.
 
 
-
-
-=== Consideraciones sobre el manejo de la unidad DS460C
-
-* Las unidades se agrupan por separado del chasis de la bandeja.
+* Familiarícese con las consideraciones para manipular correctamente las unidades DS460C:
++
+** Las unidades se agrupan por separado del chasis de la bandeja.
 +
 Debe realizar un inventario de las unidades.
 
-* Después de desempaquetar las unidades, debería guardar el material de embalaje para usarlo en el futuro.
+** Después de desempaquetar las unidades, debería guardar el material de embalaje para usarlo en el futuro.
 +
 
 CAUTION: *Posible pérdida de acceso a los datos:* Si en el futuro, es posible mover la bandeja a una parte diferente del centro de datos o transportar la bandeja a una ubicación diferente, es necesario quitar las unidades de los cajones de unidades para evitar posibles daños en los cajones y las unidades.
@@ -165,7 +110,7 @@ CAUTION: *Posible pérdida de acceso a los datos:* Si en el futuro, es posible m
 
 NOTE: Mantenga las unidades de disco en su bolsa ESD hasta que esté listo para instalarlas.
 
-* Cuando manipule las unidades, utilice siempre una muñequera ESD conectada a tierra a una superficie sin pintar en el chasis del gabinete de almacenamiento para evitar descargas estáticas.
+** Cuando manipule las unidades, utilice siempre una muñequera ESD conectada a tierra a una superficie sin pintar en el chasis del gabinete de almacenamiento para evitar descargas estáticas.
 +
 Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en el chasis de la caja de almacenamiento antes de manejar la unidad de disco.
 
@@ -173,7 +118,9 @@ Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en 
 
 
 
-== Instale las bandejas de discos con módulos IOM12/IOM12B para un añadido en caliente
+
+
+== Paso 1: Instalar estantes de discos para una adición en caliente
 
 Para cada bandeja de discos que va a añadir en caliente, debe instalar la bandeja de discos en un rack, conectar los cables de alimentación, encender la bandeja de discos y establecer el ID de bandeja de discos antes de cablear las conexiones SAS.
 
@@ -192,20 +139,17 @@ NOTE: No monte la bandeja de discos en un rack de tipo telco; el peso de la band
 Para que una bandeja de discos sea más ligera y fácil de maniobrar, quite las fuentes de alimentación y los módulos de I/o (IOM).
 
 +
-Para las bandejas de discos DS460C, aunque las unidades se empaquetan por separado, que hace que la bandeja sea más ligera, una bandeja DS460C vacía sigue pesa aproximadamente 132 lb (60 kg); por lo tanto, tenga la siguiente precaución al mover una bandeja.
+
+CAUTION: Aunque las unidades de los estantes DS460C se empaquetan por separado, lo que los hace más ligeros, un estante DS460C vacío pesa aproximadamente 60 kg (132 lb). Se recomienda utilizar un elevador mecánico o cuatro personas usando las asas para moverlo con seguridad.
 
 +
-
-CAUTION: Se recomienda utilizar un elevador mecánico o cuatro personas utilizando las asas de elevación para mover de forma segura un estante DS460C vacío.
-
-+
-El envío DS460C se ha envasado con cuatro asas de elevación desmontables (dos por cada lado). Para utilizar las asas de elevación, las instala insertando las pestañas de las asas en las ranuras del lateral de la bandeja y empujando hacia arriba hasta que encajen en su lugar. A continuación, conforme deslice la bandeja de discos sobre los raíles, separe un conjunto de asas cada vez mediante el pestillo de pulgar. La siguiente ilustración muestra cómo acoplar un asa de elevación.
+El envío del DS460C incluye cuatro asas de elevación desmontables (dos para cada lado). Para usarlas, instálelas insertando las pestañas en las ranuras laterales del estante y empujando hacia arriba hasta que encajen. A continuación, al deslizar el estante del disco sobre los rieles, retire las asas una a una utilizando el pestillo. La siguiente ilustración muestra cómo instalar una asa de elevación.
 
 +
 image::../media/drw_ds460c_handles.gif[Instalación de las asas de elevación]
 
 . Vuelva a instalar todas las fuentes de alimentación y los IOM que quitó antes de instalar la bandeja de discos en el rack.
-. Si va a instalar una bandeja de discos DS460C, instale las unidades en los cajones de unidades; de lo contrario, vaya al siguiente paso.
+. Si va a instalar un estante de discos DS460C, instale las unidades en sus respectivos cajones. De lo contrario, continúe con el siguiente paso.
 +
 [NOTE]
 ====
@@ -215,7 +159,7 @@ Si no hay ninguna correa de mano disponible, toque una superficie sin pintar en 
 
 ====
 +
-Si adquirió una bandeja parcialmente llena, lo que significa que la bandeja tiene menos de 60 unidades compatibles, para cada cajón instale las unidades de la siguiente manera:
+Si compró un estante parcialmente poblado, lo que significa que el estante tiene menos de las 60 unidades que admite, instale las unidades de la siguiente manera en cada cajón:
 
 +
 ** Instale las primeras cuatro unidades en las ranuras delanteras (0, 3, 6 y 9).
@@ -254,21 +198,11 @@ Botón elevado en el lado derecho del portador de la unidad
 +
 Debe asegurarse de que las ranuras 0, 3, 6 y 9 de cada cajón contengan unidades.
 
-... Empuje con cuidado el cajón de la unidad de nuevo dentro de la carcasa.
+... Empuje con cuidado el cajón de la unidad dentro del gabinete. +s image:../media/2860_dwg_e2860_de460c_gentle_close.gif["Cierre suavemente el cajón"]
 +
-|===
-
-
- a| 
-image:../media/2860_dwg_e2860_de460c_gentle_close.gif["Cierre suavemente el cajón"]
-
-
-
- a| 
 
 CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el cajón lentamente para evitar que el cajón se arreste y cause daños a la matriz de almacenamiento.
 
-|===
 ... Cierre el cajón de mando empujando ambas palancas hacia el centro.
 ... Repita estos pasos para cada cajón de la bandeja de discos.
 ... Conecte el panel frontal.
@@ -288,7 +222,7 @@ CAUTION: *Posible pérdida de acceso a datos:* nunca cierre el cajón. Empuje el
 Si tiene un modelo de plataforma con una bandeja de discos interna, los ID de bandeja deben ser únicos para las bandejas de discos internas y las bandejas de discos con conexión externa.
 
 +
-Puede utilizar los siguientes subpasos para cambiar ID de bandeja o utilizar instrucciones más detalladas link:install-change-shelf-id.html["Cambiar un ID de bandeja"^].
+Puede usar los siguientes subpasos para cambiar los ID de los estantes. Para obtener instrucciones más detalladas, utilice link:install-change-shelf-id.html["Cambiar un ID de bandeja"^] .
 
 +
 .. Si es necesario, verifique los ID de bandeja que ya están en uso ejecutando Config Advisor.
@@ -311,12 +245,9 @@ El ID de la bandeja parpadea y el LED ámbar del panel de visualización del ope
 
 
 
-== Cablee las bandejas de discos con módulos IOM12/IOM12B para una adición en caliente
+== Paso 2: Conecte los estantes de discos para una instalación en caliente
 
 Conecta las conexiones SAS (bandeja a bandeja y de controladora a pila) según las bandejas de discos añadidas en caliente de modo que tengan conectividad al sistema.
-
-.Antes de empezar
-Debe haber cumplido los requisitos de link:install-hot-add-shelf.html#requirements-for-hot-adding-disk-shelves-with-iom12iom12b-modules["Requisitos para añadir en caliente bandejas de discos con módulos IOM12"] E instalados, encendidos y establecidos los ID de bandeja de cada bandeja de discos según se indica en link:install-hot-add-shelf.html#install-disk-shelves-with-iom12iom12b-modules-for-a-hot-add["Instale las bandejas de discos con módulos IOM12 para un añadido en caliente"].
 
 .Acerca de esta tarea
 * Si desea obtener una explicación y ejemplos del cableado «estándar» de las bandejas a bandejas y del cableado «de doble ancho», consulte link:install-cabling-rules.html#shelf-to-shelf-connection-rules["Reglas para la conexión SAS entre bandejas"].
@@ -326,6 +257,10 @@ Debe haber cumplido los requisitos de link:install-hot-add-shelf.html#requiremen
 
 NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
 
+
+
+.Antes de empezar
+* Debes haber cumplido con los requisitos para completar este trámite en el <<before_you_begin,Antes de empezar>> sección e instalado, encendido y configurado los identificadores de estante para cada estante de disco según las instrucciones en <<install_disk_shelves_for_a_hot_add,Instale las bandejas de discos con módulos IOM12 para un añadido en caliente>> .
 
 
 .Pasos
@@ -441,15 +376,12 @@ Estas instrucciones se utilizan para la adición en caliente al final de la pila
 |===
 . Si ha añadido una bandeja de discos con cables ópticos mini-SAS HD a una pila de bandejas de discos conectadas con cables de cobre SAS, sustituya los cables de cobre SAS; de lo contrario, vaya al paso siguiente.
 +
-La pila debe cumplir los requisitos indicados en la <<Requisitos para bandejas de discos con adición en caliente con módulos IOM12/IOM12B>> sección de este procedimiento.
+La pila debe cumplir los requisitos establecidos en la <<before_you_begin,Antes de empezar>> sección de este procedimiento.
 
 +
 Sustituya los cables de uno en uno y asegúrese de esperar al menos 70 segundos entre la desconexión de un cable y la conexión de uno nuevo.
 
-. Descargue y ejecute Config Advisor para verificar que las conexiones SAS se han cableado correctamente.
-+
-https://mysupport.netapp.com/site/tools["Descargas de NetApp: Config Advisor"^]
-
+. Verifique que sus conexiones SAS estén cableadas correctamente  https://mysupport.netapp.com/site/tools["Descargar y ejecutar Config Advisor"^] .
 +
 Si se genera algún error de cableado SAS, siga las acciones correctivas proporcionadas.
 
@@ -512,11 +444,11 @@ En el resultado, «'en banda'» se muestra en la lista como «'activo'» para ca
 
 
 
-== Mueva o transporte las estanterías DS460C
+== (Opcional) Paso 3: Mover o transportar los estantes del DS460C
 
-Si en el futuro, mueve las bandejas DS460C a una parte diferente del centro de datos o transporta las bandejas a una ubicación diferente, debe quitar las unidades de los cajones de unidades para evitar daños a los cajones y las unidades.
+Si en el futuro traslada los estantes DS460C a una parte diferente del centro de datos o transporta los estantes a una ubicación diferente, deberá quitar las unidades de los cajones de unidades para evitar posibles daños en los cajones de unidades y en las unidades.
 
-* Si al instalar bandejas DS460C como parte de su adición de activo de bandeja, ha guardado los materiales de embalaje de unidades, utilice estos para volver a empaquetar las unidades antes de moverlas.
+* Si guardó los materiales de embalaje de la unidad cuando instaló los estantes DS460C como parte de la incorporación activa de estantes, úselos para volver a empaquetar las unidades antes de moverlas.
 +
 Si no ha guardado los materiales de embalaje, debe colocar las unidades en superficies acolchadas o utilizar un embalaje acolchado alternativo. No coloque nunca unidades entre sí.
 

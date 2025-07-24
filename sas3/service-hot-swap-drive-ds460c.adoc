@@ -4,20 +4,17 @@ sidebar: sidebar
 keywords: hot-swap, fail, disk, drive, ds460c, nondisruptive, replace, system, power, serving, data, i/o, hot-swap a disk drive in a ds460c disk shelf 
 summary: Es posible intercambiar en caliente una unidad de disco con error en una bandeja de discos DS460C. 
 ---
-= Unidad de disco a intercambiable en caliente de una bandeja de discos DS460C: Bandejas con módulos IOM12/IOM12B
+= Intercambio en caliente de una unidad de disco - DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Es posible intercambiar en caliente una unidad de disco con error en una bandeja de discos DS460C.
+Puede intercambiar en caliente una unidad de disco defectuosa en un estante de discos DS460C con módulos IOM12 o IOM12B.
 
 .Antes de empezar
-* La unidad de disco de reemplazo debe ser compatible con la bandeja de discos DS460C.
-+
-https://hwu.netapp.com["Hardware Universe de NetApp"]
-
+* La unidad de disco de reemplazo debe ser compatible con el estante de discos DS460C. Puede ver las unidades de disco compatibles con su configuración en  https://hwu.netapp.com["Hardware Universe de NetApp"] .
 * Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
 * La unidad de disco que desea quitar debe tener un error.
 +
@@ -29,10 +26,7 @@ NOTE: Según el tipo y la capacidad de la unidad de disco, la unidad de disco pu
 
 * Si va a sustituir un disco de cifrado automático (SED), debe seguir las instrucciones para sustituir un SED en la documentación de ONTAP para su versión de ONTAP.
 +
-Las instrucciones de la documentación de ONTAP describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
-
-+
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"]
+Instrucciones en el  https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"] La documentación describe los pasos adicionales que debe realizar antes y después de reemplazar una SED.
 
 
 
@@ -67,23 +61,11 @@ NOTE: No coloque las manos en las placas de la unidad de disco expuestas en la p
 
 NOTE: Los campos magnéticos pueden destruir todos los datos de la unidad de disco y causar daños irreparables en los circuitos de la unidad de disco.
 
-* La práctica recomendada es tener instalada la versión actual del paquete de cualificación de disco (DQP) antes de intercambiar en funcionamiento una unidad de disco.
+* *Mejor práctica*: Asegúrese de que su sistema pueda reconocer y utilizar las unidades de disco recién calificadas  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["descargando la versión actual del Paquete de Calificación de Disco (DQP)"^] Antes de intercambiar en caliente una unidad de disco.
 +
-Tener instalada la versión actual del DQP permite al sistema reconocer y utilizar unidades de disco recién cualificadas; por lo tanto, evita mensajes de eventos del sistema acerca de tener información no actualizada de la unidad de disco. También se evita la posible prevención de la partición de discos, ya que no se reconocen las unidades de disco. El DQP también notifica el firmware de la unidad de disco que no es actual.
+Tener instalada la versión actual de DQP permite que el sistema reconozca y utilice las unidades de disco recién calificadas, lo que evita los mensajes de eventos del sistema sobre la falta de información actualizada de la unidad de disco. También evita la posible interrupción de la partición del disco debido a la falta de reconocimiento de las unidades. DQP le notifica sobre el firmware de la unidad de disco no actualizado.
 
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Descargas de NetApp: Paquete de cualificación de disco"^]
-
-* La práctica recomendada es tener las versiones actuales del firmware de bandeja de discos (IOM) y de las unidades de disco instaladas en el sistema antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS.
-+
-Puede encontrar las versiones actuales del firmware en el sitio de soporte de NetApp.
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargas de NetApp: Firmware de bandeja de discos"]
-
-+
-https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargas de NetApp: Firmware de la unidad de disco"]
-
+* *Práctica recomendada*: Asegúrese de que su sistema tenga las versiones actuales del firmware de la bandeja de discos (IOM) y del firmware de la unidad de disco antes de agregar nuevas bandejas de discos, componentes FRU de bandeja o cables SAS. Puede visitar el sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar el firmware del estante de discos"^] y  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargar el firmware de la unidad de disco"^] .
 * El firmware de la unidad de disco se actualiza automáticamente (sin interrupciones) en unidades de disco nuevas con versiones de firmware no actuales.
 +
 

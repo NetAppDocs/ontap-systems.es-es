@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/bootmedia-replace-bmr.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the boot media 
-summary: Para localizar el medio de arranque fallido, elimine el módulo de gestión del sistema antes de poder sustituir el soporte de arranque. 
+summary: El medio de arranque de su sistema ASA A20, ASA A30 o ASA A50 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica retirar el módulo controlador, retirar el medio de arranque dañado, instalar el nuevo medio de arranque y, finalmente, reinstalar el módulo controlador. 
 ---
 = Sustituya el soporte de arranque: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,7 +11,17 @@ summary: Para localizar el medio de arranque fallido, elimine el módulo de gest
 
 
 [role="lead"]
-Los medios de arranque del sistema ASA A20, ASA A30 o ASA A50 almacenan datos esenciales del firmware y de configuración. El proceso de sustitución implica la extracción del módulo del controlador, la extracción del soporte de arranque dañado, la instalación del soporte de arranque de reemplazo y, a continuación, la transferencia de la imagen ONTAP al soporte de arranque de reemplazo.
+El medio de arranque de su sistema ASA A20, ASA A30 o ASA A50 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica retirar el módulo controlador, retirar el medio de arranque dañado, instalar el nuevo medio de arranque y, finalmente, reinstalar el módulo controlador.
+
+
+
+== Acerca de esta tarea
+
+Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
+
+Un chasis de plataforma tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
 
 
 
