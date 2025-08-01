@@ -21,12 +21,6 @@ El medio de arranque almacena un conjunto primario y secundario de archivos de i
 
 
 
-== Módulo de almacenamiento en caché
-
-Es necesario sustituir el módulo de almacenamiento en caché de la controladora cuando el sistema registra un único mensaje de AutoSupport (ASUP) que el módulo se ha desconectado.
-
-
-
 == Chasis
 
 El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
@@ -66,3 +60,5 @@ Un suministro de alimentación proporciona una fuente de alimentación redundant
 == Batería de reloj en tiempo real
 
 Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+////Julio de 2025: ontap-systems 370: módulo de almacenamiento en caché eliminado porque no es compatible con esta plataforma.

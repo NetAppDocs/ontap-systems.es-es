@@ -19,22 +19,22 @@ Por ejemplo, el siguiente mensaje de AutoSupport suprime la creación automátic
 +
 `node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deshabilitar la devolución automática desde la consola del controlador dañado:
+. Desactivar devolución automática:
++
+.. Ingrese el siguiente comando desde la consola del controlador dañado:
 +
 `storage failover modify -node local -auto-giveback false`
 
-+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
 
-NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
 
 . Prepare el clúster fallido y el módulo HA en la ranura 4 para su extracción quitándolos del servicio y apagándolos:
 +
+.. Introduzca el siguiente comando:
++
 `system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
 
-+
-
-NOTE: Cuando veas _¿Quieres continuar?_, introduce  `y` .
-
+.. Ingresar `y` cuando veas el mensaje _¿Quieres continuar?_
 +
 Por ejemplo, el siguiente comando prepara el módulo en la ranura 4 del nodo 2 (el controlador dañado) para su eliminación y muestra un mensaje que indica que es seguro eliminarlo:
 
@@ -49,6 +49,8 @@ Do you want to continue? {y|n}: y
 
 The module has been successfully removed from service and powered off. It can now be safely removed.
 ----
+
+
 . Verifique que el clúster fallido y el módulo HA en la ranura 4 estén apagados:
 +
 `system controller slot module show`

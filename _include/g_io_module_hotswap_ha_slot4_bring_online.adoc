@@ -6,12 +6,11 @@ Coloque el clúster de reemplazo y el módulo de E/S HA en la ranura 4 en línea
 
 . Ponga en línea el clúster de reemplazo y el módulo de E/S de alta disponibilidad:
 +
-`system controller slot module insert -node impaired_node_name_ -slot _slot_name_`
-
+.. Introduzca el siguiente comando:
 +
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_name_`
 
-NOTE: Cuando veas _¿Quieres continuar?_, introduce  `y` .
-
+.. Ingresar `y` Cuando veas el mensaje "¿Quieres continuar?"
 +
 La salida debe confirmar que el clúster y el módulo de E/S de HA se pusieron en línea correctamente (se encendieron, se inicializaron y se pusieron en servicio).
 
@@ -29,6 +28,8 @@ Do you want to continue? {y|n}: `y`
 
 The module has been successfully powered on, initialized and placed into service.
 ----
+
+
 . Verifique que cada puerto del clúster y el módulo de E/S de HA se hayan inicializado correctamente:
 +
 `event log show -event \*hotplug.init*`

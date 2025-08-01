@@ -1,0 +1,46 @@
+= 
+:allow-uri-read: 
+
+
+Para utilizar este procedimiento, su sistema de almacenamiento debe cumplir con todos los requisitos.  Lea las consideraciones para obtener más contexto sobre este procedimiento.
+
+
+NOTE: Si su sistema de almacenamiento no cumple con todos los requisitos, deberá utilizar ellink:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"] .
+
+.Requisitos
+* Su sistema de almacenamiento debe ejecutar ONTAP 9.17.1 o posterior.
+* El módulo de E/S que falló debe ser un módulo de E/S de clúster y HA en la ranura 4 y debe reemplazarlo por un módulo de E/S de clúster y HA equivalente. No se puede cambiar el tipo de módulo de E/S.
+* La configuración de su sistema de almacenamiento debe tener solo un clúster y un módulo de E/S de HA ubicados en la ranura 4, no dos clústeres y módulos de E/S de HA.
+* Su sistema de almacenamiento debe ser una configuración de clúster de dos nodos (conmutados o sin conmutador).
+* El controlador con el clúster y el módulo de E/S de alta disponibilidad fallidos (el controlador dañado) ya debe haber asumido el control del controlador asociado en buen estado. La asumida debería haberse realizado automáticamente si el módulo de E/S falla.
++
+En clústeres de dos nodos, el sistema de almacenamiento no puede discernir qué controlador tiene el módulo de E/S fallido, por lo que cualquiera de ellos podría iniciar la sustitución. El procedimiento de intercambio en caliente del clúster y del módulo de E/S de alta disponibilidad solo se admite cuando el controlador con el módulo de E/S fallido (el controlador dañado) ha sustituido al controlador en buen estado.
+
++
+Puede verificar que el controlador dañado tomó control exitosamente del controlador saludable ingresando el  `storage failover show` dominio.
+
++
+Si no está seguro de qué controlador tiene el módulo de E/S fallido, comuníquese con  https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] .
+
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+.Consideraciones
+* El intercambio en caliente del clúster y del módulo de E/S de HA significa que no es necesario realizar una toma de control manual; el controlador dañado (el controlador con el clúster y el módulo de E/S de HA fallidos) ha tomado el control automáticamente del controlador en buen estado.
++
+Cuando el controlador dañado ha tomado el control del controlador saludable, la única forma de recuperarse sin una interrupción es intercambiar el módulo en caliente.
+
+* Es fundamental aplicar los comandos al controlador correcto cuando se intercambian en caliente el clúster y el módulo de E/S de HA:
++
+** El _controlador dañado_ es el controlador en el que está intercambiando en caliente el clúster y el módulo de E/S de alta disponibilidad y es el controlador que ha tomado el control del controlador en buen estado.
+** El _controlador saludable_ es el socio de HA del controlador dañado y es el controlador que fue tomado por el controlador dañado.
+
+
+* Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
++
+Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+

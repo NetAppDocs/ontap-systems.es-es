@@ -3,7 +3,10 @@
 
 
 * Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
-* El puerto e0S (llave e0M) se utiliza para la comunicación entre los dos controladores durante el proceso de recuperación de arranque automático. Asegúrese de que el puerto e0S del controlador dañado funcione correctamente.
+* Verifique que el puerto e0M (llave) en el controlador dañado esté conectado y no esté defectuoso.
++
+El puerto e0M se utiliza para comunicarse entre los dos controladores durante el proceso de recuperación de arranque automatizado.
+
 * Para OKM, necesita el contenido del archivo de contraseña de OKM.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
