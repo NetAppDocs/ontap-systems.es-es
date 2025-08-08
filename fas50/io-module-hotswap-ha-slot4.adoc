@@ -2,7 +2,7 @@
 permalink: fas50/io-module-hotswap-ha-slot4.html 
 sidebar: sidebar 
 keywords: fas50, hotswap a cluster ha card 
-summary: 'El módulo de E/S de clúster y alta disponibilidad (HA) admite interconexiones para agrupamiento en clúster y alta disponibilidad. Puede intercambiar el módulo en caliente en su sistema de almacenamiento FAS50 si falla.' 
+summary: 'El módulo de E/S de clúster y alta disponibilidad (HA) admite interconexiones para agrupamiento en clústeres y alta disponibilidad. Puede intercambiar el módulo en caliente en su sistema de almacenamiento FAS50 cuando falle y si su sistema de almacenamiento cumple con los requisitos específicos.' 
 ---
 = Intercambio en caliente del módulo de E/S utilizado para el tráfico de clúster y HA - FAS50
 :allow-uri-read: 
@@ -15,34 +15,7 @@ El módulo de E/S de clúster y alta disponibilidad (HA) admite interconexiones 
 
 Para intercambiar en caliente un módulo, asegúrese de que su sistema de almacenamiento cumpla con los requisitos del procedimiento, prepare el sistema de almacenamiento y el módulo de E/S en la ranura 4, intercambie en caliente el módulo defectuoso por uno equivalente, ponga en línea el módulo de reemplazo, restaure el sistema de almacenamiento a su funcionamiento normal y devuelva el módulo defectuoso a NetApp.
 
-
-
-== Paso 1: Asegúrese de que el sistema de almacenamiento cumpla con los requisitos del procedimiento
-
-Para utilizar este procedimiento, su sistema de almacenamiento debe cumplir con todos los requisitos.  Lea las consideraciones para obtener más contexto sobre este procedimiento.
-
-
-NOTE: Si su sistema de almacenamiento no cumple con todos los requisitos, deberá utilizar ellink:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"] .
-
-.Requisitos
-* Su sistema de almacenamiento debe ejecutar ONTAP 9.17.1 o posterior.
-* El módulo de E/S que falló debe ser un módulo de E/S de clúster y HA en la ranura 4 y debe reemplazarlo por un módulo de E/S de clúster y HA equivalente. No se puede cambiar el tipo de módulo de E/S.
-* La configuración de su sistema de almacenamiento debe tener solo un clúster y un módulo de E/S de HA ubicados en la ranura 4, no dos clústeres y módulos de E/S de HA.
-* Su sistema de almacenamiento debe ser una configuración de clúster de dos nodos (conmutados o sin conmutador).
-* El controlador con el clúster y el módulo de E/S de alta disponibilidad fallidos (el controlador dañado) ya debe haber asumido el control del controlador asociado en buen estado. La asumida debería haberse realizado automáticamente si el módulo de E/S falla.
-+
-En clústeres de dos nodos, el sistema de almacenamiento no puede discernir qué controlador tiene el módulo de E/S fallido, por lo que cualquiera de ellos podría iniciar la sustitución. El procedimiento de intercambio en caliente del clúster y del módulo de E/S de alta disponibilidad solo se admite cuando el controlador con el módulo de E/S fallido (el controlador dañado) ha sustituido al controlador en buen estado.
-
-+
-Puede verificar que el controlador dañado tomó control exitosamente del controlador saludable ingresando el  `storage failover show` dominio.
-
-+
-Si no está seguro de qué controlador tiene el módulo de E/S fallido, comuníquese con  https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] .
-
-* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
-
-
-.Consideraciones
+.Acerca de esta tarea
 * El intercambio en caliente del clúster y del módulo de E/S de HA significa que no es necesario realizar una toma de control manual; el controlador dañado (el controlador con el clúster y el módulo de E/S de HA fallidos) ha tomado el control automáticamente del controlador en buen estado.
 +
 Cuando el controlador dañado ha tomado el control del controlador saludable, la única forma de recuperarse sin una interrupción es intercambiar el módulo en caliente.
@@ -64,10 +37,37 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+== Paso 1: Asegúrese de que el sistema de almacenamiento cumpla con los requisitos del procedimiento
+
+Para utilizar este procedimiento, asegúrese de que su sistema de almacenamiento cumpla con todos los requisitos.
+
+
+NOTE: Si su sistema de almacenamiento no cumple con todos los requisitos, deberá utilizar ellink:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"] .
+
+* Su sistema de almacenamiento debe ejecutar ONTAP 9.17.1 o posterior.
+* El módulo de E/S que falló debe ser un módulo de E/S de clúster y HA en la ranura 4 y debe reemplazarlo por un módulo de E/S de clúster y HA equivalente. No se puede cambiar el tipo de módulo de E/S.
+* La configuración de su sistema de almacenamiento debe tener solo un clúster y un módulo de E/S de HA ubicados en la ranura 4, no dos clústeres y módulos de E/S de HA.
+* Su sistema de almacenamiento debe ser una configuración de clúster de dos nodos (conmutados o sin conmutador).
+* El controlador con el clúster y el módulo de E/S de alta disponibilidad fallidos (el controlador dañado) ya debe haber asumido el control del controlador asociado en buen estado. La asumida debería haberse realizado automáticamente si el módulo de E/S falla.
++
+En clústeres de dos nodos, el sistema de almacenamiento no puede discernir qué controlador tiene el módulo de E/S fallido, por lo que cualquiera de ellos podría iniciar la sustitución. El procedimiento de intercambio en caliente del clúster y del módulo de E/S de alta disponibilidad solo se admite cuando el controlador con el módulo de E/S fallido (el controlador dañado) ha sustituido al controlador en buen estado.
+
++
+Puede verificar que el controlador dañado tomó control exitosamente del controlador saludable ingresando el  `storage failover show` dominio.
+
++
+Si no está seguro de qué controlador tiene el módulo de E/S fallido, comuníquese con  https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] .
+
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+
+
 == Paso 2: Prepare el sistema de almacenamiento y la ranura del módulo de E/S 4
 
 Prepare el sistema de almacenamiento y la ranura del módulo de E/S 4 para que sea seguro quitar el clúster fallido y el módulo de E/S de alta disponibilidad:
 
+.Pasos
 . Puesta a tierra apropiadamente usted mismo.
 . Desconecte el cableado del clúster fallido y del módulo de E/S de HA.
 +
@@ -173,6 +173,7 @@ Puede utilizar la pestaña de la izquierda y el tornillo de mariposa de la derec
 
 Coloque el clúster de reemplazo y el módulo de E/S HA en la ranura 4 en línea, verifique que los puertos del módulo se hayan inicializado correctamente, verifique que la ranura 4 esté encendida y luego verifique que el módulo esté en línea y sea reconocido.
 
+.Pasos
 . Ponga en línea el clúster de reemplazo y el módulo de E/S de alta disponibilidad:
 +
 .. Introduzca el siguiente comando:

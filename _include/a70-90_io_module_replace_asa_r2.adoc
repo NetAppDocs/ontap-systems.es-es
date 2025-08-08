@@ -1,88 +1,11 @@
-= Paso 1: Apague el controlador dañado
+= 
 :allow-uri-read: 
 
 
-Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
-
-.Antes de empezar
-* Debe tener la pieza de repuesto disponible.
-* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionen correctamente. De lo contrario, póngase en contacto con el soporte técnico.
-
-
-
-
-== Paso 1: Apague el controlador dañado
-
-Apague o tome el control de la controladora dañada.
-
-Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
-
-.Acerca de esta tarea
-* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, link:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["estado del quórum"] de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
-+
-Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
-
-* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
-
-
 .Pasos
-. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
-+
-`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
-
-+
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
-
-+
-`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
-
-. Deshabilite la devolución automática de la consola de la controladora en buen estado:
-+
-`storage failover modify -node local -auto-giveback false`
-
-+
-
-NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
-
-. Lleve la controladora dañada al aviso DEL CARGADOR:
-+
-[cols="1,2"]
-|===
-| Si el controlador dañado está mostrando... | Realice lo siguiente... 
-
-
- a| 
-El aviso del CARGADOR
- a| 
-Vaya al paso siguiente.
-
-
-
- a| 
-Esperando devolución...
- a| 
-Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
-
-
-
- a| 
-Solicitud del sistema o solicitud de contraseña
- a| 
-Retome o detenga el controlador dañado del controlador en buen estado:
-
-`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
-
-El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
-
-|===
-
-
-
-
-== Paso 2: Sustituya un módulo I/O fallido
-
 Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desconecte cualquier cableado del módulo de E/S de destino.
 +
@@ -128,38 +51,3 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 . Repita los pasos de extracción e instalación para reemplazar módulos adicionales para la controladora.
 . Gire la bandeja de gestión de cables a la posición bloqueada.
 
-
-
-
-== Paso 3: Reinicie el controlador
-
-Después de sustituir un módulo de I/O, debe reiniciar la controladora.
-
-.Pasos
-. Reinicie la controladora desde el aviso del CARGADOR:
-+
-`bye`
-
-+
-
-NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
-
-. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
-+
-`storage failover giveback -ofnode _impaired_node_name_`
-
-. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
-+
-`storage failover modify -node local -auto-giveback true`
-
-. Si AutoSupport está habilitado, restaure la creación automática de casos:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`
-
-
-
-
-
-== Paso 4: Devuelva la pieza que falló a NetApp
-
-Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

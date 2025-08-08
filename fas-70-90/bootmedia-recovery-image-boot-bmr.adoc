@@ -16,7 +16,7 @@ Tras instalar el nuevo dispositivo de arranque en su sistema de almacenamiento F
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
 .Antes de empezar
-* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para OKM, necesita la frase de contraseña de todo el clúster y también los datos de respaldo.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
 ** archivo /cfcard/kmip/servers.cfg.
@@ -85,7 +85,7 @@ El cifrado no está instalado en el sistema. Complete los siguientes pasos:
  a| 
 Vaya al paso 4 para restaurar el administrador de claves adecuado.
 
-El nodo accede al menú de arranque y ejecuta lo siguiente:
+El nodo accede al menú de arranque y ejecuta:
 
 ** Opción 10 para sistemas con gestor de claves incorporado (OKM).
 ** Opción 11 para sistemas con External Key Manager (EKM).
@@ -107,20 +107,32 @@ Entering Bootmenu Option 10...
 This option must be used only in disaster recovery procedures. Are you sure? (y or n):
 ....
 .. Introduzca `Y` en el prompt para confirmar que desea iniciar el proceso de recuperación de OKM.
-.. Introduzca la frase de acceso del gestor de claves incorporado cuando se le solicite y vuelva a introducir la frase de acceso cuando se le solicite para confirmar.
+.. Ingrese lo siguiente cuando se le solicite:
 +
-.Mostrar ejemplo de peticiones de contraseña
+... La frase de contraseña
+... La frase de contraseña nuevamente cuando se le solicite confirmar
+... Copia de seguridad de datos para el administrador de claves integrado
++
+.Mostrar ejemplo de solicitud de frase de contraseña y datos de respaldo
 [%collapsible]
 =====
 ....
 Enter the passphrase for onboard key management:
-Enter the passphrase again to confirm:
-Enter the backup data:
 -----BEGIN PASSPHRASE-----
 <passphrase_value>
 -----END PASSPHRASE-----
+Enter the passphrase again to confirm:
+-----BEGIN PASSPHRASE-----
+<passphrase_value>
+-----END PASSPHRASE-----
+Enter the backup data:
+-----BEGIN BACKUP-----
+<passphrase_value>
+-----END ACKUP-----
 ....
 =====
+
+
 .. Seguir supervisando el proceso de recuperación mientras restaura los archivos adecuados desde el nodo asociado.
 +
 Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
@@ -181,7 +193,7 @@ Si `AUTOBOOT` está establecido, el nodo se reinicia y utiliza los archivos de c
 
 
  a| 
-ONTAP 9.16.1
+ONTAP 9.16.1 y posteriores
  a| 
 Continúe con el próximo paso.
 
@@ -259,6 +271,8 @@ xxx.xxx.xxx.xxx:5696.netapp_keystore_uuid=<id_value>
 
  a| 
 Si se le solicita, introduzca el UUID de clúster ONTAP del partner.
+
+Puede comprobar el UUID del clúster desde el nodo asociado mediante el `cluster identify show` dominio.
  a| 
 .Muestra el ejemplo de UUID de clúster ONTAP
 [%collapsible]
@@ -276,6 +290,13 @@ System is ready to utilize external key manager(s).
 
  a| 
 Si se le solicita, introduzca la interfaz de red temporal y la configuración del nodo.
+
+Necesitas ingresar:
+
+... La dirección IP del puerto
+... La máscara de red para el puerto
+... La dirección IP de la puerta de enlace predeterminada
+
  a| 
 .Mostrar ejemplo de una configuración de red temporal
 [%collapsible]
@@ -298,44 +319,11 @@ Trying to recover keys from key servers....
 |===
 .. En función de si la clave se ha restaurado correctamente, realice una de las siguientes acciones:
 +
-*** Si la configuración de EKM se ha restaurado correctamente, el proceso intenta restaurar los archivos adecuados desde el nodo asociado y reinicia el nodo. Vaya al paso d.
+*** Si lo ves `kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:5696` En la salida, la configuración de EKM se ha restaurado correctamente.
 +
-.Mostrar ejemplo de mensajes de restauración 9.16.0 correctos
-[%collapsible]
-=====
-....
+El proceso intenta restaurar los archivos apropiados del nodo asociado y reinicia el nodo.  Vaya al paso d.
 
-kmip2_client: Importing keys from external key server: xxx.xxx.xxx.xxx:5696
-[Feb  6 04:57:43]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdUtils: [locateMrootAkUuids]:420: Locating local cluster MROOT-AK with keystore UUID: <uuid>
-[Feb  6 04:57:43]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [doCmdImp]:79: Calling KMIP Locate for the following attributes: [<x-NETAPP-ClusterId, <uuid>>, <x-NETAPP-KeyUsage, MROOT-AK>, <x-NETAPP-KeystoreUuid, <uuid>>, <x-NETAPP-Product, Data ONTAP>]
-[Feb  6 04:57:44]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [doCmdImp]:84: KMIP Locate executed successfully!
-[Feb  6 04:57:44]: 0x80cc09000: 0: DEBUG: kmip2::kmipCmds::KmipLocateCmdBase: [setUuidList]:50: UUID returned: <uuid>
-...
-kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:5696
-
-GEOM_ELI: Device nvd0s4.eli created.
-GEOM_ELI: Encryption: AES-XTS 256
-GEOM_ELI:     Crypto: software
-Feb 06 05:02:37 [_server-name_]: crypto_get_mroot_ak:140 MROOT-AK is requested.
-Feb 06 05:02:37 [_server-name_]: crypto_get_mroot_ak:162 Returning MROOT-AK.
-....
-=====
-+
-.Mostrar ejemplo de mensajes de restauración 9.16.1 correctos
-[%collapsible]
-=====
-....
-
-System is ready to utilize external key manager(s).
-Trying to recover keys from key servers....
-[discover_versions]
-[status=SUCCESS reason= message=]
-...
-kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:xxxx
-Successfully recovered keymanager secrets.
-....
-=====
-*** Si la clave no se restaura correctamente, el sistema se detendrá e indicará que no se pudo restaurar. Se muestran los mensajes de error y advertencia. Vuelva a ejecutar el proceso de recuperación:
+*** Si la clave no se restaura exitosamente, el sistema se detendrá e indicará que no pudo restaurar la clave.  Se muestran los mensajes de error y advertencia.  Debe volver a ejecutar el proceso de recuperación:
 +
 `boot_recovery -partner`
 

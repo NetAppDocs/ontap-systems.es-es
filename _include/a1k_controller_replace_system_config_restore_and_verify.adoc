@@ -8,6 +8,7 @@
 
 Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
 
+.Pasos
 . Arranque en modo de mantenimiento: `boot_ontap maint`
 +
 .. Introduzca `y` cuando vea _Continue with boot?_.
@@ -44,6 +45,7 @@ El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 
 == Paso 2: Verifique la lista de discos
 
+.Pasos
 . Compruebe que el adaptador enumera las rutas de acceso a todos los discos con el `storage show disk -p`.
 +
 Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.

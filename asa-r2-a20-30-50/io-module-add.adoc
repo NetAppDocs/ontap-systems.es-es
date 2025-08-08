@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/io-module-add.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, add I/O module 
-summary: Para sustituir un módulo de E/S, debe desconectar los cables del módulo, quitar los módulos SFP y QSFP del módulo, quitar el módulo, instalar el módulo de reemplazo, volver a instalar los módulos SFP y QSFP y, a continuación, conectar el cable al módulo de E/S. 
+summary: Agregue un módulo de E/S a su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos. 
 ---
 = Añada un módulo I/O: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Para sustituir un módulo de E/S, debe desconectar los cables del módu
 
 
 [role="lead"]
-Añada un módulo I/O a su sistema ASA A20, ASA A30 o ASA A50 para mejorar la conectividad de la red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
+Agregue un módulo de E/S a su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
 
-Puede agregar un módulo de E/S a su sistema de almacenamiento ASA C30 si hay ranuras disponibles. Si todas las ranuras están ocupadas, puede reemplazar un módulo existente para agregar uno nuevo.
+Puede agregar un módulo de E/S a su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 si hay ranuras disponibles.  Si todas las ranuras están completamente ocupadas, puedes reemplazar un módulo existente para agregar uno nuevo.
 
 .Acerca de esta tarea
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azules) para ayudar a localizar físicamente el sistema de almacenamiento asociado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.

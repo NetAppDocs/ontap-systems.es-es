@@ -19,7 +19,7 @@ Revise los siguientes requisitos.
 
 * Debe sustituir el medio de arranque con errores por un medio de arranque de reemplazo que recibió desde NetApp.
 * Los puertos del clúster se utilizan para la comunicación entre los dos controladores durante el proceso de recuperación de arranque automático. Asegúrese de que los puertos del clúster del controlador dañado funcionen correctamente.
-* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para OKM, necesita la frase de contraseña de todo el clúster y también los datos de respaldo.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
 ** /cfcard/kmip/servers.cfg

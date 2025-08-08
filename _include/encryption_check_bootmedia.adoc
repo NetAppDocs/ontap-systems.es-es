@@ -8,6 +8,7 @@
 
 Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.
 
+.Pasos
 . Determine si la versión de ONTAP admite el cifrado ejecutando el siguiente comando:
 +
 `version -v`
@@ -29,6 +30,7 @@ Si la salida incluye `1Ono-DARE`, NVE no es compatible con la versión del clús
 
 Para apagar de forma segura una controladora, primero identifique si el gestor de claves externo (EKM) o el gestor de claves incorporado (OKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
 
+.Pasos
 . Determine qué gestor de claves está activado en el sistema:
 +
 [cols="1a,2a"]

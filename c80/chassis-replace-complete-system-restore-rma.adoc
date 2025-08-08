@@ -19,6 +19,7 @@ Reinicie las controladoras, verifique el estado del sistema y devuelva la pieza 
 
 Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
 
+.Pasos
 . Compruebe la salida de la consola:
 +
 .. Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinicie la controladora con `boot_ontap` el comando.
@@ -39,6 +40,7 @@ Después de que se reinicien las controladoras, arranque ONTAP y devuelva las co
 
 Después de que la controladora haya devuelto el almacenamiento, debe comprobar el estado general con https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
 
+.Pasos
 . Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
 . Corrija los problemas que encuentre.
 

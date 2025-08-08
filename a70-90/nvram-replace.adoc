@@ -158,6 +158,10 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 == Paso 2: Reemplace el módulo NVRAM o NVRAM DIMM
 
+
+
+== Paso 2: Reemplace el módulo NVRAM o NVRAM DIMM
+
 Sustituya el módulo NVRAM o los DIMM de NVRAM con la siguiente opción adecuada.
 
 [role="tabbed-block"]
@@ -309,11 +313,17 @@ Debe confirmar el cambio de ID del sistema al arrancar la controladora y luego v
 CAUTION: La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.
 
 .Pasos
-. Si la controladora se encuentra en modo de mantenimiento (y se muestra `*>` el aviso), salga del modo de mantenimiento y vaya al símbolo del sistema DEL CARGADOR: _Halt_
-. En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.
-. Espere hasta que espere el retorno... El mensaje se muestra en la consola del controlador con el módulo de reemplazo y luego, desde el controlador en buen estado, verifique que el nuevo ID del sistema asociado se haya asignado automáticamente: _Storage failover show_
+. Si el controlador está en modo de mantenimiento (mostrando el `*>` indicador), salga del modo Mantenimiento y vaya al indicador LOADER:
 +
-En el resultado del comando, debería ver un mensaje donde se indica que el ID del sistema ha cambiado en la controladora dañada, con lo que se muestran los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.
+`halt`
+
+. En el aviso del CARGADOR en la controladora, arranque la controladora e introduzca _y_ cuando se le solicite anular el ID del sistema debido a una discrepancia del ID del sistema.
+. Espere hasta que aparezca el mensaje Esperando devolución en la consola del controlador con el módulo de reemplazo y luego, desde el controlador en buen estado, verifique que se haya asignado automáticamente el nuevo ID del sistema asociado:
++
+`storage failover show`
+
++
+En la salida del comando, debería ver un mensaje que indique que la ID del sistema ha cambiado en el controlador dañado, mostrando las ID antiguas y nuevas correctas.  En el siguiente ejemplo, el nodo 2 ha sido reemplazado y tiene un nuevo ID de sistema de 151759706.
 
 +
 [listing]
@@ -328,7 +338,8 @@ node2             node1             -            Waiting for giveback (HA mailbo
 ----
 . Devolver la controladora:
 +
-.. Desde la controladora en buen estado, devuelva el almacenamiento de la controladora que se sustituyó: _Storage failover giveback -ofnode replacement_node_name_
+.. Desde el controlador en buen estado, devuelva el almacenamiento del controlador reemplazado: +
+`storage failover giveback -ofnode replacement_node_name`
 +
 La controladora recupera su almacenamiento y completa el arranque.
 
@@ -336,11 +347,10 @@ La controladora recupera su almacenamiento y completa el arranque.
 Si se le solicita que sustituya el ID del sistema debido a una discrepancia de ID del sistema, debe introducir _y_.
 
 +
-
-NOTE: Si el retorno se vetó, puede considerar la sustitución de los vetos.
+Si el retorno se vetó, puede considerar la sustitución de los vetos.
 
 +
-Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["Comandos de devolución manual"^] tema para anular el veto.
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/high-availability/ha_manual_giveback.html#if-giveback-is-interrupted["comandos de devolución manual"^] para anular el veto.
 
 .. Una vez completada la devolución, confirme que la pareja de alta disponibilidad esté en buen estado y que la toma de control sea posible: _Storage failover show_
 +
@@ -348,7 +358,10 @@ La salida de `storage failover show` El comando no debe incluir el ID del sistem
 
 
 
-. Compruebe que los discos se han asignado correctamente: `storage disk show -ownership`
+. Verifique que los discos se hayan asignado correctamente:
++
+`storage disk show -ownership`
+
 +
 Los discos que pertenecen a la controladora deben mostrar el nuevo ID del sistema. En el ejemplo siguiente, los discos propiedad del nodo 1 ahora muestran el nuevo ID del sistema, 151759706:
 
@@ -396,11 +409,23 @@ dr-group-id            cluster node           configuration-state
 
 4 entries were displayed.
 ----
-. Compruebe que los volúmenes esperados estén presentes para cada controladora: `vol show -node node-name`
+. Verifique que los volúmenes esperados estén presentes para cada controlador:
++
+`vol show -node node-name`
+
 . Si el cifrado del almacenamiento está habilitado, debe restaurar la funcionalidad.
-. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
-. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
-. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

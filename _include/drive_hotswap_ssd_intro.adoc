@@ -13,14 +13,13 @@ Cuando falla una unidad, la plataforma registra un mensaje de advertencia en la 
 La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.
 
 +
-
-NOTE: La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.
+La unidad puede tardar hasta varias horas en aparecer en la lista de unidades con error.
 
 * Determine si la autenticación SED está habilitada.
 +
-La forma en que reemplace el disco depende de cómo se utilice la unidad de disco. Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución de SED en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["Guía completa de cifrado de NetApp para ONTAP 9"]. Estas instrucciones describen los pasos adicionales que debe realizar antes y después de reemplazar una SED.
+La forma de reemplazar el disco depende de cómo se utilice la unidad de disco.  Si la autenticación SED está habilitada, debe utilizar las instrucciones de reemplazo de SED en el https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/home.html["Guía completa de cifrado de NetApp para ONTAP 9"] .  Estas instrucciones describen pasos adicionales que debe realizar antes y después de reemplazar una SED.
 
-* Asegúrese de que su plataforma admite la unidad de sustitución. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"].
+* Asegúrese de que la unidad de reemplazo sea compatible con su plataforma. Ver https://hwu.netapp.com["Hardware Universe de NetApp"] .
 * Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
 
 
@@ -28,3 +27,5 @@ La forma en que reemplace el disco depende de cómo se utilice la unidad de disc
 El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
 
 Al sustituir varias unidades de disco, debe esperar 70 segundos entre la extracción de cada unidad de disco con errores y la inserción de la unidad de disco de reemplazo para que el sistema de almacenamiento pueda reconocer la existencia de cada disco nuevo.
+
+La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.

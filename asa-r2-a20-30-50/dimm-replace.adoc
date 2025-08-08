@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/dimm-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace a dimm 
-summary: Reemplace un módulo DIMM en su sistema ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp. 
+summary: Reemplace un DIMM en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria excesivos corregibles o incorregibles.  Estos errores pueden impedir que el sistema de almacenamiento inicie ONTAP.  El proceso de reemplazo implica apagar el controlador dañado, quitarlo, reemplazar el DIMM, reinstalar el controlador y luego devolver la parte defectuosa a NetApp. 
 ---
 = Sustituya un módulo DIMM: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Reemplace un módulo DIMM en su sistema ASA A20, ASA A30 o ASA A50 si s
 
 
 [role="lead"]
-Reemplace un módulo DIMM en su sistema ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria que no se pueden corregir o corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.
+Reemplace un DIMM en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 si se detectan errores de memoria excesivos corregibles o incorregibles.  Estos errores pueden impedir que el sistema de almacenamiento inicie ONTAP.  El proceso de reemplazo implica apagar el controlador dañado, quitarlo, reemplazar el DIMM, reinstalar el controlador y luego devolver la parte defectuosa a NetApp.
 
 Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 

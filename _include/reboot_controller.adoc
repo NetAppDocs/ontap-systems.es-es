@@ -1,0 +1,21 @@
+= 
+:allow-uri-read: 
+
+
+Reinicie el módulo del controlador.
+
+.Pasos
+. Introduzca _bye_ en el indicador del CARGADOR.
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Restaurar devolución automática:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Si se activó una ventana de mantenimiento de AutoSupport , finalícela:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+

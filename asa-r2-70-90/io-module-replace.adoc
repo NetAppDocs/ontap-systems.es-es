@@ -13,7 +13,7 @@ summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tar
 [role="lead"]
 Sustituya un módulo de E/S de su sistema ASA A70 o ASA A90 cuando el módulo falle o necesite una actualización para admitir un rendimiento superior o funciones adicionales. El proceso de sustitución implica apagar la controladora, sustituir el módulo de I/O fallido, reiniciar la controladora y devolver la parte fallida al NetApp.
 
-Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
+Puede utilizar este procedimiento con todas las versiones de ONTAP compatibles con su sistema de almacenamiento.
 
 .Antes de empezar
 * Debe tener la pieza de repuesto disponible.
@@ -92,8 +92,10 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 == Paso 2: Sustituya un módulo I/O fallido
 
+.Pasos
 Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desconecte cualquier cableado del módulo de E/S de destino.
 +

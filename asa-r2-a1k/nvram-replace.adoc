@@ -100,7 +100,9 @@ Sustituya el módulo NVRAM o los DIMM de NVRAM con la siguiente opción adecuada
 --
 Para sustituir el módulo NVRAM, búsquelo en la ranura 4/5 del compartimento y siga la secuencia específica de pasos.
 
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo. Desconecte los cables de alimentación de las fuentes de alimentación y luego extraiga el módulo del controlador unos centímetros del frente del sistema.
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte los cables de alimentación de las fuentes de alimentación.
 . Gire la bandeja de gestión de cables hacia abajo tirando suavemente de las clavijas de los extremos de la bandeja y girando la bandeja hacia abajo.
 . Retire el módulo NVRAM defectuoso del compartimento:
 +
@@ -145,8 +147,9 @@ Lengüetas de bloqueo DIMM
 --
 Para sustituir DIMM NVRAM en el módulo NVRAM, debe eliminar el módulo NVRAM y, a continuación, sustituir el DIMM de destino.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Desconecte los cables de alimentación de las fuentes de alimentación y luego extraiga el módulo del controlador unos centímetros del frente del sistema.
+. Desconecte los cables de alimentación de las fuentes de alimentación del controlador.
 . Gire la bandeja de gestión de cables hacia abajo tirando suavemente de las clavijas de los extremos de la bandeja y girando la bandeja hacia abajo.
 . Retire el módulo NVRAM de destino del compartimento.
 +
@@ -190,13 +193,9 @@ NOTE: Consulte la etiqueta de asignación de FRU en el lateral del módulo NVRAM
 
 == Paso 3: Reinicie el controlador
 
-Después de sustituir el FRU, debe reiniciar el módulo de la controladora.
+Después de reemplazar el componente, debe reiniciar el módulo del controlador enchufando nuevamente los cables de alimentación a la fuente de alimentación.
 
-. Vuelva a conectar los cables de alimentación a la fuente de alimentación y vuelva a colocar y bloquear con cuidado el módulo del controlador en la parte frontal del sistema.
-+
 El sistema comenzará a reiniciarse, normalmente en el aviso del CARGADOR.
-
-
 
 
 

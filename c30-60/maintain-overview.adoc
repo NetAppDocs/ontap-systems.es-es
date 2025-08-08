@@ -2,7 +2,7 @@
 permalink: c30-60/maintain-overview.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, maintenance, maintenance, repairing a20 aff a30 aff a50, replace a20 aff a30 aff a50 components 
-summary: Mantener el hardware de sus sistemas de almacenamiento AFF C30 o AFF C60 para garantizar una fiabilidad a largo plazo con un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos. 
+summary: Realice el mantenimiento del hardware de su sistema de almacenamiento AFF C30 o AFF C60 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Realice tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, para evitar tiempos de inactividad y la pérdida de datos. 
 ---
 = Descripción general del mantenimiento de hardware: AFF C30 y AFF C60
 :allow-uri-read: 
@@ -28,7 +28,7 @@ Para los sistemas de almacenamiento AFF C30 y AFF C60, se pueden realizar proced
  a| 
 link:bootmedia-replace-workflow-bmr.html["Medios de arranque: recuperación automatizada"]
  a| 
-El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de ONTAP que el sistema de almacenamiento utiliza para arrancar la imagen desde el nodo asociado y ejecutar automáticamente la opción de menú de arranque correspondiente para instalar la imagen de arranque en el medio de arranque de reemplazo. El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar.  Durante la recuperación automatizada, el sistema recupera la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque adecuada para instalar la imagen en el medio de arranque de reemplazo. El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
 
 

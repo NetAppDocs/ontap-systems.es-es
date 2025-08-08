@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/maintain-overview.html 
 sidebar: sidebar 
 keywords: asa a20 asa a30 asa a50 maintenance, maintenance, repairing a20 asa a30 asa a50, replace a20 asa a30 asa a50 components 
-summary: Mantenga el hardware de ASA A20, ASA A30 y ASA A50 
+summary: Realice el mantenimiento del hardware de su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Realice tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, para evitar tiempos de inactividad y la pérdida de datos. 
 ---
 = Descripción general del mantenimiento de hardware: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Mantenga el hardware de ASA A20, ASA A30 y ASA A50
 
 
 [role="lead"]
-Mantener el hardware de sus sistemas de almacenamiento ASA A20, ASA A30 o ASA A50 para garantizar una fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.
+Realice el mantenimiento del hardware de su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Realice tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, para evitar tiempos de inactividad y la pérdida de datos.
 
 Los procedimientos de mantenimiento se dan por sentado que ya se han puesto en marcha los sistemas ASA A20, ASA A30 y ASA A50 como nodos de almacenamiento en el entorno de ONTAP.
 
@@ -26,9 +26,18 @@ Para los sistemas de almacenamiento ASA A20, ASA A30 y ASA A50, se pueden realiz
 
 
  a| 
-link:bootmedia-replace-workflow-bmr.html["Soporte de arranque"]
+link:bootmedia-replace-workflow-bmr.html["Medios de arranque: recuperación automatizada"]
  a| 
-Los medios de arranque almacenan un conjunto primario y secundario de archivos de imagen ONTAP, así como la información de configuración del sistema que utiliza el sistema cuando se inicia.
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar.  Durante la recuperación automatizada, el sistema recupera la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque adecuada para instalar la imagen en el medio de arranque de reemplazo.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Medios de arranque: recuperación manual"]
+ a| 
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar la imagen desde una unidad USB y restaurar la configuración desde el nodo asociado.
 
 
 

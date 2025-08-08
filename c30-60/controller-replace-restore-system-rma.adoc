@@ -2,7 +2,7 @@
 permalink: c30-60/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: Para restaurar el sistema a su funcionamiento completo, debe verificar los LIF, comprobar el estado del clúster y devolver la parte con error a NetApp. 
+summary: Para completar el reemplazo del controlador de su sistema de almacenamiento AFF C30 o AFF C60, primero restaure la configuración de cifrado de almacenamiento de NetApp , si es necesario, e instale las licencias necesarias en el nuevo controlador.  A continuación, confirme que las interfaces lógicas LIF estén informando a sus puertos locales y realice una verificación del estado del clúster.  Por último, registre el número de serie del nuevo controlador y luego devuelva la pieza defectuosa a NetApp. 
 ---
 = Sustitución de controladora completa: AFF C30 y AFF C60
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Para restaurar el sistema a su funcionamiento completo, debe verificar 
 
 
 [role="lead"]
-Para completar la sustitución de la controladora del sistema AFF C30 o AFF C60, primero restaure la configuración de cifrado de almacenamiento de NetApp (si es necesario) e instale las licencias requeridas en la nueva controladora. A continuación, confirme que las interfaces lógicas (LIF) informan a sus puertos principales y realizan una comprobación del estado del clúster. Finalmente, registre el número de serie de la nueva controladora y luego devuelva la pieza fallida a NetApp.
+Para completar el reemplazo del controlador de su sistema de almacenamiento AFF C30 o AFF C60, primero restaure la configuración de cifrado de almacenamiento de NetApp (si es necesario) e instale las licencias necesarias en el nuevo controlador.  A continuación, confirme que las interfaces lógicas (LIF) estén informando a sus puertos de origen y realice una verificación del estado del clúster.  Por último, registre el número de serie del nuevo controlador y luego devuelva la pieza defectuosa a NetApp.
 
 
 

@@ -2,7 +2,7 @@
 permalink: a20-30-50/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: aff a20, aff a30, aff a50, replace the boot media 
-summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 y AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave inglesa e0M) en el controlador dañado esté funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.' 
+summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 y AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.' 
 ---
 = Requisitos para la recuperación automatizada de medios de arranque: AFF A20, AFF A30 y AFF A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamien
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 y AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
+Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A20, AFF A30 y AFF A50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
@@ -22,7 +22,7 @@ Revise los siguientes requisitos.
 +
 El puerto e0M se utiliza para comunicarse entre los dos controladores durante el proceso de recuperación de arranque automatizado.
 
-* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para OKM, necesita la frase de contraseña de todo el clúster y también los datos de respaldo.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
 ** archivo /cfcard/kmip/servers.cfg.

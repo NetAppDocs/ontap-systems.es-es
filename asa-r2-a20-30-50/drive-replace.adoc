@@ -2,7 +2,7 @@
 permalink: asa-r2-a20-30-50/drive-replace.html 
 sidebar: sidebar 
 keywords: asa a20, asa a30, asa a50, replace the drives 
-summary: Sustituya una unidad en el sistema ASA A20, ASA A30 o ASA A50 cuando se produzca un error en una unidad o requiera una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema. 
+summary: Reemplace una unidad en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 cuando una unidad falla o requiere una actualización.  El proceso de reemplazo implica identificar la unidad defectuosa, quitarla de forma segura e instalar una nueva unidad para garantizar el acceso continuo a los datos y el rendimiento del sistema. 
 ---
 = Reemplazar una unidad: ASA A20, ASA A30 y ASA A50
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sustituya una unidad en el sistema ASA A20, ASA A30 o ASA A50 cuando se
 
 
 [role="lead"]
-Sustituya una unidad en el sistema ASA A20, ASA A30 o ASA A50 cuando se produzca un error en una unidad o requiera una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema.
+Reemplace una unidad en su sistema de almacenamiento ASA A20, ASA A30 o ASA A50 cuando una unidad falla o requiere una actualización.  El proceso de reemplazo implica identificar la unidad defectuosa, quitarla de forma segura e instalar una nueva unidad para garantizar el acceso continuo a los datos y el rendimiento del sistema.
 
 Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso.
 
@@ -79,11 +79,9 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 . Quite el panel frontal de la parte delantera del sistema de almacenamiento.
 . Identifique físicamente la unidad con error.
 +
-Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
+** Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
+** El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
 
-+
-
-NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
 
 . Quite la unidad con error:
 +
@@ -115,8 +113,7 @@ Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva 
 
 Al extraer una unidad, utilice siempre dos manos para sostener su peso.
 
-
-NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
+Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
 
 |===
 . Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
@@ -141,6 +138,6 @@ Cuando el LED de actividad de la unidad está sólido, significa que la unidad t
 . Vuelva a instalar el panel frontal en la parte frontal del sistema de almacenamiento.
 . Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
 +
-Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
+Contactar con el soporte técnico https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
 
 

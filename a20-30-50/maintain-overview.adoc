@@ -28,7 +28,9 @@ Para el sistema de almacenamiento AFF A20, AFF A30 o AFF A50, puede realizar pro
  a| 
 link:bootmedia-replace-workflow-bmr.html["Medios de arranque: recuperación automatizada"]
  a| 
-El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de ONTAP que el sistema de almacenamiento utiliza para arrancar la imagen desde el nodo asociado y ejecutar automáticamente la opción de menú de arranque correspondiente para instalar la imagen de arranque en el medio de arranque de reemplazo. El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar.  Durante la recuperación automatizada, el sistema recupera la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque adecuada para instalar la imagen en el medio de arranque de reemplazo.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
 
 

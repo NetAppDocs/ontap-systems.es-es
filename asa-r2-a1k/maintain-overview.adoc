@@ -26,11 +26,18 @@ Para el sistema de almacenamiento ASA A1K, puede realizar procedimientos de mant
 
 
  a| 
-link:bootmedia-replace-workflow-bmr.html["Soporte de arranque"]
+link:bootmedia-replace-workflow-bmr.html["Medios de arranque: recuperación automatizada"]
  a| 
-Puede sustituir un medio de arranque con fallos desde el nodo asociado para la imagen de arranque.
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar.  Durante la recuperación automatizada, el sistema recupera la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque adecuada para instalar la imagen en el medio de arranque de reemplazo.
 
-La sustitución de soportes de arranque automatizada usa la imagen de arranque del nodo del partner y ejecuta automáticamente la opción de menú de arranque correspondiente para instalar la imagen de arranque en el soporte de arranque de reemplazo.
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Medios de arranque: recuperación manual"]
+ a| 
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar la imagen desde una unidad USB y restaurar la configuración desde el nodo asociado.
 
 
 

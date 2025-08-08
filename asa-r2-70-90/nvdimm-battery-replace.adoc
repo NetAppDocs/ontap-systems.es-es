@@ -87,6 +87,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
+.Pasos
 . Asegúrese de que todas las unidades del chasis estén firmemente asentadas contra el plano medio con los pulgares para empujar cada unidad hasta que sienta una parada positiva.
 +
 image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
@@ -166,6 +167,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 Retire la batería NV fallida del módulo del controlador e instale la batería NV de repuesto.
 
+.Pasos
 . Abra la cubierta del conducto de aire y localice la batería NV.
 +
 image::../media/drw_a70-90_remove_replace_nvmembat_ieops-1369.svg[Sustituya la batería NV]
@@ -208,6 +210,7 @@ Asegúrese de que el enchufe se bloquea en la toma.
 
 Vuelva a instalar el módulo del controlador y reinícielo.
 
+.Pasos
 . Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
 +
 Debe quedar a ras de la chapa metálica del módulo del controlador.
@@ -222,8 +225,7 @@ NOTE: No inserte completamente el módulo de la controladora en el chasis hasta 
 Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza cables de fibra óptica.
 
 +
-
-NOTE: Asegúrese de que el cable de la consola está conectado al módulo del controlador reparado para que reciba mensajes de la consola cuando se reinicie. La controladora reparada recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.
+Asegúrese de que el cable de la consola está conectado al módulo del controlador reparado para que reciba mensajes de la consola cuando se reinicie. La controladora reparada recibe alimentación de la controladora en buen estado y comienza a reiniciarse tan pronto como se coloca completamente en el chasis.
 
 . Complete la reinstalación del módulo del controlador:
 +
@@ -231,24 +233,28 @@ NOTE: Asegúrese de que el cable de la consola está conectado al módulo del co
 +
 Los pestillos de bloqueo se elevan cuando el módulo del controlador está completamente asentado.
 
-
-
 +
+No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
-NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
-
-+
 .. Gire los pestillos de bloqueo hacia arriba hasta la posición de bloqueo.
 
 
 . Conecte los cables de alimentación en las fuentes de alimentación. El controlador se reinicia tan pronto como se restablece la energía.
 +
+Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
-NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-. Devuelva el controlador deteriorado al funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`.
-. Si se ha desactivado la devolución automática, vuelva a activarla `storage failover modify -node local -auto-giveback true`: .
-. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

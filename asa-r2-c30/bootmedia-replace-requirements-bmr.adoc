@@ -2,7 +2,7 @@
 permalink: asa-r2-c30/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: asa c30, replace the boot media 
-summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento ASA C30, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.' 
+summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento ASA C30, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.' 
 ---
 = Requisitos para sustituir el soporte de arranque - ASA C30
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamien
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque en su sistema de almacenamiento ASA C30, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador dañado funcione correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
+Antes de reemplazar el medio de arranque en su sistema de almacenamiento ASA C30, asegúrese de cumplir con los requisitos y consideraciones necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
 
 * Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
 * Verifique que el puerto e0M (llave) en el controlador dañado esté conectado y no esté defectuoso.
 +
 El puerto e0M se utiliza para comunicarse entre los dos controladores durante el proceso de recuperación de arranque automatizado.
 
-* Para OKM, necesita el contenido del archivo de contraseña de OKM.
+* Para OKM, necesita la frase de contraseña de todo el clúster y también los datos de respaldo.
 * Para EKM, necesita copias de los siguientes archivos del nodo asociado:
 +
 ** archivo /cfcard/kmip/servers.cfg.

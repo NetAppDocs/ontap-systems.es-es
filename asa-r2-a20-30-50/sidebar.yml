@@ -2,76 +2,73 @@
 section: asa-r2-a20-30-50-maintain
 title: Sistemas ASA A20, ASA A30 y ASA A50
 entries:
-- title: Mantener
-  pdf-filename: Se mantienen ASA A20, ASA A30 y ASA A50
+- title: Información general de mantenimiento
+  url: "/asa-r2-a20-30-50/maintain-overview.html"
+- title: Soporte de arranque
+  pdf-filename: Medios de arranque ASA A20, ASA A30 y ASA A50
   entries:
-  - title: Información general de mantenimiento
-    url: "/asa-r2-a20-30-50/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Medios de arranque ASA A20, ASA A30 y ASA A50
-    entries:
-    - title: Flujo de trabajo de sustitución de medios de arranque
-      url: "/asa-r2-a20-30-50/bootmedia-replace-workflow-bmr.html"
-    - title: Revise los requisitos
-      url: "/asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html"
-    - title: Apague el controlador
-      url: "/asa-r2-a20-30-50/bootmedia-shutdown-bmr.html"
-    - title: Sustituir el soporte de arranque
-      url: "/asa-r2-a20-30-50/bootmedia-replace-bmr.html"
-    - title: Restaurar imagen en soporte de arranque
-      url: "/asa-r2-a20-30-50/bootmedia-recovery-image-boot-bmr.html"
-    - title: Devolución de pieza fallida a NetApp
-      url: "/asa-r2-a20-30-50/bootmedia-complete-rma-bmr.html"
-  - title: Chasis
-    pdf-filename: Chasis ASA A20, ASA A30 y ASA A50
-    entries:
-    - title: Flujo de trabajo de sustitución del chasis
-      url: "/asa-r2-a20-30-50/chassis-replace-workflow.html"
-    - title: Revise los requisitos
-      url: "/asa-r2-a20-30-50/chassis-replace-requirements.html"
-    - title: Apague las controladoras
-      url: "/asa-r2-a20-30-50/chassis-replace-shutdown.html"
-    - title: Sustituya el chasis
-      url: "/asa-r2-a20-30-50/chassis-replace-move-hardware.html"
-    - title: Reemplazo completo de chasis
-      url: "/asa-r2-a20-30-50/chassis-replace-complete-system-restore-rma.html"
-  - title: Controladora
-    pdf-filename: Módulo de controlador ASA A20, ASA A30 y ASA A50
-    entries:
-    - title: Flujo de trabajo de sustitución de controladoras
-      url: "/asa-r2-a20-30-50/controller-replace-workflow.html"
-    - title: Revise los requisitos
-      url: "/asa-r2-a20-30-50/controller-replace-requirements.html"
-    - title: Apague el controlador dañado
-      url: "/asa-r2-a20-30-50/controller-replace-shutdown.html"
-    - title: Sustituya la controladora
-      url: "/asa-r2-a20-30-50/controller-replace-move-hardware.html"
-    - title: Restaure la configuración del sistema
-      url: "/asa-r2-a20-30-50/controller-replace-system-config-restore-and-verify.html"
-    - title: Proporcione a la controladora
-      url: "/asa-r2-a20-30-50/controller-replace-recable-reassign-disks.html"
-    - title: Reemplazo completo de controladoras
-      url: "/asa-r2-a20-30-50/controller-replace-restore-system-rma.html"
-  - title: DIMM
-    url: "/asa-r2-a20-30-50/dimm-replace.html"
-  - title: Unidad
-    url: "/asa-r2-a20-30-50/drive-replace.html"
-  - title: Ventilador
-    url: "/asa-r2-a20-30-50/fan-replace.html"
-  - title: Módulo de I/O.
-    pdf-filename: Módulo I/O ASA A20, ASA A30 y ASA A50
-    entries:
-    - title: Descripción general del módulo I/O.
-      url: "/asa-r2-a20-30-50/io-module-overview.html"
-    - title: Agregue módulo de E/S.
-      url: "/asa-r2-a20-30-50/io-module-add.html"
-    - title: Módulo de alta disponibilidad/clúster de intercambio en caliente
-      url: "/asa-r2-a20-30-50/io-module-hotswap-ha-slot4.html"
-    - title: Sustituya el módulo de E/S.
-      url: "/asa-r2-a20-30-50/io-module-replace.html"
-  - title: Batería de NV
-    url: "/asa-r2-a20-30-50/nvdimm-battery-replace.html"
-  - title: Suministro de alimentación
-    url: "/asa-r2-a20-30-50/power-supply-replace.html"
-  - title: Batería del reloj en tiempo real
-    url: "/asa-r2-a20-30-50/rtc-battery-replace.html"
+  - title: Flujo de trabajo de sustitución de medios de arranque
+    url: "/asa-r2-a20-30-50/bootmedia-replace-workflow-bmr.html"
+  - title: Revise los requisitos
+    url: "/asa-r2-a20-30-50/bootmedia-replace-requirements-bmr.html"
+  - title: Apague el controlador
+    url: "/asa-r2-a20-30-50/bootmedia-shutdown-bmr.html"
+  - title: Sustituir el soporte de arranque
+    url: "/asa-r2-a20-30-50/bootmedia-replace-bmr.html"
+  - title: Restaurar imagen en soporte de arranque
+    url: "/asa-r2-a20-30-50/bootmedia-recovery-image-boot-bmr.html"
+  - title: Devolución de pieza fallida a NetApp
+    url: "/asa-r2-a20-30-50/bootmedia-complete-rma-bmr.html"
+- title: Chasis
+  pdf-filename: Chasis ASA A20, ASA A30 y ASA A50
+  entries:
+  - title: Flujo de trabajo de sustitución del chasis
+    url: "/asa-r2-a20-30-50/chassis-replace-workflow.html"
+  - title: Revise los requisitos
+    url: "/asa-r2-a20-30-50/chassis-replace-requirements.html"
+  - title: Apague las controladoras
+    url: "/asa-r2-a20-30-50/chassis-replace-shutdown.html"
+  - title: Sustituya el chasis
+    url: "/asa-r2-a20-30-50/chassis-replace-move-hardware.html"
+  - title: Reemplazo completo de chasis
+    url: "/asa-r2-a20-30-50/chassis-replace-complete-system-restore-rma.html"
+- title: Controladora
+  pdf-filename: Módulo de controlador ASA A20, ASA A30 y ASA A50
+  entries:
+  - title: Flujo de trabajo de sustitución de controladoras
+    url: "/asa-r2-a20-30-50/controller-replace-workflow.html"
+  - title: Revise los requisitos
+    url: "/asa-r2-a20-30-50/controller-replace-requirements.html"
+  - title: Apague el controlador dañado
+    url: "/asa-r2-a20-30-50/controller-replace-shutdown.html"
+  - title: Sustituya la controladora
+    url: "/asa-r2-a20-30-50/controller-replace-move-hardware.html"
+  - title: Restaure la configuración del sistema
+    url: "/asa-r2-a20-30-50/controller-replace-system-config-restore-and-verify.html"
+  - title: Proporcione a la controladora
+    url: "/asa-r2-a20-30-50/controller-replace-recable-reassign-disks.html"
+  - title: Reemplazo completo de controladoras
+    url: "/asa-r2-a20-30-50/controller-replace-restore-system-rma.html"
+- title: DIMM
+  url: "/asa-r2-a20-30-50/dimm-replace.html"
+- title: Unidad
+  url: "/asa-r2-a20-30-50/drive-replace.html"
+- title: Ventilador
+  url: "/asa-r2-a20-30-50/fan-replace.html"
+- title: Módulo de I/O.
+  pdf-filename: Módulo I/O ASA A20, ASA A30 y ASA A50
+  entries:
+  - title: Descripción general del módulo I/O.
+    url: "/asa-r2-a20-30-50/io-module-overview.html"
+  - title: Agregue módulo de E/S.
+    url: "/asa-r2-a20-30-50/io-module-add.html"
+  - title: Módulo de alta disponibilidad/clúster de intercambio en caliente
+    url: "/asa-r2-a20-30-50/io-module-hotswap-ha-slot4.html"
+  - title: Sustituya el módulo de E/S.
+    url: "/asa-r2-a20-30-50/io-module-replace.html"
+- title: Batería de NV
+  url: "/asa-r2-a20-30-50/nvdimm-battery-replace.html"
+- title: Suministro de alimentación
+  url: "/asa-r2-a20-30-50/power-supply-replace.html"
+- title: Batería del reloj en tiempo real
+  url: "/asa-r2-a20-30-50/rtc-battery-replace.html"
