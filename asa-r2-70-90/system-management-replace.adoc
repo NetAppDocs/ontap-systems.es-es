@@ -217,28 +217,6 @@ Reinicie el módulo del controlador.
 
 
 
-== Paso 3: Reinicie el controlador
-
-Reinicie el módulo del controlador.
-
-.Pasos
-. Introduzca _bye_ en el indicador del CARGADOR.
-. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
-+
-`storage failover giveback -ofnode _impaired_node_name_`
-
-. Restaurar devolución automática:
-+
-`storage failover modify -node local -auto-giveback true`
-
-. Si se activó una ventana de mantenimiento de AutoSupport , finalícela:
-+
-`system node autosupport invoke -node * -type all -message MAINT=END`
-
-
-
-
-
 == Paso 4: Instale licencias y registre el número de serie
 
 Debe instalar licencias nuevas para el nodo si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo por nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.

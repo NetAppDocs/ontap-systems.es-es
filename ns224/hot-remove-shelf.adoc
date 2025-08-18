@@ -13,6 +13,9 @@ summary: 'Puede quitar en caliente una bandeja de unidades NS224 donde se hayan 
 [role="lead"]
 Puede quitar en caliente una bandeja de unidades NS224 donde se hayan eliminado los agregados de las unidades, en una pareja de alta disponibilidad que esté activa y sirviendo datos (hay operaciones de I/o en curso).
 
+
+NOTE: Este procedimiento no se aplica a los sistemas ASA r2.
+
 .Antes de empezar
 * Su par de alta disponibilidad no puede estar en estado de toma de control.
 * Debe haber quitado todos los agregados de las unidades (las unidades deben ser repuestos) de la bandeja que se va a quitar.
