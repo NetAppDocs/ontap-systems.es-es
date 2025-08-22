@@ -74,13 +74,14 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 +
 `cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deshabilite la devolución automática de la consola de la controladora en buen estado:
+. Desactivar devolución automática:
++
+.. Ingrese el siguiente comando desde la consola del controlador en buen estado:
 +
 `storage failover modify -node local -auto-giveback false`
 
-+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
 
-NOTE: Cuando vea _do desea desactivar la devolución automática?_, introduzca `y`.
 
 . Lleve la controladora dañada al aviso DEL CARGADOR:
 +
@@ -138,9 +139,14 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 +
 `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
-. Deshabilite la devolución automática de la consola de la controladora en buen estado:
+. Desactivar devolución automática:
 +
-`storage failover modify –node local -auto-giveback false`
+.. Ingrese el siguiente comando desde la consola del controlador en buen estado:
++
+`storage failover modify -node local -auto-giveback false`
+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
+
 
 . Lleve la controladora dañada al aviso DEL CARGADOR:
 +
