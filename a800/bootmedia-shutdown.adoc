@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a800, shut down the controller 
 summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
 ---
-= Apague la controladora AFF A800
+= Apague el controlador para la recuperación manual del medio de arranque - AFF A800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Después de completar las tareas de NVE o NSE, deberá completar el apa
 
 [role="lead"]
 Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
 
 

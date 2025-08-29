@@ -3,7 +3,7 @@ section: fas8300
 title: Sistemas FAS8300 y FAS8700
 entries:
 - title: Instalar y configurar
-  pdf-filename: Instalación y configuración de AFF FAS8300 y FAS8700
+  pdf-filename: Instalación y configuración de FAS8300 y FAS8700
   entries:
   - title: Elija experiencia de instalación y configuración
     url: "/fas8300/install-setup.html"
@@ -14,15 +14,32 @@ entries:
   - title: Pasos detallados
     url: "/fas8300/install-detailed-guide.html"
 - title: Mantener
-  pdf-filename: AFF FAS8300 y FAS8700 mantienen
+  pdf-filename: Mantenimiento de FAS8300 y FAS8700
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/fas8300/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Medios de arranque AFF FAS8300 y FAS8700
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medios de arranque automatizados FAS8300 y FAS8700
     entries:
-    - title: Descripción general
-      url: "/fas8300/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/fas8300/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/fas8300/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/fas8300/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/fas8300/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/fas8300/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas8300/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual de medios de arranque FAS8300 y FAS8700
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/fas8300/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/fas8300/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/fas8300/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado
@@ -31,17 +48,15 @@ entries:
       url: "/fas8300/bootmedia-replace.html"
     - title: Imagen de recuperación de arranque
       url: "/fas8300/bootmedia-recovery-image-boot.html"
-    - title: Vuelva a cambiar a la configuración de MetroCluster
-      url: "/fas8300/bootmedia-2n-mcc-switchback.html"
     - title: Restaure el cifrado
       url: "/fas8300/bootmedia-encryption-restore.html"
     - title: Devolución de pieza fallida a NetApp
       url: "/fas8300/bootmedia-complete-rma.html"
   - title: Módulo de almacenamiento en caché
-    pdf-filename: Módulo de almacenamiento en caché AFF FAS8300 y FAS8700
+    pdf-filename: Módulo de almacenamiento en caché FAS8300 y FAS8700
     url: "/fas8300/caching-module-replace.html"
   - title: Chasis
-    pdf-filename: Chasis AFF FAS8300 y FAS8700
+    pdf-filename: Chasis FAS8300 y FAS8700
     entries:
     - title: Descripción general
       url: "/fas8300/chassis-replace-overview.html"
@@ -52,7 +67,7 @@ entries:
     - title: Sustitución completa
       url: "/fas8300/chassis-replace-complete-system-restore-rma.html"
   - title: Controladora
-    pdf-filename: Controladora AFF FAS8300 y FAS8700
+    pdf-filename: Controladores FAS8300 y FAS8700
     entries:
     - title: Descripción general
       url: "/fas8300/controller-replace-overview.html"
@@ -67,7 +82,7 @@ entries:
     - title: Sustitución completa
       url: "/fas8300/controller-replace-restore-system-rma.html"
   - title: DIMM
-    pdf-filename: DIMM AFF FAS8300 y FAS8700
+    pdf-filename: DIMM FAS8300 y FAS8700
     url: "/fas8300/dimm-replace.html"
   - title: Ventilador
     url: "/fas8300/fan-swap-out.html"
@@ -76,11 +91,11 @@ entries:
   - title: Batería NVDIMM
     url: "/fas8300/nvdimm-battery-replace.html"
   - title: PCIe o tarjeta intermedia
-    pdf-filename: Tarjeta intermedia o PCIe FAS8300 y FAS8700 de AFF
+    pdf-filename: Tarjeta PCIe o Mezzanine FAS8300 y FAS8700
     url: "/fas8300/pci-cards-and-risers-replace.html"
   - title: Suministro de alimentación
-    pdf-filename: Fuente de alimentación AFF FAS8300 y FAS8700
+    pdf-filename: Fuentes de alimentación FAS8300 y FAS8700
     url: "/fas8300/power-supply-replace.html"
   - title: Batería del reloj en tiempo real
-    pdf-filename: Batería de reloj en tiempo real AFF FAS8300 y FAS8700
+    pdf-filename: Batería de reloj de tiempo real FAS8300 y FAS8700
     url: "/fas8300/rtc-battery-replace.html"

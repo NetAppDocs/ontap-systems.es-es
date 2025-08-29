@@ -1,7 +1,7 @@
 ---
 permalink: asa800/maintain-overview.html 
 sidebar: sidebar 
-keywords: asa A800 maintenance, maintenance, repairing A800, repairing asa A800, replace asa A800 components, replace asa A800 components 
+keywords: asa A800 maintenance, maintenance, repairing ASA A800, repairing asa A800, replace asa A800 components, replace asa A800 components 
 summary: Mantenga el hardware de ASA A800 
 ---
 = Mantener el hardware de ASA A800
@@ -11,70 +11,100 @@ summary: Mantenga el hardware de ASA A800
 
 
 [role="lead"]
+Mantenga el hardware de su sistema de almacenamiento ASA A800 para garantizar confiabilidad a largo plazo y un rendimiento óptimo. Realice tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, para evitar tiempos de inactividad y la pérdida de datos.
+
+Los procedimientos de mantenimiento asumen que el sistema de almacenamiento ASA A800 ya se ha implementado como un nodo de almacenamiento en el entorno ONTAP .
+
+
+
+== Componentes del sistema
+
 Para el sistema de almacenamiento ASA A800, puede realizar procedimientos de mantenimiento en los componentes siguientes.
 
+[cols="25,65"]
+|===
 
 
-== Soporte de arranque
+ a| 
+link:bootmedia-replace-workflow-bmr.html["Medios de arranque: recuperación automatizada"]
+ a| 
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar.  Durante la recuperación automatizada, el sistema recupera la imagen de arranque del nodo asociado y ejecuta automáticamente la opción de menú de arranque adecuada para instalar la imagen en el medio de arranque de reemplazo. El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
-El medio de arranque almacena un conjunto primario y secundario de archivos de imagen de arranque que el sistema utiliza cuando se inicia.
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Medios de arranque: recuperación manual"]
+ a| 
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema de almacenamiento utiliza para arrancar. Durante la recuperación manual, inicia el sistema de almacenamiento desde una unidad USB y restaura manualmente la imagen y la configuración del sistema de archivos.  Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 y posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .
 
 
 
-== Chasis
-
+ a| 
+link:chassis-replace-overview.html["Chasis"]
+ a| 
 El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
 
 
 
-== Controladora
-
+ a| 
+link:controller-replace-overview.html["Controladora"]
+ a| 
 Una controladora consta de una placa, un firmware y un software. Controla las unidades e implementa las funciones de ONTAP.
 
 
 
-== DIMM
-
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
 Debe sustituir un DIMM (módulo de memoria en línea dual) cuando haya una falta de coincidencia en la memoria o tenga un DIMM fallido.
 
 
 
-== Unidad
-
+ a| 
+link:drive-replace.html["Unidad"]
+ a| 
 Una unidad es un dispositivo que proporciona medios de almacenamiento físico para datos.
 
 
 
-== Ventilador
-
+ a| 
+link:fan-replace.html["Ventilador"]
+ a| 
 El ventilador enfría el controlador.
 
 
 
-== NVDIMM
-
+ a| 
+link:nvdimm-replace.html["NVDIMM"]
+ a| 
 El NVDIMM (módulo de memoria en línea doble no volátil) gestiona la transferencia de datos desde la memoria volátil al almacenamiento no volátil y mantiene la integridad de los datos en caso de pérdida de alimentación o de apagado del sistema.
 
 
 
-== Batería NVDIMM
-
+ a| 
+link:nvdimm-battery-replace.html["Batería NVDIMM"]
+ a| 
 Una batería NVDIMM es responsable de mantener la alimentación al módulo NVDIMM.
 
 
 
-== Tarjeta PCIe
+ a| 
+link:pci-cards-and-risers-replace.html["Tarjeta PCIe y risers"]
+ a| 
+Una tarjeta PCIe (Peripheral Components Interconnect Express) es una tarjeta de expansión que se conecta a la ranura PCIe de la placa base o a los soportes verticales conectados a la placa base.
 
-Una tarjeta PCIe (interconexión de componentes periféricos express) es una tarjeta de expansión que se conecta a la ranura PCIe de la placa base.
 
 
-
-== Suministro de alimentación
-
+ a| 
+link:power-supply-replace.html["Suministro de alimentación"]
+ a| 
 Un suministro de alimentación proporciona una fuente de alimentación redundante en una bandeja de controladoras.
 
 
 
-== Batería del reloj en tiempo real
-
+ a| 
+link:rtc-battery-replace.html["Batería del reloj en tiempo real"]
+ a| 
 Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+|===

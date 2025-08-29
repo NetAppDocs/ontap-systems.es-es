@@ -1,0 +1,37 @@
+---
+permalink: c800/bootmedia-replace-requirements.html 
+sidebar: sidebar 
+keywords: c800, replace the boot media 
+summary: Antes de reemplazar el medio de arranque en su sistema AFF C800, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto. 
+---
+= Requisitos para la recuperación manual del medio de arranque - AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el medio de arranque en su sistema AFF C800, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
+
+.unidad flash USB
+* Asegúrese de tener una unidad flash USB formateada en FAT32.
+* El USB debe tener suficiente capacidad de almacenamiento para contener el  `image_xxx.tgz` archivo.
+
+
+.Preparación de archivos
+Copiar el  `image_xxx.tgz` Archivo a la memoria USB. Este archivo se usará al transferir la imagen de ONTAP mediante la memoria USB.
+
+.Reemplazo de componentes
+Reemplace el componente fallado con el componente de reemplazo proporcionado por NetApp.
+
+.Identificación del controlador
+Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
+
+* El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+* El _controlador saludable_ es el socio HA del controlador dañado.
+
+
+.El futuro
+Después de revisar los requisitos para reemplazar el soporte de arranque, debe link:bootmedia-encryption-preshutdown-checks.html["compruebe la compatibilidad y el estado de la clave de cifrado en el soporte de arranque"].

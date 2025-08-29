@@ -2,8 +2,6 @@
 :allow-uri-read: 
 
 
-Debe desconectar el módulo del controlador, extraer y abrir el módulo del controlador, localizar y sustituir el soporte de arranque en el controlador y, a continuación, transferir la imagen al soporte de arranque de reemplazo.
-
 
 
 == Paso 1: Extraiga el módulo del controlador
@@ -71,7 +69,7 @@ Debe localizar el soporte de arranque en la controladora y seguir las instruccio
 .Animación: Reemplace el soporte de arranque
 video::c5080658-765e-4d29-8456-adf2000e1495[panopto]
 +
-image::../media/drw_a900_remove_boot_dev.png[Retire el soporte de arranque]
+image::../media/drw_9000_remove_boot_dev.svg[Retire el soporte de arranque]
 
 +
 [cols="1,4"]
@@ -153,7 +151,7 @@ Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo d
 . Si la controladora está en una MetroCluster con ampliación o conexión a la estructura, debe restaurar la configuración del adaptador de FC:
 +
 .. Arranque en modo de mantenimiento: `boot_ontap maint`
-.. Establezca los puertos MetroCluster como iniciadores: `ucadmin modify -m fc -t iniitator adapter_name`
+.. Establecer los puertos MetroCluster como iniciadores: `ucadmin modify -m fc -t initiator adapter_name`
 .. Detener para volver al modo de mantenimiento: `halt`
 
 

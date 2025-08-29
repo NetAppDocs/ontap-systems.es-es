@@ -1,0 +1,101 @@
+---
+permalink: fas2800/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: fas2800, replace the boot media 
+summary: El medio de arranque de su sistema FAS2800 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica quitar el módulo del controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo del controlador y luego reinstalar el módulo del controlador. 
+---
+= Reemplace el medio de arranque para la recuperación de arranque automatizada - FAS2800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El medio de arranque de su sistema FAS2800 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica quitar y abrir el módulo del controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo del controlador y luego reinstalar el módulo del controlador.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+El medio de arranque se encuentra dentro del módulo del controlador y se accede a él quitando el módulo del controlador del chasis y quitando la cubierta del módulo del controlador del sistema.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
+. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
++
+image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[Quite la controladora]
+
+. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
+. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
++
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Abra la controladora]
+
++
+[cols="1,2"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Botón de liberación de la cubierta del módulo del controlador
+
+|===
+. Localice el medio de arranque en el módulo del controlador, que se encuentra debajo de la tarjeta intermedia y siga las instrucciones para reemplazarlo.
++
+image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Sustituya el soporte de arranque"]
+
++
+[cols="1,2"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Lengüeta de bloqueo del soporte de arranque
+
+|===
+. Retire la tarjeta intermedia utilizando la siguiente ilustración o el mapa de FRU del módulo del controlador:
++
+.. Retire la placa de E/S deslizándola directamente hacia fuera del módulo del controlador.
+.. Afloje los tornillos de la tarjeta mezzanine.
++
+
+NOTE: Puede aflojar los tornillos con los dedos o con un destornillador. Si utiliza los dedos, es posible que necesite girar la batería NV hacia arriba para una mejor compra de dedos en el tornillo de apriete manual junto a ella.
+
+.. Levante la tarjeta mezzanine en línea recta.
+
+
+. Sustituya el soporte de arranque:
++
+.. Pulse el botón azul de la carcasa del soporte de arranque para liberar el soporte de arranque de su carcasa, gire el soporte de arranque hacia arriba y, a continuación, tire suavemente de él para extraerlo de la toma del soporte de arranque.
++
+
+NOTE: No gire ni tire del soporte de arranque en línea recta, ya que podría dañar la toma o el soporte de arranque.
+
+.. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+Compruebe el soporte de arranque para asegurarse de que está bien asentado y completamente en la toma y, si es necesario, retire el soporte de arranque y vuelva a colocarlo en la toma.
+.. Pulse el botón azul de bloqueo, gire el soporte de arranque completamente hacia abajo y, a continuación, suelte el botón de bloqueo para bloquear el soporte de arranque en su lugar.
+
+
+. Vuelva a instalar la tarjeta mezzanine:
++
+.. Alinee la toma de la placa base con la toma de la tarjeta mezzanine y, a continuación, coloque suavemente la tarjeta en la toma.
+.. Apriete los tres tornillos de apriete manual de la tarjeta mezzanine.
+.. Vuelva a instalar la placa IO.
+
+
+. Vuelva a instalar la cubierta del módulo del controlador y bloquéela en su lugar.
+. Instale el módulo del controlador:
++
+.. Alinee el extremo del módulo del controlador con la abertura en el chasis y luego empuje suavemente el módulo del controlador hasta la mitad dentro del sistema.
+.. Vuelva a cablear el controlador, presione firmemente la manija de la leva para terminar de asentar el módulo del controlador, empuje la manija de la leva a la posición cerrada y luego apriete el tornillo de mariposa.
++
+El controlador comienza a arrancar y se detiene en el indicador LOADER.
+
+
+
+
+
+.El futuro
+Después de sustituir físicamente el soporte de arranque defectuoso, link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen ONTAP desde el nodo del partner"].

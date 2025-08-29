@@ -1,0 +1,38 @@
+---
+permalink: c800/bootmedia-replace-workflow-bmr.html 
+sidebar: sidebar 
+keywords: c800, replace the boot media 
+summary: Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF C800 revisando los requisitos de reemplazo, apagando el controlador, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema. 
+---
+= Flujo de trabajo de recuperación automatizada de medios de arranque - AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La recuperación automática de la imagen de arranque implica que el sistema identifique y seleccione automáticamente la opción de arranque adecuada. Utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el medio de arranque de reemplazo de su sistema de almacenamiento AFF C800.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+Para comenzar, revise los requisitos de reemplazo, apague el controlador, reemplace el medio de arranque, permita que el sistema restaure la imagen y verifique la funcionalidad del sistema.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:bootmedia-replace-requirements-bmr.html["Revise los requisitos de medios de arranque"]
+[role="quick-margin-para"]
+Revise los requisitos para la sustitución de medios de arranque.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-shutdown-bmr.html["Apague la controladora"]
+[role="quick-margin-para"]
+Apague la controladora en el sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-replace-bmr.html["Sustituya el soporte de arranque"]
+[role="quick-margin-para"]
+Retire el medio de arranque fallido del módulo controlador e instale el medio de arranque de reemplazo.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen en el soporte de arranque"]
+[role="quick-margin-para"]
+Restaurar la imagen ONTAP de la controladora asociada.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:bootmedia-complete-rma-bmr.html["Devuelve la pieza que ha fallado a NetApp"]
+[role="quick-margin-para"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.

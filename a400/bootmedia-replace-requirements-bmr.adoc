@@ -1,0 +1,41 @@
+---
+permalink: a400/bootmedia-replace-requirements-bmr.html 
+sidebar: sidebar 
+keywords: a400, replace the boot media 
+summary: Antes de reemplazar el medio de arranque en su sistema AFF A400, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. 
+---
+= Requisitos para la recuperación automatizada de medios de arranque - AFF A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el medio de arranque en su AFF A400, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) en el controlador dañado no esté defectuoso y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+* Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
+* Verifique que el puerto e0M (llave) en el controlador dañado esté conectado y no esté defectuoso.
++
+El puerto e0M se utiliza para comunicarse entre los dos controladores durante el proceso de recuperación de arranque automatizado.
+
+* Para OKM, necesita la frase de contraseña de todo el clúster y también los datos de respaldo.
+* Para EKM, necesita copias de los siguientes archivos del nodo asociado:
++
+** archivo /cfcard/kmip/servers.cfg.
+** archivo /cfcard/kmip/certs/client.crt.
+** archivo /cfcard/kmip/certs/client.key.
+** Archivo /cfcard/kmip/certs/ca.pem.
+
+
+* Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
++
+** El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
+** El _controlador saludable_ es el socio HA del controlador dañado.
+
+
+
+
+.El futuro
+Después de revisar los requisitos de soporte de arranque, usted link:bootmedia-shutdown-bmr.html["apague la controladora"].

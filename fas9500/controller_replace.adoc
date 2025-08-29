@@ -23,6 +23,7 @@ video::dc8d4acb-e061-45dd-8a0e-ae78004b6974[panopto]
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.
 . Deslice el botón terra cotta del asa de la leva hacia abajo hasta que se desbloquee.
@@ -76,6 +77,7 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 Debe localizar el medio de arranque y seguir las instrucciones para quitarlo de la controladora anterior e insertarlo en la nueva controladora.
 
+.Pasos
 . Localice el medio de arranque con la siguiente ilustración o el mapa de FRU en el módulo de la controladora:
 +
 image::../media/drw_9500_remove_boot_dev.svg[Retire el dispositivo de arranque]
@@ -120,6 +122,7 @@ Para mover los DIMM, búsquelos y muévalos de la controladora antigua a la cont
 
 NOTE: El controlador ver2 tiene menos sockets DIMM. No hay reducción en el número de módulos DIMM admitidos ni cambio en la numeración del socket DIMM. Al mover los módulos DIMM al nuevo módulo del controlador, instale los módulos DIMM en el mismo número/ubicación de socket que el módulo del controlador dañado.  Consulte el diagrama de asignación de FRU en el módulo de la controladora ver2 para ver la ubicación de los sockets DIMM.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Localice los DIMM en el módulo del controlador.
 . Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
@@ -181,6 +184,7 @@ Para los pares de alta disponibilidad con dos módulos de controladora en el mis
 
 NOTE: El sistema puede actualizar el firmware del sistema cuando arranca. No cancele este proceso. El procedimiento le obliga a interrumpir el proceso de arranque, que normalmente puede hacer en cualquier momento después de que se le solicite que lo haga. Sin embargo, si el sistema actualiza el firmware del sistema cuando arranca, debe esperar hasta que se haya completado la actualización antes de interrumpir el proceso de arranque.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.

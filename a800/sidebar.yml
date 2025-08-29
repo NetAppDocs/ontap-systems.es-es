@@ -16,13 +16,30 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de A800 de AFF
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/a800/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Soporte de arranque AFF A800
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medio de arranque automatizado AFF A800
     entries:
-    - title: Descripción general
-      url: "/a800/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/a800/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/a800/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/a800/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/a800/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/a800/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/a800/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual del medio de arranque AFF A800
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/a800/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/a800/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/a800/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado

@@ -1,5 +1,5 @@
 ---
-section: asa-c-400
+section: asa-c400
 title: Sistemas ASA C400
 entries:
 - title: Instalar y configurar
@@ -16,13 +16,30 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de ASA C400
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/asa-c400/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Soporte de arranque de ASA C400
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medio de arranque automatizado ASA C400
     entries:
-    - title: Descripción general
-      url: "/asa-c400/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa-c400/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/asa-c400/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/asa-c400/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/asa-c400/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/asa-c400/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/asa-c400/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual del medio de arranque ASA C400
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa-c400/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/asa-c400/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/asa-c400/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado
@@ -31,8 +48,6 @@ entries:
       url: "/asa-c400/bootmedia-replace.html"
     - title: Imagen de recuperación de arranque
       url: "/asa-c400/bootmedia-recovery-image-boot.html"
-    - title: Vuelva a cambiar a la configuración de MetroCluster
-      url: "/asa-c400/bootmedia-2n-mcc-switchback.html"
     - title: Restaure el cifrado
       url: "/asa-c400/bootmedia-encryption-restore.html"
     - title: Devolución de pieza fallida a NetApp
@@ -70,10 +85,10 @@ entries:
     pdf-filename: Módulo de ventilador ASA C400
     url: "/asa-c400/fan-swap-out.html"
   - title: Batería NVDIMM
-    pdf-filename: Batería ASA C400 NVDIMM
+    pdf-filename: Batería NVDIMM ASA C400
     url: "/asa-c400/nvdimm-battery-replace.html"
   - title: NVDIMM
-    pdf-filename: NVDIMM ASA A320
+    pdf-filename: Memoria NVDIMM ASA C400
     url: "/asa-c400/nvdimm-replace.html"
   - title: PCIe o tarjeta intermedia
     pdf-filename: Tarjeta mezzanine o PCIe C400 de ASA

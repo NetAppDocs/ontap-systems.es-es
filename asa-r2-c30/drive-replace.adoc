@@ -13,7 +13,7 @@ summary: Reemplace una unidad en su sistema de almacenamiento ASA C30 cuando una
 [role="lead"]
 Reemplace una unidad en su sistema de almacenamiento ASA C30 cuando una unidad falla o requiere una actualización. El proceso de sustitución implica identificar la unidad defectuosa, extraerla de forma segura e instalar una nueva unidad para garantizar un acceso continuo a los datos y el rendimiento del sistema.
 
-Puede sustituir una unidad SSD con errores sin interrupciones mientras hay operaciones de I/o en curso.
+Puede sustituir una unidad con error de forma no disruptiva mientras hay I/o en curso.
 
 .Antes de empezar
 * El sistema de almacenamiento debe admitir la unidad que está instalando.
@@ -27,7 +27,7 @@ Las instrucciones de la documentación de ONTAP describen los pasos adicionales 
 +
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Información general del cifrado de NetApp con la interfaz de línea de comandos"^]
 
-* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, debe ponerse en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 * Compruebe que la unidad que desea quitar tenga error.
 +
 Para verificar que la unidad presenta errores, ejecute el `storage disk show -broken` comando. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.
@@ -75,40 +75,13 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 .Pasos
-. Si desea asignar manualmente la propiedad de la unidad en la unidad de reemplazo, debe deshabilitar la asignación automática de unidades si se encuentra habilitada.
-+
-
-NOTE: La propiedad de la unidad se asigna manualmente y, luego, se vuelve a habilitar la asignación automática de unidades más adelante en este procedimiento.
-
-+
-.. Compruebe si la asignación automática de unidades está habilitada:
-+
-`storage disk option show`
-
-+
-Puede introducir el comando en cualquiera de las controladoras.
-
-+
-Si la asignación automática de unidades está habilitada, el resultado se muestra `on` en `Auto Assign` la columna (para cada controladora).
-
-.. Si la asignación automática de unidades está habilitada, deshabilítela:
-+
-`storage disk option modify -node node_name -autoassign off`
-
-+
-Debe deshabilitar la asignación automática de unidades en ambas controladoras.
-
-
-
 . Puesta a tierra apropiadamente usted mismo.
 . Quite el panel frontal de la parte delantera del sistema de almacenamiento.
 . Identifique físicamente la unidad con error.
 +
-Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y la unidad con error se iluminan.
+** Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
+** El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
 
-+
-
-NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
 
 . Quite la unidad con error:
 +
@@ -140,14 +113,16 @@ Deslice la unidad hacia fuera del compartimento de la unidad con el asa de leva 
 
 Al extraer una unidad, utilice siempre dos manos para sostener su peso.
 
-
-NOTE: Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
+Dado que las unidades son frágiles, minimice su manipulación para evitar dañarlas.
 
 |===
 . Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
++
+Esto permite al sistema reconocer que se ha quitado una unidad.
+
 . Inserte la unidad de reemplazo:
 +
-.. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
+.. Con la palanca de leva en posición abierta, utilice ambas manos para insertar el mando de sustitución.
 .. Empuje suavemente hasta que la unidad se detenga.
 .. Cierre el asa de la leva para que la unidad quede completamente asentada en el plano medio y el asa encaje en su lugar.
 +
@@ -159,38 +134,10 @@ Asegúrese de cerrar el mango de leva lentamente para que quede alineado correct
 +
 Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
 
-. Si desea sustituir otra unidad, repita los pasos 3 al paso 8.
+. Si está reemplazando otra unidad, repita los pasos 3 al 7.
 . Vuelva a instalar el panel frontal en la parte frontal del sistema de almacenamiento.
-. Si deshabilitó la asignación automática de unidades en el paso 1, asigne manualmente la propiedad de la unidad y vuelva a habilitar la asignación automática de unidades si es necesario:
-+
-.. Mostrar todas las unidades sin propietario:
-+
-`storage disk show -container-type unassigned`
-
-+
-Puede introducir el comando en cualquiera de las controladoras.
-
-.. Asigne cada unidad:
-+
-`storage disk assign -disk disk_name -owner owner_name`
-
-+
-Puede introducir el comando en cualquiera de las controladoras.
-
-+
-Puede usar el carácter comodín para asignar más de una unidad a la vez.
-
-.. Vuelva a habilitar la asignación automática de unidades si es necesario:
-+
-`storage disk option modify -node node_name -autoassign on`
-
-+
-Es necesario volver a habilitar la asignación automática de unidades en ambas controladoras.
-
-
-
 . Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
 +
-Póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"], 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
+Contactar con el soporte técnico https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] si necesita el número RMA o ayuda adicional con el procedimiento de reemplazo.
 
 

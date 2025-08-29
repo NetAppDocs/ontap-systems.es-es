@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2800, replace, boot, media, controller, module, fru map 
 summary: Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo. 
 ---
-= Sustituya el soporte de arranque - FAS2820
+= Reemplace el medio de arranque y prepárese para la recuperación de arranque manual - FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Debe localizar el soporte de arranque en la controladora y seguir las i
 
 [role="lead"]
 Debe quitar y abrir el módulo del controlador dañado, ubicar y reemplazar el medio de arranque en el controlador, transferir la imagen de arranque a una unidad USB, insertar la unidad USB en el controlador y luego arrancar el controlador.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
 
 

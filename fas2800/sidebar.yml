@@ -14,15 +14,32 @@ entries:
   - title: Pasos detallados
     url: "/fas2800/install-detailed-guide.html"
 - title: Mantener
-  pdf-filename: FAS2820 Mantener
+  pdf-filename: Mantenimiento de AFF FAS2800
   entries:
-  - title: Descripción general
+  - title: Descripción general del mantenimiento
     url: "/fas2800/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: FAS2820 Medio de arranque
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medio de arranque automatizado FAS2820
     entries:
-    - title: Descripción general
-      url: "/fas2800/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/fas2800/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/fas2800/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/fas2800/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/fas2800/bootmedia-replace-bmr.html"
+    - title: Imagen de recuperación de arranque
+      url: "/fas2800/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/fas2800/bootmedia-complete-rma-bmr.html"
+  - title: 'Medio de arranque: recuperación manual'
+    pdf-filename: Manual del medio de arranque FAS2820
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/fas2800/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/a800/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/fas2800/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado

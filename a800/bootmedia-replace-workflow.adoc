@@ -1,0 +1,44 @@
+---
+permalink: a800/bootmedia-replace-workflow.html 
+sidebar: sidebar 
+keywords: aff a800, replace the boot media 
+summary: Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A800 revisando los requisitos de reemplazo, verificando el estado de cifrado, apagando el controlador, reemplazando el medio de arranque, iniciando la imagen de recuperación, restaurando el cifrado y verificando la funcionalidad del sistema. 
+---
+= Flujo de trabajo de recuperación manual del medio de arranque - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A800 revisando los requisitos de reemplazo, verificando el estado de cifrado, apagando el controlador, reemplazando el medio de arranque, iniciando la imagen de recuperación, restaurando el cifrado y verificando la funcionalidad del sistema.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:bootmedia-replace-requirements.html["Revise los requisitos de medios de arranque"]
+[role="quick-margin-para"]
+Revise los requisitos para sustituir el soporte de arranque.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-encryption-preshutdown-checks.html["Compruebe la compatibilidad y el estado de la clave de cifrado"]
+[role="quick-margin-para"]
+Determine si el sistema tiene discos cifrados o habilitados para el gestor de claves de seguridad.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-shutdown.html["Apague la controladora"]
+[role="quick-margin-para"]
+Apague la controladora cuando necesite sustituir el soporte de arranque.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:bootmedia-replace.html["Sustituya el soporte de arranque"]
+[role="quick-margin-para"]
+Retire el soporte de arranque fallido del módulo de administración del sistema e instale el soporte de arranque de repuesto y, a continuación, transfiera una imagen ONTAP mediante una unidad flash USB.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:bootmedia-recovery-image-boot.html["Arranque la imagen de recuperación"]
+[role="quick-margin-para"]
+Inicie la imagen ONTAP desde la unidad USB, restaure el sistema de archivos y verifique las variables de entorno.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]link:bootmedia-encryption-restore.html["Restaure el cifrado"]
+[role="quick-margin-para"]
+Restaure la configuración del administrador de claves integrado o del administrador de claves externo desde el menú de arranque de ONATP .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Siete"]link:bootmedia-complete-rma.html["Devuelve la pieza que ha fallado a NetApp"]
+[role="quick-margin-para"]
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.

@@ -16,13 +16,30 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de ASA A400
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/asa400/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Soporte de arranque de ASA A400
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: Medio de arranque automatizado ASA A400
     entries:
-    - title: Descripción general
-      url: "/asa400/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa400/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/asa400/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/asa400/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/asa400/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/asa400/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/asa400/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual del medio de arranque ASA A400
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa400/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/asa400/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/asa400/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado
@@ -31,8 +48,6 @@ entries:
       url: "/asa400/bootmedia-replace.html"
     - title: Imagen de recuperación de arranque
       url: "/asa400/bootmedia-recovery-image-boot.html"
-    - title: Vuelva a cambiar a la configuración de MetroCluster
-      url: "/asa400/bootmedia-2n-mcc-switchback.html"
     - title: Restaure el cifrado
       url: "/asa400/bootmedia-encryption-restore.html"
     - title: Devolución de pieza fallida a NetApp

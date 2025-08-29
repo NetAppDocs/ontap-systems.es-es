@@ -1,10 +1,10 @@
 ---
 permalink: fas8300/bootmedia-2n-mcc-switchback.html 
 sidebar: sidebar 
-keywords: fas8300, fas8300, fru, replacement, two-node, metrocluster, configuration, switchback, operation, operating, system, sync-source, storage,virtual, machine, svm, impair, site, serving, data, local, disk, pool, switch, aggregate, switch back aggregates in a two-node metrocluster configuration 
+keywords: fas8300, fas8700, fru, replacement, two-node, metrocluster, configuration, switchback, operation, operating, system, sync-source, storage,virtual, machine, svm, impair, site, serving, data, local, disk, pool, switch, aggregate, switch back aggregates in a two-node metrocluster configuration 
 summary: 'Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De esta forma, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento sincronizada en origen \(SVM\) del sitio anteriormente dañado ahora activas y sirviendo datos de los pools de discos locales.' 
 ---
-= Agregados de conmutación de nuevo en una configuración MetroCluster de dos nodos: Fas8300 y FAS8700 de AFF
+= Conmutar agregados en una configuración de MetroCluster de dos nodos: FAS8300 y FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: 'Una vez que haya completado el reemplazo de FRU en una configuración 
 
 [role="lead"]
 Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
 

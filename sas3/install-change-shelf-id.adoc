@@ -67,7 +67,7 @@ Debe apagar ambos interruptores de alimentación, esperar la cantidad de tiempo 
 
 +
 ** Si ONTAP aún no está en ejecución o va a añadir una bandeja (que aún no se ha cableado al sistema), espere al menos 10 segundos.
-** Si ONTAP se está ejecutando (las controladoras están disponibles para servir datos) y todas las unidades de disco de la bandeja son propiedad de la bandeja, repuestos o parte de los agregados desconectados, espere al menos 70 segundos.
+** Si ONTAP se está ejecutando (los controladores están disponibles para servir datos) y todas las unidades de disco en el estante no tienen propietario, son de repuesto o forman parte de agregados fuera de línea, espere al menos 120 segundos.
 +
 Esta vez, ONTAP puede eliminar correctamente la dirección de la bandeja antigua y actualizar la copia de la nueva dirección de la bandeja.
 

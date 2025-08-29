@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
 ---
-= Apague el controlador dañado - AFF A900
+= Apague el controlador para la recuperación manual del medio de arranque - AFF A900
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,11 +13,15 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 [role="lead"]
 Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
 
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
+
 [role="tabbed-block"]
 ====
 .Mayoría de configuraciones
 --
 Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice el procedimiento de recuperación de arranque automatizado.  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el proceso de recuperación de arranque manual.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 

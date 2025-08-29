@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a800, boot the recovery image 
 summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
 ---
-= Arranque la imagen de recuperación: AFF A800
+= Recuperación manual del medio de arranque desde una unidad USB - AFF A800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,8 @@ summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sist
 
 [role="lead"]
 Después de instalar el nuevo dispositivo multimedia de arranque en el sistema, puede iniciar la imagen de recuperación desde una unidad USB y restaurar la configuración desde el nodo asociado.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
 .Pasos
 . Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`

@@ -11,7 +11,9 @@ summary: Apague el controlador dañado en su sistema de almacenamiento AFF A1K p
 
 
 [role="lead"]
-Apague el controlador dañado en su sistema de almacenamiento AFF A1K para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso de recuperación del medio de arranque manual.
+Apague el controlador dañado en su sistema de almacenamiento AFF A1K para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso de recuperación automática del medio de arranque.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
 [role="tabbed-block"]
 ====

@@ -1,0 +1,174 @@
+---
+permalink: a900/bootmedia-replace.html 
+sidebar: sidebar 
+keywords: AFF A900, replace, boot, media, controller, directions, replace boot media, transfer image 
+summary: Debe quitar y abrir el módulo de la controladora, localizar y sustituir los medios de arranque en la controladora y, a continuación, transferir la imagen al medio de arranque de reemplazo. 
+---
+= Reemplace el medio de arranque y prepárese para la recuperación de arranque manual - AFF A900
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe desconectar el módulo del controlador, extraer y abrir el módulo del controlador, localizar y sustituir el soporte de arranque en el controlador y, a continuación, transferir la imagen al soporte de arranque de reemplazo.
+
+Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desenchufe los cables del módulo del controlador dañado y haga un seguimiento de dónde se conectaron los cables.
+. Deslice el botón terra cotta del asa de la leva hacia abajo hasta que se desbloquee.
++
+.Animación: Retire el controlador
+video::256721fd-4c2e-40b3-841a-adf2000df5fa[panopto]
++
+image::../media/drw_a900_remove_PCM.png[Suelte el controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Botón de liberación de la palanca de leva
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Mango de leva
+
+|===
+. Gire el asa de leva para que desacople completamente el módulo del controlador del chasis y, a continuación, deslice el módulo del controlador para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el lado de la tapa del módulo del controlador hacia arriba sobre una superficie plana y estable, pulse el botón azul de la cubierta, deslice la cubierta hacia la parte posterior del módulo del controlador y, a continuación, gire la cubierta hacia arriba y levántela fuera del módulo del controlador.
++
+image::../media/drw_a900_PCM_open.png[Levante la cubierta del módulo del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Botón de bloqueo de la cubierta del módulo del controlador
+
+|===
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo.
+
+.Pasos
+. Levante el conducto de aire negro situado en la parte posterior del módulo del controlador y, a continuación, localice el soporte del maletero mediante la siguiente ilustración o el mapa de FRU en el módulo del controlador:
++
+.Animación: Reemplace el soporte de arranque
+video::c5080658-765e-4d29-8456-adf2000e1495[panopto]
++
+image::../media/drw_9000_remove_boot_dev.svg[Retire el soporte de arranque]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Presione la lengüeta de liberación
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Soporte de arranque
+
+|===
+. Pulse el botón azul de la carcasa del soporte de arranque para liberar el soporte de arranque de su carcasa y, a continuación, tire suavemente de él hacia fuera del zócalo del soporte de arranque.
++
+
+NOTE: No gire ni tire del soporte de arranque en línea recta, ya que podría dañar la toma o el soporte de arranque.
+
+. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Empuje el soporte del maletero hacia abajo para activar el botón de bloqueo en la carcasa del soporte del maletero.
+. Vuelva a instalar la tapa del módulo del controlador alineando los pasadores de la tapa con las ranuras del soporte de la placa base y, a continuación, deslice la tapa en su lugar.
+
+
+
+
+== Paso 3: Transfiera la imagen de arranque al soporte de arranque
+
+Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. No obstante, debe restaurar el sistema de archivos var durante este procedimiento.
+
+.Antes de empezar
+* Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
+* Descargue una copia de la misma versión de imagen de ONTAP que la que se estaba ejecutando la controladora afectada. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp. Utilice `version -v` el comando para mostrar si su versión de ONTAP es compatible con NVE. Si aparece el resultado del comando `<10no- DARE>` , su versión de ONTAP no admite NVE.
++
+** Si NVE es compatible con su versión de ONTAP, descargue la imagen con el cifrado de volúmenes de NetApp, tal y como se indica en el botón de descarga.
+** Si NVE no es compatible, descargue la imagen sin cifrado de volúmenes NetApp, como se indica en el botón de descarga.
+
+
+* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
+
+
+.Pasos
+. Si no lo ha hecho, descargue y copie la imagen de servicio correspondiente desde el https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a la unidad flash USB.
++
+.. Descargue la imagen del servicio desde el enlace Descargas de la página, en su espacio de trabajo en su portátil.
+.. Descomprima la imagen de servicio.
++
+
+NOTE: Si está extrayendo el contenido con Windows, no utilice WinZip para extraer la imagen netboot. Utilice otra herramienta de extracción, como 7-Zip o WinRAR.
+
++
+La unidad flash USB debe tener la imagen ONTAP adecuada de lo que está ejecutando el controlador dañado.
+
+
+
+. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+. Recuperar el módulo del controlador, según sea necesario.
+. Inserte la unidad flash USB en la ranura USB del módulo de controlador.
++
+Asegúrese de instalar la unidad flash USB en la ranura indicada para dispositivos USB, y no en el puerto de consola USB.
+
+. Empuje completamente el módulo del controlador en el sistema, asegurándose de que el mango de la leva borra la unidad flash USB, empuje firmemente el asa de la leva para terminar de sentarse el módulo del controlador y, a continuación, empuje el asa de la leva hasta la posición cerrada.
++
+La controladora comienza a arrancar en cuanto se ha instalado por completo en el chasis.
+
+. Interrumpa el proceso de arranque para que se detenga en el símbolo del SISTEMA DEL CARGADOR pulsando Ctrl-C cuando vea iniciando AUTOBOOT, pulse Ctrl-C para cancelar....
++
+Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo de mantenimiento y detenga la controladora para arrancar en EL CARGADOR.
+
+. Si la controladora está en una MetroCluster con ampliación o conexión a la estructura, debe restaurar la configuración del adaptador de FC:
++
+.. Arranque en modo de mantenimiento: `boot_ontap maint`
+.. Establecer los puertos MetroCluster como iniciadores: `ucadmin modify -m fc -t initiator adapter_name`
+.. Detener para volver al modo de mantenimiento: `halt`
+
+
++
+Los cambios se implementarán al arrancar el sistema.
+
+

@@ -1,0 +1,135 @@
+---
+permalink: a400/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: a400, replace the boot media 
+summary: El medio de arranque de su sistema AFF A400 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica quitar el módulo del controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo del controlador y luego reinstalar el módulo del controlador. 
+---
+= Reemplace el medio de arranque para la recuperación de arranque automática - AFF A400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El medio de arranque de su sistema AFF A400 almacena datos esenciales de firmware y configuración. El proceso de reemplazo implica quitar y abrir el módulo del controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo del controlador y luego reinstalar el módulo del controlador.
+
+El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+
+El medio de arranque se encuentra dentro del módulo del controlador, debajo del conducto de aire, y se accede a él quitando el módulo del controlador del sistema.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
++
+Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+
+. Retire el dispositivo de administración de cables del módulo del controlador y colóquelo aparte.
+. Presione los dos pestillos de bloqueo hacia abajo y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_c400_remove_controller_IEOPS-1216.svg[Quite la controladora]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Pestillos de bloqueo
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+La controladora se mueve ligeramente fuera del chasis
+
+|===
+. Deslice el módulo de la controladora para sacarlo del chasis.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+. Coloque el módulo del controlador sobre una superficie plana y estable.
+. Abra el conducto de aire:
++
+image::../media/drw_c400_open_air_duct_IEOPS-1215.svg[Abra el conducto de aire]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Lengüetas de bloqueo
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Deslizar el conducto de aire hacia la parte posterior del controlador
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire el conducto de aire hacia arriba
+
+|===
++
+.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
+.. Deslice el conducto de aire hacia la parte posterior del módulo del controlador y gírelo hacia arriba hasta su posición completamente abierta.
+
+
+. Localice y retire el soporte de arranque del módulo de la controladora:
++
+image::../media/drw_c400_replace_boot_media_IEOPS-1217.svg[Retire el soporte de arranque]
+
++
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Pulse el botón azul
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Gire el soporte del maletero hacia arriba y extráigalo del zócalo
+
+|===
++
+.. Pulse el botón azul al final del soporte de arranque hasta que el labio del soporte de arranque desaparezca el botón azul.
+.. Gire el soporte del maletero hacia arriba y tire con cuidado del soporte del maletero para sacarlo del zócalo.
+
+
+. Alinee los bordes del soporte de arranque de repuesto con el zócalo del soporte de arranque y, a continuación, empújelo suavemente en el zócalo.
+. Compruebe el soporte del maletero para asegurarse de que está asentado completamente en la toma.
++
+Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma.
+
+. Bloquee el soporte de arranque en su sitio:
++
+.. Gire el soporte de arranque hacia abajo hacia la placa base.
+.. Con el botón azul, coloque un dedo en el extremo del soporte de arranque y presione el extremo del soporte de inicio para activar el botón azul de bloqueo.
+.. Mientras presiona el soporte del maletero, levante el botón de bloqueo azul para bloquear el soporte del maletero en su sitio.
+
+
+. Cierre el conducto de aire.
+
+
+.El futuro
+Después de sustituir físicamente el soporte de arranque defectuoso, link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen ONTAP desde el nodo del partner"].
