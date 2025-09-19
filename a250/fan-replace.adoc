@@ -42,7 +42,7 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 +
 .. Ingrese el siguiente comando desde la consola del controlador en buen estado:
 +
-`storage failover modify -node local -auto-giveback false`
+`storage failover modify -node _impaired_node_name_ -auto-giveback false`
 
 .. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
 

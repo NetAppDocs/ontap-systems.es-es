@@ -1,0 +1,28 @@
+---
+permalink: asa-r2-a1k/chassis-replace-requirements.html 
+sidebar: sidebar 
+keywords: asa a1k, replace the chassis 
+summary: Antes de reemplazar el chasis de su sistema ASA A1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que todos los demás componentes del sistema funcionen correctamente, verificar que tenga credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias. 
+---
+= Requisitos para sustituir el chasis - ASA A1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el chasis de su sistema ASA A1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que todos los demás componentes del sistema funcionen correctamente, verificar que tenga credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.
+
+El chasis es el chasis físico que alberga todos los componentes del sistema, como los ventiladores, la unidad controladora/CPU, la NVRAM12, el módulo de administración del sistema, las tarjetas de E/S y los módulos de supresión y las fuentes de alimentación.
+
+Revise los siguientes requisitos.
+
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^] para obtener ayuda.
+* Obtenga credenciales de administrador local para ONTAP si no las tiene.
+* Asegúrese de que dispone de las herramientas y el equipo necesarios para la sustitución.
+* Puede usar el procedimiento de reemplazo de chasis con todas las versiones de ONTAP compatibles con el sistema.
+* El procedimiento de reemplazo del chasis está escrito con la suposición de que va a mover el bisel, los ventiladores, el módulo del controlador, la NVRAM12, el módulo de administración del sistema, las tarjetas de E/S y los módulos de supresión, y las fuentes de alimentación al nuevo chasis, y que el chasis de reemplazo es un componente nuevo de NetApp.
+
+
+.El futuro
+Después de revisar los requisitos para reemplazar el chasis, debe link:chassis-replace-prepare.html["prepárese para sustituir el chasis"].

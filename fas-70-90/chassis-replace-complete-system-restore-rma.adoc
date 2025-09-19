@@ -1,0 +1,54 @@
+---
+permalink: fas-70-90/chassis-replace-complete-system-restore-rma.html 
+sidebar: sidebar 
+keywords: fas70, fas90, verify and set HA state, complete the replacement process 
+summary: Reinicie el controlador, verifique el estado del sistema y devuelva la pieza defectuosa a NetApp para completar el paso final del procedimiento de reemplazo del chasis FAS70 y FAS90. 
+---
+= Completar el reemplazo del chasis - FAS70 y FAS90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reinicie el controlador, verifique el estado del sistema y devuelva la pieza defectuosa a NetApp para completar el paso final del procedimiento de reemplazo del chasis FAS70 y FAS90.
+
+
+
+== Paso 1: Arranque las controladoras y devuelva las controladoras
+
+Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
+
+.Pasos
+. Compruebe la salida de la consola:
++
+.. Si la controladora arranca en el símbolo del SISTEMA DE Loader, reinicie la controladora con `boot_ontap` el comando.
+.. Si la consola aparece `waiting for giveback` después del reinicio, inicie sesión en la controladora asociada y compruebe que la controladora reemplazada esté lista para el retorno con `storage failover show` el comando.
+
+
+. Realice la devolución del control:
++
+.. Conecte el cable de la consola al controlador asociado.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+.. Si se deshabilitó la devolución automática, vuelva a habilitarla: `storage failover modify -node _impaired_node_name_ -auto-giveback _true_`
+.. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+
+== Paso 2: Verifique el estado del sistema de almacenamiento
+
+Después de que la controladora haya devuelto el almacenamiento, debe comprobar el estado general con https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
+
+.Pasos
+. Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
+. Corrija los problemas que encuentre.
+
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.
