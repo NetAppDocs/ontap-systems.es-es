@@ -1,0 +1,94 @@
+---
+permalink: asa250/overview.html 
+sidebar: sidebar 
+summary: Especificaciones clave para el grupo de plataformas ASA250 
+---
+= Especificaciones clave del ASA A250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento ASA A250 en un solo par de alta disponibilidad.  Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
+
+
+
+== Especificaciones clave del ASA A250
+
+* Configuración de la plataforma: ASA A250 100 V, par HA de chasis único
+* Capacidad bruta máxima: 0,7344 PB
+* Memoria: 128.0000 GB
+* Factor de forma: chasis 2U con 2 controladores HA y 24 ranuras para unidades
+* Versión de ONTAP : ONTAP: 9.16.1P2
+* Ranuras de expansión PCIe: 4
+* Versión mínima de ONTAP : ONTAP 9.13.1 == Máximos de escalamiento
+* Tipo: NAS
+* Tipo: SAN; Pares HA: 6; Capacidad bruta: 4,4 PB / 3,9 PiB; Memoria máxima: 768 GB
+* Tipo: Par HA; Capacidad bruta: 0,7 PB / 0,7 PiB; Memoria máxima: 128,0000
+
+
+
+
+== E/S
+
+
+
+=== E/S integrada
+
+* Protocolo: Ethernet 25 Gbps; Puertos: 4
+* Protocolo: Ethernet 10 Gbps; Puertos: 4
+
+
+
+
+=== E/S total
+
+* Protocolo: Ethernet 100 Gbps; Puertos: 4
+* Protocolo: Ethernet 25 Gbps; Puertos: 12
+* Protocolo: Ethernet 10 Gbps; Puertos: 4
+* Protocolo: FC 32 Gbps; Puertos: 8
+* Protocolo: NVMe/FC 32 Gbps; Puertos: 8
+* Puertos: 0
+
+
+
+
+=== Puertos de gestión
+
+* Protocolo: Ethernet 1 Gbps; Puertos: 2
+* Protocolo: RS-232 115 Kbps; Puertos: 4
+* Protocolo: USB 12 Mbps; Puertos: 4
+
+
+
+
+== Redes de almacenamiento compatibles
+
+* FC
+* iSCSI
+* NVMe/FC
+* NVMe/TCP == Especificaciones del entorno del sistema No hay datos de entorno disponibles.
+
+
+
+
+== Cumplimiento
+
+* Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
+* Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Certificaciones Seguridad/EMC/EMI: EAC, UKRSEPRO
+* Certificaciones Seguridad/EMC/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Estándares EMC/EMI: BS-EN-55024, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Parte 15 Clase A, ICES-003, KS C 9832, KS C 9835
+* Normas de seguridad: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 n.º 60950-1, CAN/CSA C22.2 n.º 62368-1, CNS 14336, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (parte 1)
+
+
+
+
+== Alta disponibilidad
+
+* Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP
+* Controladores redundantes intercambiables en caliente
+* Fuentes de alimentación redundantes intercambiables en caliente
+* Gestión en banda de SAS a través de conexiones SAS para estanterías externas
+

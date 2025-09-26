@@ -1,0 +1,102 @@
+---
+permalink: asa-r2-key-specifications/asa-a90-key-specifications.html 
+sidebar: sidebar 
+summary: Especificaciones clave del ASA A90 
+---
+= Especificaciones clave del ASA A90
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento ASA A90 en un solo par de alta disponibilidad.  Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
+
+
+
+== Especificaciones de capacidad de clave, memoria, factor de forma y versión de ONTAP
+
+* Configuración de la plataforma: ASA A90, par HA de chasis único
+* Capacidad bruta máxima: 2,6622 PB
+* Memoria: 2048.0000 GB
+* Factor de forma: chasis 4U con 2 controladores HA y 48 ranuras de unidad
+* Versión de ONTAP : ONTAP: 9.16.1P2
+* Ranuras de expansión PCIe: 18
+* Versión mínima de ONTAP : ONTAP 9.16.0 == Máximos de escalamiento
+* Tipo: NAS
+* Tipo: SAN; Pares HA: 6; Capacidad bruta: 16,0 PB / 14,2 PiB; Memoria máxima: 12288 GB
+* Tipo: Par HA; Capacidad bruta: 2,7 PB / 2,4 PiB; Memoria máxima: 2048,0000
+
+
+
+
+== E/S
+
+
+
+=== E/S integrada
+
+No hay datos de E/S integrados.
+
+
+
+=== E/S total
+
+* Protocolo: Ethernet 200 Gbps; Puertos: 24
+* Protocolo: Ethernet 100 Gbps; Puertos: 36
+* Protocolo: Ethernet 25 Gbps; Puertos: 56
+* Protocolo: Ethernet 10 Gbps; Puertos: 56
+* Protocolo: FC 64 Gbps; Puertos: 56
+* Protocolo: NVMe/FC 64 Gbps; Puertos: 56
+* Puertos: 0
+
+
+
+
+=== Puertos de gestión
+
+* Protocolo: Ethernet 1 Gbps; Puertos: 2
+* Protocolo: RS-232 115 Kbps; Puertos: 4
+* Protocolo: USB 600 Mbps; Puertos: 2
+
+
+
+
+== Redes de almacenamiento compatibles
+
+* FC
+* iSCSI
+* NVMe/FC
+* NVMe/TCP == Especificaciones del entorno del sistema
+* Potencia típica: 8304 BTU/h
+* Potencia en el peor de los casos: 10948 BTU/h
+* Peso: 170,4 lb 77,3 kg
+* Altura: 4U
+* Ancho: compatible con rack IEC de 19” (17,6” 44,7 cm)
+* Profundidad: 34,5” (36,6” con soporte para gestión de cables)
+* Temperatura/altitud/humedad de funcionamiento: 10 °C a 35 °C (50 °F a 95 °F) a una altitud de 3048 m (10 000 pies); humedad relativa del 8 % al 80 %, sin condensación
+* Temperatura/humedad sin funcionamiento: -40 °C a 70 °C (-40 °F a 158 °F) hasta 12192 m (40000 pies) 10 % a 95 % de humedad relativa, sin condensación, en el contenedor original
+* Ruido acústico: Potencia sonora declarada (LwAd): 8,6 Presión sonora (LpAm) (posiciones de transeúntes): 71,6 dB
+
+
+
+
+== Cumplimiento
+
+* Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
+* Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Certificaciones Seguridad/EMC/EMI: EAC, UKRSEPRO
+* Certificaciones Seguridad/EMC/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Estándares EMC/EMI: BS-EN-55032, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Parte 15 Clase A, ICES-003, KS C 9832, KS C 9835
+* Normas de seguridad: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 n.º 60950-1, CAN/CSA C22.2 n.º 62368-1, CNS 15598-1, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (parte 1)
+
+
+
+
+== Alta disponibilidad
+
+* Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP
+* Controladores redundantes intercambiables en caliente
+* Fuentes de alimentación redundantes intercambiables en caliente
+* Gestión en banda de SAS a través de conexiones SAS para estanterías externas
+

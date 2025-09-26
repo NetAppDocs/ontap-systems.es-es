@@ -1,0 +1,281 @@
+---
+permalink: c30-60/overview.html 
+sidebar: sidebar 
+summary: Especificaciones clave para el grupo de plataformas C30-60 
+---
+= Especificaciones clave para el grupo de plataformas C30-60
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Las siguientes son especificaciones seleccionadas para el grupo de plataforma C30-60.  Visita https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener una lista completa de especificaciones.  Esta página es un reflejo de un único par de alta disponibilidad.
+
+
+
+== AFF C60
+
+
+
+=== Especificaciones clave del AFF C60
+
+Configuración de la plataforma: AFF C60, par HA de chasis único
+
+Capacidad bruta máxima: 7,3680 PB
+
+Memoria: 128.0000 GB
+
+Factor de forma: chasis 2U con 2 controladores HA y 24 ranuras para unidades
+
+Versión de ONTAP : b_startONTAP: 9.16.1P2b_end
+
+Ranuras de expansión PCIe: 8
+
+Versión mínima de ONTAP : ONTAP 9.16.1RC1
+
+
+
+=== Máximos de escalamiento
+
+|===
+
+
+| Tipo | Pares HA | Capacidad bruta | Memoria máxima 
+
+
+| NAS | 4 | 29,5 PB / 26,2 PiB | 512 GB 
+
+
+| SAN | 4 | 29,5 PB / 26,2 PiB | 512 GB 
+
+
+| Par HA |  | 7,4 PB / 6,5 PiB | 128,0000 
+|===
+
+
+=== IO
+
+
+
+==== E/S integrada
+
+No hay datos de E/S integrados.
+
+
+
+==== E/S total
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 100 Gbps | 16 
+
+
+| Ethernet de 25 Gbps | 24 
+
+
+| Ethernet de 10 Gbps | 24 
+
+
+| FC 64 Gbps | 24 
+
+
+| NVMe/FC 64 Gbps | 24 
+
+
+|  | 0 
+|===
+
+
+==== Puertos de gestión
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 1 Gbps | 2 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB 600 Mbps | 2 
+|===
+
+
+=== Redes de almacenamiento compatibles
+
+CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NVMe/FC; NVMe/TCP; S3; S3 con NAS; SMB 2.0; SMB 2.1; SMB 2.x; SMB 3.0; SMB 3.1; SMB 3.1.1;
+
+
+
+=== Especificaciones del entorno del sistema
+
+* Potencia típica: 2892 BTU/h
+* Potencia en el peor de los casos: 4445 BTU/h
+* Peso: 60,7 lb/27,5 kg
+* Altura: 2U
+* Ancho: compatible con rack IEC de 19” (17,6” 44,7 cm)
+* Profundidad:
+* Temperatura/altitud/humedad de funcionamiento: 10 °C a 35 °Cbr/50 °F a br/95 °F) abr/= 3048mbr/= 10000 pies) de elevación; 8 % a 80 %br/humedad relativa, sin condensación
+* Temperatura/humedad sin funcionamiento: -40 °C a 70 °C (-40 °F a 158 °F) hasta 12 192 m (40 000 pies)<br/>10 % a 95 % de humedad relativa, sin condensación, en el contenedor original
+* Ruido acústico: Potencia sonora declarada (LwAd): 8,0; br/Presión sonora (LpAm) (posiciones de transeúntes): 70,5 dB
+
+
+
+
+=== Cumplimiento
+
+* Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
+* Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Certificaciones Seguridad/EMC/EMI: EAC, UKRSEPRO
+* Certificaciones Seguridad/EMC/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Estándares EMC/EMI: BS-EN-55032, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Parte 15 Clase A, ICES-003, KS C 9832, KS C 9835
+* Normas de seguridad: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 n.º 60950-1, CAN/CSA C22.2 n.º 62368-1, CNS 15598-1, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (parte 1)
+
+
+
+
+=== Alta disponibilidad
+
+Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP ; Controladores intercambiables en caliente redundantes; Fuentes de alimentación intercambiables en caliente redundantes;
+
+
+
+== AFF C30
+
+
+
+=== Especificaciones clave del AFF C30
+
+Configuración de la plataforma: AFF C30, par HA de chasis único
+
+Capacidad bruta máxima: 2,2104 PB
+
+Memoria: 128.0000 GB
+
+Factor de forma: chasis 2U con 2 controladores HA y 24 ranuras para unidades
+
+Versión de ONTAP : b_startONTAP: 9.16.1P2b_end
+
+Ranuras de expansión PCIe: 8
+
+Versión mínima de ONTAP : ONTAP 9.16.1RC1
+
+
+
+=== Máximos de escalamiento
+
+|===
+
+
+| Tipo | Pares HA | Capacidad bruta | Memoria máxima 
+
+
+| NAS | 4 | 8,8 PB / 7,9 PiB | 512 GB 
+
+
+| SAN | 4 | 8,8 PB / 7,9 PiB | 512 GB 
+
+
+| Par HA |  | 2,2 PB / 2,0 PiB | 128,0000 
+|===
+
+
+=== IO
+
+
+
+==== E/S integrada
+
+No hay datos de E/S integrados.
+
+
+
+==== E/S total
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 100 Gbps | 16 
+
+
+| Ethernet de 25 Gbps | 24 
+
+
+| Ethernet de 10 Gbps | 24 
+
+
+| FC 64 Gbps | 24 
+
+
+| NVMe/FC 64 Gbps | 24 
+
+
+|  | 0 
+|===
+
+
+==== Puertos de gestión
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 1 Gbps | 2 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB 600 Mbps | 2 
+|===
+
+
+=== Redes de almacenamiento compatibles
+
+CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NVMe/FC; NVMe/TCP; S3; S3 con NAS; SMB 2.0; SMB 2.1; SMB 2.x; SMB 3.0; SMB 3.1; SMB 3.1.1;
+
+
+
+=== Especificaciones del entorno del sistema
+
+* Potencia típica: 2892 BTU/h
+* Potencia en el peor de los casos: 4445 BTU/h
+* Peso: 60,7 lb/27,5 kg
+* Altura: 2U
+* Ancho: compatible con rack IEC de 19” (17,6” 44,7 cm)
+* Profundidad:
+* Temperatura/altitud/humedad de funcionamiento: 10 °C a 35 °Cbr/50 °F a br/95 °F) abr/= 3048mbr/= 10000 pies) de elevación; 8 % a 80 %br/humedad relativa, sin condensación
+* Temperatura/humedad sin funcionamiento: -40 °C a 70 °C (-40 °F a 158 °F) hasta 12 192 m (40 000 pies)<br/>10 % a 95 % de humedad relativa, sin condensación, en el contenedor original
+* Ruido acústico: Potencia sonora declarada (LwAd): 8,0; br/Presión sonora (LpAm) (posiciones de transeúntes): 70,5 dB
+
+
+
+
+=== Cumplimiento
+
+* Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
+* Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
+* Certificaciones Seguridad/EMC/EMI: EAC, UKRSEPRO
+* Certificaciones Seguridad/EMC/EMI/RoHS: BSMI, CE DoC, UKCA DoC
+* Estándares EMC/EMI: BS-EN-55032, BS-EN55035, CISPR 32, EN55022, EN55024, EN55032, EN55035, EN61000-3-2, EN61000-3-3, FCC Parte 15 Clase A, ICES-003, KS C 9832, KS C 9835
+* Normas de seguridad: ANSI/UL60950-1, ANSI/UL62368-1, BS-EN62368-1, CAN/CSA C22.2 n.º 60950-1, CAN/CSA C22.2 n.º 62368-1, CNS 15598-1, EN60825-1, EN62368-1, IEC 62368-1, IEC60950-1, IS 13252 (parte 1)
+
+
+
+
+=== Alta disponibilidad
+
+Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP ; Controladores intercambiables en caliente redundantes; Fuentes de alimentación intercambiables en caliente redundantes;
