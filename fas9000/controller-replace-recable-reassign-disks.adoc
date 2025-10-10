@@ -34,6 +34,14 @@ Compruebe las conexiones de red y almacenamiento del módulo del controlador.
 
 == Paso 2: Reasignar discos
 
+El procedimiento que utilice dependerá de la configuración de redundancia de su controlador.
+
+[role="tabbed-block"]
+====
+.Opción 1: par HA
+--
+=== Verificar el cambio de ID del sistema en un sistema HA
+
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el nodo _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
 
 Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
@@ -148,3 +156,132 @@ dr-group-id            cluster node           configuration-state
 . Compruebe que existen volúmenes esperados para cada nodo: `vol show -node node-name`
 . Si deshabilitó la toma de control automática al reiniciar, habilite esa función desde el nodo en buen estado: `storage failover modify -node replacement-node-name -onreboot true`
 
+
+--
+.Opción 2: MetroCluster de dos nodos
+--
+=== Reasignar manualmente el ID del sistema en sistemas en una configuración de MetroCluster de dos nodos
+
+En una configuración de MetroCluster de dos nodos que ejecuta ONTAP, debe reasignar los discos manualmente al ID del sistema de la nueva controladora antes de devolver el sistema a la condición de funcionamiento normal.
+
+.Acerca de esta tarea
+Este procedimiento solo se aplica a sistemas de una configuración MetroCluster de dos nodos que ejecutan ONTAP.
+
+Debe asegurarse de emitir los comandos en este procedimiento en el nodo correcto:
+
+* El nodo _drinated_ es el nodo en el que realiza tareas de mantenimiento.
+* El nodo _regrUSTITUCION_ es el nuevo nodo que reemplazó al nodo dañado como parte de este procedimiento.
+* El nodo _heated_ es el compañero de recuperación ante desastres del nodo dañado.
+
+
+.Pasos
+. Si todavía no lo ha hecho, reinicie el nodo _regrel_, interrumpa el proceso de arranque introduciendo `Ctrl-C`Y, a continuación, seleccione la opción para iniciar el modo de mantenimiento en el menú que se muestra.
++
+Debe entrar `Y` Cuando se le solicite que anule el ID del sistema debido a una discrepancia de ID del sistema.
+
+. Vea los ID del sistema antiguos del nodo en buen estado: ``metrocluster node show -fields node-systemid`,dr-partner-systemid'
++
+En este ejemplo, Node_B_1 es el nodo antiguo, con el ID de sistema antiguo de 118073209:
+
++
+[listing]
+----
+dr-group-id cluster         node                 node-systemid dr-partner-systemid
+ ----------- --------------------- -------------------- ------------- -------------------
+ 1           Cluster_A             Node_A_1             536872914     118073209
+ 1           Cluster_B             Node_B_1             118073209     536872914
+ 2 entries were displayed.
+----
+. Vea el nuevo ID del sistema en el símbolo del sistema del modo de mantenimiento en el nodo dañado: `disk show`
++
+En este ejemplo, el nuevo ID del sistema es 118065481:
+
++
+[listing]
+----
+Local System ID: 118065481
+    ...
+    ...
+----
+. Reasigne la propiedad de disco (para sistemas FAS) mediante la información de ID de sistema obtenida del comando disk show: `disk reassign -s old system ID`
++
+En el caso del ejemplo anterior, el comando es: `disk reassign -s 118073209`
+
++
+Usted puede responder `Y` cuando se le solicite continuar.
+
+. Compruebe que los discos se han asignado correctamente: `disk show -a`
++
+Compruebe que los discos que pertenecen al nodo _regrisage_ muestran el nuevo ID del sistema para el nodo _regrisage_. En el siguiente ejemplo, los discos propiedad del sistema-1 ahora muestran el nuevo ID del sistema, 118065481:
+
++
+[listing]
+----
+*> disk show -a
+Local System ID: 118065481
+
+  DISK     OWNER                 POOL   SERIAL NUMBER  HOME
+-------    -------------         -----  -------------  -------------
+disk_name   system-1  (118065481) Pool0  J8Y0TDZC       system-1  (118065481)
+disk_name   system-1  (118065481) Pool0  J8Y09DXC       system-1  (118065481)
+.
+.
+.
+----
+. Desde el nodo en buen estado, compruebe que se han guardado los núcleo:
++
+.. Cambie al nivel de privilegio avanzado: `set -privilege advanced`
++
+Usted puede responder `Y` cuando se le solicite que continúe en el modo avanzado. Aparece el símbolo del sistema del modo avanzado (*>).
+
+.. Compruebe que se han guardado los núcleo: `system node run -node _local-node-name_ partner savecore`
++
+Si el resultado del comando indica que savecore está en curso, espere a que savecore se complete antes de emitir el retorno. Puede controlar el progreso del savecore mediante el `system node run -node _local-node-name_ partner savecore -s command`.</info>.
+
+.. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
+
+
+. Si el nodo _reader_ está en modo de mantenimiento (mostrando el símbolo del sistema *>), salga del modo de mantenimiento y vaya al símbolo del sistema DEL CARGADOR: `halt`
+. Arranque el nodo _reboot_: `boot_ontap`
+. Una vez que el nodo _reader_ haya arrancado completamente, lleve a cabo una conmutación de estado: `metrocluster switchback`
+. Compruebe la configuración de MetroCluster: `metrocluster node show - fields configuration-state`
++
+[listing]
+----
+node1_siteA::> metrocluster node show -fields configuration-state
+
+dr-group-id            cluster node           configuration-state
+-----------            ---------------------- -------------- -------------------
+1 node1_siteA          node1mcc-001           configured
+1 node1_siteA          node1mcc-002           configured
+1 node1_siteB          node1mcc-003           configured
+1 node1_siteB          node1mcc-004           configured
+
+4 entries were displayed.
+----
+. Compruebe el funcionamiento de la configuración de MetroCluster en Data ONTAP:
++
+.. Compruebe si hay alertas de estado en ambos clústeres: `system health alert show`
+.. Confirme que el MetroCluster está configurado y en modo normal: `metrocluster show`
+.. Realizar una comprobación de MetroCluster: `metrocluster check run`
+.. Mostrar los resultados de la comprobación de MetroCluster: `metrocluster check show`
+.. Ejecute Config Advisor. Vaya a la página Config Advisor del sitio de soporte de NetApp en https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor/["support.netapp.com/NOW/download/tools/config_advisor/"].
++
+Después de ejecutar Config Advisor, revise el resultado de la herramienta y siga las recomendaciones del resultado para solucionar los problemas detectados.
+
+
+
+. Simular una operación de switchover:
++
+.. Desde el símbolo del sistema de cualquier nodo, cambie al nivel de privilegio avanzado: `set -privilege advanced`
++
+Debe responder con `y` cuando se le solicite que continúe en el modo avanzado y vea el símbolo del sistema del modo avanzado (*>).
+
+.. Lleve a cabo la operación de regreso con el parámetro -Simulate: `metrocluster switchover -simulate`
+.. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
+
+
+
+
+--
+====

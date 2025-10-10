@@ -107,7 +107,6 @@ NOTE: Póngase en contacto con https://support.netapp.com["Soporte de NetApp"] s
 
 . Una vez que el sistema se procesa, verá el menú de inicio. Seleccione '1' para el arranque normal.
 . Compruebe el estado de toma de control: `storage failover show`
-. Asegúrese de que los volcados de memoria del nodo reparado se guarden en el modo avanzado `set -privilege advanced` y luego `run local partner nosavecore`.
 . Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
 . Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
 . Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
