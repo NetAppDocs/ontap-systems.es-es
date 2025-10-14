@@ -1,0 +1,32 @@
+= 
+:allow-uri-read: 
+
+
+Vuelva a instalar el módulo del controlador y arranque.
+
+. Asegúrese de que el conducto de aire esté completamente cerrado girándolo hacia abajo hasta el tope.
++
+Debe quedar a ras de la chapa metálica del módulo del controlador.
+
+. Alinee el extremo del módulo del controlador con la abertura en la carcasa y deslice el módulo del controlador en el chasis con las palancas giradas hacia fuera de la parte delantera del sistema.
+. Una vez que el módulo del controlador le impide deslizarlo más, gire las asas de la leva hacia dentro hasta que queden atrapadas debajo de los ventiladores
++
+
+NOTE: No ejerza demasiada fuerza al deslizar el módulo del controlador en la carcasa para evitar dañar los conectores.
+
++
+
+NOTE: La controladora arranca en el símbolo del sistema DE Loader tan pronto como está completamente asentada.
+
+. Desde el aviso de Loader, introduzca `show date` para mostrar la fecha y la hora de la controladora de reemplazo. La fecha y la hora están en GMT.
++
+
+NOTE: La hora se muestra en hora local y en formato de 24 horas.
+
+. Si es necesario, configure la fecha actual con el `set date mm/dd/yyyy` dominio.
+. Si es necesario, ajuste la hora en GMT utilizando `set time hh:mm:ss` comando.
++
+.. Puede obtener el GMT actual del nodo asociado con el `date -u` dominio.
+
+
+

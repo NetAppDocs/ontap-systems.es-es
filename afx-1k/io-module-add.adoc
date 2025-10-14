@@ -1,0 +1,284 @@
+---
+permalink: afx-1k/io-module-add.html 
+sidebar: sidebar 
+keywords: afx 1k, add I/O module 
+summary: Agregue un módulo de E/S a su sistema de almacenamiento AFX 1K para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos. 
+---
+= Añadir módulo de E/S - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Agregue un módulo de E/S a su sistema de almacenamiento AFX 1K para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
+
+Puede agregar un módulo de E/S a su sistema de almacenamiento AFX 1K cuando haya ranuras vacías disponibles o cuando todas las ranuras estén completamente ocupadas.
+
+
+
+== Paso 1: Apague el módulo del controlador defectuoso
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Antes de empezar
+Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+.Pasos
+. Si AutoSupport está habilitado, suprima la creación automática de casos invocando un comando de mensaje de AutoSupport :
++
+`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+
++
+El siguiente comando AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilitar la devolución automática desde la consola del controlador sano:
++
+`storage failover modify –node local -auto-giveback false`
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+`Waiting for giveback...`
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña (introduzca la contraseña del sistema)
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado:
+
+`storage failover takeover -ofnode impaired_node_name -halt true`
+
+El `-halt true` El parámetro lo lleva al indicador LOADER.
+
+|===
+
+
+
+
+== Paso 2: Agregue el nuevo módulo de E/S.
+
+Si el sistema de almacenamiento tiene ranuras disponibles, instale el nuevo módulo de I/O en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.
+
+.Antes de empezar
+* Comprueba el https://hwu.netapp.com/["Hardware Universe de NetApp"^] para garantizar que el nuevo módulo de E/S sea compatible con su sistema de almacenamiento y la versión de ONTAP .
+* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"^] Y utilice el mejor disponible para su módulo de E/S.
+* Asegúrese de que todos los demás componentes funcionan correctamente.
+* Asegúrese de tener el componente de reemplazo que recibió de NetApp.
+
+
+[role="tabbed-block"]
+====
+.Agregue un módulo de E/S a una ranura disponible
+--
+Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras disponibles.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Retire el módulo de obturación de la ranura de destino del soporte:
++
+.. Presione el pestillo de leva del módulo de supresión de la ranura de destino.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
+
+
+. Instale el módulo de E/S:
++
+.. Alinee el módulo de E/S con los bordes de la abertura de la ranura del compartimento.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el módulo de E/S al dispositivo designado.
++
+
+NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
+
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Desde el aviso del CARGADOR, reinicie el nodo:
++
+`bye`
+
++
+
+NOTE: De este modo, se reinicializa el módulo de I/O y otros componentes, y se reinicia el nodo.
+
+. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+** Si ve el mensaje _login_, vaya al siguiente paso.
+** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado.
+
+
+. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consultelink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Comprenda los niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+. Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Repita estos pasos para la controladora B.
+. Desde el nodo en buen estado, restaure la devolución automática si la deshabilitó:
++
+`storage failover modify -node local -auto-giveback-of _true_`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+--
+.Agregue un módulo de E/S a un sistema completamente completo
+--
+Puede agregar un módulo de E/S a un sistema completamente completo eliminando un módulo de E/S existente e instalando uno nuevo en su lugar.
+
+.Acerca de esta tarea
+Asegúrese de comprender las siguientes situaciones para agregar un nuevo módulo de E/S a un sistema completamente completo:
+
+[cols="1,2"]
+|===
+| Situación | Acción necesaria 
+
+
+ a| 
+NIC a NIC (el mismo número de puertos)
+ a| 
+Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.
+
+
+
+ a| 
+NIC a NIC (distinto número de puertos)
+ a| 
+Reasignar permanentemente las LIF seleccionadas a un puerto raíz diferente. Consulte https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^] para obtener más información.
+
+
+
+ a| 
+De NIC al módulo de I/O de almacenamiento
+ a| 
+Utilice System Manager para migrar de forma permanente las LIF a distintos puertos principales, como se describe en https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-208BB0B8-3F84-466D-9F4F-6E1542A2BE7D.html["Migrar una LIF"^].
+
+|===
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte cualquier cableado del módulo de E/S de destino.
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Extraiga el módulo de I/o de destino del chasis:
++
+.. Pulse el botón de bloqueo de leva.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
+
+
+. Instale el módulo de E/S en la ranura de destino del receptáculo:
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el módulo de E/S al dispositivo designado.
+. Repita los pasos de extracción e instalación para reemplazar módulos adicionales para la controladora.
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+. Reinicie la controladora desde el símbolo del sistema del CARGADOR:_bye_
++
+Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo.
+
+. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+** Si ve el mensaje _login_, vaya al siguiente paso.
+** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado.
+
+
+. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consultelink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Comprenda los niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+. Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode impaired_node_name`
+
+. Habilitar devolución automática si estaba deshabilitada:
++
+`storage failover modify -node local -auto-giveback-of true`
+
+. Debe realizar una de las siguientes acciones:
++
+** Si quitó un módulo de E/S de almacenamiento e instaló un nuevo módulo de E/S de NIC, utilice el siguiente comando de red para cada puerto:
++
+`storage port modify -node <node name>__ -port <port name>__ -mode network`
+
+** Si quitó un módulo de E/S de NIC e instaló un módulo de E/S de almacenamiento, instale y cablee sus estantes NX224, como se describe enlink:../nx224/hot-add-shelf.html["Estante NX224 de adición en caliente"] .
+
+
+. Repita estos pasos para la controladora B.
+
+
+--
+====

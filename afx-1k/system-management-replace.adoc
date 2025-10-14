@@ -1,0 +1,300 @@
+---
+permalink: afx-1k/system-management-replace.html 
+sidebar: sidebar 
+keywords: afx 1k, replace the system manager module 
+summary: Reemplace el módulo de administración del sistema en su sistema de almacenamiento AFX 1K cuando se vuelva defectuoso o su firmware esté dañado.  El proceso de reemplazo implica apagar el controlador, reemplazar el módulo de administración del sistema fallado, reiniciar el controlador, actualizar las claves de licencia y devolver la parte fallada a NetApp. 
+---
+= Reemplazar el módulo de gestión del sistema - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplace el módulo de administración del sistema en su sistema de almacenamiento AFX 1K cuando se vuelva defectuoso o su firmware esté dañado.  El proceso de reemplazo implica apagar el controlador, reemplazar el módulo de administración del sistema fallado, reiniciar el controlador, actualizar las claves de licencia y devolver la parte fallada a NetApp.
+
+El módulo de administración del sistema, ubicado en la parte posterior del controlador a la izquierda de la ranura 8, contiene componentes integrados para la administración del sistema, así como puertos para la administración externa.  El controlador de destino debe apagarse y desconectarse para reemplazar un módulo de administración del sistema dañado o reemplazar el medio de arranque.
+
+El módulo Gestión del sistema tiene los siguientes componentes integrados:
+
+* Soporte de arranque, permitiendo la sustitución de medios de arranque sin extraer el módulo del controlador.
+* BMC
+* Switch de gestión
+
+
+El módulo Gestión del sistema también contiene los siguientes puertos para la gestión externa:
+
+* RJ45 Serie
+* Serie USB (tipo C)
+* USB tipo A (recuperación de arranque)
+* Puerto de servicio Ethernet RJ45 para acceso a la red e0M y BMC
+
+
+.Antes de empezar
+* Asegúrese de que todos los demás componentes del sistema funcionan correctamente.
+* Asegúrese de que la controladora asociada pueda hacerse cargo de la controladora deteriorada.
+* Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
+
+
+.Acerca de esta tarea
+Este procedimiento usa la siguiente terminología:
+
+* El controlador dañado es el controlador en el que realiza el mantenimiento.
+* El controlador sano es el compañero de alta disponibilidad del controlador dañado.
+
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Apague o tome el control de la controladora dañada.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, realizar una toma de control del almacenamiento del controlador para que el controlador en buen estado continúe proporcionando datos desde el almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si tiene un clúster con más de cuatro nodos, debe estar en quórum.  Para ver información del clúster sobre sus nodos, utilice el `cluster show` dominio.  Para obtener más información sobre el `cluster show` comando, verlink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Ver detalles a nivel de nodo en un clúster ONTAP"^] .
+* Si el clúster no está en quórum o si el estado o la elegibilidad de cualquier controlador (excepto el controlador dañado) se muestra como falso, debe corregir el problema antes de apagar el controlador dañado. Ver link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^] .
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilitar la devolución automática desde la consola del controlador dañado:
++
+`storage failover modify -node impaired-node -auto-giveback-of false`
+
++
+
+NOTE: Cuando veas _¿Quieres desactivar la devolución automática?_, escribe `y` .
+
++
+.. Si está ejecutando ONTAP versión 9.17.1 y no se puede iniciar el controlador dañado o ya está tomado, debe quitar el enlace de interconexión de alta disponibilidad del controlador en buen estado antes de iniciar el controlador dañado.  Esto evita que el controlador dañado realice la devolución automática.
++
+`system ha interconnect link off -node healthy-node -link 0`
+
++
+`system ha interconnect link off -node healthy-node -link 1`
+
++
+
+NOTE: Si no está ejecutando la versión 9.17.1 de ONTAP , omita el paso anterior y vaya al paso 3.
+
+
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Tomar el control o detener el controlador dañado desde el controlador sano:
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
+
+|===
+
+
+
+
+== Paso 2: Reemplace el módulo de gestión del sistema dañado
+
+Sustituya el módulo de gestión del sistema defectuoso.
+
+. Retire el módulo Gestión del sistema:
++
+
+NOTE: Asegúrese de que la separación de NVRAM se haya completado antes de continuar. Cuando el LED del módulo NV está apagado, NVRAM se separa. Si el LED parpadea, espere a que se detenga el parpadeo. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
+
++
+image::../media/drw_a1k_sys-mgmt_remove_ieops-1384.svg[Sustituya el módulo Gestión del sistema]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+|===
++
+.. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+.. Desconecte los cables de alimentación de las fuentes de alimentación.
+.. Retire todos los cables conectados al módulo de administración del sistema.  Etiquete los cables donde estaban conectados, para que pueda volver a conectarlos a los puertos correctos al reinstalar el módulo.
+.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
+.. Pulse el botón de leva del módulo de gestión del sistema.
+.. Gire la palanca de leva hacia abajo hasta el tope.
+.. Enrolle el dedo en el orificio de la palanca de leva y tire del módulo hacia fuera del sistema.
+.. Coloque el módulo de administración del sistema sobre una alfombra antiestática para acceder al medio de arranque.
+
+
+. Mueva el soporte de arranque al módulo de administración del sistema de reemplazo:
++
+image::../media/drw_a1k_boot_media_remove_replace_ieops-1377.svg[Sustitución de soporte de arranque]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Bloqueo de leva del módulo de gestión del sistema
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Botón de bloqueo del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Soporte de arranque
+
+|===
++
+.. Pulse el botón azul de bloqueo del soporte de arranque en el módulo de gestión del sistema defectuoso.
+.. Gire el soporte de arranque hacia arriba y deslícelo para extraerlo del conector.
+
+
+. Instale el soporte de arranque en el módulo de gestión del sistema de sustitución:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hasta que toque el botón de bloqueo.
+.. Presione el bloqueo azul, gire el soporte del maletero completamente hacia abajo y suelte el botón de bloqueo azul.
+
+
+. Instale el módulo de gestión del sistema de repuesto en el compartimento:
++
+.. Alinee los bordes del módulo de gestión del sistema de sustitución con la apertura del sistema y empújelo suavemente en el módulo del controlador.
+.. Deslice suavemente el módulo en la ranura hasta que el pestillo de leva comience a acoplarse con el pasador de leva de E/S y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su sitio.
+
+
+. Gire el ARM de gestión de cables hasta la posición cerrada.
+. Vuelva a conectar el módulo Gestión del sistema.
+
+
+
+
+== Paso 3: Reinicie el módulo del controlador
+
+Reinicie el módulo del controlador.
+
+. Vuelva a enchufar los cables de alimentación a la fuente de alimentación.
++
+El sistema se reinicia, normalmente en el mensaje LOADER.
+
+. Introduzca _bye_ en el indicador del CARGADOR.
+. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+** Si ve el mensaje _login_, vaya al siguiente paso.
+** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado.
+
+
+. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consultelink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Comprenda los niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+. Espere 5 minutos después de que se complete el informe de devolución, luego verifique los estados de conmutación por error y devolución:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Si se deshabilitó la devolución automática, vuelva a habilitarla: `storage failover modify -node local -auto-giveback-of true` .
+. Si AutoSupport está activado, restaurar/desactivar la supresión de la creación automática de casos `system node autosupport invoke -node * -type all -message MAINT=END`: .
+
+
+
+
+== Paso 4: Instale licencias y registre el número de serie
+
+Cuando reemplaza el módulo de administración del sistema, el número de serie del sistema (SSN) del controlador cambia.  Debe instalar nuevas licencias para el nodo si el nodo dañado estaba usando funciones de ONTAP que requieren una licencia estándar (bloqueada por nodo).  Para las funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
+
+.Acerca de esta tarea
+Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo. Sin embargo, si el nodo era el único nodo del clúster con una licencia para la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo puede provocar que no cumpla el acuerdo de licencia, por lo que debe instalar las claves o la clave de licencia de reemplazo en el para el nodo lo antes posible.
+
+.Antes de empezar
+Se requiere un archivo de licencia de NetApp (NLF) para el nuevo número de serie del sistema.  Para obtener más información sobre los archivos de licencia de NetApp , consultelink:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/ONTAP_9.10.1_and_later_licensing_overview["Descripción general de licencias de ONTAP 9.10.1 y versiones posteriores"^] .
+
+Tiene 90 días para instalar las claves de licencia, después de los cuales todas las licencias antiguas dejarán de ser válidas.  Después de instalar una clave de licencia válida, tendrá 24 horas para instalar todas las claves antes de que finalice el período de gracia.
+
+
+NOTE: Si su sistema ejecutaba inicialmente ONTAP 9.15.1 o posterior, utilice el procedimiento documentado enlink:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["Proceso posterior al reemplazo de la placa base para actualizar las licencias en un sistema AFF/FAS"^] .  Si no está seguro de la versión inicial de ONTAP para su sistema, consultelink:https://hwu.netapp.com["Hardware Universe de NetApp"^] Para más información.
+
+.Pasos
+. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
++
+
+NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
+
+. Instale cada clave de licencia a través de ONTAP System Manager.
++
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Habilite nuevas funciones agregando claves de licencia con ONTAP System Manager"^] .
+
+. Elimine las licencias antiguas, si lo desea:
++
+.. Comprobar si hay licencias no utilizadas: `license clean-up -unused -simulate`
+.. Si la lista parece correcta, elimine las licencias no utilizadas: `license clean-up -unused`
+
+
+. Registre el número de serie del sistema con el soporte de NetApp.
++
+** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
+** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
+
+
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

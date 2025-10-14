@@ -1,0 +1,195 @@
+---
+permalink: nx224/service-replace-boot-media.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, boot, media, run, ontap, nvme, module, nsm, firmware, version, nondisruptive, i/o 
+summary: Puede reemplazar un medio de arranque fallido en un estante NX224.  El reemplazo del medio de arranque se puede realizar sin interrupciones, mientras el estante está encendido y la E/S está en progreso. 
+---
+= Reemplazar el medio de arranque - Estantes NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reemplazar un medio de arranque fallido en un estante NX224.  El reemplazo del medio de arranque se puede realizar sin interrupciones, mientras el estante está encendido y la E/S está en progreso.
+
+.Acerca de esta tarea
+* Después de sustituir el medio de arranque, la imagen de arranque del partner NSM de la bandeja se copia automáticamente al medio de arranque de reemplazo.
++
+Esto puede tardar hasta cinco minutos.
+
+* Permita al menos 70 segundos entre la eliminación y la instalación del módulo de bandeja de NVMe (NSM).
++
+Esto le da tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
+
+* Tras sustituir el soporte de arranque, puede devolver la pieza con error a NetApp tal como se describe en las instrucciones de la RMA que se suministran con el kit.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+
+
+.Antes de empezar
+* El NSM asociado del estante debe estar en funcionamiento y cableado correctamente para que su estante mantenga la conectividad cuando retire el NSM con la FRU defectuosa (NSM de destino).  Puede verificar el estado del socio NSM mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargar y ejecutar Config Advisor"^] .
+* Todos los demás componentes del sistema deben funcionar correctamente.
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Desconecte el cableado del NSM que contiene la FRU que desea reemplazar:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufando el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento de los puertos NSM.
++
+Anote los puertos NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos cuando vuelva a insertar el NSM, más adelante en este procedimiento.
+
+
+
+. Retire la NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Quite el NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del NSM, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para retirar el NSM del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera de la bandeja. Cuando sientas algo de resistencia, sigue tirando.
+
+** Deslice el NSM hacia fuera del estante y colóquelo en una superficie plana y estable.
++
+Asegúrese de apoyar la parte inferior del NSM a medida que lo desliza fuera de la bandeja.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas en posición vertical (junto a las pestañas) para alejarlas.
+
+|===
+. Abra la cubierta NSM girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+. Localice físicamente el medio de arranque con errores.
+. Retire el soporte de arranque:
++
+image::../media/drw_tp_boot_media_replace_ieops-2201.svg[Retire el soporte de arranque.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Ubicación del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Presione la pestaña azul hacia abajo para soltar el extremo derecho del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el extremo derecho del soporte de arranque en un ángulo ligero para conseguir un buen agarre a lo largo de los laterales del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Número de llamada 4]
+ a| 
+Tire suavemente del extremo izquierdo del soporte de arranque para extraerlo de su toma.
+
+|===
+. Instale el soporte de arranque de repuesto:
++
+.. Alinee los bordes del soporte del maletero con el alojamiento del zócalo y, a continuación, empújelo suavemente en el zócalo.
+.. Gire el soporte de arranque hacia abajo hacia el botón de bloqueo.
+.. Pulse el botón de bloqueo, gire el soporte del maletero completamente hacia abajo y, a continuación, suelte el botón de bloqueo.
+
+
+. Cierre la cubierta NSM y, a continuación, apriete el tornillo de mariposa.
+. Inserte el NSM en la bandeja:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Sustituya la NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si ha girado las asas NSM en posición vertical (junto a las pestañas) para alejarlas mientras ha reparado el NSM, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Alinee la parte posterior del NSM con la abertura de la bandeja y, a continuación, empuje suavemente el NSM con las asas hasta que quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas.
+
+|===
+. Vuelva a conectar el cableado al NSM:
++
+.. Vuelva a conectar el cableado de almacenamiento a los mismos ocho puertos NSM.
++
+Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y luego asegúrelo con el retenedor.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
++
+Además, se iluminan los LED LNK (verde) del puerto NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+
+
+
+. Compruebe que los LED de atención (ámbar) del NSM que contienen el soporte de arranque fallido y el panel de visualización del operador de la bandeja ya no están encendidos.
++
+Puede tardar entre 5 y 10 minutos en que se aptotal los LED de atención. Esta es la cantidad de tiempo que tarda el NSM en reiniciarse y en completarse la copia de imagen de medios de arranque.
+
++
+Si los LED de fallo permanecen encendidos, es posible que el soporte de arranque no se encuentre correctamente o que haya otro problema y deberá ponerse en contacto con el soporte técnico para obtener ayuda.
+
+. Verifique que el NSM esté cableado correctamente, https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ejecutando Active IQ Config Advisor"^] .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

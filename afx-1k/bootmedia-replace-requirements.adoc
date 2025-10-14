@@ -1,0 +1,29 @@
+---
+permalink: afx-1k/bootmedia-replace-requirements.html 
+sidebar: sidebar 
+keywords: afx 1k, replace the boot media 
+summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFX 1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que no haya puertos de clúster defectuosos en el controlador y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.' 
+---
+= Requisitos para reemplazar el medio de arranque - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFX 1K, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que no haya puertos de clúster defectuosos en el controlador y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
+
+Antes de sustituir el soporte de arranque, asegúrese de revisar los siguientes requisitos.
+
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Es importante que aplique los comandos en estos pasos en la controladora correcta:
++
+** El controlador _drinated_ es el controlador en el que está realizando tareas de mantenimiento.
+** El controlador _heated_ es el compañero de alta disponibilidad del controlador dañado.
+
+
+* No debe haber puertos de clúster defectuosos en la controladora dañada.
+
+
+.El futuro
+Después de revisar los requisitos para reemplazar el medio de arranque, debelink:bootmedia-shutdown.html["apague la controladora"] .

@@ -1,0 +1,78 @@
+= Paso 1: Arranque las controladoras y devuelva las controladoras
+:allow-uri-read: 
+
+
+
+
+== Paso 1: Arranque las controladoras y devuelva las controladoras
+
+Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
+
+.Pasos
+. Compruebe la salida de la consola:
++
+.. Si el controlador se detiene en el indicador LOADER, inicie el controlador con el `boot_ontap` dominio.
+.. Una vez que el nodo se inicia y proporciona la solicitud de inicio de sesión, inicie sesión en el controlador asociado y verifique que el controlador reemplazado esté listo para la devolución. `storage failover show` dominio.
+
+
+. Realice la devolución del control:
++
+.. Conecte el cable de la consola al controlador asociado.
+.. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+*** Si ve el mensaje _login_, vaya al siguiente paso.
+*** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado.
+
+
+.. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consultelink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Comprenda los niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+.. Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+.. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+.. Si se deshabilitó la devolución automática, vuelva a habilitarla: `storage failover modify -node _impaired_node_name_ -auto-giveback-of _true_`
+.. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+
+== Paso 2: Verifique el estado del sistema de almacenamiento
+
+Después de que el controlador devuelva el almacenamiento, verifique el estado usando https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .
+
+.Pasos
+. Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
+. Corrija los problemas que encuentre.
+
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

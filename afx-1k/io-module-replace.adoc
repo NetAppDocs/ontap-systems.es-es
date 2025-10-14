@@ -1,0 +1,217 @@
+---
+permalink: afx-1k/io-module-replace.html 
+sidebar: sidebar 
+keywords: afx 1k, replace a pcie card 
+summary: Reemplace un módulo de E/S en su sistema de almacenamiento AFX 1K cuando el módulo falla o requiere una actualización para soportar un mayor rendimiento o funciones adicionales. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de E/S defectuoso, reiniciar la controladora y devolver la pieza defectuosa a NetApp. 
+---
+= Reemplazar módulo de E/S - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplace un módulo de E/S en su sistema de almacenamiento AFX 1K cuando el módulo falla. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de E/S defectuoso, reiniciar la controladora y devolver la pieza defectuosa a NetApp.
+
+Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
+
+.Antes de empezar
+* Debe tener la pieza de repuesto disponible.
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionen correctamente. De lo contrario, póngase en contacto con el soporte técnico.
+
+
+
+
+== Paso 1: Apague el nodo dañado
+
+Apague o tome el control de la controladora dañada.
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, realizar una toma de control del almacenamiento del controlador para que el controlador en buen estado continúe proporcionando datos desde el almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si tiene un clúster con más de cuatro nodos, debe estar en quórum.  Para ver información del clúster sobre sus nodos, utilice el `cluster show` dominio.  Para obtener más información sobre el `cluster show` comando, verlink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Ver detalles a nivel de nodo en un clúster ONTAP"^] .
+* Si el clúster no está en quórum o si el estado o la elegibilidad de cualquier controlador (excepto el controlador dañado) se muestra como falso, debe corregir el problema antes de apagar el controlador dañado. Ver link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^] .
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilitar la devolución automática desde la consola del controlador dañado:
++
+`storage failover modify -node impaired-node -auto-giveback-of false`
+
++
+
+NOTE: Cuando veas _¿Quieres desactivar la devolución automática?_, escribe `y` .
+
++
+.. Si está ejecutando ONTAP versión 9.17.1 y no se puede iniciar el controlador dañado o ya está tomado, debe quitar el enlace de interconexión de alta disponibilidad del controlador en buen estado antes de iniciar el controlador dañado.  Esto evita que el controlador dañado realice la devolución automática.
++
+`system ha interconnect link off -node healthy-node -link 0`
+
++
+`system ha interconnect link off -node healthy-node -link 1`
+
++
+
+NOTE: Si no está ejecutando la versión 9.17.1 de ONTAP , omita el paso anterior y vaya al paso 3.
+
+
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Tomar el control o detener el controlador dañado desde el controlador sano:
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
+
+|===
+
+
+
+
+== Paso 2: Sustituya un módulo I/O fallido
+
+Para sustituir un módulo de E/S, búsquelo dentro del receptáculo y siga la secuencia específica de pasos.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte cualquier cableado del módulo de E/S de destino.
++
+
+NOTE: Asegúrese de etiquetar dónde se conectaron los cables, para que pueda conectarlos a los puertos correctos cuando reinstale el módulo.
+
+. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
++
+
+NOTE: En la siguiente ilustración, se muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo eliminará un módulo de E/S.
+
++
+image:../media/drw_a1k_io_remove_replace_ieops-1382.svg["Retire el módulo de E/S."]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Bloqueo de leva de E/S.
+
+|===
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Retire el módulo de E/S de destino del receptáculo:
++
+.. Pulse el botón de leva del módulo de destino.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo de la carcasa enganchando el dedo en la abertura de la palanca de leva y sacando el módulo de la carcasa.
++
+Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
+
+
+. Coloque el módulo de E/S a un lado.
+. Instale el módulo de E/S de repuesto en la carcasa:
++
+.. Alinee el módulo con los bordes de la abertura de la ranura de la carcasa.
+.. Deslice suavemente el módulo dentro de la ranura hasta el fondo de la carcasa y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Vuelva a cablear el módulo de E/S.
+. Gire la bandeja de gestión de cables hasta la posición cerrada.
+
+
+
+
+== Paso 3: Reinicie el controlador
+
+Después de sustituir un módulo de I/O, debe reiniciar la controladora.
+
+. Reinicie la controladora desde el aviso del CARGADOR:
++
+`bye`
+
++
+
+NOTE: Al reiniciar la controladora afectada, también se reinician los módulos de E/S y otros componentes.
+
+. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+** Si ve el mensaje _login_, vaya al siguiente paso.
+** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado.
+
+
+. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consultelink:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Comprenda los niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+. Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -ofnode impaired-node -automatic-giveback true`
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+. Restaure la devolución automática del control desde la consola de la controladora en buen estado:
++
+`storage failover modify -node local -auto-giveback-of true`
+
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+
+
+== Paso 4: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

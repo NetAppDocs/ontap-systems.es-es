@@ -1,0 +1,443 @@
+---
+permalink: nx224/service-monitor-leds.html 
+sidebar: sidebar 
+keywords: monitor, health, drive, shelf, location, status, condition, led, component, operator, display, panel, nsm, power, supply, drive, monitor drive shelf leds, operator display panel leds, nsm leds, power supply leds, drive leds 
+summary: Para supervisar el estado de la bandeja de unidades, conozca las condiciones de ubicación y estado de las LED de los componentes de la bandeja de unidades. 
+---
+= LED de los estantes de la unidad de monitor - Estantes NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede supervisar el estado de su estante comprendiendo la ubicación y las condiciones de estado de los LED en los componentes del estante de su unidad.
+
+* Los LED de ubicación (azules), en el panel de visualización del operador (ODP) de un estante y en ambos módulos de estante NVMe (NSM), se pueden activar para ayudar a localizar físicamente el estante que necesita mantenimiento: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero mediante el `off` opción.
+
+* Un estado de LED puede ser:
++
+** Encendido: La iluminación LED es continua/constante
+** Apagado: El LED no está iluminado
+** Parpadeo: El LED se enciende y se apaga a intervalos variables dependiendo del estado de la FRU
+** Cualquier estado: El LED puede estar encendido, apagado o parpadeo.
+
+
+
+
+
+
+== Indicadores LED del panel del operador
+
+Los LED del panel de visualización frontal del operador (ODP) de la bandeja de unidades indican si la bandeja de unidades funciona con normalidad o si existen problemas con el hardware.
+
+En la siguiente ilustración y tabla se describen los tres LED del ODP:
+
+image::../media/drw_ns224_odp_leds_IEOPS-1262.svg[Indicadores LED del panel del operador]
+
+[cols="1,2,1,5"]
+|===
+| Icono DE LED | Nombre y color DEL LED | Estado | Descripción 
+
+
+ a| 
+image::../media/drw_sas_power_icon.svg[LED de alimentación del panel de visualización del operador]
+ a| 
+Alimentación (verde)
+ a| 
+Encendido
+ a| 
+Una o varias fuentes de alimentación suministran alimentación a la bandeja de unidades.
+
+
+
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Atención (ámbar)
+ a| 
+Encendido
+ a| 
+* Se produjo un error con la función de una de más FRU de bandeja.
++
+Compruebe los mensajes de eventos para determinar la acción correctiva que se debe realizar.
+
+* Si el ID de bandeja de dos dígitos también parpadea, el ID de bandeja está en estado pendiente.
++
+Apague y encienda la bandeja de unidades del ID de bandeja que se vea afectado.
+
+
+
+
+
+ a| 
+image::../media/drw_sas3_location_icon.svg[LED de ubicación del panel de visualización del operador]
+ a| 
+Ubicación (azul)
+ a| 
+Encendido
+ a| 
+El administrador del sistema activó esta función LED.
+
+|===
+
+
+== LED NSM
+
+Los LED de un NSM indican si el módulo funciona con normalidad, si está listo para el tráfico de I/O y si hay algún problema con el hardware.
+
+En la ilustración y las tablas siguientes se describen los LED NSM asociados con la función de un módulo y la función de cada puerto NVMe en un módulo.
+
+image::../media/drw_tp_nsmb_leds_ieops-2206.svg[LED del módulo NX224 NSM140]
+
+[cols="1,1,2,4"]
+|===
+| Llame | Icono DE LED | Color | Descripción 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+LNK
+ a| 
+Verde
+ a| 
+Puerto/enlace NVMe: Estado
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+Puerto/enlace NVMe: Atención
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+Módulo de I/O: Atención
+
+
+
+ a| 
+image:../media/icon_round_4.png["Número de llamada 4"]
+ a| 
+image::../media/drw_sas3_location_icon.svg[LED de ubicación del panel de visualización del operador]
+ a| 
+Azul
+ a| 
+NSM: Ubicación
+
+
+
+ a| 
+image:../media/icon_round_5.png["Número de llamada 5"]
+ a| 
+image::../media/drw_sas_fault_icon.svg[LED de atención del panel de visualización del operador]
+ a| 
+Ámbar
+ a| 
+NSM: Atención
+
+|===
+[cols="2,1,1,1,1"]
+|===
+| Estado | Atención NSM (ámbar) | Puerto LNK (verde) | Atención del puerto (ámbar) | Atención del módulo de E/S. 
+
+
+ a| 
+NSM normal
+ a| 
+Apagado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+ a| 
+Apagado
+
+
+
+ a| 
+Fallo de NSM
+ a| 
+Encendido
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Error de NSM VPD
+ a| 
+Encendido
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+No hay conexión de puerto de host
+ a| 
+Cualquier estado
+ a| 
+Apagado
+ a| 
+Apagado
+ a| 
+Apagado
+
+
+
+ a| 
+Enlace de conexión del puerto de host activo
+ a| 
+Cualquier estado
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Conexión del puerto de host con el fallo
+ a| 
+Encendido
+ a| 
+Encendido/apagado si todos los carriles tienen fallos
+ a| 
+Encendido
+ a| 
+Apagado
+
+
+
+ a| 
+Arranque del BIOS desde la imagen del BIOS después del encendido
+ a| 
+Parpadeo
+ a| 
+Cualquier estado
+ a| 
+Cualquier estado
+ a| 
+Apagado
+
+
+
+ a| 
+Falta el módulo de E/S.
+ a| 
+Encendido
+ a| 
+N.A.
+ a| 
+N.A.
+ a| 
+Encendido
+
+|===
+
+
+== Indicadores LED del sistema de alimentación
+
+Los LED de una fuente de alimentación de CA (PSU) indican si la PSU está funcionando normalmente o hay problemas de hardware.
+
+La siguiente ilustración y tablas describen el LED de una fuente de alimentación.
+
+image::../media/drw_generic_psu_ac_terra_cotta_ieops-2370.svg[LED de actividad de alimentación de la fuente de alimentación]
+
+[cols="1,4"]
+|===
+| Llame | Descripción 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+El LED bicolor indica la alimentación/actividad cuando está en verde y un fallo cuando está en rojo.
+
+|===
+[cols="2,1,1"]
+|===
+| Estado | Potencia/actividad (verde) | Atención (rojo) 
+
+
+ a| 
+No hay alimentación de CA en el gabinete
+ a| 
+Apagado
+ a| 
+Apagado
+
+
+
+ a| 
+No hay alimentación de CA a la fuente de alimentación
+ a| 
+Apagado
+ a| 
+Encendido
+
+
+
+ a| 
+La alimentación de CA está activada, pero la fuente de alimentación no está en el gabinete
+ a| 
+Parpadeo
+ a| 
+Apagado
+
+
+
+ a| 
+La fuente de alimentación funciona correctamente
+ a| 
+Encendido
+ a| 
+Apagado
+
+
+
+ a| 
+Fallo de PSU
+ a| 
+Apagado
+ a| 
+Encendido
+
+
+
+ a| 
+Fallo del ventilador
+ a| 
+Apagado
+ a| 
+Encendido
+
+
+
+ a| 
+Modo de actualización del firmware
+ a| 
+Parpadeo
+ a| 
+Apagado
+
+|===
+
+
+== LED de unidad
+
+Los LED de una unidad NVMe indican si funciona normalmente o si hay problemas con el hardware.
+
+En la ilustración y las siguientes tablas se describen los dos LED de una unidad NVMe:
+
+image::../media/drw_ns224_drive_leds_IEOPS-1263.svg[LED de alimentación y atención de la unidad NVMe]
+
+[cols="1,2,2"]
+|===
+| Llame | Nombre DEL LED | Color 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Atención
+ a| 
+Ámbar
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Alimentación/actividad
+ a| 
+Verde
+
+|===
+[cols="2,1,1,1"]
+|===
+| Estado | Alimentación/actividad (verde) | Atención (ámbar) | LED ODP asociado 
+
+
+ a| 
+Unidad instalada y operativa
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Cualquier estado
+ a| 
+N.A.
+
+
+
+ a| 
+Fallo de una unidad
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Encendido
+ a| 
+Atención (ámbar)
+
+
+
+ a| 
+Juego de identificación de dispositivo SES
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Parpadea
+ a| 
+La atención (ámbar) está desactivada
+
+
+
+ a| 
+Bit de fallo del dispositivo SES establecido
+ a| 
+Activa/parpadea con la actividad
+ a| 
+Encendido
+ a| 
+Atención (ámbar)
+
+
+
+ a| 
+Fallo del circuito de control de alimentación
+ a| 
+Apagado
+ a| 
+Cualquier estado
+ a| 
+Atención (ámbar)
+
+|===

@@ -1,0 +1,121 @@
+---
+permalink: nx224/service-replace-drive.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, fail, replace, drive, nondisruptive, i/o, hot-swap, hot-swap a drive 
+summary: Puede reemplazar una unidad defectuosa de manera no disruptiva en un estante NX224 que esté encendido y mientras la E/S esté en progreso. 
+---
+= Intercambio en caliente de una unidad - Estantes NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reemplazar una unidad defectuosa de manera no disruptiva en un estante NX224 que esté encendido y mientras la E/S esté en progreso.
+
+.Antes de empezar
+* La unidad que está instalando debe ser compatible con el estante NX224.  Puede verificar las unidades compatibles de su estante en el https://hwu.netapp.com["Hardware Universe de NetApp"^] .
+* Si la autenticación SED está activada, debe utilizar las instrucciones de sustitución de SED de la documentación de ONTAP.
++
+Puede ver los pasos adicionales que se deben completar antes y después de reemplazar una SED en el https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["Descripción general del cifrado de NetApp con la documentación de la CLI"^] .
+
+* Todos los demás componentes del sistema deben funcionar correctamente; si no, póngase en contacto con el soporte técnico.
+* Compruebe que la unidad que desea quitar tenga error.
++
+Para verificar que la unidad presenta errores, ejecute el `storage disk show -broken` comando. La unidad con error se muestra en la lista de unidades con errores. Si no lo hace, debe esperar y volver a ejecutar el comando.
+
++
+
+NOTE: Según el tipo y la capacidad de la unidad, la unidad puede tardar hasta varias horas en aparecer en la lista de unidades con errores.
+
+
+
+.Acerca de esta tarea
+* *Mejor práctica:* Asegúrese de que su sistema pueda reconocer y usar unidades recién calificadas https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["descargando la versión actual del Paquete de Calificación de Disco"^] .
++
+Esto evita mensajes de eventos del sistema sobre tener información de unidad no actualizada y la prevención de particionamiento de unidades porque las unidades no se reconocen.  El DQP también le notifica si el firmware de la unidad no está actualizado.
+
+* *Mejor práctica:* La mejor práctica es tener versiones actuales del firmware del módulo de estante NVMe (NSM) y del firmware de la unidad en su sistema antes de reemplazar los componentes FRU. Puede visitar el sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar el firmware del estante de discos"^] y  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargar el firmware de la unidad de disco"^] .
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* El firmware de la unidad se actualiza automáticamente (sin interrupciones) en las unidades nuevas con versiones de firmware no actuales.
++
+
+NOTE: Las comprobaciones del firmware de la unidad se realizan cada dos minutos.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `_shelf_name_` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
+
+* Cuando desembale la unidad de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la unidad con error.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente la unidad con error.
++
+Cuando falla una unidad, el sistema registra un mensaje de advertencia en la consola del sistema que indica qué unidad falló. Además, el LED de atención (ámbar) del panel de visualización del operador del estante y la unidad fallida se iluminan.
+
++
+
+NOTE: El LED de actividad (verde) en una unidad con error puede estar iluminado (fijo), lo que indica que la unidad tiene alimentación, pero no debe parpadear, lo que indica actividad de I/O. Una unidad con error no tiene actividad de I/O.
+
+. Quite la unidad con error:
++
+image::../media/drw_nvme_drive_replace_ieops-1904.svg[Quite la unidad.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Pulse el botón de liberación de la cara de la unidad para abrir la palanca de la leva.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Gire la palanca de leva hacia abajo para desacoplar la transmisión del plano medio.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Deslice la unidad para sacarla de la estantería con el mango de la leva y apoye la unidad con la otra mano.
+
+|===
+. Espere al menos 70 segundos antes de insertar la unidad de reemplazo.
++
+Esto permite al sistema reconocer que se ha quitado una unidad.
+
+. Inserte la unidad de reemplazo:
++
+.. Con el mango de leva en la posición abierta, inserte la unidad con ambas manos.
+.. Empuje suavemente hasta que la unidad se detenga.
+.. Cierre el asa de leva de forma que la unidad esté completamente asentada en el plano medio y el asa encaje en su lugar.
++
+Asegúrese de cerrar el mango de leva lentamente para que quede alineado correctamente con la cara de la transmisión.
+
+
+
+. Verifique que el LED de actividad de la unidad (verde) esté iluminado.
++
+Cuando el LED de actividad de la unidad está sólido, significa que la unidad tiene alimentación. Cuando el LED de actividad de la unidad parpadea, significa que la unidad tiene alimentación y I/o está en curso. Si el firmware de la unidad se actualiza automáticamente, el LED parpadea.
+
+. Si desea sustituir otra unidad, repita los pasos 3 al paso 7.
+

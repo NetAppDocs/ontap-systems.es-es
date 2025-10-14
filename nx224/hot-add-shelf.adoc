@@ -1,0 +1,220 @@
+---
+permalink: nx224/hot-add-shelf.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, hot-add, ha, pair, install, hot-add an nx224 drive shelf 
+summary: Puede agregar en caliente un estante de unidad NX224 después de que su clúster AFX cumpla con ciertos requisitos y después de que se completen las tareas de preparación aplicables a su clúster AFX. 
+---
+= Añadir un estante en caliente - Estantes NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede ampliar sus capacidades de almacenamiento agregando en caliente un estante NX224 a su configuración de clúster AFX existente.
+
+.Acerca de esta tarea
+* Después de haber cableado un estante agregado en caliente, ONTAP reconoce el estante.  El firmware del estante NSM y el firmware de la unidad deben actualizarse automáticamente, si es necesario.
++
+
+NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
+
+
+
+.Antes de empezar
+* Antes de añadir un estante en caliente, asegúrese de tener:
++
+** Un clip con un lado enderezado o un bolígrafo de punta estrecha.
++
+Para cambiar el ID de la bandeja, utilice el clip de papel o el bolígrafo para acceder al botón de ID de la bandeja situado detrás del panel de visualización del operador (ODP) para el paso de ID de la bandeja de cambio.
+
+** El número y tipo correcto de cables para conectar el estante. Ver https://hwu.netapp.com["Hardware Universe de NetApp"^] .
+
+
+* Comprenda que un estante NX224 completamente cargado puede pesar un promedio de 56,8 libras (25,8 kg) y requiere dos personas para levantarlo o el uso de un elevador hidráulico.  Evite quitar componentes del estante (de la parte delantera o trasera del estante) para reducir el peso del estante, porque este se desequilibrará.
+* Un estante NX224 contiene dos módulos NSM140.  El módulo superior va en la ranura A (NSM A) y el módulo inferior va en la ranura B (NSM B).
+* Su modelo de plataforma y la versión de ONTAP deben ser compatibles con el estante NX224 y las unidades que está agregando en caliente. Ver https://hwu.netapp.com["Hardware Universe de NetApp"^]
+* Su clúster AFX debe tener menos que la cantidad máxima de estantes admitidos, al menos por la cantidad de estantes que planea agregar en caliente.
++
+No es posible que haya excedido la cantidad máxima de estantes admitidos por su clúster AFX después de agregar estantes en caliente. Ver https://hwu.netapp.com["Hardware Universe de NetApp"^] .
+
+* *Mejor práctica:* Asegúrese de tener la versión actual del https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Paquete de cualificación de disco"^] instalado antes de agregar un estante en caliente.
++
+Si tiene instalada la versión actual del DQP, el sistema podrá reconocer y utilizar unidades recién cualificadas. Esto evita mensajes de eventos del sistema sobre la información no actualizada de la unidad y la prevención de la partición de unidades, ya que no se reconocen las unidades. El DQP también notifica el firmware de la unidad no actual.
+
+* *Mejor práctica*: Ejecutar https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] Antes y después de agregar un estante en caliente para ver los mensajes de error de cableado de almacenamiento y las acciones correctivas que debe tomar.
++
+La ejecución de Active IQ Config Advisor antes de agregar en caliente un estante proporciona una instantánea de la conectividad Ethernet (ENET) del estante existente, verifica las versiones de firmware del módulo de estante NVMe (NSM) y le permite verificar una ID de estante que ya esté en uso en el clúster AFX.
+
++
+Al ejecutar Active IQ Config Advisor después de agregar un estante en caliente, podrá verificar que los estantes estén cableados correctamente y que las identificaciones de los estantes sean únicas dentro del clúster AFX.
+
+* *Mejor práctica:* Asegúrese de tener versiones actualizadas de https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Firmware del módulo de bandeja NVMe (NSM)"^] y https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["firmware de la unidad"^] en su sistema de almacenamiento antes de agregar un nuevo estante.
++
+
+NOTE: No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+
+
+
+
+== Paso 1: Instale un estante para agregar en caliente
+
+Debe instalar un estante NX224 en un gabinete o rack de telecomunicaciones, conectar los cables de alimentación (que encienden automáticamente el estante) y configurar el ID del estante.
+
+.Pasos
+. Instale el kit de guías para la bandeja, según sea necesario, siguiendo las instrucciones incluidas con el kit.
++
+
+NOTE: Use siempre el kit de rieles adecuado para que su bandeja instale la bandeja en un rack o armario.
+
+. Instale la bandeja:
++
+.. Coloque la parte posterior de la bandeja en los rieles, y luego sostenga la bandeja desde la parte inferior y deslícela en el armario o rack de telecomunicaciones.
++
+Se recomienda instalar todos los estantes cerca de los interruptores en el mismo rack.
+
+.. Fije la bandeja al armario o al rack Telco con los tornillos de montaje incluidos en el kit.
+
+
+. Conecte la alimentación:
++
+.. Conecte los cables de alimentación al estante y fíjelos en su lugar con los sujetadores del cable de alimentación.
+.. Conecte los cables de alimentación a diferentes fuentes de alimentación para mayor resistencia.
++
+Una bandeja se enciende cuando está conectada a una fuente de alimentación; no tiene interruptores de alimentación. Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
+
+
+. Establezca el ID del estante en un número que sea único dentro del clúster AFX:
++
+Para obtener instrucciones más detalladas, consultelink:change-shelf-id.html["Cambiar el ID de un estante - Estantes NX224"^] .
+
++
+image::../media/drw_tp_change_shelf_id_ieops-2381.svg[Cambiar el ID del estante NX224]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Tapa final de estante
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Número de referencia 2]
+ a| 
+Placa frontal de la bandeja
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Número de referencia 3]
+ a| 
+Número de ID de la bandeja
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Número de referencia 4]
+ a| 
+Acceso al botón de identificación del estante
+
+|===
++
+.. Retire la tapa del extremo izquierdo y localice el orificio pequeño a la derecha de los LED.
+.. Introduzca el extremo de un clip de papel o una herramienta similar en el orificio pequeño para llegar al botón de ID de la bandeja.
+.. Mantenga pulsado el botón (hasta 15 segundos) hasta que el primer número de la pantalla digital parpadee y, a continuación, suelte el botón.
++
+Si el ID tarda más de 15 segundos en parpadear, mantenga pulsado el botón de nuevo y asegúrese de pulsarlo completamente.
+
+.. Pulse y suelte el botón para avanzar el número hasta alcanzar el número deseado de 0 a 9.
+.. Repita los subpasos 4c y 4d para establecer el segundo número del ID de la bandeja.
++
+El número puede tardar hasta tres segundos (en lugar de 15 segundos) en parpadear.
+
+.. Mantenga presionado el botón hasta que el segundo número deje de parpadear.
++
+Después de unos cinco segundos, ambos números comienzan a parpadear y el LED ámbar del ODP se ilumina.
+
+.. Apague y encienda la bandeja para que el ID de bandeja quede registrado.
++
+Debe desconectar los dos cables de alimentación de la bandeja, esperar 10 segundos y, a continuación, volver a enchufarlos.
+
++
+Cuando se restablece la alimentación a las fuentes de alimentación, sus LED bicolores se iluminan en verde.
+
+
+
+
+
+
+
+== Paso 2: Estante para cables para agregar en caliente
+
+Cablea cada estante NX224 que estás agregando en caliente de modo que cada estante tenga ocho conexiones a cada conmutador.
+
+.Antes de empezar
+* Familiarícese con la orientación adecuada del conector de cable y la ubicación y el etiquetado de los puertos en los módulos de estante NX224 NSM140.
++
+** Los cables se insertan con la lengüeta de extracción del conector hacia arriba.
++
+Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
++
+Después de conectar ambos extremos del cable, se encienden los LED LNK (verde) de la bandeja y el puerto de la controladora. Si un LED LNK de puerto no se ilumina, vuelva a colocar el cable.
+
++
+image::../media/oie_cable_pull_tab_up.png[Los cables se insertan con la lengüeta de extracción del conector hacia arriba]
+
+** Cada módulo NSM140 incluye 4 puertos CX7 Path_A de 100 GbE (e1a, e2a, e3a y e4a) y 4 puertos CX7 Path_B de 100 GbE (e1b, e2b, e3b y e4b).
++
+
+NOTE: Se requieren cables de conexión separados para los puertos Path_A y Path_B en cada módulo NSM140, para un total de cuatro cables de conexión por estante.
+
++
+La siguiente ilustración resalta los puertos Path_A y Path_B en los módulos NSM140:
+
++
+image::../media/drw_tp_nsm_ports_ieops-2301.svg[Ubicación de los puertos Path_A y Path_B del NX224 NSM140.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Puertos Path_A (puertos azules)
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Puertos Path_B (puertos rojos)
+
+|===
+
+
+
+
+.Pasos
+. Estante de cables NSM A y NSM B Path_A puertos e1a, e2a, e3a y e4a a cualquier puerto en el conmutador A.
+. Estante de cables NSM A y NSM B Path_B puertos e1b, e2b, e3b y e4b a cualquier puerto en el conmutador B.
++
+La siguiente ilustración resalta el cableado para agregar en caliente un estante adicional a una configuración de conmutador.  Para agregar estantes adicionales, siga la misma metodología de cableado basada en conmutadores.
+
++
+image::../media/drw_nx224_afx_a1k_ieops-2344.svg[Cableado del conmutador NX224 a AFX A1K]
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

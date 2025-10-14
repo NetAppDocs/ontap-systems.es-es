@@ -1,0 +1,335 @@
+---
+permalink: nx224/service-replace-nsm140.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, replace, impair, nvme, module, nsm, nondisruptive, drive, i/o, nsm, replace an NSM 
+summary: 'Puede reemplazar un módulo de estante NVMe dañado (NSM) de manera no disruptiva en un estante de unidad NX224 que esté encendido y mientras la E/S esté en progreso.' 
+---
+= Reemplazar un estante NSM - NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reemplazar un módulo de estante NVMe (NSM) dañado de manera no disruptiva en un estante de unidad NX224 que esté encendido y mientras la E/S esté en progreso.
+
+.Acerca de esta tarea
+* Reemplazar el NSM implica mover los DIMM, los ventiladores, el medio de arranque, el módulo de E/S y la fuente de alimentación del NSM dañado al NSM de reemplazo.
++
+No mueva la batería del reloj de tiempo real (RTC).  Viene preinstalado en el NSM de reemplazo.
+
+* Deje pasar al menos 70 segundos entre la extracción y la instalación del NSM.
++
+Esto le da tiempo suficiente para que ONTAP procese el evento de eliminación de NSM.
+
+* *Mejor práctica:* La mejor práctica es tener versiones actuales del firmware NSM y del firmware de la unidad en el sistema antes de reemplazar los componentes FRU. Puede visitar el sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar el firmware del estante de discos"^] y  https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["Descargar el firmware de la unidad de disco"^] .
++
+[NOTE]
+====
+No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+
+====
+* El firmware de la bandeja (NSM) se actualiza automáticamente (no disruptiva) en una nueva NSM que tiene una versión de firmware no actual.
++
+Las comprobaciones de firmware NSM se realizan cada 10 minutos. Una actualización de firmware del NSM puede demorar hasta 30 minutos.
+
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlos introduciendo el mismo comando, pero usando la `off` opción.
+
+* Cuando desembale el NSM de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva el NSM con errores.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+
+
+.Antes de empezar
+* El NSM asociado del estante debe estar en funcionamiento y cableado correctamente para que su estante mantenga la conectividad cuando retire el NSM fallido.  Puede verificar el estado del socio NSM mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descargar y ejecutar Config Advisor"^] .
+* Todos los demás componentes del sistema deben funcionar correctamente.
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente el NSM deteriorado.
++
+El sistema registra un mensaje de advertencia a la consola del sistema que indica qué módulo está dañado. Además, se iluminan el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja de unidades y el módulo dañado.
+
+. Desconecte el cableado del NSM dañado:
++
+.. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufando el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+.. Desconecte el cableado de almacenamiento de los puertos NSM.
++
+Anote los puertos NSM a los que está conectado cada cable. Vuelva a conectar los cables a los mismos puertos en el NSM de reemplazo, más adelante en este procedimiento.
+
+
+
+. Retire la NSM:
++
+image::../media/drw_g_and_t_handles_remove_ieops-1837.svg[Quite el NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+En ambos extremos del NSM, empuje las lengüetas de bloqueo verticales hacia afuera para liberar las asas.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+** Tire de las asas hacia usted para retirar el NSM del plano medio.
++
+A medida que tira, las asas se extienden hacia fuera de la bandeja. Cuando sientas algo de resistencia, sigue tirando.
+
+** Deslice el NSM hacia fuera del estante y colóquelo en una superficie plana y estable.
++
+Asegúrese de apoyar la parte inferior del NSM a medida que lo desliza fuera de la bandeja.
+
+
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas en posición vertical (junto a las pestañas) para alejarlas.
+
+|===
+. Desembale el NSM de repuesto y colóquelo en una superficie nivelada cerca del NSM dañado.
+. Abra las cubiertas de ambos NSM aflojando el tornillo de mariposa de cada cubierta.
+. Mueva los cuatro DIMM del NSM dañado al NSM de reemplazo:
++
+.. Retire cada DIMM del NSM dañado:
++
+image::../media/drw_tp_dimm_replace_ieops-2202.svg[Quite los DIMM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Numeración y posiciones de las ranuras DIMM.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+*** Observe la orientación del módulo DIMM en el zócalo para que pueda insertarlo en el módulo DIMM de repuesto con la misma orientación.
+*** Extraiga el módulo DIMM defectuoso empujando lentamente las dos lengüetas del expulsor DIMM en ambos extremos de la ranura DIMM.
+
+
+
+IMPORTANT: Sujete con cuidado el DIMM por las esquinas o bordes para evitar la presión en los componentes de la placa de circuitos DIMM.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el módulo DIMM y sáquelo de la ranura.
+
+Las lengüetas del expulsor permanecen en la posición abierta.
+
+|===
+.. Instale cada DIMM en el NSM de reemplazo:
++
+... Sujete el módulo DIMM por las esquinas y, a continuación, inserte el módulo DIMM directamente en una ranura.
++
+La muesca de la parte inferior del DIMM, entre los pasadores, debe alinearse con la lengüeta de la ranura.
+
++
+Cuando se inserta correctamente, el DIMM debe entrar fácilmente pero ajustarse firmemente en la ranura. De lo contrario, vuelva a insertar el DIMM.
+
+... Empuje hacia abajo con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de ambos extremos del DIMM.
+
+
+
+
+. Mueva todos los ventiladores del NSM dañado al NSM de reemplazo:
++
+image::../media/drw_tp_fan_replace_ieops-2203.svg[Retire el ventilador que ha fallado.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Retire el ventilador averiado sujetando firmemente los lados donde se encuentran los puntos de contacto azules y, a continuación, tire de él hacia arriba para extraerlo de su toma.
+
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 2]
+ a| 
+Inserte el ventilador de repuesto alineándolo dentro de las guías y, a continuación, empuje hacia abajo hasta que el conector del ventilador esté completamente asentado en el enchufe.
+
+|===
+. Mueva el medio de arranque al NSM de reemplazo:
++
+.. Retire el soporte de arranque del NSM dañado:
++
+image::../media/drw_tp_boot_media_replace_ieops-2201.svg[Retire el soporte de arranque.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Ubicación del soporte de arranque
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Presione la pestaña azul hacia abajo para soltar el extremo derecho del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Levante el extremo derecho del soporte de arranque en un ángulo ligero para conseguir un buen agarre a lo largo de los laterales del soporte de arranque.
+
+
+
+ a| 
+image::../media/icon_round_4.png[Número de llamada 4]
+ a| 
+Tire suavemente del extremo izquierdo del soporte de arranque para extraerlo de su toma.
+
+|===
+.. Instale el medio de arranque en el NSM de reemplazo:
++
+... Alinee los bordes del soporte de arranque con la carcasa del conector hembra del NSM de repuesto y, a continuación, empújelo suavemente en el conector hembra.
+... Gire el soporte de arranque hacia abajo hacia el botón de bloqueo.
+... Pulse el botón de bloqueo, gire el soporte del maletero completamente hacia abajo y, a continuación, suelte el botón de bloqueo.
+
+
+
+
+. Mueva los cuatro módulos de E/S del NSM dañado al NSM de reemplazo.
++
+.. Retire cada módulo de E/S del NSM dañado:
++
+image::../media/drw_tp_io_module_replace_ieops-2204.svg[Sustituya el módulo de E/S.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Gire el tornillo de apriete manual del módulo de E/S hacia la izquierda para aflojarlo.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Extraiga el módulo de E/S del NSM utilizando la pestaña de etiqueta de puerto de la izquierda y el tornillo de mariposa.
+
+|===
+.. Instale cada módulo de E/S en el NSM de reemplazo:
++
+... Alinee el módulo de E/S con los bordes de la ranura en el NSM de reemplazo.
+... Empuje suavemente el módulo de E/S completamente en la ranura, asegurándose de que el módulo se asienta correctamente en el conector.
++
+Puede utilizar la lengüeta de la izquierda y el tornillo de mariposa para insertar el módulo de E/S.
+
+
+
+
+
+. Cierre la cubierta de cada NSM y, a continuación, apriete cada tornillo de mariposa.
+. Mueva la fuente de alimentación del NSM dañado al NSM de reemplazo:
++
+.. Gire la manija de la fuente de alimentación hacia arriba, a su posición horizontal, y luego sujétela.
+.. Con el pulgar, presione la pestaña de terracota de la fuente de alimentación para liberar el mecanismo de bloqueo.
+.. Saque la fuente de alimentación del NSM mientras usa la otra mano para soportar su peso.
+.. Con ambas manos, apoye y alinee los bordes de la fuente de alimentación con la abertura del NSM de reemplazo.
+.. Empuje suavemente la fuente de alimentación en el NSM hasta que el mecanismo de bloqueo encaje en su lugar.
++
+
+NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
+
+.. Gire la manija de la fuente de alimentación hacia abajo, de modo que no interfiera con las operaciones normales.
+
+
+. Inserte el NSM en la bandeja:
++
+image::../media/drw_g_and_t_handles_reinstall_ieops-1838.svg[Sustituya la NSM.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+ a| 
+Si ha girado las asas NSM en posición vertical (junto a las pestañas) para alejarlas mientras ha reparado el NSM, gírelas hacia abajo hasta la posición horizontal.
+
+
+
+ a| 
+image::../media/icon_round_2.png[Número de llamada 2]
+ a| 
+Alinee la parte posterior del NSM con la abertura de la bandeja y, a continuación, empuje suavemente el NSM con las asas hasta que quede completamente asentado.
+
+
+
+ a| 
+image::../media/icon_round_3.png[Número de llamada 3]
+ a| 
+Gire las asas hasta la posición vertical y bloquéelas en su lugar con las lengüetas.
+
+|===
+. Vuelva a conectar el cableado al NSM:
++
+.. Vuelva a conectar el cableado de almacenamiento a los mismos ocho puertos NSM.
++
+Los cables se insertan con la lengüeta de extracción del conector hacia arriba. Cuando se inserta correctamente un cable, éste hace clic en su lugar.
+
+.. Vuelva a conectar el cable de alimentación a la fuente de alimentación y luego asegúrelo con el retenedor.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
++
+Además, se iluminan los LED LNK (verde) del puerto NSM. Si un LED LNK no se ilumina, vuelva a colocar el cable.
+
+
+
+. Verifique que el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja ya no esté iluminado.
++
+El LED de atención del panel de visualización del operador se apaga después de reiniciar NSM. Esto puede tardar entre tres y cinco minutos.
+
+. Verifique que el NSM esté cableado correctamente, https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ejecutando Active IQ Config Advisor"^] .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+. Asegúrese de que tanto los NSM de la bandeja ejecuten la misma versión de firmware: Versión 0300 o posterior.
+

@@ -1,0 +1,53 @@
+---
+permalink: afx-1k/fan-replace.html 
+sidebar: sidebar 
+keywords: afx 1k, replace a fan 
+summary: Reemplace un módulo de ventilador defectuoso o averiado en su sistema AFX 1K para mantener una refrigeración adecuada y evitar problemas de rendimiento del sistema.  Los ventiladores son intercambiables en caliente y se pueden reemplazar sin apagar el sistema. 
+---
+= Reemplazar un ventilador - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reemplace un módulo de ventilador defectuoso o averiado en su sistema AFX 1K para mantener una refrigeración adecuada y evitar problemas de rendimiento del sistema.  Los ventiladores son intercambiables en caliente y se pueden reemplazar sin apagar el sistema.  Este procedimiento incluye identificar el ventilador defectuoso mediante mensajes de error de la consola e indicadores LED, quitar el bisel, cambiar el módulo del ventilador y devolver la pieza defectuosa a NetApp.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
+. Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola y mirando el LED de atención en cada módulo de ventilador.
++
+De cara al módulo del controlador, los módulos de ventilador están numerados del 1 al 5, de izquierda a derecha.
+
++
+
+NOTE: Hay un solo LED para cada ventilador. Es verde cuando el ventilador funciona correctamente y ámbar cuando no.
+
+. Pulse el botón negro del módulo del ventilador y tire del módulo del ventilador para extraerlo del chasis, asegurándose de que lo apoya con la mano libre.
++
+
+IMPORTANT: Los módulos del ventilador son cortos. Apoye siempre la parte inferior del módulo de ventilador con la mano libre para que no se caiga repentinamente del chasis y le haga daño.
+
++
+image::../media/drw_a1k_fan_remove_replace_ieops-1376.svg[Sustitución del ventilador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Botón de liberación negro
+
+|===
+. Apartar el módulo de ventilador.
+. Alinee los bordes del módulo del ventilador de repuesto con la abertura del chasis y, a continuación, deslícelo dentro del chasis hasta que encaje en su lugar.
++
+Cuando se inserta en un sistema activo, el LED de atención ámbar se apaga una vez que el sistema reconoce el ventilador.
+
+. Alinee el bisel con los espárragos de bola y, a continuación, empuje suavemente el bisel hacia los espárragos de bola.
+. Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"^] la página para obtener más información.
+

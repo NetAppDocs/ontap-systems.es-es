@@ -1,0 +1,40 @@
+= 
+:allow-uri-read: 
+
+
+Cuando reemplaza el módulo de administración del sistema, el número de serie del sistema (SSN) del controlador cambia.  Debe instalar nuevas licencias para el nodo si el nodo dañado estaba usando funciones de ONTAP que requieren una licencia estándar (bloqueada por nodo).  Para las funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
+
+.Acerca de esta tarea
+Hasta que instale las claves de licencia, las funciones que requieren licencias estándar siguen estando disponibles para el nodo. Sin embargo, si el nodo era el único nodo del clúster con una licencia para la función, no se permiten cambios de configuración en la función. Además, el uso de funciones sin licencia en el nodo puede provocar que no cumpla el acuerdo de licencia, por lo que debe instalar las claves o la clave de licencia de reemplazo en el para el nodo lo antes posible.
+
+.Antes de empezar
+Se requiere un archivo de licencia de NetApp (NLF) para el nuevo número de serie del sistema.  Para obtener más información sobre los archivos de licencia de NetApp , consultelink:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/ONTAP_9.10.1_and_later_licensing_overview["Descripción general de licencias de ONTAP 9.10.1 y versiones posteriores"^] .
+
+Tiene 90 días para instalar las claves de licencia, después de los cuales todas las licencias antiguas dejarán de ser válidas.  Después de instalar una clave de licencia válida, tendrá 24 horas para instalar todas las claves antes de que finalice el período de gracia.
+
+
+NOTE: Si su sistema ejecutaba inicialmente ONTAP 9.15.1 o posterior, utilice el procedimiento documentado enlink:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Post_Motherboard_Replacement_Process_to_update_Licensing_on_a_AFF_FAS_system["Proceso posterior al reemplazo de la placa base para actualizar las licencias en un sistema AFF/FAS"^] .  Si no está seguro de la versión inicial de ONTAP para su sistema, consultelink:https://hwu.netapp.com["Hardware Universe de NetApp"^] Para más información.
+
+.Pasos
+. Si necesita claves de licencia nuevas, obtenga claves de licencia de reemplazo en el https://mysupport.netapp.com/site/global/dashboard["Sitio de soporte de NetApp"] En la sección My Support, en licencias de software.
++
+
+NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y se envían a la dirección de correo electrónico que está registrada. Si no recibe el correo electrónico con las claves de licencia en un plazo de 30 días, debe ponerse en contacto con el soporte técnico.
+
+. Instale cada clave de licencia a través de ONTAP System Manager.
++
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Habilite nuevas funciones agregando claves de licencia con ONTAP System Manager"^] .
+
+. Elimine las licencias antiguas, si lo desea:
++
+.. Comprobar si hay licencias no utilizadas: `license clean-up -unused -simulate`
+.. Si la lista parece correcta, elimine las licencias no utilizadas: `license clean-up -unused`
+
+
+. Registre el número de serie del sistema con el soporte de NetApp.
++
+** Si AutoSupport está habilitado, envíe un mensaje de AutoSupport para registrar el número de serie.
+** Si AutoSupport no está habilitado, llame al https://mysupport.netapp.com["Soporte de NetApp"] para registrar el número de serie.
+
+
+

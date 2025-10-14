@@ -1,0 +1,94 @@
+---
+permalink: nx224/service-replace-power-supply.html 
+sidebar: sidebar 
+keywords: nx224, shelves, shelf, nx224 shelves, replace, fail, power, supply, nondisruptive, drive, i/o, progress, hot-swap, hot-swap a power supply 
+summary: Puede reemplazar una fuente de alimentación defectuosa de manera no disruptiva en un estante NX224 que esté encendido y mientras la E/S esté en progreso. 
+---
+= Intercambio en caliente de una fuente de alimentación - Estantes NX224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reemplazar una fuente de alimentación defectuosa de manera no disruptiva en un estante NX224 que esté encendido y mientras la E/S esté en progreso.
+
+.Acerca de esta tarea
+* No mezcle fuentes de alimentación con diferentes niveles de eficiencia o con diferentes tipos de entrada.
++
+Sustituya siempre como por ejemplo.
+
+* Si va a reemplazar más de un suministro de alimentación, debe hacerlo uno a la vez para que la bandeja mantenga alimentación.
+* *Mejores prácticas:* La mejor práctica es reemplazar la fuente de alimentación dentro de los dos minutos posteriores a la eliminación del NSM.
++
+Si supera los dos minutos, la bandeja sigue funcionando, pero ONTAP envía mensajes a la consola sobre el suministro de alimentación degradado hasta que se reemplace el suministro de alimentación.
+
+* No revierte el firmware a una versión que no admite la bandeja y sus componentes.
+* Si es necesario, puede encender los LED de ubicación (azul) de la bandeja para ayudar a localizar físicamente la bandeja afectada: `storage shelf location-led modify -shelf-name _shelf_name_ -led-status on`
++
+Si no conoce la `shelf_name` de la bandeja afectada, ejecute el `storage shelf show` comando.
+
++
+Una bandeja tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada NSM. Los LED de ubicación permanecen encendidos durante 30 minutos. Puede desactivarlas introduciendo el mismo comando, pero utilizando la opción OFF.
+
+* Cuando desembale la fuente de alimentación de repuesto, guarde todos los materiales de embalaje para su uso cuando devuelva la fuente de alimentación fallida.
++
+Si necesita el número de la RMA o ayuda adicional con el procedimiento de reemplazo, póngase en contacto con el soporte técnico en https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^], 888-463-8277 (América del Norte), 00-800-44-638277 (Europa), o +800-800-80-800 (Asia/Pacífico).
+
+
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Identifique físicamente el suministro de alimentación con errores.
++
+El sistema registra un mensaje de advertencia en la consola del sistema que indica qué fuente de alimentación ha fallado. Además, el LED de atención (ámbar) del panel de la pantalla del operador de la bandeja se ilumina y el LED bicolor de la fuente de alimentación fallida se ilumina en rojo.
+
+. Desconecte el cable de alimentación de la fuente de alimentación abriendo el retenedor del cable de alimentación y luego desenchufe el cable de alimentación de la fuente de alimentación.
++
+Las fuentes de alimentación no tienen un switch de alimentación.
+
+. Retire la fuente de alimentación:
++
+image::../media/drw_tp_psu_ac_replace_ieops-2343.svg[Extraiga una fuente de alimentación de CA]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Gire el asa hacia arriba, a su posición horizontal y, a continuación, sujételo.
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Con el pulgar, presione la lengüeta de terracota para liberar el mecanismo de bloqueo.
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+Saque la fuente de alimentación del NSM mientras usa la otra mano para soportar su peso.
+
+|===
+. Inserte la fuente de alimentación de repuesto:
++
+.. Con ambas manos, apoye y alinee los bordes de la fuente de alimentación con la abertura del NSM.
+.. Empuje suavemente la fuente de alimentación en el NSM hasta que el mecanismo de bloqueo encaje en su lugar.
++
+
+NOTE: No ejerza una fuerza excesiva o podría dañar el conector interno.
+
+.. Gire el asa hacia abajo, de manera que quede fuera del camino de las operaciones normales.
+
+
+. Conecte el cable de alimentación a la fuente de alimentación y asegure el cable de alimentación con el retenedor del cable de alimentación.
++
+Cuando funciona correctamente, el LED bicolor de una fuente de alimentación se ilumina en verde.
+
+

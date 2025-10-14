@@ -1,0 +1,40 @@
+---
+permalink: afx-1k/controller-replace-restore-system-rma.html 
+sidebar: sidebar 
+keywords: afx 1k, how to restore NetApp Storage Encryption, how to complete the replacement process 
+summary: 'Verifique que las interfaces lógicas (LIF) informen a su puerto de origen, realice una verificación del estado del clúster y luego devuelva la pieza defectuosa a NetApp para completar el paso final en el procedimiento de reemplazo del controlador AFX 1K.' 
+---
+= Reemplazo completo del controlador - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verifique que las interfaces lógicas (LIF) informen a su puerto de origen, realice una verificación del estado del clúster y luego devuelva la pieza defectuosa a NetApp para completar el paso final en el procedimiento de reemplazo del controlador AFX 1K.
+
+
+
+== Paso 1: Verifique las LIF y compruebe el estado del clúster
+
+Antes de devolver el nodo de reemplazo al servicio, asegúrese de que las interfaces lógicas estén en sus puertos de origen, verifique el estado del clúster y restablezca la devolución automática.
+
+.Pasos
+. Verifique que las interfaces lógicas estén reportando a su servidor local y puertos:
++
+`network interface show -is-home false`
+
++
+Si alguna interfaz lógica aparece como falsa, devuélvala a sus puertos de origen:
+
++
+`network interface revert -vserver * -lif *`
+
+. Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
+
+
+
+
+== Paso 2: Devuelve la parte fallida a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

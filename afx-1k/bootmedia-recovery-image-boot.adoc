@@ -1,0 +1,288 @@
+---
+permalink: afx-1k/bootmedia-recovery-image-boot.html 
+sidebar: sidebar 
+keywords: afx 1k, boot the recovery image 
+summary: Después de instalar el nuevo dispositivo de medio de arranque en su sistema de almacenamiento AFX 1K, puede iniciar el proceso de recuperación automática del medio de arranque para restaurar la configuración desde el nodo asociado. 
+---
+= Arranque la imagen de recuperación - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de instalar el nuevo dispositivo de medio de arranque en su sistema de almacenamiento AFX 1K, puede iniciar el proceso de recuperación automática del medio de arranque para restaurar la configuración desde el nodo asociado.
+
+.Acerca de esta tarea
+Durante el proceso de recuperación, el sistema verifica si el cifrado está habilitado e identifica el tipo de cifrado de clave que se está utilizando. Si el cifrado de clave está habilitado, el sistema le guiará por los pasos necesarios para restaurarlo.
+
+.Antes de empezar
+* Para OKM, necesita la frase de contraseña de todo el clúster y los datos de respaldo.
+* Para EKM, necesita copias de los siguientes archivos del nodo asociado:
++
+** archivo /cfcard/kmip/servers.cfg.
+** archivo /cfcard/kmip/certs/client.crt.
+** archivo /cfcard/kmip/certs/client.key.
+** Archivo /cfcard/kmip/certs/ca.pem.
+
+
+
+
+.Pasos
+. En el símbolo del SISTEMA de Loader, introduzca el comando:
++
+`boot_recovery -partner`
+
++
+La pantalla muestra el siguiente mensaje:
+
++
+`Starting boot media recovery (BMR) process. Press Ctrl-C to abort…`
+
+. Supervise el proceso de recuperación de instalación de medios de arranque.
++
+El proceso finaliza y muestra el `Installation complete` mensaje.
+
+. El sistema comprueba el tipo de cifrado y cifrado y muestra uno de los dos mensajes. En función del mensaje que se muestre, realice una de las siguientes acciones:
++
+
+IMPORTANT: En ocasiones, es posible que el proceso no pueda identificar si el gestor de claves está configurado en el sistema. Mostrará un mensaje de error, preguntará si el gestor de claves está configurado para el sistema y, a continuación, preguntará qué tipo de gestor de claves está configurado. El proceso se reanudará después de resolver el problema.
+
++
+.Mostrar ejemplo de error de configuración al buscar peticiones de datos
+[%collapsible]
+====
+....
+Error when fetching key manager config from partner ${partner_ip}: ${status}
+
+Has key manager been configured on this system
+
+Is the key manager onboard
+
+....
+====
++
+[cols="1,2"]
+|===
+| Si ve este mensaje... | Realice lo siguiente... 
+
+
+ a| 
+`key manager is not configured. Exiting.`
+ a| 
+El cifrado no está configurado en el sistema. Complete los siguientes pasos:
+
+.. Pulse <enter> cuando se detengan los mensajes de la consola.
++
+*** Si ve el mensaje de inicio de sesión, vaya al paso 4.
+*** Si no ve el mensaje de inicio de sesión, inicie sesión en el nodo asociado y continúe con el paso 4.
+
+
+.. Vaya al paso 6 para habilitar la devolución automática si estaba deshabilitada.
+
+
+
+
+ a| 
+`key manager is configured.`
+ a| 
+Vaya al paso 5 para restaurar el administrador de claves apropiado.
+
+El nodo accede al menú de arranque y ejecuta:
+
+** Opción 10 para sistemas con gestor de claves incorporado (OKM).
+** Opción 11 para sistemas con External Key Manager (EKM).
+
+
+|===
+. Si el cifrado no está instalado en el sistema y no se muestra el mensaje de inicio de sesión. Complete los siguientes pasos:
++
+.. Devuelva solo la raíz con la opción override-destination-checks:
++
+`storage failover giveback -ofnode impaired-node -only-root true -override -destination-checks true`
+
++
+
+NOTE: Este comando sólo está disponible en el modo de diagnóstico. Para obtener más información, consulte link:https://docs.netapp.com/us-en/ontap/system-admin/administrative-privilege-levels-concept.html["Niveles de privilegio para los comandos CLI de ONTAP"^] .
+
++
+Si encuentra errores, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+
+.. Espere 5 minutos una vez que finalice el informe de devolución y compruebe el estado de conmutación por error y el estado de restauración:
++
+`storage failover show`y `storage failover show-giveback`
+
++
+
+NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
+
+.. Si está ejecutando ONTAP 9.17.1 y los enlaces de interconexión de HA se desconectaron, vuelva a activarlos:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
++
+
+NOTE: Si está ejecutando 9.18.1 o superior, omita el paso anterior y vaya al siguiente.
+
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
+
+
+. Para los sistemas con un administrador de claves configurado, seleccione el proceso de restauración del administrador de claves adecuado.
++
+[role="tabbed-block"]
+====
+.Gestión de claves incorporada (OKM)
+--
+Si se detecta OKM, el sistema muestra el siguiente mensaje y comienza a ejecutar la opción de menú de inicio 10.
+
+....
+key manager is configured.
+Entering Bootmenu Option 10...
+
+This option must be used only in disaster recovery procedures. Are you sure? (y or n):
+....
+.. Introduzca `Y` en el prompt para confirmar que desea iniciar el proceso de recuperación de OKM.
+.. Ingrese lo siguiente cuando se le solicite:
++
+... La frase de contraseña
+... La frase de contraseña nuevamente cuando se le solicite confirmar
+... Copia de seguridad de datos para el administrador de claves integrado
++
+.Mostrar ejemplo de solicitud de frase de contraseña y datos de respaldo
+[%collapsible]
+=====
+....
+Enter the passphrase for onboard key management:
+-----BEGIN PASSPHRASE-----
+<passphrase_value>
+-----END PASSPHRASE-----
+Enter the passphrase again to confirm:
+-----BEGIN PASSPHRASE-----
+<passphrase_value>
+-----END PASSPHRASE-----
+Enter the backup data:
+-----BEGIN BACKUP-----
+<passphrase_value>
+-----END ACKUP-----
+....
+=====
+
+
+.. Seguir supervisando el proceso de recuperación mientras restaura los archivos adecuados desde el nodo asociado.
++
+Cuando se complete el proceso de recuperación, el nodo se reiniciará. Los siguientes mensajes indican una recuperación correcta:
+
++
+....
+Trying to recover keymanager secrets....
+Setting recovery material for the onboard key manager
+Recovery secrets set successfully
+Trying to delete any existing km_onboard.keydb file.
+
+Successfully recovered keymanager secrets.
+....
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar conectado y operativo.
+.. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
++
+... Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos para reanudar la recuperación automática:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+
+
+.. Una vez que el nodo asociado esté completamente activo y sirviendo datos, sincronice las claves OKM en todo el clúster.
++
+`security key-manager onboard sync`
+
+
+
+--
+.Gestor de claves externo (EKM)
+--
+Si se detecta EKM, el sistema muestra el siguiente mensaje y comienza a ejecutar la opción de menú de inicio 11.
+
+....
+key manager is configured.
+Entering Bootmenu Option 11...
+....
+.. En función de si la clave se ha restaurado correctamente, realice una de las siguientes acciones:
++
+*** Si lo ves `kmip2_client: Successfully imported the keys from external key server: xxx.xxx.xxx.xxx:5696` En la salida, la configuración de EKM se ha restaurado correctamente.
++
+El proceso intenta restaurar los archivos apropiados del nodo asociado y reinicia el nodo.  Vaya al paso d.
+
+*** Si la clave no se restaura exitosamente, el sistema se detendrá e indicará que no pudo restaurar la clave.  Se muestran los mensajes de error y advertencia.  Debe volver a ejecutar el proceso de recuperación:
++
+`boot_recovery -partner`
+
++
+.Muestre un ejemplo de mensajes de error y advertencia de recuperación de claves
+[%collapsible]
+=====
+....
+
+ERROR: kmip_init: halting this system with encrypted mroot...
+WARNING: kmip_init: authentication keys might not be available.
+********************************************************
+*                 A T T E N T I O N                    *
+*                                                      *
+*       System cannot connect to key managers.         *
+*                                                      *
+********************************************************
+ERROR: kmip_init: halting this system with encrypted mroot...
+.
+Terminated
+
+Uptime: 11m32s
+System halting...
+
+LOADER-B>
+....
+=====
+
+
+.. Cuando el nodo se reinicia, compruebe que la recuperación del medio de arranque se haya realizado correctamente confirmando que el sistema vuelva a estar en línea y operativo.
+.. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`
+
++
+... Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos para reanudar la recuperación automática:
++
+`system ha interconnect link on -node healthy-node -link 0`
+
++
+`system ha interconnect link on -node healthy-node -link 1`
+
+
+
+
+
+--
+====
+
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local auto-giveback-of true`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+.El futuro
+Una vez que haya restaurado la imagen de ONTAP y el nodo esté activo y proporcionando datos, deberálink:bootmedia-complete-rma.html["Devuelva la pieza fallida a NetApp"] .
