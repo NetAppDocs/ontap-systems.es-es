@@ -64,15 +64,9 @@ image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Diagrama de cableado
 --
 .Cableado de clúster conmutado
 --
-Use el cable de 100 GbE para conectar los puertos e1a a e1a y los puertos e7a a e7a.
+Utilice el cable de 100 GbE para conectar los puertos e1a y e7a de los controladores A y B a los conmutadores de red del clúster A y B. .Pasos . Conecte el puerto e1a en el controlador A y el puerto e1a en el controlador B al conmutador de red del clúster A. Conecte el puerto e7a en el controlador A y el puerto e7a en el controlador B al conmutador de red del clúster B.
 
-.Pasos
-. Conecte el puerto e1a de la Controladora A y el puerto e1a de la Controladora B al switch de red de clúster A.
-. Conecte el puerto e7a de la Controladora A y el puerto e7a de la Controladora B al switch de red de clúster B.
-+
-*Cable de 100 GbE*
-
-
++ *Cable de 100 GbE*
 
 image::../media/oie_cable100_gbe_qsfp28.png[Cable de 100 GB]
 
@@ -92,7 +86,7 @@ A continuación se muestran algunos ejemplos típicos de cableado de red host. C
 . Conecte los puertos e9a y e9b al switch de red de datos Ethernet.
 +
 
-NOTE: Para obtener el rendimiento máximo del sistema para el tráfico de alta disponibilidad y clúster, no utilice los puertos e1b y e7b para las conexiones de red de host. Utilice una tarjeta de host independiente para maximizar el rendimiento.
+NOTE: No utilice los puertos e1b y e7b para conexiones de red del host. Utilice una tarjeta host independiente.
 
 +
 *Cable de 100 GbE*

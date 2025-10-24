@@ -1,7 +1,8 @@
 ---
 permalink: asa150/overview.html 
 sidebar: sidebar 
-summary: Especificaciones clave para el grupo de plataformas ASA150 
+keywords: ASA A150 specifications, ASA A150 specs, NetApp ASA A150, ASA A150 hardware 
+summary: Especificaciones clave del sistema de almacenamiento ASA A150 
 ---
 = Especificaciones clave del ASA A150
 :allow-uri-read: 
@@ -10,66 +11,117 @@ summary: Especificaciones clave para el grupo de plataformas ASA150
 
 
 [role="lead"]
-Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento ASA A150 en un solo par de alta disponibilidad.  Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
+Las siguientes son especificaciones seleccionadas para el ASA A150.  Visita https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener una lista completa de las especificaciones del ASA A150 .  Esta página es un reflejo de un único par de alta disponibilidad.
 
 
 
-== Especificaciones clave del ASA A150
+=== Especificaciones clave del ASA A150
 
-* Configuración de la plataforma: ASA A150 UTA2, par HA de chasis único
-* Capacidad bruta máxima: 0,5472 PB
-* Memoria: 64.0000 GB
-* Factor de forma: chasis 2U con 2 controladores HA y 24 ranuras para unidades
-* Versión de ONTAP : ONTAP: 9.16.1P2
-* Versión mínima de ONTAP : ONTAP 9.13.1 == Máximos de escalamiento
-* Tipo: NAS
-* Tipo: SAN; Pares HA: 6; Capacidad bruta: 3,3 PB / 2,9 PiB; Memoria máxima: 384 GB
-* Tipo: Par HA; Capacidad bruta: 0,5 PB / 0,5 PiB; Memoria máxima: 64,0000
+Configuración de la plataforma: ASA A150 UTA2, par HA de chasis único
 
+Capacidad bruta máxima: 0,5472 PB
 
+Memoria: 64.0000 GB
 
+Factor de forma: chasis 2U con 2 controladores HA y 24 ranuras para unidades
 
-== E/S
+Versión de ONTAP : b_startONTAP: 9.16.1P2b_end
 
+Ranuras de expansión PCIe:
 
-
-=== E/S integrada
-
-* Protocolo: Ethernet 10 Gbps; Puertos: 12
-* Protocolo: FC 16 Gbps; Puertos: 8
-* Protocolo: SAS 12 Gbps; Puertos: 4
+Versión mínima de ONTAP : ONTAP 9.13.1
 
 
 
+=== Máximos de escalamiento
 
-=== E/S total
-
-* Protocolo: Ethernet 10 Gbps; Puertos: 12
-* Protocolo: FC 16 Gbps; Puertos: 8
-* Protocolo: SAS 12 Gbps; Puertos: 4
+|===
 
 
+| Tipo | Pares HA | Capacidad bruta | Memoria máxima 
 
 
-=== Puertos de gestión
-
-* Protocolo: Ethernet 1 Gbps; Puertos: 2
-* Protocolo: RS-232 115 Kbps; Puertos: 4
-* Protocolo: USB 12 Mbps; Puertos: 2
+| NAS |  |  |  
 
 
+| SAN | 6 | 3,3 PB / 2,9 PiB | 384 GB 
 
 
-== Redes de almacenamiento compatibles
+| Par HA |  | 0,5 PB / 0,5 PiB | 64,0000 
+|===
 
-* FC
-* iSCSI
-* NVMe/TCP == Especificaciones del entorno del sistema No hay datos de entorno disponibles.
+
+=== IO
 
 
 
+==== E/S integrada
 
-== Cumplimiento
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 10 Gbps | 12 
+
+
+| FC 16 Gbps | 8 
+
+
+| SAS de 12 Gbps | 4 
+|===
+
+
+==== E/S total
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 10 Gbps | 12 
+
+
+| FC 16 Gbps | 8 
+
+
+| SAS de 12 Gbps | 4 
+|===
+
+
+==== Puertos de gestión
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 1 Gbps | 2 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB de 12 Mbps | 2 
+|===
+
+
+=== Redes de almacenamiento compatibles
+
+FC; iSCSI; NVMe/TCP;
+
+
+
+=== Especificaciones del entorno del sistema
+
+No hay datos ambientales disponibles.
+
+
+
+=== Cumplimiento
 
 * Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
 * Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
@@ -81,10 +133,6 @@ Las siguientes son especificaciones seleccionadas para el sistema de almacenamie
 
 
 
-== Alta disponibilidad
+=== Alta disponibilidad
 
-* Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP
-* Controladores redundantes intercambiables en caliente
-* Fuentes de alimentación redundantes intercambiables en caliente
-* Gestión en banda de SAS a través de conexiones SAS
-
+Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP ; Controladores redundantes intercambiables en caliente; Fuentes de alimentación redundantes intercambiables en caliente; Administración en banda de SAS a través de conexiones SAS; [//] 2025-10-15 ontap-systems-internal/issues/1357

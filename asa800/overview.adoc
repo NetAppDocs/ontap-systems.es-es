@@ -1,7 +1,8 @@
 ---
 permalink: asa800/overview.html 
 sidebar: sidebar 
-summary: Especificaciones clave para el grupo de plataformas ASA800 
+keywords: ASA A800 specifications, ASA A800 specs, NetApp ASA A800, ASA A800 hardware 
+summary: Especificaciones clave del sistema de almacenamiento ASA A800 
 ---
 = Especificaciones clave del ASA A800
 :allow-uri-read: 
@@ -10,71 +11,126 @@ summary: Especificaciones clave para el grupo de plataformas ASA800
 
 
 [role="lead"]
-Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento ASA A800 en un solo par de alta disponibilidad.  Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
+Las siguientes son especificaciones seleccionadas para el ASA A800.  Visita https://hwu.netapp.com["Hardware Universe de NetApp"^] (HWU) para obtener una lista completa de las especificaciones del ASA A800 .  Esta página es un reflejo de un único par de alta disponibilidad.
 
 
 
-== Especificaciones clave del ASA A800
+=== Especificaciones clave del ASA A800
 
-* Configuración de la plataforma: ASA A800, par HA de chasis único
-* Capacidad bruta máxima: 6,6096 PB
-* Memoria: 1280.0000 GB
-* Factor de forma: chasis 4U con 2 controladores HA y 48 ranuras de unidad
-* Versión de ONTAP : ONTAP: 9.16.1P2
-* Ranuras de expansión PCIe: 10
-* Versión mínima de ONTAP : ONTAP 9.13.1 == Máximos de escalamiento
-* Tipo: NAS
-* Tipo: SAN; Pares HA: 6; Capacidad bruta: 39,7 PB / 35,2 PiB; Memoria máxima: 7680 GB
-* Tipo: Par HA; Capacidad bruta: 6,6 PB / 5,9 PiB; Memoria máxima: 1280,0000
+Configuración de la plataforma: ASA A800, par HA de chasis único
 
+Capacidad bruta máxima: 6,6096 PB
 
+Memoria: 1280.0000 GB
 
+Factor de forma: chasis 4U con 2 controladores HA y 48 ranuras de unidad
 
-== E/S
+Versión de ONTAP : b_startONTAP: 9.16.1P2b_end
+
+Ranuras de expansión PCIe: 10
+
+Versión mínima de ONTAP : ONTAP 9.13.1
 
 
 
-=== E/S integrada
+=== Máximos de escalamiento
 
-* Protocolo: Ethernet 100 Gbps; Puertos: 4
-
-
+|===
 
 
-=== E/S total
-
-* Protocolo: Ethernet 100 Gbps; Puertos: 20
-* Protocolo: Ethernet 25 Gbps; Puertos: 16
-* Protocolo: Ethernet 10 Gbps; Puertos: 32
-* Protocolo: FC 32 Gbps; Puertos: 32
-* Protocolo: NVMe/FC 32 Gbps; Puertos: 32
-* Puertos: 0
-* Puertos: 0
-* Protocolo: SAS 12 Gbps; Puertos: 32
+| Tipo | Pares HA | Capacidad bruta | Memoria máxima 
 
 
+| NAS |  |  |  
 
 
-=== Puertos de gestión
+| SAN | 6 | 39,7 PB / 35,2 PiB | 7680 GB 
 
-* Protocolo: Ethernet 1 Gbps; Puertos: 4
-* Protocolo: RS-232 115 Kbps; Puertos: 4
-* Protocolo: USB 12 Mbps; Puertos: 4
+
+| Par HA |  | 6,6 PB / 5,9 PiB | 1280,0000 
+|===
+
+
+=== IO
 
 
 
+==== E/S integrada
 
-== Redes de almacenamiento compatibles
-
-* FC
-* iSCSI
-* NVMe/FC
-* NVMe/TCP == Especificaciones del entorno del sistema No hay datos de entorno disponibles.
+|===
 
 
+| Protocolo | Puertos 
 
 
-== Cumplimiento
+| Ethernet de 100 Gbps | 4 
+|===
+
+
+==== E/S total
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 100 Gbps | 20 
+
+
+| Ethernet de 25 Gbps | 16 
+
+
+| Ethernet de 10 Gbps | 32 
+
+
+| FC 32 Gbps | 32 
+
+
+| NVMe/FC 32 Gbps | 32 
+
+
+|  | 0 
+
+
+|  | 0 
+
+
+| SAS de 12 Gbps | 32 
+|===
+
+
+==== Puertos de gestión
+
+|===
+
+
+| Protocolo | Puertos 
+
+
+| Ethernet de 1 Gbps | 4 
+
+
+| RS-232 115 Kbps | 4 
+
+
+| USB de 12 Mbps | 4 
+|===
+
+
+=== Redes de almacenamiento compatibles
+
+FC; iSCSI; NVMe/FC; NVMe/TCP;
+
+
+
+=== Especificaciones del entorno del sistema
+
+No hay datos ambientales disponibles.
+
+
+
+=== Cumplimiento
 
 * Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
 * Certificaciones seguridad: BIS, CB, CSA, G_K_U-SoR, IRAM, NOM, NRCS, SONCAP, TBS
@@ -86,10 +142,6 @@ Las siguientes son especificaciones seleccionadas para el sistema de almacenamie
 
 
 
-== Alta disponibilidad
+=== Alta disponibilidad
 
-* Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP
-* Controladores redundantes intercambiables en caliente
-* Fuentes de alimentación redundantes intercambiables en caliente
-* Gestión en banda de SAS a través de conexiones SAS para estanterías externas
-
+Controlador de gestión de placa base (BMC) basado en Ethernet e interfaz de gestión ONTAP ; Controladores redundantes intercambiables en caliente; Fuentes de alimentación redundantes intercambiables en caliente; Gestión en banda de SAS a través de conexiones SAS para estantes externos; [//] 2025-10-15 ontap-systems-internal/issues/1357
