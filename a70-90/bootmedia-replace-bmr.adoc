@@ -15,10 +15,18 @@ El medio de arranque de su sistema de almacenamiento AFF A70 o AFF A90 almacena 
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
-El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
+Reemplace el medio de arranque, que se encuentra dentro del módulo de administración del sistema en la parte posterior del controlador.
+
+.Antes de empezar
+* Necesitas un medio de arranque de repuesto.
+* Tenga a mano una alfombrilla antiestática para el módulo de gestión del sistema.
+
 
 .Pasos
-. Asegúrese de que la separación de NVRAM se haya completado antes de continuar. Cuando el LED del módulo NV está apagado, NVRAM se separa. Si el LED parpadea, espere a que se detenga el parpadeo. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
+. Verifique que la descarga de la NVRAM se haya completado antes de continuar.  Cuando el LED del módulo NV está apagado, la NVRAM se desactiva.
++
+Si el LED parpadea, espere a que deje de parpadear.  Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el soporte de NetApp para obtener ayuda.
+
 +
 image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
 
@@ -40,26 +48,26 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 LED de alerta de NVRAM
 
 |===
+. Dirígete a la parte trasera del chasis y conéctate a tierra correctamente si aún no lo estás.
+. Desconectar la alimentación del controlador:
 +
-** Si el LED NV está apagado, vaya al siguiente paso.
-** Si el LED NV parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
+** En el caso de fuentes de alimentación de CA, desconecte los cables de alimentación de las fuentes de alimentación.
+** Para fuentes de alimentación de CC, desconecte el bloque de alimentación de las fuentes de alimentación.
 
 
-. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Desconecte las fuentes de alimentación del controlador.
+. Retire el módulo Gestión del sistema:
 +
-
-NOTE: Si el sistema tiene alimentación de CC, desconecte el bloque de alimentación de las PSU.
-
+.. Retire todos los cables conectados al módulo de administración del sistema. Etiquete los cables para identificar sus puertos correctos para la reinstalación.
+.. Gire el brazo organizador de cables hacia abajo tirando de los botones situados a ambos lados del mismo.
+.. Pulse el botón de la leva de gestión del sistema.
 +
-.. Retire todos los cables conectados al módulo de gestión del sistema. Asegúrese de etiquetar dónde estaban conectados los cables, de modo que pueda conectarlos a los puertos correctos cuando vuelva a instalar el módulo.
-.. Gire la bandeja de gestión de cables hacia abajo tirando de los botones situados en ambos lados del interior de la bandeja de gestión de cables y, a continuación, gire la bandeja hacia abajo.
-.. Pulse el botón de la leva de gestión del sistema. La palanca de leva se aleja del chasis.
-.. Gire la palanca de leva completamente hacia abajo y retire el módulo de gestión del sistema del módulo del controlador.
-.. Coloque el módulo de gestión del sistema en una alfombrilla antiestática, de forma que se pueda acceder al soporte de arranque.
+La palanca de levas se aleja del chasis.
+
+.. Gire la palanca de leva completamente hacia abajo y retire el módulo de administración del sistema del controlador.
+.. Coloque el módulo de administración del sistema sobre una alfombrilla antiestática con el medio de arranque accesible.
 
 
-. Retire el soporte de arranque del módulo de gestión:
+. Retire el medio de arranque del módulo de administración del sistema:
 +
 image::../media/drw_a70-90_boot_media_remove_replace_ieops-1367.svg[Gráfico de sustitución de soporte de arranque]
 
@@ -90,7 +98,7 @@ Soporte de arranque
 |===
 +
 .. Pulse el botón de bloqueo azul.
-.. Gire el soporte de arranque hacia arriba, deslícelo para extraerlo de la toma y déjelo a un lado.
+.. Gire el medio de arranque hacia arriba, deslícelo fuera del zócalo y déjelo a un lado.
 
 
 . Instale el soporte de arranque de repuesto en el módulo de gestión del sistema:
@@ -102,16 +110,23 @@ Soporte de arranque
 
 . Vuelva a instalar el módulo Gestión del sistema:
 +
-.. Gire la bandeja de gestión de cables hasta la posición cerrada.
-.. Vuelva a conectar el módulo Gestión del sistema.
+.. Alinee los bordes del módulo de administración del sistema con la abertura del chasis.
+.. Deslice suavemente el módulo dentro del chasis hasta que el pestillo de leva comience a encajar.
+.. Gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+.. Vuelva a conectar los cables al módulo de administración del sistema utilizando las etiquetas que creó durante la extracción.
+.. Gire el ARM de gestión de cables hasta la posición cerrada.
 
 
-. Conecte los cables de alimentación en las fuentes de alimentación. El controlador se reinicia tan pronto como se restablece la energía.
+. Vuelva a conectar la alimentación al controlador:
 +
+** Para las fuentes de alimentación de CA, conecte los cables de alimentación a las fuentes de alimentación.
+** Para fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación.
++
+El controlador se reinicia automáticamente cuando se restablece la alimentación.
 
-NOTE: Si tiene fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación.
 
-. Interrumpa el proceso de arranque pulsando Ctrl-C para detenerse en el símbolo del sistema DEL CARGADOR.
+
+. Interrumpa el proceso de arranque pulsando `Ctrl-C` para detenerse en el indicador CARGADOR.
 
 
 .El futuro

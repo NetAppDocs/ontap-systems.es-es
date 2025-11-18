@@ -13,56 +13,93 @@ summary: Después de instalar el nuevo dispositivo de medio de arranque en su si
 [role="lead"]
 Después de instalar el nuevo dispositivo de medio de arranque en su sistema de almacenamiento AFF C30 o AFF C60, puede arrancar la imagen de recuperación manualmente desde una unidad USB para restaurar la configuración desde el nodo asociado.
 
-.Pasos
-. Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
-+
-La imagen se descarga desde la unidad flash USB.
+.Antes de empezar
+* Asegúrese de que su consola esté conectada al controlador averiado.
+* Verifique que dispone de una unidad flash USB con la imagen de recuperación.
+* Determina si tu sistema utiliza cifrado.  Deberá seleccionar la opción apropiada en el paso 3 según si el cifrado está habilitado o no.
 
-. Cuando se le solicite, introduzca el nombre de la imagen o acepte la imagen predeterminada que se muestra dentro de los corchetes de la pantalla.
-. Restaure el sistema de archivos var:
+
+.Pasos
+. Desde el indicador LOADER del controlador averiado, arranque la imagen de recuperación desde la unidad flash USB:
++
+`boot_recovery`
+
++
+La imagen de recuperación se descarga desde la unidad flash USB.
+
+. Cuando se le solicite, ingrese el nombre de la imagen o presione *Enter* para aceptar la imagen predeterminada que se muestra entre corchetes.
+. Restaure el sistema de archivos var siguiendo el procedimiento correspondiente a su versión de ONTAP :
 +
 [role="tabbed-block"]
 ====
-.Opción 1: ONTAP 9.16,0 o anterior
+.ONTAP 9.16.0 o anterior
 --
-.. En el controlador defectuoso, pulse `Y` cuando vea `Do you want to restore the backup configuration now?`
-.. Si se le solicita en el controlador defectuoso, pulse `Y` para sobrescribir _/etc/ssh/ssh_HOST_ecdsa_KEY_.
-.. En el controlador asociado en buen estado, configure la controladora con deficiencias en el nivel de privilegio avanzado `set -privilege advanced`: .
-.. En la controladora asociada en buen estado, ejecute el comando restore backup `system node restore-backup -node local -target-address impaired_node_IP_address`: .
+Complete los siguientes pasos en el controlador averiado y en el controlador asociado:
+
+.. *En el controlador averiado:* Pulse `Y` cuando ves `Do you want to restore the backup configuration now?`
+.. *En el controlador averiado:* Si se le solicita, pulse `Y` para sobrescribir _/etc/ssh/ssh_host_ecdsa_key_.
+.. *En el controlador asociado:* Configure el controlador afectado con el nivel de privilegios avanzado:
 +
-*NOTA:* Si ve cualquier mensaje que no sea una restauración exitosa, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+`set -privilege advanced`
 
-.. En la controladora asociada en buen estado, devuelva la controladora afectada al nivel de administración `set -privilege admin`: .
-.. En el controlador deficiente, pulse `Y` cuando vea `Was the restore backup procedure successful?`.
-.. En el controlador deficiente, pulse `Y` cuando vea `...would you like to use this restored copy now?`.
-.. En el controlador dañado, pulse `Y` cuando se le solicite reiniciar el controlador dañado y pulse `ctrl-c` para acceder al menú de arranque.
-.. Si el sistema no utiliza cifrado, seleccione _Opción 1 Normal Boot._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure el cifrado"].
-
-
---
-.Opción 2: ONTAP 9.16,1 o posterior
---
-.. En el controlador dañado, pulse `Y` cuando se le solicite restaurar la configuración de copia de seguridad.
+.. *En el controlador asociado:* Ejecute el comando de restauración de copia de seguridad:
 +
-Después de que el procedimiento de restauración se haya realizado correctamente, este mensaje se mostrará en la consola - `syncflash_partner: Restore from partner complete`.
+`system node restore-backup -node local -target-address _impaired_node_IP_address_`
 
-.. En la controladora deteriorada, pulse `Y` cuando se le solicite confirmar si la copia de seguridad de la restauración se ha realizado correctamente.
-.. En el controlador defectuoso, pulse `Y` cuando se le solicite utilizar la configuración restaurada.
-.. En la controladora defectuosa, pulse `Y` cuando se le solicite reiniciar el nodo.
-.. En el controlador dañado, pulse `Y` cuando se le solicite reiniciar el controlador dañado y pulse `ctrl-c` para acceder al menú de arranque.
-.. Si el sistema no utiliza cifrado, seleccione _Opción 1 Normal Boot._; de lo contrario, vaya a link:bootmedia-encryption-restore.html["Restaure el cifrado"].
++
+
+NOTE: Si ve algún mensaje que no sea el de una restauración exitosa, póngase en contacto con el soporte de NetApp .
+
+.. *En el controlador asociado:* Volver al nivel de administrador:
++
+`set -privilege admin`
+
+.. *En el controlador averiado:* Pulse `Y` cuando ves `Was the restore backup procedure successful?`
+.. *En el controlador averiado:* Pulse `Y` cuando ves `...would you like to use this restored copy now?`
+.. *En el controlador averiado:* Pulse `Y` Cuando se le solicite reiniciar, pulse `Ctrl-C` cuando veas el menú de arranque.
+.. *En el controlador averiado:* Realice una de las siguientes acciones:
++
+*** Si el sistema no utiliza cifrado, seleccione _Opción 1 Arranque normal_ del menú de arranque.
+*** Si el sistema utiliza cifrado, vaya alink:bootmedia-encryption-restore.html["Restaure el cifrado"] .
+
+
+
+
+--
+.ONTAP 9.16.1 o posterior
+--
+Complete los siguientes pasos en el controlador averiado:
+
+.. Pulse `Y` cuando se le solicite restaurar la configuración de copia de seguridad.
++
+Una vez finalizado correctamente el proceso de restauración, aparece el siguiente mensaje: `syncflash_partner: Restore from partner complete`
+
+.. Prensa `Y` cuando se le solicitó que confirmara que la restauración de la copia de seguridad se había realizado correctamente.
+.. Prensa `Y` cuando se le solicite utilizar la configuración restaurada.
+.. Prensa `Y` cuando se le solicite reiniciar el nodo.
+.. Prensa `Y` Cuando se le solicite reiniciar de nuevo, pulse `Ctrl-C` cuando veas el menú de arranque.
+.. Debe realizar una de las siguientes acciones:
++
+*** Si el sistema no utiliza cifrado, seleccione _Opción 1 Arranque normal_ del menú de arranque.
+*** Si el sistema utiliza cifrado, vaya alink:bootmedia-encryption-restore.html["Restaure el cifrado"] .
+
+
 
 
 --
 ====
-
-
 . Conecte el cable de la consola al controlador asociado.
-. Respalde la controladora con el `storage failover giveback -fromnode local` comando.
-. Restaure la devolución automática si la ha desactivado mediante el `storage failover modify -node local -auto-giveback true` comando.
-. Si AutoSupport está habilitado, restaurar/desactivar la creación automática de casos mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
+. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
 +
-*NOTA:* Si el proceso falla, póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
+`storage failover giveback -fromnode local`
+
+. Si desactivaste la devolución automática, vuelve a activarla:
++
+`storage failover modify -node local -auto-giveback true`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 

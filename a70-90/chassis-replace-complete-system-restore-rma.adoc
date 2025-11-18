@@ -15,9 +15,9 @@ Reinicie las controladoras, verifique el estado del sistema y devuelva la pieza 
 
 
 
-== Paso 1: Arranque las controladoras y devuelva las controladoras
+== Paso 1: Encienda los controladores y realice la devolución.
 
-Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
+Inicie ONTAP en los controladores y realice la devolución del controlador para devolver la propiedad del almacenamiento.
 
 .Pasos
 . Compruebe la salida de la consola:
@@ -38,12 +38,7 @@ Después de que se reinicien las controladoras, arranque ONTAP y devuelva las co
 
 == Paso 2: Verifique el estado del sistema de almacenamiento
 
-Después de que la controladora haya devuelto el almacenamiento, debe comprobar el estado general con https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
-
-.Pasos
-. Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
-. Corrija los problemas que encuentre.
-
+Una vez finalizada la devolución del controlador, verifique el estado del sistema mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .  Solucione cualquier problema detectado.
 
 
 

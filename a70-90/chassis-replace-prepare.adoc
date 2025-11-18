@@ -13,55 +13,30 @@ summary: Prepárese para sustituir el chasis deficiente de su sistema AFF A70 o 
 [role="lead"]
 Prepárese para sustituir el chasis deficiente de su sistema AFF A70 o AFF A90 identificando el chasis deficiente, verificando los componentes de reemplazo y etiquetando los cables y los módulos de la controladora.
 
-
-
-== Paso 1: Localice y supervise su sistema
-
-Debe abrir una sesión de consola y guardar los registros de sesiones para futuras referencias, así como encender el LED de ubicación del sistema para encontrar el chasis dañado.
-
 .Pasos
 . Conéctese al puerto de la consola de serie para la interfaz con el sistema y supervisarlo.
-. Busque y encienda el LED de ubicación de la controladora:
+. Enciende el LED de ubicación del controlador:
 +
-.. Utilice `system controller location-led show` el comando para mostrar el estado actual del LED de ubicación.
-.. Cambie el estado del LED de ubicación a ON:
+.. Utilice el `system controller location-led show` comando para mostrar el estado actual del LED de ubicación.
+.. Encienda el LED de ubicación:
 +
-`system controller location-led modify -node _node1_ -state on`.
+`system controller location-led modify -node _node1_ -state on`
 
 +
 El LED de ubicación permanece encendido durante 30 minutos.
 
 
 
-
-
-
-
-== Paso 2: Verifique los componentes de reemplazo
-
-Debe verificar que ha recibido los componentes necesarios, quitarlos del empaque y guardar el empaque.
-
-.Pasos
-. Antes de abrir el embalaje, debe mirar la etiqueta del embalaje y verificar:
+. Antes de abrir el envase, examine la etiqueta del envase y verifique lo siguiente:
 +
-** Número de pieza del componente.
-** Descripción de la pieza.
-** Cantidad en la caja.
+** Número de pieza del componente
+** Descripción de la pieza
+** Cantidad en la caja
 
 
-. Quite el contenido del paquete y utilice el paquete para devolver el componente con errores a NetApp.
-
-
-
-
-== Paso 3: Etiquete los cables y los módulos del controlador
-
-Debe etiquetar los cables y los módulos de controladoras antes de quitarlos de los módulos de la controladora o el chasis.
-
-.Pasos
-. Etiquete todos los cables asociados con el sistema de almacenamiento. Esto facilita el recableado más adelante en este procedimiento.
-. Etiquete los módulos del controlador.
-. Si aún no está correctamente conectado a tierra, asígnese a tierra.
+. Retire el contenido del embalaje y guarde el embalaje para devolver el componente defectuoso a NetApp.
+. Etiquete todos los cables conectados al sistema de almacenamiento.  Esto garantiza un recableado adecuado más adelante en este procedimiento.
+. Conéctate con la tierra si aún no lo estás.
 
 
 .El futuro

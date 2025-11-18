@@ -16,23 +16,23 @@ Antes de sustituir la controladora en su sistema AFF C80, asegúrese de cumplir 
 Revise los requisitos para sustituir el módulo del controlador.
 
 * Todas las bandejas de unidades deben funcionar correctamente.
-* El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
-* No utilice este procedimiento para las actualizaciones de la controladora; consulte la https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para obtener orientación.
-* Si su sistema tiene una configuración MetroCluster, debe revisar https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe usar este procedimiento.
-* Debe sustituir el componente con errores por la unidad reemplazable del sector (FRU) que ha recibido de NetApp.
-* Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
-* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
-* Debido a que el dispositivo de inicio está ubicado en el módulo de administración del sistema que está instalado en la parte posterior del sistema, no es necesario mover el dispositivo de arranque al reemplazar un módulo de controlador.
-* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
+* El controlador en buen estado debe ser capaz de asumir el control del controlador que se está reemplazando (denominado en este procedimiento como controlador averiado).
+* No utilice este procedimiento para actualizaciones de controladores.  Referirse a https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para ayuda.
+* Si su sistema está en una configuración MetroCluster , revise https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si se debe utilizar este procedimiento.
+* Reemplace el componente defectuoso con la unidad reemplazable en campo (FRU) que recibió de NetApp.
+* Sustituya el módulo controlador por un módulo controlador del mismo modelo.  No puedes actualizar tu sistema reemplazando el módulo controlador.
+* No se pueden cambiar las unidades ni las bandejas de unidades como parte de este procedimiento.
+* El dispositivo de arranque se encuentra en el módulo de administración del sistema instalado en la parte posterior del sistema.  No es necesario mover el dispositivo de arranque al reemplazar un módulo controlador.
+* Comprenda la terminología del controlador utilizada en este procedimiento:
 +
-** El controlador _drinated_ es el controlador que se va a sustituir.
-** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
+** El controlador _dañado_ es el controlador que se está reemplazando.
+** El controlador de _reemplazo_ es el nuevo controlador que reemplaza al controlador averiado.
 ** El controlador _heated_ es el controlador que sobrevive.
 
 
-* Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.
+* Capture la salida de la consola del controlador en un archivo de registro de texto.
 +
-Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+Esto proporciona un registro del procedimiento para solucionar cualquier problema durante el proceso de reemplazo.
 
 
 

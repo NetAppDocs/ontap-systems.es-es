@@ -11,11 +11,11 @@ summary: Comience a sustituir la controladora en su sistema de almacenamiento AF
 
 
 [role="lead"]
-Para comenzar a sustituir la controladora en su sistema de almacenamiento AFF A70 o AFF A90, apague la controladora dañada, quite y sustituya la controladora, restaure la configuración del sistema y devuelva el control de los recursos de almacenamiento a la controladora de reemplazo.
+Reemplace el controlador de su sistema de almacenamiento AFF A70 o AFF A90 apagando el controlador averiado, extrayéndolo y reemplazándolo, restaurando la configuración del sistema y devolviendo el control de los recursos de almacenamiento al controlador de reemplazo.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:controller-replace-requirements.html["Revise los requisitos para sustituir la controladora"]
 [role="quick-margin-para"]
-Para sustituir el módulo del controlador, debe cumplir ciertos requisitos.
+Revisar los requisitos de reemplazo del controlador, incluyendo la compatibilidad del sistema, las herramientas necesarias, las credenciales ONTAP y la verificación de la funcionalidad de los componentes.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:controller-replace-shutdown.html["Apague el controlador dañado"]
 [role="quick-margin-para"]
@@ -23,7 +23,7 @@ Apague o asuma el control de la controladora deteriorada para que la controlador
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:controller-replace-move-hardware.html["Sustituya el controlador"]
 [role="quick-margin-para"]
-El reemplazo de la controladora incluye la extracción de la controladora deteriorada, el movimiento de los componentes FRU al módulo de controladora de reemplazo y luego la instalación del módulo de controladora de reemplazo en el compartimento.
+Retire el controlador averiado, traslade los componentes FRU al módulo controlador de reemplazo e instale el módulo controlador de reemplazo en la carcasa.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:controller-replace-system-config-restore-and-verify.html["Restaurar y verificar la configuración del sistema"]
 [role="quick-margin-para"]
@@ -35,4 +35,4 @@ Vuelva a conectar la controladora y transfiera la propiedad de los recursos de a
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]link:controller-replace-restore-system-rma.html["Reemplazo completo de controladoras"]
 [role="quick-margin-para"]
-Verifique los LIF, compruebe el estado del clúster y devuelva la parte con error a NetApp.
+Verifique las LIF, compruebe el estado del clúster y devuelva la parte fallida a NetApp.

@@ -15,31 +15,35 @@ Para garantizar la seguridad de los datos en su sistema de almacenamiento FAS70 
 
 
 
-== Paso 1: Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp
+== Paso 1: Compruebe la compatibilidad con NVE y descargue la imagen ONTAP correcta.
 
-Compruebe si su versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE). Esta información es crucial para descargar la imagen ONTAP correcta.
+Determine si su versión de ONTAP admite NetApp Volume Encryption (NVE) para que pueda descargar la imagen de ONTAP correcta para el reemplazo del medio de arranque.
 
 .Pasos
-. Determine si la versión de ONTAP admite el cifrado ejecutando el siguiente comando:
+. Comprueba si tu versión de ONTAP admite cifrado:
 +
 `version -v`
 
 +
 Si la salida incluye `1Ono-DARE`, NVE no es compatible con la versión del clúster.
 
-. Según si NVE es compatible con el sistema, realice una de las siguientes acciones:
+. Descargue la imagen ONTAP apropiada según la compatibilidad con NVE:
 +
-** Si NVE es compatible, descargue la imagen ONTAP con NetApp Volume Encryption.
-** Si NVE no es compatible, descargue la imagen ONTAP *sin* Cifrado de volumen NetApp.
+** Si NVE es compatible: Descargue la imagen ONTAP con NetApp Volume Encryption.
+** Si NVE no es compatible: Descargue la imagen de ONTAP sin NetApp Volume Encryption.
++
+
+NOTE: Descargue la imagen ONTAP desde el sitio de soporte de NetApp a su servidor HTTP o FTP o a una carpeta local.  Necesitará este archivo de imagen durante el procedimiento de reemplazo del medio de arranque.
 
 
 
 
 
 
-== Paso 2: Determine si es seguro apagar el controlador
 
-Para apagar de forma segura una controladora, primero identifique si el gestor de claves externo (EKM) o el gestor de claves incorporado (OKM) están activos. A continuación, verifique el administrador de claves en uso, muestre la información de clave adecuada y realice acciones en función del estado de las claves de autenticación.
+== Paso 2: Verifique el estado del administrador de claves y la configuración de copia de seguridad.
+
+Antes de apagar el controlador averiado, verifique la configuración del administrador de claves y haga una copia de seguridad de la información necesaria.
 
 .Pasos
 . Determine qué gestor de claves está activado en el sistema:
@@ -72,125 +76,134 @@ ONTAP 9.13.1 o anterior
 
 
 |===
-. En función de si hay configurado un gestor de teclas en el sistema, seleccione una de las siguientes opciones.
+. Dependiendo de si hay un administrador de claves configurado en su sistema, realice una de las siguientes acciones:
 +
-[role="tabbed-block"]
-====
-.No se ha configurado ningún gestor de claves
---
-Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+*Si no hay ningún gestor de claves configurado:*
 
---
-.Se ha configurado el gestor de claves externo o incorporado
---
-.. Introduzca el siguiente comando query para mostrar el estado de las claves de autenticación en su administrador de claves.
++
+Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
++
+*Si se ha configurado un gestor de claves (EKM u OKM):*
+
++
+.. Introduzca el siguiente comando de consulta para mostrar el estado de las claves de autenticación en su gestor de claves:
 +
 `security key-manager key query`
 
-.. Compruebe la salida del valor de `Restored` la columna para su gestor de claves.
-+
-Esta columna indica si las claves de autenticación del gestor de claves (EKM u OKM) se han restaurado correctamente.
+.. Revise la salida y verifique el valor en el `Restored` columna.  Esta columna indica si las claves de autenticación para su gestor de claves (ya sea EKM u OKM) se han restaurado correctamente.
 
 
-
---
-====
-
-
-. En función de si el sistema utiliza el Administrador de claves externo o el Administrador de claves incorporado, seleccione una de las siguientes opciones.
+. Complete el procedimiento correspondiente según su tipo de gestor de claves:
 +
 [role="tabbed-block"]
 ====
-.Gestor de claves externo
+.Gestor de claves externo (EKM)
 --
-En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
+Complete estos pasos según el valor en el `Restored` columna.
 
-[cols="1a,2a"]
-|===
-| Valor de salida en `Restored` la columna | Siga estos pasos... 
+*Si se muestran todas las teclas `true` en la columna Restaurado:*
 
+Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
 
- a| 
-`true`
- a| 
-Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+*Si alguna clave muestra un valor distinto de `true` en la columna Restaurado:*
 
-
-
- a| 
-Cualquier otra cosa que no sea `true`
- a| 
-.. Restaure las claves de autenticación de gestión de claves externas en todos los nodos del clúster mediante el siguiente comando:
+.. Restablecer las claves de autenticación de gestión de claves externas en todos los nodos del clúster:
 +
 `security key-manager external restore`
 
 +
-Si el comando falla, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
+Si el comando falla, póngase en contacto con el soporte de NetApp .
 
-.. Compruebe que `Restored` la columna se muestre `true` para todas las claves de autenticación introduciendo  `security key-manager key query`el comando.
-+
-Si todas las claves de autenticación son `true`, puede apagar de forma segura el controlador defectuoso. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
-
-
-
-|===
---
-.Gestión de claves incorporada
---
-En función del valor de salida mostrado en la `Restored` columna, siga los pasos adecuados.
-
-[cols="1a,2a"]
-|===
-| Valor de salida en `Restored` la columna | Siga estos pasos... 
-
-
- a| 
-`true`
- a| 
-Realice una copia de seguridad manual de la información de OKM.
-
-.. Vaya al modo avanzado introduciendo `set -priv advanced` y, a continuación, introdúzcalo `Y` cuando se le solicite.
-.. Introduzca el siguiente comando para mostrar la información de gestión de claves:
-+
-`security key-manager onboard show-backup`
-
-.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
-+
-Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
-
-.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
-
-
-
-
- a| 
-Cualquier otra cosa que no sea `true`
- a| 
-.. Introduzca el comando SYNC del gestor de claves de seguridad incorporado:
-+
-`security key-manager onboard sync`
-
-.. Introduzca los 32 caracteres y la clave de acceso alfanumérica de gestión de claves incorporada cuando se le solicite.
-+
-Si no se puede proporcionar la contraseña, póngase en contacto con http://mysupport.netapp.com/["Soporte de NetApp"^].
-
-.. Compruebe que `Restored` se muestra la columna `true` para todas las claves de autenticación:
+.. Verifique que todas las claves de autenticación se hayan restaurado:
 +
 `security key-manager key query`
 
-.. Compruebe que se muestra el `Key Manager` tipo `onboard`y, a continuación, realice una copia de seguridad manual de la información de OKM.
-.. Introduzca el comando para mostrar la información de backup para la gestión de claves:
++
+Confirma que el `Restored` pantallas de columna `true` para todas las claves de autenticación.
+
+.. Si se restauran todas las claves, puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
+--
+.Gestión de claves incorporada (OKM)
+--
+Complete estos pasos según el valor en el `Restored` columna.
+
+*Si se muestran todas las teclas `true` en la columna Restaurado:*
+
+.. Realizar una copia de seguridad de la información de OKM:
++
+... Cambiar al modo de privilegios avanzados:
++
+`set -priv advanced`
+
++
+Ingresar `y` cuando se le solicite continuar.
+
+... Mostrar la información de copia de seguridad de gestión de claves:
 +
 `security key-manager onboard show-backup`
 
-.. Copie el contenido de la información de la copia de seguridad en un archivo o archivo de registro separados.
+... Copie la información de la copia de seguridad a un archivo aparte o a su archivo de registro.
 +
-Lo necesitará en escenarios de desastres donde podría necesitar una recuperación manual de OKM.
+Necesitará esta información de respaldo si necesita recuperar OKM manualmente durante el procedimiento de reemplazo.
 
-.. Puede apagar el controlador defectuoso de forma segura. Vaya a link:bootmedia-shutdown.html["apague el controlador dañado"].
+... Volver al modo administrador:
++
+`set -priv admin`
 
 
-|===
+
+.. Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
+*Si alguna clave muestra un valor distinto de `true` en la columna Restaurado:*
+
+.. Sincronizar el gestor de claves integrado:
++
+`security key-manager onboard sync`
+
++
+Introduzca la contraseña alfanumérica de 32 caracteres para la gestión de la llave integrada cuando se le solicite.
+
++
+
+NOTE: Esta es la contraseña para todo el clúster que creó cuando configuró inicialmente el Administrador de claves integrado.  Si no dispone de esta contraseña, póngase en contacto con el soporte de NetApp .
+
+.. Verifique que todas las claves de autenticación se hayan restaurado:
++
+`security key-manager key query`
+
++
+Confirma que el `Restored` pantallas de columna `true` para todas las claves de autenticación y la `Key Manager` El tipo muestra `onboard` .
+
+.. Realizar una copia de seguridad de la información de OKM:
++
+... Cambiar al modo de privilegios avanzados:
++
+`set -priv advanced`
+
++
+Ingresar `y` cuando se le solicite continuar.
+
+... Mostrar la información de copia de seguridad de gestión de claves:
++
+`security key-manager onboard show-backup`
+
+... Copie la información de la copia de seguridad a un archivo aparte o a su archivo de registro.
++
+Necesitará esta información de respaldo si necesita recuperar OKM manualmente durante el procedimiento de reemplazo.
+
+... Volver al modo administrador:
++
+`set -priv admin`
+
+
+
+.. Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
 --
 ====
 

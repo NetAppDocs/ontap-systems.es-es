@@ -1,0 +1,83 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Compruebe que el LED ámbar de estado de NVRAM situado en la ranura 4/5 de la parte posterior de cada módulo de controlador está apagado. Busque el icono de NV.
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+** Si el LED NVRAM está apagado, vaya al siguiente paso.
+** Si el LED NVRAM parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con http://mysupport.netapp.com/["Sitio de soporte de NetApp"^] para obtener ayuda.
+
+
+. Extraiga los módulos del controlador:
++
+.. Presione hacia abajo ambos pestillos de bloqueo del controlador y, a continuación, gire ambos pestillos hacia abajo al mismo tiempo.
++
+El módulo de la controladora se mueve ligeramente fuera del chasis.
+
++
+image::../media/drw_a70-90_pcm_remove_replace_ieops-1365.svg[Gráfico de extracción del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Pestillo de bloqueo
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Pasador de bloqueo
+
+|===
+.. Deslice el módulo del controlador para extraerlo del chasis por los pestillos de bloqueo y colóquelo en una superficie plana y estable.
++
+Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+
+.. Repita estos pasos para el segundo módulo del controlador.
+
+
+. Quite las unidades:
++
+.. Retire con cuidado el bisel de la parte delantera del sistema.
+.. Presione el botón de liberación en la parte superior de la cara del portador de unidades debajo de los LED.
+.. Tire de la palanca de leva hasta su posición totalmente abierta para desasentar la unidad del plano medio y, a continuación, deslice suavemente la unidad para extraerla del chasis.
++
+La transmisión debe desconectarse del chasis, lo que le permitirá deslizarse sin el chasis.
+
++
+
+NOTE: Las unidades son frágiles. Utilice siempre dos manos para soportar el peso de la unidad al retirar una unidad para evitar que se dañen.
+
+.. Haga un seguimiento de la bahía de conducción en la que estaba cada unidad y deje la unidad a un lado en un carro o mesa libre de estática.
+.. Repita este paso para las unidades restantes del chasis.
+
+
+

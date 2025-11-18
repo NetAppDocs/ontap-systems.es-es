@@ -2,7 +2,7 @@
 permalink: a70-90/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: aff a70, aff a90, replace the boot media 
-summary: Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. 
+summary: Revise los requisitos antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90 . 
 ---
 = Requisitos para la recuperación automatizada de medios de arranque: AFF A70 y AFF A90
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Antes de reemplazar el medio de arranque en su sistema de almacenamient
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque de su sistema de almacenamiento AFF A70 o AFF A90 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tenga el medio de arranque de reemplazo correcto, confirmar que los puertos del clúster en la controladora dañada funcionen correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) están habilitados.
+Revise los requisitos antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF A70 o AFF A90 , incluida la funcionalidad del puerto de clúster, la configuración del administrador de claves y la compatibilidad de la versión de ONTAP .
 
-El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
+El proceso automatizado de recuperación de medios de arranque requiere ONTAP 9.17.1 o posterior.  Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice lalink:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
 Revise los siguientes requisitos.
 
@@ -28,7 +28,7 @@ Revise los siguientes requisitos.
 ** /cfcard/kmip/certs/CA.pem
 
 
-* Es fundamental aplicar los comandos al controlador correcto cuando se reemplaza el medio de arranque dañado:
+* Comprenda la terminología del controlador utilizada en este procedimiento:
 +
 ** El _controlador dañado_ es el controlador en el que está realizando mantenimiento.
 ** El _controlador saludable_ es el socio HA del controlador dañado.

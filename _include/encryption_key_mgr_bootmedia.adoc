@@ -1,0 +1,166 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Determine qué gestor de claves está activado en el sistema:
++
+[cols="1a,2a"]
+|===
+| Versión de ONTAP | Ejecute este comando 
+
+
+ a| 
+ONTAP 9.14.1 o posterior
+ a| 
+`security key-manager keystore show`
+
+** Si EKM está activado, `EKM` aparece en la salida del comando.
+** Si OKM está activado, `OKM` aparece en la salida del comando.
+** Si no hay ningún gestor de claves activado, `No key manager keystores configured` aparece en el resultado del comando.
+
+
+
+
+ a| 
+ONTAP 9.13.1 o anterior
+ a| 
+`security key-manager show-key-store`
+
+** Si EKM está activado, `external` aparece en la salida del comando.
+** Si OKM está activado, `onboard` aparece en la salida del comando.
+** Si no hay ningún gestor de claves activado, `No key managers configured` aparece en el resultado del comando.
+
+
+|===
+. Dependiendo de si hay un administrador de claves configurado en su sistema, realice una de las siguientes acciones:
++
+*Si no hay ningún gestor de claves configurado:*
+
++
+Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
++
+*Si se ha configurado un gestor de claves (EKM u OKM):*
+
++
+.. Introduzca el siguiente comando de consulta para mostrar el estado de las claves de autenticación en su gestor de claves:
++
+`security key-manager key query`
+
+.. Revise la salida y verifique el valor en el `Restored` columna.  Esta columna indica si las claves de autenticación para su gestor de claves (ya sea EKM u OKM) se han restaurado correctamente.
+
+
+. Complete el procedimiento correspondiente según su tipo de gestor de claves:
++
+[role="tabbed-block"]
+====
+.Gestor de claves externo (EKM)
+--
+Complete estos pasos según el valor en el `Restored` columna.
+
+*Si se muestran todas las teclas `true` en la columna Restaurado:*
+
+Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+*Si alguna clave muestra un valor distinto de `true` en la columna Restaurado:*
+
+.. Restablecer las claves de autenticación de gestión de claves externas en todos los nodos del clúster:
++
+`security key-manager external restore`
+
++
+Si el comando falla, póngase en contacto con el soporte de NetApp .
+
+.. Verifique que todas las claves de autenticación se hayan restaurado:
++
+`security key-manager key query`
+
++
+Confirma que el `Restored` pantallas de columna `true` para todas las claves de autenticación.
+
+.. Si se restauran todas las claves, puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
+--
+.Gestión de claves incorporada (OKM)
+--
+Complete estos pasos según el valor en el `Restored` columna.
+
+*Si se muestran todas las teclas `true` en la columna Restaurado:*
+
+.. Realizar una copia de seguridad de la información de OKM:
++
+... Cambiar al modo de privilegios avanzados:
++
+`set -priv advanced`
+
++
+Ingresar `y` cuando se le solicite continuar.
+
+... Mostrar la información de copia de seguridad de gestión de claves:
++
+`security key-manager onboard show-backup`
+
+... Copie la información de la copia de seguridad a un archivo aparte o a su archivo de registro.
++
+Necesitará esta información de respaldo si necesita recuperar OKM manualmente durante el procedimiento de reemplazo.
+
+... Volver al modo administrador:
++
+`set -priv admin`
+
+
+
+.. Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
+*Si alguna clave muestra un valor distinto de `true` en la columna Restaurado:*
+
+.. Sincronizar el gestor de claves integrado:
++
+`security key-manager onboard sync`
+
++
+Introduzca la contraseña alfanumérica de 32 caracteres para la gestión de la llave integrada cuando se le solicite.
+
++
+
+NOTE: Esta es la contraseña para todo el clúster que creó cuando configuró inicialmente el Administrador de claves integrado.  Si no dispone de esta contraseña, póngase en contacto con el soporte de NetApp .
+
+.. Verifique que todas las claves de autenticación se hayan restaurado:
++
+`security key-manager key query`
+
++
+Confirma que el `Restored` pantallas de columna `true` para todas las claves de autenticación y la `Key Manager` El tipo muestra `onboard` .
+
+.. Realizar una copia de seguridad de la información de OKM:
++
+... Cambiar al modo de privilegios avanzados:
++
+`set -priv advanced`
+
++
+Ingresar `y` cuando se le solicite continuar.
+
+... Mostrar la información de copia de seguridad de gestión de claves:
++
+`security key-manager onboard show-backup`
+
+... Copie la información de la copia de seguridad a un archivo aparte o a su archivo de registro.
++
+Necesitará esta información de respaldo si necesita recuperar OKM manualmente durante el procedimiento de reemplazo.
+
+... Volver al modo administrador:
++
+`set -priv admin`
+
+
+
+.. Puede apagar de forma segura el controlador averiado y proceder al procedimiento de apagado.
+
+
+--
+====
+

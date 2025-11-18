@@ -2,7 +2,7 @@
 permalink: c80/chassis-replace-workflow.html 
 sidebar: sidebar 
 keywords: aff 70, 90, replace the chassis workflow 
-summary: Comience a reemplazar el chasis de su sistema AFF C80 revisando los requisitos de reemplazo, apagando las controladoras, reemplazando el chasis y verificando las operaciones del sistema. 
+summary: Para comenzar con el reemplazo del chasis en su sistema AFF C80, revise los requisitos de reemplazo, apague los controladores, reemplace el chasis y verifique el funcionamiento del sistema. 
 ---
 = Flujo de trabajo de reemplazo de chasis - AFF C80
 :allow-uri-read: 
@@ -11,20 +11,24 @@ summary: Comience a reemplazar el chasis de su sistema AFF C80 revisando los req
 
 
 [role="lead"]
-Comience a reemplazar el chasis de su sistema AFF C80 revisando los requisitos de reemplazo, apagando las controladoras, reemplazando el chasis y verificando las operaciones del sistema.
+Para comenzar con el reemplazo del chasis en su sistema AFF C80, revise los requisitos de reemplazo, apague los controladores, reemplace el chasis y verifique el funcionamiento del sistema.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:chassis-replace-requirements.html["Revise los requisitos de reemplazo del chasis"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:chassis-replace-requirements.html["Revisar los requisitos de reemplazo del chasis"]
 [role="quick-margin-para"]
-Para sustituir el chasis, debe cumplir ciertos requisitos.
+Revisar los requisitos de reemplazo del chasis, incluyendo la compatibilidad del sistema, las herramientas necesarias, las credenciales ONTAP y la verificación de la funcionalidad de los componentes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:chassis-replace-shutdown.html["Apague las controladoras"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["dos"]link:chassis-replace-prepare.html["Prepárese para el reemplazo del chasis"]
 [role="quick-margin-para"]
-Apague las controladoras para poder realizar el mantenimiento del chasis.
+Prepárese para la sustitución del chasis localizando el sistema, reuniendo las credenciales y las herramientas, verificando el chasis de reemplazo y etiquetando los cables.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:chassis-replace-move-hardware.html["Sustituya el chasis"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["tres"]link:chassis-replace-shutdown.html["Apague las controladoras"]
 [role="quick-margin-para"]
-La sustitución del chasis incluye mover las fuentes de alimentación, los discos duros y el módulo del controlador del chasis dañado al nuevo chasis, y el intercambio del chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
+Apague los controladores para realizar el mantenimiento del chasis de forma segura.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:chassis-replace-complete-system-restore-rma.html["Reemplazo completo de chasis"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:chassis-replace-move-hardware.html["Sustituya el chasis"]
 [role="quick-margin-para"]
-Compruebe el estado HA del chasis y devuelva la parte fallida a NetApp.
+Traslade los componentes del chasis averiado al chasis de repuesto.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:chassis-replace-complete-system-restore-rma.html["Reemplazo completo de chasis"]
+[role="quick-margin-para"]
+Complete la sustitución arrancando los controladores, realizando la devolución y devolviendo el chasis averiado a NetApp.

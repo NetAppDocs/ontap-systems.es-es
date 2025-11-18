@@ -164,7 +164,7 @@ image::../media/icon_round_2.png[Número de llamada 2]
 Módulo de ventilador
 
 |===
-. Mueva el módulo de ventilador al módulo de controlador de repuesto y, a continuación, instale el módulo de ventilador alineando sus bordes con la abertura del módulo de controlador y, a continuación, deslice el módulo de ventilador hacia el módulo de controlador hasta que los pestillos de bloqueo encajen en su lugar.
+. Traslada el módulo del ventilador al módulo controlador de repuesto y, a continuación, instálalo alineando sus bordes con la abertura del módulo controlador y deslizándolo hasta que los pestillos de bloqueo encajen en su lugar.
 . Repita estos pasos para los módulos de ventilador restantes.
 
 
@@ -283,8 +283,16 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 Mueva los módulos de E/S al módulo de controlador de reemplazo.
 
+.Pasos
+. Desconecte cualquier cableado del módulo de E/S de destino.
++
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Gire el ARM de gestión de cables hacia abajo tirando de los botones del interior del ARM de gestión de cables y girándolo hacia abajo.
++
 image::../media/drw_a70_90_io_remove_replace_ieops-1532.svg[Retire el módulo de E/S.]
 
++
 [cols="1,4"]
 |===
 
@@ -293,12 +301,6 @@ image::../media/drw_a70_90_io_remove_replace_ieops-1532.svg[Retire el módulo de
 image::../media/icon_round_1.png[Número de llamada 1]
 | Palanca de leva del módulo de E/S. 
 |===
-.Pasos
-. Desconecte cualquier cableado del módulo de E/S de destino.
-+
-Asegúrese de etiquetar los cables para saber de dónde proceden.
-
-. Gire el ARM de gestión de cables hacia abajo tirando de los botones del interior del ARM de gestión de cables y girándolo hacia abajo.
 . Retire los módulos de E/S del módulo del controlador:
 +
 .. Pulse el botón de bloqueo de leva del módulo de E/S de destino.
@@ -329,8 +331,12 @@ NOTE: Para mover los módulos de E/S de las ranuras 6 y 7, debe mover el portado
 
 Mueva el módulo Gestión del sistema al módulo de controlador de reemplazo.
 
+.Pasos
+. Retire el módulo de gestión del sistema del módulo del controlador defectuoso:
++
 image::../media/drw_70-90_sys-mgmt_remove_ieops-1817.svg[Mueva el módulo Gestión del sistema]
 
++
 [cols="1,4"]
 |===
 
@@ -341,8 +347,6 @@ image::../media/icon_round_1.png[Número de llamada 1]
 Bloqueo de leva del módulo de gestión del sistema
 
 |===
-.Pasos
-. Retire el módulo de gestión del sistema del módulo del controlador defectuoso:
 +
 .. Pulse el botón de la leva de gestión del sistema.
 .. Gire la palanca de leva completamente hacia abajo.
@@ -363,8 +367,12 @@ Bloqueo de leva del módulo de gestión del sistema
 
 Mueva el módulo NVRAM al módulo de la controladora de reemplazo.
 
+.Pasos
+. Retire el módulo NVRAM del módulo del controlador defectuoso:
++
 image::../media/drw_a70-90_nvram12_remove_replace_ieops-1370.svg[Retire el módulo NVRAM12 y los DIMM]
 
++
 [cols="1,4"]
 |===
 
@@ -382,8 +390,6 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Lengüeta de bloqueo de DIMM
 
 |===
-.Pasos
-. Retire el módulo NVRAM del módulo del controlador defectuoso:
 +
 .. Pulse el botón de bloqueo de leva.
 +
@@ -452,3 +458,6 @@ Si ha quitado los transceptores (QSFP o SFP), recuerde reinstalarlos si utiliza 
 NOTE: Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de alimentación a las fuentes de alimentación después de que el módulo del controlador esté completamente asentado en el chasis.
 
 
+
+.El futuro
+Después de haber reemplazado el controlador ASA A70 o ASA A90 defectuoso, deberálink:controller-replace-system-config-restore-and-verify.html["restaure la configuración del sistema"] .

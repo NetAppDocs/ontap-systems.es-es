@@ -13,20 +13,16 @@ summary: Compruebe que la configuración de alta disponibilidad de la controlado
 [role="lead"]
 Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF C80 y confirme que los adaptadores del sistema enumeran todas las rutas a los discos.
 
-
-
-== Paso 1: Verifique la configuración de alta disponibilidad
-
-Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.
+Verifique la configuración de alta disponibilidad y la lista de discos antes de volver a poner el sistema en servicio.
 
 .Pasos
-. Arranque en modo de mantenimiento: `boot_ontap maint`
+. Arranque en modo de mantenimiento:
 +
-.. Introduzca `y` cuando vea _Continue with boot?_.
+`boot_ontap maint`
+
+. Introduzca `y` cuando vea _Continue with boot?_.
 +
 Si aparece el mensaje de advertencia _System ID mismatch_, introduzca `y`.
-
-
 
 . Introduzca `sysconfig -v` y capture el contenido de la pantalla.
 +
@@ -34,11 +30,17 @@ Si aparece el mensaje de advertencia _System ID mismatch_, introduzca `y`.
 NOTE: Si ve _PERSONALITY MISMATCH_ póngase en contacto con el servicio de atención al cliente.
 
 . En `sysconfig -v` la salida, compare la información de la tarjeta del adaptador con las tarjetas y las ubicaciones de la controladora de reemplazo.
-. Compruebe que todos los componentes muestran el mismo `HA` estado: `ha-config show`
+. Compruebe que todos los componentes muestran el mismo `HA` estado:
++
+`ha-config show`
+
 +
 El estado de alta disponibilidad debe ser el mismo para todos los componentes.
 
-. Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado del módulo del controlador: `ha-config modify controller ha`
+. Si el estado del sistema que se muestra en el módulo controlador no coincide con la configuración de su sistema, configure el `HA` estado del módulo controlador:
++
+`ha-config modify controller ha`
+
 +
 El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 
@@ -49,21 +51,15 @@ El valor del estado de alta disponibilidad puede ser uno de los siguientes:
 ** `non-ha` (no compatible)
 
 
-. Confirme que el ajuste ha cambiado: `ha-config show`
+. Confirme que el ajuste ha cambiado:
++
+`ha-config show`
 
-
-
-
-== Paso 2: Verifique la lista de discos
-
-Debe verificar la lista de adaptadores y las rutas a todos los discos del sistema.
-
-.Pasos
-. Compruebe que el adaptador enumera las rutas de acceso a todos los discos con el `storage show disk -p`.
+. Verifique que el adaptador muestre las rutas a todos los discos: `storage show disk -p`
 +
 Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
 
-. Salir del modo de mantenimiento `halt`: .
+. Salir del modo de mantenimiento: `halt`
 
 
 .El futuro

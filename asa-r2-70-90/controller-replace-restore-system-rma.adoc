@@ -20,12 +20,21 @@ Para completar el reemplazo de la controladora de su sistema ASA A70 o ASA A90, 
 Antes de devolver el nodo de sustitución al servicio, compruebe que las interfaces lógicas estén en sus puertos principales, compruebe el estado del clúster y restablezca la devolución automática.
 
 .Pasos
-. Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
+. Verifique que las interfaces lógicas estén reportando a su servidor local y puertos:
 +
-Si alguna de las interfaces lógicas aparece como false, revertiéndela a sus puertos de inicio: `network interface revert -vserver * -lif *`
+`network interface show -is-home false`
 
-. Compruebe el estado del clúster. Consulte https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] el artículo de la base de conocimientos para obtener más información.
-. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
++
+Si alguna interfaz lógica aparece como falsa, rediríjala a sus puertos originales:
+
++
+`network interface revert -vserver * -lif *`
+
+. Comprueba el estado de tu clúster.  Ver el https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["Cómo realizar una comprobación del estado de un clúster con un script en ONTAP"^] Artículo de la base de conocimientos.
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`
+
 
 
 

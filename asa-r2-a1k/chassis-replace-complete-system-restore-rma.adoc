@@ -15,9 +15,9 @@ Reinicie el controlador, verifique el estado del sistema y devuelva la pieza def
 
 
 
-== Paso 1: Arranque las controladoras y devuelva las controladoras
+== Paso 1: Inicie los controladores y verifique el estado del sistema.
 
-Después de que se reinicien las controladoras, arranque ONTAP y devuelva las controladoras.
+Después de reiniciar los controladores, inicie ONTAP, devuelva los controladores y verifique el estado del sistema de almacenamiento.
 
 .Pasos
 . Compruebe la salida de la consola:
@@ -34,21 +34,11 @@ Después de que se reinicien las controladoras, arranque ONTAP y devuelva las co
 .. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+. Una vez finalizada la devolución, corre https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] para verificar el estado del sistema de almacenamiento y corregir cualquier problema que encuentre.
 
 
 
 
-== Paso 2: Verifique el estado del sistema de almacenamiento
-
-Después de que la controladora haya devuelto el almacenamiento, debe comprobar el estado general con https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"].
-
-.Pasos
-. Una vez finalizada la devolución, ejecute Active IQ Config Advisor para comprobar el estado del sistema de almacenamiento.
-. Corrija los problemas que encuentre.
-
-
-
-
-== Paso 3: Devuelva la pieza que falló a NetApp
+== Paso 2: Devuelve la parte fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

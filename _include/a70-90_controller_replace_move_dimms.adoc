@@ -1,0 +1,63 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Abra el conducto de aire del controlador en la parte superior del controlador.
++
+.. Inserte los dedos en los huecos de los extremos del conducto de aire.
+.. Levante el conducto de aire y gírelo hacia arriba hasta el tope.
+
+
+. Localice los módulos DIMM del sistema en la placa base, utilizando el mapa DIMM situado en la parte superior del conducto de aire.
++
+Las ubicaciones de DIMM, por modelo, se enumeran en la siguiente tabla:
+
++
+[cols="1,4"]
+|===
+
+
+| Modelo | Ubicación de la ranura DIMM 
+
+
+ a| 
+FAS70
+| 3, 10, 19, 26 
+
+
+ a| 
+FAS90
+| 3, 7, 10, 14, 19, 23, 26 y 30 
+|===
++
+image::../media/drw_a70_90_dimm_ieops-1513.svg[Asignación de DIMM]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Número de llamada 1]
+| DIMM del sistema 
+|===
+. Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
+. Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+. Localice la ranura en el módulo de controlador de reemplazo en el que va a instalar el módulo DIMM.
+. Inserte el módulo DIMM directamente en la ranura.
++
+El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+
++
+
+NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en la ranura.
+
+. Empuje con cuidado, pero firmemente, en el borde superior del DIMM hasta que las lengüetas expulsoras encajen en su lugar sobre las muescas de los extremos del DIMM.
+. Repita estos pasos para los módulos DIMM restantes.
+. Cierre el conducto de aire del controlador.
+

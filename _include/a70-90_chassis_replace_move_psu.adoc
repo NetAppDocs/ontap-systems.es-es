@@ -1,0 +1,45 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Retire las cuatro PSU:
++
+.. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+.. Desconecte los cables de alimentación de la fuente de alimentación del módulo del controlador.
++
+Si el sistema tiene alimentación de CC, desconecte el bloque de alimentación de las PSU.
+
+.. Retire la PSU de la controladora girando el asa de la PSU hacia arriba de modo que pueda sacar la PSU, presionar la pestaña de bloqueo de PSU y, a continuación, extraer la PSU del módulo de la controladora.
++
+
+CAUTION: La fuente de alimentación es corta. Utilice siempre dos manos para apoyarlo cuando lo extraiga del módulo del controlador de modo que no se mueva repentinamente del módulo del controlador y le herir.
+
++
+image::../media/drw_a70-90_psu_remove_replace_ieops-1368.svg[Sustituya la PSU]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Lengüeta de bloqueo de PSU de terracota
+
+|===
+.. Repita estos pasos para las PSU restantes.
+
+
+. Retire los cables:
++
+.. Desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo del controlador, pero déjelos en el dispositivo de administración de cables para mantenerlos organizados.
++
+
+NOTE: Los cables deben haber sido etiquetados al principio de este procedimiento.
+
+.. Retire el dispositivo de gestión de cables de los módulos del controlador y póngalos a un lado.
+
+
+
