@@ -50,7 +50,7 @@ El cifrado no está instalado en el sistema.
 +
 `storage failover giveback -ofnode _impaired_node_name_`
 
-.. Vaya al paso 6 para volver a habilitar la devolución automática si estaba deshabilitada.
+.. Ir a <<reenable-auto-giveback,reactivación de la devolución automática>> Si estaba deshabilitado.
 
 
 
@@ -58,13 +58,16 @@ El cifrado no está instalado en el sistema.
  a| 
 `key manager is configured.`
  a| 
-El cifrado está instalado.  Vaya al paso 4 para restaurar el administrador de claves.
+El cifrado está instalado. Vaya a <<restore-key-manager,restaurar el administrador de claves>>.
 
 |===
 +
 
 NOTE: Si el sistema no puede identificar la configuración del gestor de claves, muestra un mensaje de error y le solicita que confirme si el gestor de claves está configurado y de qué tipo (integrado o externo).  Responda a las preguntas para continuar.
 
+
+
+[[restore-key-manager]]
 . Restaure el administrador de claves utilizando el procedimiento adecuado para su configuración:
 +
 [role="tabbed-block"]
@@ -125,7 +128,7 @@ Successfully recovered keymanager secrets.
 `security key-manager onboard sync`
 
 +
-Vaya al paso 5 para volver a habilitar la devolución automática si estaba deshabilitada.
+Ir a <<reenable-auto-giveback,reactivación de la devolución automática>> Si estaba deshabilitado.
 
 
 
@@ -269,7 +272,7 @@ LOADER-B>
 `storage failover giveback -ofnode _impaired_node_name_`
 
 +
-Vaya al paso 5 para volver a habilitar la devolución automática si estaba deshabilitada.
+Ir a <<reenable-auto-giveback,reactivación de la devolución automática>> Si estaba deshabilitado.
 
 
 
@@ -277,6 +280,7 @@ Vaya al paso 5 para volver a habilitar la devolución automática si estaba desh
 ====
 
 
+[[reenable-auto-giveback]]
 . Si la devolución automática está desactivada, vuelva a habilitarla:
 +
 `storage failover modify -node local -auto-giveback true`

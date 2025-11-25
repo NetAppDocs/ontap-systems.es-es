@@ -73,7 +73,7 @@ Cuando los puertos no dedicados no están configurados para el uso del almacenam
 
 . Si los puertos no dedicados están configurados para el uso del almacenamiento, se realiza con este procedimiento.
 +
-De lo contrario, deberá configurar los puertos completando los pasos 4 a 7.
+De lo contrario, deberá configurar los puertos completando los siguientes pasos.
 
 . Configure los puertos no dedicados para uso del almacenamiento, en una de las controladoras:
 +
@@ -98,7 +98,7 @@ ONTAP 9.7
 `storage port enable -node _node_name_ -port _port_name_`
 
 |===
-. Repita el paso 4 para la segunda controladora.
+. Repita el paso anterior para el segundo controlador.
 . Compruebe que los puertos no dedicados de ambas controladoras están configurados para el uso del almacenamiento: `storage port show`
 +
 ** Si su par de alta disponibilidad ejecuta ONTAP 9.8 o posterior, se muestran los puertos no dedicados `storage` en la `Mode` columna.

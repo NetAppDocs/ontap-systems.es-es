@@ -269,7 +269,7 @@ NOTE: Las actualizaciones de firmware pueden tardar hasta 30 minutos.
 Debe asignar manualmente la propiedad de un disco si los discos de la pila son propiedad de ambas controladoras de una pareja de alta disponibilidad.
 
 +
-La asignación automática de propiedad de disco se deshabilita antes de cablear las bandejas de discos añadidas de forma activa y, a continuación, en el paso 7, se vuelve a habilitar tras cablear las bandejas de discos añadidas en caliente.
+Debe deshabilitar la asignación automática de propiedad del disco antes de cablear los estantes de discos agregados en caliente y luego volver a habilitarla más adelante en este procedimiento después de cablear los estantes de discos agregados en caliente.
 
 +
 .. Compruebe si la asignación automática de propiedad de disco está habilitada:``storage disk option show``
@@ -285,7 +285,7 @@ Debe deshabilitar la asignación automática de la propiedad de disco en ambas c
 
 
 
-. Si va a añadir una pila de bandejas de discos directamente a una controladora, complete los siguientes pasos; de lo contrario, vaya al paso 3.
+. Si está agregando en caliente una pila de estantes de discos directamente a un controlador, complete los siguientes subpasos; de lo contrario, vaya al siguiente paso.
 +
 .. Si la pila que va a añadir en caliente tiene más de una bandeja de discos, conecte las conexiones de bandeja a bandeja; de lo contrario, vaya al subpaso b.
 +
