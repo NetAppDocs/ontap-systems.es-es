@@ -20,11 +20,51 @@ Reemplace la controladora en el sistema AFF A70 o AFF A90 cuando un fallo de har
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
 .Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Asegúrese de que todas las unidades del chasis estén firmemente asentadas contra el plano medio con los pulgares para empujar cada unidad hasta que sienta una parada positiva.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+.Vídeo - Confirmar el asiento del conductor
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Asentar las unidades]
 
-. Compruebe que el LED de estado situado en la ranura 4/5 de la parte posterior del módulo del controlador defectuoso está apagado. Busque el icono de NV.
+. Compruebe las unidades del controlador en función del estado del sistema:
++
+.. En el controlador en buen estado, verifique si algún grupo RAID activo se encuentra en estado degradado, estado fallido o ambos:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<Check-missing-drives,Vaya al siguiente subpaso para verificar si faltan unidades>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Verifique si hay problemas de unidades faltantes tanto para el sistema de archivos como para las unidades de repuesto:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<Check-the-amber-NVRAM,ir al siguiente paso>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[Verifique la NVRAM ámbar]]Verifique que el LED de estado de la NVRAM ámbar ubicado en la ranura 4/5 en la parte posterior del módulo del controlador dañado esté apagado.  Busque el icono NV.
 +
 image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
 

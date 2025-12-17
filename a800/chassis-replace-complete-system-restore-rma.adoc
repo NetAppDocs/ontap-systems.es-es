@@ -11,14 +11,13 @@ summary: Debe comprobar el estado HA del chasis y devolver la pieza fallida a Ne
 
 
 [role="lead"]
-Debe comprobar el estado HA del chasis y devolver la pieza fallida a NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
+Reinicie los controladores, verifique el estado del sistema y devuelva la pieza defectuosa a NetApp para completar el paso final del procedimiento de reemplazo del chasis AFF A800 .
 
 
 
 == Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
 
-Debe verificar el estado de alta disponibilidad del chasis y, si es necesario, actualizar el estado para que coincida con la configuración del sistema.
-
+.Pasos
 . En el modo de mantenimiento, desde cualquier módulo de controlador, muestre el estado de alta disponibilidad del módulo de controlador local y el chasis: `ha-config show`
 +
 El estado de alta disponibilidad debe ser el mismo para todos los componentes.
@@ -45,6 +44,12 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 
 
-== Paso 2: Devuelve la parte fallida a NetApp
+== Paso 2: Verifique el estado del sistema de almacenamiento
+
+Una vez finalizada la devolución del controlador, verifique el estado del sistema mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .  Solucione cualquier problema detectado.
+
+
+
+== Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

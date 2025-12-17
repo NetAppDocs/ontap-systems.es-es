@@ -1,0 +1,40 @@
+---
+permalink: c800/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff c800, prerequisite, replace the controller module 
+summary: Antes de reemplazar el controlador de su sistema AFF C800 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que todos los demás componentes del sistema estén funcionando correctamente, verificar que tenga el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto. 
+---
+= Requisitos para reemplazar el controlador - AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el controlador de su sistema AFF C800 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que todos los demás componentes del sistema estén funcionando correctamente, verificar que tenga el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.
+
+Revise los requisitos para sustituir el módulo del controlador.
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* El controlador en buen estado debe ser capaz de asumir el control del controlador que se está reemplazando (denominado en este procedimiento como controlador averiado).
+* No utilice este procedimiento para actualizaciones de controladores.  Referirse a https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para ayuda.
+* Si su sistema está en una configuración MetroCluster , revise https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si se debe utilizar este procedimiento.
+* Reemplace el componente defectuoso con la unidad reemplazable en campo (FRU) que recibió de NetApp.
+* Sustituya el módulo controlador por un módulo controlador del mismo modelo.  No puedes actualizar tu sistema reemplazando el módulo controlador.
+* No se pueden cambiar las unidades ni las bandejas de unidades como parte de este procedimiento.
+* El dispositivo de arranque se encuentra en el módulo de administración del sistema instalado en la parte posterior del sistema.  No es necesario mover el dispositivo de arranque al reemplazar un módulo controlador.
+* Comprenda la terminología del controlador utilizada en este procedimiento:
++
+** El controlador _dañado_ es el controlador que se está reemplazando.
+** El controlador de _reemplazo_ es el nuevo controlador que reemplaza al controlador averiado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Capture la salida de la consola del controlador en un archivo de registro de texto.
++
+Esto proporciona un registro del procedimiento para solucionar cualquier problema durante el proceso de reemplazo.
+
+
+
+.El futuro
+Después de haber revisado los requisitos para reemplazar su controlador AFF C800 , debelink:controller-replace-shutdown.html["apague el controlador defectuoso"] .

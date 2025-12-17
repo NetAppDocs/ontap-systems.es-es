@@ -11,11 +11,13 @@ summary: Debe quitar el módulo de la controladora del chasis cuando sustituya u
 
 
 [role="lead"]
-Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+Reemplace un módulo de ventilador en su sistema AFF A800 cuando un ventilador falla o no funciona de manera eficiente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general.  El proceso de reemplazo implica apagar el controlador dañado, quitarlo, reemplazar el módulo del ventilador, reinstalar el controlador y luego devolver la pieza defectuosa a NetApp.
 
 
 
 == Paso 1: Apague el controlador dañado
+
+Apague el controlador dañado
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -84,16 +86,55 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 == Paso 2: Extraiga el módulo del controlador
 
-Debe quitar el módulo de la controladora del chasis cuando sustituya un módulo de ventilador.
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Asegúrese de que todas las unidades del chasis estén firmemente asentadas contra el plano medio con los pulgares para empujar cada unidad hasta que sienta una parada positiva.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+.Vídeo - Confirmar el asiento del conductor
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Asentar las unidades]
 
-. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
-. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
-. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema del módulo del controlador, manteniendo un seguimiento del lugar en el que se conectaron los cables.
+. Compruebe las unidades del controlador en función del estado del sistema:
++
+.. En el controlador en buen estado, verifique si algún grupo RAID activo se encuentra en estado degradado, estado fallido o ambos:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<Check-missing-drives,Vaya al siguiente subpaso para verificar si faltan unidades>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Verifique si hay problemas de unidades faltantes tanto para el sistema de archivos como para las unidades de repuesto:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<remove-power-cables,ir al siguiente paso>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Retire los retenedores del cable de alimentación y luego desenchufe los cables de las fuentes de alimentación.
+. Afloje la correa de gancho y bucle del dispositivo de administración de cables.  Desconecte los cables del sistema y los módulos SFP/QSFP (si es necesario) del módulo controlador.  Tenga en cuenta la ubicación de cada cable.
 +
 Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
 
@@ -103,7 +144,7 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
 +
-image::../media/drw_a800_pcm_remove.png[Liberación del módulo del controlador]
+image::../media/drw_a800_pcm_remove.png[Extracción del módulo del controlador]
 
 +
 [cols="1,4"]
@@ -112,7 +153,9 @@ image::../media/drw_a800_pcm_remove.png[Liberación del módulo del controlador]
 
  a| 
 image:../media/icon_round_1.png["Número de llamada 1"]
-| Pestillo de bloqueo 
+ a| 
+Pestillo de bloqueo
+
 
 
  a| 
@@ -121,19 +164,19 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Pasador de bloqueo
 
 |===
-. Deslice el módulo de la controladora para sacarlo del chasis.
+. Deslice el módulo del controlador para sacarlo del chasis y colóquelo sobre una superficie plana y estable.
 +
-Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
+Sostenga la parte inferior del módulo del controlador mientras lo desliza fuera del chasis.
 
-. Coloque el módulo del controlador aparte en un lugar seguro.
 
 
 
 
 == Paso 3: Sustituir un ventilador
 
-Para sustituir un ventilador, retire el módulo de ventilador que ha fallado y sustitúyalo por un nuevo módulo de ventilador.
+Localice el módulo del ventilador defectuoso y reemplácelo por uno nuevo.
 
+.Pasos
 . Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola o ubicando el LED iluminado para el módulo de ventilador en la placa base.
 . Retire el módulo del ventilador pinzando las lengüetas de bloqueo del lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.
 +
@@ -161,14 +204,18 @@ Módulo de ventilador
 
 == Paso 4: Vuelva a instalar el módulo del controlador
 
-Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
+Vuelva a instalar el módulo del controlador y reinícielo.
 
+.Pasos
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
 . Recuperar el sistema, según sea necesario.
++
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
+
 . Complete la reinstalación del módulo del controlador:
 +
 .. Empuje firmemente el módulo de la controladora en el chasis hasta que se ajuste al plano medio y esté totalmente asentado.
@@ -187,8 +234,18 @@ El módulo del controlador comienza a arrancar tan pronto como se restaura la al
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
 
 
-. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
-. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -controller local -auto-giveback true`
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
++
+`storage failover giveback -ofnode _impaired_node_name_`.
+
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

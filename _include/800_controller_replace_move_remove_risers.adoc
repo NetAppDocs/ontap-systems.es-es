@@ -1,0 +1,39 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Extraiga la tarjeta vertical PCIe del módulo de la controladora:
++
+.. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
+.. Gire el pestillo de bloqueo de la tarjeta vertical en el lado izquierdo de la tarjeta vertical hacia arriba y hacia los módulos de ventilador.
++
+La tarjeta vertical se eleva ligeramente del módulo del controlador.
+
+.. Levante la tarjeta vertical, colóquela hacia los ventiladores de forma que el borde de chapa metálica de la tarjeta vertical salga del borde del módulo de la controladora, levante la tarjeta vertical para extraerla del módulo de la controladora y, a continuación, colóquela en una superficie plana y estable.
++
+image::../media/drw_a800_riser_2_3_remove.png[Quite los elevadores 2 y 3]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Conducto de aire
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Pestillos de bloqueo de la tarjeta vertical 1 (tarjeta vertical izquierda), la tarjeta vertical 2 (tarjeta vertical media) y 3 (tarjeta vertical derecha)
+
+|===
+
+
+. Repita el paso anterior para los elevadores restantes del módulo del controlador dañado.
+. Repita los pasos anteriores con los elevadores vacíos en la controladora de sustitución y póngelos.
+

@@ -1,0 +1,34 @@
+---
+permalink: c800/chassis-replace-workflow.html 
+sidebar: sidebar 
+keywords: aff c800, replace the chassis workflow 
+summary: Comience a reemplazar el chasis de su sistema de almacenamiento AFF C800 revisando los requisitos de reemplazo, apagando los controladores, reemplazando el chasis y verificando las operaciones del sistema. 
+---
+= Flujo de trabajo de reemplazo de chasis - AFF C800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Comience a reemplazar el chasis de su sistema de almacenamiento AFF C800 revisando los requisitos de reemplazo, apagando los controladores, reemplazando el chasis y verificando las operaciones del sistema.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:chassis-replace-requirements.html["Revisar los requisitos de reemplazo del chasis"]
+[role="quick-margin-para"]
+Revisar los requisitos de reemplazo del chasis, incluyendo la compatibilidad del sistema, las herramientas necesarias, las credenciales ONTAP y la verificación de la funcionalidad de los componentes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["dos"]link:chassis-replace-prepare.html["Prepárese para el reemplazo del chasis"]
+[role="quick-margin-para"]
+Prepárese para la sustitución del chasis localizando el sistema, reuniendo las credenciales y las herramientas, verificando el chasis de reemplazo y etiquetando los cables.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["tres"]link:chassis-replace-shutdown.html["Apague las controladoras"]
+[role="quick-margin-para"]
+Apague los controladores para realizar el mantenimiento del chasis de forma segura.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:chassis-replace-move-hardware.html["Sustituya el chasis"]
+[role="quick-margin-para"]
+Traslade los componentes del chasis averiado al chasis de repuesto.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:chassis-replace-complete-system-restore-rma.html["Complete el reemplazo del chasis"]
+[role="quick-margin-para"]
+Complete la sustitución arrancando los controladores, realizando la devolución y devolviendo el chasis averiado a NetApp.

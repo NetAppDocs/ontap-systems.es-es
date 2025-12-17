@@ -11,12 +11,15 @@ summary: Mueva las fuentes de alimentación, las unidades de disco duro y el mó
 
 
 [role="lead"]
-Mueva las fuentes de alimentación, los discos duros y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
+Reemplace el chasis de su sistema ASA A800 cuando una falla de hardware lo requiera. El proceso de reemplazo implica quitar los controladores, mover las unidades al chasis de reemplazo, quitar el chasis dañado, instalar el chasis de reemplazo y reinstalar los componentes del chasis.
 
 
 
-== Paso 1: Extraiga los módulos de la controladora
+== Paso 1: Retire los módulos del controlador del chasis antiguo
 
+Retire los módulos del controlador del chasis antiguo.
+
+.Pasos
 Para sustituir el chasis, debe quitar los módulos de la controladora del chasis antiguo.
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -62,8 +65,9 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 == Paso 2: Mueva unidades al nuevo chasis
 
-Es necesario mover las unidades desde la apertura de cada bahía en el chasis antiguo hasta la misma abertura de bahía en el nuevo chasis.
+Mueva las unidades del chasis antiguo al nuevo.
 
+.Pasos
 . Retire con cuidado el bisel de la parte delantera del sistema.
 . Quite las unidades:
 +
@@ -98,8 +102,9 @@ Asegúrese de cerrar el mango de leva lentamente para que quede alineado correct
 
 == Paso 3: Sustituya un chasis desde el bastidor del equipo o el armario del sistema
 
-Debe quitar el chasis existente del rack del equipo o armario del sistema antes de poder instalar el chasis de reemplazo.
+Reemplace el chasis dañado en el rack del equipo o en el gabinete del sistema por el chasis nuevo.
 
+.Pasos
 . Quite los tornillos de los puntos de montaje del chasis.
 . Con dos personas, deslice el chasis antiguo fuera de los rieles del rack en un armario del sistema o rack del equipo y, a continuación, colóquelo aparte.
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -111,12 +116,13 @@ Debe quitar el chasis existente del rack del equipo o armario del sistema antes 
 
 
 
-== Paso 4: Instale los módulos del controlador
+== Paso 4: Instale los módulos del controlador en el nuevo chasis
 
 Después de instalar los módulos del controlador en el nuevo chasis, debe arrancarlo.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
 
+.Pasos
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
 
@@ -144,3 +150,6 @@ El módulo del controlador comienza a arrancar tan pronto como se restaura la al
 
 . Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
 
+
+.El futuro
+Después de haber reemplazado el chasis ASA A800 dañado y reinstalado los componentes, debelink:chassis-replace-complete-system-restore-rma.html["complete el reemplazo del chasis"]

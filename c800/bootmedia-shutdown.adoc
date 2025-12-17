@@ -11,7 +11,7 @@ summary: Después de completar las tareas de NVE o NSE, deberá completar el apa
 
 
 [role="lead"]
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apague el controlador dañado en su sistema de almacenamiento AFF C800 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso de recuperación automática del medio de arranque.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
@@ -107,3 +107,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:bootmedia-replace.html["sustituya el soporte de arranque"].

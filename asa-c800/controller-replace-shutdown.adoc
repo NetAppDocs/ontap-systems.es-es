@@ -11,6 +11,8 @@ summary: Para apagar el controlador dañado, debe determinar el estado del contr
 
 
 [role="lead"]
+Apague el controlador en su sistema de almacenamiento ASA C800 para evitar la pérdida de datos y garantizar la estabilidad del sistema al reemplazar el controlador.
+
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
 .Acerca de esta tarea
@@ -73,3 +75,6 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:controller-replace-move-hardware.html["sustituya el controlador"].

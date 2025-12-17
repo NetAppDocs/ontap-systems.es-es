@@ -11,6 +11,8 @@ summary: Tras completar el reemplazo y el arranque del hardware en modo de mante
 
 
 [role="lead"]
+Devuelva el control de los recursos de almacenamiento al controlador de reemplazo para que su sistema AFF A800 pueda reanudar su funcionamiento normal.  El procedimiento de devolución varía según el tipo de cifrado utilizado por su sistema: sin cifrado o cifrado mediante Onboard Key Manager (OKM).
+
 Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario.
 
 
@@ -68,3 +70,6 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 . Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
 . Confirme que el ajuste ha cambiado: `ha-config show`
 
+
+.El futuro
+Después de transferir la propiedad de los recursos de almacenamiento de nuevo a la controladora de reemplazo, debe link:controller-replace-restore-system-rma.html["complete el reemplazo de la controladora"]realizar un procedimiento.

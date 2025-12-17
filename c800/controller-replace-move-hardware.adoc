@@ -11,7 +11,7 @@ summary: Para sustituir un módulo de controladora, debe extraer la controladora
 
 
 [role="lead"]
-Para sustituir la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de controladora de reemplazo, instalar el módulo de controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+Reemplace el controlador de su sistema AFF C800 cuando una falla de hardware lo requiera. El proceso de reemplazo implica quitar el controlador dañado, mover los componentes al controlador de reemplazo, instalar el controlador de reemplazo y reiniciarlo.
 
 
 
@@ -19,14 +19,53 @@ Para sustituir la controladora, debe retirar la controladora dañada, mover los 
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Asegúrese de que todas las unidades del chasis estén firmemente asentadas contra el plano medio con los pulgares para empujar cada unidad hasta que sienta una parada positiva.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+.Vídeo - Confirmar el asiento del conductor
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Asentar las unidades]
 
-. Vaya a la parte posterior del chasis. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
-. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
-. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.
+. Compruebe las unidades del controlador en función del estado del sistema:
++
+.. En el controlador en buen estado, verifique si algún grupo RAID activo se encuentra en estado degradado, estado fallido o ambos:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<Check-missing-drives,Vaya al siguiente subpaso para verificar si faltan unidades>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Verifique si hay problemas de unidades faltantes tanto para el sistema de archivos como para las unidades de repuesto:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<remove-power-cables,ir al siguiente paso>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Retire los retenedores del cable de alimentación y luego desenchufe los cables de las fuentes de alimentación.
+. Afloje la correa de gancho y bucle del dispositivo de administración de cables.  Desconecte los cables del sistema y los módulos SFP/QSFP (si es necesario) del módulo controlador.  Tenga en cuenta la ubicación de cada cable.
 +
 Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
 
@@ -36,7 +75,7 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
 +
-image::../media/drw_a800_pcm_remove.png[Suelte el módulo del controlador]
+image::../media/drw_a800_pcm_remove.png[Extracción del módulo del controlador]
 
 +
 [cols="1,4"]
@@ -58,42 +97,7 @@ Pasador de bloqueo
 |===
 . Deslice el módulo del controlador para sacarlo del chasis y colóquelo sobre una superficie plana y estable.
 +
-Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis. .
-
-. Coloque el módulo del controlador sobre una superficie plana y estable.
-. Abra el conducto de aire del módulo del controlador:
-+
-.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
-.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
-+
-image::../media/drw_a800_open_air_duct.png[Abra el conducto de aire]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Número de llamada 1"]
- a| 
-Lengüetas de bloqueo del conducto de aire
-
-
-
- a| 
-image:../media/icon_round_2.png["Número de llamada 2"]
- a| 
-Deslizar el conducto de aire hacia los módulos de ventilador
-
-
-
- a| 
-image:../media/icon_round_3.png["Número de llamada 3"]
- a| 
-Girar el conducto de aire hacia los módulos del ventilador
-
-|===
-
+Sostenga la parte inferior del módulo del controlador mientras lo desliza fuera del chasis.
 
 
 
@@ -101,8 +105,9 @@ Girar el conducto de aire hacia los módulos del ventilador
 
 == Paso 2: Mueva las fuentes de alimentación
 
-Debe mover las fuentes de alimentación del módulo del controlador dañado al módulo del controlador de recambio cuando sustituya un módulo de controlador.
+Mueva las fuentes de alimentación al módulo controlador de reemplazo.
 
+.Pasos
 . Gire el mango de la leva de forma que pueda utilizarse para extraer la fuente de alimentación del módulo del controlador mientras presiona la lengüeta de bloqueo.
 +
 
@@ -144,8 +149,9 @@ NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al desl
 
 == Paso 3: Mueva los ventiladores
 
-Debe mover los ventiladores del módulo de la controladora dañada al módulo de sustitución cuando sustituya un módulo de la controladora con fallos.
+Mueva los módulos del ventilador al módulo controlador de reemplazo.
 
+.Pasos
 . Retire el módulo del ventilador pinzando las lengüetas de bloqueo del lado del módulo del ventilador y, a continuación, levante el módulo del ventilador para extraerlo del módulo del controlador.
 +
 image::../media/drw_a800_replace_fan.png[Retire el ventilador]
@@ -176,8 +182,9 @@ Módulo de ventilador
 
 == Paso 4: Mueva la batería NVDIMM
 
-Al sustituir el módulo de controlador, debe mover la batería NVRAM del módulo de controlador dañado al módulo de controlador de reemplazo
+Mueva la batería NVDIMM al módulo controlador de reemplazo.
 
+.Pasos
 . Abra la cubierta del conducto de aire y localice la batería NVDIMM en la tarjeta vertical.
 +
 image::../media/drw_a800_nvdimm_battery_replace.png[Sustituya la batería NVDIMM]
@@ -224,8 +231,9 @@ Paquete de baterías NVDIMM
 
 == Paso 5: Retire los elevadores PCIe
 
-Como parte del proceso de sustitución de la controladora, debe retirar los módulos PCIe del módulo de la controladora dañada. Se deben instalar en la misma ubicación en el módulo de controladora de repuesto una vez que los NVDIMMS y los DIMM se han movido al módulo de controladora de reemplazo.
+Retire los elevadores PCIe del módulo controlador dañado.
 
+.Pasos
 . Extraiga la tarjeta vertical PCIe del módulo de la controladora:
 +
 .. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
@@ -265,8 +273,9 @@ Pestillos de bloqueo de la tarjeta vertical 1 (tarjeta vertical izquierda), la t
 
 == Paso 6: Mover los DIMM del sistema
 
-Para mover los módulos DIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.
+Mueva los DIMM del sistema al módulo controlador de reemplazo.
 
+.Pasos
 . Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
 . Extraiga el DIMM de su ranura empujando lentamente las dos lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
 +
@@ -290,8 +299,9 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 == Paso 7: Mueva los NVDIMM
 
-Para mover los NVDIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.
+Mueva los NVDIMMS al módulo controlador de reemplazo.
 
+.Pasos
 . Localice los NVDIMM en el módulo del controlador.
 +
 image::../media/drw_a800_no_risers_nvdimm_move.svg[Mueva NVDIMM]
@@ -337,11 +347,10 @@ NOTE: Inspeccione visualmente el NVDIMM para comprobar que está alineado de for
 
 == Paso 8: Mueva el soporte de arranque
 
-Debe mover el dispositivo de soporte de arranque de la controladora afectada e instalarlo en la controladora de sustitución.
+Mueva el medio de arranque al módulo controlador de reemplazo.
 
-El soporte de arranque se encuentra debajo de la tarjeta vertical 3.
-
-. Busque el soporte de arranque:
+.Pasos
+. Localice el medio de arranque en Riser 3.
 +
 image::../media/drw_a800_pcm_replace_only_boot_media.png[Retire el soporte de arranque]
 
@@ -406,8 +415,9 @@ No apriete en exceso el tornillo o podría dañar el soporte del maletero.
 
 == Paso 9: Instalar los elevadores PCIe
 
-Los elevadores PCIe se instalan en el módulo de controladora de reemplazo después de mover los DIMM, NVDIMM y los medios de arranque.
+Instale los elevadores en el módulo controlador de reemplazo.
 
+.Pasos
 . Instale la tarjeta vertical en el módulo de la controladora de reemplazo:
 +
 .. Alinee el reborde de la tarjeta vertical con la parte inferior de la chapa metálica del módulo del controlador.
@@ -426,45 +436,17 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 == Paso 10: Instale el módulo del controlador
 
-Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.
+Vuelva a instalar el módulo del controlador y reinícielo.
 
-. Si aún no lo ha hecho, cierre el conducto de aire:
-+
-.. Gire el conducto de aire hacia abajo hasta el módulo del controlador.
-.. Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
-.. Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
-+
-image::../media/drw_a800_close_air_duct.png[Cierre el conducto de aire]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Número de llamada 1"]
- a| 
-Lengüetas de bloqueo
-
-
-
- a| 
-image:../media/icon_round_2.png["Número de llamada 2"]
- a| 
-Deslice el émbolo
-
-|===
-
-
+.Pasos
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
-. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
+. Recuperar el sistema, según sea necesario.
 +
-
-NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
 
 . Complete la reinstalación del módulo del controlador:
 +
@@ -477,15 +459,26 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
-
-
-. Conecte los cables del sistema y los módulos del transceptor al módulo del controlador y vuelva a instalar el dispositivo de administración de cables.
-. Enchufe los cables de alimentación en las fuentes de alimentación y vuelva a instalar los retenes del cable de alimentación.
+.. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
 +
-El módulo del controlador comienza a arrancar tan pronto como se conecta a la alimentación. Esté preparado para interrumpir el proceso de arranque.
+El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.
 
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
 +
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-NOTE: Si el sistema dispone de fuentes de alimentación CC, asegúrese de que los tornillos de ajuste manual del cable de la fuente de alimentación están apretados.
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
+
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
 
 
+
+.El futuro
+Después de haber reemplazado el controlador AFF C800 dañado, deberálink:controller-replace-system-config-restore-and-verify.html["restaure la configuración del sistema"]

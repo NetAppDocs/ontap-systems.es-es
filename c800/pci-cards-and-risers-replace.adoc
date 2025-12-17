@@ -11,15 +11,20 @@ summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tar
 
 
 [role="lead"]
-Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas, quitar los módulos SFP y QSFP de las tarjetas antes de quitar la tarjeta vertical, volver a instalar la tarjeta vertical y, a continuación, volver a instalar los módulos SFP y QSFP antes de cablear las tarjetas.
+Reemplace o agregue un módulo de E/S en su sistema AFF C800 cuando el módulo falla, requiere una actualización para soportar un mayor rendimiento o funciones adicionales. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de E/S defectuoso, reiniciar la controladora y devolver la pieza defectuosa a NetApp.
 
-* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
+.Antes de empezar
+* Debe tener disponible la pieza nueva o de repuesto de NetApp .
+* Asegúrese de que el resto de los componentes del sistema de almacenamiento funcionen correctamente. De lo contrario, póngase en contacto con el soporte técnico.
+* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
 * Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
 
 
 
 
 == Paso 1: Apague el controlador dañado
+
+Apague o tome el control de la controladora dañada.
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
@@ -90,14 +95,53 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
 
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Asegúrese de que todas las unidades del chasis estén firmemente asentadas contra el plano medio con los pulgares para empujar cada unidad hasta que sienta una parada positiva.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.svg[Unidades de disco de asiento]
+.Vídeo - Confirmar el asiento del conductor
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image::../media/drw_a800_drive_seated_IEOPS-960.svg[Asentar las unidades]
 
-. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
-. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
-. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los módulos SFP y QSFP (si es necesario) del módulo de controlador, manteniendo un seguimiento del lugar en el que se conectan los cables.
+. Compruebe las unidades del controlador en función del estado del sistema:
++
+.. En el controlador en buen estado, verifique si algún grupo RAID activo se encuentra en estado degradado, estado fallido o ambos:
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<Check-missing-drives,Vaya al siguiente subpaso para verificar si faltan unidades>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]Verifique si hay problemas de unidades faltantes tanto para el sistema de archivos como para las unidades de repuesto:
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** Si el comando retorna `There are no entries matching your query.` continuar<<remove-power-cables,ir al siguiente paso>> .
+*** Si el comando devuelve otros resultados, recopile los datos de AutoSupport de ambos controladores y comuníquese con el soporte de NetApp para obtener más ayuda.
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]Retire los retenedores del cable de alimentación y luego desenchufe los cables de las fuentes de alimentación.
+. Afloje la correa de gancho y bucle del dispositivo de administración de cables.  Desconecte los cables del sistema y los módulos SFP/QSFP (si es necesario) del módulo controlador.  Tenga en cuenta la ubicación de cada cable.
 +
 Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
 
@@ -107,7 +151,7 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
 +
-image::../media/drw_a800_pcm_remove.png[Suelte el módulo del controlador]
+image::../media/drw_a800_pcm_remove.png[Extracción del módulo del controlador]
 
 +
 [cols="1,4"]
@@ -127,52 +171,19 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Pasador de bloqueo
 
 |===
-. Deslice el módulo de la controladora para sacarlo del chasis.
+. Deslice el módulo del controlador para sacarlo del chasis y colóquelo sobre una superficie plana y estable.
 +
-Asegúrese de que admite la parte inferior del módulo de la controladora cuando la deslice para sacarlo del chasis.
-
-. Coloque el módulo del controlador sobre una superficie plana y estable y, a continuación, abra el conducto de aire:
-+
-.. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
-.. Deslice el conducto de aire hacia los módulos del ventilador y gírelo hacia arriba hasta su posición completamente abierta.
-+
-image::../media/drw_a800_open_air_duct.png[Abra el conducto de aire]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Número de llamada 1"]
- a| 
-Lengüetas de bloqueo del conducto de aire
-
-
-
- a| 
-image:../media/icon_round_2.png["Número de llamada 2"]
- a| 
-Deslizar el conducto de aire hacia los módulos de ventilador
-
-
-
- a| 
-image:../media/icon_round_3.png["Número de llamada 3"]
- a| 
-Girar el conducto de aire hacia los módulos del ventilador
-
-|===
+Sostenga la parte inferior del módulo del controlador mientras lo desliza fuera del chasis.
 
 
 
 
 
+== Paso 3: Reemplace la tarjeta PCIe
 
-== Paso 3: Sustituya una tarjeta PCIe
+Reemplace una tarjeta PCIe quitando el cableado y cualquier QSFP y SFP de los puertos de las tarjetas PCIe en el riser de destino, quitando el riser del módulo del controlador, quitando y reemplazando la tarjeta PCIe, reinstalando el riser y cualquier QSFP y SFP en los puertos y volviendo a calibrar los puertos.
 
-Para sustituir una tarjeta PCIe, debe retirar el cableado y todos los QSFP e SFP de los puertos de las tarjetas PCIe de la tarjeta vertical objetivo, quitar la tarjeta vertical del módulo de la controladora, retirar y sustituir la tarjeta PCIe, volver a instalar la tarjeta vertical y cualquier QSFP y SFP en los puertos, y conecte los cables de los puertos.
-
+.Pasos
 . Determine si la tarjeta que está reemplazando es de la tarjeta vertical 1 o si es de la tarjeta vertical 2 ó 3.
 +
 ** Si va a sustituir la tarjeta PCIe 100GbE en la tarjeta vertical 1, utilice los pasos 2 - 3 y 6 - 7.
@@ -319,45 +330,17 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 == Paso 4: Vuelva a instalar el módulo del controlador
 
-Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
+Vuelva a instalar el módulo del controlador y reinícielo.
 
-. Si aún no lo ha hecho, cierre el conducto de aire:
-+
-.. Gire el conducto de aire hacia abajo hasta el módulo del controlador.
-.. Deslice el conducto de aire hacia los elevadores hasta que las lengüetas de bloqueo encajen en su lugar.
-.. Inspeccione el conducto de aire para asegurarse de que está correctamente asentado y bloqueado en su lugar.
-+
-image::../media/drw_a800_close_air_duct.png[Cierre el conducto de aire]
-
-+
-[cols="1,4"]
-|===
-
-
- a| 
-image:../media/icon_round_1.png["Número de llamada 1"]
- a| 
-Lengüetas de bloqueo
-
-
-
- a| 
-image:../media/icon_round_2.png["Número de llamada 2"]
- a| 
-Deslice el émbolo
-
-|===
-
-
+.Pasos
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
-. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
+. Recuperar el sistema, según sea necesario.
 +
-
-NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
 
 . Complete la reinstalación del módulo del controlador:
 +
@@ -370,19 +353,25 @@ Los pestillos de bloqueo se elevan cuando el módulo del controlador está compl
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
 
 .. Gire los pestillos de bloqueo hacia arriba, inclinándolos para que los pasadores de bloqueo se puedan separar y, a continuación, bajarlos hasta la posición de bloqueo.
-
-
-. Conecte los cables del sistema y los módulos del transceptor al módulo del controlador y vuelva a instalar el dispositivo de administración de cables.
-. Enchufe los cables de alimentación en las fuentes de alimentación y vuelva a instalar los retenes del cable de alimentación.
+.. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
 +
-El módulo del controlador comienza a arrancar tan pronto como se conecta a la alimentación. Esté preparado para interrumpir el proceso de arranque.
+El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.
 
+.. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
+
+
+. Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento:
 +
+`storage failover giveback -ofnode _impaired_node_name_`.
 
-NOTE: Si el sistema dispone de fuentes de alimentación CC, asegúrese de que los tornillos de ajuste manual del cable de la fuente de alimentación están apretados.
+. Si la devolución automática está desactivada, vuelva a habilitarla:
++
+`storage failover modify -node local -auto-giveback true`.
 
-. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
-. Si la devolución automática está desactivada, vuelva a habilitarla: `storage failover modify -node local -auto-giveback true`
+. Si AutoSupport está habilitado, restaure o desactive la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`.
+
 
 
 

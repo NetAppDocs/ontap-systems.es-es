@@ -1,0 +1,43 @@
+---
+permalink: a800/chassis-replace-prepare.html 
+sidebar: sidebar 
+keywords: aff a800, replace the chassis 
+summary: Prepárese para reemplazar el chasis dañado en su sistema AFF A800 identificando el chasis dañado, verificando los componentes de reemplazo y etiquetando los cables y los módulos del controlador. 
+---
+= Prepárese para reemplazar el chasis - AFF A800
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepárese para reemplazar el chasis dañado en su sistema AFF A800 identificando el chasis dañado, verificando los componentes de reemplazo y etiquetando los cables y los módulos del controlador.
+
+.Pasos
+. Conéctese al puerto de la consola de serie para la interfaz con el sistema y supervisarlo.
+. Enciende el LED de ubicación del controlador:
++
+.. Utilice el `system controller location-led show` comando para mostrar el estado actual del LED de ubicación.
+.. Encienda el LED de ubicación:
++
+`system controller location-led modify -node _node1_ -state on`
+
++
+El LED de ubicación permanece encendido durante 30 minutos.
+
+
+
+. Antes de abrir el envase, examine la etiqueta del envase y verifique lo siguiente:
++
+** Número de pieza del componente
+** Descripción de la pieza
+** Cantidad en la caja
+
+
+. Retire el contenido del embalaje y guarde el embalaje para devolver el componente defectuoso a NetApp.
+. Etiquete todos los cables conectados al sistema de almacenamiento.  Esto garantiza un recableado adecuado más adelante en este procedimiento.
+. Conéctate con la tierra si aún no lo estás.
+
+
+.El futuro
+Una vez que se haya preparado para reemplazar el hardware del chasis AFF A800 , debelink:chassis-replace-shutdown.html["apague las controladoras"] .

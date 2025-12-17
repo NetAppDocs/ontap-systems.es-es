@@ -11,7 +11,7 @@ summary: Antes de apagar la controladora con deterioro y comprobar el estado de 
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en el sistema de almacenamiento, debe verificar el estado y la compatibilidad de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Para garantizar la seguridad de los datos en su sistema de almacenamiento ASA A800, debe verificar la compatibilidad y el estado de la clave de cifrado en el medio de arranque. Compruebe si su versión de ONTAP admite NetApp Volume Encryption (NVE) y, antes de apagar el controlador, compruebe si el administrador de claves está activo.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
@@ -209,3 +209,6 @@ Necesitará esta información de respaldo si necesita recuperar OKM manualmente 
 --
 ====
 
+
+.El futuro
+Después de comprobar la compatibilidad y el estado de la clave de cifrado en el soporte de arranque, debe link:bootmedia-shutdown.html["apague la controladora"].
