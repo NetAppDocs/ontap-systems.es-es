@@ -11,7 +11,7 @@ summary: Especificaciones clave para el grupo de plataformas A1K
 
 
 [role="lead"]
-Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento AFF A1K en un solo par de alta disponibilidad.  Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
+Las siguientes son especificaciones seleccionadas para el sistema de almacenamiento AFF A1K en un solo par de alta disponibilidad. Visite NetApp Hardware Universe (HWU) para conocer las especificaciones completas de este sistema de almacenamiento.
 
 
 
@@ -23,7 +23,13 @@ Las siguientes son especificaciones seleccionadas para el sistema de almacenamie
 * Factor de forma: chasis 2U con 1 controlador HA
 * Versión de ONTAP : ONTAP: 9.16.1P2
 * Ranuras de expansión PCIe: 18
-* Versión mínima de ONTAP : ONTAP 9.15.1RC2 == Máximos de escalamiento
+* Versión mínima de ONTAP : ONTAP 9.15.1RC2
+
+
+
+
+== Máximos de escalamiento
+
 * Tipo: NAS; Pares HA: 12; Capacidad bruta: 176,3 PB / 156,5 PiB; Memoria máxima: 24576 GB
 * Tipo: SAN; Pares HA: 6; Capacidad bruta: 88,1 PB / 78,3 PiB; Memoria máxima: 12288 GB
 * Tipo: Par HA; Capacidad bruta: 14,7 PB / 13,0 PiB; Memoria máxima: 2048,0000
@@ -84,14 +90,20 @@ No hay datos de E/S integrados.
 * SMB 2.x
 * SMB 3.0
 * SMB 3.1
-* SMB 3.1.1 == Especificaciones del entorno del sistema
+* SMB 3.1.1
+
+
+
+
+== Especificaciones del entorno del sistema
+
 * Potencia típica: 4402 BTU/h
 * Potencia en el peor de los casos: 6174 BTU/h
 * Peso: 59,5 lb 27,0 kg
 * Altura: 2U
 * Ancho: 19” compatible con rack IEC (17,7” 44,9 cm)
 * Profundidad: 30,0” (35,2” con soporte para gestión de cables)
-* Temperatura/altitud/humedad de funcionamiento: 10 °C a 35 °C (50 °F a 95 °F) a una altitud de 3048 m (10 000 pies); humedad relativa del 8 % al 80 %, sin condensación
+* Temperatura/altitud/humedad de funcionamiento: 10 °C a 35 °C (50 °F a 95 °F) a una altitud de hasta 3048 m (10 000 pies); humedad relativa del 8 % al 80 %, sin condensación
 * Temperatura/humedad sin funcionamiento: -40 °C a 70 °C (-40 °F a 158 °F) hasta 12192 m (40000 pies) 10 % a 95 % de humedad relativa, sin condensación, en el contenedor original
 * Ruido acústico: Potencia sonora declarada (LwAd): 8,5 Presión sonora (LpAm) (posiciones de transeúntes): 67,7 dB
 
@@ -115,5 +127,5 @@ No hay datos de E/S integrados.
 * Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP
 * Controladores redundantes intercambiables en caliente
 * Fuentes de alimentación redundantes intercambiables en caliente
-* Gestión en banda de SAS mediante conexiones SAS para estanterías externas [//] 2025-10-15 ontap-systems-internal/issues/1357
+* Gestión en banda de SAS a través de conexiones SAS para estanterías externas
 
