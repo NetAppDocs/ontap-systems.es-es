@@ -1,8 +1,8 @@
 ---
 permalink: a700/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, shutdown, check, onboard, encryption, key 
-summary: Antes de apagar el nodo con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado del nodo con deterioro, deshabilitar la devolución automática del nodo y comprobar la versión de ONTAP que el sistema se está ejecutando. 
+keywords: aff a700, shutdown, check, onboard, encryption, key, manual, manual boot recovery 
+summary: Antes de apagar el nodo dañado y verificar el estado de las claves de cifrado integradas, debe verificar el estado del nodo dañado, deshabilitar la devolución automática y verificar qué versión de ONTAP está ejecutando el sistema. El sistema AFF A700 solo admite procedimientos de recuperación de medios de arranque manuales. 
 ---
 = Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A700
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Antes de apagar el nodo con deterioro y comprobar el estado de las clav
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en el sistema de almacenamiento, debe verificar el estado y la compatibilidad de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Para garantizar la seguridad de los datos en su sistema de almacenamiento, debe verificar la compatibilidad y el estado de la clave de cifrado en su medio de arranque. El sistema AFF A700 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
+
+Compruebe si su versión de ONTAP admite NetApp Volume Encryption (NVE) y, antes de apagar el controlador, compruebe si el administrador de claves está activo.
 
 
 

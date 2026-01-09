@@ -1,8 +1,8 @@
 ---
 permalink: fas2600/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: fas2600, verify environment variables, image, boot the recovery image 
-summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+keywords: fas2600, verify environment variables, image, boot the recovery image, manual, manual boot recovery 
+summary: Arranque la imagen de recuperación de ONTAP desde la unidad USB en un sistema FAS2600 para restaurar el medio de arranque. El sistema FAS2600 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Arranque la imagen de recuperación - FAS2600
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sist
 
 
 [role="lead"]
-Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+Arranque la imagen de recuperación de ONTAP desde la unidad USB en un sistema FAS2600 para restaurar el medio de arranque. Este procedimiento incluye arrancar desde la unidad flash USB, restaurar el sistema de archivos, verificar las variables ambientales y devolver el controlador al funcionamiento normal después del reemplazo del medio de arranque.
+
+El sistema FAS2600 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 .Pasos
 . Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`

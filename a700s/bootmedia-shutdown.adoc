@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, completing, complete, nve, nse, shutdown, impair, controller, shut down the controller 
-summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+keywords: aff a700s, aff, a700s, completing, complete, nve, nse, shutdown, impair, controller, shut down the controller, manual, manual boot recovery 
+summary: Apague el controlador dañado en un sistema AFF A700s después de completar las comprobaciones de cifrado. El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Apague la controladora AFF A700s
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: Después de completar las tareas de NVE o NSE, deberá completar el apa
 
 
 [role="lead"]
+Apague el controlador dañado en un sistema AFF A700s después de completar las comprobaciones de cifrado. Este procedimiento incluye llevar el controlador al indicador LOADER, capturar las variables ambientales de arranque para referencia y preparar el controlador para el reemplazo del medio de arranque.
+
+El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
+
 Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
 
 .Pasos

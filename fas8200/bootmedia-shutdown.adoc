@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: fas8200, shut down the impaired controller 
-summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+keywords: fas8200, shut down the impaired controller, manual, manual boot recovery 
+summary: Apague el controlador dañado en un sistema FAS8200 después de completar las comprobaciones de cifrado. El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Apague la controladora dañada - FAS8200
 :allow-uri-read: 
@@ -15,7 +15,15 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 == Opción 1: La mayoría de los sistemas
 
 [role="lead"]
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Apague el controlador dañado en un sistema FAS8200 después de completar las comprobaciones de cifrado. Este procedimiento incluye llevar el controlador al indicador LOADER, capturar las variables ambientales de arranque como referencia y preparar el controlador para el reemplazo del medio de arranque, con pasos específicos que varían según la configuración del sistema.
+
+El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
+
+
+
+== Opción 1: La mayoría de los sistemas
+
+Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
 
 .Pasos
 . Lleve la controladora dañada al aviso DEL CARGADOR:

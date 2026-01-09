@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, shut, down, impair, controller, check, status, onboard, encryption, keys, status, disable, automatic, giveback, ontap, pre-shutdown, pre-shutdown checks for onboard encyption keys 
-summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
+keywords: aff a700s, aff, a700s, shut, down, impair, controller, check, status, onboard, encryption, keys, status, disable, automatic, giveback, ontap, pre-shutdown, pre-shutdown checks for onboard encyption keys, manual, manual boot recovery 
+summary: Verifique el estado y la compatibilidad de la clave de cifrado antes de apagar el controlador dañado en un sistema AFF A700s . El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Compruebe la compatibilidad y el estado de la clave de cifrado: AFF A700s
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Antes de apagar la controladora con deterioro y comprobar el estado de 
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en el sistema de almacenamiento, debe verificar el estado y la compatibilidad de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Verifique el estado y la compatibilidad de la clave de cifrado antes de apagar el controlador dañado en un sistema AFF A700s . Este procedimiento incluye verificar la compatibilidad de la versión de ONTAP con NetApp Volume Encryption (NVE), verificar la configuración del administrador de claves y realizar copias de seguridad de la información de cifrado para garantizar la seguridad de los datos durante la recuperación del medio de arranque.
+
+El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 
 

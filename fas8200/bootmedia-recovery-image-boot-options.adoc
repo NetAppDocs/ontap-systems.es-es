@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-recovery-image-boot-options.html 
 sidebar: sidebar 
-keywords: fas8200, boot the recovery image 
-summary: El procedimiento para arrancar la controladora con deterioro de la imagen de recuperación depende de si el sistema está en una configuración MetroCluster de dos nodos. 
+keywords: fas8200, boot the recovery image, manual, manual boot recovery 
+summary: Arranque la imagen de recuperación de ONTAP desde la unidad USB en un sistema FAS8200 para restaurar el medio de arranque. El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Arranque la imagen de recuperación: FAS8200
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: El procedimiento para arrancar la controladora con deterioro de la imag
 
 
 [role="lead"]
-El procedimiento para arrancar la controladora con deterioro de la imagen de recuperación depende de si el sistema está en una configuración MetroCluster de dos nodos.
+Arranque la imagen de recuperación de ONTAP desde la unidad USB en un sistema FAS8200 para restaurar el medio de arranque. Este procedimiento incluye arrancar desde la unidad flash USB, restaurar el sistema de archivos, verificar las variables ambientales y devolver el controlador al funcionamiento normal, con pasos específicos que varían dependiendo de si el sistema está en una configuración MetroCluster de dos nodos.
+
+El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 
 

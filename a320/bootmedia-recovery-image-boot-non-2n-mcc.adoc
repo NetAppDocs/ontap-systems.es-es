@@ -1,8 +1,8 @@
 ---
 permalink: a320/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: aff a320, aff, a320, procedure, boot, impair, node, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image 
-summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
+keywords: aff a320, aff, a320, procedure, boot, impair, node, recovery, image, system, two-node, metrocluster, configuration, boot the recovery image, manual, manual boot recovery 
+summary: Debe iniciar la imagen ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables ambientales. El sistema AFF A320 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Arranque la imagen de recuperación - AFF A320
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sist
 
 
 [role="lead"]
-Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+Debe iniciar la imagen ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables ambientales. El sistema AFF A320 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 . Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
 +

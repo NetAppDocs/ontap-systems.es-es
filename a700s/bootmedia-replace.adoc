@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-replace.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, locate, fail, boot, media, controller, module, pcie, led, replace, replace the boot media 
-summary: Debe localizar el medio de arranque con fallos en el módulo de la controladora. Para ello, debe quitar el módulo PCIe medio del módulo de la controladora, localizar el medio de arranque con fallos mediante el LED encendido cerca del medio de arranque y, a continuación, sustituir el medio de arranque. 
+keywords: aff a700s, aff, a700s, locate, fail, boot, media, controller, module, pcie, led, replace, replace the boot media, manual, manual boot recovery 
+summary: Reemplace el medio de arranque fallido en un módulo controlador AFF A700s . El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Sustituya el medio de arranque - AFF A700s
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Debe localizar el medio de arranque con fallos en el módulo de la cont
 
 
 [role="lead"]
-Debe quitar el módulo de la controladora del chasis, abrirlo y luego sustituir el soporte de arranque con errores.
+Reemplace el medio de arranque fallido en un módulo controlador AFF A700s . Este procedimiento incluye quitar el módulo del controlador del chasis, localizar el medio de arranque defectuoso usando el indicador LED encendido, reemplazar físicamente el componente del medio de arranque y restaurar el sistema a su funcionamiento normal.
+
+El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 
 

@@ -1,8 +1,8 @@
 ---
 permalink: fas9000/bootmedia-encryption-restore.html 
 sidebar: sidebar 
-keywords: aff a700, fas9000, post, boot, media, replacement, steps, okm, nse, nve 
-summary: 'Una vez marcadas las variables de entorno, debe completar los pasos específicos de los sistemas que tienen activada la opción Onboard Key Manager (OKM), el cifrado en almacenamiento de NetApp (NSE) o el cifrado de volúmenes de NetApp (NVE).' 
+keywords: aff a700, fas9000, post, boot, media, replacement, steps, okm, nse, nve, manual, manual boot recovery 
+summary: 'Una vez que se verifican las variables de entorno, debe completar los pasos específicos de los sistemas que tienen Onboard Key Manager (OKM), NetApp Storage Encryption (NSE) o NetApp Volume Encryption (NVE) habilitados. El sistema FAS9000 solo admite procedimientos de recuperación de medios de arranque manuales.' 
 ---
 = Restaurar cifrado - FAS9000
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Una vez marcadas las variables de entorno, debe completar los pasos es
 
 
 [role="lead"]
-Restaure el cifrado en el soporte de arranque de reemplazo.
+Restaurar el cifrado en el medio de arranque de reemplazo. El sistema FAS9000 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 Complete los pasos adecuados para restaurar el cifrado en su sistema según el tipo de administrador de claves que utilice.  Si no está seguro de qué administrador de claves utiliza su sistema, revise la configuración que capturó al inicio del procedimiento de reemplazo del medio de arranque.
 

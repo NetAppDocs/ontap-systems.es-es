@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-transfer-boot-image.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive 
-summary: Este procedimiento solo debe usarse si falló la restauración de medios de arranque secundarios o si el archivo image.tgz no se encuentra en el medio de arranque secundario. 
+keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive, manual, manual boot recovery 
+summary: Transfiera la imagen de arranque al medio de arranque de reemplazo en un sistema AFF A700s utilizando el medio de arranque secundario o una unidad flash USB. El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Transfiera la imagen de arranque al medio de arranque - AFF A700s
 :allow-uri-read: 
@@ -11,11 +11,13 @@ summary: Este procedimiento solo debe usarse si falló la restauración de medio
 
 
 [role="lead"]
-Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante la imagen del segundo soporte de arranque instalado en el módulo del controlador, el método principal para restaurar la imagen del sistema, O al transferir la imagen de inicio al soporte de arranque mediante una unidad flash USB cuando se produjo un error en la restauración del soporte de arranque secundario o si el archivo image.tgz no se encuentra en el soporte de arranque secundario.
+Transfiera la imagen de arranque al medio de arranque de reemplazo en un sistema AFF A700s utilizando el medio de arranque secundario o una unidad flash USB. Este procedimiento incluye la restauración desde la imagen en el medio de arranque secundario como método principal o el uso de una unidad flash USB si la restauración del medio de arranque secundario falla o falta el archivo image.tgz.
+
+El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 
 
-== Opción 1: Transfiera archivos al soporte de arranque mediante la recuperación de copia de seguridad desde el segundo soporte de arranque
+== Opción 1: Transferir archivos mediante la recuperación de respaldo desde el segundo medio de arranque
 
 Puede instalar la imagen del sistema en el soporte de arranque de reemplazo mediante la imagen del segundo soporte de arranque instalado en el módulo de la controladora. Este es el método principal para transferir los archivos de medios de arranque al medio de arranque de reemplazo en sistemas con dos medios de arranque en el módulo del controlador.
 
@@ -84,7 +86,7 @@ La imagen se descarga desde el soporte de arranque secundario.
 
 
 
-== Opción 2: Transfiera la imagen de inicio al soporte de arranque mediante una unidad flash USB
+== Opción 2: Transferir la imagen de arranque mediante una unidad flash USB
 
 Este procedimiento solo debe usarse si falló la restauración de medios de arranque secundarios o si el archivo image.tgz no se encuentra en el medio de arranque secundario.
 

@@ -1,8 +1,8 @@
 ---
 permalink: a220/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: fas2700, aff a220, replace, boot, media, image, nondisruptive, disruptive, replacement, fat32, usb 
-summary: 'El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema \(imagen de arranque\) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.' 
+keywords: fas2700, aff a220, replace, boot, media, image, nondisruptive, disruptive, replacement, fat32, usb, manual, manual boot recovery 
+summary: 'El medio de arranque almacena un conjunto primario y secundario de archivos de sistema (imagen de arranque) que el sistema utiliza cuando arranca. Dependiendo de la configuración de su red, puede realizar un reemplazo disruptivo o no disruptivo. El sistema AFF A220 solo admite procedimientos de recuperación de medios de arranque manuales.' 
 ---
 = Descripción general de la sustitución de soportes de arranque - AFF A220
 :allow-uri-read: 
@@ -11,6 +11,8 @@ summary: 'El soporte de arranque almacena un conjunto principal y secundario de 
 
 
 [role="lead"]
+El sistema AFF A220 solo admite procedimientos de recuperación de medios de arranque manuales.
+
 El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.
 
 Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.

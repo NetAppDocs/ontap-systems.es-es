@@ -1,8 +1,8 @@
 ---
 permalink: c190/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: AFF c190, nondisruptive, disruptive, replace the boot media 
-summary: 'El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema \(imagen de arranque\) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.' 
+keywords: AFF c190, nondisruptive, disruptive, replace the boot media, manual, manual boot recovery 
+summary: Obtenga información sobre el reemplazo del medio de arranque en un sistema AFF C190 y comprenda los diferentes métodos de reemplazo. El sistema AFF C190 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Descripción general de la sustitución de medios de arranque: AFF C190
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: 'El soporte de arranque almacena un conjunto principal y secundario de 
 
 
 [role="lead"]
-El soporte de arranque almacena un conjunto principal y secundario de archivos del sistema (imagen de arranque) que el sistema utiliza cuando arranca. En función de la configuración de red, puede realizar una sustitución no disruptiva o disruptiva.
+Obtenga información sobre el reemplazo del medio de arranque en un sistema AFF C190 y comprenda los diferentes métodos de reemplazo. El medio de arranque almacena archivos de imagen de arranque primarios y secundarios que el sistema utiliza durante el inicio. Dependiendo de la configuración de su red, puede realizar un reemplazo no disruptivo (par HA conectado a la red) o un reemplazo disruptivo (requiere dos reinicios).
+
+El sistema AFF C190 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 Debe tener una unidad flash USB, formateada a FAT32, con la cantidad de almacenamiento adecuada para guardar el `image_xxx.tgz` archivo.
 

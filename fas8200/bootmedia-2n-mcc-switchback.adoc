@@ -1,8 +1,8 @@
 ---
 permalink: fas8200/bootmedia-2n-mcc-switchback.html 
 sidebar: sidebar 
-keywords: fas8200, switch back aggregate in a two-node metrocluster configuration 
-summary: 'Una vez que haya completado el reemplazo de FRU en una configuración de MetroCluster de dos nodos, podrá llevar a cabo la operación de conmutación de estado de MetroCluster. De este modo, la configuración vuelve a su estado operativo normal, con las máquinas virtuales de almacenamiento (SVM) sincronizada en el sitio anteriormente afectado que ahora están activas y sirviendo datos de los pools de discos locales.' 
+keywords: fas8200, switch back aggregate in a two-node metrocluster configuration, manual, manual boot recovery 
+summary: Realice la operación de retroceso de MetroCluster en un sistema FAS8200 después de completar el reemplazo del medio de arranque en una configuración de MetroCluster de dos nodos. El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos: FAS8200
 :allow-uri-read: 
@@ -11,6 +11,10 @@ summary: 'Una vez que haya completado el reemplazo de FRU en una configuración 
 
 
 [role="lead"]
+Realice la operación de retroceso de MetroCluster en un sistema FAS8200 después de completar el reemplazo del medio de arranque en una configuración de MetroCluster de dos nodos. Este procedimiento incluye verificar los estados de los nodos y de las máquinas virtuales de almacenamiento (SVM), ejecutar el comando switchback y confirmar que la configuración vuelve al estado operativo normal con las SVM de origen sincronizado que sirven datos desde los grupos de discos locales.
+
+El sistema FAS8200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
+
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
 
 .Pasos

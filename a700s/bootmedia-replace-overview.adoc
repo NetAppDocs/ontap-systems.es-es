@@ -1,8 +1,8 @@
 ---
 permalink: a700s/bootmedia-replace-overview.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media 
-summary: El medio de arranque principal almacena la imagen de arranque ONTAP que utiliza el sistema cuando arranca. Puede restaurar la imagen del soporte de arranque principal utilizando la imagen ONTAP en el soporte de arranque secundario o, si es necesario, utilizando una unidad flash USB. 
+keywords: aff a700s, aff, a700s, primary, boot, media, store, ontap, image, system, restore, primary, media, secondary, usb, flash, drive, replace, replace the boot media, manual, manual boot recovery 
+summary: Obtenga información sobre el reemplazo del medio de arranque en un sistema AFF A700s y comprenda los métodos de recuperación. El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Descripción general de la sustitución de medios de arranque: AFF A700s
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: El medio de arranque principal almacena la imagen de arranque ONTAP que
 
 
 [role="lead"]
-El medio de arranque principal almacena la imagen de arranque ONTAP que utiliza el sistema cuando arranca. Puede restaurar la imagen del soporte de arranque principal utilizando la imagen ONTAP en el soporte de arranque secundario o, si es necesario, utilizando una unidad flash USB.
+Obtenga información sobre el reemplazo del medio de arranque en un sistema AFF A700s y comprenda los métodos de recuperación. El medio de arranque principal almacena la imagen de arranque ONTAP que el sistema utiliza durante el inicio. Puede restaurar la imagen del medio de arranque principal utilizando la imagen ONTAP del medio de arranque secundario o, si es necesario, desde una unidad flash USB formateada en FAT32.
+
+El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 Si el soporte de arranque secundario ha fallado o le falta el archivo image.tgz, debe restaurar el soporte de arranque primario mediante una unidad flash USB. La unidad debe formatearse con FAT32 y debe disponer de la cantidad de almacenamiento adecuada para alojar el archivo image_xxx.tgz.
 

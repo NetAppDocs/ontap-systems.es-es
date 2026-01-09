@@ -1,7 +1,7 @@
 ---
 permalink: a200/bootmedia-recovery-image-boot-non-2n-mcc.html 
 sidebar: sidebar 
-keywords: aff a200, verify environment variables, image, boot the recovery image 
+keywords: aff a200, verify environment variables, image, boot the recovery image, manual, manual boot recovery 
 summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno. 
 ---
 = Arranque la imagen de recuperación: AFF A200
@@ -11,7 +11,7 @@ summary: Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sist
 
 
 [role="lead"]
-Debe arrancar la imagen de ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables del entorno.
+Debe iniciar la imagen ONTAP desde la unidad USB, restaurar el sistema de archivos y verificar las variables ambientales. El sistema AFF A200 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 .Pasos
 . Desde el símbolo DEL SISTEMA DEL CARGADOR, arranque la imagen de recuperación desde la unidad flash USB: `boot_recovery`
