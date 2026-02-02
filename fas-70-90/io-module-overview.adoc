@@ -19,6 +19,14 @@ Puede sustituir un módulo de I/O con fallo en el sistema de almacenamiento FAS7
 +
 La adición de módulos adicionales puede mejorar la redundancia, lo que ayuda a garantizar que el sistema siga funcionando incluso si falla un módulo.
 
+* link:io-module-hotswap.html["Intercambia en caliente un módulo de E/S"]
++
+Puedes intercambiar en caliente ciertos módulos de E/S por un módulo de E/S equivalente para restaurar el sistema de almacenamiento a su estado de funcionamiento óptimo. El intercambio en caliente se hace sin tener que realizar una toma de control manual.
+
+
+
+Para usar este procedimiento, tu sistema de almacenamiento debe estar ejecutando ONTAP 9.18.1 o una versión posterior.
+
 * link:io-module-replace.html["Sustituya un módulo de E/S."]
 +
 El reemplazo de un módulo de E/S que falla puede restaurar el sistema a su estado operativo óptimo.

@@ -1,0 +1,59 @@
+= 
+:allow-uri-read: 
+
+
+Para usar este procedimiento, tu sistema de almacenamiento debe estar ejecutando ONTAP 9.17.1 o una versión posterior, y tu sistema de almacenamiento debe cumplir todos los requisitos para la versión de ONTAP que esté ejecutando.
+
+
+NOTE: Si tu sistema de almacenamiento no está ejecutando ONTAP 9.17.1 o una versión posterior, o no cumple con todos los requisitos para la versión de ONTAP que está ejecutando tu sistema de almacenamiento, no puedes usar este procedimiento, debes usar el link:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"].
+
+[role="tabbed-block"]
+====
+.ONTAP 9.17.1 o 9.18.1RC
+--
+* Estás intercambiando en caliente un módulo de E/S de clúster y HA averiado en la ranura 4 por un módulo de E/S equivalente. No puedes cambiar el tipo de módulo de E/S.
+* El controlador con el clúster y el módulo de E/S de alta disponibilidad que han fallado (el controlador dañado) ya debe haber tomado el control del controlador asociado sano. La toma de control automática debería haberse producido si el módulo de E/S ha fallado.
++
+Para clústeres de dos nodos, el sistema de almacenamiento no puede discernir qué controlador tiene el módulo de E/S que ha fallado, por lo que cualquiera de los controladores podría iniciar la toma de control. El intercambio en caliente solo se admite cuando el controlador con el módulo de E/S que ha fallado (el controlador dañado) ha tomado el control del controlador sano. El intercambio en caliente del módulo de E/S es la única forma de recuperarse sin una interrupción.
+
++
+Puede verificar que el controlador dañado tomó control exitosamente del controlador saludable ingresando el  `storage failover show` dominio.
+
++
+Si no está seguro de qué controlador tiene el módulo de E/S fallido, comuníquese con  https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] .
+
+* La configuración de su sistema de almacenamiento debe tener solo un clúster y un módulo de E/S de HA ubicados en la ranura 4, no dos clústeres y módulos de E/S de HA.
+* Su sistema de almacenamiento debe ser una configuración de clúster de dos nodos (conmutados o sin conmutador).
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+--
+.ONTAP 9.18.1GA o posterior
+--
+* Estás intercambiando en caliente un módulo de E/S Ethernet en cualquier ranura que tenga cualquier combinación de puertos usados para cluster, HA y cliente con un módulo de E/S equivalente. No puedes cambiar el tipo de módulo de E/S.
++
+Los módulos de E/S Ethernet con puertos usados para almacenamiento o MetroCluster no son intercambiables en caliente.
+
+* Tu sistema de almacenamiento (configuración de clúster sin switches o con switches) puede tener cualquier número de nodos compatibles con tu sistema de almacenamiento.
+* Todos los nodos del clúster deben estar ejecutando la misma versión de ONTAP (ONTAP 9.18.1GA o posterior) o estar ejecutando diferentes niveles de parche de la misma versión de ONTAP.
++
+Si los nodos de tu clúster están ejecutando diferentes versiones de ONTAP, esto se considera un clúster de versión mixta y no se admite el intercambio en caliente de un módulo de I/O.
+
+
+
+* Los controladores de tu sistema de almacenamiento pueden estar en cualquiera de los siguientes estados:
++
+** Ambos controladores pueden estar en funcionamiento y ejecutando E/S (sirviendo datos).
+** Cualquiera de los controladores puede estar en un estado de toma de control si la toma de control fue causada por el módulo de I/O que falló y los controladores, por lo demás, funcionan correctamente.
++
+En determinadas situaciones, ONTAP puede realizar una toma de control automática de cualquiera de los controladores debido al módulo de I/O averiado. Por ejemplo, si el módulo de I/O averiado contenía todos los puertos de cluster (todos los enlaces de cluster de ese controlador se caen) ONTAP realiza una toma de control automática.
+
+
+
+
+
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+--
+====

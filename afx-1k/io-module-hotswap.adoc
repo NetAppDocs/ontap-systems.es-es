@@ -1,0 +1,368 @@
+---
+permalink: afx-1k/io-module-hotswap.html 
+sidebar: sidebar 
+keywords: AFX 1K, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
+summary: Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFX 1K si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP. 
+---
+= Intercambio en caliente de un módulo de E/S - AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFX 1K si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.
+
+Para intercambiar en caliente un módulo de E/S, asegúrate de que tu sistema de almacenamiento esté ejecutando ONTAP 9.18.1 GA o una versión posterior, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
+
+.Acerca de esta tarea
+* No necesitas realizar una toma de control manual antes de reemplazar el módulo de E/S averiado.
+* Aplica los comandos al controlador y a la ranura de E/S correctos durante el intercambio en caliente:
++
+** El _controlador dañado_ es el controlador donde estás reemplazando el módulo de E/S.
+** El _controlador saludable_ es el socio HA del controlador dañado.
+
+
+* Puedes encender los LED de ubicación (azules) del sistema de almacenamiento para ayudarte a localizar físicamente el sistema de almacenamiento afectado. Inicia sesión en el BMC usando SSH y escribe el comando `system location-led _on_`.
++
+El sistema de almacenamiento incluye tres LED de localización: uno en el panel de visualización del operador y uno en cada controlador. Los LED permanecen iluminados durante 30 minutos.
+
++
+Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+
+
+
+
+
+== Paso 1: Asegúrese de que el sistema de almacenamiento cumpla con los requisitos del procedimiento
+
+Para usar este procedimiento, tu sistema de almacenamiento debe estar ejecutando ONTAP 9.18.1 GA o una versión posterior, y tu sistema de almacenamiento debe cumplir todos los requisitos.
+
+
+NOTE: Si tu sistema de almacenamiento no está ejecutando ONTAP 9.18.1 GA o una versión posterior, no puedes usar este procedimiento, debes usar el link:io-module-replace.html["procedimiento para reemplazar un módulo de E/S"].
+
+* Estás intercambiando en caliente un módulo de E/S Ethernet en cualquier ranura que tenga cualquier combinación de puertos usados para cluster, HA y cliente con un módulo de E/S equivalente. No puedes cambiar el tipo de módulo de E/S.
++
+Los módulos de E/S Ethernet con puertos usados para almacenamiento o MetroCluster no son intercambiables en caliente.
+
+* Tu sistema de almacenamiento (configuración de clúster sin switches o con switches) puede tener cualquier número de nodos compatibles con tu sistema de almacenamiento.
+* Todos los nodos del clúster deben estar ejecutando la misma versión de ONTAP (ONTAP 9.18.1GA o posterior) o estar ejecutando diferentes niveles de parche de la misma versión de ONTAP.
++
+Si los nodos de tu clúster están ejecutando diferentes versiones de ONTAP, esto se considera un clúster de versión mixta y no se admite el intercambio en caliente de un módulo de I/O.
+
+
+
+* Los controladores de tu sistema de almacenamiento pueden estar en cualquiera de los siguientes estados:
++
+** Ambos controladores pueden estar en funcionamiento y ejecutando E/S (sirviendo datos).
+** Cualquiera de los controladores puede estar en un estado de toma de control si la toma de control fue causada por el módulo de I/O que falló y los nodos funcionan correctamente por lo demás.
++
+En determinadas situaciones, ONTAP puede realizar una toma de control automática de cualquiera de los controladores debido al módulo de I/O averiado. Por ejemplo, si el módulo de I/O averiado contenía todos los puertos de cluster (todos los enlaces de cluster de ese controlador se caen) ONTAP realiza una toma de control automática.
+
+
+
+
+
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+
+
+
+
+== Paso 2: prepara el sistema de almacenamiento y la ranura del módulo de E/S
+
+Prepara el sistema de almacenamiento y la ranura del módulo de E/S para que sea seguro retirar el módulo de E/S averiado:
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Etiqueta los cables para identificar de dónde vienen y luego desconecta todos los cables del módulo de E/S de destino.
++
+[NOTE]
+====
+El módulo de E/S debe estar averiado (los puertos deben estar en estado de enlace caído); sin embargo, si los enlaces siguen funcionando y contienen el último puerto de clúster en funcionamiento, al desenchufar los cables se desencadena una toma de control automática.
+
+Espera cinco minutos después de desenchufar los cables para asegurarte de que se haya completado cualquier toma de control automática o conmutación por error de LIF antes de continuar con este procedimiento.
+
+====
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Por ejemplo, el siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Desactiva la devolución automática si el nodo asociado ha sido tomado por el partner:
++
+[cols="1,2"]
+|===
+| Si... | Realice lo siguiente... 
+
+
+ a| 
+Si cualquiera de los controladores tomó el control de su pareja automáticamente
+ a| 
+Desactivar devolución automática:
+
+.. Introduce el siguiente comando desde la consola del controlador que tomó el control de su pareja:
++
+`storage failover modify -node local -auto-giveback false`
+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
+
+
+
+
+ a| 
+Ambos controladores están en funcionamiento y ejecutando E/S (sirviendo datos)
+ a| 
+Vaya al paso siguiente.
+
+|===
+. Prepara el módulo de E/S averiado para retirarlo, poniéndolo fuera de servicio y apagándolo:
++
+.. Introduzca el siguiente comando:
++
+`system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
+
+.. Ingresar `y` cuando veas el mensaje _¿Quieres continuar?_
++
+Por ejemplo, el siguiente comando prepara el módulo que ha fallado en la ranura 7 del nodo 2 (el controlador dañado) para su extracción y muestra un mensaje que indica que es seguro extraerlo:
+
++
+[listing]
+----
+node2::> system controller slot module remove -node node2 -slot 7
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 7 of node node2 will be powered off for removal.
+
+Do you want to continue? {y|n}: y
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+
+
+. Verifica que el módulo de E/S averiado esté apagado:
++
+`system controller slot module show`
+
++
+La salida debería mostrar `_powered-off_` en la `_status_` columna para el módulo que ha fallado y su número de ranura.
+
+
+
+
+
+== Paso 3: intercambio en caliente del módulo de E/S averiado
+
+Intercambia en caliente el módulo de E/S averiado por un módulo de E/S equivalente.
+
+.Pasos
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Gire hacia abajo la bandeja de gestión de cables tirando de los botones del interior de la bandeja de gestión de cables y girándola hacia abajo.
+. Retire el módulo de E/S del módulo del controlador:
++
+
+NOTE: La siguiente ilustración muestra la extracción de un módulo de E/S horizontal y vertical. Normalmente, solo extraerás un módulo de E/S.
+
++
+image::../media/drw_a1k_io_remove_replace_ieops-1382.svg[Retire el módulo de E/S.]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Botón de bloqueo de leva
+
+|===
++
+.. Pulse el botón de bloqueo de leva.
+.. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
+.. Retire el módulo del módulo del controlador enganchando el dedo en la abertura de la palanca de leva y sacando el módulo del módulo del controlador.
++
+Lleva un registro de en qué ranura estaba el módulo de E/S.
+
+
+
+. Coloque el módulo de E/S a un lado.
+. Instale el módulo de E/S de repuesto en la ranura de destino:
++
+.. Alinee el módulo de E/S con los bordes de la ranura.
+.. Deslice suavemente el módulo en la ranura hasta el fondo dentro del módulo del controlador y, a continuación, gire el pestillo de leva completamente hacia arriba para bloquear el módulo en su lugar.
+
+
+. Conecte el cable al módulo de E/S.
+. Gire la bandeja de gestión de cables a la posición bloqueada.
+
+
+
+
+== Paso 4: poner en línea el módulo de E/S de sustitución
+
+Pon en línea el módulo de E/S de reemplazo, verifica que los puertos del módulo de E/S se hayan inicializado correctamente, verifica que la ranura esté encendida y luego verifica que el módulo de E/S esté en línea y reconocido.
+
+.Acerca de esta tarea
+Después de que el módulo de E/S es reemplazado y los puertos vuelven a un estado saludable, los LIFs se revierten al módulo de E/S reemplazado.
+
+.Pasos
+. Pon en línea el módulo de E/S de recambio:
++
+.. Introduzca el siguiente comando:
++
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_number_`
+
+.. Ingresar `y` Cuando veas el mensaje "¿Quieres continuar?"
++
+La salida debe confirmar que el módulo de E/S se puso en línea correctamente (encendido, inicializado y puesto en servicio).
+
++
+Por ejemplo, el siguiente comando pone en línea la ranura 7 del nodo 2 (el controlador dañado) y muestra un mensaje que indica que el proceso fue exitoso:
+
++
+[listing]
+----
+node2::> system controller slot module insert -node node2 -slot 7
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 7 of node node2 will be powered on and initialized.
+
+Do you want to continue? {y|n}: `y`
+
+The module has been successfully powered on, initialized and placed into service.
+----
+
+
+. Verifica que cada puerto del módulo de E/S se haya inicializado correctamente:
++
+.. Ingrese el siguiente comando desde la consola del controlador dañado:
++
+`event log show -event \*hotplug.init*`
+
++
+
+NOTE: Puede que las actualizaciones necesarias de firmware y la inicialización del puerto tarden varios minutos.
+
++
+La salida debería mostrar uno o más eventos EMS hotplug.init.success y `_hotplug.init.success:_` en la columna `_Event_` indicando que cada puerto en el módulo de E/S se inicializó con éxito.
+
++
+Por ejemplo, la siguiente salida muestra que la inicialización fue exitosa para los puertos de E/S e7b y e7a:
+
++
+[listing]
+----
+node2::> event log show -event *hotplug.init*
+
+Time                Node             Severity      Event
+
+------------------- ---------------- ------------- ---------------------------
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e7b" in slot 7 succeeded
+
+7/11/2025 16:04:06  node2      NOTICE        hotplug.init.success: Initialization of ports "e7a" in slot 7 succeeded
+
+2 entries were displayed.
+----
+.. Si la inicialización del puerto falla, revisa el registro de EMS para ver los siguientes pasos a seguir.
+
+
+. Verifica que la ranura del módulo de E/S esté encendida y lista para funcionar:
++
+`system controller slot module show`
+
++
+La salida debe mostrar el estado de la ranura como `_powered-on_` y por lo tanto lista para el funcionamiento del módulo de E/S.
+
+. Verifica que el módulo de E/S está en línea y reconocido.
++
+Ingrese el comando desde la consola del controlador dañado:
+
++
+`system controller config show -node local -slot _slot_number_`
+
++
+Si el módulo de E/S se puso en línea correctamente y se reconoce, la salida muestra información del módulo de E/S, incluida la información del puerto para la ranura.
+
++
+Por ejemplo, deberías ver una salida similar a la siguiente para un módulo de E/S en la ranura 7:
+
++
+[listing]
+----
+node2::> system controller config show -node local -slot 7
+
+Node: node2
+Sub- Device/
+Slot slot Information
+---- ---- -----------------------------
+   7    - Dual 40G/100G Ethernet Controller CX6-DX
+                  e7a MAC Address: d0:39:ea:59:69:74 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2807GJFM-B
+                  e7b MAC Address: d0:39:ea:59:69:75 (auto-100g_cr4-fd-up)
+                          QSFP Vendor:        CISCO-BIZLINK
+                          QSFP Part Number:   L45593-D218-D10
+                          QSFP Serial Number: LCC2809G26F-A
+                  Device Type:        CX6-DX PSID(NAP0000000027)
+                  Firmware Version:   22.44.1700
+                  Part Number:        111-05341
+                  Hardware Revision:  20
+                  Serial Number:      032403001370
+----
+
+
+
+
+== Paso 5: Restaurar el sistema de almacenamiento a su funcionamiento normal
+
+Restaura el funcionamiento normal de tu sistema de almacenamiento devolviendo el almacenamiento al controlador del que se hizo la toma de control (si es necesario), restaurando la toma de control automática (si es necesario), verificando que los LIF estén en sus puertos de origen y volviendo a habilitar la creación automática de casos en AutoSupport.
+
+.Pasos
+. Según sea necesario para la versión de ONTAP que está ejecutando tu sistema de almacenamiento y el estado de los controladores, devuelve el almacenamiento y restaura la toma de control automática en el controlador que fue tomado:
++
+[cols="1,2"]
+|===
+| Si... | Realice lo siguiente... 
+
+
+ a| 
+Si cualquiera de los controladores tomó el control de su pareja automáticamente
+ a| 
+.. Devuelve el controlador que fue tomado a su funcionamiento normal devolviéndole su almacenamiento:
++
+`storage failover giveback -ofnode _controller that was taken over_name_`
+
+.. Restaura la devolución automática desde la consola del controlador que fue tomado:
++
+`storage failover modify -node local -auto-giveback _true_`
+
+
+
+
+
+ a| 
+Ambos controladores están en funcionamiento y ejecutando E/S (sirviendo datos)
+ a| 
+Vaya al paso siguiente.
+
+|===
+. Verifica que las interfaces lógicas estén reportando a su nodo y puertos de origen: `network interface show -is-home false`
++
+Si alguno de los LIF se muestra como false, este se revierte a sus puertos principales: `network interface revert -vserver * -lif *`
+
+. Si AutoSupport está habilitado, restaure la creación automática de casos:
++
+`system node autosupport invoke -node * -type all -message MAINT=end`
+
+
+
+
+
+== Paso 6: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

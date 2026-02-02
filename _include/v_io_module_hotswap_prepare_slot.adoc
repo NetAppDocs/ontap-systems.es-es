@@ -1,0 +1,85 @@
+= 
+:allow-uri-read: 
+
+
+Prepara el sistema de almacenamiento y la ranura del módulo de E/S para que sea seguro retirar el módulo de E/S averiado:
+
+.Pasos
+. Puesta a tierra apropiadamente usted mismo.
+. Etiqueta los cables para identificar de dónde vienen y luego desconecta todos los cables del módulo de E/S de destino.
++
+[NOTE]
+====
+El módulo de E/S debe estar averiado (los puertos deben estar en estado de enlace caído); sin embargo, si los enlaces siguen funcionando y contienen el último puerto de clúster en funcionamiento, al desenchufar los cables se desencadena una toma de control automática.
+
+Espera cinco minutos después de desenchufar los cables para asegurarte de que se haya completado cualquier toma de control automática o conmutación por error de LIF antes de continuar con este procedimiento.
+
+====
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Por ejemplo, el siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`node2::> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Desactiva la devolución automática si el nodo asociado ha sido tomado por el partner:
++
+[cols="1,2"]
+|===
+| Si... | Realice lo siguiente... 
+
+
+ a| 
+Si cualquiera de los controladores tomó el control de su pareja automáticamente
+ a| 
+Desactivar devolución automática:
+
+.. Introduce el siguiente comando desde la consola del controlador que tomó el control de su pareja:
++
+`storage failover modify -node local -auto-giveback false`
+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
+
+
+
+
+ a| 
+Ambos controladores están en funcionamiento y ejecutando E/S (sirviendo datos)
+ a| 
+Vaya al paso siguiente.
+
+|===
+. Prepara el módulo de E/S averiado para retirarlo, poniéndolo fuera de servicio y apagándolo:
++
+.. Introduzca el siguiente comando:
++
+`system controller slot module remove -node _impaired_node_name_ -slot _slot_number_`
+
+.. Ingresar `y` cuando veas el mensaje _¿Quieres continuar?_
++
+Por ejemplo, el siguiente comando prepara el módulo que ha fallado en la ranura 7 del nodo 2 (el controlador dañado) para su extracción y muestra un mensaje que indica que es seguro extraerlo:
+
++
+[listing]
+----
+node2::> system controller slot module remove -node node2 -slot 7
+
+Warning: IO_2X_100GBE_NVDA_NIC module in slot 7 of node node2 will be powered off for removal.
+
+Do you want to continue? {y|n}: y
+
+The module has been successfully removed from service and powered off. It can now be safely removed.
+----
+
+
+. Verifica que el módulo de E/S averiado esté apagado:
++
+`system controller slot module show`
+
++
+La salida debería mostrar `_powered-off_` en la `_status_` columna para el módulo que ha fallado y su número de ranura.
+
+

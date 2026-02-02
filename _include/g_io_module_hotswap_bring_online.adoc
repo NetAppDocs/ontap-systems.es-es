@@ -2,18 +2,21 @@
 :allow-uri-read: 
 
 
-Coloque el clúster de reemplazo y el módulo de E/S HA en la ranura 4 en línea, verifique que los puertos del módulo se hayan inicializado correctamente, verifique que la ranura 4 esté encendida y luego verifique que el módulo esté en línea y sea reconocido.
+Pon en línea el módulo de E/S de reemplazo, verifica que los puertos del módulo de E/S se hayan inicializado correctamente, verifica que la ranura esté encendida y luego verifica que el módulo de E/S esté en línea y reconocido.
+
+.Acerca de esta tarea
+Después de que el módulo de E/S es reemplazado y los puertos vuelven a un estado saludable, los LIFs se revierten al módulo de E/S reemplazado.
 
 .Pasos
-. Ponga en línea el clúster de reemplazo y el módulo de E/S de alta disponibilidad:
+. Pon en línea el módulo de E/S de recambio:
 +
 .. Introduzca el siguiente comando:
 +
-`system controller slot module insert -node _impaired_node_name_ -slot _slot_name_`
+`system controller slot module insert -node _impaired_node_name_ -slot _slot_number_`
 
 .. Ingresar `y` Cuando veas el mensaje "¿Quieres continuar?"
 +
-La salida debe confirmar que el clúster y el módulo de E/S de HA se pusieron en línea correctamente (se encendieron, se inicializaron y se pusieron en servicio).
+La salida debe confirmar que el módulo de E/S se puso en línea correctamente (encendido, inicializado y puesto en servicio).
 
 +
 Por ejemplo, el siguiente comando pone en línea la ranura 4 del nodo 2 (el controlador dañado) y muestra un mensaje que indica que el proceso fue exitoso:
@@ -31,19 +34,21 @@ The module has been successfully powered on, initialized and placed into service
 ----
 
 
-. Verifique que cada puerto del clúster y el módulo de E/S de HA se hayan inicializado correctamente:
+. Verifica que cada puerto del módulo de E/S se haya inicializado correctamente:
++
+.. Ingrese el siguiente comando desde la consola del controlador dañado:
 +
 `event log show -event \*hotplug.init*`
 
 +
 
-NOTE: Podrían pasar varios minutos hasta que se realicen las actualizaciones de firmware y la inicialización del puerto necesarias.
+NOTE: Puede que las actualizaciones necesarias de firmware y la inicialización del puerto tarden varios minutos.
 
 +
-La salida debe mostrar un evento EMS hotplug.init.success registrado para cada puerto en el clúster y el módulo de E/S de HA con  `_hotplug.init.success:_` en el  `_Event_` columna.
+La salida debería mostrar uno o más eventos hotplug.init.success EMS que indican que cada puerto del módulo de E/S se inició con éxito.
 
 +
-Por ejemplo, la siguiente salida muestra que la inicialización fue exitosa para los puertos e4b y e4a del módulo de E/S de HA y del clúster:
+Por ejemplo, la siguiente salida muestra que la inicialización fue exitosa para los puertos de E/S e4b y e4a:
 
 +
 [listing]
@@ -60,25 +65,28 @@ Time                Node             Severity      Event
 
 2 entries were displayed.
 ----
-. Verifique que la ranura 4 del módulo de E/S esté encendida y lista para funcionar:
+.. Si la inicialización del puerto falla, revisa el registro de EMS para ver los siguientes pasos a seguir.
+
+
+. Verifica que la ranura del módulo de E/S esté encendida y lista para funcionar:
 +
 `system controller slot module show`
 
 +
-La salida debe mostrar el estado de la ranura 4 como  `_powered-on_` y por lo tanto está listo para el funcionamiento del clúster de reemplazo y del módulo de E/S HA.
+La salida debe mostrar el estado de la ranura como `_powered-on_` y por lo tanto lista para el funcionamiento del módulo de E/S.
 
-. Verifique que el clúster de reemplazo y el módulo de E/S de HA estén en línea y sean reconocidos.
+. Verifica que el módulo de E/S está en línea y reconocido.
 +
 Ingrese el comando desde la consola del controlador dañado:
 
 +
-`system controller config show -node local -slot4`
+`system controller config show -node local -slot _slot_number_`
 
 +
-Si el clúster de reemplazo y el módulo de E/S de HA se pusieron en línea correctamente y se reconocen, la salida muestra información del módulo de E/S, incluida información del puerto, para la ranura 4.
+Si el módulo de E/S se puso en línea correctamente y se reconoce, la salida muestra información del módulo de E/S, incluida la información del puerto para la ranura.
 
 +
-Por ejemplo, debería ver un resultado similar al siguiente:
+Por ejemplo, deberías ver una salida similar a la siguiente para un módulo de E/S en la ranura 4:
 
 +
 [listing]
