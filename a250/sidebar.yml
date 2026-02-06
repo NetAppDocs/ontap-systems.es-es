@@ -16,13 +16,30 @@ entries:
 - title: Mantener
   pdf-filename: AFF A250 mantener
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/a250/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Soporte de arranque AFF A250
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: AFF A250 arranque automatizado
     entries:
-    - title: Descripción general
-      url: "/a250/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/a250/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/a250/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/a250/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/a250/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/a250/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/a250/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual de Boot Media de AFF 250
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/a250/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/a250/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/a250/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado
@@ -38,9 +55,13 @@ entries:
   - title: Chasis
     pdf-filename: Chasis AFF A250
     entries:
-    - title: Descripción general
-      url: "/a250/chassis-replace-overview.html"
-    - title: Apague el controlador dañado
+    - title: Flujo de trabajo de reemplazo del chasis
+      url: "/a250/chassis-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/a250/chassis-replace-requirements.html"
+    - title: Prepárese para reemplazar
+      url: "/a250/chassis-replace-prepare.html"
+    - title: Apague las controladoras
       url: "/a250/chassis-replace-shutdown.html"
     - title: Sustituya el chasis
       url: "/a250/chassis-replace-move-hardware.html"
@@ -49,8 +70,10 @@ entries:
   - title: Controladora
     pdf-filename: Módulo controlador AFF A250
     entries:
-    - title: Descripción general
-      url: "/a250/controller-replace-overview.html"
+    - title: Flujo de trabajo de reemplazo de la controladora
+      url: "/a250/controller-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/a250/controller-replace-requirements.html"
     - title: Apague el controlador dañado
       url: "/a250/controller-replace-shutdown.html"
     - title: Sustituya la controladora
@@ -59,7 +82,7 @@ entries:
       url: "/a250/controller-replace-system-config-restore-and-verify.html"
     - title: Sistema de recuperación
       url: "/a250/controller-replace-recable-reassign-disks.html"
-    - title: Restauración completa del sistema
+    - title: Reemplazo completo de controladoras
       url: "/a250/controller-replace-restore-system-rma.html"
   - title: DIMM
     url: "/a250/dimm-replace.html"

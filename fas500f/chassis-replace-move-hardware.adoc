@@ -4,14 +4,16 @@ sidebar: sidebar
 keywords: fas500f, move hardware components, replace the chassis 
 summary: Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado. 
 ---
-= Mueva y reemplace la tornillería - FAS500f
+= Reemplaza el chasis - FAS500f
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado.
+Sustituye el chasis de tu sistema FAS500f cuando lo requiera un fallo de hardware. El proceso de sustitución implica quitar los controladores y las fuentes de alimentación (PSUs), quitar las unidades, instalar el chasis de reemplazo y volver a instalar los componentes del chasis.
+
+Para sustituir el chasis, mueva las fuentes de alimentación, los discos duros y el módulo del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado por el nuevo chasis del mismo modelo que el chasis dañado.
 
 
 
@@ -19,7 +21,7 @@ Mueva las fuentes de alimentación, las unidades de disco duro y el módulo o lo
 
 Para sustituir el chasis, debe quitar los módulos de la controladora del chasis antiguo.
 
-Puede usar el siguiente vídeo o los pasos tabulados para reemplazar el chasis; asume la extracción y sustitución del bisel:
+Utilice el siguiente vídeo o los pasos tabulados para reemplazar el chasis; asume la extracción y sustitución del bisel:
 
 .Animación - sustituya el chasis
 video::1f859217-fede-491a-896e-ac5b015c1a36[panopto]
@@ -35,6 +37,7 @@ NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los
 image::../media/drw_a250_pcm_remove_install.png[Apertura del mecanismo de enclavamiento]
 
 +
+[cols="1,3"]
 |===
 
 
@@ -108,7 +111,7 @@ Debe quitar el chasis existente del rack del equipo o armario del sistema antes 
 
 == Paso 4: Instale los módulos del controlador
 
-Después de instalar los módulos del controlador en el nuevo chasis, debe arrancarlo.
+Después de instalar los módulos de la controladora en el nuevo chasis, debe arrancar el sistema.
 
 Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
 
@@ -118,7 +121,6 @@ Para los pares de alta disponibilidad con dos módulos de controladora en el mis
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
 . Vuelva a conectar la consola al módulo del controlador y, a continuación, vuelva a conectar el puerto de administración.
-. Enchufe los cables de alimentación en las fuentes de alimentación y vuelva a instalar los retenes del cable de alimentación.
 . Inserte el módulo de la controladora en el chasis:
 +
 .. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
@@ -126,13 +128,20 @@ NOTE: No inserte completamente el módulo de la controladora en el chasis hasta 
 .. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
 .. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
-+
-El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis. Esté preparado para interrumpir el proceso de arranque.
-
 
 
 +
 El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
 
++
+.. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
++
+El módulo del controlador comienza a arrancar tan pronto como se restaura la alimentación. Esté preparado para interrumpir el proceso de arranque.
+
+
+
 . Repita los pasos anteriores para instalar la segunda controladora en el chasis nuevo.
 
+
+.El futuro
+Después de que hayas reemplazado el chasis FAS500f dañado y reinstalado los componentes, necesitas link:chassis-replace-complete-system-restore-rma.html["complete el reemplazo del chasis"]

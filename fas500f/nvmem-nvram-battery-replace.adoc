@@ -1,0 +1,249 @@
+---
+permalink: fas500f/nvmem-nvram-battery-replace.html 
+sidebar: sidebar 
+keywords: fas500f, replace nvmem battery, replace nvmem nvram battery 
+summary: Para sustituir una batería de NVMEM en el sistema, debe extraer el módulo de la controladora del sistema, abrirlo, sustituir la batería y cerrar y sustituir el módulo de la controladora. 
+---
+= Sustituya la batería de NVMEM - FAS500f
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sustituir una batería de NVMEM en el sistema, debe extraer el módulo de la controladora del sistema, abrirlo, sustituir la batería y cerrar y sustituir el módulo de la controladora.
+
+Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+
+
+
+== Paso 1: Apague el controlador dañado
+
+Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+
+.Acerca de esta tarea
+* Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento  `cluster kernel-service show`) para el blade SCSI de la controladora dañada.  `cluster kernel-service show`El comando (desde el modo avanzado priv) muestra el nombre del nodo, link:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["estado del quórum"] de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.
++
+Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los problemas deben resolverse antes de continuar con el reemplazo.
+
+* Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Desactivar devolución automática:
++
+.. Ingrese el siguiente comando desde la consola del controlador en buen estado:
++
+`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+
+.. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
+
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Esperando devolución...
+ a| 
+Pulse Ctrl-C y, a continuación, responda `y` cuando se le solicite.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Retome o detenga el controlador dañado del controlador en buen estado:
+
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
+
+|===
+
+
+
+
+== Paso 2: Extraiga el módulo del controlador
+
+Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
+
+Asegúrese de etiquetar los cables para saber de dónde proceden.
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[Apertura del mecanismo de enclavamiento]
+
++
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+| Palanca 
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
++
+image::../media/drw_a250_open_controller_module_cover.png[Apertura de la cubierta del módulo del controlador]
+
++
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+| Tornillo de apriete manual 
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Cubierta del módulo del controlador.
+
+|===
+
+
+
+
+== Paso 3: Sustituya la batería de NVMEM
+
+Para sustituir la batería de NVMEM, debe extraer la batería con error del módulo de la controladora e instalar la batería de repuesto en el módulo de la controladora.
+
+Puede usar el siguiente vídeo o los pasos tabulados para reemplazar la batería de NVMEM:
+
+.Animación: Reemplace la batería de NVMEM
+video::89f6d5c3-1a5b-4500-8ba8-ac5b01653050[panopto]
+. Localice y sustituya la batería de NVMEM defectuosa en el módulo de la controladora.
++
+
+NOTE: Se recomienda seguir las instrucciones ilustradas en el orden indicado.
+
++
+image::../media/drw_a250_replace_nvmem_batt.png[Quitando la batería de NVMEM]
+
++
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+| Apriete la abrazadera de la cara del enchufe de la batería. 
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Desconecte el cable de la batería de la toma.
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+Sujete la batería y presione LA lengüeta azul de bloqueo marcada CON LA TECLA.
+
+
+
+ a| 
+image:../media/icon_round_4.png["Número de llamada 4"]
+ a| 
+Levante la batería para extraerla del soporte y del módulo del controlador.
+
+|===
+. Localice el enchufe de la batería y apriete el clip en la parte frontal del enchufe de la batería para liberar el enchufe de la toma.
+. Sujete la batería y presione LA lengüeta de bloqueo azul marcada CON LA PRESIÓN, luego levante la batería del soporte y el módulo del controlador y déjela a un lado.
+. Retire la batería NV de repuesto de la bolsa de transporte antiestática y alinéela con el soporte de la batería.
+. Inserte el enchufe de la batería NV de repuesto en la toma.
+. Deslice la batería hacia abajo a lo largo de la pared lateral de chapa metálica hasta que las lengüetas de soporte del gancho lateral de la pared entren en las ranuras de la batería y el pestillo de la batería se acople y haga clic en la abertura de la pared lateral.
+. Presione firmemente la batería para asegurarse de que está bloqueada en su lugar.
+
+
+
+
+== Paso 4: Instale el módulo del controlador
+
+Después de reemplazar el componente en el módulo de controlador, debe reinstalar el módulo de controlador en el chasis y, a continuación, arrancarlo.
+
+Puede usar la siguiente ilustración o los pasos escritos para instalar el módulo de la controladora de reemplazo en el chasis.
+
+. Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.
++
+image::../media/drw_a250_close_controller_module_cover.png[Cierre de la cubierta del módulo del controlador]
+
++
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+| Cubierta del módulo del controlador 
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Tornillo de apriete manual
+
+|===
+. Inserte el módulo de la controladora en el chasis:
++
+.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
+.. Con ambas manos, alinee y deslice suavemente el módulo del controlador en los brazos del mecanismo de bloqueo hasta que se detenga.
+.. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+.. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo de la controladora comienza a arrancar tan pronto como se asienta completamente en el chasis.
+
+
+
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+. Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
++
+
+NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+
+
+
+
+
+== Paso 5: Devuelva la pieza que falló a NetApp
+
+Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

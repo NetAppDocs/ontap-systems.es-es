@@ -1,0 +1,38 @@
+---
+permalink: c250/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff c250, prerequisite, replace the controller module 
+summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
+---
+= Requisitos para sustituir el controlador - AFF C250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de reemplazar el controlador en tu sistema de almacenamiento AFF C250, asegúrate de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que todos los demás componentes del sistema funcionen correctamente, asegurarte de que tienes el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.
+
+Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* Si su sistema está en una configuración MetroCluster, debe revisar la sección https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si debe utilizar este procedimiento.
+* Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
+* Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al controlador _regrel_ de modo que el controlador _regrel_ se arranque en la misma versión de ONTAP que el módulo de controlador antiguo.
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El controlador _drinated_ es el controlador que se va a sustituir.
+** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Siempre debe capturar el resultado de la consola de la controladora en un archivo de texto.
++
+Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
+
+
+
+.El futuro
+Después de revisar los requisitos para sustituir el controlador dañado, necesitas link:controller-replace-shutdown.html["apague el controlador defectuoso"].

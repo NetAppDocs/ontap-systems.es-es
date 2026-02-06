@@ -1,20 +1,24 @@
 ---
 permalink: a250/bootmedia-shutdown.html 
 sidebar: sidebar 
-keywords: aff a250, shutdown 
+keywords: aff a250, shut down the controller 
 summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
 ---
-= Apague el controlador AFF A250
+= Apaga el controlador para la recuperación manual de medios de arranque - AFF A250
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
+[role="lead"]
+Apaga el controlador dañado de tu sistema de almacenamiento AFF A250 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso automatizado de recuperación del boot media.
+
+Si tu sistema de almacenamiento está ejecutando ONTAP 9.18.1 o una versión posterior, usa el link:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"]. Si tu sistema está ejecutando una versión anterior de ONTAP, debes usar el procedimiento de recuperación de arranque manual.
+
 
 
 == Opción 1: La mayoría de los sistemas
 
-[role="lead"]
 Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
 
 .Pasos
@@ -56,9 +60,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 
 
 
-== Opción 2: Sistemas en una MetroCluster
-
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+== Opción 2: El sistema está en una MetroCluster
 
 
 NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
@@ -105,3 +107,6 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 |===
 
+
+.El futuro
+Después de apagar el controlador, debe link:bootmedia-replace.html["sustituya el soporte de arranque"].

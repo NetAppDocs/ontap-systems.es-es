@@ -11,6 +11,8 @@ summary: Para sustituir el chasis, debe apagar las controladoras.
 
 
 [role="lead"]
+Apaga los controladores de tu sistema de almacenamiento FAS500f para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el chasis.
+
 Este procedimiento es para sistemas con configuraciones de dos nodos. Para obtener más información sobre el cierre correcto al realizar el mantenimiento de un cluster, consulte https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Apagar y encender sin problemas la Guía de resolución del sistema de almacenamiento: Base de conocimientos de NetApp"].
 
 .Antes de empezar
@@ -64,3 +66,6 @@ NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: 
 
 . Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.
 
+
+.El futuro
+Tras apagar los controladores,link:chassis-replace-move-hardware.html["sustituya el chasis"] .

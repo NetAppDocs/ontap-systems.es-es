@@ -1,0 +1,173 @@
+---
+permalink: asa-c250/bootmedia-replace-bmr.html 
+sidebar: sidebar 
+keywords: asa c250, replace the boot media 
+summary: El medio de arranque en tu sistema ASA C250 almacena firmware esencial y datos de configuración. El proceso de reemplazo implica quitar el módulo del controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo del controlador y luego volver a instalar el módulo del controlador. 
+---
+= Reemplaza el medio de arranque para la recuperación automática de arranque - ASA C250
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El medio de arranque de tu sistema ASA C250 almacena datos esenciales de firmware y configuración. El proceso de sustitución implica quitar y abrir el módulo controlador, quitar el medio de arranque dañado, instalar el medio de arranque de reemplazo en el módulo controlador y luego volver a instalar el módulo controlador.
+
+El proceso automatizado de recuperación de medios de arranque solo se admite en ONTAP 9.18.1 y versiones posteriores. Si tu sistema de almacenamiento está ejecutando una versión anterior de ONTAP, usa el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"].
+
+El medio de arranque se encuentra dentro del módulo del controlador, debajo del conducto de aire, y se accede a él quitando el módulo del controlador del sistema.
+
+
+
+== Paso 1: Extraiga el módulo del controlador
+
+. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+. Desconecte las fuentes de alimentación del módulo del controlador de la fuente.
+. Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
+. Desconecte los cables de E/S del módulo del controlador.
+. Inserte el índice en el mecanismo de bloqueo de ambos lados del módulo del controlador, presione la palanca con el pulgar y tire suavemente del controlador a unas pocas pulgadas del chasis.
++
+
+NOTE: Si tiene dificultades para extraer el módulo del controlador, coloque los dedos de índice a través de los orificios para los dedos desde el interior (cruzando los brazos).
+
++
+image::../media/drw_a250_pcm_remove_install.png[Apertura del mecanismo de enclavamiento]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Palanca
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Mecanismo de cierre
+
+|===
+. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
++
+image::../media/drw_a250_open_controller_module_cover.png[Apertura de la cubierta del módulo del controlador]
+
++
+[cols="1,4"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Tornillo de apriete manual
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Cubierta del módulo del controlador.
+
+|===
+. Levantar la tapa del conducto de aire.
++
+image::../media/drw_a250_remove_airduct_cover.png[Levantando la cubierta del conducto de aire]
+
+
+
+
+
+== Paso 2: Sustituya el soporte de arranque
+
+Puede usar el siguiente vídeo o los pasos tabulados para reemplazar el soporte de arranque:
+
+.Animación: Reemplace el soporte de arranque
+video::7c2cad51-dd95-4b07-a903-ac5b015c1a6d[panopto]
+. Localiza y reemplaza el soporte de arranque dañado del módulo controlador:
++
+
+NOTE: Necesita un destornillador Phillips magnético número 1 para quitar el tornillo que sujeta el soporte del maletero en su lugar. Debido a las limitaciones de espacio dentro del módulo del controlador, también debe tener un imán para transferir el tornillo a para que no se pierda.
+
++
+image::../media/drw_a250_replace_boot_media.png[Sustituya el soporte de arranque]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Retire el tornillo que fija el soporte de arranque a la placa base en el módulo del controlador.
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Levante el soporte del maletero para extraerlo del módulo del controlador.
+
+|===
++
+.. Con el destornillador magnético número 1, retire el tornillo del soporte del maletero dañado y colóquelo a un lado de forma segura en el imán.
+.. Levante suavemente el soporte del maletero dañado y colóquelo a un lado.
+.. Retire el soporte del maletero de repuesto de la bolsa de transporte antiestática y alinéelo en su sitio en el módulo del controlador.
+.. Con el destornillador magnético número 1, inserte y apriete el tornillo del soporte de arranque.
++
+No apriete en exceso el tornillo o podría dañar el soporte del maletero.
+
+.. Instala el conducto de aire.
++
+image::../media/drw_a250_install_airduct_cover.png[Instalación del conducto de aire]
+
+.. Cierre la cubierta del módulo del controlador y apriete el tornillo de mariposa.
++
+image::../media/drw_a250_close_controller_module_cover.png[Cierre de la cubierta del módulo del controlador]
+
++
+[cols="1,3"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Cubierta del módulo del controlador
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Tornillo de apriete manual
+
+|===
+
+
+. Instale el módulo del controlador:
++
+.. Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+.. Inserte completamente el módulo del controlador en el chasis:
+.. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
+.. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
+.. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
++
+El módulo del controlador debe estar completamente insertado y alineado con los bordes del chasis.
+
+
+
+. Vuelva a conectar los cables de E/S del módulo del controlador.
+. Conecte los cables de alimentación a las fuentes de alimentación, vuelva a instalar el collar de bloqueo del cable de alimentación y, a continuación, conecte las fuentes de alimentación a la fuente de alimentación.
++
+El módulo controlador comienza a arrancar y se detiene en el indicador LOADER.
+
+
+
+.El futuro
+Después de sustituir físicamente el soporte de arranque defectuoso, link:bootmedia-recovery-image-boot-bmr.html["Restaure la imagen ONTAP desde el nodo del partner"].

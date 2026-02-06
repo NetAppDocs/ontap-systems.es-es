@@ -16,13 +16,30 @@ entries:
 - title: Mantener
   pdf-filename: Mantenimiento de ASA C250
   entries:
-  - title: Descripción general
+  - title: Información general de mantenimiento
     url: "/asa-c250/maintain-overview.html"
-  - title: Soporte de arranque
-    pdf-filename: Soporte de arranque de ASA C250
+  - title: 'Medios de arranque: recuperación automatizada'
+    pdf-filename: ASA C250 medios de arranque automatizados
     entries:
-    - title: Descripción general
-      url: "/asa-c250/bootmedia-replace-overview.html"
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa-c250/bootmedia-replace-workflow-bmr.html"
+    - title: Revise los requisitos
+      url: "/asa-c250/bootmedia-replace-requirements-bmr.html"
+    - title: Apague el controlador
+      url: "/asa-c250/bootmedia-shutdown-bmr.html"
+    - title: Sustituir el soporte de arranque
+      url: "/asa-c250/bootmedia-replace-bmr.html"
+    - title: Restaurar imagen en soporte de arranque
+      url: "/asa-c250/bootmedia-recovery-image-boot-bmr.html"
+    - title: Devolución de pieza fallida a NetApp
+      url: "/asa-c250/bootmedia-complete-rma-bmr.html"
+  - title: 'Medios de arranque: recuperación manual'
+    pdf-filename: Manual de arranque ASA C250
+    entries:
+    - title: Flujo de trabajo de sustitución de medios de arranque
+      url: "/asa-c250/bootmedia-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/asa-c250/bootmedia-replace-requirements.html"
     - title: Compruebe las claves de cifrado
       url: "/asa-c250/bootmedia-encryption-preshutdown-checks.html"
     - title: Apague el controlador dañado
@@ -38,9 +55,13 @@ entries:
   - title: Chasis
     pdf-filename: Chasis ASA C250
     entries:
-    - title: Descripción general
-      url: "/asa-c250/chassis-replace-overview.html"
-    - title: Apague el controlador dañado
+    - title: Flujo de trabajo de reemplazo del chasis
+      url: "/asa-c250/chassis-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/asa-c250/chassis-replace-requirements.html"
+    - title: Prepárese para reemplazar
+      url: "/asa-c250/chassis-replace-prepare.html"
+    - title: Apague las controladoras
       url: "/asa-c250/chassis-replace-shutdown.html"
     - title: Sustituya el chasis
       url: "/asa-c250/chassis-replace-move-hardware.html"
@@ -49,8 +70,10 @@ entries:
   - title: Controladora
     pdf-filename: Módulo de controlador ASA C250
     entries:
-    - title: Descripción general
-      url: "/asa-c250/controller-replace-overview.html"
+    - title: Flujo de trabajo de reemplazo de la controladora
+      url: "/asa-c250/controller-replace-workflow.html"
+    - title: Revise los requisitos
+      url: "/asa-c250/controller-replace-requirements.html"
     - title: Apague el controlador dañado
       url: "/asa-c250/controller-replace-shutdown.html"
     - title: Sustituya la controladora
@@ -59,7 +82,7 @@ entries:
       url: "/asa-c250/controller-replace-system-config-restore-and-verify.html"
     - title: Sistema de recuperación
       url: "/asa-c250/controller-replace-recable-reassign-disks.html"
-    - title: Restauración completa del sistema
+    - title: Reemplazo completo de controladoras
       url: "/asa-c250/controller-replace-restore-system-rma.html"
   - title: DIMM
     url: "/asa-c250/dimm-replace.html"

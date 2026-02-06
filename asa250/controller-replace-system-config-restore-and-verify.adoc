@@ -11,6 +11,8 @@ summary: Tras completar el reemplazo y el arranque del hardware en modo de mante
 
 
 [role="lead"]
+Después de completar la sustitución del hardware y arrancar tu sistema ASA A250 en modo de mantenimiento, necesitas verificar la configuración de bajo nivel del sistema del controlador de reemplazo y reconfigurar los ajustes del sistema según sea necesario.
+
 Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento, debe verificar la configuración del sistema de bajo nivel de la controladora de reemplazo y volver a configurar los ajustes del sistema según sea necesario.
 
 
@@ -68,3 +70,6 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 . Si el estado del sistema mostrado del módulo del controlador no coincide con la configuración del sistema, defina el `HA` estado para el módulo de la controladora: `ha-config modify controller ha-state`
 . Confirme que el ajuste ha cambiado: `ha-config show`
 
+
+.El futuro
+Después de que hayas restaurado y verificado la configuración del sistema, necesitas link:controller-replace-recable-reassign-disks.html["recablea el sistema y reasigna discos"].
