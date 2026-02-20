@@ -13,8 +13,10 @@ summary: Sustituya un módulo de ventilador en el sistema FAS70 o FAS90 si un ve
 [role="lead"]
 Sustituya un módulo de ventilador en el sistema FAS70 o FAS90 si un ventilador falla o no funciona de manera eficiente, ya que esto puede afectar a la refrigeración del sistema y al rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp.
 
+
+CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.
+
 .Pasos
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Retire el bisel (si es necesario) con dos manos, sujetando las aberturas de cada lado del bisel y tirando de él hacia usted hasta que el bisel se suelte de los espárragos de bolas del bastidor del chasis.
 . Identifique el módulo de ventilador que debe sustituir comprobando los mensajes de error de la consola y mirando el LED de atención en cada módulo de ventilador.
 +

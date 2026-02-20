@@ -29,6 +29,9 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+
+CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Intercambio en caliente de una fuente de alimentación de CA
@@ -36,7 +39,6 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 Para sustituir una fuente de alimentación de CA, lleve a cabo los siguientes pasos.
 
 .Pasos
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Identifique la fuente de alimentación defectuosa en función de los mensajes de error de la consola o a través del LED rojo de atención de la fuente de alimentación.
 . Desconecte el cable de alimentación de la PSU abriendo el retén del cable de alimentación y, a continuación, desenchufe el cable de alimentación de la PSU.
 +

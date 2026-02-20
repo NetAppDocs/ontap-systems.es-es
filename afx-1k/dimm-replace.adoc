@@ -13,6 +13,9 @@ summary: Reemplace un DIMM en su sistema de almacenamiento AFX 1K si se detectan
 [role="lead"]
 Reemplace un DIMM en su sistema de almacenamiento AFX 1K si se detectan errores de memoria excesivos corregibles o incorregibles. Estos errores pueden impedir que el sistema de almacenamiento inicie ONTAP. El proceso de reemplazo implica apagar el controlador dañado, quitarlo, reemplazar el DIMM, reinstalar el controlador y luego devolver la parte defectuosa a NetApp.
 
+
+CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.
+
 .Antes de empezar
 * Asegúrese de tener el componente de reemplazo que recibió de NetApp.
 * Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
@@ -148,7 +151,9 @@ Asegúrese de que apoya la parte inferior del módulo del controlador mientras l
 
 Debe sustituir un DIMM cuando el sistema informe de una condición de fallo permanente para ese DIMM.
 
-. Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
+
+CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.
+
 . Abra el conducto de aire del controlador en la parte superior del controlador.
 +
 .. Inserte los dedos en los huecos de los extremos del conducto de aire.
