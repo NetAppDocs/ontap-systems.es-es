@@ -15,7 +15,7 @@ Apague o tome el control de la controladora dañada.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Completa el apagado del controlador dañado deteniéndolo en el indicador LOADER y capturando las variables de entorno de arranque. El indicador LOADER es el estado de detención seguro desde el que puedes reemplazar el medio de arranque.
 
 .Pasos
 . Lleve la controladora dañada al aviso DEL CARGADOR:

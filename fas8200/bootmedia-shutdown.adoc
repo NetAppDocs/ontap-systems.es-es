@@ -23,7 +23,7 @@ El sistema FAS8200 solo admite procedimientos de recuperación de medios de arra
 
 == Opción 1: La mayoría de los sistemas
 
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Completa el apagado del controlador dañado deteniéndolo en el indicador LOADER y capturando las variables de entorno de arranque. El indicador LOADER es el estado de detención seguro desde el que puedes reemplazar el medio de arranque.
 
 .Pasos
 . Lleve la controladora dañada al aviso DEL CARGADOR:
@@ -69,7 +69,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 
 NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.
 
-Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
+Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
 * Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
 * Si tiene una configuración MetroCluster, debe haber confirmado que el estado de configuración de MetroCluster está configurado y que los nodos están en estado normal y habilitado (`metrocluster node show`).
