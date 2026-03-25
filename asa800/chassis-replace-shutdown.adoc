@@ -19,17 +19,10 @@ Este procedimiento es para sistemas con configuraciones de dos nodos. Para obten
 * Asegúrese de que dispone de los permisos y credenciales necesarios:
 +
 ** Credenciales de administrador local para ONTAP.
-** Accesibilidad de BMC para cada controladora.
+** Accesibilidad de BMC para cada controlador.
 
 
 * Asegúrese de que dispone de las herramientas y el equipo necesarios para la sustitución.
-* Como práctica recomendada antes del cierre, debe:
-+
-** Realizar adicionales https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["comprobaciones de estado del sistema"].
-** Actualice ONTAP a una versión recomendada para el sistema.
-** Resuelva cualquier https://activeiq.netapp.com/["Alertas de estado y riesgos de Active IQ"]. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.
-
-
 
 
 .Pasos
@@ -48,9 +41,11 @@ Este procedimiento es para sistemas con configuraciones de dos nodos. Para obten
 +
 `exit`
 
-. Inicie sesión en SP/BMC over SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior para supervisar el progreso.
+. Inicia sesión en el SP/BMC de cada controlador usando la dirección IP identificada en el paso anterior:
 +
-Si está utilizando una consola/portátil, inicie sesión en la controladora con las mismas credenciales de administrador del clúster.
+** Si inicias sesión desde el BMC por SSH, conéctate usando la dirección SP/BMC (por ejemplo, `ssh admin@<SP/BMC_address>`), luego ingresa el comando `system console` y autentícate.
+** Si estás usando una consola local o un portátil conectado directamente al controlador, inicia sesión con las mismas credenciales de administrador del clúster.
+
 
 . Detenga los dos nodos ubicados en el chasis dañado:
 +

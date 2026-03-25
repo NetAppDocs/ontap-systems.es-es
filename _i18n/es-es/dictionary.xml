@@ -5332,12 +5332,7 @@
   <block id="68d685ddbaa25f1a411d5e93d6f91913" category="list-text">Credenciales de administrador local para ONTAP.</block>
   <block id="d6562c849f41b9038124f0c304aed030" category="list-text">Detenga el acceso de todos los clientes/host a los datos del sistema de NetApp.</block>
   <block id="d61b46d9cd719b77efb76269147aa377" category="list-text">Suspender trabajos de backup externo.</block>
-  <block id="356bf392971487f892daba5338258571" category="paragraph">Como práctica recomendada antes del cierre, debe:</block>
-  <block id="2ee5edc561a6167cf2d57a64ee655bef" category="inline-link">comprobaciones de estado del sistema</block>
-  <block id="7023017d0098f741d6569842ee62b922" category="list-text">Realizar adicionales<block ref="9ace058273de133e6accbea83a7d278a" category="inline-link-rx"></block>.</block>
-  <block id="f40b8507b340a958be200bec6d3758a0" category="list-text">Actualice ONTAP a una versión recomendada para el sistema.</block>
   <block id="9f4d2068e7b3d206efc0252b3da597a5" category="inline-link">Alertas de estado y riesgos de Active IQ</block>
-  <block id="c5df4dcae9a001142a36959487445ff6" category="list-text">Resuelva cualquier<block ref="31b25beca26cb366eeb0665e3c0d7cbf" category="inline-link-rx"></block>. Tome nota de cualquier fallo presente en el sistema, como los LED de los componentes del sistema.</block>
   <block id="3923b7d5100131c85be2160c8b680704" category="list-text">Inicie sesión en el clúster a través de SSH o inicie sesión desde cualquier nodo del clúster mediante un cable de consola local y un equipo portátil/consola.</block>
   <block id="0d16db60da2c01b63ef84ee8d616c2fb" category="paragraph"><block ref="b206d268f79aeaa7c4f1e44684d2f080" prefix="" category="inline-code"></block></block>
   <block id="a39c8c38e51a42fcfaac22367dd19064" category="list-text">Espere a que cada controladora se detenga y muestre el aviso del CARGADOR.</block>
@@ -7474,7 +7469,6 @@ SFP+ (destino/iniciador)</block>
   <block id="0be7ecaeb710959e64858a36fa1f8783" category="inline-link">AFF A1K</block>
   <block id="c61e96543ff55077f64d8dd03940c2c6" category="inline-link">AFF A70</block>
   <block id="8cd7d5cbedf290a9b729cc263d9b289c" category="paragraph">ONTAP 9.15.1</block>
-  <block id="3fa7c0866aba2253b800fb8f1b9d08dc" category="list-text">Accesibilidad de BMC para cada controladora.</block>
   <block id="ac632c351c050929564cd7a72c3d383a" category="doc">Apague el controlador defectuoso: AFF A1K</block>
   <block id="a4fbb291103a5430eb9ece2393c095a4" category="doc">Devuelva el controlador - AFF A1K</block>
   <block id="fb829c49a3a2da88fb46330449bb960d" category="summary">Para restaurar el sistema a su funcionamiento completo, debe verificar los LIF, comprobar el estado del clúster y devolver la parte con error a NetApp. Póngase en contacto con el servicio de asistencia técnica en<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block>, 888-463-8277 (Norteamérica), 00-800-44-638277 (Europa) o +800-800-80-800 (Asia/Pacífico) si necesita el número RMA o ayuda adicional con el procedimiento de sustitución.</block>
@@ -8757,7 +8751,6 @@ SFP+ (destino/iniciador)</block>
   <block id="9959e1ea8c67446c566e6a371f9e14cb" category="list-text">En la controladora deteriorada, pulse<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> cuando se le solicite confirmar si la copia de seguridad de la restauración se ha realizado correctamente.</block>
   <block id="b883391d9dfbf834ff0bda07a53554f5" category="list-text">En el controlador defectuoso, pulse<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> cuando se le solicite utilizar la configuración restaurada.</block>
   <block id="d0ec0afe83814a07fcdbf02b0d2e2e8b" category="list-text">En la controladora defectuosa, pulse<block ref="57cec4137b614c87cb4e24a3d003a3e0" prefix=" " category="inline-code"></block> cuando se le solicite reiniciar el nodo.</block>
-  <block id="cd979ca520736846558f2b04a04b63da" category="paragraph">Si está utilizando una consola/portátil, inicie sesión en la controladora con las mismas credenciales de administrador del clúster.</block>
   <block id="4250e5b5781f94ff901cc1822461f6ae" category="doc">Sustituya el módulo de gestión del sistema - AFF A1K</block>
   <block id="b1b14a007e6d27cacb6cbf9837dd5e7e" category="doc">Devuelva el controlador: AFF A70 y AFF A90</block>
   <block id="4443f66d8d4febc600e0d4d0b3b0db91" category="doc">Devuelva el controlador: ASA A70 y ASA A90</block>
@@ -9399,7 +9392,6 @@ SFP+ (destino/iniciador)</block>
   <block id="7329bfa51dec924de206ced093bea600" category="paragraph">* Cables de 40/100 GbE*</block>
   <block id="8f31147c7cfeb7520dc9739e31dedc90" category="image-alt">Cable de 40/100 GB</block>
   <block id="ec83c89c1bfd1fa2fe72db4df75b0e43" category="image-alt">Cable a switches de red host ethernet 40/100GbE</block>
-  <block id="8f03269dbdbab70bab244893051fb6ec" category="paragraph">En cada controladora, conecte los puertos 1a, 1b, 1c y 1d a los switches de red host FC.</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">*64 Gb/s cables FC*</block>
   <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">Cable fc de 64 GB, ancho = 100px cm</block>
   <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
@@ -9867,7 +9859,6 @@ SFP+ (destino/iniciador)</block>
   <block id="4288b2b72921e4670bb8b42ba6a5248d" category="list-text">Identifique la dirección SP/BMC de todos los nodos del clúster:</block>
   <block id="bb000e8434af9c71358c26cf3aa76ce3" category="list-text">Salga del shell de cluster:</block>
   <block id="d9f6eac526670fe9182f1a63d251a180" category="paragraph"><block ref="f24f62eeb789199b9b2e467df3b1876b" prefix="" category="inline-code"></block></block>
-  <block id="29b1aa97ab42c7253b7c5769a711e501" category="list-text">Inicie sesión en SP/BMC over SSH con la dirección IP de cualquiera de los nodos que aparecen en el resultado del paso anterior para supervisar el progreso.</block>
   <block id="4e66424513d5ccef0e91ad9aa7c87642" category="list-text">Ingrese *y* para cada controlador en el clúster cuando vea:</block>
   <block id="38ae227cf94e3775806bccfd95814d4b" category="paragraph"><block ref="035b082bfaf23bf2d7b95c3ef597d380" prefix="" category="inline-code"></block></block>
   <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">Estos procedimientos muestran configuraciones comunes. El cableado específico depende de los componentes solicitados del sistema de almacenamiento. Para obtener información completa sobre la configuración y la prioridad de las ranuras, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
@@ -14924,4 +14915,12 @@ SFP+ (destino/iniciador)</block>
   <block id="0cea086e190611d579375e0cfbe7f6b7" category="paragraph">Completa el apagado del controlador dañado deteniéndolo en el indicador LOADER y capturando las variables de entorno de arranque. El indicador LOADER es el estado de detención seguro desde el que puedes reemplazar el medio de arranque.</block>
   <block id="580317d87f0c97d7c347306d452cfb2c" category="paragraph">Apaga o hazte cargo del controlador dañado. - Hazte cargo y detén el controlador dañado para que el controlador sano siga sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas el giveback automático y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.</block>
   <block id="0348833f0ff47bd2ae37f1706a53ef42" category="list-text">Si se han desconectado los enlaces de interconexión de alta disponibilidad, vuelve a conectarlos:</block>
+  <block id="5689c5ea3692b97ad8c9b15340cdeaf8" category="admonition">Aprieta completamente los tornillos de mariposa de la tarjeta mezzanine. Si están flojos, puede que no se detecten los puertos e0e a e0h, que el LED parpadee continuamente y que los registros muestren un error de "cable no soportado".</block>
+  <block id="4383fe9a37feb4f64a0355e3ec27ad10" category="paragraph">Desde la imagen de ONTAP extraída, copia la carpeta<block ref="6e2807816e9d2621b7e5dffff6c33711" prefix=" " category="inline-code"></block> al directorio raíz de la unidad flash USB.</block>
+  <block id="8b0642e6333dcba17664a67ef72215ec" category="list-text">Accesibilidad de BMC para cada controlador.</block>
+  <block id="da9053d5fc06539ec5cadf63d46c662d" category="list-text">Inicia sesión en el SP/BMC de cada controlador usando la dirección IP identificada en el paso anterior:</block>
+  <block id="43ed5e374baf2e56183228d2ee15fdc4" category="list-text">Si inicias sesión desde el BMC por SSH, conéctate usando la dirección SP/BMC (por ejemplo,<block ref="4af43ee092242a6ac7ac3f68e7a27542" prefix=" " category="inline-code"></block>), luego ingresa el comando<block ref="6a412eb180c3f0a9798690443fba49e1" prefix=" " category="inline-code"></block> y autentícate.</block>
+  <block id="4238d84ec7e4655601b7b55b2f076b2e" category="list-text">Si estás usando una consola local o un portátil conectado directamente al controlador, inicia sesión con las mismas credenciales de administrador del clúster.</block>
+  <block id="8e06442a81408e5b3d9d881ee34604d9" category="list-text">Conecta el puerto e10b al puerto e0b del NSM B del shelf 1.</block>
+  <block id="e075a310e0208871f253ed1786f7aa85" category="list-text">En cada controlador, conecta los puertos 2a, 2b, 2c y 2d a los switches de red del host FC.</block>
 </blocks>
