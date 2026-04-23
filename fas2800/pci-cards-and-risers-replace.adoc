@@ -11,17 +11,30 @@ summary: Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cabl
 
 
 [role="lead"]
-Sustituya la tarjeta intermedia desconectando los cables y los módulos SFP y QSFP de la tarjeta, sustituya la tarjeta intermedia que haya fallado y, a continuación, vuelva a conectar las tarjetas.
+Sustituye la tarjeta mezzanine en tu sistema FAS2820 si la tarjeta falla o actualízala a un protocolo diferente instalando una tarjeta nueva.
 
-* Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
-* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+* Usa este procedimiento con cualquier versión de ONTAP compatible con tu sistema.
+* Sustituye la tarjeta mezzanine por otra del mismo tipo o de un tipo diferente.
+* Anota la información de ifgrp y VLAN antes de apagar el controlador.
+* Si cambias los tipos de tarjeta mezzanine, cambia los ajustes de LIF y puerto después de que el controlador se reinicie.
+* Verifica que todos los demás componentes del sistema estén funcionando. Si el problema persiste, llama al soporte técnico.
 
 
-.Animación: Sustituya la tarjeta mezzanine
+.Animación - reemplace la tarjeta mezzanine
 video::a8ec891d-f6f6-4479-9ca2-af47017254ff[panopto]
 
 
 == Paso 1: Apague el controlador dañado
+
+.Antes de empezar
+* Si vas a cambiar los tipos de tarjeta mezzanine, captura la información ifgrp y VLAN del nodo dañado.
++
+[source, cli]
+----
+network port vlan show -node _impaired_node_name_
+network port ifgrp show -node _impaired_node_name_
+----
+
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
@@ -68,23 +81,23 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 == Paso 2: Extraiga el módulo del controlador
 
-Retire el módulo del controlador del sistema y, a continuación, retire la cubierta del módulo del controlador.
+Retira el módulo controlador y su cubierta.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
+. Afloja la cinta autoadherente, fíjate dónde están conectados los cables y luego desconecta los cables del sistema y los SFP (si es necesario).
 +
-Deje los cables en el dispositivo de administración de cables de manera que cuando vuelva a instalar el dispositivo de administración de cables, los cables estén organizados.
+Deja los cables en el dispositivo de gestión de cables para mantenerlos organizados.
 
 . Retire y retire los dispositivos de administración de cables de los lados izquierdo y derecho del módulo del controlador.
-. Apriete el pestillo del mango de la leva hasta que se suelte, abra el mango de la leva completamente para liberar el módulo del controlador del plano medio y, a continuación, tire con dos manos del módulo del controlador para extraerlo del chasis.
+. Suelta el pestillo del tirador de leva, ábrelo por completo y extrae el módulo controlador del chasis.
 +
 image::../media/drw_2850_pcm_remove_install_IEOPS-694.svg[Quite la controladora]
 
-. Dé la vuelta al módulo del controlador y colóquelo sobre una superficie plana y estable.
-. Abra la cubierta pulsando los botones azules de los laterales del módulo del controlador para liberar la cubierta y, a continuación, gire la cubierta hacia arriba y hacia fuera del módulo del controlador.
+. Dale la vuelta al mando y colócalo sobre una superficie plana y estable.
+. Pulsa los botones azules situados en los laterales del módulo controlador para liberar la cubierta. Gira la cubierta hacia arriba y sáquela del módulo controlador.
 +
-image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Abra el controlador]
+image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Abra la controladora]
 
 
 
@@ -138,36 +151,35 @@ NOTE: Puede aflojar los tornillos con los dedos o con un destornillador. Si util
 
 . Vuelva a instalar la tarjeta mezzanine:
 +
-.. Alinee la toma del enchufe de la tarjeta mezzanine de repuesto con la toma de la placa base y, a continuación, coloque suavemente la tarjeta en el zócalo.
+.. Alinea el conector de la tarjeta mezzanine de repuesto con el zócalo de la placa base y, luego, coloca con cuidado la tarjeta de manera uniforme en el zócalo.
 .. Apriete los tres tornillos de apriete manual de la tarjeta mezzanine.
 .. Vuelva a instalar la placa IO.
 
 
-. Vuelva a instalar la cubierta del módulo del controlador y bloquéela en su lugar.
+. Vuelve a colocar la cubierta del módulo controlador y bloquéala.
 
 
 
 
-== Paso 4: Instale el módulo del controlador
+== Paso 4: instala y reinicia el módulo controlador
 
-Vuelva a instalar el módulo del controlador.
+Reinstala y reinicia el módulo controlador.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Si aún no lo ha hecho, vuelva a colocar la cubierta del módulo del controlador.
 . Gire el módulo del controlador y alinee el extremo con la abertura del chasis.
-. Empuje suavemente el módulo del controlador hasta la mitad del sistema.Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
+. Empuja suavemente el módulo controlador hasta la mitad del chasis.
 +
 
 NOTE: No inserte completamente el módulo de la controladora en el chasis hasta que se le indique hacerlo.
 
-. Recuperar el sistema, según sea necesario.
+. Vuelve a conectar los cables del sistema según sea necesario.
 +
 Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instalarlos si está utilizando cables de fibra óptica.
 
 . Complete la reinstalación del módulo del controlador:
 +
-.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo.
+.. Con la palanca de leva abierta, empuja firmemente el módulo controlador hasta que quede completamente asentado. Cierra la palanca de leva para bloquear.
 +
 
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
@@ -176,16 +188,58 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
 
 .. Si aún no lo ha hecho, vuelva a instalar el dispositivo de administración de cables.
-.. Conecte los cables al dispositivo de gestión de cables con la correa de gancho y lazo.
+.. Fija los cables al dispositivo de gestión de cables con la cinta autoadherente. == Paso 5: reconfigura la tarjeta mezzanine (si ha cambiado de tipo)
 
 
-. Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
+
+
+Después de reiniciar el controlador, cambia la configuración de la tarjeta mezzanine para que coincida con la nueva tarjeta si la sustituiste por un tipo diferente.
+
+[role="tabbed-block"]
+====
+.Opción 1: tarjeta mezzanine de Fibre Channel a Ethernet
+--
+Configura la tarjeta mezzanine de reemplazo Ethernet actualizando los LIF y la configuración de los puertos según sea necesario.
+
+.Pasos
+. Usa el comando `network port show` para confirmar los nuevos nombres de puerto y los estados de enlace.
+. Reconstruye cualquier ifgrp y VLAN en los nuevos puertos mezzanine Ethernet.
+. Coloca los nuevos puertos, o los puertos ifgrp/VLAN, en los dominios de difusión y espacios IP correctos, y establece los valores de MTU.
+. Actualiza el puerto de origen del LIF afectado y la configuración de conmutación por error.
+. Elimina las LIF que ya no necesitas.
+
+
+Consulta link:https://docs.netapp.com/us-en/ontap/networking/configure_network_ports_cluster_administrators_only_overview.html["Conoce la configuración de puertos de red de ONTAP"] para obtener información más detallada sobre la configuración de Ethernet en ONTAP.
+
+--
+.Opción 2: tarjeta mezzanine de Ethernet a Fibre Channel
+--
+Configura la tarjeta mezzanine FC de reemplazo actualizando las LIF y la configuración de puertos según sea necesario.
+
+.Pasos
+. Activa FCP en las SVM pertinentes. Crea nuevas LIF de datos.
+. Actualiza la división en zonas del fabric y las rutas de host. Actualiza el conjunto de puertos, el igroup y las asignaciones de LUN según sea necesario.
+. Verifica la multivía del host. Confirma que no hay rutas obsoletas y que las rutas están equilibradas entre rutas optimizadas y no optimizadas.
+. Verifica que no haya LIFs en los puertos Ethernet eliminados, que todos los LIFs FC estén activos y sirviendo E/S, y que la monitorización de AutoSupport refleje la nueva configuración.
+
+
+Consulta link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["Visión general de la gestión SAN"] para obtener información más detallada sobre la configuración de Fibre Channel en ONTAP.
+
+--
+====
+
+
+== Paso 6: Restablece el funcionamiento normal del controlador
+
+Devuelve el almacenamiento al controlador afectado, restablece la devolución automática y finaliza la ventana de mantenimiento de AutoSupport.
+
+. Desde el controlador en buen estado o desde la consola de administración del clúster, vuelve a poner el controlador en funcionamiento normal restaurando su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
 . Restaure la devolución automática del control mediante el `storage failover modify -node local -auto-giveback true` comando.
 . Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 
 
 
 
-== Paso 5: Devuelva la pieza que falló a NetApp
+== Paso 7: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

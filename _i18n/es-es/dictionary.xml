@@ -5609,15 +5609,11 @@ Compruebe el soporte de arranque para asegurarse de que está bien asentado y co
 Consulte<block ref="087e4d006962c8ba6c4d8fdb71ff8e38" category="inline-link-rx"></block> para obtener más detalles.</block>
   <block id="0f844d6324319ebe9b4aabd24f1b88dd" category="list-text">Instale el módulo del controlador:</block>
   <block id="6bfde1459ef866428e3532004887b3b8" category="list-text">Vuelva a conectar el módulo del controlador.</block>
-  <block id="db5c04ca6cb958f296ff071cf8420f54" category="paragraph">Sustituya la tarjeta intermedia desconectando los cables y los módulos SFP y QSFP de la tarjeta, sustituya la tarjeta intermedia que haya fallado y, a continuación, vuelva a conectar las tarjetas.</block>
-  <block id="783de30113379b15fc6135387f11b7e6" category="video-title">Animación: Sustituya la tarjeta mezzanine</block>
   <block id="a0ff1a6d16d908c33e10409aed0ac623" category="paragraph">Retire el módulo del controlador del sistema y, a continuación, retire la cubierta del módulo del controlador.</block>
   <block id="cf6800eb49ae54456676c105c115a1fa" category="section-title">Paso 3: Reemplace la tarjeta mezzanine</block>
   <block id="6918dd1d1ecfa7a18a047a925c4f30ee" category="paragraph">Vuelva a colocar la tarjeta mezzanine.</block>
   <block id="83b54898f0ac014b1e217ee413643205" category="paragraph">Tarjeta mezzanine PCIe</block>
   <block id="64016c063cf6b470fdcccc5a97f852b1" category="list-text">Afloje los tornillos de la tarjeta mezzanine y levante la tarjeta mezzanine en línea recta.</block>
-  <block id="4bca5310f65e82fe5c4eec2c7a1c6c17" category="list-text">Alinee la toma del enchufe de la tarjeta mezzanine de repuesto con la toma de la placa base y, a continuación, coloque suavemente la tarjeta en el zócalo.</block>
-  <block id="f2972968e044e6666c42c0182107b4f6" category="paragraph">Vuelva a instalar el módulo del controlador.</block>
   <block id="f36f34bd21dc87823e156cd47c7d7440" category="list-text">Gire el módulo del controlador y alinee el extremo con la abertura del chasis.</block>
   <block id="3ab31ac30e2ad91e2f7e6a9ecd045f6e" category="list-text">Empuje suavemente el módulo del controlador hasta la mitad del sistema.Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.</block>
   <block id="d32890221c5529cefc96a956073d9844" category="list-text">Restaure la devolución automática del control mediante el<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block> comando.</block>
@@ -10896,7 +10892,6 @@ SFP+ (destino/iniciador)</block>
   <block id="56632d1795a7d32b89a455a3b633b7f5" category="list-text">Encienda el estante y configure los identificadores del estante utilizando la animación al comienzo de este paso.</block>
   <block id="6a3ffb8f58252e034e90b5eb7a9cc233" category="list-text">Encienda el estante y configure los identificadores del estante usando la animación al comienzo de este paso.</block>
   <block id="cb102c5c1eccde9b442d1de001f76cc3" category="image-alt">Retire la cubierta del controlador</block>
-  <block id="8fca7d700183532fd08f68b674a86c60" category="image-alt">Abra el controlador</block>
   <block id="6abebf9335209d6b986ad1d41e48f43b" category="image-alt">Reemplazar una tarjeta mezzanine</block>
   <block id="9f8a96e46f0e86179108737100c29b9d" category="list-text">Vuelva a instalar la cubierta del controlador.</block>
   <block id="627450f7182bd50247300c6db6f17129" category="image-alt">Quitar un módulo PCI</block>
@@ -15016,4 +15011,48 @@ SFP+ (destino/iniciador)</block>
   <block id="284f3d864e67ec64454ad1382833e490" category="summary">Encuentra procedimientos de sustitución de módulos de estantería NVMe para tu estantería de almacenamiento NetApp organizados por modelo de estantería. Esta referencia proporciona enlaces directos a flujos de trabajo de sustitución de NSM paso a paso para estanterías NS224 y NX224 para ayudarte a localizar rápidamente el procedimiento correcto para tu modelo de estantería específico.</block>
   <block id="a461d5a3ec6eff00835d5b1479552285" category="doc">Procedimientos de sustitución de la batería NVMEM o NVRAM por familia de plataformas</block>
   <block id="66439d0b114daf635ee9ba53d5e8d568" category="summary">El armario del sistema admite distintos tipos de unidades de distribución de alimentación. Las PDU cumplen las normas NEMA o IEC.</block>
+  <block id="bb67cf9a22f6bca036da3944f082f70d" category="admonition">Antes de cerrar la cubierta del controlador dañado, asegúrate de que las lengüetas eyectoras de todas las ranuras DIMM vacías vuelven a la posición de bloqueo.</block>
+  <block id="669e934b15627ccb89dc33fcabeddbfb" category="paragraph">Sustituye la tarjeta mezzanine en tu sistema FAS2820 si la tarjeta falla o actualízala a un protocolo diferente instalando una tarjeta nueva.</block>
+  <block id="188325fb14c01076ac7986e006024318" category="list-text">Usa este procedimiento con cualquier versión de ONTAP compatible con tu sistema.</block>
+  <block id="ac252143999e21b283146112dd2be869" category="list-text">Sustituye la tarjeta mezzanine por otra del mismo tipo o de un tipo diferente.</block>
+  <block id="fe8724291ba433d10b4fcf50b8fb75e8" category="list-text">Anota la información de ifgrp y VLAN antes de apagar el controlador.</block>
+  <block id="f161beffd589a67ef92732e9b253cdd7" category="list-text">Si cambias los tipos de tarjeta mezzanine, cambia los ajustes de LIF y puerto después de que el controlador se reinicie.</block>
+  <block id="449e834456e7e68b70b454418fba97ab" category="list-text">Verifica que todos los demás componentes del sistema estén funcionando. Si el problema persiste, llama al soporte técnico.</block>
+  <block id="5bff8c12368fa11b6a921de13c7b88c4" category="list-text">Si vas a cambiar los tipos de tarjeta mezzanine, captura la información ifgrp y VLAN del nodo dañado.</block>
+  <block id="f8d7ee81ae11933d89c54b63f5fadf14" category="paragraph">Retira el módulo controlador y su cubierta.</block>
+  <block id="209665c3ca401651aef828199962e8e6" category="list-text">Afloja la cinta autoadherente, fíjate dónde están conectados los cables y luego desconecta los cables del sistema y los SFP (si es necesario).</block>
+  <block id="3cd42af34b01ed058f7c2cd55e0996dd" category="paragraph">Deja los cables en el dispositivo de gestión de cables para mantenerlos organizados.</block>
+  <block id="7b0ea8fe43bfe3b98d824632eff95227" category="list-text">Suelta el pestillo del tirador de leva, ábrelo por completo y extrae el módulo controlador del chasis.</block>
+  <block id="98218aa7f65c228232e406628bf68c52" category="list-text">Dale la vuelta al mando y colócalo sobre una superficie plana y estable.</block>
+  <block id="c423597c377723410ddff79391c30184" category="list-text">Pulsa los botones azules situados en los laterales del módulo controlador para liberar la cubierta. Gira la cubierta hacia arriba y sáquela del módulo controlador.</block>
+  <block id="049bcfe9f533b1ce55e8c569103ad005" category="list-text">Alinea el conector de la tarjeta mezzanine de repuesto con el zócalo de la placa base y, luego, coloca con cuidado la tarjeta de manera uniforme en el zócalo.</block>
+  <block id="9995c7de2e4f28bd5897f9cddbfb7fe2" category="list-text">Vuelve a colocar la cubierta del módulo controlador y bloquéala.</block>
+  <block id="8b9e2d3291c598b800be072b8afefa3b" category="section-title">Paso 4: instala y reinicia el módulo controlador</block>
+  <block id="df34b20e74975704c940ac43d85db1a0" category="paragraph">Reinstala y reinicia el módulo controlador.</block>
+  <block id="aa8d1cbe476192b8bca04b6db3820a20" category="list-text">Empuja suavemente el módulo controlador hasta la mitad del chasis.</block>
+  <block id="f537a6f2f3860f6a3385b2dba60ee50d" category="list-text">Vuelve a conectar los cables del sistema según sea necesario.</block>
+  <block id="f44818abfdb464a54383bded154be7a6" category="list-text">Con la palanca de leva abierta, empuja firmemente el módulo controlador hasta que quede completamente asentado. Cierra la palanca de leva para bloquear.</block>
+  <block id="3caa3f6c101dc917e6e89ed7e891e2e7" category="list-text">Fija los cables al dispositivo de gestión de cables con la cinta autoadherente. == Paso 5: reconfigura la tarjeta mezzanine (si ha cambiado de tipo)</block>
+  <block id="e705f3e2e1683e9fdc37c829b76df435" category="paragraph">Después de reiniciar el controlador, cambia la configuración de la tarjeta mezzanine para que coincida con la nueva tarjeta si la sustituiste por un tipo diferente.</block>
+  <block id="4a75ad40a6302b2865f475233d3fb5e5" category="open-title">Opción 1: tarjeta mezzanine de Fibre Channel a Ethernet</block>
+  <block id="3eab4e5e3f38a487e4c0ff8986b53620" category="paragraph">Configura la tarjeta mezzanine de reemplazo Ethernet actualizando los LIF y la configuración de los puertos según sea necesario.</block>
+  <block id="5f0a91ebda5419c9dae2884b55adbe74" category="list-text">Usa el comando<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block> para confirmar los nuevos nombres de puerto y los estados de enlace.</block>
+  <block id="3efcada16cb2f3e01caddea484618416" category="list-text">Reconstruye cualquier ifgrp y VLAN en los nuevos puertos mezzanine Ethernet.</block>
+  <block id="6e2960cee1a644afd90e3d3b838fd123" category="list-text">Coloca los nuevos puertos, o los puertos ifgrp/VLAN, en los dominios de difusión y espacios IP correctos, y establece los valores de MTU.</block>
+  <block id="4c56c513928e3bd961610cfdc822c8d9" category="list-text">Actualiza el puerto de origen del LIF afectado y la configuración de conmutación por error.</block>
+  <block id="a795d709ecd423b1744a5ef88448d471" category="list-text">Elimina las LIF que ya no necesitas.</block>
+  <block id="2379f006c7634c9a3930eb53207e352b" category="inline-link-macro">Conoce la configuración de puertos de red de ONTAP</block>
+  <block id="b98137e3a1d1b6f4b29e605a6485919a" category="paragraph">Consulta <block ref="cb17047b6380f83ae8de9ed3ea1a53d8" category="inline-link-macro-rx"></block> para obtener información más detallada sobre la configuración de Ethernet en ONTAP.</block>
+  <block id="52a696c40ad570403490bdec6c48e094" category="open-title">Opción 2: tarjeta mezzanine de Ethernet a Fibre Channel</block>
+  <block id="e9e71980f309166c903d0c3d71389741" category="paragraph">Configura la tarjeta mezzanine FC de reemplazo actualizando las LIF y la configuración de puertos según sea necesario.</block>
+  <block id="fea1b58373a99298346b2ee3c42f7a8e" category="list-text">Activa FCP en las SVM pertinentes. Crea nuevas LIF de datos.</block>
+  <block id="da9bb3b5a73b19eb3674470b3621051d" category="list-text">Actualiza la división en zonas del fabric y las rutas de host. Actualiza el conjunto de puertos, el igroup y las asignaciones de LUN según sea necesario.</block>
+  <block id="87160066c3c44a03aee7080e00432c64" category="list-text">Verifica la multivía del host. Confirma que no hay rutas obsoletas y que las rutas están equilibradas entre rutas optimizadas y no optimizadas.</block>
+  <block id="062a9fa0f81c39da805029b15f680004" category="list-text">Verifica que no haya LIFs en los puertos Ethernet eliminados, que todos los LIFs FC estén activos y sirviendo E/S, y que la monitorización de AutoSupport refleje la nueva configuración.</block>
+  <block id="563c6fa09f1e284ce85546393fc8feb8" category="inline-link-macro">Visión general de la gestión SAN</block>
+  <block id="63018430f374d831226e536d0e46ce53" category="paragraph">Consulta <block ref="02b029a61c3a3a6905adcb1c22e947fd" category="inline-link-macro-rx"></block> para obtener información más detallada sobre la configuración de Fibre Channel en ONTAP.</block>
+  <block id="b677c618703db10bec968500a7722ccc" category="section-title">Paso 6: Restablece el funcionamiento normal del controlador</block>
+  <block id="21eb4ba3e07d5691bb2ca2aeeaea8fca" category="paragraph">Devuelve el almacenamiento al controlador afectado, restablece la devolución automática y finaliza la ventana de mantenimiento de AutoSupport.</block>
+  <block id="b0cf17c34e1e13a80699938c1fb9a3a1" category="list-text">Desde el controlador en buen estado o desde la consola de administración del clúster, vuelve a poner el controlador en funcionamiento normal restaurando su almacenamiento:<block ref="30edaf7c9fa43c78aeaf4b8fabb7af1a" prefix=" " category="inline-code"></block></block>
+  <block id="5a1c9794f830d65f2a212554cf798ab8" category="admonition">Antes de cerrar la cubierta del NSM dañado, asegúrate de que las lengüetas eyectoras de todas las ranuras DIMM vacías vuelven completamente a la posición de bloqueo.</block>
 </blocks>
