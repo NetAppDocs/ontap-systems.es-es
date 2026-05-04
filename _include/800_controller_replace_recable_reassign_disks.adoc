@@ -34,12 +34,6 @@ Puede introducir el siguiente comando para supervisar el progreso del comando sa
 .. Vuelva al nivel de privilegio de administrador: `set -privilege admin`
 
 
-. Si el sistema de almacenamiento tiene configurado el cifrado de volúmenes o el almacenamiento, debe restaurar la funcionalidad de cifrado de volúmenes o almacenamiento usando uno de los siguientes procedimientos, en función de si usa la gestión de claves externa o incorporada:
-+
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
-** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
-
-
 . Devolver la controladora:
 +
 .. Desde la controladora en buen estado, proporcione almacenamiento a la controladora que sustituyó: `storage failover giveback -ofnode _replacement_node_name_`
@@ -60,6 +54,12 @@ http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62
 +
 La salida de `storage failover show` El comando no debe incluir el ID del sistema cambiado en el mensaje del partner.
 
+
+
+. Si el sistema de almacenamiento tiene configurado el cifrado de volúmenes o el almacenamiento, debe restaurar la funcionalidad de cifrado de volúmenes o almacenamiento usando uno de los siguientes procedimientos, en función de si usa la gestión de claves externa o incorporada:
++
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["Restaure las claves de cifrado de gestión de claves incorporadas"^]
+** https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["Restaure las claves de cifrado de gestión de claves externas"^]
 
 
 . Compruebe que los discos se han asignado correctamente: `storage disk show -ownership`

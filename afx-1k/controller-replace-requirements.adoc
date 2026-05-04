@@ -15,6 +15,15 @@ Antes de reemplazar el controlador en su sistema de almacenamiento AFX 1K, aseg�
 
 Revise los requisitos para reemplazar la controladora.
 
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
 * Es importante que aplique los comandos de estos pasos en los sistemas correctos:
 +
 ** El controlador _drinated_ es el controlador que se va a sustituir.
@@ -27,10 +36,6 @@ Revise los requisitos para reemplazar la controladora.
 * Debe sustituir el componente con errores por la unidad reemplazable del sector (FRU) que ha recibido de NetApp.
 * Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
 * No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
-* Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.
-+
-Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
-
 
 
 .El futuro

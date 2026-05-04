@@ -4,6 +4,15 @@
 
 Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP.
 
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
 * Todas las bandejas de unidades deben funcionar correctamente.
 * Si el sistema tiene una licencia V_StorageAttach, debe consultar los pasos adicionales necesarios antes de realizar este procedimiento.
 * Si su sistema está en un par de alta disponibilidad, el nodo en buen estado debe ser capaz de tomar el nodo que se va a sustituir (denominado en este procedimiento el «'nodo dañado''').
@@ -21,9 +30,5 @@ Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimie
 ** El nodo _regrsustituya_ es el nuevo nodo que está reemplazando al nodo dañado.
 ** El nodo _heated_ es el nodo que sobrevive.
 
-
-* Siempre debe capturar el resultado de la consola del nodo en un archivo de texto.
-+
-Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
 
 

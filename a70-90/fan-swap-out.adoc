@@ -36,7 +36,10 @@ Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los
 .Pasos
 . Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Esto evita que se abran casos de soporte automático durante tu ventana de mantenimiento planificada. La duración máxima de la supresión es de 72 horas. Si tu mantenimiento termina antes de tiempo, puedes volver a habilitar la creación de casos invocando un mensaje AutoSupport con `MAINT=END`. Para más información, consulta https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Cómo suprimir la creación automática de casos durante las ventanas de mantenimiento programadas"^].
 
 +
 El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
@@ -101,7 +104,10 @@ Toma el control y detén el controlador dañado para que el controlador sano con
 .Pasos
 . Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Esto evita que se abran casos de soporte automático durante tu ventana de mantenimiento planificada. La duración máxima de la supresión es de 72 horas. Si tu mantenimiento termina antes de tiempo, puedes volver a habilitar la creación de casos invocando un mensaje AutoSupport con `MAINT=END`. Para más información, consulta https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Cómo suprimir la creación automática de casos durante las ventanas de mantenimiento programadas"^].
 
 +
 El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:

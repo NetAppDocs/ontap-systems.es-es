@@ -4,6 +4,15 @@
 
 Revise los requisitos para sustituir el módulo del controlador.
 
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
 * Todas las bandejas de unidades deben funcionar correctamente.
 * El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
 * No utilice este procedimiento para las actualizaciones de la controladora; consulte la https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para obtener orientación.
@@ -18,9 +27,5 @@ Revise los requisitos para sustituir el módulo del controlador.
 ** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
 ** El controlador _heated_ es el controlador que sobrevive.
 
-
-* Siempre debe capturar la salida de consola de la controladora en un archivo de registro de texto.
-+
-Esto proporciona un registro del procedimiento para poder solucionar los problemas que puedan surgir durante el proceso de reemplazo.
 
 

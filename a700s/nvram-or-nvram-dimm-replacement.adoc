@@ -37,9 +37,18 @@ Toma el control y detén el controlador dañado para que el controlador sano con
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra falso según su condición, debe corregir el problema antes de apagar la controladora dañada; consulte link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^].
 
 .Pasos
-. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport: `system node autosupport invoke -node * -type all -message MAINT=_number_of_hours_down_h`
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas: `cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Esto evita que se abran casos de soporte automático durante tu ventana de mantenimiento planificada. La duración máxima de la supresión es de 72 horas. Si tu mantenimiento termina antes de tiempo, puedes volver a habilitar la creación de casos invocando un mensaje AutoSupport con `MAINT=END`. Para más información, consulta https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Cómo suprimir la creación automática de casos durante las ventanas de mantenimiento programadas"^].
+
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:*> system node autosupport invoke -node * -type all -message MAINT=2h`
 
 . Si la controladora dañada forma parte de un par de alta disponibilidad, deshabilite la devolución automática de la consola de la controladora en buen estado: `storage failover modify -node local -auto-giveback false`
 . Lleve la controladora dañada al aviso DEL CARGADOR:

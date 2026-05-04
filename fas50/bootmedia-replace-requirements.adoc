@@ -13,6 +13,15 @@ summary: Antes de reemplazar el medio de arranque en su sistema de almacenamient
 [role="lead"]
 Antes de reemplazar el medio de arranque en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto.
 
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
 .unidad flash USB
 * Asegúrese de tener una unidad flash USB formateada en FAT32.
 * El USB debe tener suficiente capacidad de almacenamiento para contener el  `image_xxx.tgz` archivo.

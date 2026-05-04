@@ -54,7 +54,7 @@ En la siguiente tabla se identifican los tipos de cables que pueden recibir. Si 
 +
 [cols="1,2,1,2"]
 |===
-| Tipo de cable... | Número de pieza y longitud | Tipo de conector | Durante... .2 o posterior 
+| Tipo de cable... | Número de pieza y longitud | Tipo de conector | Durante... 
 
 
  a| 
@@ -62,7 +62,7 @@ Cable de 25 GbE
  a| 
 X66240A-05 (112-00595), 0,5 m;
 
-X66240-2 (112-00573), 2m 3 o posterior
+X66240-2 (112-00573), 2 m
  a| 
 image:../media/oie_cable100_gbe_qsfp28.png["Conector QSFP28 de 100 GbE"]
  a| 
@@ -76,28 +76,31 @@ X66240A-2 (112-00598), 2 m;
 X66240A-5 (112-00600), 5 m
  a| 
 SQL Server
+
+
+
  a| 
 Cable de 100 GbE
  a| 
 X66211-2 (112-00574), 2 m;
 
 X66211-5 (112-00576), 5 m
-
-
-
  a| 
 Reducida
+
+
+
  a| 
 RJ-45 (dependiente del pedido)
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_rj45.png["Conector de cable RJ-45"]
-
-
-
  a| 
 Red de gestión (BMC y puerto de llave inglesa) y datos Ethernet (e0a y e0b)
+
+
+
  a| 
 Fibre Channel
  a| 
@@ -110,27 +113,29 @@ X66250-15 (112-00346) 15 m;
 X66250-30 (112-00347) 30m
  a| 
 image:../media/oie_cable_fc_optical.png["Cable óptico de canal de fibra de la OIE"]
-
-
-
  a| 
+
+
+
  a| 
 Cable de consola Micro-USB
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_micro_usb.png["Conector micro USB"]
-
-
-
  a| 
 Conexión de consola durante la configuración del software
+
+
+
  a| 
 Cables de alimentación
  a| 
 No aplicable
  a| 
 image:../media/oie_cable_power.png["Cables de alimentación"]
+ a| 
+Encendido del sistema
 
 |===
 . Revise la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"^] y recopilar la información necesaria que aparece en esa guía.
@@ -186,9 +191,9 @@ Use la animación o los pasos tabulados para completar el cableado entre los con
 .Animación: Conecte mediante cable el clúster de dos nodos sin switches
 video::beec3966-0a01-473c-a5de-ac68017fbf29[panopto]
 .Pasos
-. Use el cable de interconexión de clúster de 25GbE para conectar los puertos e0c a e0c y e0d a e0d.
+. Utiliza el cable de interconexión de clúster de 25 GbE para conectar los puertos de interconexión de clúster e0c con e0c y e0d con e0d.
 +
-image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE"]:
+image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE"]
 
 +
 image:../media/drw_affa250_tnsc_cabling.png["Cableado de interconexión de clúster en un clúster sin switches de dos nodos"]
@@ -244,7 +249,7 @@ image::../media/drw_affa250_mgmt_cabling.png[Cableado de puertos de gestión]
 Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.
 
 
-NOTE: link:https://hwu.netapp.com["Hardware Universe de NetApp"^] La prioridad de ranura para tarjetas de red host (Fibre Channel o 25GbE) es la ranura 2. Sin embargo, si tiene ambas tarjetas, la tarjeta de canal de fibra va en la ranura 2 y la tarjeta de 25GbE va en la ranura 1 (como se muestra en las opciones a continuación). Si dispone de una bandeja externa, la tarjeta de almacenamiento se coloca en la ranura 1, la única ranura compatible para las bandejas.
+NOTE: link:https://hwu.netapp.com["Hardware Universe de NetApp"^] la prioridad de ranura para las tarjetas de red host (Fibre Channel o 25 GbE) es la ranura 2. Sin embargo, si tienes ambas tarjetas, la tarjeta Fibre Channel va en la ranura 2 y la tarjeta 25 GbE va en la ranura 1 (como se muestra en las opciones abajo). Si tienes un shelf externo, la tarjeta de almacenamiento va en la ranura 1, la única ranura admitida para shelves.
 
 [role="tabbed-block"]
 ====
@@ -275,9 +280,9 @@ image:../media/drw_affa250_fc_host_cabling.png["Cableado del host de Fibre Chann
 
 
 --
-.Opción 2: Cable a datos 25GbE o red host
+.Opción 2: Cable a red de datos o host de 25 GbE
 --
-Los puertos de 25 GbE de las controladoras están conectados a datos de 25 GbE o a switches de red de host.
+Los puertos de 25 GbE de los controladores están conectados a conmutadores de red de datos o host de 25 GbE.
 
 .Antes de empezar
 * Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.

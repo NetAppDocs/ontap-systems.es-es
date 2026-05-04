@@ -15,8 +15,17 @@ Antes de reemplazar el medio de arranque en tu ASA C250, asegúrate de cumplir c
 
 El proceso automatizado de recuperación de medios de arranque solo se admite en ONTAP 9.18.1 y versiones posteriores. Si tu sistema de almacenamiento está ejecutando una versión anterior de ONTAP, usa el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"].
 
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
 * Debe sustituir el componente con errores por un componente FRU de reemplazo con la misma capacidad que recibió de NetApp.
-* Verifique que el puerto e0M (llave) en el controlador dañado esté conectado y no esté defectuoso.
+* Verifica que la interfaz e0S (puerto de llave e0M) del controlador dañado no esté averiada.
 +
 El puerto e0M se utiliza para comunicarse entre los dos controladores durante el proceso de recuperación de arranque automatizado.
 

@@ -4,18 +4,24 @@ sidebar: sidebar
 keywords: aff c30, aff c60, add IO module 
 summary: Agrega un módulo de I/O a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de tu sistema para manejar el tráfico de datos. 
 ---
-= Agrega un módulo IO - AFF C30 y AFF C60
+= Agrega un módulo de E/S - AFF C30 y AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Agregue un módulo de E/S a su sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
+Agrega un módulo de E/S a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de tu sistema para manejar el tráfico de datos. Puedes usar este procedimiento para añadir un módulo de E/S a un controlador operativo como una actualización planificada o a un controlador con fallas durante la ventana de mantenimiento.
 
 Puede añadir un módulo de I/O a los sistemas de almacenamiento AFF C30 y AFF C60 cuando haya ranuras disponibles o cuando todas estén completamente ocupadas.
 
 .Acerca de esta tarea
+Puedes realizar este procedimiento en cualquiera de los controladores del par de HA, sin importar si el controlador está actualmente operativo o averiado. Como no se puede añadir un módulo de E/S a un controlador en funcionamiento, el controlador de destino debe apagarse antes de instalar el módulo. El partner de HA se encarga de las operaciones de almacenamiento durante el procedimiento para que los datos sigan estando disponibles para los clientes.
+
+* Si el controlador de destino es *operativo* (adición prevista), sigue los pasos de apagado tal como están escritos, tratando al controlador de destino como el controlador "perjudicado" en ese contenido.
+* Si el controlador de destino está *perjudicado*, sigue los pasos de apagado tal y como están escritos.
+
+
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
 
 Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
@@ -24,7 +30,9 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
-== Paso 1: Apague el módulo del controlador defectuoso
+== Paso 1: apaga el módulo controlador de destino
+
+Toma el control y apaga el módulo controlador de destino para que su pareja de HA siga sirviendo datos mientras añades el módulo de E/S. Los pasos enlazados se refieren al controlador que se está apagando como el controlador "deteriorado"; los mismos pasos se aplican tanto si tomas el control de un controlador operativo para una adición planificada como si apagas un controlador que ya está deteriorado.
 
 [role="tabbed-block"]
 ====
@@ -43,7 +51,10 @@ Cada proceso SCSI-blade debe quórum con los otros nodos del clúster. Todos los
 .Pasos
 . Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Esto evita que se abran casos de soporte automático durante tu ventana de mantenimiento planificada. La duración máxima de la supresión es de 72 horas. Si tu mantenimiento termina antes de tiempo, puedes volver a habilitar la creación de casos invocando un mensaje AutoSupport con `MAINT=END`. Para más información, consulta https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Cómo suprimir la creación automática de casos durante las ventanas de mantenimiento programadas"^].
 
 +
 El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
@@ -108,7 +119,10 @@ Toma el control y detén el controlador dañado para que el controlador sano con
 .Pasos
 . Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
 +
-`system node autosupport invoke -node * -type all -message MAINT=number_of_hours_downh`
+`system node autosupport invoke -node * -type all -message MAINT=<number of hours down>h`
+
++
+Esto evita que se abran casos de soporte automático durante tu ventana de mantenimiento planificada. La duración máxima de la supresión es de 72 horas. Si tu mantenimiento termina antes de tiempo, puedes volver a habilitar la creación de casos invocando un mensaje AutoSupport con `MAINT=END`. Para más información, consulta https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["Cómo suprimir la creación automática de casos durante las ventanas de mantenimiento programadas"^].
 
 +
 El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
