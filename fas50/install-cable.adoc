@@ -44,48 +44,41 @@ Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Ha
 ====
 .Cableado de clúster sin switches
 --
+Usa esta opción de cableado cuando los dos controladores estén conectados directamente entre sí sin usar switches de red en clúster.
+
 .FAS50 con un módulo I/O de 40/100 GbE con 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conectar las conexiones de interconexión de clúster/alta disponibilidad:
-+
+Conecta los puertos de interconexión de alta disponibilidad del módulo de E/S en la ranura 4.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
-.. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
-+
+.Pasos
+. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
+. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
+
+
 *100 GbE Cluster/cables de interconexión HA*
 
-+
 image::../media/oie_cable100_gbe_qsfp28.png[Cable de alta disponibilidad de 100 GbE del clúster]
 
-+
 image::../media/drw_isi_fas50_switchless_2p_100gbe_cabling_ieops-1937.svg[diagrama de cableado de clúster sin switches de fas50 usando un módulo de 100gbe io]
 
-
-
-
-
-=====
 --
 .Cableado de clúster conmutado
 --
+Usa esta opción de cableado cuando los controladores se conectan a switches de red de clúster en vez de estar conectados directamente entre sí.
+
 .FAS50 con un módulo I/O de 40/100 GbE con 2 puertos
-[%collapsible]
-=====
-. Conecte los cables de las controladoras a los switches de red de clúster:
-+
+Conecta los puertos de interconexión de clúster/HA del módulo de E/S en la ranura 4 a los switches de red del clúster.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
-.. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
-.. Conecte el cable del puerto B E4A al switch de red de clúster A.
-.. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
+.Pasos
+. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
+. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
+. Conecte el cable del puerto B E4A al switch de red de clúster A.
+. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
 +
 *40/100 GbE Cluster/cables de interconexión HA*
 
@@ -97,9 +90,6 @@ image:../media/drw_isi_fas50_2p_100gbe_switched_cluster_cabling_ieops-1936.svg["
 
 
 
-
-
-=====
 --
 ====
 
@@ -119,62 +109,44 @@ Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Ha
 ====
 .Cableado del host Ethernet
 --
+Conecta los controladores a tu red host Ethernet usando los puertos adecuados según la configuración de tu módulo de I/O.
+
 .FAS50 con un módulo I/O de 10/25 GbE con 4 puertos
-[%collapsible]
-=====
-.Pasos
-. En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
-+
+En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
+
 * Cables de 10/25 GbE*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE, width=100px"]
 
-+
 image::../media/drw_isi_fas50_4p_25gbe_optional_cabling_ieops-1934.svg[cable fas50 a switches de red ethernet host de 10/25 GbE]
 
-
-
-=====
 --
 .Cableado del host FC
 --
+Conecta los controladores a tu red host de Fibre Channel usando el módulo de E/S FC en tu sistema.
+
 .FAS50 con un módulo de I/O FC de 4 puertos de 64 Gb/s.
-[%collapsible]
-=====
-.Pasos
-. En cada controlador, conecta los puertos 2a, 2b, 2c y 2d a los switches de red del host FC.
-+
+En cada controlador, conecta los puertos 2a, 2b, 2c y 2d a los switches de red del host FC.
+
 *64 Gb/s cables FC*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["Cable fc de 64 GB, ancho = 100px cm"]
 
-+
 image::../media/drw_isi_fas50_4p_64gb_fc_optional_cabling_ieops-1935.svg[Cable a switches de red host de 64GB fc]
 
-
-
-=====
 --
 ====
 
 
 == Paso 3: Conecte los cables de las conexiones de red de gestión
 
-Conecte las controladoras a la red de gestión.
+Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
 
-. Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
-+
 * 1000BASE-T CABLES RJ-45*
 
-+
 image::../media/oie_cable_rj45.png[Cables RJ-45]
 
-+
 image::../media/drw_isi_fas50_wrench_cabling_ieops-1938.svg[Conéctese a su red de gestión]
-
-
 
 
 IMPORTANT: No enchufe los cables de alimentación todavía.
@@ -201,26 +173,20 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Cable HD Mini-SAS]
 
 
 
-[role="tabbed-block"]
-====
-.Opción 1: Una bandeja DS460C
---
+
+
+=== Un estante DS460C
+
 Conecte mediante cable cada controladora a cada módulo de IOM12 de la bandeja DS460C.
 
 .Pasos
-. Conecte la controladora A a la bandeja:
-+
-.. Conecte el cable del controlador A del puerto 3a al puerto IOMA 1.
-.. Cable del controlador del puerto A 3D al puerto IOMB 3.
+. Conecte el cable del controlador A del puerto 3a al puerto IOMA 1.
+. Cable del controlador del puerto A 3D al puerto IOMB 3.
 +
 image:../media/drw_isi_fas50_1_ds460c_controller_a_cabling_ieops-2167.svg["La controladora A dispone de los puertos 3a y 3D cableados a una bandeja DS460C"]
 
-
-
-. Conecte la controladora B a la bandeja:
-+
-.. Conecte el cable del puerto B del controlador 3a al puerto IOMB 1.
-.. Conecte el cable del puerto B del controlador 3D al puerto IOMA 3.
+. Conecte el cable del puerto B del controlador 3a al puerto IOMB 1.
+. Conecte el cable del puerto B del controlador 3D al puerto IOMA 3.
 +
 image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Controladora B con los puertos 3a y 3D cableados a una bandeja DS460C"]
 
@@ -228,41 +194,26 @@ image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Contr
 
 
 
---
-.Opción 2: Dos bandejas DS460C
---
+=== Dos estantes DS460C
+
 Conecte cada controladora a los módulos IOM12 en ambas bandejas DS460C.
 
-. Conecte el cable de las conexiones de bandeja a bandeja:
-+
-.. Bandeja de cables 1 Puerto IOMA 3 a Bandeja 2 Puerto IOMA 1.
-.. Bandeja de cables 1 Puerto IOMB 3 a Bandeja 2 Puerto IOMB 1.
+. Bandeja de cables 1 Puerto IOMA 3 a Bandeja 2 Puerto IOMA 1.
+. Bandeja de cables 1 Puerto IOMB 3 a Bandeja 2 Puerto IOMB 1.
 +
 image:../media/drw_isi_fas50_2_ds460c_shelf_to_shelf_ieops-2172.svg["conecte el cable entre la bandeja y la bandeja"]
 
-
-
-. Conecte la controladora A a las bandejas:
-+
-.. Conecte por cable el puerto A 3a a el puerto IOMA 1 de la bandeja 1.
-.. Conecte el cable del controlador A del puerto 3D al puerto 3 de IOMB de la bandeja 2.
+. Conecte por cable el puerto A 3a a el puerto IOMA 1 de la bandeja 1.
+. Conecte el cable del controlador A del puerto 3D al puerto 3 de IOMB de la bandeja 2.
 +
 image:../media/drw_isi_fas50_2_ds460c_controller_a_cabling_ieops-2170.svg["De la controladora A, los puertos 3a y 3D, cableados a dos bandejas DS460C"]
 
-
-
-. Conecte la controladora B a las bandejas:
-+
-.. Conecte el cable del controlador B del puerto 3a al puerto 1 de IOMB de la bandeja 1.
-.. Conecte el cable del controlador B, puerto 3D a la bandeja 2, puerto IOMA 3.
+. Conecte el cable del controlador B del puerto 3a al puerto 1 de IOMB de la bandeja 1.
+. Conecte el cable del controlador B, puerto 3D a la bandeja 2, puerto IOMA 3.
 +
 image:../media/drw_isi_fas50_2_ds460c_controller_b_cabling_ieops-2171.svg["Los puertos 3a y 3D de la controladora B cableados a dos bandejas DS460C"]
 
 
 
-
-
---
-====
 .El futuro
 Después de cablear el hardware del sistema de almacenamiento,link:install-power-hardware.html["encienda el sistema de almacenamiento"]

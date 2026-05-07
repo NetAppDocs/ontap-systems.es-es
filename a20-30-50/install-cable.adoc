@@ -44,18 +44,17 @@ Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Ha
 ====
 .Cableado de clúster sin switches
 --
+Usa esta opción de cableado cuando los dos controladores estén conectados directamente entre sí sin usar switches de red en clúster.
+
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conectar las conexiones de interconexión de clúster/alta disponibilidad:
-+
+Cablea los puertos de interconexión de alta disponibilidad del clúster en los módulos de E/S de las ranuras 2 y 4.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en los módulos de I/O en las ranuras 2 y 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable del controlador A del puerto E2A al puerto E2A de la controladora B.
-.. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
+.Pasos
+. Conecte el cable del controlador A del puerto E2A al puerto E2A de la controladora B.
+. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
 +
 
 NOTE: Los puertos E2B y e4b de los módulos de I/O no se utilizan y están disponibles para la conectividad de red del host.
@@ -71,21 +70,15 @@ image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg
 
 
 
-
-
-=====
 .AFF A30 o AFF A50 con un módulo de I/O de 40/100 GbE de 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conectar las conexiones de interconexión de clúster/alta disponibilidad:
-+
+Conecta los puertos de interconexión de alta disponibilidad del módulo de E/S en la ranura 4.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
-.. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
+.Pasos
+. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
+. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
 +
 *100 GbE Cluster/cables de interconexión HA*
 
@@ -97,21 +90,15 @@ image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg
 
 
 
-
-
-=====
 .AFF A20 con un módulo I/O de 10/25 GbE con 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conectar las conexiones de interconexión de clúster/alta disponibilidad:
-+
+Conecta los puertos de interconexión de alta disponibilidad del módulo de E/S en la ranura 4.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 10/25 GbE.
 
-+
-.. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
-.. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
+.Pasos
+. Conecte el cable del controlador A del puerto E4A al puerto E4A de la controladora B.
+. Conecte el cable del controlador A del puerto e4b al puerto e4b de la controladora B.
 +
 *25 GbE Cluster/cables de interconexión HA*
 
@@ -123,26 +110,22 @@ image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[diagrama 
 
 
 
-
-
-=====
 --
 .Cableado de clúster conmutado
 --
+Usa esta opción de cableado cuando los controladores se conectan a switches de red de clúster en vez de estar conectados directamente entre sí.
+
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conectar las conexiones de interconexión de clúster/alta disponibilidad:
-+
+Conecta los puertos de interconexión de clúster/alta disponibilidad en los módulos de E/S de las ranuras 2 y 4 a los switches de red del clúster.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en los módulos de I/O en las ranuras 2 y 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
-.. Conecte el cable de la controladora A al puerto E2A al switch de red de clúster B.
-.. Conecte el cable del puerto B E4A al switch de red de clúster A.
-.. Conecte el cable del controlador B del puerto E2A al switch de red de clúster B.
+.Pasos
+. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
+. Conecte el cable de la controladora A al puerto E2A al switch de red de clúster B.
+. Conecte el cable del puerto B E4A al switch de red de clúster A.
+. Conecte el cable del controlador B del puerto E2A al switch de red de clúster B.
 +
 
 NOTE: Los puertos E2B y e4b de los módulos de I/O no se utilizan y están disponibles para la conectividad de red del host.
@@ -158,23 +141,17 @@ image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[d
 
 
 
-
-
-=====
 .AFF A30 o AFF A50 con un módulo de I/O de 40/100 GbE de 2 puertos
-[%collapsible]
-=====
-.Pasos
-. Conecte los cables de las controladoras a los switches de red de clúster:
-+
+Conecta los puertos de interconexión de clúster/HA del módulo de E/S en la ranura 4 a los switches de red del clúster.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 40/100 GbE.
 
-+
-.. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
-.. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
-.. Conecte el cable del puerto B E4A al switch de red de clúster A.
-.. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
+.Pasos
+. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
+. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
+. Conecte el cable del puerto B E4A al switch de red de clúster A.
+. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
 +
 *40/100 GbE Cluster/cables de interconexión HA*
 
@@ -186,22 +163,17 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[C
 
 
 
-
-
-=====
 .AFF A20 con un módulo I/O de 10/25 GbE con 2 puertos
-[%collapsible]
-=====
-. Conecte los cables de las controladoras a los switches de red de clúster:
-+
+Conecta los puertos de interconexión de clúster/HA del módulo de E/S en la ranura 4 a los switches de red del clúster.
+
 
 NOTE: El tráfico de interconexión del clúster y el tráfico de alta disponibilidad comparten los mismos puertos físicos (en el módulo de I/O de la ranura 4). Los puertos son 10/25 GbE.
 
-+
-.. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
-.. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
-.. Conecte el cable del puerto B E4A al switch de red de clúster A.
-.. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
+.Pasos
+. Conecte el cable De la controladora A al puerto E4A al switch de red de clúster A.
+. Conecte el cable de la controladora A al puerto e4b al switch de red de clúster B.
+. Conecte el cable del puerto B E4A al switch de red de clúster A.
+. Conecte el cable del controlador B del puerto e4b al switch de red de clúster B.
 +
 *10/25 GbE Cluster/cables de interconexión HA*
 
@@ -213,9 +185,6 @@ image:../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg["a20 diagram
 
 
 
-
-
-=====
 --
 ====
 
@@ -235,83 +204,56 @@ Si no se muestra aquí la configuración, vaya a link:https://hwu.netapp.com["Ha
 ====
 .Cableado del host Ethernet
 --
+Conecta los controladores a tu red host Ethernet usando los puertos adecuados según la configuración de tu módulo de I/O.
+
 .AFF A30 o AFF A50 con dos módulos de I/O de 40/100 GbE con 2 puertos
-[%collapsible]
-=====
-.Pasos
-. En cada controladora, conecte los puertos E2B y e4b a los switches de red host Ethernet.
-+
+En cada controladora, conecte los puertos E2B y e4b a los switches de red host Ethernet.
+
 
 NOTE: Los puertos en los módulos de I/O de la ranura 2 y 4 son de 40/100 GbE (la conectividad de host es de 40/100 GbE).
 
-+
 * Cables de 40/100 GbE*
 
-+
 image::../media/oie_cable_sfp_gbe_copper.png[Cable de 40/100 GB]
 
-+
 image::../media/drw_isi_a30-50_host_2p_40-100gbe_2card_cabling_ieops-2014.svg[Cable a switches de red host ethernet 40/100GbE]
 
+.AFF A20, AFF A30 o AFF A50 con un módulo de E/S 10/25 GbE de 4 puertos
+En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
 
-
-=====
-.AFF A20, A30 o AFF A50 con un módulo I/O de 10/25 GbE de 4 puertos
-[%collapsible]
-=====
-.Pasos
-. En cada controladora, conecte los puertos E2A, E2B, E2C y e2d a los switches de red host Ethernet.
-+
 * Cables de 10/25 GbE*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["Conector de cobre SFP GbE"]
 
-+
 image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Cable a switches de red host ethernet 40/100GbE]
 
-
-
-=====
 --
 .Cableado del host FC
 --
-.AFF A20, A30 o AFF A50 con un módulo de I/O FC de 64 Gb/s de 4 puertos
-[%collapsible]
-=====
-.Pasos
-. En cada controlador, conecta los puertos 2a, 2b, 2c y 2d a los switches de red del host FC.
-+
+Conecta los controladores a tu red host de Fibre Channel usando el módulo de E/S FC en tu sistema.
+
+.AFF A20, AFF A30 o AFF A50 con un módulo de E/S FC de 4 puertos a 64 Gb/s
+En cada controlador, conecta los puertos 2a, 2b, 2c y 2d a los switches de red del host FC.
+
 *64 Gb/s cables FC*
 
-+
 image:../media/oie_cable_sfp_gbe_copper.png["Cable fc de 64 GB"]
 
-+
 image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cable a switches de red host de 64GB fc]
 
-
-
-=====
 --
 ====
 
 
 == Paso 3: Conecte los cables de las conexiones de red de gestión
 
-Conecte las controladoras a la red de gestión.
+Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
 
-. Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
-+
 * 1000BASE-T CABLES RJ-45*
 
-+
 image::../media/oie_cable_rj45.png[Cables RJ-45]
 
-+
 image::../media/drw_isi_g_wrench_cabling_ieops-1928.svg[Conéctese a su red de gestión]
-
-
 
 
 IMPORTANT: No enchufe los cables de alimentación todavía.
@@ -341,23 +283,15 @@ image::../media/oie_cable100_gbe_qsfp28.png[Cable de cobre QSFP28 de 100 GbE]
 
 
 .Pasos
-. Conecte la controladora A a la bandeja:
-+
-.. Conecte mediante cable el puerto A de la controladora E3A al puerto NSM A e1a.
-.. Conecte los cables del puerto A E3b al puerto NSM B e1b.
+. Conecte mediante cable el puerto A de la controladora E3A al puerto NSM A e1a.
+. Conecte los cables del puerto A E3b al puerto NSM B e1b.
 +
 image:../media/drw_isi_g_1_ns224_controller_a_cabling_ieops-1945.svg["La controladora A dispone de los puertos E3A y E3b cableados a una bandeja NS224"]
 
-
-
-. Conecte la controladora B a la bandeja:
-+
-.. Conecte el cable del puerto B E3A al puerto NSM B e1a.
-.. Conecte mediante cable el puerto E3b de la controladora B al puerto NSM A e1b.
+. Conecte el cable del puerto B E3A al puerto NSM B e1a.
+. Conecte mediante cable el puerto E3b de la controladora B al puerto NSM A e1b.
 +
 image:../media/drw_isi_g_1_ns224_controller_b_cabling_ieops-1946.svg["Controladora B con los puertos E3A y E3b cableados a una bandeja NS224"]
-
-
 
 
 
