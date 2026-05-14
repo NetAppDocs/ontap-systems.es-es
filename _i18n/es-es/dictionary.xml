@@ -8306,12 +8306,6 @@ SFP+ (destino/iniciador)</block>
   <block id="9e4b32259f721cc54024969657de5534" category="paragraph">Puede agregar en caliente hasta dos bandejas NS224 a un par de alta disponibilidad ASA A70 o ASA A90 cuando necesite almacenamiento adicional (a la bandeja interna).</block>
   <block id="55ec693931401ff7a634100e33ff8cfd" category="doc">Novedades en los sistemas de hardware de ONTAP</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">Documentación de los sistemas de hardware de ONTAP</block>
-  <block id="64f78e10c5d8a4db6f25299bf9a418cd" category="sidebar">Los sistemas A-Series y C-Series de AFF se diseñaron para ayudar a las organizaciones a transformar su infraestructura más rápidamente y a impulsar estrategias condicionadas por los datos.</block>
-  <block id="d186b8a54af216bfae7a9573dc3dfd54" category="sidebar">En la documentación de los sistemas AFF se describe cómo instalar, configurar y mantener los sistemas AFF A-Series y C-Series.</block>
-  <block id="8b4ad289620e7b0611000ddd6fa583c3" category="sidebar">Instalar y configurar sistemas A-Series</block>
-  <block id="c91d48fe9284f4d299615b787ff7c882" category="sidebar">Instalar y configurar sistemas C-Series</block>
-  <block id="d82b198ed12fecd580981b34c4959490" category="sidebar">Mantener los sistemas A-Series</block>
-  <block id="e32ee65ffedbf05873ffce177cee51b5" category="sidebar">Mantener los sistemas C-Series</block>
   <block id="9c2e760711833288658335a04261b16a" category="sidebar">La documentación del sistema de almacenamiento R2 de ASA permite instalar, configurar y mantener el sistema ASA R2.</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="sidebar">Obtenga información sobre los sistemas de almacenamiento R2 de ASA</block>
   <block id="aa0dbb314a1c2c27148345705facc55c" category="sidebar">Instalar y mantener los sistemas ASA R2</block>
@@ -8328,8 +8322,6 @@ SFP+ (destino/iniciador)</block>
   <block id="2a2dfadb84e98697260fabd8a1ba63ea" category="sidebar">Es posible que deba realizar procedimientos de mantenimiento en el hardware. En esta sección se incluyen los procedimientos específicos para el mantenimiento de los componentes del sistema ASA r2.</block>
   <block id="9823a9d702614ebe046cb789d32b241d" category="sidebar">Descubra cómo mantener sus sistemas R2 de ASA.</block>
   <block id="8cf7baf96983d1c70a286576ddcd0ca1" category="sidebar">ASA A70 y ASA A90</block>
-  <block id="91be56ff709f018bb7b1a4c33c68d316" category="sidebar">Sistemas A-Series</block>
-  <block id="078c4b575f196efdc8ec79e58f26db9f" category="sidebar">Sistemas C-Series</block>
   <block id="2d0e9a7694bf5bc701c3af145a6bba71" category="sidebar">Revise los requisitos</block>
   <block id="f76aaf3aaa7b30238e7a3e2b1a04493b" category="sidebar">Prepárese para la instalación</block>
   <block id="03f15d4e5abe2379224af55ea714e8fd" category="sidebar">Sistemas ASA A70 y ASA A90</block>
@@ -9781,7 +9773,6 @@ SFP+ (destino/iniciador)</block>
   <block id="38ae227cf94e3775806bccfd95814d4b" category="paragraph"><block ref="035b082bfaf23bf2d7b95c3ef597d380" prefix="" category="inline-code"></block></block>
   <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">Estos procedimientos muestran configuraciones comunes. El cableado específico depende de los componentes solicitados del sistema de almacenamiento. Para obtener información completa sobre la configuración y la prioridad de las ranuras, consulte <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
   <block id="e5f780ef73bd41c1dd64af7a1a1a31ac" category="paragraph">Conecte los cables de las controladoras al clúster de ONTAP. Este procedimiento varía según el modelo del sistema de almacenamiento y la configuración del módulo de I/O.</block>
-  <block id="0990249c3bba6596b74be9af46837266" category="list-text">Conecte el puerto e7a de la Controladora A al puerto e1a de la Controladora B.</block>
   <block id="18695b824b22d82a916970e4903bf31d" category="paragraph">Use el cable de 100 GbE para conectar los puertos e1a a e1a y los puertos e7a a e7a.</block>
   <block id="3b29102e499249644dff327644d96081" category="list-text">Conecte los puertos e9a y e9b al switch de red de datos Ethernet.</block>
   <block id="c7900e3ee1f4eb935f449465b57ad5c1" category="paragraph">Utilice los cables 1000BASE-T RJ-45 para conectar los puertos de gestión (llave) de cada controladora a los switches de red de gestión.</block>
@@ -9812,7 +9803,6 @@ SFP+ (destino/iniciador)</block>
   <block id="8019bdcaff5849ab8015533c8674f305" category="paragraph">Conecte mediante cable cada controladora a los módulos NSM en ambas bandejas NS224. El gráfico muestra el cableado de la controladora A en azul y el cableado de la controladora B en amarillo.</block>
   <block id="546125971d4fce23d0f562118f0ce95f" category="open-title">Opción 3: Dos bandejas DS460C</block>
   <block id="8994222dc8e3118b755e00531cef6a1c" category="paragraph">Conecte mediante cable cada controladora a los módulos IOM en ambas bandejas DS460C. El gráfico muestra el cableado de la controladora A en azul y el cableado de la controladora B en amarillo.</block>
-  <block id="d42c87e93d80bf28fffc01d7bb494eb2" category="list-text"><block ref="d42c87e93d80bf28fffc01d7bb494eb2" category="inline-link-macro-rx"></block></block>
   <block id="98aab8017242eea1d6e23ba928b20ae5" category="list-text"><block ref="98aab8017242eea1d6e23ba928b20ae5" category="inline-link-macro-rx"></block></block>
   <block id="4e3c3284590d1aa1440e67b3bd65ba6e" category="list-text"><block ref="4e3c3284590d1aa1440e67b3bd65ba6e" category="inline-link-macro-rx"></block></block>
   <block id="370d2e6f20948d3881708f9706576691" category="sidebar">Prepárese para reemplazar</block>
@@ -15048,4 +15038,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6b7f864bd91be16ace313bfe44f12e71" category="section-title">Dos estantes DS460C</block>
   <block id="b62281acd6d6f68b211c9c140acb1de6" category="summary">Vuelve a cablear el sistema y reasigna los discos.</block>
   <block id="c7585f11abe7b6b5267f9b01ab8db3d3" category="summary">Sustituye la batería del reloj en tiempo real en el módulo controlador.</block>
+  <block id="4e219191285e6b026a35828fa008670f" category="list-text"><block ref="4e219191285e6b026a35828fa008670f" category="inline-link-macro-rx"></block></block>
+  <block id="f907c55a04055c61d778510e17a75874" category="list-text"><block ref="f907c55a04055c61d778510e17a75874" category="inline-link-macro-rx"></block></block>
 </blocks>
