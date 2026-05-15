@@ -1,0 +1,33 @@
+= 
+:allow-uri-read: 
+
+
+Cuando incorporas en caliente estanterías a un par A1K HA, necesitas volver a cablear las estanterías existentes para equilibrar la conectividad entre varios módulos de E/S con capacidad RoCE.
+
+* Si estás añadiendo en caliente un segundo estante, el primer estante debe recablearse a través de las ranuras 11 y 10. Para un segundo estante, el procedimiento asume que el estante existente está cableado a un módulo de E/S con capacidad RoCE en la ranura 11 de cada controlador.
+* Si estás añadiendo en caliente un cuarto estante, el tercer estante debe ser recableado a través de las ranuras 9 y 8. Para un cuarto estante, el procedimiento asume que el tercer estante está cableado a la ranura 9 en cada controlador.
+* Si estás añadiendo en caliente un tercer estante e instalando un tercer o cuarto módulo de E/S con capacidad RoCE en cada controlador, el tercer estante se conecta solo al tercer o al tercer y cuarto módulo de E/S. No necesitas recablear ningún estante existente, así que puedes omitir este procedimiento.
+
+
+.Pasos
+. Realice una de las siguientes acciones si va a añadir una segunda bandeja o una cuarta bandeja en caliente.
++
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 11 y la ranura 10 de cada controladora.
++
+... En el controlador A, mueve el cable de la ranura 11 puerto b (e11b) a la ranura 10 puerto b (e10b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 9 y la ranura 8 de cada controladora.
++
+... En el controlador A, mueve el cable de la ranura 9 puerto b (e9b) a la ranura 8 puerto b (e8b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

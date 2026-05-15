@@ -1,0 +1,33 @@
+---
+permalink: ns224/hot-add-eoa-cable-overview.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, eoa systems, end-of-availability, cable 
+summary: Conecta tu estantería NS224 a tu sistema de fin de disponibilidad para proporcionar una conectividad de doble ruta que garantice la redundancia del almacenamiento y una alta disponibilidad para el par de HA. 
+---
+= Conecta una estantería NS224 a tu sistema de fin de disponibilidad
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Conecta tu estantería NS224 a tu sistema de fin de disponibilidad para proporcionar una conectividad de doble ruta que garantice la redundancia del almacenamiento y una alta disponibilidad para el par de HA.
+
+
+
+== Visión general del cableado para sistemas de fin de disponibilidad
+
+El cableado difiere según el modelo de plataforma porque cada sistema tiene asignaciones de puertos y configuraciones de módulos de E/S únicas.
+
+Durante el procedimiento de cableado de incorporación en caliente, conectas cada estante NS224 a ambos controladores del par de HA:
+
+* Cada módulo NSM de estantería se conecta a un puerto de almacenamiento dedicado en cada controlador, creando dos rutas por estantería (una a través de NSM A, otra a través de NSM B).
+* Esta configuración de doble ruta proporciona redundancia de almacenamiento y garantiza el acceso continuo a los datos si falla una sola ruta.
+* Los cables se conectan desde los puertos e0a/e0b (NSM100) o e1a/e1b (NSM100B) del estante NSM a los puertos de almacenamiento compatibles con RoCE de los controladores.
+
+
+
+
+== Recursos adicionales
+
+Tu sistema de hardware puede ser compatible tanto con las estanterías NS224 con módulos NSM100 como con las estanterías NS224 con módulos NSM100B. Para obtener información completa sobre los nombres de los puertos y los detalles de configuración, consulta https://hwu.netapp.com["Hardware Universe de NetApp"^].

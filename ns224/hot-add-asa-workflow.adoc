@@ -1,0 +1,39 @@
+---
+permalink: ns224/hot-add-asa-workflow.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, asa systems, workflow 
+summary: Sigue estos pasos para incorporar en caliente un shelf NS224 a tu sistema ASA. 
+---
+= Agrega en caliente un shelf NS224 a tu sistema ASA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sigue estos pasos para incorporar en caliente un shelf NS224 a tu sistema ASA.
+
+.Antes de empezar
+* Este procedimiento sólo se aplica al almacenamiento de conexión directa. Para ver las instrucciones para el almacenamiento de conexión conmutada, consulta link:cable-as-switch-attached.html["guía de cableado conectado a switches"].
+* Para incorporar en caliente un estante NS224, tu par de HA debe cumplir ciertos requisitos. Revisa el link:hot-add-asa-requirements.html["requisitos de incorporación en caliente y prácticas recomendadas"].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:hot-add-asa-requirements.html["Revisar los requisitos de incorporación en caliente"]
+[role="quick-margin-para"]
+Verifica que tu sistema ASA cumple los requisitos para añadir en caliente un shelf NS224, incluida la compatibilidad con la versión de ONTAP, el número de shelves y los requisitos de cableado.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:hot-add-asa-prepare.html["Prepárese para añadir en caliente la bandeja"]
+[role="quick-margin-para"]
+Según el modelo de plataforma, es posible que deba instalar tarjetas PCIe o módulos de E/S adicionales compatibles con RoCE, configurar los puertos Ethernet no dedicados compatibles con RoCE para uso de almacenamiento, volver a conectar la bandeja existente entre dos conjuntos de puertos en ranuras diferentes para lograr resiliencia contra error de ranura, y deshabilite la asignación automática de unidades si va a asignar manualmente propiedad de unidades.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:hot-add-asa-install.html["Instale la bandeja"]
+[role="quick-margin-para"]
+Instala el kit de raíles para la estantería, instala y asegura tu estantería en el rack o gabinete de telecomunicaciones, conecta los cables de alimentación para encender la estantería y asigna un ID de estantería único para asegurarte de que la estantería sea distinta dentro del par de HA.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:hot-add-asa-cable-overview.html["Conecte los cables de la bandeja"]
+[role="quick-margin-para"]
+Conecte el cable de la bandeja que va a añadir en caliente para que tenga dos conexiones a cada controladora del par de alta disponibilidad.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:hot-add-asa-complete.html["Complete su incorporación en caliente"]
+[role="quick-margin-para"]
+Si deshabilitó la asignación automática de unidades como parte de la preparación para la adición en caliente, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.

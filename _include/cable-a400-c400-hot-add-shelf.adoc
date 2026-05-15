@@ -1,16 +1,12 @@
-= 
+= Conecta el estante a un par A400 HA
 :allow-uri-read: 
 
 
-.Antes de empezar
-* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
-* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
-* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
 
 
-* Estante de cable a un par AFF A400 HA*
+== Conecta el estante a un par A400 HA
 
-Para una pareja de alta disponibilidad AFF A400, puede agregar en caliente hasta dos bandejas y utilizar los puertos integrados e0c/e0d y los puertos en la ranura 5 según sea necesario.
+Para un par A400 HA, puedes añadir en caliente hasta dos estantes y usar los puertos integrados e0c/e0d y los puertos de la ranura 5 según sea necesario.
 
 .Pasos
 . Si va a añadir en caliente una bandeja con un conjunto de puertos compatibles con RoCE (puertos integrados compatibles con RoCE) en cada controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
@@ -70,15 +66,13 @@ image::../media/drw_ns224_a400_2shelves_IEOPS-983.svg[Cableado para un /ASA A400
 +
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
-. Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y volver a habilitar la asignación automática de unidades, si es necesario. Consulte link:complete-hot-add-shelf.html["Complete el hot-add"].
-+
-De lo contrario, ha finalizado este procedimiento.
 
 
 
-* Estante de cable a un par AFF C400 HA*
 
-Para un par de alta disponibilidad AFF C400, puede agregar en caliente hasta dos bandejas y utilizar puertos en la ranura 4 y 5 según sea necesario.
+== Conecta el estante a un par C400 HA
+
+Para un par C400 HA, puedes añadir en caliente hasta dos estanterías y usar los puertos de las ranuras 4 y 5 según sea necesario.
 
 .Pasos
 . Si va a agregar en caliente una bandeja con un conjunto de puertos compatibles con RoCE en cada controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
@@ -139,8 +133,3 @@ image::../media/drw_ns224_c400_2shelves_IEOPS-984.svg[Cableado para un AFF/ASA C
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 
-
-.El futuro
-Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
-
-De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.

@@ -1,0 +1,54 @@
+= 
+:allow-uri-read: 
+
+
+En algunos sistemas, los puertos con capacidad RoCE se configuran automáticamente para el uso de almacenamiento cuando instalas una tarjeta PCIe con capacidad RoCE o un módulo de E/S en una ranura de controlador compatible. Sin embargo, debes completar este procedimiento para verificar que los puertos están configurados correctamente para el uso de almacenamiento.
+
+La configuración de puertos no dedicados con capacidad RoCE para uso de almacenamiento es un procedimiento sin interrupciones. No necesitas reiniciar los controladores a menos que uno o ambos estén en modo de mantenimiento. Este procedimiento asume que ninguno de los controladores está en modo de mantenimiento.
+
+Si en el futuro necesitas cambiar los puertos de uso de almacenamiento a uso de red, usa el comando `storage port modify -node _node_name_ -port _port_name_ -mode network`.
+
+.Pasos
+. Verifica que hayas instalado cualquier tarjeta PCIe o módulo de E/S compatible con RoCE adicional en cada controlador.
+. Inicie sesión en el clúster mediante SSH o el puerto de la consola de serie.
+. Verifica que los puertos no dedicados del par de HA estén configurados para uso de almacenamiento introduciendo el comando `storage port show`.
++
+La salida del comando varía en función de la versión de ONTAP:
+
++
+** **ONTAP 9.8 o posterior:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `storage` en la columna `Mode`. Los puertos no configurados para el uso de almacenamiento muestran `network` en la columna `Mode`.
+** **ONTAP 9.7:** Los puertos no dedicados configurados para uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `enabled` en la columna `State`. Los puertos no configurados para uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `disabled` en la columna `State`.
+
+
+. Si los puertos no dedicados están configurados para uso de almacenamiento, ya terminaste con este procedimiento. De lo contrario, completa los siguientes pasos para configurar los puertos.
+. Configura los puertos no dedicados para uso de almacenamiento en uno de los controladores. Debes repetir el comando aplicable para cada puerto que estés configurando.
++
+[cols="1,3"]
+|===
+| Si su par de alta disponibilidad está ejecutando... | Se usa este comando... 
+
+
+ a| 
+ONTAP 9.8 o posterior
+ a| 
+`storage port modify -node _node_name_ -port _port_name_ -mode storage`
+
+
+
+ a| 
+ONTAP 9.7
+ a| 
+`storage port enable -node _node_name_ -port _port_name_`
+
+|===
+. Repita el paso anterior para el segundo controlador.
+. Verifica que los puertos no dedicados de ambos controladores están configurados para uso de almacenamiento introduciendo el comando `storage port show`.
++
+La salida del comando varía en función de la versión de ONTAP:
+
++
+** **ONTAP 9.8 o posterior:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `storage` en la columna `Mode`.
+** **ONTAP 9.7:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `enabled` en la columna `State`.
+
+
+

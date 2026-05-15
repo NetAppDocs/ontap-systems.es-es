@@ -1,0 +1,28 @@
+---
+permalink: ns224/hot-add-aff-prepare.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, preparation 
+summary: Prepárate para incorporar en caliente una estantería NS224 a tu sistema AFF instalando tarjetas PCIe con capacidad RoCE o módulos de E/S, configurando puertos, recableando las estanterías existentes y desactivando la asignación automática de unidades si es necesario. 
+---
+= Descripción general de la preparación para la incorporación en caliente de una estantería NS224 a tu sistema AFF
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepárate para la incorporación en caliente de estanterías NS224 a tu sistema AFF asegurándote de que haya suficientes puertos de almacenamiento compatibles con RoCE, configurándolos para uso de almacenamiento y optimizando tu configuración existente para la nueva estantería.
+
+
+
+== Qué preparar
+
+La preparación para la incorporación en caliente de estanterías NS224 a tu sistema AFF implica verificar y configurar la infraestructura de conectividad de almacenamiento antes de instalar físicamente las nuevas estanterías. Estas tareas aseguran que tu par de alta disponibilidad tiene los puertos Ethernet con capacidad RoCE necesarios y que tu sistema está configurado para admitir capacidad de almacenamiento adicional.
+
+Las tareas específicas de preparación que tienes que realizar dependen del modelo de tu plataforma, la configuración actual y la cantidad de estantes que vas a añadir:
+
+Instale tarjetas PCIe o módulos de I/O compatibles con RoCE:: Verifica que tu sistema tenga suficientes puertos Ethernet compatibles con RoCE disponibles (dos por shelf en cada controlador). Si necesitas puertos adicionales, instala tarjetas PCIe compatibles con RoCE o módulos de E/S en las ranuras correctas del controlador.
+Configure los puertos compatibles con RoCE para el uso del almacenamiento:: Si utilizas puertos no dedicados aptos para RoCE para conectar el shelf NS224, configura esos puertos para uso de almacenamiento en lugar de uso de red. Este es un procedimiento no disruptivo.
+Vuelva a conectar las bandejas existentes:: En algunos modelos de plataforma, es posible que tengas que volver a cablear un shelf existente a través de dos conjuntos de puertos en ranuras diferentes para proporcionar resiliencia contra fallos de ranura después de instalar tarjetas PCIe o módulos de E/S compatibles con RoCE adicionales.
+Deshabilite la asignación automática de unidades:: Si planeas asignar manualmente la propiedad de las unidades, desactiva la asignación automática de unidades antes de añadir estanterías en caliente.
+

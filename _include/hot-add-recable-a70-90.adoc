@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Cuando incorporas en caliente una segunda estantería a un par HA A70 o A90, necesitas volver a cablear la primera estantería a través de los módulos de E/S compatibles con RoCE en la ranura 11 y la ranura 8 de cada controlador.
+
+El procedimiento asume que la estantería existente está cableada a un módulo de E/S compatible con RoCE en la ranura 11 de cada controlador.
+
+.Pasos
+. Recablea el primer estante a través de los módulos de E/S con capacidad RoCE en la ranura 11 y la ranura 8 de cada controlador.
++
+.. En el controlador A, mueve el cable de la ranura 11 puerto b (e11b) a la ranura 8 puerto b (e8b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

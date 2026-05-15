@@ -1,0 +1,32 @@
+= 
+:allow-uri-read: 
+
+
+Cuando incorporas en caliente estanterías a un par A900 HA, necesitas volver a cablear las estanterías existentes para equilibrar la conectividad entre varios módulos de E/S con capacidad RoCE.
+
+* Si estás añadiendo en caliente un segundo estante, el primer estante debe recablearse a través de las ranuras 2 y 10. Para un segundo estante, el procedimiento asume que el estante existente está cableado a un módulo de E/S con capacidad RoCE en la ranura 2 de cada controlador.
+* Si estás añadiendo en caliente un cuarto estante, el tercer estante debe ser recableado a través de las ranuras 1 y 11. Para un cuarto estante, el procedimiento asume que el tercer estante está cableado a la ranura 1 en cada controlador.
+
+
+.Pasos
+. Realice una de las siguientes acciones si va a añadir una segunda bandeja o una cuarta bandeja en caliente.
++
+** Si va a agregar en caliente una segunda bandeja, vuelva a conectar los cables de la primera bandeja entre los módulos de I/O compatibles con RoCE de la ranura 2 y la ranura 10 de cada controladora.
++
+... En el controlador A, mueve el cable del puerto b de la ranura 2 (e2b) al puerto b de la ranura 10 (e10b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** Si va a agregar en caliente una cuarta bandeja, vuelva a conectar la tercera bandeja entre los módulos de I/O compatibles con RoCE en la ranura 1 y la ranura 11 de cada controladora.
++
+... En el controlador A, mueve el cable del puerto b de la ranura 1 (e1b) al puerto b de la ranura 11 (e11b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

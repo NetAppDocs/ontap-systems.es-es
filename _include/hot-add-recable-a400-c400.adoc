@@ -1,0 +1,38 @@
+= 
+:allow-uri-read: 
+
+
+Cuando incorporas en caliente un segundo estante a un par de HA A400 o C400, necesitas recablear el primer estante a través de dos conjuntos de puertos compatibles con RoCE en cada controlador.
+
+* Para el A400, el procedimiento asume que el estante existente está cableado a los puertos onboard e0c/e0d compatibles con RoCE en cada controlador, y que recableas a través de los puertos onboard e0c/e0d y la ranura 5.
+* Para el C400, el procedimiento asume que el estante existente está cableado a puertos con capacidad RoCE en la ranura 4 de cada controlador, y recableas a través de la ranura 4 y la ranura 5.
+
+
+.Pasos
+. Dependiendo de tu sistema, haz una de las siguientes cosas:
++
+** En el A400:
++
+Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE, e0c/e0d internos y en la ranura 5, en cada controladora.
+
++
+... En la controladora A, mueva el cable del puerto e0d a la ranura 5 puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+** En el C400:
++
+Vuelva a conectar la primera bandeja de los dos conjuntos de puertos compatibles con RoCE en la ranura 4 y la ranura 5, en cada controladora.
+
++
+... En el controlador A, mueva el cable de la ranura 4, puerto a (e4a), a la ranura 5, puerto b (e5b).
+... Repita el mismo cable y mueva la controladora B.
+
+
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

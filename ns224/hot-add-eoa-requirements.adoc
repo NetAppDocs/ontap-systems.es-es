@@ -1,0 +1,44 @@
+---
+permalink: ns224/hot-add-eoa-requirements.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, eoa systems, end-of-availability, requirement 
+summary: Antes de añadir en caliente una estantería NS224 a tu sistema de fin de disponibilidad, revisa los requisitos y las mejores prácticas. 
+---
+= Requisitos y mejores prácticas para la incorporación en caliente de una estantería NS224 a tu sistema de fin de disponibilidad
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verifica que tu sistema de fin de disponibilidad cumpla con los requisitos de versión de ONTAP, capacidad de la estantería y cableado antes de agregar en caliente una estantería NS224. Revisa las mejores prácticas de firmware y configuración para asegurarte de que el procedimiento de incorporación en caliente se complete correctamente y sin errores.
+
+
+
+== Requisitos
+
+Tu par de HA debe cumplir los siguientes requisitos para agregar en caliente una shelf NS224.
+
+Versión de ONTAP compatible:: El modelo de tu plataforma y la versión de ONTAP deben ser compatibles con el shelf NS224 y las unidades que vas a añadir en caliente. Consulta https://hwu.netapp.com["Hardware Universe de NetApp"^].
+Número de estantes:: Tu par de HA debe admitir al menos un estante adicional además del número instalado actualmente. Después de añadir estantes en caliente, no puedes superar el número máximo de estantes admitidos por tu par de HA. Consulta https://hwu.netapp.com["Hardware Universe de NetApp"^].
+Cableado:: Debes tener el número y tipo de cables correctos para conectar la estantería. Si estás añadiendo en caliente una estantería a un par de HA que ya tiene una estantería NS224, tu par de HA debe estar cableado como HA multivía sin errores de cableado de almacenamiento.
++
+--
+Ejecuta https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] para ver cualquier mensaje de error de cableado de almacenamiento y las acciones correctivas. Consulta https://hwu.netapp.com["Hardware Universe de NetApp"^] para conocer los requisitos de cableado.
+
+--
+
+
+
+
+== Mejores prácticas
+
+Familiarícese con las siguientes prácticas recomendadas antes de agregar en caliente una bandeja NS224.
+
+Paquete de cualificación de disco:: Instala la versión actual de https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware/download/DISKQUAL/ALL/qual_devices.zip["Paquete de cualificación de disco"^] antes de añadir en caliente un shelf. Tener instalado el DQP actual permite que tu sistema reconozca y use unidades recién calificadas, evita mensajes de eventos del sistema sobre información no actual de las unidades y previene fallos de partición causados por unidades no reconocidas. El DQP también te notifica sobre firmware no actual de las unidades.
+Active IQ Config Advisor:: Ejecuta https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^] antes y después de añadir en caliente una shelf. Ejecutarlo antes de añadir en caliente te da una instantánea de la conectividad Ethernet existente de la shelf, verifica las versiones de firmware del NSM y te muestra si hay algún ID de shelf ya en uso. Ejecutarlo después de añadir en caliente verifica que las shelf están cableadas correctamente y que los ID de shelf son únicos dentro del par de HA.
+NSM y firmware de la unidad:: Instala las versiones actuales de https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Firmware del módulo de bandeja NVMe (NSM)"^] y https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware["firmware de la unidad"^] en tu sistema de almacenamiento antes de añadir una nueva shelf. No reviertas el firmware a una versión que no sea compatible con tu shelf y sus componentes.
+
+
+.El futuro
+Tras revisar los requisitos, link:hot-add-eoa-prepare-overview.html["prepárate para incorporar en caliente tu estante"].

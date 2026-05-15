@@ -2,12 +2,6 @@
 :allow-uri-read: 
 
 
-.Antes de empezar
-* Debe haber revisado el link:requirements-hot-add-shelf.html["requisitos de incorporación en caliente y prácticas recomendadas"].
-* Debe haber completado los procedimientos aplicables en link:prepare-hot-add-shelf.html["Prepárese para agregar en caliente una bandeja"].
-* Debe haber instalado las bandejas, encenderlas y definir los ID de bandeja tal como se describe en link:prepare-hot-add-shelf.html["Instale una bandeja para una incorporación en caliente"].
-
-
 .Acerca de esta tarea
 * En este procedimiento se asume que su pareja de alta disponibilidad solo tiene almacenamiento interno (sin bandejas externas) y que se puede agregar en caliente hasta dos bandejas adicionales y dos módulos de I/O compatibles con RoCE en cada controladora.
 * Este procedimiento aborda los siguientes escenarios de adición en caliente:
@@ -112,8 +106,3 @@ image::../media/drw_ns224_g_2shelf_2card_ieops-2003.svg[Cableado para AFF A30/AS
 Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
 
 
-
-.El futuro
-Si se deshabilitó la asignación automática de unidades como parte de la preparación para este procedimiento, debe asignar manualmente la propiedad de la unidad y, después, volver a habilitar la asignación automática de unidades, si es necesario. Vaya a link:complete-hot-add-shelf.html["Complete el hot-add"].
-
-De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.

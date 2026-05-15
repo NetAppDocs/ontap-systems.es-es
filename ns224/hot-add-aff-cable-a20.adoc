@@ -1,0 +1,97 @@
+---
+permalink: ns224/hot-add-aff-cable-a20.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff a20, cable 
+summary: Conecta tu estantería NS224 a tu sistema AFF A20 para que cada estantería tenga dos conexiones a cada controlador del par HA. 
+---
+= Conecta un shelf NS224 a tu sistema AFF A20
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Conecta tu estantería NS224 a tu sistema AFF A20 para que cada estantería tenga dos conexiones a cada controlador del par HA.
+
+Puede agregar en caliente una bandeja NS224 a un par de alta disponibilidad de AFF A20 cuando necesite almacenamiento adicional (a la bandeja interna).
+
+.Acerca de esta tarea
+* En este procedimiento se asume que su par de alta disponibilidad solo tiene almacenamiento interno (no hay bandejas externas) y que se puede agregar en caliente a una bandeja adicional.
+* Este procedimiento aborda los siguientes escenarios de adición en caliente:
++
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con un módulo I/O compatible con RoCE en cada controladora.
+** Adición en caliente de la primera bandeja a una pareja de alta disponibilidad con dos módulos I/O compatibles con RoCE en cada controladora.
+
+
+* Estos sistemas son compatibles con bandejas NS224 con módulos NSM100 y bandejas NS224 con módulos NSM100B. Para asegurarse de conectar los controladores a los puertos correctos, sustituya la “X” de cada diagrama por el número de puerto correcto para su módulo:
++
+[cols="1,4"]
+|===
+| Tipo de módulo | Etiquetado de puertos 
+
+
+ a| 
+NSM100
+ a| 
+«0»
+
+ej. e0a
+
+
+
+ a| 
+NSM100B
+ a| 
+«1»
+
+ej. e1a
+
+|===
+
+
+.Pasos
+. Si va a añadir en caliente una bandeja con un conjunto de puertos compatibles con RoCE (un módulo de I/O compatible con RoCE) en cada módulo de controladora, y esta es la única bandeja NS224 de la pareja de alta disponibilidad, complete los siguientes pasos secundarios.
++
+De lo contrario, vaya al paso siguiente.
+
++
+
+NOTE: En este paso se supone que se ha instalado el módulo de I/O compatible con RoCE en la ranura 3.
+
++
+.. Bandeja de cables NSM A puerto EXA a la controladora A 3 puerto A (E3A).
+.. Bandeja de cables NSM A puerto EXB a ranura 3 de la controladora B puerto b (E3b).
+.. Bandeja de cables Puerto NSM B EXA a ranura 3 de la controladora B, puerto A (E3A).
+.. Bandeja de cables NSM B port EXB a la controladora A ranura 3 puerto b (E3b).
++
+En la siguiente ilustración, se muestra el cableado de una bandeja añadida en caliente mediante un módulo de I/o compatible con roce en cada módulo de la controladora:
+
++
+image::../media/drw_ns224_g_1shelf_1card_ieops-2002.svg[Cableado para AFF/ASA A20 con una bandeja y un módulo I/O.]
+
+
+
+. Si va a añadir en caliente una bandeja con dos conjuntos de puertos compatibles con RoCE (dos módulos de I/O compatibles con RoCE) en cada módulo de controladora, complete los siguientes pasos secundarios.
++
+.. Conecte el cable de NSM A port EXA a la controladora A ranura 3 puerto A (E3A).
+.. Conecte el cable del puerto A de NSM al puerto b (e1b) de la ranura 1 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXA al puerto A (E3A) de la ranura 3 de la controladora B.
+.. Conecte mediante cable el puerto NSM B EXB al puerto b de la ranura 1 de la controladora A (e1b).
+
+
+
+
+En la siguiente ilustración, se muestra el cableado para una bandeja añadida en caliente con dos módulos I/O compatibles con RoCE en cada módulo de controladora:
+
+image::../media/drw_ns224_g_1shelf_2card_ieops-2005.svg[Cableado para AFF/ASA A20 con una bandeja y dos módulos IO]
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+.El futuro
+Si desactivaste la asignación automática de unidades como parte de la preparación para este procedimiento, necesitas asignar manualmente la propiedad de las unidades y luego volver a habilitar la asignación automática de unidades, si es necesario. Ve a link:hot-add-aff-complete.html["Complete el hot-add"].
+
+De lo contrario, finalizó el procedimiento de bandeja con adición en caliente.

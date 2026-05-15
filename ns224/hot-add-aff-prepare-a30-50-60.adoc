@@ -1,0 +1,132 @@
+---
+permalink: ns224/hot-add-aff-prepare-a30-50-60.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, aff systems, preparation, roce, aff a30, aff c30, aff a50, aff c60 
+summary: Prepara tu sistema AFF A30, AFF C30, AFF A50 o AFF C60 para agregar en caliente una shelf NS224 instalando módulos de E/S compatibles con RoCE, configurando puertos, recableando las shelves existentes y desactivando la asignación automática de discos. 
+---
+= Prepara tu sistema AFF A30, AFF C30, AFF A50 o AFF C60 para añadir en caliente una shelf NS224
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prepara tu sistema AFF A30, AFF C30, AFF A50 o AFF C60 para agregar en caliente una shelf NS224 asegurándote de que haya suficientes puertos de almacenamiento compatibles con RoCE, configurándolos para uso de almacenamiento, recableando las shelves existentes para la resiliencia del slot y desactivando la asignación automática de discos.
+
+
+
+== Instalar módulos de E/S compatibles con RoCE
+
+Si tu sistema admite el uso de tarjetas PCIe o módulos de E/S compatibles con RoCE, tu par de alta disponibilidad debe tener suficientes puertos Ethernet compatibles con RoCE disponibles para admitir la cantidad de estanterías que vas a añadir en caliente.
+
+.Pasos
+. Para cada bandeja que añada en caliente, compruebe que existan dos puertos compatibles con RoCE en cada controladora.
++
+Estos puertos pueden estar a bordo de los controladores, en tarjetas PCIe con capacidad RoCE, en una combinación de ambos o en módulos de E/S con capacidad RoCE, según admita tu sistema.
+
+. Si tu par de alta disponibilidad no tiene suficientes puertos compatibles con RoCE disponibles, instala las tarjetas PCIe o los módulos de E/S adicionales en las ranuras de controlador correctas, según lo admita tu sistema.
++
+.. Identifica las ranuras de controlador correctas para tu sistema. Consulta https://hwu.netapp.com["Hardware Universe de NetApp"^].
+.. Consulta la documentación de tu sistema para ver las instrucciones de instalación de la tarjeta PCIe o del módulo de E/S.
+
+
+
+
+
+
+== Configure los puertos compatibles con RoCE para el uso del almacenamiento
+
+En algunos sistemas, los puertos con capacidad RoCE se configuran automáticamente para el uso de almacenamiento cuando instalas una tarjeta PCIe con capacidad RoCE o un módulo de E/S en una ranura de controlador compatible. Sin embargo, debes completar este procedimiento para verificar que los puertos están configurados correctamente para el uso de almacenamiento.
+
+La configuración de puertos no dedicados con capacidad RoCE para uso de almacenamiento es un procedimiento sin interrupciones. No necesitas reiniciar los controladores a menos que uno o ambos estén en modo de mantenimiento. Este procedimiento asume que ninguno de los controladores está en modo de mantenimiento.
+
+Si en el futuro necesitas cambiar los puertos de uso de almacenamiento a uso de red, usa el comando `storage port modify -node _node_name_ -port _port_name_ -mode network`.
+
+.Pasos
+. Verifica que hayas instalado cualquier tarjeta PCIe o módulo de E/S compatible con RoCE adicional en cada controlador.
+. Inicie sesión en el clúster mediante SSH o el puerto de la consola de serie.
+. Verifica que los puertos no dedicados del par de HA estén configurados para uso de almacenamiento introduciendo el comando `storage port show`.
++
+La salida del comando varía en función de la versión de ONTAP:
+
++
+** **ONTAP 9.8 o posterior:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `storage` en la columna `Mode`. Los puertos no configurados para el uso de almacenamiento muestran `network` en la columna `Mode`.
+** **ONTAP 9.7:** Los puertos no dedicados configurados para uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `enabled` en la columna `State`. Los puertos no configurados para uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `disabled` en la columna `State`.
+
+
+. Si los puertos no dedicados están configurados para uso de almacenamiento, ya terminaste con este procedimiento. De lo contrario, completa los siguientes pasos para configurar los puertos.
+. Configura los puertos no dedicados para uso de almacenamiento en uno de los controladores. Debes repetir el comando aplicable para cada puerto que estés configurando.
++
+[cols="1,3"]
+|===
+| Si su par de alta disponibilidad está ejecutando... | Se usa este comando... 
+
+
+ a| 
+ONTAP 9.8 o posterior
+ a| 
+`storage port modify -node _node_name_ -port _port_name_ -mode storage`
+
+
+
+ a| 
+ONTAP 9.7
+ a| 
+`storage port enable -node _node_name_ -port _port_name_`
+
+|===
+. Repita el paso anterior para el segundo controlador.
+. Verifica que los puertos no dedicados de ambos controladores están configurados para uso de almacenamiento introduciendo el comando `storage port show`.
++
+La salida del comando varía en función de la versión de ONTAP:
+
++
+** **ONTAP 9.8 o posterior:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `storage` en la columna `Mode`.
+** **ONTAP 9.7:** Los puertos no dedicados configurados para el uso de almacenamiento muestran `false` en la columna `Is Dedicated?` y `enabled` en la columna `State`.
+
+
+
+
+
+
+== Vuelva a conectar las bandejas existentes
+
+Cuando agregues en caliente una segunda estantería a un par HA A30, C30, A50 o C60, necesitas volver a cablear la primera estantería a través de los módulos de E/S compatibles con RoCE en la ranura 3 y la ranura 1 de cada controlador.
+
+El procedimiento asume que la estantería existente está cableada a un módulo de E/S compatible con RoCE en la ranura 3 de cada controlador.
+
+.Pasos
+. Recablea el primer estante a través de los módulos de E/S con capacidad RoCE en la ranura 3 y la ranura 1 de cada controlador.
++
+.. En el controlador A, mueve el cable del puerto b de la ranura 3 (e3b) al puerto b de la ranura 1 (e1b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
+
+
+
+== Deshabilite la asignación automática de unidades
+
+Si no está seguro si debe asignar manualmente propiedad de una unidad o desea comprender la asignación automática de políticas de propiedad de unidades para el sistema de almacenamiento, vaya a https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Acerca de la asignación automática de propiedad de disco"^].
+
+.Pasos
+. Compruebe si la asignación automática de unidades está habilitada: `storage disk option show`
++
+Puede introducir el comando en cualquiera de los nodos.
+
++
+Si la asignación automática de unidades está activada, la salida muestra `on` en la columna `Auto Assign` para cada nodo.
+
+. Si la asignación automática de unidades está habilitada, deshabilítela: `storage disk option modify -node _node_name_ -autoassign off`
++
+Debe deshabilitar la asignación automática de unidades en ambos nodos.
+
+
+
+.El futuro
+Vaya a link:hot-add-aff-install.html["instala la estantería"].

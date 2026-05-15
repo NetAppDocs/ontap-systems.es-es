@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+Si tu sistema admite el uso de tarjetas PCIe o módulos de E/S compatibles con RoCE, tu par de alta disponibilidad debe tener suficientes puertos Ethernet compatibles con RoCE disponibles para admitir la cantidad de estanterías que vas a añadir en caliente.
+
+.Pasos
+. Para cada bandeja que añada en caliente, compruebe que existan dos puertos compatibles con RoCE en cada controladora.
++
+Estos puertos pueden estar a bordo de los controladores, en tarjetas PCIe con capacidad RoCE, en una combinación de ambos o en módulos de E/S con capacidad RoCE, según admita tu sistema.
+
+. Si tu par de alta disponibilidad no tiene suficientes puertos compatibles con RoCE disponibles, instala las tarjetas PCIe o los módulos de E/S adicionales en las ranuras de controlador correctas, según lo admita tu sistema.
++
+.. Identifica las ranuras de controlador correctas para tu sistema. Consulta https://hwu.netapp.com["Hardware Universe de NetApp"^].
+.. Consulta la documentación de tu sistema para ver las instrucciones de instalación de la tarjeta PCIe o del módulo de E/S.
+
+
+

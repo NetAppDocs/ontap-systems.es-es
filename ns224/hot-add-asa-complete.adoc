@@ -1,0 +1,35 @@
+---
+permalink: ns224/hot-add-asa-complete.html 
+sidebar: sidebar 
+keywords: ns224, shelves, shelf, ns224 shelves, hot-add, ha, pair, asa systems, complete, drive 
+summary: Si desactivaste la asignación automática de unidades, asigna manualmente la propiedad de las unidades y vuelve a activar la asignación automática de unidades para tu sistema ASA. 
+---
+= Completa la incorporación en caliente de la estantería NS224 para tu sistema ASA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si deshabilitó la asignación automática de unidades como parte de la preparación para la adición de caliente de la bandeja NS224, debe asignar manualmente la propiedad de la unidad y luego volver a habilitar la asignación automática de unidades, si es necesario.
+
+.Antes de empezar
+Ya debes haber cableado tu estante según las instrucciones para tu par de HA.
+
+.Pasos
+. Mostrar todas las unidades sin propietario: `storage disk show -container-type unassigned`
++
+Puede introducir el comando en cualquiera de las controladoras.
+
+. Asigne cada unidad: `storage disk assign -disk _disk_name_ -owner _owner_name_`
++
+Puede introducir el comando en cualquiera de las controladoras.
+
++
+Puede usar el carácter comodín para asignar más de una unidad a la vez.
+
+. Vuelva a habilitar la asignación automática de unidades si es necesario: `storage disk option modify -node _node_name_ -autoassign on`
++
+Es necesario volver a habilitar la asignación automática de unidades en ambas controladoras.
+
+

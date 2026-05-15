@@ -1,0 +1,21 @@
+= 
+:allow-uri-read: 
+
+
+.Pasos
+. Conecte el cable de la bandeja a las controladoras.
++
+.. Conecte El cable NSM de Un puerto e0a al puerto e0e de la controladora A.
+.. Conecte el cable NSM del puerto e0b al puerto e0b de la controladora B.
+.. Conecte el cable del puerto e0a NSM B al puerto e0e de la controladora B.
+.. Conecte el cable del puerto e0b a el puerto e0b de la controladora a. + la siguiente ilustración muestra el cableado de la bandeja añadida en activo (bandeja 2):
++
+image::../media/drw_ns224_a320_2shelves_direct_attached.png[Cableado para un AFF A320 con dos bandejas NS224 y tres conjuntos de puertos internos]
+
+
+
+. Compruebe que la bandeja añadida en caliente se ha cableado correctamente https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^]mediante .
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+

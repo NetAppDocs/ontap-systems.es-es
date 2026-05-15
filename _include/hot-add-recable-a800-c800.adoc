@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+Cuando agregues en caliente un segundo shelf a un par HA A800 o C800, necesitas volver a cablear el primer shelf a través de los dos conjuntos de puertos compatibles con RoCE en la ranura 5 y la ranura 3 de cada controlador.
+
+El procedimiento asume que la estantería existente está cableada a tarjetas PCIe con capacidad RoCE en la ranura 5 de cada controlador.
+
+.Pasos
+. Recablea el primer estante a través de los dos conjuntos de puertos con capacidad RoCE en la ranura 5 y la ranura 3 de cada controlador.
++
+.. En la controladora A, mueva el cable de la ranura 5, puerto b (e5b), a la ranura 3, puerto b (e3b).
+.. Repita el mismo cable y mueva la controladora B.
+
+
+. Compruebe que la bandeja remachada está cableada correctamente mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
++
+Si se genera algún error de cableado, siga las acciones correctivas proporcionadas.
+
+
