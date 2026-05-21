@@ -1,7 +1,7 @@
 ---
 permalink: a700s/bootmedia-transfer-boot-image.html 
 sidebar: sidebar 
-keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, trasnfer, usb, flash, drive, transfer the boot image to the boot medai using a usb flash drive, manual, manual boot recovery 
+keywords: aff a700s, aff, a700s, procedure, secondary, boot, media, restore, fail, image, tgz, file, transfer, usb, flash, drive, transfer the boot image to the boot media using a usb flash drive, manual, manual boot recovery 
 summary: Transfiera la imagen de arranque al medio de arranque de reemplazo en un sistema AFF A700s utilizando el medio de arranque secundario o una unidad flash USB. El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
 = Transfiera la imagen de arranque al medio de arranque - AFF A700s
@@ -11,17 +11,17 @@ summary: Transfiera la imagen de arranque al medio de arranque de reemplazo en u
 
 
 [role="lead"]
-Transfiera la imagen de arranque al medio de arranque de reemplazo en un sistema AFF A700s utilizando el medio de arranque secundario o una unidad flash USB. Este procedimiento incluye la restauración desde la imagen en el medio de arranque secundario como método principal o el uso de una unidad flash USB si la restauración del medio de arranque secundario falla o falta el archivo image.tgz.
+Transfiere la imagen de arranque al medio de arranque de reemplazo en un sistema AFF A700s usando el medio de arranque secundario (método principal) o una unidad flash USB (si falla la restauración del medio de arranque secundario o falta el archivo `image.tgz`).
 
 El sistema AFF A700s solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
 
 
-== Opción 1: Transferir archivos mediante la recuperación de respaldo desde el segundo medio de arranque
+== Opción 1: transferir la imagen del sistema utilizando la recuperación de copia de seguridad desde el segundo medio de arranque
 
-Puede instalar la imagen del sistema en el soporte de arranque de reemplazo mediante la imagen del segundo soporte de arranque instalado en el módulo de la controladora. Este es el método principal para transferir los archivos de medios de arranque al medio de arranque de reemplazo en sistemas con dos medios de arranque en el módulo del controlador.
+Puedes instalar la imagen del sistema en el medio de arranque de reemplazo usando la imagen del segundo medio de arranque en el módulo controlador. Este es el método principal para sistemas con dos medios de arranque en el módulo controlador.
 
-La imagen del soporte de arranque secundario debe contener un `image.tgz` error de archivo y no debe ser informado. Si falta el archivo image.tgz o el soporte de arranque informa de fallos, no puede usar este procedimiento. Debe transferir la imagen de inicio al soporte de arranque de repuesto mediante el procedimiento de sustitución de la unidad flash USB.
+La imagen del medio de arranque secundario debe contener un archivo `image.tgz` y no debe informar de fallos. Si falta el archivo `image.tgz` o el medio de arranque informa de fallos, no puedes usar este procedimiento. Usa <<Opción 2: Transferir la imagen de arranque mediante una unidad flash USB>> en su lugar.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -88,10 +88,10 @@ La imagen se descarga desde el soporte de arranque secundario.
 
 == Opción 2: Transferir la imagen de arranque mediante una unidad flash USB
 
-Este procedimiento solo debe usarse si falló la restauración de medios de arranque secundarios o si el archivo image.tgz no se encuentra en el medio de arranque secundario.
+Este procedimiento solo debe utilizarse si falla la restauración del medio de arranque secundario o si no se encuentra el archivo `image.tgz` en el medio de arranque secundario.
 
 * Debe tener una unidad flash USB, formateada con FAT32, con una capacidad mínima de 4 GB.
-* Una copia de la misma versión de imagen de ONTAP que la controladora dañada en funcionamiento. Puede descargar la imagen adecuada en la sección Descargas del sitio de soporte de NetApp
+* Una copia de la misma versión de imagen de ONTAP que la que estaba ejecutando el controlador dañado. Puedes descargar la imagen adecuada de la sección Descargas en el sitio de soporte de NetApp.
 +
 ** Si NVE está habilitado, descargue la imagen con el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
 ** Si el cifrado de volúmenes de NetApp no está habilitado, descargue la imagen sin el cifrado de volúmenes de NetApp, como se indica en el botón de descarga.
@@ -176,7 +176,7 @@ Si omite este mensaje, pulse Ctrl-C, seleccione la opción de arrancar en modo d
 *** `bootarg.onboard_keymanager <value>`
 
 
-.. Guarde las variables de entorno modificadas con el `savenv` comando
+.. Guarda las variables de entorno que cambiaste con el comando `savenv`.
 .. Confirme los cambios mediante el `printenv _variable-name_` comando.
 
 
@@ -195,12 +195,11 @@ La imagen se descarga desde la unidad flash USB.
 . Pulse `y` cuando se le pregunte si desea utilizar la copia restaurada y, a continuación, pulse `y` cuando se le solicite reiniciar la controladora.
 . En la controladora asociada en el nivel de privilegio avanzado, inicie la sincronización de configuración con la dirección IP registrada en el paso anterior: `system node restore-backup -node local -target-address _impaired_node_IP_address_`
 . Cuando la sincronización de la configuración se haya completado sin errores, pulse `y` cuando se le solicite que confirme que el procedimiento de copia de seguridad se ha realizado correctamente.
-. Pulse `y` cuando se le pregunte si desea utilizar la copia restaurada y, a continuación, pulse `y` cuando se le solicite reiniciar la controladora.
-. Compruebe que las variables de entorno están establecidas de la forma esperada.
+. Verifica que las variables de entorno estén configuradas como esperas.
 +
 .. Lleve la controladora al aviso del CARGADOR.
 +
-En el símbolo del sistema de ONTAP, puede emitir el comando "system node halt -Skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibition-takeover true".
+Desde el símbolo del sistema de ONTAP, puede ejecutar el comando `system node halt -skip-lif-migration-before-shutdown true -ignore-quorum-warnings true -inhibit-takeover true`.
 
 .. Compruebe la configuración de la variable de entorno con el `printenv` comando.
 .. Si una variable de entorno no está establecida como se espera, modifíquela con el `setenv __environment-variable-name__ __changed-value__` comando.
