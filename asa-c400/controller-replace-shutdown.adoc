@@ -1,8 +1,8 @@
 ---
 permalink: asa-c400/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: asa c400, shut down the impair controller 
-summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+keywords: asa c400, shut down the impaired controller 
+summary: Apaga el controlador de tu sistema de almacenamiento ASA C400 para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el controlador. 
 ---
 = Apague el controlador defectuoso: ASA C400
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 
 
 [role="lead"]
-Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apaga el controlador de tu sistema de almacenamiento ASA C400 para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el controlador.
+
+Apague el módulo del controlador mediante una de las siguientes opciones.
 
 [role="tabbed-block"]
 ====
@@ -179,3 +181,5 @@ mcc1A::> metrocluster operation show
 
 --
 ====
+.El futuro
+Después de apagar el controlador ASA C400, necesitas link:controller-replace-move-hardware.html["sustituya el controlador"].

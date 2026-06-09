@@ -2,27 +2,30 @@
 permalink: a400/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: aff a400, move the controller module hardware 
-summary: Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+summary: Sustituye el controlador de tu sistema AFF A400 cuando un fallo de hardware lo requiera. Retira el controlador averiado, mueve sus componentes al controlador de reemplazo, instala el nuevo controlador y reinícialo. 
 ---
-= Sustituya el hardware del módulo de la controladora - AFF A400
+= Reemplaza el controlador - AFF A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+Sustituye el controlador de tu sistema AFF A400 cuando un fallo de hardware lo requiera. Retira el controlador averiado, mueve sus componentes al controlador de reemplazo, instala el nuevo controlador y reinícialo.
 
 
 
 == Paso 1: Extraiga el módulo del controlador
 
+Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
+
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
 
-Puede utilizar las siguientes ilustraciones o los pasos escritos para extraer el módulo del controlador del chasis.
+Puede utilizar la animación, la ilustración o los pasos escritos siguientes para quitar el módulo del controlador del chasis.
 
 .Animación: Extraiga el módulo del controlador
 video::ca74d345-e213-4390-a599-aae10019ec82[panopto]
+.Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
 . Suelte los retenes del cable de alimentación y, a continuación, desenchufe los cables de las fuentes de alimentación.
 . Afloje el gancho y la correa de bucle que sujetan los cables al dispositivo de administración de cables y, a continuación, desconecte los cables del sistema y los SFP (si fuera necesario) del módulo del controlador, manteniendo un seguimiento del lugar en el que estaban conectados los cables.
@@ -35,7 +38,7 @@ Deje los cables en el dispositivo de administración de cables de manera que cua
 El módulo de la controladora se mueve ligeramente fuera del chasis.
 
 +
-image:../media/drw_A400_Remove_controller.png["Suelte el módulo del controlador"]
+image::../media/drw_A400_Remove_controller.png[Suelte el módulo del controlador]
 
 +
 [cols="10a,90a"]
@@ -88,12 +91,15 @@ Pestillos de liberación del elevador
 
 == Paso 2: Mueva las fuentes de alimentación
 
+Mueva las fuentes de alimentación al módulo controlador de reemplazo.
+
 Debe mover la fuente de alimentación del módulo del controlador dañado al módulo del controlador de repuesto cuando sustituya un módulo del controlador.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover las fuentes de alimentación al módulo de controlador de reemplazo.
 
 .Animación: Mueva las fuentes de alimentación
 video::92060115-1967-475b-b517-aad9012f130c[panopto]
+.Pasos
 . Retire la fuente de alimentación:
 +
 image::../media/drw_A400_psu.png[Sustituya la fuente de alimentación]
@@ -138,6 +144,8 @@ NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al desl
 
 == Paso 3: Mueva la batería NVDIMM
 
+Mueva la batería NVDIMM al módulo controlador de reemplazo.
+
 Para mover la batería NVDIMM del módulo de controlador dañado al módulo de controlador de repuesto, debe realizar una secuencia específica de pasos.
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover la batería NVDIMM del módulo de controlador dañado al módulo de controlador de reemplazo.
@@ -170,6 +178,7 @@ image:../media/icon_round_3.png["Número de llamada 3"]
 Batería NVDIMM
 
 |===
+.Pasos
 . Abra el conducto de aire:
 +
 .. Presione las lengüetas de bloqueo de los lados del conducto de aire hacia el centro del módulo del controlador.
@@ -180,7 +189,7 @@ Batería NVDIMM
 . Localice el enchufe de la batería y apriete el clip en la parte frontal del enchufe de la batería para liberar el enchufe de la toma y, a continuación, desenchufe el cable de la batería de la toma.
 . Sujete la batería, presione LA lengüeta de bloqueo azul marcada Y, a continuación, levante la batería para sacarla del soporte y del módulo del controlador.
 . Mueva la batería al módulo del controlador de repuesto.
-. Alinee el módulo de la batería con la abertura de la batería y, a continuación, empuje suavemente la batería hasta que encaje en su sitio.
+. Alinea el módulo de la batería con la abertura para la batería y luego empuja suavemente la batería en la ranura hasta que encaje en su sitio.
 +
 
 NOTE: No vuelva a enchufar el cable de la batería a la placa base hasta que se le indique hacerlo.
@@ -190,6 +199,8 @@ NOTE: No vuelva a enchufar el cable de la batería a la placa base hasta que se 
 
 
 == Paso 4: Mueva el soporte de arranque
+
+Mueva el medio de arranque al módulo controlador de reemplazo.
 
 Debe localizar el soporte de arranque y, a continuación, seguir las instrucciones para retirarlo del módulo de controlador dañado e insertarlo en el módulo de controlador de sustitución.
 
@@ -216,6 +227,7 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Soporte de arranque
 
 |===
+.Pasos
 . Localice y retire el soporte de arranque del módulo de la controladora:
 +
 .. Pulse el botón azul al final del soporte de arranque hasta que el labio del soporte de arranque desaparezca el botón azul.
@@ -231,7 +243,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 +
 .. Gire el soporte de arranque hacia abajo hacia la placa base.
 .. Pulse el botón de bloqueo azul para que esté en la posición abierta.
-.. Coloque los dedos en el extremo del soporte del maletero mediante el botón azul, presione firmemente el extremo del soporte del maletero para activar el botón de bloqueo azul.
+.. Coloca los dedos en el extremo del soporte de arranque junto al botón azul y empuja firmemente hacia abajo el extremo del soporte de arranque para enganchar el botón de bloqueo azul.
 
 
 
@@ -239,6 +251,8 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 == Paso 5: Mover los elevadores PCIe y la tarjeta mezzanine
+
+Mueve los elevadores PCIe y la tarjeta mezzanine al módulo controlador de sustitución.
 
 Como parte del proceso de sustitución de la controladora, debe mover los elevadores PCIe y la tarjeta mezzanine del módulo de controladora dañado al módulo de controladora de reemplazo.
 
@@ -285,6 +299,7 @@ image:../media/icon_round_4.png["Número de llamada 4"]
 Tarjeta PCI
 
 |===
+.Pasos
 . Mueva los elevadores PCIe uno y dos del módulo del controlador dañado al módulo del controlador de sustitución:
 +
 .. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
@@ -315,6 +330,8 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 
 
 == Paso 6: Mueva los DIMM
+
+Mueva los módulos DIMM al módulo de controlador de reemplazo.
 
 Debe localizar los módulos DIMM y, a continuación, moverlos desde el módulo del controlador dañado hasta el módulo del controlador de reemplazo.
 
@@ -350,13 +367,14 @@ image:../media/icon_round_3.png["Número de llamada 3"]
 Toma DIMM
 
 |===
+.Pasos
 . Localice los DIMM en el módulo del controlador.
 . Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
 . Compruebe que la batería NVDIMM no está conectada al nuevo módulo de controlador.
 . Mueva los DIMM del módulo del controlador dañado al módulo del controlador de sustitución:
 +
 
-NOTE: Asegúrese de instalar cada DIMM en la misma ranura que ocupa en el módulo de controlador dañado.
+NOTE: Asegúrate de instalar cada módulo DIMM en la misma ranura que ocupaba en el módulo controlador deteriorado.
 
 +
 .. Extraiga el DIMM de su ranura empujando lentamente las lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
@@ -383,6 +401,8 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 == Paso 7: Instale el módulo del controlador
 
+Vuelva a instalar el módulo del controlador y reinícielo.
+
 Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.
 
 Puede utilizar la animación, la ilustración o los pasos escritos siguientes para instalar el módulo de la controladora de reemplazo en el chasis.
@@ -408,6 +428,7 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Pestillos de bloqueo del controlador
 
 |===
+.Pasos
 . Si aún no lo ha hecho, cierre el conducto de aire.
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.
 +
@@ -445,3 +466,6 @@ Si el sistema se detiene en el menú de inicio, seleccione la opción para arran
 
 
 
+
+.El futuro
+Después de reemplazar el controlador AFF A400 dañado, tienes que link:controller-replace-system-config-restore-and-verify.html["restaure la configuración del sistema"].

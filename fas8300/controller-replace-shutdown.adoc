@@ -1,8 +1,8 @@
 ---
 permalink: fas8300/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: fas8300, fas8700, shut down the impair controller 
-summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+keywords: fas8300, fas8700, shut down the impaired controller 
+summary: Apaga el controlador en tu sistema de almacenamiento FAS8300 y FAS8700 para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el controlador. 
 ---
 = Apague la controladora con deterioro: FAS8300 y FAS8700
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 
 
 [role="lead"]
-Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
+Apaga el controlador en tu sistema de almacenamiento FAS8300 y FAS8700 para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el controlador.
+
+Apague el módulo del controlador mediante una de las siguientes opciones.
 
 [role="tabbed-block"]
 ====
@@ -179,3 +181,5 @@ mcc1A::> metrocluster operation show
 
 --
 ====
+.El futuro
+Después de apagar el controlador FAS8300 y FAS8700, necesitas link:controller-replace-move-hardware.html["sustituya el controlador"].

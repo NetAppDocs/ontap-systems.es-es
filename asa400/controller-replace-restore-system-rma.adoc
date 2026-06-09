@@ -2,16 +2,16 @@
 permalink: asa400/controller-replace-restore-system-rma.html 
 sidebar: sidebar 
 keywords: asa a400, how to restore NetApp Storage Encryption, how to complete the replacement process 
-summary: Para restablecer el funcionamiento completo del sistema, debes restaurar la configuración de NetApp Storage Encryption si es necesario, instalar licencias para el nuevo controlador y devolver la pieza defectuosa a NetApp, como se describe en las instrucciones de RMA enviadas con el kit. 
+summary: 'Completa la sustitución del controlador para tu sistema ASA A400. Instala las licencias para el controlador de sustitución, confirma que las interfaces lógicas (LIF) están reportando a sus puertos de origen y realiza una comprobación del estado del clúster. Por último, devuelve la pieza averiada a NetApp.' 
 ---
-= Restauración completa del sistema - ASA A400
+= Sustitución completa del controlador - ASA A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para restaurar el funcionamiento completo del sistema, debe restaurar la configuración del cifrado de almacenamiento de NetApp (si es necesario), instalar licencias para la nueva controladora y devolver la pieza con error a NetApp, como se describe en las instrucciones de RMA que se incluyen en el kit.
+Completa la sustitución del controlador para tu sistema ASA A400. Instala las licencias para el controlador de sustitución, confirma que las interfaces lógicas (LIF) están reportando a sus puertos de origen y realiza una comprobación del estado del clúster. Por último, devuelve la pieza averiada a NetApp.
 
 
 
@@ -51,7 +51,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 == Paso 2: Verifique las LIF y registre el número de serie
 
-Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se encuentran en sus puertos principales y registrar el número de serie del nodo _reader_ si AutoSupport está habilitado y restablecer la devolución automática.
+Antes de devolver el nodo _replacement_ al servicio, debes verificar que los LIFs están en sus puertos de origen, y registrar el número de serie del nodo _replacement_ si AutoSupport está habilitado, comprobar la salud de tu clúster, cerrar cualquier ventana de mantenimiento y restablecer el giveback automático.
 
 .Pasos
 . Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`

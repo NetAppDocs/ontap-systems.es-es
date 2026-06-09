@@ -1,0 +1,67 @@
+= 
+:allow-uri-read: 
+
+
+Debe localizar los módulos DIMM y, a continuación, moverlos desde el módulo del controlador dañado hasta el módulo del controlador de reemplazo.
+
+Debe tener preparado el nuevo módulo de controlador para poder mover los DIMM directamente desde el módulo de controlador dañado a las ranuras correspondientes del módulo de controlador de reemplazo.
+
+Puede utilizar la animación, ilustración o los pasos escritos siguientes para mover los DIMM del módulo de controlador dañado al módulo de controlador de reemplazo.
+
+.Animación: Mueva los DIMM
+video::717b52fa-f236-4f3d-b07d-aad9012f51a3[panopto]
+image::../media/drw_A400_Replace-NVDIMM-DIMM.png[Mueva los DIMM]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Lengüetas de bloqueo DIMM
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+DIMM
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+Toma DIMM
+
+|===
+.Pasos
+. Localice los DIMM en el módulo del controlador.
+. Tenga en cuenta la orientación del DIMM en el socket para poder insertar el DIMM en el módulo de controlador de reemplazo en la orientación adecuada.
+. Compruebe que la batería NVDIMM no está conectada al nuevo módulo de controlador.
+. Mueva los DIMM del módulo del controlador dañado al módulo del controlador de sustitución:
++
+
+NOTE: Asegúrate de instalar cada módulo DIMM en la misma ranura que ocupaba en el módulo controlador deteriorado.
+
++
+.. Extraiga el DIMM de su ranura empujando lentamente las lengüetas expulsoras del DIMM a ambos lados del DIMM y, a continuación, extraiga el DIMM de la ranura.
++
+
+NOTE: Sujete con cuidado el módulo DIMM por los bordes para evitar la presión sobre los componentes de la placa de circuitos DIMM.
+
+.. Localice la ranura DIMM correspondiente en el módulo de la controladora de reemplazo.
+.. Asegúrese de que las lengüetas del expulsor DIMM del zócalo del DIMM están en posición abierta y, a continuación, inserte el DIMM directamente en el zócalo.
++
+Los módulos DIMM se ajustan firmemente en el zócalo, pero deben entrar fácilmente. Si no es así, realinee el DIMM con el zócalo y vuelva a insertarlo.
+
+.. Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en el zócalo.
+.. Repita estos subpasos para los módulos DIMM restantes.
+
+
+. Conecte la batería NVDIMM a la placa base.
++
+Asegúrese de que el tapón se bloquea en el módulo del controlador.
+
+

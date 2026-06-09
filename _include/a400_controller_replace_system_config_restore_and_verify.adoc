@@ -1,0 +1,53 @@
+= 
+:allow-uri-read: 
+
+
+Verifique la configuración de alta disponibilidad y la lista de discos antes de volver a poner el sistema en servicio.
+
+.Pasos
+. Arranque en modo de mantenimiento:
++
+`boot_ontap maint`
+
+. Introduzca `y` cuando vea _Continue with boot?_.
++
+Si aparece el mensaje de advertencia _System ID mismatch_, introduzca `y`.
+
+. Introduzca `sysconfig -v` y capture el contenido de la pantalla.
++
+
+NOTE: Si ve _PERSONALITY MISMATCH_ póngase en contacto con el servicio de atención al cliente.
+
+. En `sysconfig -v` la salida, compare la información de la tarjeta del adaptador con las tarjetas y las ubicaciones de la controladora de reemplazo.
+. Compruebe que todos los componentes muestran el mismo `HA` estado:
++
+`ha-config show`
+
++
+El estado de alta disponibilidad debe ser el mismo para todos los componentes.
+
+. Si el estado del sistema que se muestra en el módulo controlador no coincide con la configuración de su sistema, configure el `HA` estado del módulo controlador:
++
+`ha-config modify controller _ha-state_`
+
++
+El valor del estado de alta disponibilidad puede ser uno de los siguientes:
+
++
+** `ha`
+** `mcc`
+** `mcc-2n`
+** `mccip`
+** `non-ha`
+
+
+. Confirme que el ajuste ha cambiado:
++
+`ha-config show`
+
+. Verifique que el adaptador muestre las rutas a todos los discos: `storage show disk -p`
++
+Si observa algún problema, compruebe el cableado y vuelva a colocar los cables.
+
+. Salir del modo de mantenimiento: `halt`
+

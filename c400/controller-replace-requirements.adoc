@@ -1,0 +1,46 @@
+---
+permalink: c400/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: aff c400, prerequisite, replace the controller module 
+summary: Antes de sustituir el controlador de tu sistema AFF C400, verifica que todos los demás componentes del sistema funcionan correctamente, asegúrate de que tienes el controlador de repuesto correcto y guarda la salida de la consola del controlador en un archivo de registro de texto. 
+---
+= Requisitos para sustituir el controlador - AFF C400
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de sustituir el controlador de tu sistema AFF C400, verifica que todos los demás componentes del sistema funcionan correctamente, asegúrate de que tienes el controlador de repuesto correcto y guarda la salida de la consola del controlador en un archivo de registro de texto.
+
+Revise los requisitos para sustituir el módulo del controlador.
+
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
+* Todas las bandejas de unidades deben funcionar correctamente.
+* El controlador en buen estado debe ser capaz de asumir el control del controlador que se está reemplazando (denominado en este procedimiento como controlador averiado).
+* No utilice este procedimiento para actualizaciones de controladores.  Referirse a https://docs.netapp.com/us-en/ontap-systems-upgrade/choose_controller_upgrade_procedure.html["Seleccione el procedimiento de actualización del hardware de la controladora"] para ayuda.
+* Si su sistema está en una configuración MetroCluster , revise https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/concept_choosing_the_correct_recovery_procedure_parent_concept.html["Elección del procedimiento de recuperación correcto"] para determinar si se debe utilizar este procedimiento.
+* Reemplace el componente defectuoso con la unidad reemplazable en campo (FRU) que recibió de NetApp.
+* Sustituya el módulo controlador por un módulo controlador del mismo modelo.  No puedes actualizar tu sistema reemplazando el módulo controlador.
+* No se pueden cambiar las unidades ni las bandejas de unidades como parte de este procedimiento.
+* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al controlador de sustitución de modo que el controlador de sustitución se arranque en la misma versión de ONTAP que el módulo de controlador anterior.
+* Comprenda la terminología del controlador utilizada en este procedimiento:
++
+** El controlador _dañado_ es el controlador que se está reemplazando.
+** El controlador de _reemplazo_ es el nuevo controlador que reemplaza al controlador averiado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Usa `security key-manager onboard show-key-store` para comprobar si Onboard Key Manager (OKM) está configurado. Si es así, recupera la frase de contraseña de todo el clúster usando https://docs.netapp.com/us-en/ontap-cli/security-key-manager-onboard-show-backup.html["security key-manager onboard show-backup"] o contacta con el soporte de NetApp antes de empezar este procedimiento.
+
+
+.El futuro
+Después de haber revisado los requisitos para reemplazar tu controlador AFF C400, necesitas link:controller-replace-shutdown.html["apague el controlador defectuoso"].

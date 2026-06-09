@@ -1,0 +1,76 @@
+= 
+:allow-uri-read: 
+
+
+Como parte del proceso de sustitución de la controladora, debe mover los elevadores PCIe y la tarjeta mezzanine del módulo de controladora dañado al módulo de controladora de reemplazo.
+
+Puede utilizar las siguientes animaciones, ilustraciones o los pasos escritos para mover los elevadores PCIe y la tarjeta intermedia desde el módulo de la controladora dañada al módulo de la controladora de sustitución.
+
+Movimiento de la tarjeta vertical PCIe 1 y 2 (elevadores izquierdo y medio):
+
+.Animación - mover elevadores PCI 1 y 2
+video::f4ee1d4d-6029-4fe6-a063-aad9012f170b[panopto]
+Desplazamiento de la tarjeta mezzanine y la tarjeta vertical 3 (tarjeta vertical derecha):
+
+.Animación: Mover la tarjeta mezzanine y la tarjeta vertical 3
+video::b0c3b575-3434-4e00-a421-aad9012f2e9e[panopto]
+image::../media/drw_A400_Replace-PCIe-cards.png[Extraiga las tarjetas PCIe]
+
+[cols="10,90"]
+|===
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+Pestillo de bloqueo de la tarjeta vertical
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+Pestillo de bloqueo de tarjeta PCI
+
+
+
+ a| 
+image:../media/icon_round_3.png["Número de llamada 3"]
+ a| 
+Placa de bloqueo PCI
+
+
+
+ a| 
+image:../media/icon_round_4.png["Número de llamada 4"]
+ a| 
+Tarjeta PCI
+
+|===
+.Pasos
+. Mueva los elevadores PCIe uno y dos del módulo del controlador dañado al módulo del controlador de sustitución:
++
+.. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
+.. Gire el pestillo de bloqueo del elevador en el lado izquierdo del elevador hacia arriba y hacia el conducto de aire.
++
+La tarjeta vertical se eleva ligeramente del módulo del controlador.
+
+.. Levante la tarjeta vertical y, a continuación, muérela al módulo de la controladora de reemplazo.
+.. Alinee la tarjeta vertical con las patillas del lado de la toma de la tarjeta vertical, baje la tarjeta vertical de los pasadores, empuje la tarjeta vertical directamente hacia la toma de la placa base y, a continuación, gire el pestillo hacia abajo al ras con la chapa metálica de la tarjeta vertical.
+.. Repita este paso para la tarjeta vertical número 2.
+
+
+. Extraiga la tarjeta vertical número 3, extraiga la tarjeta intermedia e instálela en el módulo de la controladora de sustitución:
++
+.. Quite todos los módulos SFP o QSFP que puedan estar en las tarjetas PCIe.
+.. Gire el pestillo de bloqueo del elevador en el lado izquierdo del elevador hacia arriba y hacia el conducto de aire.
++
+La tarjeta vertical se eleva ligeramente del módulo del controlador.
+
+.. Levante la tarjeta vertical y déjela a un lado en una superficie plana y estable.
+.. Afloje los tornillos de ajuste manual de la tarjeta intermedia y levante suavemente la tarjeta directamente del zócalo y, a continuación, muévela al módulo de controlador de repuesto.
+.. Instale el entresuelo en el controlador de repuesto y fíjelo con los tornillos de apriete manual.
+.. Instale la tercera tarjeta vertical en el módulo de la controladora de reemplazo.
+
+
+

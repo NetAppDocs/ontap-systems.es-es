@@ -15,7 +15,7 @@ Devuelva el control de los recursos de almacenamiento a la controladora de reemp
 
 [role="tabbed-block"]
 ====
-.Sin cifrado
+.Sin cifrado ni gestor de claves externo (EKM)
 --
 Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal.
 
@@ -35,11 +35,25 @@ Devuelva el almacenamiento a la controladora afectada a su funcionamiento normal
 --
 .Cifrado incorporado (OKM)
 --
-Restablezca el cifrado integrado y devuelva la controladora a su funcionamiento normal.
+Restaura y vuelve a sellar las claves de cifrado a bordo para OKM y devuelve el controlador al funcionamiento normal.
+
+.Antes de empezar
+Antes de empezar, revisa https://docs.netapp.com/us-en/ontap-cli/security-key-manager-onboard-show-backup.html["security key-manager onboard show-backup"] o contacta con el soporte de NetApp.
 
 .Pasos
-. En el símbolo del sistema Loader, introduzca `boot_ontap maint`.
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
+. Recupera y verifica la frase de contraseña de todo el clúster desde el controlador en buen estado.
++
+.. Ejecuta el siguiente comando para recuperar la frase de contraseña de todo el clúster:
++
+`security key-manager onboard show-backup`
+
+.. Verifica la frase de contraseña de todo el clúster utilizando el siguiente comando:
++
+`security key-manager onboard verify-backup`
+
+
+
 . Introduzca la frase de contraseña de OKM.
 +
 
@@ -63,9 +77,9 @@ NOTE: Se le pedirá dos veces la frase de contraseña.
 
 NOTE: Se le pedirá la clave de acceso de OKM para todo el clúster.
 
-.. Compruebe el estado de las claves: `security key-manager key query -restored _false_`
+.. Verifica el estado de las llaves: `security key-manager key query -restored false`
 +
-La salida no debe mostrar resultados cuando se sincroniza correctamente.
+La salida no debería mostrar ningún resultado cuando esté correctamente sincronizada.
 
 +
 Si la salida muestra resultados (los ID de clave de las claves que no están presentes en la tabla de claves internas del sistema), póngase en contacto con https://support.netapp.com["Soporte de NetApp"].
@@ -74,6 +88,10 @@ Si la salida muestra resultados (los ID de clave de las claves que no están pre
 
 . Devuelva la controladora afectada a su funcionamiento normal devolviendo su almacenamiento: `storage failover giveback -ofnode _impaired_node_name_`
 . Si se ha desactivado la devolución automática, vuelva a activarla: `storage failover modify -node local -auto-giveback _true_`
++
+
+NOTE: No anules el veto en la devolución por llaves faltantes. Contacta al soporte de NetApp.
+
 . Si AutoSupport está habilitado, restaure o desactive la creación automática de casos: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 

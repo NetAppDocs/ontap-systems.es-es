@@ -50,7 +50,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 == Paso 2: Verifique las LIF, registre el número de serie y compruebe el estado del clúster
 
-Antes de devolver el nodo _reader_ al servicio, debe comprobar que las LIF se encuentran en sus puertos principales y registrar el número de serie del nodo _reader_ si AutoSupport está habilitado y restablecer la devolución automática.
+Antes de devolver el nodo _replacement_ al servicio, debes verificar que los LIFs están en sus puertos de origen, y registrar el número de serie del nodo _replacement_ si AutoSupport está habilitado, comprobar la salud de tu clúster, cerrar cualquier ventana de mantenimiento y restablecer el giveback automático.
 
 .Pasos
 . Compruebe que las interfaces lógicas están reportando a sus puertos y servidores domésticos: `network interface show -is-home false`
