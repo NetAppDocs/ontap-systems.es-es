@@ -1,10 +1,10 @@
 ---
 permalink: sas3/install-new-system.html 
 sidebar: sidebar 
-keywords: install, cabling, cable, disk, shelves, shelf, iom12, module, system, installation, system, ha, pair, single-controller, configuration, cabinet, rack, requirement, install and cable disk shelves with iom12 modules for a new system installation, requirements for installing and cabling disk shelves with iom12 modules for a new system installation, considerations for installing and cabling disk shelves with iom12 modules for a new system installation, install disk shelves with iom12 modules for a new system installation, cable disk shelves with iom12 modules for a new system installation, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: Si su nuevo sistema, una pareja de alta disponibilidad o la configuración de una única controladora, no viene instalada en un armario, debe instalar y cablear las bandejas de discos de un rack. 
+keywords: install, cable, disk, shelf, iom12, module, system, ha, pair, single-controller, configuration, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Si tu nuevo sistema no venía instalado en un gabinete, debes instalar y cablear las bandejas de discos en un rack. 
 ---
-= Instalación y cableado de estantes: DS212C, DS224C o DS460C
+= Instala y conecta una bandeja DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Si su nuevo sistema, una pareja de alta disponibilidad o la configuraci
 Si su nuevo sistema, una pareja de alta disponibilidad o una configuración de controladora única, no viene instalada en un armario, puede instalar y cablear las bandejas de discos de un rack.
 
 .Acerca de esta tarea
-* Las bandejas de discos con módulos IOM12/IOM12B se envían con ID de bandeja predefinidos en 00.
+* Los bastidores de discos con módulos IOM12, IOM12B o IOM12C se suministran con los identificadores de bastidor preconfigurados en 00.
 +
 
 NOTE: Si tiene una pareja de alta disponibilidad con al menos dos pilas, la bandeja de discos que contiene los agregados raíz de la segunda pila tiene un ID de bandeja predefinido en 10.
@@ -26,7 +26,7 @@ Debe definir ID de bandeja para que sean únicos en las configuraciones de par d
 +
 Las etiquetas muestran el número de pila; por ejemplo, *bucle o pila #: 1* y *bucle o pila #: 2*. Las bandejas de discos que no contienen los agregados raíz solo muestran el número de serie de la bandeja de discos en las etiquetas.
 
-* Si durante la configuración del sistema no se configura para usar la asignación automática de propiedad del disco, deberá asignarla manualmente.
+* Si no configuras el sistema para que use la asignación automática de propiedad de discos durante la instalación y configuración del sistema, tendrás que asignar manualmente la propiedad de los discos.
 * La ruta de control alternativa en banda (IBACP) se activa automáticamente.
 +
 IBACP no es compatible con las configuraciones de alta disponibilidad o de ruta única.

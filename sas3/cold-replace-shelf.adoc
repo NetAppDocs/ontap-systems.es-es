@@ -1,16 +1,18 @@
 ---
 permalink: sas3/cold-replace-shelf.html 
 sidebar: sidebar 
-keywords: cold-replace, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, I O, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: Puede sustituir en frío una bandeja de discos por módulos IOM12. 
+keywords: cold-replace, drive, disk, shelf, iom12, iom12b, iom12c, ds212c, ds224c, ds460c, sas3 
+summary: Puedes sustituir en frío un bastidor de discos en un sistema de producción que tenga discos en uso. 
 ---
-= Reemplazo en frío de un estante: DS212C, DS224C y DS460C
+= Sustituye en frío una bandeja DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Al reemplazar un estante de unidades en un sistema de producción con discos en uso, es necesario realizar un reemplazo en frío. Este procedimiento puede interrumpir el funcionamiento de los estantes con módulos IOM12 o IOM12B. Requiere detener las controladoras de su par de alta disponibilidad (HA).
+Debes realizar una sustitución en frío del shelf cuando cambies un shelf de unidades en un sistema de producción que tenga discos en uso. Este es un procedimiento disruptivo que requiere que detengas los controladores en tu par HA.
+
+Este procedimiento se aplica a las estanterías con módulos IOM12, IOM12B o IOM12C.
 
 Use el artículo de la base de conocimientos de NetApp https://kb.netapp.com/onprem/ontap/hardware/How_to_replace_a_shelf_chassis_using_a_cold_shelf_removal_procedure["Cómo sustituir un chasis de bandeja mediante un procedimiento de retirada de bandeja de datos fríos"].

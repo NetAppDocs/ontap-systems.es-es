@@ -1,17 +1,19 @@
 ---
 permalink: sas3/install-change-shelf-id.html 
 sidebar: sidebar 
-keywords: change, shelf, id, system, ontap, run, hot-add, ontap, controller, module, available, serve, data, unown, spare, offline, aggregate 
-summary: 'Se puede cambiar un ID de bandeja de un sistema cuando ONTAP aún no se está ejecutando o cuando se añade una bandeja en caliente antes de cablearla al sistema. También puede cambiar un ID de bandeja cuando ONTAP está activo y en ejecución (los módulos de controladora están disponibles para servir datos) y todas las unidades de la bandeja son propiedad, piezas de repuesto o parte de los agregados desconectados.' 
+keywords: change, shelf, id, system, ontap, controller, module, ds212c, ds224c, ds460c 
+summary: Cambia el ID de un shelf en un sistema cuando ONTAP aún no se está ejecutando, al añadir un shelf en caliente antes de conectarlo al sistema, o cuando ONTAP está en funcionamiento y todas las unidades del shelf no tienen propietario, son repuestos o forman parte de agregados fuera de línea. 
 ---
-= Cambiar la identificación de un estante: DS212C, DS224C o DS460C
+= Cambiar el ID de un shelf DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede cambiar el ID de un estante en un sistema con módulos IOM12/IOM12B cuando ONTAP aún no se esté ejecutando o al añadir un estante en caliente antes de cablearlo al sistema. También puede cambiar el ID de un estante cuando ONTAP esté en funcionamiento (los módulos del controlador estén disponibles para servir datos) y todas las unidades del estante no tengan propietario, sean de repuesto o formen parte de agregados fuera de línea.
+Puedes cambiar el ID de un shelf en un DS212C, DS224C o DS460C cuando ONTAP aún no está en funcionamiento o al añadir un shelf en caliente antes de conectarlo al sistema. También puedes cambiar el ID de un shelf cuando ONTAP está en funcionamiento (los módulos controladores están disponibles para servir datos) y todas las unidades del shelf no tienen propietario, son repuestos o forman parte de agregados fuera de línea.
+
+Este procedimiento se aplica a las estanterías con módulos IOM12, IOM12B o IOM12C.
 
 .Acerca de esta tarea
 * Un ID de bandeja válido tiene un valor de 00 a 99.

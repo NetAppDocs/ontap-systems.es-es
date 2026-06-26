@@ -1,22 +1,22 @@
 ---
 permalink: sas3/install-cabling-rules.html 
 sidebar: sidebar 
-keywords: disk, shelves, shelf, iom12, module, single-controller, configuration, support, platform, sas, cabling, cable, rule, controller, shelf-to-shelf, connection, rule, controller-to-stack, mini-sas, hd, optical, cable, rule, sas cabling rules, iom12b, concepts 
-summary: 'Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de pares de alta disponibilidad y de controladoras individuales (para plataformas compatibles).' 
+keywords: disk, shelf, iom12, module, iom12b, iom12c, configuration, support, platform, sas, cabling, cable, rule, controller, connection, mini-sas optical, ds212c, ds224c, ds460c 
+summary: 'Las estanterías de discos con módulos IOM12, IOM12B o IOM12C pueden cablearse en configuraciones de par de alta disponibilidad (HA) y de controlador único (para las plataformas compatibles).' 
 ---
-= Reglas y conceptos de cableado SAS: DS212C, DS224C o DS460C
+= Normas y conceptos de cableado SAS para los shelves DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Las bandejas de discos con módulos IOM12/IOM12B pueden cablearse en configuraciones de par de alta disponibilidad y de controlador único (para plataformas compatibles) aplicando las reglas de cableado SAS: Reglas de configuración, reglas de numeración de ranuras de controladoras, reglas de conexión de bandeja a bandeja, reglas de conexión de controladora a pila y, si procede, reglas de cables ópticos mini-SAS HD.
+Los racks DS212C, DS224C y DS460C con módulos IOM12, IOM12B o IOM12C pueden cablearse en configuraciones de par de alta disponibilidad (HA) y de controlador único (para las plataformas compatibles) aplicando las reglas de cableado SAS: reglas de configuración, reglas de numeración de ranuras de controlador, reglas de conexión entre racks, reglas de conexión entre el controlador y la pila y, si aplica, reglas de cables ópticos SAS mini-SAS HD.
 
 
-NOTE: Las reglas de cableado SAS descritas en esta guía, relativas a la numeración de ranuras de controlador, las reglas de conexión entre estantes y las reglas de conexión entre controlador y pila, son las mismas que se aplican a todas las bandejas de discos SAS, independientemente de si tienen módulos IOM12 o IOM12B. Sin embargo, la información de esta guía se centra en las características únicas de las bandejas de discos con módulos IOM12/IOM12B y su uso en las configuraciones compatibles.
+NOTE: Las normas de cableado SAS relativas a la numeración de las ranuras de los controladores, las reglas de conexión entre estantes y las reglas de conexión entre controladores y pilas descritas en esta guía son las mismas que se aplican a todos los estantes de discos SAS, ya sea que tengan módulos IOM12, IOM12B o IOM12C. Sin embargo, la información de esta guía es específica de las características únicas de los estantes de discos con módulos IOM12, IOM12B o IOM12C y su uso en configuraciones compatibles.
 
-Las reglas de cableado SAS con respecto a las reglas de configuración y las reglas de cable óptico mini-SAS HD SAS descritas en esta guía son específicas de las bandejas de discos con módulos IOM12/IOM12B.
+Las normas de cableado SAS relativas a las reglas de configuración y a los cables ópticos mini-SAS HD SAS que se describen en esta guía son específicas para los bastidores de discos con módulos IOM12, IOM12B o IOM12C.
 
 Las reglas de cableado de SAS descritas en esta guía equilibran el cableado SAS entre los puertos SAS integrados y los puertos SAS de adaptador de bus de host para proporcionar configuraciones de controladora de almacenamiento de alta disponibilidad y cumplir los siguientes objetivos:
 
@@ -32,7 +32,7 @@ Debe evitar desviarse de las reglas; las desviaciones pueden reducir la confiabi
 
 == Reglas de configuración
 
-Las bandejas de discos con módulos IOM12/IOM12B son compatibles con tipos específicos de configuraciones de par de alta disponibilidad y de controladora única.
+Las estanterías de discos con módulos IOM12, IOM12B o IOM12C son compatibles con determinados tipos de configuraciones de pares de alta disponibilidad y de controlador único.
 
 [NOTE]
 ====

@@ -1,22 +1,24 @@
 ---
 permalink: sas3/install-hot-add-shelf.html 
 sidebar: sidebar 
-keywords: hot-add, disk, shelves, shelf, iom12, exist, stack, module, sas, hba, onboard, sas, port, controller, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: Puede añadir en caliente una o varias bandejas de discos con módulos IOM12/IOM12B a una pila existente de bandejas de discos con módulos IOM12/IOM12B o añadir en caliente una pila de una o varias bandejas de discos con módulos IOM12/IOM12B directamente a un HBA SAS o un puerto SAS integrado en la controladora. 
+keywords: hot-add, add, disk, shelf, iom12, stack, sas, hba, port, controller, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Puedes agregar en caliente uno o varios bastidores de discos a una pila existente de bastidores de discos, o agregar en caliente una pila de uno o varios bastidores de discos directamente a un HBA SAS o a un puerto SAS integrado en el controlador. 
 ---
-= Estantes de adición en caliente: DS212C, DS224C o DS460C
+= Agregar en caliente una bandeja DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede añadir en caliente una o varias bandejas de discos con módulos IOM12/IOM12B a una pila existente de bandejas de discos con módulos IOM12/IOM12B o añadir en caliente una pila de una o varias bandejas de discos con módulos IOM12/IOM12B directamente a un HBA SAS o un puerto SAS integrado en la controladora.
+Puedes agregar en caliente uno o varios bastidores de discos a una pila existente de bastidores de discos, o agregar en caliente una pila de uno o varios bastidores de discos directamente a un HBA SAS o a un puerto SAS integrado en el controlador.
+
+Este procedimiento se aplica a las estanterías con módulos IOM12, IOM12B o IOM12C.
 
 .Antes de empezar
 Debe cumplir ciertos requisitos y familiarizarse con las mejores prácticas y consideraciones para este procedimiento antes de agregar estantes de discos en caliente.
 
-* Asegúrese de que su sistema cumpla con ciertos requisitos antes de agregar en caliente estantes de discos con módulos IOM12/IOM12B:
+* Asegúrate de que tu sistema cumple ciertos requisitos antes de añadir estantes de discos en caliente con módulos IOM12, IOM12B o IOM12C:
 +
 ** Su sistema y la versión de ONTAP deben ser compatibles con las bandejas de discos que está agregando en caliente, incluyendo los módulos de E/S, las unidades de disco y los cables SAS. Puede ver qué versión de ONTAP necesita para sus bandejas en  https://hwu.netapp.com["Hardware Universe de NetApp"^] .
 ** El sistema debe tener una cantidad inferior a la cantidad máxima de unidades de disco compatibles y, al menos, la cantidad de bandejas de discos que haya pensado añadir en caliente.
@@ -52,11 +54,11 @@ Después de añadir en caliente la bandeja de discos, debe sustituir los cables 
 
 * Familiarícese con las consideraciones generales para completar este procedimiento:
 +
-** Si va a añadir en caliente una bandeja de discos con módulos IOM12/IOM12B a una pila existente (de bandejas de discos con módulos IOM12/IOM12B), puede añadir en caliente la bandeja de discos al final (la primera o la última bandeja de discos lógica) de la pila.
+** Si vas a añadir en caliente un bastidor de discos con módulos IOM12, IOM12B o IOM12C a una pila ya existente (de bastidores de discos con módulos IOM12, IOM12B o IOM12C), puedes añadir en caliente el bastidor de discos en cualquiera de los extremos, ya sea el primer o el último bastidor de discos lógico, de la pila.
 +
 Para configuraciones de ruta única y alta disponibilidad, según corresponda a los sistemas AFF A200, AFF A220, serie FAS2600 y FAS2700, debe añadir en caliente bandejas de discos al final de la pila que no tenga conexiones a la controladora.
 
-** Los estantes de discos con módulos IOM12/IOM12B deben estar en su propia pila única.
+** Las estanterías de discos con módulos IOM12, IOM12B o IOM12C deben estar en su propia pila exclusiva.
 ** En este procedimiento se asume que la configuración utiliza una ACP en banda.
 +
 En el caso de configuraciones que tienen ACP en banda habilitado, ACP en banda se habilita automáticamente en bandejas de discos añadidas de forma activa. En el caso de configuraciones en las que ACP en banda no está habilitado, las bandejas de discos añadidas en activo funcionan sin ninguna funcionalidad ACP.

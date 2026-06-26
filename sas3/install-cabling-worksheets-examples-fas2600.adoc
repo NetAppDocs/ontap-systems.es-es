@@ -1,20 +1,17 @@
 ---
 permalink: sas3/install-cabling-worksheets-examples-fas2600.html 
 sidebar: sidebar 
-keywords: controller-to-stack, cabling, worksheet, aff, a200, a220, fas2600, fas2700, fas2800, internal storage 
+keywords: controller, stack, cable, aff, a200, a220, fas2600, fas2700, fas2800, internal storage, iom12, iom12b, iom12c, ds212c, ds224c, ds460c 
 summary: Puede utilizar las hojas de cálculo de cableado completas de la controladora a la pila y ejemplos de cableado para cablear plataformas con almacenamiento interno. 
 ---
-= Hojas de trabajo de cableado para almacenamiento interno: DS212C, DS224C o DS460C
+= Hojas de trabajo de cableado para bandejas DS212C, DS224C o DS460C con plataformas de almacenamiento internas
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede usar las hojas de trabajo completas de cableado de controlador a pila y los ejemplos de cableado para cablear plataformas con almacenamiento interno. Esto aplica a estanterías con módulos IOM12/IOM12B.
-
-
-NOTE: Esta información no se aplica a las plataformas FAS25XX.
+Puedes usar las hojas de trabajo de cableado de controlador a pila ya completadas y los ejemplos de cableado para conectar plataformas con almacenamiento interno. Esto aplica a los shelves con módulos IOM12, IOM12B o IOM12C.
 
 * Si es necesario, puede consultar link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información sobre las configuraciones compatibles, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja.
 * Los ejemplos de cableado muestran los cables de la controladora a la pila como sólidos o discontinuos para distinguir las conexiones de los puertos 0b/0b1 del controlador de las conexiones de los puertos 0A del controlador.
@@ -60,26 +57,8 @@ image::../media/drw_fas2800_withshelves_tpha_IEOPS-949.svg[Ejemplo de cableado d
 En el siguiente ejemplo de hoja de datos y cableado se utiliza la pareja de puertos 0a/0b:
 
 
-NOTE: Esta sección no se aplica a los sistemas FAS2820 o FAS25XX.
+NOTE: Esta sección no se aplica a los sistemas FAS2820.
 
 image::../media/drw_fas2600_mpha_worksheet_IEOPS-1255.svg[Hoja de cálculo de cableado de alta disponibilidad multivía para plataformas con almacenamiento interno y una pila]
 
 image::../media/drw_fas2600_mpha_IEOPS-1256.svg[Ejemplo de cableado de alta disponibilidad multivía para plataformas con almacenamiento interno]
-
-
-
-== Configuración multivía de la serie FAS2600 con una pila de varias bandejas
-
-Las siguientes hojas de datos y ejemplos de cableado utilizan el par de puertos 0a/0b.
-
-En este ejemplo, la controladora se instala en la ranura A del chasis. Cuando una controladora se encuentra en la ranura A del chasis, su puerto de almacenamiento interno (0b) está en el dominio A (IOM A); por lo tanto, el puerto 0b debe conectarse con el dominio A (IOM A) en la pila.
-
-image::../media/drw_fas2600_mp_slot_a_worksheet.png[Hoja de datos de cableado FAS2600 que muestra la pareja de puertos para una configuración multivía]
-
-image::../media/drw_fas2600_mp_slot_a.png[Ejemplo de cableado multivía FAS2600 con controladora en la ranura del chasis 1]
-
-En este ejemplo, la controladora se instala en la ranura B del chasis. Cuando una controladora se encuentra en la ranura B del chasis, su puerto de almacenamiento interno (0b) se encuentra en el dominio B (IOM B); por lo tanto, el puerto 0b debe conectarse al dominio B (IOM B) en la pila.
-
-image::../media/drw_fas2600_mp_slot_b_worksheet.png[Hoja de datos de cableado FAS2600 que muestra la pareja de puertos para una configuración multivía]
-
-image::../media/drw_fas2600_mp_slot_b.png[Ejemplo de cableado multivía FAS2600 con controladora en la ranura del chasis 2]

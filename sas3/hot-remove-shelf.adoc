@@ -1,17 +1,19 @@
 ---
 permalink: sas3/hot-remove-shelf.html 
 sidebar: sidebar 
-keywords: hot-remove, disk, shelf, iom12, module, nondisruptive, module-nondisruptively, system, power, serving, data, I O, progress, hot-remove, stack, shelves, hot-remove a disk shelf with iom12 modules, DS460C, transport DS460C, move DS460C, remove drives from DS460C, DS460C drive handling, iom12b 
-summary: 'Puede quitar en caliente una bandeja de discos con módulos IOM12 (sin interrupciones, quite una bandeja de discos de un sistema que está encendido y hay I/o en curso) cuando necesite mover o sustituir la bandeja de discos. Puede quitar en caliente una o varias bandejas de discos de cualquier parte dentro de una pila de bandejas de discos o quitar una pila de bandejas de discos.' 
+keywords: hot-remove, remove, disk, shelf, sas3, iom12, iom12b, iom12c, stack, ds460c, transport, move, ds212c, ds224c 
+summary: Puedes quitar en caliente una bandeja de discos cuando necesites retirarla o reemplazarla de un sistema que está encendido y con operaciones de E/S en curso. 
 ---
-= Quitar un estante en caliente - DS212C, DS224C y DS460C
+= Quitar en caliente un shelf DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede extraer en caliente un estante de discos con módulos IOM12 o IOM12B (extraer sin interrupciones un estante de discos de un sistema encendido con E/S en curso) cuando necesite mover o reemplazar un estante de discos. Puede extraer en caliente uno o más estantes de discos desde cualquier lugar dentro de una pila de estantes de discos o extraer una pila de estantes de discos.
+Puedes quitar en caliente una bandeja de discos cuando necesites retirarla o reemplazarla de un sistema que está encendido y con operaciones de E/S en curso. Puedes quitar en caliente una o más bandejas de discos desde cualquier lugar dentro de una pila de bandejas de discos, o quitar una pila completa de bandejas de discos.
+
+Este procedimiento se aplica a las estanterías con módulos IOM12, IOM12B o IOM12C.
 
 .Acerca de esta tarea
 * Si va a extraer una bandeja de discos en activo de una pila (pero manteniendo la pila), puede volver a admitir y verificar una ruta por vez (ruta A y, a continuación, ruta B) para omitir la bandeja de discos que va a quitar para mantener siempre la conectividad de ruta única de las controladoras a la pila.
@@ -175,7 +177,7 @@ Una bandeja de discos en el medio de la pila a una bandeja De discos en el medio
 Puede consultar los siguientes ejemplos de cableado al extraer una bandeja de discos de un extremo de una pila o el medio de una pila. Tenga en cuenta lo siguiente acerca de los ejemplos de cableado:
 
 +
-** Los módulos IOM12/IOM12B están dispuestos en paralelo como en una bandeja de discos DS224C o DS212C; si tiene un DS460C, los módulos IOM12/IOM12B están dispuestos uno sobre el otro.
+** Los módulos IOM12, IOM12B o IOM12C están dispuestos uno al lado del otro, como en una bahía de discos DS224C o DS212C; si tienes un DS460C, los módulos IOM12, IOM12B o IOM12C están dispuestos uno encima del otro.
 ** La pila de cada ejemplo se cablea con cableado estándar de bandejas a bandejas, que se utiliza en pilas cableadas con conectividad de alta disponibilidad multivía, alta disponibilidad de tres rutas o multivía.
 +
 Puede realizar la conexión directa si la pila se cableó con alta disponibilidad de cuatro rutas o conectividad de cuatro rutas, que utiliza cableado de doble bandeja a bandeja.

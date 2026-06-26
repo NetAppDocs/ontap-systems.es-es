@@ -1,17 +1,17 @@
 ---
 permalink: sas3/install-cabling-worksheets-how-to-read-multipath.html 
 sidebar: sidebar 
-keywords: example, guide, read, apply, complete, worksheet, cable, controller-to-stack, connection, disk, shelves, shelf, iom12, multipathed, connectivity, hot to read a worksheet to cable controller-to-stack connections for multipathed connectivity 
-summary: Puede utilizar este ejemplo como guía para leer y aplicar una hoja de trabajo completada para cablear las conexiones de la controladora a la pila de bandejas de discos con módulos IOM12 para la conectividad multivía. 
+keywords: cable, controller, stack, connection, disk, shelves, shelf, iom12, multipathed, connectivity, ds212c, ds224c, ds460c 
+summary: Utiliza este ejemplo como guía para leer y aplicar una hoja de trabajo completada a las conexiones por cable entre el controlador y la pila de los disk shelves, para lograr una conectividad multivía. 
 ---
-= Cómo leer una hoja de cálculo para cablear conexiones de controlador a pila para conectividad multitrayecto: DS212C, DS224C o DS460C
+= Consulta la hoja de cableado para las conexiones multivía entre el controlador y la pila de los modelos DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede utilizar este ejemplo como guía para leer y aplicar una hoja de trabajo completada para cablear las conexiones de controladora a pila para las bandejas de discos con módulos IOM12/IOM12B para la conectividad multipathed.
+Puedes usar este ejemplo como guía para aprender a leer y aplicar una hoja de cálculo completada a las conexiones por cable entre el controlador y la pila en los bastidores de discos con módulos IOM12, IOM12B o IOM12C para conectividad multivía.
 
 .Antes de empezar
 Si tiene una plataforma con almacenamiento interno, use la siguiente hoja de trabajo:
@@ -21,7 +21,7 @@ link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el 
 .Acerca de esta tarea
 * Este procedimiento hace referencia al siguiente ejemplo de hoja de datos y cableado para mostrar cómo leer una hoja de datos para cablear las conexiones de la controladora a la pila.
 +
-La configuración utilizada en este ejemplo es una configuración de alta disponibilidad multivía con dos HBA SAS de cuatro puertos (ocho puertos SAS) en cada controladora y dos pilas de bandejas de discos con módulos IOM12/IOM12B. Las parejas de puertos se cablean omitiendo cada otro par de puertos de la hoja de cálculo.
+La configuración utilizada en este ejemplo es una configuración HA multivía con dos HBA SAS de cuatro puertos (ocho puertos SAS) en cada controlador y dos pilas de estantes de discos con módulos IOM12, IOM12B o IOM12C. Los pares de puertos se cablean omitiendo cada otro par de puertos en la hoja de trabajo.
 
 +
 

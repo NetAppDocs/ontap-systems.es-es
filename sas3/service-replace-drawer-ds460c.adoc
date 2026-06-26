@@ -1,10 +1,10 @@
 ---
 permalink: sas3/service-replace-drawer-ds460c.html 
 sidebar: sidebar 
-keywords: I O activity, power, off, shelf, replacing, replace, drive, drawer, disk, replace a drive drawer in a ds460c disk shelf, dcm2, dcm 
-summary: 'El reemplazo de un cajón de unidades de una bandeja requiere detener todo el sistema de almacenamiento (par de alta disponibilidad), lo que permite mantener los agregados de datos en la bandeja o tener la opción de mantener el par de alta disponibilidad en funcionamiento, lo que requiere que mueva todos los datos de los agregados de datos que residen en las unidades de disco, desconectar y eliminar los agregados de datos. Sin embargo, si la bandeja contiene un agregado raíz, debe detener la pareja de alta disponibilidad.' 
+keywords: shelf, sas, replace, drive, drawer, disk, dcm2, dcm, ds460c 
+summary: 'Al sustituir un cajón de unidades en una estantería, puedes detener todo el sistema de almacenamiento (HA pair) o mantener el HA pair en funcionamiento.' 
 ---
-= Reemplazar un cajón de unidad - DS460C
+= Sustituir un cajón de unidades del DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 'El reemplazo de un cajón de unidades de una bandeja requiere detener 
 [role="lead"]
 Para reemplazar un cajón de unidades en un estante, puede detener todo el sistema de almacenamiento (par de alta disponibilidad), lo que le permite conservar los agregados de datos en el estante. Como alternativa, puede mantener el par de alta disponibilidad en funcionamiento, lo que requiere mover todos los datos de los agregados de datos en las unidades de disco del estante y, a continuación, desconectarlos y eliminarlos. Si el estante contiene un agregado raíz, debe detener el par de alta disponibilidad.
 
-Este procedimiento se aplica a estantes con módulos IOM12 o IOM12B.
+Este procedimiento se aplica a las estanterías con módulos IOM12, IOM12B o IOM12C.
 
 .Antes de empezar
 Necesita estos elementos para este procedimiento:
@@ -29,7 +29,7 @@ NOTE: *Posible daño de hardware:* para evitar daños por descarga electrostáti
 
 
 .Acerca de esta tarea
-* Este procedimiento se aplica a estanterías con cajones para unidades DCM y/o cajones para unidades DCM2 o DCM3. (Las estanterías también tendrán dos módulos IOM12 o IOM12B).
+* Este procedimiento se aplica a los shelves que tienen cajones de unidad DCM y/o cajones de unidad DCM2 o DCM3. (Los shelves también tendrán dos módulos IOM12, dos módulos IOM12B o dos módulos IOM12C.)
 +
 Cuando falla un cajón de unidad DCM, DCM2 o DCM3, recibirá un cajón de unidad DCM, DCM2 o DCM3 para reemplazarlo.
 
@@ -37,9 +37,9 @@ Cuando falla un cajón de unidad DCM, DCM2 o DCM3, recibirá un cajón de unidad
 
 [NOTE]
 ====
-Cuando reemplace un cajón de unidad defectuoso con un cajón de unidad DCM2 o DCM3 más nuevo, asegúrese de que el software ONTAP y el firmware del módulo IOM12 o IOM12B estén ejecutando las versiones mínimas requeridas para admitir los cajones DCM2 o DCM3.
+Cuando sustituyas una unidad con error por una bandeja DCM2 o DCM3 más reciente, asegúrate de que el software ONTAP y el firmware del módulo IOM12, IOM12B o IOM12C estén ejecutando las versiones mínimas requeridas para ser compatibles con las bandejas DCM2 o DCM3.
 
-La actualización IOM12 FW se puede realizar antes o después de sustituir un cajón de unidades. Este procedimiento incluye la actualización del FW como parte de la preparación para el procedimiento de sustitución del cajón.
+La actualización del firmware de los modelos IOM12, IOM12B o IOM12C puede realizarse antes o después de sustituir una bandeja de unidades. Este procedimiento te guía para actualizar el firmware como parte de los preparativos para el procedimiento de sustitución de la bandeja.
 
 ====
 * Los cajones de unidad DCM, DCM2 y DCM3 se pueden distinguir por su apariencia:
@@ -81,7 +81,7 @@ Antes de reemplazar un cajón de unidades, asegúrese de actualizar el firmware 
 +
 Si es necesario, puede ir al sitio de soporte de NetApp para  https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware["Descargar versiones actuales del firmware del estante de discos"] . De lo contrario, vaya al siguiente paso.
 
-. Si su estante tendrá una combinación de módulos IOM12 o IOM12B con cualquier cantidad de cajones de unidad DCM3, su sistema debe ejecutar las siguientes versiones mínimas de ONTAP:
+. Si tu rack va a incluir una combinación de módulos IOM12, IOM12B o IOM12C junto con cualquier número de cajones de unidades DCM3, tu sistema debe ejecutar las siguientes versiones mínimas de ONTAP:
 +
 ** ONTAP 9.17.1RC1
 ** ONTAP 9.16.1P3

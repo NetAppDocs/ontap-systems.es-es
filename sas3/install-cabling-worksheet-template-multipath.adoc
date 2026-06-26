@@ -1,17 +1,17 @@
 ---
 permalink: sas3/install-cabling-worksheet-template-multipath.html 
 sidebar: sidebar 
-keywords: complete, completing, worksheet, template, controller, sas, port, pair, cable, controller, disk, shelves, iom12, module, achieve, multipathed, connectivity, ha, pair, single-controller, configuration, worksheet, connection, controller-to-stack cabling worksheet template for multipathed connectivity, iom12b 
-summary: Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de los controladores que puede utilizar para conectar los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr una conectividad multivía en una configuración de par de alta disponibilidad o de controlador único. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones multivía para la configuración. 
+keywords: controller, sas, port, cable, disk, shelf, iom12, module, multipathed, ha, pair, iom12b, iom12c, ds212c, ds224c, ds460c 
+summary: Puedes utilizar una hoja de trabajo de cableado para definir los pares de puertos SAS de los controladores que puedes utilizar para conectar los controladores a pilas de estantes de discos y lograr así una conectividad multivía. 
 ---
-= Hoja de trabajo de cableado para conectividad multitrayecto: DS212C, DS224C o DS460C
+= Hoja de trabajo de cableado para conectividad multivía de los modelos DS212C, DS224C o DS460C
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Al completar la plantilla de hoja de cálculo, puede definir los pares de puertos SAS de los controladores que puede utilizar para conectar los controladores a las pilas de bandejas de discos con módulos IOM12/IOM12B para lograr una conectividad multivía en una configuración de par de alta disponibilidad o de controlador único. También puede usar la hoja de datos completada para caminar por el cableado de las conexiones multivía para la configuración.
+Puedes utilizar una hoja de trabajo de cableado para definir los pares de puertos SAS de los controladores que puedes usar para conectar los controladores a las pilas de estantes de discos y así lograr una conectividad multivía en una configuración de par de alta disponibilidad (HA) o de controlador único. También puedes usar la hoja de trabajo completada para guiarte al cablear las conexiones multivía de tu configuración.
 
 .Antes de empezar
 Si tiene una plataforma con almacenamiento interno, use la siguiente hoja de trabajo:
@@ -24,7 +24,7 @@ link:install-cabling-worksheets-examples-fas2600.html["Hojas de trabajo para el 
 Se proporcionan ejemplos de hojas de trabajo completadas para configuraciones de alta disponibilidad multivía y multivía.
 
 +
-En la hoja de trabajo se utiliza una configuración con dos HBA SAS de cuatro puertos y dos pilas de bandejas de discos con módulos IOM12/IOM12B.
+Para los ejemplos de la hoja de trabajo se utiliza una configuración con dos adaptadores HBA SAS de cuatro puertos y dos pilas de bastidores de discos con módulos IOM12, IOM12B o IOM12C.
 
 * La plantilla de hoja de cálculo permite hasta seis pilas; si es necesario, debe agregar más columnas.
 * Si es necesario, puede consultar la link:install-cabling-rules.html["Reglas y conceptos del cableado SAS"] para obtener información sobre las configuraciones compatibles, la convención de numeración de las ranuras de la controladora, la conectividad de bandeja a bandeja y la conectividad de controladora a bandeja (incluido el uso de pares de puertos).
