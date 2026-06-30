@@ -1,0 +1,70 @@
+---
+permalink: afx-2k/controller-replace-shutdown.html 
+sidebar: sidebar 
+keywords: afx 2k, shut down the impaired controller 
+summary: Apaga el controlador de tu sistema de almacenamiento afx 2k cuando presente algún fallo. Antes de realizar tareas de mantenimiento o de sustitución de componentes, es fundamental apagar el controlador de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema. 
+---
+= Apaga el controlador defectuoso - AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Apaga el controlador defectuoso de tu sistema de almacenamiento AFX 2K para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el controlador.
+
+Apague el módulo del controlador mediante una de las siguientes opciones.
+
+Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
+
+.Acerca de esta tarea
+* Si tiene un clúster con más de cuatro nodos, debe estar en quórum.  Para ver información del clúster sobre sus nodos, utilice el `cluster show` dominio.  Para obtener más información sobre el `cluster show` comando, verlink:https://docs.netapp.com/us-en/ontap/system-admin/display-nodes-cluster-task.html["Ver detalles a nivel de nodo en un clúster ONTAP"^] .
+* Si el clúster no está en quórum o si el estado o la elegibilidad de cualquier controlador (excepto el controlador dañado) se muestra como falso, debe corregir el problema antes de apagar el controlador dañado. Ver link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^] .
+
+
+.Pasos
+. Si AutoSupport está habilitado, elimine la creación automática de casos invocando un mensaje de AutoSupport:
++
+`system node autosupport invoke -node * -type all -message MAINT=<# of hours>h`
+
++
+El siguiente mensaje de AutoSupport suprime la creación automática de casos durante dos horas:
+
++
+`cluster1:> system node autosupport invoke -node * -type all -message MAINT=2h`
+
+. Deshabilitar la devolución automática desde la consola del controlador dañado:
++
+`storage failover modify -node impaired-node -auto-giveback-of false`
+
++
+
+NOTE: Cuando veas _¿Quieres desactivar la devolución automática?_, escribe `y` .
+
+. Lleve la controladora dañada al aviso DEL CARGADOR:
++
+[cols="1,2"]
+|===
+| Si el controlador dañado está mostrando... | Realice lo siguiente... 
+
+
+ a| 
+El aviso del CARGADOR
+ a| 
+Vaya al paso siguiente.
+
+
+
+ a| 
+Solicitud del sistema o solicitud de contraseña
+ a| 
+Tomar el control o detener el controlador dañado desde el controlador sano:
+`storage failover takeover -ofnode _impaired_node_name_ -halt _true_`
+
+El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
+
+|===
+
+
+.El futuro
+Después de apagar el controlador,link:controller-replace-move-hardware.html["sustituya el controlador"] .

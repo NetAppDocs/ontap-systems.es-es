@@ -1,0 +1,42 @@
+---
+permalink: afx-2k/controller-replace-requirements.html 
+sidebar: sidebar 
+keywords: afx 2k, prerequisite, replace the controller module 
+summary: Antes de sustituir el controlador en tu sistema de almacenamiento afx 2k, asegúrate de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye tener el controlador de reemplazo correcto, una copia de seguridad de la configuración de tu sistema y acceso a cualquier herramienta y firmware requeridos. 
+---
+= Requisitos para sustituir el controlador - AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de sustituir el controlador de tu sistema de almacenamiento AFX 2K, asegúrate de que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, comprobar que tienes el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.
+
+Revise los requisitos para reemplazar la controladora.
+
+[NOTE]
+====
+NetApp recomienda encarecidamente que habilites el registro de consola en los dispositivos con los que estás trabajando y que realices las siguientes acciones al llevar a cabo este procedimiento:
+
+* Deja AutoSupport activado durante tu mantenimiento. Esto permite que el soporte de NetApp reciba información de diagnóstico si ocurren problemas.
+* Habilita el registro de sesión para cualquier sesión CLI. Esto crea un registro completo de todos los comandos y la salida del sistema durante la actividad de mantenimiento. Para obtener orientación sobre cómo habilitar el registro de sesión, consulta https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Cómo configurar PuTTY para una conectividad óptima con los sistemas ONTAP"^].
+
+
+====
+* Es importante que aplique los comandos de estos pasos en los sistemas correctos:
++
+** El controlador _drinated_ es el controlador que se va a sustituir.
+** El controlador _regrse_ es el nuevo controlador que está reemplazando el controlador dañado.
+** El controlador _heated_ es el controlador que sobrevive.
+
+
+* Todas las bandejas de unidades deben funcionar correctamente.
+* El controlador en buen estado podrá hacerse cargo del controlador que se vaya a sustituir (a que se hace referencia en el presente procedimiento como el "'controlador en deterioro"").
+* Debe sustituir el componente con errores por la unidad reemplazable del sector (FRU) que ha recibido de NetApp.
+* Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
+
+
+.El futuro
+Después de revisar los requisitos para reemplazar tu controlador AFX 2K, link:controller-replace-shutdown.html["apaga los controladores"].

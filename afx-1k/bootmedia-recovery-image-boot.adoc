@@ -276,7 +276,7 @@ LOADER-B>
 
 . Si la devolución automática está desactivada, vuelva a habilitarla:
 +
-`storage failover modify -node local auto-giveback-of true`
+`storage failover modify -node local -auto-giveback-of true`
 
 . Si AutoSupport está habilitado, restaure la creación automática de casos:
 +

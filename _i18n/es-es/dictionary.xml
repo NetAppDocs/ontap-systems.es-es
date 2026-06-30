@@ -12599,7 +12599,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6ec97e2f84e4bbd8386245095dc82c6c" category="admonition">El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.  Para obtener más información sobre los niveles de privilegio, consulte<block ref="7ea886a463a2f378bb349492138018e4" category="inline-link-macro-rx"></block> .</block>
   <block id="6cf6b99f11a6f1d9493d7c0c682e72cc" category="paragraph"><block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix="" category="inline-code"></block>y<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block></block>
   <block id="3e51eab268209c4ecd6a66e3fb482d1e" category="admonition">El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.</block>
-  <block id="fbda2271859607bf1d062d190a7ffbe4" category="list-text">Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:</block>
   <block id="c45147b20fda10297d1b0e7d907f26f5" category="paragraph"><block ref="124fff7033dbf247c26ba55c91c24e05" prefix="" category="inline-code"></block></block>
   <block id="d764751d3eb0487a9a265fb174875be7" category="paragraph"><block ref="392f25c94aa750e124e01b0898bbf72d" prefix="" category="inline-code"></block></block>
   <block id="4138629ba2319734a01ac99105a7d77e" category="paragraph"><block ref="5702632fd36e775fbe40719b9f560522" prefix="" category="inline-code"></block></block>
@@ -12622,7 +12621,6 @@ SFP+ (destino/iniciador)</block>
   <block id="a3bab47f3ba234dac2b20342edc8dcf3" category="admonition">Si está ejecutando 9.18.1 o superior, omita el paso anterior y vaya al siguiente.</block>
   <block id="fc279180fd280dd504aa2557c0c4b7ba" category="list-text">Para los sistemas con un administrador de claves configurado, seleccione el proceso de restauración del administrador de claves adecuado.</block>
   <block id="f7dd172e6fadfb3c093097a95e97e630" category="list-text">Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos para reanudar la recuperación automática:</block>
-  <block id="3581d4955c5076af6afb6cb30f7b03b8" category="paragraph"><block ref="9f164e62b00bce8d23a29e3dd492366d" prefix="" category="inline-code"></block></block>
   <block id="ed7739c629ade444e8a564a1c7027dba" category="list-text">Retire los cables del módulo de administración del sistema y etiquételos para garantizar una reconexión correcta durante la reinstalación.</block>
   <block id="3202c1f631c1e508fc5fbb88d75ecd12" category="list-text">Si el controlador se detiene en el indicador LOADER, inicie el controlador con el<block ref="ce54ef17bebf280339d340bd40dff593" prefix=" " category="inline-code"></block> dominio.</block>
   <block id="fd6b8aa1d23f1f6e813129702041b66f" category="list-text">Una vez que el nodo se inicia y proporciona la solicitud de inicio de sesión, inicie sesión en el controlador asociado y verifique que el controlador reemplazado esté listo para la devolución.<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> dominio.</block>
@@ -12701,7 +12699,6 @@ SFP+ (destino/iniciador)</block>
   <block id="7198e71472ec41b1732ea66e4a56ac9e" category="paragraph">El<block ref="710390a66a3f7deb600ee6db0f191788" prefix=" " category="inline-code"></block> El parámetro lo lleva al indicador LOADER.</block>
   <block id="7b57ec62c551f7a0803d70e56d72b6df" category="summary">Reemplace un módulo de ventilador defectuoso o averiado en su sistema AFF A1K para mantener un enfriamiento adecuado y evitar problemas de rendimiento del sistema.  Los ventiladores son intercambiables en caliente y se pueden reemplazar sin apagar el sistema.</block>
   <block id="3fe309657796b19bb6bd152bdc853d95" category="paragraph">Reemplace un módulo de ventilador defectuoso o averiado en su sistema AFF A1K para mantener un enfriamiento adecuado y evitar problemas de rendimiento del sistema.  Los ventiladores son intercambiables en caliente y se pueden reemplazar sin apagar el sistema.  Este procedimiento incluye identificar el ventilador defectuoso mediante mensajes de error de la consola e indicadores LED, quitar el bisel, cambiar el módulo del ventilador y devolver la pieza defectuosa a NetApp.</block>
-  <block id="954efe13e01eb3431da5e6dcc2f00ab2" category="doc">Instale y configure su sistema de almacenamiento AFX</block>
   <block id="67e3534cd0feec346d52509c43cc0189" category="inline-link">Documentación de AFX</block>
   <block id="3854c1721469c26bd8dfca0e95e5bdbf" category="paragraph">Ir a la<block ref="1451289199683c74183eb3973056699f" category="inline-link-rx"></block> para aprender a instalar, usar y administrar su sistema AFX.</block>
   <block id="1c2ec7314c1e2ed4dd8bad09528d7973" category="paragraph">El<block ref="1451289199683c74183eb3973056699f" category="inline-link-rx"></block> Incluye información como:</block>
@@ -12869,7 +12866,6 @@ SFP+ (destino/iniciador)</block>
   <block id="0d751a1e018d36709b8b432579e17ae7" category="list-text">Estante de cables NSM A y NSM B Path_A puertos e1a, e2a, e3a y e4a a cualquier puerto en el conmutador A.</block>
   <block id="03832137a2df071ed5fe219e534cd9c2" category="list-text">Estante de cables NSM A y NSM B Path_B puertos e1b, e2b, e3b y e4b a cualquier puerto en el conmutador B.</block>
   <block id="c73a63da4aa2a55331dc580e3f7a6058" category="paragraph">La siguiente ilustración resalta el cableado para agregar en caliente un estante adicional a una configuración de conmutador.  Para agregar estantes adicionales, siga la misma metodología de cableado basada en conmutadores.</block>
-  <block id="b05d02c2614c4a2d2b2a26a857851df5" category="image-alt">Cableado del conmutador NX224 a AFX A1K</block>
   <block id="6556efde934a1b635008a5645f522b81" category="summary">Descripción general del mantenimiento del estante NX224.</block>
   <block id="993a8298922e1e33c5d4cd26d00918db" category="paragraph">Puede realizar las siguientes acciones para realizar el mantenimiento de su estante NX224:</block>
   <block id="25a6c9168ed620e1583de103c9a0feda" category="paragraph">Puede supervisar el estado de su estante comprendiendo la ubicación y las condiciones de estado de los LED en los componentes del estante de su unidad.</block>
@@ -12949,9 +12945,6 @@ SFP+ (destino/iniciador)</block>
   <block id="2eb3070ac77dd41679fb2a4b736fd5ab" category="sidebar">Obtenga más información sobre el almacenamiento AFX</block>
   <block id="f716c6e3202ed7d92fc8348d46cf91c0" category="sidebar">Características del sistema AFX</block>
   <block id="42bae4a5964639b077e0e13fa4126b4d" category="sidebar">Arquitectura AFX</block>
-  <block id="c2dc06d8d82ede301d5f832213cb54bf" category="sidebar">Instalar y mantener AFX</block>
-  <block id="89ff3ce0de6b4487110c6bfb69e1cec4" category="sidebar">Instalar hardware AFX</block>
-  <block id="8e3f86181f0fb65d0b0b68d13bda7974" category="sidebar">Mantener el hardware AFX</block>
   <block id="c5d12991791afbc0c95716bf77c8090c" category="sidebar">Administrar datos en AFX</block>
   <block id="c19ab7b0503dde9b072764d1a9d252bb" category="sidebar">Crear un volumen AFX</block>
   <block id="fdba72201777e5847a2c45a3cfc37679" category="sidebar">Administrar volúmenes AFX</block>
@@ -12960,17 +12953,13 @@ SFP+ (destino/iniciador)</block>
   <block id="601296cd84138b168e734f88cec6ceb2" category="sidebar">Mantenga el hardware de su sistema de almacenamiento AFX para garantizar la confiabilidad a largo plazo y un rendimiento óptimo. Realice tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, para evitar tiempos de inactividad y la pérdida de datos.</block>
   <block id="e80b87ba4d37600c592831624306362b" category="sidebar">Mantenga su sistema de almacenamiento AFX</block>
   <block id="ff5a200358d7841c6f0da4a1e0582537" category="sidebar">Mantenga el hardware de su sistema de almacenamiento AFX para garantizar la confiabilidad a largo plazo y un rendimiento óptimo.</block>
-  <block id="8c9e54112088985292bdf1de01ba195c" category="sidebar">Memoria y almacenamiento</block>
-  <block id="4c81882c84fe8dd13b8c5d9dccc2c472" category="sidebar">E/S y expansión</block>
   <block id="492876b76f7f3555a0aa9a76a56bccb6" category="sidebar">Instalar estantes NX224</block>
   <block id="1336e883edd86f211d74be20135a50b1" category="sidebar">Mantener los estantes NX224</block>
-  <block id="3ce642d33ebe879acc4e339fbbe88746" category="sidebar">AFX Mantener</block>
   <block id="a43cc36cba3c97642118a8f1e1411d2a" category="sidebar">Estantes NX224</block>
   <block id="44897f292c79e694fcea494af35f40cc" category="sidebar">Mantenimiento del estante NX224</block>
   <block id="9356bad064253adcb17a19cef3f04d34" category="sidebar">Reemplazar el estante de la unidad NX224</block>
   <block id="5198087ddb6461cb35b786132461261c" category="sidebar">Medio de arranque AFX 1K</block>
   <block id="5a94cb746c52c38beb8e02711e643cd9" category="sidebar">Restaurar el medio de arranque</block>
-  <block id="d3bca45bb48d04c6d999281b772fa015" category="sidebar">Chasis AFX A1K</block>
   <block id="9a4e2ca13bc5368ad30e628996c8e94e" category="sidebar">Controlador AFX 1K</block>
   <block id="4c052a07dcf923d8d73e0be9a32b97a7" category="sidebar">Módulo de E/S AFX 1K</block>
   <block id="35be92b1079dd4d454c4f763e5723f8a" category="list-text">Las fuentes de alimentación son redundantes e intercambiables en caliente. No es necesario apagar el controlador para reemplazar una fuente de alimentación.</block>
@@ -13014,38 +13003,26 @@ SFP+ (destino/iniciador)</block>
   <block id="265e5afbc76b65a563c8e31441a1e485" category="doc">Intercambio en caliente de una fuente de alimentación: FAS8300 y FAS8700</block>
   <block id="653496b123c4243a527d8a9ea55d4f8f" category="doc">Intercambio en caliente de una fuente de alimentación - FAS9000</block>
   <block id="048c525dc48e40a1d09bef0038c82ef7" category="doc">Intercambio en caliente de una fuente de alimentación - FAS9500</block>
-  <block id="80f1b598bcc25f7ec82fc65712322c5f" category="inline-link-macro">AFX A1K</block>
-  <block id="456595a68c845460a0bce72ae205008b" category="list-text"><block ref="456595a68c845460a0bce72ae205008b" category="inline-link-macro-rx"></block></block>
   <block id="bc43101d4663f6af1088f44fa1f4971c" category="open-title">Sistemas de estanterías</block>
   <block id="4118c4e0c27fbed6f04b04d3aa72ac24" category="list-text"><block ref="4118c4e0c27fbed6f04b04d3aa72ac24" category="inline-link-macro-rx"></block></block>
   <block id="ce10d24d102f61248a1ca7225202165a" category="inline-link-macro">NX224</block>
   <block id="125f10a9ef50430953cfa201c04d3fc7" category="list-text"><block ref="125f10a9ef50430953cfa201c04d3fc7" category="inline-link-macro-rx"></block></block>
-  <block id="a15565e937e16d1f4615ffae54386c32" category="list-text"><block ref="a15565e937e16d1f4615ffae54386c32" category="inline-link-macro-rx"></block></block>
-  <block id="3c91bcd5af8e3e8a07bca4d6122e6b3e" category="list-text"><block ref="3c91bcd5af8e3e8a07bca4d6122e6b3e" category="inline-link-macro-rx"></block></block>
-  <block id="2eea8cfe67bfbaf554197cde256262be" category="list-text"><block ref="2eea8cfe67bfbaf554197cde256262be" category="inline-link-macro-rx"></block></block>
   <block id="ed07672fb572f93f885feb990d0a637f" category="list-text"><block ref="ed07672fb572f93f885feb990d0a637f" category="inline-link-macro-rx"></block></block>
   <block id="7a51e753de7bf2934296fac2cdc9d593" category="list-text"><block ref="7a51e753de7bf2934296fac2cdc9d593" category="inline-link-macro-rx"></block></block>
   <block id="1397e21113f4acf414d8754488a466fc" category="list-text"><block ref="1397e21113f4acf414d8754488a466fc" category="inline-link-macro-rx"></block></block>
   <block id="66fcce69e4503a0a9c8c46637435aa8c" category="list-text"><block ref="66fcce69e4503a0a9c8c46637435aa8c" category="inline-link-macro-rx"></block></block>
-  <block id="badea07b223f33f206dbb3f59038b884" category="list-text"><block ref="badea07b223f33f206dbb3f59038b884" category="inline-link-macro-rx"></block></block>
   <block id="54d8c26f8a704f2ae1cd358913de64ac" category="list-text"><block ref="54d8c26f8a704f2ae1cd358913de64ac" category="inline-link-macro-rx"></block></block>
   <block id="4b4484c2e067a790a8b029f0e7157ba8" category="list-text"><block ref="4b4484c2e067a790a8b029f0e7157ba8" category="inline-link-macro-rx"></block></block>
-  <block id="d4ec2b21b63964207f65fe842cdcf1d9" category="list-text"><block ref="d4ec2b21b63964207f65fe842cdcf1d9" category="inline-link-macro-rx"></block></block>
   <block id="f9eb62938eec55221ed8ab27033b19b9" category="list-text"><block ref="f9eb62938eec55221ed8ab27033b19b9" category="inline-link-macro-rx"></block></block>
   <block id="7ca1678229ac5064dbd99a27e4886773" category="list-text"><block ref="7ca1678229ac5064dbd99a27e4886773" category="inline-link-macro-rx"></block></block>
   <block id="bd57b67f8598879d2601631d0c721137" category="summary">Encuentre los procedimientos de reemplazo del módulo de estante NVMe (NSM) para su estante de almacenamiento NetApp organizados por modelo de estante. Esta referencia proporciona enlaces directos a flujos de trabajo de reemplazo de NSM paso a paso para estantes NS224 y NX224 para ayudarlo a localizar rápidamente el procedimiento correcto para su modelo de estante específico.</block>
   <block id="09836515455d31781ff12c48f8614517" category="doc">Procedimientos de reemplazo de NSM por modelo de estante</block>
   <block id="1a82a6fe55e3f2f61872867b5fd0dceb" category="list-text"><block ref="1a82a6fe55e3f2f61872867b5fd0dceb" category="inline-link-macro-rx"></block></block>
   <block id="f39104a2d7ac4b866439486ba176811c" category="list-text"><block ref="f39104a2d7ac4b866439486ba176811c" category="inline-link-macro-rx"></block></block>
-  <block id="8f5f4bdbc294c6f2651fcd2e526c8a78" category="list-text"><block ref="8f5f4bdbc294c6f2651fcd2e526c8a78" category="inline-link-macro-rx"></block></block>
-  <block id="211bc6ebaac1ad5d04c5e33045e9bf83" category="list-text"><block ref="211bc6ebaac1ad5d04c5e33045e9bf83" category="inline-link-macro-rx"></block></block>
-  <block id="09fad4d466bf3d1fedb9b890171a4ef4" category="list-text"><block ref="09fad4d466bf3d1fedb9b890171a4ef4" category="inline-link-macro-rx"></block></block>
   <block id="fb22f4b778e12fb8fce97075a2c2e7cc" category="list-text"><block ref="fb22f4b778e12fb8fce97075a2c2e7cc" category="inline-link-macro-rx"></block></block>
   <block id="7e67c0810c8ad6d0694164958ee67278" category="list-text"><block ref="7e67c0810c8ad6d0694164958ee67278" category="inline-link-macro-rx"></block></block>
-  <block id="5b2fbd0784647c22ca81799fe3de9d4b" category="list-text"><block ref="5b2fbd0784647c22ca81799fe3de9d4b" category="inline-link-macro-rx"></block></block>
   <block id="9dfce2bdad58de88bbfaf4eb1ffec4c6" category="list-text"><block ref="9dfce2bdad58de88bbfaf4eb1ffec4c6" category="inline-link-macro-rx"></block></block>
   <block id="9942cbccf0648199db8728c675a51861" category="list-text"><block ref="9942cbccf0648199db8728c675a51861" category="inline-link-macro-rx"></block></block>
-  <block id="53293de4445d9809b5beb36bf8b2bdd2" category="list-text"><block ref="53293de4445d9809b5beb36bf8b2bdd2" category="inline-link-macro-rx"></block></block>
   <block id="b1a10fdec821bde7511fcf1b956e5382" category="paragraph"><block ref="b6b8a8462966204b648f1ae9c887611d" category="inline-link-macro-rx"></block>.</block>
   <block id="8a484401787078890bc1e7fd9beb44fb" category="sidebar">Procedimientos de reemplazo de NSM</block>
   <block id="dcb60d37ecd73502c4c85283951d3ef3" category="paragraph">Utilice el cable 100 GbE para conectar los puertos e1a y e7a de los controladores A y B a los conmutadores de red del clúster A y B.</block>
@@ -15031,4 +15008,227 @@ SFP+ (destino/iniciador)</block>
   <block id="53b85a29c003144aff88b6c26f882fa8" category="summary">Si falla un módulo de ventilador en un shelf de unidades DS460C, debes reemplazarlo lo antes posible para asegurarte de que el shelf tenga una refrigeración adecuada.</block>
   <block id="9b0d92965a7a8ccab1c7ce6ea546857d" category="doc">Sustituye un módulo de ventilador del DS460C</block>
   <block id="770b055f16b653c149bedee6248d42a9" category="sidebar">Módulo IOM12, IOM12B o IOM12C</block>
+  <block id="7c0a38097cd9b6cf1def5c4486adbafb" category="admonition">La siguiente ilustración muestra cómo extraer un módulo de E/S vertical. Por lo general, solo se extrae un módulo de E/S.</block>
+  <block id="005f37b37bf56ac92e0857be3c202b7a" category="section-title">Paso 2: retira las tarjetas de E/S, NVRAM12, NVRAM12-EX y el módulo de administración de sistemas</block>
+  <block id="eea947ddefc6869f6476a8336b6b48ab" category="paragraph"><block ref="eea947ddefc6869f6476a8336b6b48ab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5cda905a256692afc5d5bd2ad1286cf4" category="image-alt">Retira el módulo NVRAM12</block>
+  <block id="56243c3b9a32c27ab41689ffc7ffec61" category="list-text">Retira el módulo NVRAM12-EX:</block>
+  <block id="614ef23fed4f95db557a4942bf413b2a" category="list-text">Coge el asa del módulo y pulsa el botón de la leva de bloqueo.</block>
+  <block id="bd8ef8cac0ce99c504a443fc5b0a348b" category="list-text">Extrae el módulo NVRAM12-EX del chasis mientras sujetas la parte inferior del módulo con la otra mano.</block>
+  <block id="05832027315df23232d3769c5b6cb3f6" category="image-alt">Retira el módulo NVRAM12-EX</block>
+  <block id="6eae4ee81d85be539e8c04f1e55590dc" category="cell">Mango y botón de leva del NVRAM12-EX</block>
+  <block id="c93e60e00d4ea21de1d30a9eac96d292" category="list-text">Coloca el módulo NVRAM12-EX sobre una superficie estable.</block>
+  <block id="f70281b96bbc4d892cc8175c4073c22b" category="list-text">Comprueba el LED de estado de la NVRAM situado en la ranura 4/5 y el de la NVRAM12-EX en la ranura 6/7 del sistema. También hay un LED de la NVRAM en el panel frontal del módulo controlador. Busca el icono NV:</block>
+  <block id="94b6b55a0a9db1529f1372e896f14792" category="cell">*NVRAM*</block>
+  <block id="1fa16501584c9e30513abf91fc7cc0b9" category="image-alt">Gráfico de la ubicación de los LED de atención y estado del NVRAM12-EX</block>
+  <block id="ba0a0c19ee7e80bc18262de3b080ead7" category="cell">*NVRAM12-EX*</block>
+  <block id="4404dfb734c8d7aa1077974f0212c768" category="paragraph">LED de estado de NVRAM12-EX</block>
+  <block id="67fb456c50422194fba4214d07f3e99d" category="paragraph">LED de atención de NVRAM12-EX</block>
+  <block id="5c40960208a7535beecf44f84d10cea9" category="paragraph"><block ref="fa00b95aa82b5506a4c27cc4a50f05d7" prefix="" category="inline-code"></block></block>
+  <block id="c3165d0219ae1a4207ad0ebcf7cf0c94" category="admonition">La siguiente ilustración muestra cómo extraer un módulo de E/S vertical. Por lo general, solo quitarás un módulo de E/S.</block>
+  <block id="a8ca556aef32bcdf3b78af817650cec9" category="inline-link-macro">Sustituye la batería NV del NVRAM12-EX</block>
+  <block id="19357c6818732b5c143113cfbbdb6c00" category="paragraph">Este procedimiento se aplica a la sustitución de una batería NV defectuosa del módulo NVRAM en las ranuras 4 y 5 del controlador AFX 2K. Para obtener información sobre cómo sustituir la batería NV del módulo NVRAM12-EX en las ranuras 6 y 7 del controlador AFX 2K, consulta <block ref="c1527c06da2f8081a89a92a76513721c" category="inline-link-macro-rx"></block>.</block>
+  <block id="d0e0c3dcb53bac3afb0b39def82634d7" category="admonition">El ID del sistema Override solo es necesario para el reemplazo del módulo NVRAM y no para el reemplazo del DIMM de NVRAM.</block>
+  <block id="e34ffdf953bcf2183852f0fba937d427" category="list-text">Desde el controlador que funciona correctamente, devuelve el almacenamiento del controlador sustituido: `_storage failover giveback -ofnode impaired_node_name_`</block>
+  <block id="632b0abbc27c5b279f1c1a81849131b9" category="paragraph">El módulo NVRAM12-EX está compuesto por el hardware NVRAM12 y DIMMs sustituibles en campo. Puedes reemplazar un módulo NVRAM12-EX defectuoso, los DIMMs o la batería NVRAM que está dentro del módulo NVRAM12-EX.</block>
+  <block id="42ec7054527c81c3d49a47e997997484" category="admonition">Antes de sustituir el módulo NVRAM12-EX, asegúrate de apagar el controlador defectuoso antes de proceder con la sustitución.</block>
+  <block id="0e0eace371a8fcc0e3130745a7bff00a" category="section-title">Paso 2: Sustituye el módulo NVRAM12-EX, el DIMM de NVRAM o la batería de NVRAM</block>
+  <block id="4e73ecbdea2cdd1dfd05e548e92b3da4" category="paragraph">Reemplaza el módulo NVRAM12-EX, los DIMM de NVRAM o la batería de NVRAM usando las siguientes opciones.</block>
+  <block id="20d230b24a10e2d4ea62d894bf06edae" category="open-title">Opción 1: reemplazar el módulo NVRAM12-EX</block>
+  <block id="cc7dad726b1758fd9848508967d40ce0" category="paragraph">Para sustituir el módulo NVRAM12-EX, localízalo en la ranura 6/7 de la carcasa y sigue la secuencia específica de pasos.</block>
+  <block id="5d5429d2b89c16327681ac2d96a8e585" category="list-text">Retira el módulo NVRAM12-EX defectuoso de la carcasa:</block>
+  <block id="0155e2bfb22df6e3385523855e7c694e" category="list-text">Pulsa el botón de la leva de bloqueo.</block>
+  <block id="6351073ef6849491c5e2242099202cbf" category="list-text">Retira el módulo NVRAM12-EX defectuoso de la carcasa tirando del módulo hacia fuera de la carcasa.</block>
+  <block id="7016f8b9921b63b5910d0b5052f69057" category="list-text">Abre la tapa del módulo NVRAM12-EX usando los dedos o un destornillador para aflojar el único tornillo de mariposa de la tapa y luego levanta la tapa para retirarla del módulo.</block>
+  <block id="f60f8a91635df94cb56f931f0b614a81" category="image-alt">Retira la tapa del NVRAM12-EX</block>
+  <block id="76fb6593ae1c94607421dddd72aae250" category="cell">Tornillo de mariposa para la tapa de NVRAM12-EX</block>
+  <block id="d3cc0012e39a8a3c9c566e21f5975126" category="list-text">Retira los DIMM, uno por uno, del módulo NVRAM12-EX defectuoso e instálalos en el módulo NVRAM12-EX de recambio.</block>
+  <block id="c40d539131e0503bdda74196d486caa8" category="image-alt">Retira los módulos DIMM NVRAM12-EX</block>
+  <block id="3ac4543f6fa68e32a251dd05e79e3fcb" category="list-text">Desconecta la batería del módulo NVRAM12-EX:</block>
+  <block id="32f2f774008234de776ed9574f288b59" category="list-text">Aprieta el clip en la parte frontal del conector de la batería para soltar el conector de la toma.</block>
+  <block id="84c2235c0bf535a0089b333f043995bf" category="list-text">Retira la batería desconectada levantándola para sacarla del módulo.</block>
+  <block id="42fda177f3e900e1553b0c165c859c9d" category="image-alt">Retira la batería NVRAM12-EX</block>
+  <block id="9a045a4e889c795cd065c0bfab75d480" category="cell">Clip de conexión de batería NVRAM12-EX</block>
+  <block id="f91e2ad43acf0c22357712b06e57659b" category="list-text">Instala la batería en el módulo de recambio NVRAM12-EX:</block>
+  <block id="04b5db8883b9a87196c9dc6772cfd7b0" category="list-text">Enchufa el conector de la batería en la toma y asegúrate de que el enchufe quede bien encajado.</block>
+  <block id="d9c23bb5121c13dfac0e43210d4e3f83" category="list-text">Instala la tapa del módulo NVRAM12-EX alineando la tapa con el orificio del tornillo y asegurando la tapa con el tornillo de mariposa.</block>
+  <block id="19dbf5e022f7833a9f3a526224c5d077" category="list-text">Instala el módulo NVRAM12-EX de recambio en la carcasa:</block>
+  <block id="7fac372261dcac427b5e44213304e389" category="list-text">Alinea el módulo con los bordes de la abertura de la carcasa en la ranura 6/7.</block>
+  <block id="c57cb6ea839049a3ba2445d4e1c45843" category="list-text">Desliza con cuidado el módulo en la ranura hasta el fondo para fijarlo en su sitio.</block>
+  <block id="2cac3dc3cab71edb78a2f05d65dd1557" category="paragraph">Para sustituir los módulos DIMM de NVRAM en el módulo NVRAM12-EX, debes extraer el módulo NVRAM12-EX y luego sustituir el DIMM en cuestión.</block>
+  <block id="78e3759baf20573b4d15c50c1e5ffb60" category="list-text">Retira el módulo NVRAM12-EX de la carcasa:</block>
+  <block id="e68c8690544db2ecadf8cdf634ca7343" category="list-text">Localiza el DIMM que hay que sustituir dentro del módulo NVRAM12-EX.</block>
+  <block id="73afffb93fececb9ea07d1d4315c870c" category="admonition">Consulta la etiqueta del mapa FRU en el lateral del módulo NVRAM12-EX para determinar la ubicación de las ranuras DIMM 1 y 2.</block>
+  <block id="af27e1d721237e51be8e630f9e9b8893" category="list-text">Instala el módulo NVRAM12-EX en la carcasa:</block>
+  <block id="b424c3c2319e21f3b8f736a3ea323d5c" category="list-text">Desliza con cuidado el módulo en la ranura hasta el fondo para que encaje en su sitio.</block>
+  <block id="c29503e6e52d224926a605d91b7e3bb0" category="open-title">Opción 3: Cambiar la batería de la NVRAM</block>
+  <block id="b5a80cf740dfe64de1875e52a75f6e4e" category="paragraph">Para sustituir los módulos DIMM de NVRAM del módulo NVRAM12-EX, debes extraer el módulo NVRAM12-EX y luego reemplazar la batería.</block>
+  <block id="f68107ca5b2b795ebda55fa05adc5eb6" category="list-text">Instala la batería de recambio en el módulo NVRAM12-EX:</block>
+  <block id="23a1f9b0ad8df787fa40e2d7976923bf" category="section-title">Paso 4: Completa la sustitución de la NVRAM12-EX</block>
+  <block id="493298a3a6f3a3cf70519ac77bb7cc64" category="paragraph">Sigue estos pasos para completar la sustitución de la NVRAM12-EX.</block>
+  <block id="1c0ddb7495bc326a40ae1ea3966e1457" category="paragraph">En la salida del comando, deberías ver un mensaje que muestre el estado actual de la sustitución del almacenamiento. En el siguiente ejemplo,<block ref="78882aaeb08e9a4c81687b5de2add74f" prefix=" " category="inline-code"></block> ha sido sustituido y muestra el estado actual como<block ref="f9aed4590452f5aef264e3a300310c74" prefix=" " category="inline-code"></block>.</block>
+  <block id="42b3f0646b307caaf22f86b43e3eb71d" category="list-text">Desde el controlador que funciona correctamente, devuelve el almacenamiento del controlador sustituido:<block ref="2758e32ab200505077d7f67db24fef34" prefix=" " category="inline-code"></block></block>
+  <block id="ce6279cd36ee4c306295f39452eabbf8" category="doc">Instala y configura tu sistema de almacenamiento AFX 1K</block>
+  <block id="30954684f5a6a329efedc9f25f4bcc8c" category="doc">Instala y configura tu sistema de almacenamiento AFX 2K</block>
+  <block id="e07ddba440295d8e078bed0178002da1" category="summary">Si falla algún componente de tu sistema de almacenamiento afx 2k, devuelve la pieza defectuosa a NetApp.</block>
+  <block id="9511dc49b384d1158b9f8a8c0337e207" category="doc">Devuelve la pieza defectuosa a NetApp - AFX 2K</block>
+  <block id="0affd127beb8fc0bfeff964dd038d723" category="paragraph">Si falla algún componente de tu sistema de almacenamiento AFX 2K, devuelve la pieza defectuosa a NetApp. Consulta la página<block ref="f2d8b0d8f345a4e987bed9853cde2668" category="inline-link-rx"></block> para obtener más información.</block>
+  <block id="47f0338c49f097e8093bce9657ff1646" category="summary">Después de instalar el nuevo dispositivo de arranque en tu sistema de almacenamiento afx 2k, puedes iniciar el proceso automático de recuperación del dispositivo de arranque para restaurar la configuración desde el nodo asociado.</block>
+  <block id="84153d26e804fcdee7fb671df98746e1" category="doc">Arranca la imagen de recuperación - AFX 2K</block>
+  <block id="c450538e490e69fd0e9467f41c8631ab" category="paragraph">Después de instalar el nuevo dispositivo de arranque en tu sistema de almacenamiento AFX 2K, puedes iniciar el proceso automático de recuperación del dispositivo de arranque para restaurar la configuración desde el nodo asociado.</block>
+  <block id="5f1f79d08ef475823db8257dc1bdd0cc" category="summary">Antes de sustituir el soporte de arranque en tu sistema de almacenamiento afx 2k, asegúrate de cumplir los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de recambio correcto, confirmar que no hay puertos de clúster defectuosos en el controlador y determinar si Onboard Key Manager o External Key Manager están habilitados.</block>
+  <block id="d2d71b085d843602a2d9c3f66c9c5596" category="doc">Requisitos para sustituir el soporte de arranque - AFX 2K</block>
+  <block id="d41dade972da3418c65cb14c057bd633" category="paragraph">Antes de sustituir el soporte de arranque en tu sistema de almacenamiento AFX 2K, asegúrate de cumplir con los requisitos necesarios para una sustitución exitosa. Esto incluye verificar que tienes el soporte de arranque de recambio correcto, confirmar que no hay puertos de clúster defectuosos en el controlador y determinar si Onboard Key Manager (OKM) o External Key Manager (EKM) está habilitado.</block>
+  <block id="d5cd69eac9dd0d5de3d4237a240bece5" category="summary">Empieza a sustituir el boot media de tu sistema de almacenamiento afx 2k revisando los requisitos de sustitución, comprobando el estado del cifrado, apagando el controlador, sustituyendo el boot media, arrancando la imagen de recuperación, restaurando el cifrado y verificando el funcionamiento del sistema.</block>
+  <block id="baef70475cbbc792f2131ba3fb54aefe" category="doc">Flujo de trabajo de reemplazo del soporte de arranque - AFX 2K</block>
+  <block id="bc830856fd35a52a3a89d651cd864fbf" category="paragraph">Empieza a sustituir el soporte de arranque de tu sistema de almacenamiento AFX 2K revisando los requisitos de sustitución, comprobando el estado del cifrado, apagando el controlador, sustituyendo el soporte de arranque, arrancando la imagen de recuperación, restaurando el cifrado y verificando el funcionamiento del sistema.</block>
+  <block id="4fd2c496ca4d33821f657d8aaf9a63ba" category="summary">El soporte de arranque de tu sistema de almacenamiento afx 2k almacena datos esenciales de firmware y configuración. El proceso de sustitución implica quitar el módulo de administración de sistemas, retirar el soporte de arranque dañado, instalar el soporte de arranque de repuesto en el módulo de administración de sistemas y luego volver a instalar el módulo de administración de sistemas.</block>
+  <block id="0c3e985723f6a8a21af6e15c4396618f" category="doc">Sustituye el soporte de arranque - AFX 2K</block>
+  <block id="8f1d1b9d974152a32c5690207277c95b" category="paragraph">El soporte de arranque de tu sistema de almacenamiento AFX 2K almacena datos esenciales de firmware y configuración. El proceso de sustitución consiste en quitar el módulo de administración de sistemas, retirar el soporte de arranque dañado, instalar el soporte de arranque de repuesto en el módulo de administración de sistemas y luego volver a instalar el módulo de administración de sistemas.</block>
+  <block id="08fa7aa863e6b927cfc399f2ef320f21" category="summary">Apaga el controlador defectuoso de tu sistema de almacenamiento afx 2k para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el boot media.</block>
+  <block id="68866c0551915937e68abe79bf5ef440" category="doc">Apaga el controlador para reemplazar el soporte de arranque - AFX 2K</block>
+  <block id="4dc397418ec19de981c3fdf94c990373" category="paragraph">Apaga el controlador defectuoso de tu sistema de almacenamiento AFX 2K para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el medio de arranque.</block>
+  <block id="733189122efc7c7d771d2781ab9edc13" category="doc">Completa la sustitución del chasis - AFX 2K</block>
+  <block id="f2cf1a2d6a564179db911470c7676dbc" category="paragraph">Reinicia el controlador, comprueba el estado del sistema y devuelve la pieza defectuosa a NetApp para completar el último paso del procedimiento de sustitución del chasis AFX 2K.</block>
+  <block id="90f0deb4f558f0628824127f70ab2904" category="summary">Sustituye el chasis de tu sistema de almacenamiento afx 2k cuando lo requiera un fallo de hardware. El proceso de sustitución consiste en retirar el controlador de la parte frontal del chasis, extraer las unidades de alimentación, la NVRAM12, los módulos de E/S y los espacios vacíos, y el módulo de administración de sistemas, para luego instalar el chasis de repuesto y volver a instalar los componentes del chasis.</block>
+  <block id="e8a38b5bcb86d3baafecd1cb84315938" category="doc">Sustituir el chasis - AFX 2K</block>
+  <block id="5c4826b51aa30ed4ef6492f516458b76" category="paragraph">Sustituye el chasis de tu sistema de almacenamiento AFX 2K cuando un fallo de hardware lo requiera. El proceso de sustitución implica retirar el controlador, las tarjetas de E/S, el módulo NVRAM12, el módulo de administración de sistemas y las unidades de alimentación (PSUs), instalar el chasis de repuesto y volver a instalar los componentes del chasis.</block>
+  <block id="5f488087f80a00d8a0a9c9ea39dd9a39" category="paragraph">Después de reemplazar el chasis AFX 2K deteriorado y reinstalar sus componentes, completa el <block ref="26075a6bb8a8530abf8ac901371df95c" category="inline-link-macro-rx"></block>.</block>
+  <block id="0d31d940838cf27af8dcbdc4bb1e5cc5" category="summary">Prepárate para sustituir el chasis defectuoso en tu sistema de almacenamiento afx 2k identificando el chasis defectuoso, verificando los componentes de reemplazo y etiquetando los cables y los módulos de controlador.</block>
+  <block id="97ea2ff13381c9e80e4a9e5866798008" category="doc">Prepárate para sustituir el chasis - AFX 2K</block>
+  <block id="8ad61988da397d5c7edb61330bbffe52" category="paragraph">Prepárate para sustituir el chasis defectuoso de tu sistema de almacenamiento AFX 2K identificando el chasis defectuoso, comprobando los componentes de recambio y etiquetando los cables y el módulo controlador.</block>
+  <block id="aee3662996304503df8dfe1957eb5f3f" category="paragraph">Una vez que te hayas preparado para sustituir los componentes del chasis de tu AFX 2K, necesitas <block ref="56c6ba4ece2a517e11a0ae4af44a8f78" category="inline-link-macro-rx"></block>.</block>
+  <block id="d6df809a31fd91ee4ebfcf365ecba6c2" category="summary">Antes de sustituir el chasis en tu sistema de almacenamiento afx 2k, asegúrate de cumplir los requisitos necesarios para una sustitución exitosa. Esto incluye verificar que todos los demás componentes del sistema funcionen correctamente, que tengas credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.</block>
+  <block id="241c5559a8db1110c02f46f1b23144d9" category="doc">Requisitos para sustituir el chasis - AFX 2K</block>
+  <block id="d140062b5792fa29619e99c355c9a0d1" category="paragraph">Antes de sustituir el chasis de tu sistema de almacenamiento AFX 2K, asegúrate de cumplir con los requisitos necesarios para que la sustitución sea exitosa. Esto incluye verificar que todos los demás componentes del sistema funcionen correctamente, que tengas credenciales de administrador local para ONTAP, el chasis de reemplazo correcto y las herramientas necesarias.</block>
+  <block id="e16e7814eb1ed3a86464700b59e96402" category="summary">Apaga el controlador de tu sistema de almacenamiento afx 2k para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir el chasis.</block>
+  <block id="99fc7a4cd41d10bebbe7ed8ded52ede7" category="doc">Apaga el controlador para sustituir el chasis - AFX 2K</block>
+  <block id="69ab490f4653208cd65d6913bee4569c" category="paragraph">Apaga el controlador de tu sistema de almacenamiento AFX 2K para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el chasis.</block>
+  <block id="1f7ca8867973ca942502e20d95044a0e" category="summary">Empieza a sustituir el chasis de tu sistema de almacenamiento afx 2k revisando los requisitos de sustitución, apagando el controlador, sustituyendo el chasis y comprobando el funcionamiento del sistema.</block>
+  <block id="eb045a163eb7be9f73f4a40d1c0f41b7" category="doc">Flujo de reemplazo del chasis - AFX 2K</block>
+  <block id="eacae0f88e59233ad6ded55e422f7945" category="paragraph">Empieza a sustituir el chasis de tu sistema de almacenamiento AFX 2K revisando los requisitos de sustitución, apagando el controlador, sustituyendo el chasis y comprobando el funcionamiento del sistema.</block>
+  <block id="5b8f290c3f089907bba9c2c693c2fe48" category="summary">Sustituye el controlador de tu sistema de almacenamiento afx 2k cuando lo requiera un fallo de hardware. El proceso de sustitución consiste en retirar el controlador averiado, mover los componentes al controlador de reemplazo, instalar el controlador de reemplazo y reiniciarlo.</block>
+  <block id="7a37d11ee7f6a2db7866bba675f4a88c" category="doc">Sustituye el controlador - AFX 2K</block>
+  <block id="2c9ff4eca4d80dfdc8f7696cd65f5221" category="paragraph">Sustituye el controlador de tu sistema de almacenamiento AFX 2K cuando lo requiera un fallo de hardware. El proceso de sustitución implica quitar el controlador averiado, mover los componentes al controlador de reemplazo, instalar el controlador de reemplazo y reiniciarlo.</block>
+  <block id="9d165553852fd4225e1ab7573c22323b" category="paragraph">Tras sustituir el controlador AFX 2K defectuoso, <block ref="2b62b6819eda0605f4028f44dd716aa8" category="inline-link-macro-rx"></block>.</block>
+  <block id="232109d76a222d9f105a0d4882a42416" category="summary">Devuelve el control de los recursos de almacenamiento al controlador de sustitución para que tu sistema de almacenamiento afx 2k pueda reanudar su funcionamiento normal.</block>
+  <block id="3cb36adf127544644230cf2e4b5ab84f" category="doc">Devuelve el mando - AFX 2K</block>
+  <block id="19c41860e2f260ae2e77595f423e0eb2" category="paragraph">Devuelve el control de los recursos de almacenamiento al controlador de sustitución para que tu sistema de almacenamiento AFX 2K pueda reanudar su funcionamiento normal. El procedimiento de devolución varía en función del tipo de cifrado que utilice tu sistema: sin cifrado o cifrado mediante Onboard Key Manager (OKM).</block>
+  <block id="72b508e9c8c6ad7aa90aadf13f71d293" category="summary">Antes de sustituir el controlador en tu sistema de almacenamiento afx 2k, asegúrate de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye tener el controlador de reemplazo correcto, una copia de seguridad de la configuración de tu sistema y acceso a cualquier herramienta y firmware requeridos.</block>
+  <block id="5ce6725b6e299bd1adaa099d3aae884f" category="doc">Requisitos para sustituir el controlador - AFX 2K</block>
+  <block id="a3ec385c2147224f642fb131801a40fd" category="paragraph">Antes de sustituir el controlador de tu sistema de almacenamiento AFX 2K, asegúrate de que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye verificar que todos los demás componentes del sistema funcionan correctamente, comprobar que tienes el controlador de reemplazo correcto y guardar la salida de la consola del controlador en un archivo de registro de texto.</block>
+  <block id="529ca8721a927b16e30574449622b413" category="paragraph">Después de revisar los requisitos para reemplazar tu controlador AFX 2K, <block ref="8e2bedbe0502a7014e560cda99cd14d0" category="inline-link-macro-rx"></block>.</block>
+  <block id="8d1c7ddaafa8c8a7745df487e02b16a8" category="summary">Comprueba que las interfaces lógicas estén conectadas a su puerto de origen, realiza una comprobación del estado del clúster y luego devuelve la pieza defectuosa a NetApp para completar el paso final del procedimiento de sustitución del controlador afx 2k.</block>
+  <block id="1a5638aad581532c355b25c7fab88dd1" category="doc">Sustitución completa del controlador - AFX 2K</block>
+  <block id="c74919ac1cf8befa5b3d4e0140e2f53d" category="paragraph">Comprueba que las interfaces lógicas (LIF) estén conectadas a su puerto de origen, realiza una comprobación del estado del clúster y luego devuelve la pieza defectuosa a NetApp para completar el paso final del procedimiento de sustitución del controlador AFX 2K.</block>
+  <block id="3d847e98ec2f041217e5a4b4b4c5c6f6" category="summary">Apaga el controlador de tu sistema de almacenamiento afx 2k cuando presente algún fallo. Antes de realizar tareas de mantenimiento o de sustitución de componentes, es fundamental apagar el controlador de forma segura para evitar la pérdida de datos y garantizar la estabilidad del sistema.</block>
+  <block id="6c6c11c1dcf06a060fe052443c9b2260" category="doc">Apaga el controlador defectuoso - AFX 2K</block>
+  <block id="9188bc0bec40b9527dc8f57405753ee0" category="paragraph">Apaga el controlador defectuoso de tu sistema de almacenamiento AFX 2K para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el controlador.</block>
+  <block id="b08c8863502f72da3fd581302686a342" category="summary">Comprueba que la configuración HA del controlador esté activa y funcione correctamente en tu sistema de almacenamiento afx 2k, y confirma que los adaptadores del sistema muestren todas las rutas a los discos.</block>
+  <block id="bce3dd09e8330d332cb5912ea39ab800" category="doc">Restaurar y verificar la configuración del sistema - AFX 2K</block>
+  <block id="85d06de7cf5f37631d681fe7e72c5ca4" category="paragraph">Comprueba que la configuración HA del controlador esté activa y funcione correctamente en tu sistema de almacenamiento AFX 2K, y confirma que los adaptadores del sistema muestren todas las rutas a los discos.</block>
+  <block id="3855e1fdaf92f61d59ffd35c040186b8" category="paragraph">Tras restaurar y verificar la configuración del sistema de almacenamiento AFX 2K, <block ref="f96992113d4cc080f9d372523b7a919c" category="inline-link-macro-rx"></block>.</block>
+  <block id="9ca87651c273633e10245db8e8fea9f5" category="summary">Empieza a sustituir el controlador en tu sistema de almacenamiento afx 2k apagando el controlador averiado, extrayendo y sustituyendo el controlador, reconfigurando los ajustes del sistema y comprobando el funcionamiento del sistema.</block>
+  <block id="5023a06f40721fa8e50780b5148e4ea1" category="doc">Flujo de reemplazo del controlador - AFX 2K</block>
+  <block id="5b8b05b20932dd01e5f9e97a0b5065ae" category="paragraph">Empieza a sustituir el controlador de tu sistema de almacenamiento AFX 2K apagando el controlador averiado, extrayendo y sustituyendo el controlador, restaurando la configuración del sistema y comprobando el funcionamiento del sistema.</block>
+  <block id="99c97b601c7421b57272daa86dbf8b23" category="summary">Sustituye un DIMM en tu sistema de almacenamiento afx 2k si se detectan errores de memoria excesivos, ya sean corregibles o no corregibles. Estos errores pueden impedir que el sistema de almacenamiento arranque ONTAP. El proceso de sustitución consiste en apagar el controlador afectado, retirarlo, reemplazar el DIMM, volver a instalar el controlador y luego devolver la pieza defectuosa a NetApp.</block>
+  <block id="3bdcaf1603b8e82edefeb8b285d86bbc" category="doc">Reemplaza un DIMM - AFX 2K</block>
+  <block id="6dd6eda6c74f7ba8b9bd081607f4aecd" category="paragraph">Sustituye un DIMM en tu sistema de almacenamiento AFX 2K si se detectan errores de memoria excesivos, ya sean corregibles o no corregibles. Estos errores pueden impedir que el sistema de almacenamiento arranque ONTAP. El proceso de sustitución implica apagar el controlador afectado, retirarlo, reemplazar el DIMM, volver a instalar el controlador y luego devolver la pieza defectuosa a NetApp.</block>
+  <block id="838e989c8093a7e90636389afa993183" category="summary">Sustituye un módulo de ventilador averiado o defectuoso de tu sistema afx 2k para mantener una refrigeración adecuada y evitar problemas de rendimiento del sistema. Los ventiladores son intercambiables en caliente y pueden reemplazarse sin necesidad de apagar el sistema.</block>
+  <block id="93af2d5c5da4ba62fcf3e889139979f8" category="doc">Reemplazar un ventilador - AFX 2K</block>
+  <block id="cb1f064b836e4b8c180543dacce71319" category="paragraph">Sustituye un módulo de ventilador averiado o defectuoso de tu sistema AFX 2K para mantener una refrigeración adecuada y evitar problemas de rendimiento del sistema. Los ventiladores son intercambiables en caliente y puedes reemplazarlos sin apagar el sistema. Este procedimiento incluye identificar el ventilador defectuoso usando los mensajes de error de la consola y los indicadores LED, retirar el frontal, intercambiar el módulo del ventilador y devolver la pieza averiada a NetApp.</block>
+  <block id="887217312340d4bd19fcdac132019576" category="summary">Agrega un módulo de I/O a tu sistema de almacenamiento afx 2k para mejorar la conectividad de red y ampliar la capacidad de tu sistema para manejar el tráfico de datos.</block>
+  <block id="9148cd0d2edc5ced8eb0a4dc9175dd6b" category="doc">Agregar módulo de E/S - AFX 2K</block>
+  <block id="ce6d38b71c3fb3c7fb2ed59d66f0506e" category="paragraph">Añade un módulo de E/S a tu sistema de almacenamiento AFX 2K para mejorar la conectividad de red y ampliar la capacidad de tu sistema para gestionar el tráfico de datos.</block>
+  <block id="4fdb5fecd36bff72c28077c8ef1fdd69" category="paragraph">Puedes añadir un módulo de E/S a tu sistema de almacenamiento AFX 2K cuando hay ranuras libres disponibles o cuando todas las ranuras están completamente ocupadas.</block>
+  <block id="22b48166a83fe9cb39be3e37e219b528" category="summary">Puedes realizar un intercambio en caliente de un módulo de E/S Ethernet en tu sistema de almacenamiento afx 2k si un módulo falla y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.</block>
+  <block id="3c08a7ab62bcec00e7adabd9ebfa32fb" category="doc">Intercambio en caliente de un módulo de E/S - AFX 2K</block>
+  <block id="69f81f2052320136f3837bb5dc90b742" category="paragraph">Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFX 2K si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.</block>
+  <block id="1467175f80b5b6aeb9baf8911c169c66" category="paragraph">Directiva sin resolver en stdin: include::../_include/afx_2k_io_module_hotswap_replace.adoc[]</block>
+  <block id="a28f0e1852a67eef8c7002ec42407437" category="summary">El sistema de almacenamiento afx 2k ofrece flexibilidad a la hora de ampliar o sustituir módulos de E/S para mejorar la conectividad de red y el rendimiento. Añadir o sustituir un módulo de E/S es esencial cuando actualizas las capacidades de red o solucionas el fallo de un módulo.</block>
+  <block id="090e0f185fc019584bd34692f1181c1b" category="doc">Descripción general de añadir y sustituir módulos de E/S - AFX 2K</block>
+  <block id="2a86a987b9aaad96420c91330dbf1d59" category="paragraph">El sistema de almacenamiento AFX 2K ofrece flexibilidad a la hora de ampliar o sustituir módulos de E/S para mejorar la conectividad de red y el rendimiento. Añadir o sustituir un módulo de E/S es fundamental a la hora de actualizar las capacidades de red o solucionar el fallo de un módulo.</block>
+  <block id="e79912bea1cf19564789abe796691f33" category="paragraph">Puedes sustituir un módulo de E/S averiado de tu sistema de almacenamiento AFX 2K por otro del mismo tipo o por uno diferente. También puedes añadir un módulo de E/S a un sistema con ranuras libres.</block>
+  <block id="93c17c81de596806e55e0bcb545b0124" category="paragraph">Las ranuras de E/S del controlador AFX 2K están numeradas del 1 al 11, como se muestra en la siguiente ilustración.</block>
+  <block id="0c0b8e9d6d48f25f140564908a0fbefe" category="image-alt">Numeración de las ranuras en un controlador AFX 2K</block>
+  <block id="1910382d2df1981bfd58fce3bc46f693" category="cell">Número de ranura</block>
+  <block id="e6010d0015a0057354e2f435c8258d8c" category="cell">Ranura de E/S</block>
+  <block id="594c16ca0695f6665d7cf4971707adf6" category="cell">HA</block>
+  <block id="36a9bb76a73be848a5443273efc36dce" category="cell">NVRAM12</block>
+  <block id="6ba8ef21cd3a6e29bac6f5100625f023" category="image-alt">Llamada número 9</block>
+  <block id="249694a485fc5d3289c38986b4f8e887" category="cell">Clúster</block>
+  <block id="252d3b7f2054eb6f5b22182e91ecc613" category="image-alt">Llamada número 6</block>
+  <block id="07df018939a3e88fde27c12e57c601e0" category="image-alt">Llamada número 7</block>
+  <block id="3b8240959b126ef66dac73a8609d4e88" category="cell">NVRAM12-EX</block>
+  <block id="995ee42e14fa7ada296e437cafe297d0" category="image-alt">Llamada número 10</block>
+  <block id="8c7663c7feb0ad581220a65f1966b9b1" category="image-alt">Llamada número 8</block>
+  <block id="3f93d6296d6d3a4e6ccba7c6defe16e0" category="image-alt">Llamada número 11</block>
+  <block id="2bbc0144b4be4eb8e87f365fd41bfd2b" category="cell">(*Opcional*) Cuatro puertos SFP28 de 25GbE para conectividad de gestión adicional</block>
+  <block id="b4a4627623c6898e3423c3771cab5324" category="summary">Sustituye un módulo de E/S de tu sistema de almacenamiento afx 2k cuando el módulo falle o necesite una actualización para soportar un mayor rendimiento o funciones adicionales. El proceso de sustitución consiste en apagar el controlador, reemplazar el módulo de E/S defectuoso, reiniciar el controlador y devolver la pieza defectuosa a NetApp.</block>
+  <block id="a44655e5d7603039f1a2569d54108b18" category="doc">Reemplazar módulo de E/S - AFX 2K</block>
+  <block id="c2bf9157db36930d03521f2fb5063469" category="paragraph">Sustituye un módulo de E/S de tu sistema de almacenamiento AFX 2K cuando falle. El proceso de sustitución consiste en apagar el controlador, sustituir el módulo de E/S defectuoso, reiniciar el controlador y devolver la pieza defectuosa a NetApp.</block>
+  <block id="e80e98fbdd1a8ff85f0ba233e912b977" category="summary">Realiza el mantenimiento del hardware de tu sistema de almacenamiento afx 2k para garantizar su fiabilidad a largo plazo y un rendimiento óptimo. Realiza tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.</block>
+  <block id="35c425db32753c4c8a6d5f81d2e0b199" category="doc">Resumen de los procedimientos de mantenimiento - AFX 2K</block>
+  <block id="8d1a6bb89dd08a5abd5d033d7c40f5c5" category="paragraph">Realiza el mantenimiento del hardware de tu sistema de almacenamiento AFX 2K para asegurar la fiabilidad a largo plazo y un rendimiento óptimo. Realiza tareas de mantenimiento periódicas, como reemplazar componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.</block>
+  <block id="00f00bf38d2535a80ca3e4d1b8808884" category="paragraph">Los procedimientos de mantenimiento dan por hecho que el sistema de almacenamiento AFX 2K ya se ha implementado como nodo de almacenamiento en el entorno ONTAP.</block>
+  <block id="e8b581fab68956048ad06e30bf595e8f" category="paragraph">Para el sistema de almacenamiento AFX 2K, puedes realizar procedimientos de mantenimiento en los siguientes componentes.</block>
+  <block id="19d55967c2bced020d205588fd8a244c" category="inline-link-macro">Módulo NVRAM12-EX</block>
+  <block id="b764fe9de756f253401af614379e0f69" category="paragraph"><block ref="b764fe9de756f253401af614379e0f69" category="inline-link-macro-rx"></block></block>
+  <block id="56ef17b17c8d7c119d3dc5a67d31d1c8" category="paragraph">El NVRAM12-EX es el segundo módulo NVRAM (memoria no volátil de acceso aleatorio) para el controlador AFX 2K. El módulo NVRAM12-EX permite al controlador proteger y guardar los datos en curso si el sistema pierde energía.</block>
+  <block id="a7489340331ce7a0b75196c9756e98c1" category="summary">Sustituye el NVRAM12-EX de tu sistema de almacenamiento AFX 2K cuando la memoria no volátil presente algún fallo o necesite una actualización.</block>
+  <block id="78f7a086ea9ce6525c8511fcf07b4c4c" category="doc">Reemplaza NVRAM12-EX - AFX 2K</block>
+  <block id="cdeaf4befd645a1418466df1a21922d1" category="paragraph">Sustituye el NVRAM12-EX de tu sistema de almacenamiento AFX 2K cuando la memoria no volátil presente un fallo o necesite una actualización. El proceso de sustitución implica apagar el controlador con problemas, reemplazar el módulo NVRAM12-EX, el DIMM de NVRAM o la batería de NVRAM, y devolver la pieza defectuosa a NetApp.</block>
+  <block id="fd00f44b87ed9926040c0f7357406795" category="summary">Sustituye la batería NV de tu sistema de almacenamiento afx 2k cuando la batería empiece a perder carga o falle, ya que es la responsable de preservar los datos críticos del sistema durante los cortes de energía. El proceso de sustitución consiste en apagar el controlador averiado, extraer el módulo del controlador, reemplazar la batería NV, volver a instalar el módulo del controlador y devolver la pieza averiada a NetApp.</block>
+  <block id="11e2fa2b1a655738e29861e2ca4853d7" category="doc">Reemplaza la batería NV - AFX 2K</block>
+  <block id="85e4f998436505a0021e344ba43480ef" category="paragraph">Sustituye la batería NV de tu sistema de almacenamiento AFX 2K cuando la batería empiece a perder carga o falle, ya que es la responsable de preservar los datos críticos del sistema durante los cortes de energía. El proceso de sustitución consiste en apagar el controlador averiado, extraer el módulo del controlador, sustituir la batería NV, volver a instalar el módulo del controlador y devolver la pieza defectuosa a NetApp.</block>
+  <block id="a8eab56fbea9ed8a962d4d7c33caa257" category="summary">Sustituye la NVRAM de tu sistema de almacenamiento afx 2k cuando la memoria no volátil presente algún fallo o sea necesario actualizarla.</block>
+  <block id="d9eb0be8817cba6416aa39d8b13e726f" category="doc">Reemplazar NVRAM - AFX 2K</block>
+  <block id="7a20acbb25fe20c5f0072b737cd45e25" category="paragraph">Sustituye la NVRAM de tu sistema de almacenamiento AFX 2K cuando la memoria no volátil presente un fallo o necesite una actualización. El proceso de sustitución consiste en apagar el controlador afectado, reemplazar el módulo NVRAM o el DIMM de NVRAM y devolver la pieza defectuosa a NetApp.</block>
+  <block id="5ce39682ade36bffe68d0cc4d123011f" category="summary">Sustituye la fuente de alimentación de CA de tu sistema de almacenamiento afx 2k cuando falle o presente algún fallo, asegurándote de que tu sistema siga recibiendo la energía necesaria para un funcionamiento estable. El proceso de sustitución consiste en desconectar la fuente de alimentación en cuestión, desenchufar el cable de alimentación, retirar la fuente de alimentación defectuosa, instalar la de repuesto y luego volver a conectarla a la fuente de energía.</block>
+  <block id="5ff8a93dd5f3d4779eb6968d4ed33fd1" category="doc">Reemplaza una fuente de alimentación - AFX 2K</block>
+  <block id="4afdc9b422bf39e0fd94dee5a0688c44" category="paragraph">Sustituye la fuente de alimentación de CA (PSU) de tu sistema de almacenamiento AFX 2K cuando falle o presente algún fallo, asegurándote de que tu sistema siga recibiendo la alimentación necesaria para un funcionamiento estable. El proceso de sustitución consiste en desconectar la PSU en cuestión, desenchufar el cable de alimentación, retirar la PSU defectuosa e instalar la PSU de reemplazo, y luego volver a conectarla a la fuente de alimentación.</block>
+  <block id="a33028de097a1247ad2cadb61dea9867" category="summary">Cambia la batería del reloj en tiempo real de tu sistema de almacenamiento afx 2k para garantizar que los servicios y aplicaciones que dependen de una sincronización horaria precisa sigan funcionando correctamente.</block>
+  <block id="3f6e83d0edc72cc804f8be0755fa3c99" category="doc">Reemplaza la batería del reloj en tiempo real - AFX 2K</block>
+  <block id="0d8003363fc792dd81c652e8bc618b43" category="paragraph">Sustituye la batería del reloj en tiempo real (RTC), conocida comúnmente como pila de botón, en tu sistema de almacenamiento AFX 2K para asegurarte de que los servicios y aplicaciones que dependen de una sincronización horaria precisa sigan funcionando.</block>
+  <block id="8a3215ed113f872bcf7d0d459fb9afad" category="summary">Sustituye el módulo de administración de sistemas de tu sistema de almacenamiento afx 2k cuando presente un fallo o su firmware esté dañado. El proceso de sustitución consiste en apagar el controlador, sustituir el módulo de administración de sistemas defectuoso, reiniciar el controlador, actualizar las claves de licencia y devolver la pieza defectuosa a NetApp.</block>
+  <block id="5ed066357f2fda24aaedd57515d1c183" category="doc">Reemplaza el módulo de administración de sistemas - AFX 2K</block>
+  <block id="87ed545ce36193cc1fbea29e4208a193" category="paragraph">Sustituye el módulo de administración de sistemas de tu sistema de almacenamiento AFX 2K cuando presente un fallo o su firmware esté dañado. El proceso de sustitución consiste en apagar el controlador, sustituir el módulo de administración de sistemas averiado, reiniciar el controlador, actualizar las claves de licencia y devolver la pieza averiada a NetApp.</block>
+  <block id="cc124a47556540a9a228bf590b7e3b65" category="list-text"><block ref="cc124a47556540a9a228bf590b7e3b65" category="inline-link-macro-rx"></block></block>
+  <block id="23b43ede4557b73e6fa354124a73ba91" category="inline-link-macro">AFX 2K</block>
+  <block id="dbcc312bcf48bb612e820bd1b861c76b" category="list-text"><block ref="dbcc312bcf48bb612e820bd1b861c76b" category="inline-link-macro-rx"></block></block>
+  <block id="b305ca160420c491e6a321b063f1f526" category="list-text"><block ref="b305ca160420c491e6a321b063f1f526" category="inline-link-macro-rx"></block></block>
+  <block id="1c4baa9712f1624f2ffb11507ffcc90d" category="list-text"><block ref="1c4baa9712f1624f2ffb11507ffcc90d" category="inline-link-macro-rx"></block></block>
+  <block id="89d53452505bb77504dd6fe1f1f11472" category="list-text"><block ref="89d53452505bb77504dd6fe1f1f11472" category="inline-link-macro-rx"></block></block>
+  <block id="a6eb711ac1edc0c740ac5b39bccfa56f" category="list-text"><block ref="a6eb711ac1edc0c740ac5b39bccfa56f" category="inline-link-macro-rx"></block></block>
+  <block id="3fcdb1404138eeb1241c5074f743b569" category="list-text"><block ref="3fcdb1404138eeb1241c5074f743b569" category="inline-link-macro-rx"></block></block>
+  <block id="188ee2090b0cf8ebf483a8430f3f9294" category="list-text"><block ref="188ee2090b0cf8ebf483a8430f3f9294" category="inline-link-macro-rx"></block></block>
+  <block id="c1149d1b9cf1aa578313c54f4199ebd5" category="list-text"><block ref="c1149d1b9cf1aa578313c54f4199ebd5" category="inline-link-macro-rx"></block></block>
+  <block id="4afdd656b0da9c824f9f0b1e8b1d2833" category="list-text"><block ref="4afdd656b0da9c824f9f0b1e8b1d2833" category="inline-link-macro-rx"></block></block>
+  <block id="7a4729ce5a9ab5a9b735bf973721a637" category="list-text"><block ref="7a4729ce5a9ab5a9b735bf973721a637" category="inline-link-macro-rx"></block></block>
+  <block id="50f8399feede8a0e5e3e7518573d4934" category="list-text"><block ref="50f8399feede8a0e5e3e7518573d4934" category="inline-link-macro-rx"></block></block>
+  <block id="97218f014fcc079728135c579d4c16fc" category="list-text"><block ref="97218f014fcc079728135c579d4c16fc" category="inline-link-macro-rx"></block></block>
+  <block id="49588709ef279503d46e3fbf769f07d7" category="list-text"><block ref="49588709ef279503d46e3fbf769f07d7" category="inline-link-macro-rx"></block></block>
+  <block id="a2c936d1a014fd55a1910febb0a664ba" category="list-text"><block ref="a2c936d1a014fd55a1910febb0a664ba" category="inline-link-macro-rx"></block></block>
+  <block id="a20fbecf0fecf8199d60e0695a6f05a5" category="inline-link-macro">AFX 2K (módulo NVRAM)</block>
+  <block id="d157ea7251c66f2e890b7a4531922503" category="list-text"><block ref="d157ea7251c66f2e890b7a4531922503" category="inline-link-macro-rx"></block></block>
+  <block id="9a3b2a88f136b0356dcdcdef27c26265" category="inline-link-macro">AFX 2K (módulo NVRAM12-EX)</block>
+  <block id="429183d8ac6c25a2fb882b3b334734ad" category="list-text"><block ref="429183d8ac6c25a2fb882b3b334734ad" category="inline-link-macro-rx"></block></block>
+  <block id="b3cb2a10b0831d3295bf6e3135395f22" category="list-text"><block ref="b3cb2a10b0831d3295bf6e3135395f22" category="inline-link-macro-rx"></block></block>
+  <block id="a66e0746dd400680d10a1c0492550e95" category="list-text"><block ref="a66e0746dd400680d10a1c0492550e95" category="inline-link-macro-rx"></block></block>
+  <block id="3baa01ecc1ade86e469162b22bc53651" category="list-text"><block ref="3baa01ecc1ade86e469162b22bc53651" category="inline-link-macro-rx"></block></block>
+  <block id="de18288725848c30dca11daa590f854e" category="list-text"><block ref="de18288725848c30dca11daa590f854e" category="inline-link-macro-rx"></block></block>
+  <block id="c07b54afd1b8f146db9a728b6702a1b5" category="list-text"><block ref="c07b54afd1b8f146db9a728b6702a1b5" category="inline-link-macro-rx"></block></block>
+  <block id="868d7288522b8e1eee22545b0daa00c3" category="list-text"><block ref="868d7288522b8e1eee22545b0daa00c3" category="inline-link-macro-rx"></block></block>
+  <block id="1551ad4ae2e6078eb2eca8d5c6ff4bcb" category="image-alt">Cableado del conmutador NX224 al AFX 1K</block>
+  <block id="40de4ee4d271e2b473a234ce1418e8c1" category="sidebar">Instala y configura sistemas AFX</block>
+  <block id="e6b43d44e837c88835a24eed44fe337e" category="sidebar">Instala el hardware AFX 1K</block>
+  <block id="22b501d3873dc125bd1324e3e003ec6c" category="sidebar">Instala el hardware AFX 2K</block>
+  <block id="99a41adbe6b380b12a49c2d7894517a9" category="sidebar">Mantén los sistemas AFX</block>
+  <block id="5129c3153a4394fb86c12a43692107aa" category="sidebar">Sistemas AFX 1K</block>
+  <block id="6a43958b7770ac343264ac2f57152bf7" category="sidebar">Chasis AFX 1K</block>
+  <block id="7722872ef8ea6640ddd1f94753987349" category="sidebar">Sistemas AFX 2K</block>
+  <block id="554af379134221e17ed749696cffb63e" category="sidebar">Medio de arranque AFX 2K</block>
+  <block id="6237e9bd3def009e1ada11487d357dc3" category="sidebar">Chasis AFX 2K</block>
+  <block id="f093b22bad0b8da1a16f35c6f8c25ca0" category="sidebar">Controlador AFX 2K</block>
+  <block id="62e406b8d6fcd44e844c63e4623510c3" category="sidebar">Módulo AFX 2K IO</block>
 </blocks>

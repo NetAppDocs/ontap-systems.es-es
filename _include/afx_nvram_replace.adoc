@@ -262,7 +262,7 @@ La salida de `storage failover show` El comando no debe incluir el ID del sistem
 
 NOTE: El siguiente comando solo está disponible en el nivel de privilegio del modo Diagnóstico.
 
-. Si se desconectaron los enlaces de interconexión de HA, vuelva a conectarlos:
+. Si se han desconectado los enlaces de interconexión de alta disponibilidad, vuelve a conectarlos:
 +
 `system ha interconnect link on -node healthy-node -link 0`
 

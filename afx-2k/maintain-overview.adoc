@@ -1,0 +1,110 @@
+---
+permalink: afx-2k/maintain-overview.html 
+sidebar: sidebar 
+keywords: afx 2k maintenance, maintenance, repairing a1k, repairing afx 2k, replace afx 2k components, replace afx 2k components 
+summary: Realiza el mantenimiento del hardware de tu sistema de almacenamiento afx 2k para garantizar su fiabilidad a largo plazo y un rendimiento óptimo. Realiza tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos. 
+---
+= Resumen de los procedimientos de mantenimiento - AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Realiza el mantenimiento del hardware de tu sistema de almacenamiento AFX 2K para asegurar la fiabilidad a largo plazo y un rendimiento óptimo. Realiza tareas de mantenimiento periódicas, como reemplazar componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.
+
+Los procedimientos de mantenimiento dan por hecho que el sistema de almacenamiento AFX 2K ya se ha implementado como nodo de almacenamiento en el entorno ONTAP.
+
+
+
+== Componentes del sistema
+
+Para el sistema de almacenamiento AFX 2K, puedes realizar procedimientos de mantenimiento en los siguientes componentes.
+
+[cols="25,65"]
+|===
+
+
+ a| 
+link:bootmedia-replace-workflow.html["Soporte de arranque"]
+ a| 
+El medio de arranque almacena un conjunto primario y secundario de archivos de imagen ONTAP que el sistema utiliza cuando arranca.
+
+
+
+ a| 
+link:chassis-replace-workflow.html["Chasis"]
+ a| 
+El chasis es el compartimento físico que aloja todos los componentes de la controladora, como la unidad controladora/CPU, el suministro de alimentación y las operaciones de I/O.
+
+
+
+ a| 
+link:controller-replace-workflow.html["Controladora"]
+ a| 
+Una controladora consta de una placa, un firmware y un software. Controla las unidades y ejecuta el software del sistema operativo ONTAP.
+
+
+
+ a| 
+link:dimm-replace.html["DIMM"]
+ a| 
+Un módulo de memoria dual en línea (DIMM) es un tipo de memoria del ordenador. Se instalan para agregar memoria del sistema a una placa base de la controladora.
+
+
+
+ a| 
+link:fan-replace.html["Ventilador"]
+ a| 
+Un ventilador enfría el controlador.
+
+
+
+ a| 
+link:nvram-replace.html["Módulo de NVRAM"]
+ a| 
+El módulo NVRAM (memoria de acceso aleatorio no volátil) permite al controlador proteger y guardar datos en vuelo si el sistema pierde energía.  El ID del sistema se almacena en el módulo NVRAM .  Cuando se reemplaza, el controlador utiliza la nueva ID del sistema del módulo NVRAM de reemplazo.
+
+
+
+ a| 
+link:nv12l-replace.html["Módulo NVRAM12-EX"]
+ a| 
+El NVRAM12-EX es el segundo módulo NVRAM (memoria no volátil de acceso aleatorio) para el controlador AFX 2K. El módulo NVRAM12-EX permite al controlador proteger y guardar los datos en curso si el sistema pierde energía.
+
+
+
+ a| 
+link:nvdimm-battery-replace.html["Batería de NV"]
+ a| 
+La batería NV es responsable de suministrar alimentación al módulo de NVRAM mientras los datos en tránsito se separan a la memoria flash después de un corte de alimentación.
+
+
+
+ a| 
+link:io-module-overview.html["Módulo de I/O."]
+ a| 
+El módulo de E/S (módulo de entrada/salida) es un componente de hardware que actúa como intermediario entre el controlador y varios dispositivos o sistemas que necesitan intercambiar datos con el controlador.
+
+
+
+ a| 
+link:power-supply-replace.html["Suministro de alimentación"]
+ a| 
+Un suministro de alimentación proporciona una fuente de alimentación redundante en una controladora.
+
+
+
+ a| 
+link:rtc-battery-replace.html["Batería del reloj en tiempo real"]
+ a| 
+Una batería de reloj en tiempo real conserva la información de fecha y hora del sistema si la alimentación está apagada.
+
+
+
+ a| 
+link:system-management-replace.html["Módulo de gestión del sistema"]
+ a| 
+El módulo de gestión del sistema proporciona la interfaz entre el controlador y una consola o portátil para el mantenimiento del controlador o del sistema. El módulo de gestión del sistema contiene el soporte de arranque y almacena el número de serie del sistema (SSN).
+
+|===
