@@ -15,6 +15,7 @@ Continúe con el procedimiento de sustitución presentando el almacenamiento y c
 
 
 
+[[step-1-recable-the-system]]
 == Paso 1: Recuperar el sistema
 
 Verifique las conexiones de red y almacenamiento del módulo controlador mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .
@@ -28,12 +29,14 @@ Verifique las conexiones de red y almacenamiento del módulo controlador mediant
 
 
 
+[[step-2-reassign-disks]]
 == Paso 2: Reasignar discos
 
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. En un sistema independiente, debe reasignar manualmente el ID a los discos. Debe utilizar el procedimiento correcto para su configuración.
 
 
 
+[[option-1-verify-the-system-id-change-on-an-ha-system]]
 === Opción 1: Comprobar el cambio de ID del sistema en un sistema de alta disponibilidad
 
 Debe confirmar el cambio de ID del sistema al arrancar el controlador _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
@@ -122,6 +125,7 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 
 
 
+[[option-2-manually-reassign-the-system-id-on-a-stand-alone-system-in-ontap]]
 === Opción 2: Reasignar manualmente el ID del sistema en un sistema independiente en ONTAP
 
 En un sistema independiente, debe reasignar manualmente los discos al ID del sistema de la nueva controladora antes de devolver el sistema a su estado de funcionamiento normal.

@@ -17,6 +17,7 @@ Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar el sistema AFF C250, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -143,6 +144,7 @@ Encendido del sistema
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -163,6 +165,7 @@ image::../media/drw_affa250_weight_caution.png[Precaución de elevación para do
 
 
 
+[[step-3-cable-controllers-to-cluster]]
 == Paso 3: Conecte los cables de las controladoras al clúster
 
 Conecte los cables de las controladoras a un clúster mediante el método de clúster sin switch de dos nodos o mediante el uso de la red de interconexión de clúster.
@@ -247,6 +250,7 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 ====
 
 
+[[step-4-cable-to-host-network-or-storage-optional]]
 == Paso 4: Cable a red host o almacenamiento (opcional)
 
 Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.
@@ -342,6 +346,7 @@ image:../media/drw_affa250_1shelf_cabling_b.png["Cableado de la controladora B."
 ====
 
 
+[[step-5-complete-system-setup]]
 == Paso 5: Complete la configuración del sistema
 
 Complete la instalación y la configuración del sistema mediante la detección de clústeres que solo tiene una conexión al switch y al portátil, o bien se puede conectar directamente a una controladora del sistema y, a continuación, conectarse al switch de gestión.

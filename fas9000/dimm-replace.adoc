@@ -19,6 +19,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -191,6 +192,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -243,6 +245,7 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 
 
+[[step-3-replace-the-dimms]]
 == Paso 3: Sustituya los módulos DIMM
 
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
@@ -298,6 +301,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 
 
+[[step-4-install-the-controller]]
 == Paso 4: Instale la controladora
 
 Después de instalar los componentes en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema e iniciar el sistema operativo.
@@ -338,6 +342,7 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 
 
+[[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -394,6 +399,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -15,6 +15,7 @@ Esta guía ofrece instrucciones detalladas paso a paso para la instalación de u
 
 
 
+[[prepare-for-installation]]
 == Preparación de la instalación
 
 Para instalar su sistema AFF A320, tendrá que crear una cuenta, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -175,6 +176,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Hoja de datos par
 
 
 
+[[install-the-hardware]]
 == Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -197,12 +199,14 @@ image::../media/drw_a320_cable_management_arms.png[Retire o instale los brazos o
 
 
 
+[[cable-controllers-to-your-network]]
 == Conecte los controladores a la red
 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
 
+[[option-1-cable-a-two-node-switchless-cluster]]
 === Opción 1: Conecte el cable de un clúster sin switch de dos nodos
 
 Los puertos de datos opcionales, las tarjetas NIC opcionales y los puertos de gestión de los módulos de la controladora se conectan a los switches. Los puertos de interconexión de clúster/alta disponibilidad se cablean en ambos módulos de controladoras.
@@ -276,6 +280,7 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[option-2-cabling-a-switched-cluster]]
 === Opción 2: Cableado de un clúster de switches
 
 Los puertos de datos opcionales, las tarjetas NIC opcionales y los puertos de gestión de los módulos de la controladora se conectan a los switches. Los puertos de interconexión de clúster/alta disponibilidad se cablean al switch cluster/ha.
@@ -349,12 +354,14 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[cable-controllers-to-drive-shelves]]
 == Conecte los controladores a las bandejas de unidades
 
 Debe cablear las controladoras a las bandejas con los puertos de almacenamiento internos.
 
 
 
+[[option-1-cable-the-controllers-to-a-single-drive-shelf]]
 === Opción 1: Conecte las controladoras a una bandeja de unidades única
 
 Debe cablear cada controladora a los módulos NSM de la bandeja de unidades NS224.
@@ -394,6 +401,7 @@ Conecte el cable de la controladora B a la bandeja: image:../media/drw_a320_stor
 
 
 
+[[option-2-cable-the-controllers-to-two-drive-shelves]]
 === Opción 2: Conecte las controladoras a dos bandejas de unidades
 
 Debe cablear cada controladora a los módulos NSM de ambas bandejas de unidades NS224.
@@ -433,12 +441,14 @@ Conecte la controladora B a las bandejas: image:../media/drw_a320_2_shelves_cabl
 
 
 
+[[complete-system-setup-and-configuration]]
 == Completar la configuración y los ajustes del sistema
 
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada
 
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
@@ -482,6 +492,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.

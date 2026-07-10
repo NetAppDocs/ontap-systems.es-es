@@ -17,6 +17,7 @@ Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink
 
 
 
+[[step-1-remove-the-controller-module]]
 == Paso 1: Extraiga el módulo del controlador
 
 .Pasos
@@ -47,6 +48,7 @@ Botón de liberación de la cubierta del módulo del controlador
 |===
 
 
+[[step-2-replace-the-boot-media]]
 == Paso 2: Sustituya el soporte de arranque
 
 Localice el medio de arranque en el módulo del controlador, que se encuentra debajo de la tarjeta intermedia y siga las instrucciones para reemplazarlo.
@@ -100,6 +102,7 @@ Compruebe el soporte de arranque para asegurarse de que está bien asentado y co
 
 
 
+[[step-3-transfer-the-boot-image-to-the-boot-media]]
 == Paso 3: Transfiera la imagen de arranque al soporte de arranque
 
 Instale la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en él. Debe restaurar el sistema de archivos var durante este procedimiento.

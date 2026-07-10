@@ -17,6 +17,7 @@ El sistema FAS8200 solo admite procedimientos de recuperación de medios de arra
 
 
 
+[[option-1-most-systems]]
 == Opción 1: La mayoría de los sistemas
 
 : Debe arrancar la imagen ONTAP desde la unidad USB, restaurar el sistema de archivos y comprobar las variables de entorno.
@@ -109,6 +110,7 @@ Si alguna interfaz se muestra como "falsa", vuelva a revertir dichas interfaces 
 
 
 
+[[option-2-controller-is-in-a-two-node-metrocluster]]
 == Opción 2: La controladora está en un MetroCluster de dos nodos
 
 Debe arrancar la imagen de ONTAP desde la unidad USB y comprobar las variables de entorno.

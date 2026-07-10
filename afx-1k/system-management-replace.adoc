@@ -45,6 +45,7 @@ Este procedimiento usa la siguiente terminología:
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control de la controladora dañada.
@@ -115,6 +116,7 @@ El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
 
 
 
+[[step-2-replace-the-impaired-system-management-module]]
 == Paso 2: Reemplace el módulo de gestión del sistema dañado
 
 Sustituya el módulo de gestión del sistema defectuoso.
@@ -202,6 +204,7 @@ Soporte de arranque
 
 
 
+[[step-3-reboot-the-controller-module]]
 == Paso 3: Reinicie el módulo del controlador
 
 Reinicie el módulo del controlador.
@@ -253,6 +256,7 @@ NOTE: El siguiente comando solo está disponible en el nivel de privilegio del m
 
 
 
+[[step-4-install-licenses-and-register-serial-number]]
 == Paso 4: Instale licencias y registre el número de serie
 
 Cuando reemplaza el módulo de administración del sistema, el número de serie del sistema (SSN) del controlador cambia.  Debe instalar nuevas licencias para el nodo si el nodo dañado estaba usando funciones de ONTAP que requieren una licencia estándar (bloqueada por nodo).  Para las funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
@@ -294,6 +298,7 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/onta
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

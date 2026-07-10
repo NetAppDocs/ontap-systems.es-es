@@ -65,6 +65,8 @@ image::../media/drw_dcm3_ieops-2176.svg[Vista frontal de un estante de unidad DC
 
 
 
+[[step-1-prepare-to-replace-a-drive-drawer]]
+[[prepare_to_replace_drive_drawer]]
 == Paso 1: Prepárese para reemplazar un cajón de unidad
 
 Antes de reemplazar un cajón de unidades, asegúrese de actualizar el firmware de IOM y ONTAP si es necesario, y detenga el par de alta disponibilidad (HA), lo que le permite mantener los agregados de datos en el estante, o bien manténgalo en funcionamiento, lo que requiere transferir todos los datos de los agregados de datos que residen en las unidades de disco. A continuación, debe desconectar y eliminar los agregados de datos. Sin embargo, si el estante contiene un agregado raíz, debe detener el par de alta disponibilidad. Por último, debe apagar el estante.
@@ -143,6 +145,8 @@ NOTE: Si tiene unidades de disco con fallos en la bandeja, `broken` aparece en l
 
 
 
+[[step-2-remove-the-cable-chains]]
+[[remove_cable_chains]]
 == Paso 2: Retire las cadenas de cable
 
 Las cadenas para cables izquierda y derecha de cada cajón de unidades de la bandeja de unidades DS460C permiten que los cajones se deslice hacia adentro y hacia afuera. Para poder quitar un cajón de unidades, es necesario quitar ambas cadenas para cables.
@@ -291,6 +295,7 @@ La figura muestra el anillo naranja del soporte horizontal que se está empujand
 
 
 
+[[step-3-remove-a-drive-drawer]]
 == Paso 3: Retire el cajón de la unidad
 
 Después de quitar las cadenas para cables derecha e izquierda, es posible quitar el cajón de unidades de la bandeja de unidades. Para extraer un cajón de unidad, es necesario deslizar la parte del cajón hacia fuera, extraer las unidades y extraer el cajón de la unidad.
@@ -346,6 +351,7 @@ image:../media/icon_round_1.png["Número de llamada 1"]
 
 
 
+[[step-4-install-a-drive-drawer]]
 == Paso 4: Instalar un cajón de unidad
 
 La instalación de un cajón de unidades en una bandeja de unidades implica deslizar el cajón en la ranura vacía, instalar las unidades y reemplazar el embellecedor frontal.
@@ -442,6 +448,7 @@ NOTE: *Riesgo de avería del equipo:* Asegúrese de cerrar completamente el caj�
 
 
 
+[[step-5-attach-the-cable-chains]]
 == Paso 5: Conecte las cadenas de cable
 
 El paso final en la instalación de un cajón de unidades está conectando las cadenas para cables izquierda y derecha de reemplazo a la bandeja de unidades. Al conectar una cadena de cables, invierta el orden que utilizó al desconectar la cadena de cables. Debe insertar el conector horizontal de la cadena en el soporte horizontal de la carcasa antes de insertar el conector vertical de la cadena en el soporte vertical de la carcasa.

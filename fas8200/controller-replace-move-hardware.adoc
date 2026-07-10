@@ -15,6 +15,7 @@ Para sustituir el hardware del módulo de la controladora, debe retirar la contr
 
 
 
+[[step-1-open-the-controller-module]]
 == Paso 1: Abra el módulo del controlador
 
 Para sustituir el módulo de controlador, primero debe extraer el módulo de controlador antiguo del chasis.
@@ -59,6 +60,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-2-move-the-boot-device]]
 == Paso 2: Mueva el dispositivo de arranque
 
 Debe localizar el medio de arranque y seguir las instrucciones para quitarlo de la controladora anterior e insertarlo en la nueva controladora.
@@ -82,6 +84,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 
+[[step-3-move-the-nvmem-battery]]
 == Paso 3: Mueva la batería de NVMEM
 
 Para mover la batería de NVMEM del módulo de controladora antiguo al nuevo módulo de controladora, debe realizar una secuencia específica de pasos.
@@ -135,6 +138,7 @@ Paquete de baterías NVMEM
 
 
 
+[[step-4-move-the-dimms]]
 == Paso 4: Mueva los DIMM
 
 Para mover los DIMM, búsquelos y muévalos de la controladora antigua a la controladora de reemplazo y siga la secuencia específica de pasos.
@@ -171,6 +175,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 
 
+[[step-5-move-a-pcie-card]]
 == Paso 5: Mover una tarjeta PCIe
 
 Para mover tarjetas PCIe, búsquelas y moverlas de la controladora antigua a la controladora de reemplazo y siga la secuencia específica de pasos.
@@ -215,6 +220,7 @@ Asegúrese de alinear correctamente la tarjeta en la ranura y ejercer una presi�
 
 
 
+[[step-6-move-a-caching-module]]
 == Paso 6: Mover un módulo de almacenamiento en caché
 
 Al sustituir un módulo de controlador, debe mover los módulos de almacenamiento en caché de los módulos de controlador con deterioro al módulo de controlador de sustitución.
@@ -239,6 +245,7 @@ image::../media/drw_rxl_fcache.png[Extraiga y rellene el módulo de almacenamien
 
 
 
+[[step-7-install-the-controller]]
 == Paso 7: Instale la controladora
 
 Después de instalar los componentes del módulo de controlador antiguo en el nuevo módulo de controlador, debe instalar el nuevo módulo de controlador en el chasis del sistema e iniciar el sistema operativo.

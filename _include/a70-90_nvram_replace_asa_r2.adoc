@@ -4,6 +4,9 @@
 
 Reemplace el módulo NVRAM o los DIMM NVRAM utilizando la opción adecuada.
 
+
+WARNING: El módulo NVRAM no es intercambiable en caliente. Antes de reemplazarlo, vuelve a colocar las unidades, apaga el nodo, desconecta la alimentación del controlador y saca el controlador unas pulgadas del chasis.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Sustituya el módulo NVRAM
@@ -169,6 +172,7 @@ NOTE: Si tiene fuentes de alimentación de CC, vuelva a conectar el bloque de al
 ====
 
 
+[[step-3-verify-controller-state]]
 == Paso 3: Verifique el estado de la controladora
 
 Debe confirmar el estado de la controladora de las controladoras conectadas al pool de discos al arrancar la controladora.

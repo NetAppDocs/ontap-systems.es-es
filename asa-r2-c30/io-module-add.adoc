@@ -24,6 +24,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -94,6 +95,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-add-the-new-io-module]]
 == Paso 2: Agregue el nuevo módulo de E/S.
 
 Si el sistema de almacenamiento tiene ranuras disponibles, instale el nuevo módulo de I/O en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.

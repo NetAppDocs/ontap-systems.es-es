@@ -6,6 +6,7 @@ Para sustituir el soporte de arranque, debe retirar el módulo del controlador d
 
 
 
+[[step-1-remove-the-controller]]
 == Paso 1: Quite la controladora
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -64,6 +65,7 @@ Botón de bloqueo de la cubierta del módulo del controlador
 |===
 
 
+[[step-2-replace-the-boot-media]]
 == Paso 2: Sustituya el soporte de arranque
 
 Localice el medio de arranque con la siguiente ilustración o el mapa de FRU en el módulo de la controladora:
@@ -108,6 +110,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 
+[[step-3-transfer-the-boot-image-to-the-boot-media]]
 == Paso 3: Transfiera la imagen de arranque al soporte de arranque
 
 Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. Sin embargo, debe restaurar el `var` sistema de archivos durante este procedimiento.

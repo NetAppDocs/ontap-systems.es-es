@@ -15,6 +15,7 @@ En esta sección se ofrecen instrucciones detalladas paso a paso para la instala
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar el sistema FAS500f, debe crear una cuenta y registrar el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -138,6 +139,7 @@ Encendido del sistema
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -158,12 +160,14 @@ image::../media/drw_affa250_weight_caution.png[Precaución de elevación para do
 
 
 
+[[step-3-cable-controllers]]
 == Paso 3: Controladores de cables
 
 Se requiere un cableado para el clúster de la plataforma mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster. Existe un cableado opcional para las redes host Fibre Channel o iSCSI o almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cables para una red host y almacenamiento.
 
 
 
+[[required-cabling-cable-controllers-to-a-cluster]]
 === Cableado necesario: Conecte las controladoras a un clúster
 
 Conecte los cables de las controladoras a un clúster mediante el método de clúster sin switch de dos nodos o mediante el uso de la red de interconexión de clúster.
@@ -280,6 +284,7 @@ Para completar la configuración del sistema, consulte link:install-detailed-gui
 
 
 
+[[optional-cabling-cable-configuration-dependent-options]]
 === Cableado opcional: Opciones dependientes de la configuración del cable
 
 Tiene un cableado opcional dependiente de la configuración a las redes host Fibre Channel o iSCSI, o al almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cableado para una red host y almacenamiento.
@@ -417,12 +422,14 @@ Para completar la configuración del sistema, consulte link:install-detailed-gui
 
 
 
+[[step-4-complete-system-setup-and-configuration]]
 == Paso 4: Pasos completos para la instalación y la configuración del sistema
 
 Complete la instalación y la configuración del sistema mediante la detección de clústeres que solo tiene una conexión al switch y al portátil, o bien se puede conectar directamente a una controladora del sistema y, a continuación, conectarse al switch de gestión.
 
 
 
+[[option-1-complete-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Opción 1: Completar la configuración y la instalación del sistema si la detección de red está activada
 
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
@@ -462,6 +469,7 @@ Se abrirá System Manager.
 
 
 
+[[option-2-complete-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Opción 2: Completar la configuración y la instalación del sistema si la detección de red no está habilitada
 
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.

@@ -20,6 +20,7 @@ Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasiados erro
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -166,6 +167,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 
@@ -286,6 +288,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-the-dimm]]
 == Paso 3: Reemplace la DIMM
 
 Para sustituir el DIMM, búsquelos dentro de la controladora y siga la secuencia específica de pasos.
@@ -341,6 +344,7 @@ IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alin
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador y reinícielo.
@@ -394,6 +398,7 @@ Si dispone de fuentes de alimentación de CC, vuelva a conectar el bloque de ali
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

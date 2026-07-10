@@ -23,6 +23,7 @@ Puede realizar cualquiera de los siguientes procedimientos dependiendo de qué c
 
 
 
+[[replace-the-flash-cache-module-carrier]]
 == Sustituya el soporte del módulo Flash Cache
 
 El portador del módulo Flash Cache está ubicado en la ranura 6 y aloja hasta dos módulos Flash Cache. No es posible intercambiar en caliente el portador del módulo Flash Cache
@@ -34,6 +35,7 @@ El portador del módulo Flash Cache está ubicado en la ranura 6 y aloja hasta d
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 === Paso 1: Apague el nodo dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -180,6 +182,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 ====
 
 
+[[step-2-replace-the-flash-cache-module-carrier]]
 === Paso 2: Sustituya el portador del módulo Flash Cache
 
 Realice los pasos siguientes para sustituir el portador del módulo Flash Cache.
@@ -249,6 +252,7 @@ LED de fallo del portador del módulo Flash Cache
 
 
 
+[[step-3-reboot-the-controller]]
 === Paso 3: Reinicie el controlador
 
 Después de sustituir el portador del módulo Flash Cache, debe reiniciar el módulo de la controladora.
@@ -265,12 +269,14 @@ NOTE: De este modo, se reinicializan las tarjetas de I/O y otros componentes y s
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 === Paso 4: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.
 
 
 
+[[replace-the-caching-module]]
 == Sustituya el módulo de almacenamiento en caché
 
 Los módulos Flash Cache (módulos de almacenamiento en caché) están ubicados en la ranura 6-1 o en la ranura 6-2 o en la ranura 6-1 y la ranura 6-2.

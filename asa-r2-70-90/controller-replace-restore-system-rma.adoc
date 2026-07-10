@@ -15,6 +15,7 @@ Para completar el reemplazo de la controladora de su sistema ASA A70 o ASA A90, 
 
 
 
+[[step-1-verify-lifs-and-check-cluster-health]]
 == Paso 1: Verifique las LIF y compruebe el estado del clúster
 
 Antes de devolver el nodo de sustitución al servicio, compruebe que las interfaces lógicas estén en sus puertos principales, compruebe el estado del clúster y restablezca la devolución automática.
@@ -39,6 +40,7 @@ Si alguna interfaz lógica aparece como falsa, rediríjala a sus puertos origina
 
 
 
+[[step-2-return-the-failed-part-to-netapp]]
 == Paso 2: Devuelve la parte fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -15,6 +15,7 @@ Verifique que las interfaces lógicas (LIF) informen a su puerto de origen, real
 
 
 
+[[step-1-verify-lifs-and-check-cluster-health]]
 == Paso 1: Verifique las LIF y compruebe el estado del clúster
 
 Antes de devolver el nodo de reemplazo al servicio, asegúrese de que las interfaces lógicas estén en sus puertos de origen, verifique el estado del clúster y restablezca la devolución automática.
@@ -35,6 +36,7 @@ Si alguna interfaz lógica aparece como falsa, devuélvala a sus puertos de orig
 
 
 
+[[step-2-return-the-failed-part-to-netapp]]
 == Paso 2: Devuelve la parte fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

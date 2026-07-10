@@ -15,6 +15,7 @@ Reinicie los controladores, verifique el estado del sistema y devuelva la pieza 
 
 
 
+[[step-1-verify-and-set-the-ha-state-of-the-chassis]]
 == Paso 1: Verificar y establecer el estado de alta disponibilidad del chasis
 
 .Pasos
@@ -44,12 +45,14 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 
 
 
+[[step-2-verify-storage-system-health]]
 == Paso 2: Verifique el estado del sistema de almacenamiento
 
 Una vez finalizada la devolución del controlador, verifique el estado del sistema mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .  Solucione cualquier problema detectado.
 
 
 
+[[step-3-return-the-failed-part-to-netapp]]
 == Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

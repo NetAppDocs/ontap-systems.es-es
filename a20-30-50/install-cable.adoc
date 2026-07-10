@@ -29,6 +29,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Dirección de la len
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Paso 1: Conecte los cables de las conexiones del clúster/alta disponibilidad
 
 Cree las conexiones del clúster de ONTAP. En el caso de clústeres sin switch, conecte las controladoras entre sí. En el caso de los clústeres con switches, conecte las controladoras a los switches de red de clúster.
@@ -189,6 +190,7 @@ image:../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg["a20 diagram
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Paso 2: Conecte los cables de las conexiones de red host
 
 Conecte las controladoras a la red host Ethernet o FC.
@@ -245,6 +247,7 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cable a s
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Paso 3: Conecte los cables de las conexiones de red de gestión
 
 Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
@@ -260,6 +263,7 @@ IMPORTANT: No enchufe los cables de alimentación todavía.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Paso 4: Conecte los cables de las conexiones de la bandeja
 
 Este procedimiento muestra cómo conectar los cables de las controladoras a una bandeja NS224.

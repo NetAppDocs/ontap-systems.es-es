@@ -19,6 +19,7 @@ Si tiene una configuración de MetroCluster, utilice https://docs.netapp.com/us-
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar el sistema, cree una cuenta en el sitio de soporte de NetApp, registre el sistema y obtenga las claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -159,6 +160,7 @@ Encendido del sistema
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Instale el sistema en un rack de 4 parantes o armario de sistema de NetApp según corresponda.
@@ -182,6 +184,7 @@ image::../media/drw_cable_management_arm_install.png[Conexión de dispositivos d
 
 
 
+[[step-3-cable-controllers-to-network]]
 == Paso 3: Conecte los controladores a la red
 
 Conecte mediante cable las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster.
@@ -332,6 +335,7 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 ====
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
 Conecte las controladoras a las bandejas con los puertos de almacenamiento integrados. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo.
@@ -384,6 +388,7 @@ Para obtener más información sobre el cableado, consulte link:../sas3/install-
 
 
 
+[[step-5-complete-system-setup]]
 == Paso 5: Complete la configuración del sistema
 
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.

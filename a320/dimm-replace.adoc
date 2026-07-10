@@ -19,6 +19,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-controller]]
 == Paso 1: Apague el controlador
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -89,6 +90,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
@@ -119,6 +121,7 @@ El gancho del mecanismo de bloqueo debe estar casi en vertical y debe estar alej
 
 
 
+[[step-3-replace-system-dimms]]
 == Paso 3: Sustituya los módulos DIMM del sistema
 
 El reemplazo de un DIMM del sistema implica identificar el DIMM de destino a través del mensaje de error asociado, localizar el DIMM de destino mediante el mapa de FRU en el conducto de aire y, a continuación, sustituir el DIMM.
@@ -175,6 +178,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 
 
+[[step-4-install-the-controller-module]]
 == Paso 4: Instale el módulo del controlador
 
 Después de reemplazar el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis.
@@ -215,6 +219,7 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 
 
+[[step-5-restore-the-controller-module-to-operation]]
 == Paso 5: Restaure el módulo de la controladora a su funcionamiento
 
 Debe volver a conectar el sistema, devolver el módulo de controladora y, a continuación, volver a habilitar el retorno del control automático.
@@ -229,6 +234,7 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

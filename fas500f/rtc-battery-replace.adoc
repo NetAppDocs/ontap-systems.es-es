@@ -19,6 +19,7 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -89,6 +90,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
@@ -149,6 +151,7 @@ image::../media/drw_a250_remove_airduct_cover.png[Levantando la cubierta del con
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Paso 3: Sustituya la batería RTC
 
 Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.
@@ -217,6 +220,7 @@ CAUTION: Si se la empuja agresivamente, la batería se puede expulsar de nuevo.
 
 
 
+[[step-4-reinstall-the-controller-module-and-set-timedate-after-rtc-battery-replacement]]
 == Paso 4: Vuelva a instalar el módulo del controlador y establezca la fecha y hora después de sustituir la batería RTC
 
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
@@ -264,6 +268,7 @@ El módulo del controlador debe estar completamente insertado y alineado con los
 
 
 
+[[step-5-complete-the-replacement-process]]
 == Paso 5: Complete el proceso de reemplazo
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

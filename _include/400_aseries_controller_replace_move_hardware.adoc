@@ -6,6 +6,7 @@ Para sustituir el hardware del módulo de la controladora, debe retirar la contr
 
 
 
+[[step-1-remove-the-controller-module]]
 == Paso 1: Extraiga el módulo del controlador
 
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
@@ -77,6 +78,7 @@ Pestillos de liberación del elevador
 
 
 
+[[step-2-move-the-power-supplies]]
 == Paso 2: Mueva las fuentes de alimentación
 
 Debe mover la fuente de alimentación del módulo del controlador dañado al módulo del controlador de repuesto cuando sustituya un módulo del controlador.
@@ -127,6 +129,7 @@ NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al desl
 
 
 
+[[step-3-move-the-nvdimm-battery]]
 == Paso 3: Mueva la batería NVDIMM
 
 Para mover la batería NVDIMM del módulo de controlador dañado al módulo de controlador de repuesto, debe realizar una secuencia específica de pasos.
@@ -180,6 +183,7 @@ NOTE: No vuelva a enchufar el cable de la batería a la placa base hasta que se 
 
 
 
+[[step-4-move-the-boot-media]]
 == Paso 4: Mueva el soporte de arranque
 
 Debe localizar el soporte de arranque y, a continuación, seguir las instrucciones para retirarlo del módulo de controlador dañado e insertarlo en el módulo de controlador de sustitución.
@@ -229,6 +233,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 
+[[step-5-move-the-pcie-risers-and-mezzanine-card]]
 == Paso 5: Mover los elevadores PCIe y la tarjeta mezzanine
 
 Como parte del proceso de sustitución de la controladora, debe mover los elevadores PCIe y la tarjeta mezzanine del módulo de controladora dañado al módulo de controladora de reemplazo.
@@ -305,6 +310,7 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 
 
 
+[[step-6-move-the-dimms]]
 == Paso 6: Mueva los DIMM
 
 Debe localizar los módulos DIMM y, a continuación, moverlos desde el módulo del controlador dañado hasta el módulo del controlador de reemplazo.
@@ -372,6 +378,7 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 
 
+[[step-7-install-the-controller-module]]
 == Paso 7: Instale el módulo del controlador
 
 Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y, a continuación, reiniciarlo en modo de mantenimiento.

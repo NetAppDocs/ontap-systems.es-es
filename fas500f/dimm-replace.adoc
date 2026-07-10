@@ -19,6 +19,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -89,6 +90,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya un componente dentro del módulo de la controladora.
@@ -149,6 +151,7 @@ image::../media/drw_a250_remove_airduct_cover.png[Levantando la cubierta del con
 
 
 
+[[step-3-replace-a-dimm]]
 == Paso 3: Sustituya un DIMM
 
 Para sustituir un módulo DIMM, debe localizarlo en el módulo del controlador mediante la etiqueta de mapa DIMM situada en la parte superior del conducto de aire y, a continuación, sustituirlo siguiendo la secuencia específica de pasos.
@@ -181,6 +184,7 @@ Los módulos DIMM se ajustan firmemente al zócalo. Si no es así, vuelva a inse
 
 
 
+[[step-4-install-the-controller-module]]
 == Paso 4: Instale el módulo del controlador
 
 Después de reemplazar el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis.
@@ -234,6 +238,7 @@ NOTE: Conectará el resto de los cables al módulo del controlador más adelante
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -18,6 +18,7 @@ Debe sustituir el módulo de almacenamiento en caché en el módulo de la contro
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
@@ -80,6 +81,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 
+[[step-2-remove-controller-module]]
 == Paso 2: Extraiga el módulo de controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -107,6 +109,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Apertura o cierre del módulo del
 
 
 
+[[step-3-replace-a-caching-module]]
 == Paso 3: Sustituya un módulo de almacenamiento en caché
 
 Para sustituir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos.
@@ -141,6 +144,7 @@ Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócal
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Después de sustituir los componentes del módulo del controlador, vuelva a instalarlo en el chasis.
@@ -201,6 +205,7 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 
 
+[[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -257,6 +262,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

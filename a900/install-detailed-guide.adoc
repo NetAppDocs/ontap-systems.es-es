@@ -15,6 +15,7 @@ Este artículo ofrece instrucciones detalladas paso a paso para la instalación 
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar el sistema, debe crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -170,6 +171,7 @@ Encendido del sistema
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -196,6 +198,7 @@ image::../media/drw_a900_controller_in_chassis_ID_IEOPS-856.svg[Configuración t
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Paso 3: Conecte los controladores a la red
 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
@@ -387,6 +390,7 @@ image::../media/drw_a900fas9500_power_icon_IEOPS-1142.svg[Conexiones de alimenta
 ====
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
 Conecte mediante el cable una única bandeja de unidades NS224 o dos bandejas de unidades NS224 a las controladoras.
@@ -515,6 +519,7 @@ Cable de 100 GbE
 ====
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.

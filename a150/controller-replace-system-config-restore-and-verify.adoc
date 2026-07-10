@@ -15,6 +15,7 @@ Tras completar el reemplazo y el arranque del hardware en modo de mantenimiento,
 
 
 
+[[step-1-set-and-verify-system-time-after-replacing-the-controller]]
 == Paso 1: Configurar y verificar la hora del sistema después de sustituir el controlador
 
 Debe comprobar la hora y la fecha del módulo de la controladora de sustitución en comparación con el módulo de controladora en buen estado de un par de alta disponibilidad o con un servidor de tiempo fiable en una configuración independiente. Si la hora y la fecha no coinciden, debe reiniciarlas en el módulo del controlador de repuesto para evitar posibles interrupciones en los clientes debido a diferencias de tiempo.
@@ -46,6 +47,7 @@ La fecha y la hora se indican en GMT.
 
 
 
+[[step-2-verify-and-set-the-ha-state-of-the-controller-module]]
 == Paso 2: Verifique y configure el estado de alta disponibilidad del módulo de la controladora
 
 Debe comprobar el `HA` estado del módulo de la controladora y, si es necesario, actualice el estado para que coincida con la configuración del sistema.

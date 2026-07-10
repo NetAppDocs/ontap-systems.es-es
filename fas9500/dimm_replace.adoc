@@ -20,6 +20,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 == Paso 1: Apague el nodo dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -90,6 +91,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -145,6 +147,7 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 
 
+[[step-3-replace-the-dimms]]
 == Paso 3: Sustituya los módulos DIMM
 
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
@@ -205,6 +208,7 @@ IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alin
 
 
 
+[[step-4-install-the-controller]]
 == Paso 4: Instale la controladora
 
 Después de instalar los componentes en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema e iniciar el sistema operativo.
@@ -283,6 +287,7 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

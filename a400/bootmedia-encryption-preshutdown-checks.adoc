@@ -17,6 +17,7 @@ Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink
 
 
 
+[[step-1-check-nve-support-and-download-the-correct-ontap-image]]
 == Paso 1: Compruebe la compatibilidad con NVE y descargue la imagen ONTAP correcta.
 
 Determine si su versión de ONTAP admite NetApp Volume Encryption (NVE) para que pueda descargar la imagen de ONTAP correcta para el reemplazo del medio de arranque.
@@ -43,6 +44,7 @@ NOTE: Descargue la imagen ONTAP desde el sitio de soporte de NetApp a su servido
 
 
 
+[[step-2-verify-key-manager-status-and-back-up-configuration]]
 == Paso 2: Verifique el estado del administrador de claves y la configuración de copia de seguridad.
 
 Antes de apagar el controlador averiado, verifique la configuración del administrador de claves y haga una copia de seguridad de la información necesaria.

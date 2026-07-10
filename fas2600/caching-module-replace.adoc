@@ -20,6 +20,7 @@ link:https://youtu.be/LaMzvnAwM_I["Vídeo de sustitución del módulo de almacen
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -81,6 +82,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 
+[[step-2-remove-controller-module]]
 == Paso 2: Extraiga el módulo de controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -107,6 +109,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Apertura o cierre del módulo del
 
 
 
+[[step-3-replace-a-caching-module]]
 == Paso 3: Sustituya un módulo de almacenamiento en caché
 
 Para sustituir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos.
@@ -143,6 +146,7 @@ Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócal
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Después de sustituir los componentes del módulo del controlador, vuelva a instalarlo en el chasis.
@@ -204,6 +208,7 @@ La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

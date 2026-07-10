@@ -19,6 +19,7 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
@@ -191,6 +192,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-open-the-controller-module]]
 == Paso 2: Abra el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -234,6 +236,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Paso 3: Sustituya la batería RTC
 
 Para sustituir la batería RTC, búsquela dentro del controlador y siga la secuencia específica de pasos.
@@ -256,6 +259,7 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 
 
+[[step-4-reinstall-the-controller-module-and-setting-timedate-after-rtc-battery-replacement]]
 == Paso 4: Vuelva a instalar el módulo del controlador y ajuste la fecha y hora después de la sustitución de la batería RTC
 
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
@@ -302,6 +306,7 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 
 
+[[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -358,6 +363,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -10,6 +10,7 @@ Para reemplazar un módulo de E/S, debe realizar una secuencia específica de ta
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 == Paso 1: Apague el nodo dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -141,6 +142,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
+[[step-2-replace-io-modules]]
 == Paso 2: Sustituya los módulos de E/S.
 
 Para sustituir un módulo de E/S, búsquelo dentro del chasis y siga la secuencia específica de pasos.
@@ -197,6 +199,7 @@ Pestillo de leva de E/S completamente desbloqueado
 
 
 
+[[step-3-reboot-the-controller]]
 == Paso 3: Reinicie el controlador
 
 Después de sustituir un módulo de I/o, debe reiniciar el módulo de la controladora.
@@ -227,6 +230,7 @@ NOTE: Asegúrese de salir del modo de mantenimiento después de completar la con
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Paso 4: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -21,6 +21,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 video::6c035199-9b79-494b-9c65-af9a015ffaf0[panopto]
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -75,6 +76,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 
+[[step-2-remove-controller-module]]
 == Paso 2: Extraiga el módulo de controlador
 
 Retire el módulo del controlador del sistema y, a continuación, retire la cubierta del módulo del controlador.
@@ -109,6 +111,7 @@ Botón de liberación de la cubierta del módulo del controlador
 |===
 
 
+[[step-3-replace-the-dimms]]
 == Paso 3: Sustituya los módulos DIMM
 
 Localice el DIMM dentro de la controladora, quítelo y sustitúyalo.
@@ -209,6 +212,7 @@ Asegúrese de que el enchufe se bloquea en la toma de corriente de la batería d
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador en el chasis.
@@ -254,6 +258,7 @@ NOTE: Durante el proceso de arranque, puede ver los siguientes mensajes:
 
 
 
+[[step-5-restore-automatic-giveback-and-autsupport]]
 == Paso 5: Restaurar el retorno automático y AutSupport
 
 Restaure la devolución automática del control y el AutoSupport si se han desactivado.
@@ -264,6 +269,7 @@ Restaure la devolución automática del control y el AutoSupport si se han desac
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

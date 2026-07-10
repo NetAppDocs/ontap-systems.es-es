@@ -11,6 +11,7 @@ Puede usar este procedimiento con todas las versiones de ONTAP compatibles con e
 
 
 
+[[step-1-shut-down-the-impaired-node]]
 == Paso 1: Apague el nodo dañado
 
 Apague o tome el control de la controladora dañada.
@@ -68,6 +69,7 @@ El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
 
 
 
+[[step-2-replace-a-failed-io-module]]
 == Paso 2: Sustituya un módulo I/O fallido
 
 Para sustituir un módulo de E/S, búsquelo dentro del receptáculo y siga la secuencia específica de pasos.
@@ -125,6 +127,7 @@ Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el m�
 
 
 
+[[step-3-reboot-the-controller]]
 == Paso 3: Reinicie el controlador
 
 Después de sustituir un módulo de I/O, debe reiniciar la controladora.
@@ -182,6 +185,7 @@ NOTE: El siguiente comando solo está disponible en el nivel de privilegio del m
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Paso 4: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

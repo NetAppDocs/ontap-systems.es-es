@@ -12,6 +12,7 @@ summary: Apague el controlador dañado en un sistema FAS8200 después de complet
 
 
 
+[[option-1-most-systems]]
 == Opción 1: La mayoría de los sistemas
 
 [role="lead"]
@@ -21,6 +22,7 @@ El sistema FAS8200 solo admite procedimientos de recuperación de medios de arra
 
 
 
+[[option-1-most-systems]]
 == Opción 1: La mayoría de los sistemas
 
 Completa el apagado del controlador dañado deteniéndolo en el indicador LOADER y capturando las variables de entorno de arranque. El indicador LOADER es el estado de detención seguro desde el que puedes reemplazar el medio de arranque.
@@ -64,6 +66,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 
 
 
+[[option-2-controller-is-in-a-metrocluster-configuration]]
 == Opción 2: La controladora está en una configuración MetroCluster
 
 
@@ -123,6 +126,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 
+[[option-3-controller-is-in-a-two-node-metrocluster]]
 == Opción 3: La controladora se encuentra en un MetroCluster de dos nodos
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.

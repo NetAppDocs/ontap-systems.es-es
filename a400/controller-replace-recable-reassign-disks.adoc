@@ -42,19 +42,19 @@ Antes de empezar, revisa https://docs.netapp.com/us-en/ontap-cli/security-key-ma
 
 .Pasos
 . Inicie en el menú ONTAP desde el indicador de Loader `boot_ontap menu` y seleccione la opción 10.
-. Recupera y verifica la frase de contraseña de todo el clúster desde el controlador en buen estado.
+. Muestra la información de la copia de seguridad de la gestión de claves del clúster.
 +
-.. Ejecuta el siguiente comando para recuperar la frase de contraseña de todo el clúster:
+.. Ejecuta el siguiente comando para mostrar la información de la copia de seguridad de la gestión de claves del clúster:
 +
 `security key-manager onboard show-backup`
 
-.. Verifica la frase de contraseña de todo el clúster utilizando el siguiente comando:
+.. Ejecuta el siguiente comando para comprobar la copia de seguridad del gestor de claves integrado:
 +
 `security key-manager onboard verify-backup`
 
 
 
-. Introduzca la frase de contraseña de OKM.
+. Introduce la frase de contraseña de OKM y confirma la verificación exitosa.
 +
 
 NOTE: Se le pedirá dos veces la frase de contraseña.

@@ -31,6 +31,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -101,6 +102,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller]]
 == Paso 2: Retire la controladora
 
 Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
@@ -212,6 +214,7 @@ Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarl
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Paso 3: Sustituya la batería RTC
 
 Retire la batería RTC defectuosa e instale la batería RTC de repuesto.
@@ -252,6 +255,7 @@ Saque la batería del RTC de su soporte.
 
 
 
+[[step-4-reinstall-the-controller]]
 == Paso 4: Vuelva a instalar el controlador
 
 Vuelva a instalar la controladora en el chasis y reiníciela.
@@ -358,6 +362,7 @@ FUENTE DE ALIMENTACIÓN DE CC
 
 
 
+[[step-5-reset-the-time-and-date-on-the-controller]]
 == Paso 5: Restablezca la hora y la fecha del controlador
 
 
@@ -384,6 +389,7 @@ NOTE: Si el sistema de almacenamiento se detiene en el menú de arranque, selecc
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

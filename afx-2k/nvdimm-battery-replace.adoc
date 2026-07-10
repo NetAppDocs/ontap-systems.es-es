@@ -14,10 +14,11 @@ summary: Sustituye la batería NV de tu sistema de almacenamiento afx 2k cuando 
 Sustituye la batería NV de tu sistema de almacenamiento AFX 2K cuando la batería empiece a perder carga o falle, ya que es la responsable de preservar los datos críticos del sistema durante los cortes de energía. El proceso de sustitución consiste en apagar el controlador averiado, extraer el módulo del controlador, sustituir la batería NV, volver a instalar el módulo del controlador y devolver la pieza defectuosa a NetApp.
 
 .Acerca de esta tarea
-Este procedimiento se aplica a la sustitución de una batería NV defectuosa del módulo NVRAM en las ranuras 4 y 5 del controlador AFX 2K. Para obtener información sobre cómo sustituir la batería NV del módulo NVRAM12-EX en las ranuras 6 y 7 del controlador AFX 2K, consulta link:../install-setup/nv12l-replace.html#step-2-replace-the-nvram12-ex-module-nvram-dimm-or-nvram-battery["Sustituye la batería NV del NVRAM12-EX"].
+Este procedimiento se aplica a la sustitución de una batería NV defectuosa del módulo NVRAM en las ranuras 4 y 5 del controlador AFX 2K. Para información sobre cómo sustituir la batería NV del módulo NVRAM12-EX en las ranuras 6 y 7 del controlador AFX 2K, consulta link:nv12l-replace.html#step-2-replace-the-nvram12-ex-module-nvram-dimm-or-nvram-battery["Sustituye la batería NV del NVRAM12-EX"].
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control de la controladora dañada.
@@ -75,6 +76,7 @@ El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Cuando sustituya el módulo de controlador o sustituya uno de los componentes del módulo de controlador, debe quitar el módulo de controlador del compartimento.
@@ -159,6 +161,7 @@ Asegúrese de que apoya la parte inferior del módulo del controlador mientras l
 
 
 
+[[step-3-replace-the-nv-battery]]
 == Paso 3: Sustituya la batería de NV
 
 Retire la batería NV fallida del módulo del controlador e instale la batería NV de repuesto.
@@ -201,6 +204,7 @@ Asegúrese de que el enchufe se bloquea en la toma.
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador y arranque.
@@ -260,6 +264,7 @@ NOTE: El siguiente comando solo está disponible en el nivel de privilegio del m
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

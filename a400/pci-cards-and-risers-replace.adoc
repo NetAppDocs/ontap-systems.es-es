@@ -19,6 +19,7 @@ Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cual
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -191,6 +192,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Para acceder a los componentes internos del módulo de controlador, debe extraer el módulo de controlador del chasis.
@@ -236,6 +238,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-a-pcie-card]]
 == Paso 3: Sustituya una tarjeta PCIe
 
 Para sustituir una tarjeta PCIe, debe localizar la tarjeta PCIe con error, extraer la tarjeta vertical que contiene la tarjeta del módulo de la controladora, sustituir la tarjeta y volver a instalar la tarjeta vertical PCIe en el módulo de la controladora.
@@ -311,6 +314,7 @@ NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el 
 
 
 
+[[step-4-replace-the-mezzanine-card]]
 == Paso 4: Sustituya la tarjeta intermedia
 
 La tarjeta mezzanine se encuentra bajo el número de tarjeta vertical 3 (ranuras 4 y 5). Debe extraer esa tarjeta vertical para acceder a la tarjeta intermedia, sustituir la tarjeta intermedia y volver a instalar la tarjeta vertical número 3. Consulte el mapa de FRU en el módulo de la controladora para obtener más información.
@@ -377,6 +381,7 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 
 
 
+[[step-5-install-the-controller-module]]
 == Paso 5: Instale el módulo del controlador
 
 Después de sustituir el componente en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis y, a continuación, reiniciarlo en el modo de mantenimiento.
@@ -421,6 +426,7 @@ NOTE: Si el sistema se detiene en el menú de inicio, seleccione la opción para
 
 
 
+[[step-6-restore-the-controller-module-to-operation]]
 == Paso 6: Restaure el módulo de la controladora a su funcionamiento
 
 Para restaurar el controlador, debe poder recuperar el sistema, devolver el módulo del controlador y, a continuación, volver a habilitar la devolución automática.
@@ -435,6 +441,7 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 
 
+[[step-7-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -491,6 +498,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-8-return-the-failed-part-to-netapp]]
 == Paso 8: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -4,6 +4,7 @@
 
 
 
+[[about-this-task]]
 == Acerca de esta tarea
 
 Si es necesario, puede encender los LED de ubicación del chasis de la plataforma (azules) para ayudar a localizar físicamente la plataforma afectada. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
@@ -14,6 +15,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+[[step-1-remove-the-controller]]
 == Paso 1: Quite la controladora
 
 Es necesario quitar la controladora del chasis cuando se sustituye la controladora o se sustituye uno dentro de la controladora.
@@ -126,6 +128,7 @@ Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarl
 
 
 
+[[step-2-replace-the-boot-media]]
 == Paso 2: Sustituya el soporte de arranque
 
 Para sustituir el medio de arranque, búsquelo dentro de la controladora y siga la secuencia de pasos específica.
@@ -180,6 +183,7 @@ Tire suavemente del extremo izquierdo del soporte de arranque para extraerlo de 
 
 
 
+[[step-3-reinstall-the-controller]]
 == Paso 3: Vuelva a instalar el controlador
 
 Vuelva a instalar la controladora en el chasis, pero no la reinicie.
@@ -232,6 +236,7 @@ NOTE: Asegúrese de que el cable de la consola está conectado a la controladora
 
 
 
+[[step-4-transfer-the-boot-image-to-the-boot-media]]
 == Paso 4: Transfiera la imagen de arranque al soporte de arranque
 
 El soporte de arranque de repuesto que ha instalado no tiene una imagen ONTAP, por lo que debe transferir una imagen ONTAP mediante una unidad flash USB.

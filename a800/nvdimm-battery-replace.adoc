@@ -15,6 +15,7 @@ Reemplace la batería NV en su sistema AFF A800 cuando la batería comience a pe
 
 
 
+[[step-1-shutdown-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control de la controladora dañada.
@@ -87,6 +88,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
@@ -175,6 +177,7 @@ Sostenga la parte inferior del módulo del controlador mientras lo desliza fuera
 
 
 
+[[step-3-replace-the-nvdimm-battery]]
 == Paso 3: Sustituya la batería NVDIMM
 
 Reemplace la batería NVDIMM quitando la batería defectuosa del módulo del controlador e instalando la batería de reemplazo en el módulo del controlador.
@@ -230,6 +233,7 @@ Asegúrese de que el enchufe se bloquea en la toma.
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador y reinícielo.
@@ -278,6 +282,7 @@ El módulo del controlador comienza a arrancar tan pronto como se restaura la al
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

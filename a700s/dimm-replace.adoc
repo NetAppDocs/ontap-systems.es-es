@@ -19,6 +19,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
@@ -62,6 +63,7 @@ Cuando se muestra el controlador dañado `Waiting for giveback...`, Pulse Ctrl-C
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
@@ -139,6 +141,7 @@ Conducto de aire
 
 
 
+[[step-3-replace-a-dimm]]
 == Paso 3: Sustituya un DIMM
 
 Para sustituir un DIMM, debe localizarlo en el módulo de la controladora mediante el mapa DIMM en el interior del módulo de la controladora y, a continuación, sustitúyalo según la secuencia específica de pasos.
@@ -214,6 +217,7 @@ Si ha quitado la tarjeta vertical NVRAM, la tarjeta vertical 1, asegúrese de qu
 
 
 
+[[step-4-reinstall-the-controller-module-and-boot-the-system]]
 == Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
 
 Después de sustituir una FRU en el módulo de la controladora, debe volver a instalar el módulo de la controladora y reiniciarlo.
@@ -252,6 +256,7 @@ El módulo del controlador comienza a arrancar tan pronto como se restaura la al
 
 
 
+[[step-5return-the-failed-part-to-netapp]]
 == Paso 5: Devuelve la pieza fallida a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

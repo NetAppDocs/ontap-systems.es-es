@@ -15,6 +15,7 @@ Devuelva el control de los recursos de almacenamiento al controlador de reemplaz
 
 
 
+[[step-1-recable-the-system]]
 == Paso 1: Recuperar el sistema
 
 Verifique las conexiones de red y almacenamiento del módulo controlador mediante https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"] .
@@ -28,6 +29,7 @@ Verifique las conexiones de red y almacenamiento del módulo controlador mediant
 
 
 
+[[step-2-reassign-disks]]
 == Paso 2: Reasignar discos
 
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el controlador _reboot_ y, a continuación, comprobar que se ha implementado el cambio.

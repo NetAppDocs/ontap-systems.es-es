@@ -15,6 +15,7 @@ Esta página ofrece instrucciones detalladas paso a paso para instalar un sistem
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar su sistema AFF A220, tiene que crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener las claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -167,6 +168,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2839002["Hoja de datos par
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -190,12 +192,14 @@ image::../media/drw_cable_management_arm_install.png[Conexión de dispositivos d
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Paso 3: Conecte los controladores a la red
 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
 
+[[option-1-cable-a-two-node-switchless-cluster-unified-network-configuration]]
 === Opción 1: Cable de un clúster sin switch de dos nodos, configuración de red unificada
 
 La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
@@ -272,6 +276,7 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[option-2-cable-a-switched-cluster-unified-network-configuration]]
 === Opción 2: Conecte un clúster con switches o una configuración de red unificada
 
 La red de gestión, la red de datos UTA2 y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.
@@ -349,6 +354,7 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[option-3-cable-a-two-node-switchless-cluster-ethernet-network-configuration]]
 === Opción 3: Cable de un clúster sin switch de dos nodos, configuración de red Ethernet
 
 La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
@@ -413,6 +419,7 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[option-4-cable-a-switched-cluster-ethernet-network-configuration]]
 === Opción 4: Cableado de un clúster conmutado, configuración de red Ethernet
 
 La red de gestión, la red de datos Ethernet y los puertos de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster se cablean a los switches de interconexión de clúster.
@@ -475,12 +482,14 @@ NO enchufe los cables de alimentación en este momento.
 
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
 Debe cablear las controladoras a las bandejas con los puertos de almacenamiento internos. NetApp recomienda el cableado MP-ha para sistemas con almacenamiento externo. Si tiene una unidad de cinta SAS, puede utilizar el cableado de una sola ruta. Si no dispone de bandejas externas, el cableado MP-ha a las unidades internas es opcional (no se muestra) si los cables SAS se solicitan con el sistema.
 
 
 
+[[option-1-cable-storage-on-an-ha-pair-with-external-drive-shelves]]
 === Opción 1: Conectar el almacenamiento en una pareja de alta disponibilidad con bandejas de unidades externas
 
 Debe cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades.
@@ -551,12 +560,14 @@ Si posee más de un paquete de bandeja de unidades, consulte _Guía de instalaci
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
+[[option-1-complete-system-setup-if-network-discovery-is-enabled]]
 === Opción 1: Completar la configuración del sistema si la detección de red está activada
 
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
@@ -610,6 +621,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.

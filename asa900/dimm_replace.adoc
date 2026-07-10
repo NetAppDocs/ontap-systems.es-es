@@ -20,6 +20,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -156,6 +157,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -210,6 +212,7 @@ Botón de bloqueo de la cubierta del módulo del controlador
 
 
 
+[[step-3-replace-the-dimms]]
 == Paso 3: Sustituya los módulos DIMM
 
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
@@ -269,6 +272,7 @@ IMPORTANT: Inspeccione visualmente el módulo DIMM para comprobar que está alin
 
 
 
+[[step-4-install-the-controller]]
 == Paso 4: Instale la controladora
 
 Después de instalar los componentes en el módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema e iniciar el sistema operativo.
@@ -348,6 +352,7 @@ El módulo de la controladora comienza a arrancar tan pronto como se asienta com
 
 
 
+[[step-5-run-system-level-diagnostics]]
 == Paso 5: Ejecute un diagnóstico de nivel de sistema
 
 Después de instalar un DIMM nuevo, debe ejecutar un diagnóstico.
@@ -454,6 +459,7 @@ Después de emitir el comando, espere hasta que el sistema se detenga en el sím
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

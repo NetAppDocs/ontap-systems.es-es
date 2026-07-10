@@ -15,6 +15,7 @@ Para sustituir el hardware del módulo de la controladora, debe retirar la contr
 
 
 
+[[step-1-remove-the-controller-module]]
 == Paso 1: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
@@ -93,6 +94,7 @@ Conducto de aire
 
 
 
+[[step-2-move-the-nvram-card]]
 == Paso 2: Mover la tarjeta NVRAM
 
 Como parte del proceso de sustitución del controlador, debe extraer la tarjeta NVRAM de la tarjeta vertical 1 del módulo del controlador dañado e instalar la tarjeta en la tarjeta vertical 1 del módulo del controlador de sustitución. Sólo debe volver a instalar la tarjeta vertical 1 en el módulo del controlador de sustitución después de haber movido los módulos DIMM del módulo del controlador defectuoso al módulo del controlador de reemplazo.
@@ -173,6 +175,7 @@ NOTE: Asegúrese de que la tarjeta está completamente asentada en la toma de la
 
 
 
+[[step-3-move-pcie-cards]]
 == Paso 3: Mover tarjetas PCIe
 
 Como parte del proceso de reemplazo del controlador, debe quitar ambos módulos de elevador PCIe, Riser 2 (el elevador intermedio) y Riser 3 (elevador en el extremo derecho) del módulo de controlador dañado, quitar las tarjetas PCIe de los módulos elevadores, e instale las tarjetas en los mismos módulos elevadores en el módulo de controlador de reemplazo. Una vez que se hayan movido los DIMM al módulo de la controladora de reemplazo, instalará los módulos de la tarjeta vertical.
@@ -248,6 +251,7 @@ Asegúrese de que la tarjeta está completamente asentada en la toma de la tarje
 
 
 
+[[step-4-move-the-boot-media]]
 == Paso 4: Mueva el soporte de arranque
 
 AFF A700s tiene dos dispositivos multimedia de arranque, un medio de arranque primario y secundario o backup. Debe moverlos del controlador dañado al controlador _regrel_ e instalarlos en sus respectivas ranuras en el controlador _regrel_.
@@ -319,6 +323,7 @@ No apriete en exceso el tornillo o podría dañar el soporte del maletero.
 
 
 
+[[step-5-move-the-fans]]
 == Paso 5: Mueva los ventiladores
 
 Debe mover los ventiladores del módulo de la controladora dañada al módulo de sustitución cuando sustituya un módulo de la controladora con fallos.
@@ -351,6 +356,7 @@ Módulo de ventilador
 
 
 
+[[step-6-move-system-dimms]]
 == Paso 6: Mover los DIMM del sistema
 
 Para mover los módulos DIMM, búsquelos y muévalos del controlador dañado al controlador de recambio y siga la secuencia específica de pasos.
@@ -412,6 +418,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 
 
+[[step-7-install-the-nvram-module]]
 == Paso 7: Instale el módulo NVRAM
 
 Para instalar el módulo NVRAM, debe seguir la secuencia específica de pasos.
@@ -431,6 +438,7 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 
 
+[[step-8-move-the-nvram-battery]]
 == Paso 8: Mueva la batería NVRAM
 
 Al sustituir el módulo de controlador, debe mover la batería NVRAM del módulo de controlador dañado al módulo de controlador de reemplazo
@@ -470,6 +478,7 @@ Lengüeta azul de bloqueo de la batería NVRAM
 
 
 
+[[step-9-install-a-pcie-riser]]
 == Paso 9: Instale una tarjeta «riser» PCIe
 
 Para instalar una tarjeta «riser» PCIe, debe seguir una secuencia específica de pasos.
@@ -491,6 +500,7 @@ Cuando está bloqueado, el pestillo de bloqueo está alineado con la parte super
 
 
 
+[[step-10-move-the-power-supply]]
 == Paso 10: Mueva la fuente de alimentación
 
 Cuando reemplace un módulo de controlador, debe mover la fuente de alimentación y la fuente de alimentación del módulo de controlador dañado al módulo de controlador de reemplazo.
@@ -536,6 +546,7 @@ NOTE: Para evitar dañar el conector interno, no ejerza demasiada fuerza al desl
 
 
 
+[[step-11-install-the-controller-module]]
 == Paso 11: Instale el módulo del controlador
 
 Una vez que todos los componentes se han movido del módulo de controlador dañado al módulo de controlador de repuesto, debe instalar el módulo de controlador de repuesto en el chasis y luego arrancar en modo de mantenimiento.

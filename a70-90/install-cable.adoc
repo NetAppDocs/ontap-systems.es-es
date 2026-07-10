@@ -34,6 +34,7 @@ image::../media/drw_cable_pull_tab_direction_ieops-1699.svg[Ejemplo de orientaci
 
 
 
+[[step-1-connect-the-storage-controllers-to-your-network]]
 == Paso 1: Conecte las controladoras de almacenamiento a la red
 
 Conecte los cables de las controladoras al clúster de ONTAP. Este procedimiento varía según el modelo del sistema de almacenamiento y la configuración del módulo de I/O.
@@ -84,6 +85,7 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Cablear las co
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Paso 2: Conecte los cables de las conexiones de red host
 
 Conecte los puertos del módulo Ethernet a la red host.
@@ -119,6 +121,7 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Cable a red Ethernet 1
 
 
 
+[[step-3-cable-the-management-network-connections]]
 == Paso 3: Conecte los cables de las conexiones de red de gestión
 
 Utilice los cables 1000BASE-T RJ-45 para conectar los puertos de gestión (llave) de cada controladora a los switches de red de gestión.
@@ -134,6 +137,7 @@ IMPORTANT: No enchufe los cables de alimentación todavía.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Paso 4: Conecte los cables de las conexiones de la bandeja
 
 Los siguientes procedimientos de cableado muestran cómo conectar las controladoras a una bandeja de almacenamiento. Elija una de las siguientes opciones de cableado que coincidan con su configuración.

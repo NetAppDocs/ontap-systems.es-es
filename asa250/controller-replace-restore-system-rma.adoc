@@ -15,6 +15,7 @@ Para completar la sustitución del controlador de tu sistema ASA A250 a pleno fu
 
 
 
+[[step-1-install-licenses-for-the-replacement-controller-in-ontap]]
 == Paso 1: Instalar las licencias para la controladora de reemplazo en ONTAP
 
 Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
@@ -49,6 +50,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 
 
+[[step-2-verify-lifs-and-registering-the-serial-number]]
 == Paso 2: Verifique las LIF y registre el número de serie
 
 Antes de devolver el nodo _replacement_ al servicio, debes verificar que los LIFs están en sus puertos de origen, y registrar el número de serie del nodo _replacement_ si AutoSupport está habilitado, comprobar la salud de tu clúster, cerrar cualquier ventana de mantenimiento y restablecer el giveback automático.
@@ -71,6 +73,7 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 
 
 
+[[step-3-return-the-failed-part-to-netapp]]
 == Paso 3: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -17,6 +17,7 @@ El sistema AFF A700 solo admite procedimientos de recuperación de medios de arr
 
 
 
+[[option-1-most-systems]]
 == Opción 1: La mayoría de los sistemas
 
 Completa el apagado del controlador dañado deteniéndolo en el indicador LOADER y capturando las variables de entorno de arranque. El indicador LOADER es el estado de detención seguro desde el que puedes reemplazar el medio de arranque.
@@ -60,6 +61,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 
 
 
+[[option-2-controller-is-in-a-metrocluster]]
 === Opción 2: La controladora se encuentra en un MetroCluster
 
 Después de completar las tareas de NVE o NSE, necesita completar el apagado del nodo dañado. NOTA: No utilice este procedimiento si el sistema está en una configuración MetroCluster de dos nodos.
@@ -118,6 +120,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 
 
 
+[[option-3-controller-is-in-a-two-node-metrocluster]]
 == Opción 3: La controladora se encuentra en un MetroCluster de dos nodos
 
 Después de completar las tareas de NVE o NSE, necesita completar el apagado del nodo dañado.

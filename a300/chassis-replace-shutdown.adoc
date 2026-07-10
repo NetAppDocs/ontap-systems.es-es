@@ -15,6 +15,7 @@ Para sustituir el chasis, debe apagar las controladoras.
 
 
 
+[[option-1-shut-down-the-controller]]
 == Opción 1: Apague el controlador
 
 Este procedimiento es para sistemas con configuraciones de dos nodos. Para obtener más información sobre el cierre correcto al realizar el mantenimiento de un cluster, consulte https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Apagar y encender sin problemas la Guía de resolución del sistema de almacenamiento: Base de conocimientos de NetApp"].
@@ -68,6 +69,7 @@ NOTE: Para los clústeres que utilizan SnapMirror síncrono en modo StrictSync: 
 
 
 
+[[option-2-controllers-are-in-a-two-node-metrocluster-configuration]]
 == Opción 2: Las controladoras están en una configuración MetroCluster de dos nodos
 
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, cambiar el controlador para que el controlador correcto siga sirviendo datos del almacenamiento del controlador dañado.

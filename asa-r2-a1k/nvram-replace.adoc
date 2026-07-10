@@ -22,6 +22,7 @@ El módulo de NVRAM consta de hardware NVRAM12 y DIMM reemplazables en campo. Pu
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control de la controladora dañada.
@@ -94,6 +95,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-replace-the-nvram-module-or-nvram-dimm]]
 == Paso 2: Reemplace el módulo NVRAM o NVRAM DIMM
 
 Sustituya el módulo NVRAM o los DIMM de NVRAM con la siguiente opción adecuada.
@@ -195,6 +197,7 @@ NOTE: Consulte la etiqueta de asignación de FRU en el lateral del módulo NVRAM
 ====
 
 
+[[step-3-reboot-the-controller]]
 == Paso 3: Reinicie el controlador
 
 Después de reemplazar el componente, debe reiniciar el módulo del controlador enchufando nuevamente los cables de alimentación a la fuente de alimentación.
@@ -203,6 +206,7 @@ El sistema comenzará a reiniciarse, normalmente en el aviso del CARGADOR.
 
 
 
+[[step-4-verify-controller-state]]
 == Paso 4: Verifique el estado de la controladora
 
 Debe confirmar el estado de la controladora de las controladoras conectadas al pool de discos al arrancar la controladora.
@@ -273,6 +277,7 @@ Disk                   Size Shelf Bay Type    Type        Name
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

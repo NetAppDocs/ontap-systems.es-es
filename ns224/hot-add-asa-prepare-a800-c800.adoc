@@ -15,6 +15,7 @@ Prepara tu sistema ASA A800 o C800 para agregar en caliente un shelf NS224 asegu
 
 
 
+[[install-roce-capable-pcie-cards]]
 == Instalar tarjetas PCIe compatibles con RoCE
 
 Si tu sistema admite el uso de tarjetas PCIe o módulos de E/S compatibles con RoCE, tu par de alta disponibilidad debe tener suficientes puertos Ethernet compatibles con RoCE disponibles para admitir la cantidad de estanterías que vas a añadir en caliente.
@@ -34,6 +35,7 @@ Estos puertos pueden estar a bordo de los controladores, en tarjetas PCIe con ca
 
 
 
+[[configure-roce-capable-ports-for-storage-use]]
 == Configure los puertos compatibles con RoCE para el uso del almacenamiento
 
 En algunos sistemas, los puertos con capacidad RoCE se configuran automáticamente para el uso de almacenamiento cuando instalas una tarjeta PCIe con capacidad RoCE o un módulo de E/S en una ranura de controlador compatible. Sin embargo, debes completar este procedimiento para verificar que los puertos están configurados correctamente para el uso de almacenamiento.
@@ -89,6 +91,7 @@ La salida del comando varía en función de la versión de ONTAP:
 
 
 
+[[recable-existing-shelves]]
 == Vuelva a conectar las bandejas existentes
 
 Cuando agregues en caliente un segundo shelf a un par HA A800 o C800, necesitas volver a cablear el primer shelf a través de los dos conjuntos de puertos compatibles con RoCE en la ranura 5 y la ranura 3 de cada controlador.
@@ -110,6 +113,7 @@ Si se genera algún error de cableado, siga las acciones correctivas proporciona
 
 
 
+[[disable-automatic-drive-assignment]]
 == Deshabilite la asignación automática de unidades
 
 Si no está seguro si debe asignar manualmente propiedad de una unidad o desea comprender la asignación automática de políticas de propiedad de unidades para el sistema de almacenamiento, vaya a https://docs.netapp.com/us-en/ontap/disks-aggregates/disk-autoassignment-policy-concept.html["Acerca de la asignación automática de propiedad de disco"^].

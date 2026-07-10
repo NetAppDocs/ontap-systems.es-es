@@ -15,6 +15,7 @@ Las siguientes son especificaciones seleccionadas para el AFF C80.  Visita https
 
 
 
+[[key-specifications-for-aff-c80]]
 === Especificaciones clave del AFF C80
 
 Configuración de la plataforma: AFF C80, par HA de chasis único
@@ -33,6 +34,7 @@ Versión mínima de ONTAP : ONTAP 9.16.1RC1
 
 
 
+[[scaleout-maximums]]
 === Máximos de escalamiento
 
 |===
@@ -51,6 +53,7 @@ Versión mínima de ONTAP : ONTAP 9.16.1RC1
 |===
 
 
+[[io]]
 === IO
 
 
@@ -109,18 +112,21 @@ No hay datos de E/S integrados.
 |===
 
 
+[[storage-networking-supported]]
 === Redes de almacenamiento compatibles
 
 CIFS; FC; iSCSI; NFS v3; NFS v4.0; NFS v4.1; NFS v4.2; NFSv3/RDMA; NFSv4/RDMA; NVMe/FC; NVMe/TCP; S3; S3 con NAS; SMB 2.0; SMB 2.1; SMB 2.x; SMB 3.0; SMB 3.1; SMB 3.1.1;
 
 
 
+[[system-environment-specifications]]
 === Especificaciones del entorno del sistema
 
 No hay datos ambientales disponibles.
 
 
 
+[[compliance]]
 === Cumplimiento
 
 * Certificaciones EMC/EMI: AMCA, FCC, ICES, KC, Marruecos, VCCI
@@ -133,6 +139,7 @@ No hay datos ambientales disponibles.
 
 
 
+[[high-availability]]
 === Alta disponibilidad
 
 Controlador de administración de placa base (BMC) basado en Ethernet e interfaz de administración ONTAP ; Controladores intercambiables en caliente redundantes; Fuentes de alimentación intercambiables en caliente redundantes;

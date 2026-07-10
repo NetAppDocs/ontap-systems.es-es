@@ -19,6 +19,7 @@ Para reemplazar una tarjeta PCIe, debe realizar una secuencia específica de tar
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -191,6 +192,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-open-the-controller-module]]
 == Paso 2: Abra el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -231,6 +233,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-a-pcie-card]]
 == Paso 3: Sustituya una tarjeta PCIe
 
 Para sustituir una tarjeta PCIe, búsquela dentro de la controladora y siga la secuencia específica de pasos.
@@ -270,6 +273,7 @@ NOTE: Si va a instalar una tarjeta en la ranura inferior y no puede ver bien el 
 
 
 
+[[step-4-reinstall-the-controller]]
 == Paso 4: Vuelva a instalar el controlador
 
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema y reiniciarlo.
@@ -354,6 +358,7 @@ Continúe con el próximo paso. El procedimiento de conmutación de estado del M
 
 
 
+[[step-5-two-node-metrocluster-only-switch-back-aggregate]]
 == Paso 5 (solo MetroCluster de dos nodos): Agregado de conmutación
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -410,6 +415,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

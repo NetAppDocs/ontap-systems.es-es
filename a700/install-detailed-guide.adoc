@@ -15,6 +15,7 @@ Esta guía ofrece instrucciones detalladas paso a paso para la instalación de u
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar el sistema, debe crear una cuenta en el sitio de soporte de NetApp, registrar el sistema y obtener claves de licencia. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -178,6 +179,7 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configur
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Debe instalar el sistema en un rack de 4 parantes o armario del sistema de NetApp, según corresponda.
@@ -205,12 +207,14 @@ image::../media/drw_9000_cable_management_arms.png[Conexión de dispositivos de 
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Paso 3: Conecte los controladores a la red
 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
 
+[[option-1-two-node-switchless-cluster]]
 === Opción 1: Clúster sin switches de dos nodos
 
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
@@ -237,6 +241,7 @@ image::../media/drw_9000_TNSC_composite_cabling.png[Cableado compuesto de cluste
 
 
 
+[[option-2-switched-cluster]]
 === Opción 2: Clúster de switches
 
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
@@ -263,12 +268,14 @@ image:../media/drw_9000_switched_cluster_cabling.png["Cableado compuesto de clus
 
 
 
+[[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
 Puede cablear el nuevo sistema a las bandejas DS212C, DS224C o NS224, según sea un sistema AFF o FAS.
 
 
 
+[[option-1-cable-the-controllers-to-ds212c-or-ds224c-drive-shelves]]
 === Opción 1: Conecte los cables de las controladoras a las bandejas de unidades DS212C o DS224C
 
 Se deben cablear las conexiones de bandeja a bandeja y luego conectar ambas controladoras a las bandejas de unidades DS212C o DS224C.
@@ -320,6 +327,7 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png["Cableado del sistema 
 
 
 
+[[option-2-cable-the-controllers-to-a-single-ns224-drive-shelf-in-aff-a700-and-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Opción 2: Conecte las controladoras a una única bandeja de unidades NS224 en sistemas A700 de AFF y ASA AFF A700 que solo ejecuten ONTAP 9.8 y versiones posteriores
 
 Debe conectar cada controladora a los módulos NSM de la bandeja de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
@@ -355,6 +363,7 @@ image::../media/single_NS224_shelf.png[Cableado de bandeja única]
 
 
 
+[[option-3-cable-the-controllers-to-two-ns224-drive-shelves-in-aff-a700-and-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Opción 3: Conecte los cables de las controladoras a dos bandejas de unidades NS224 en sistemas A700 de AFF y A700 de ASA AFF que ejecuten solo ONTAP 9.8 y versiones posteriores
 
 Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
@@ -390,12 +399,14 @@ image::../media/two_NS224_shelves.png[Cableado de bandeja doble]
 
 
 
+[[step-5-complete-system-setup-and-configuration]]
 == Paso 5: Pasos completos para la instalación y la configuración del sistema
 
 Puede completar la instalación y configuración del sistema mediante la detección de clústeres mediante una sola conexión al switch y el portátil, o bien conectarse directamente a una controladora del sistema y luego conectarse al switch de gestión.
 
 
 
+[[option-1-completing-system-setup-and-configuration-if-network-discovery-is-enabled]]
 === Opción 1: Completar la configuración y la configuración del sistema si la detección de redes está activada
 
 Si tiene la detección de red habilitada en el portátil, puede completar la configuración y la instalación del sistema mediante la detección automática del clúster.
@@ -468,6 +479,7 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Descar
 
 
 
+[[option-2-completing-system-setup-and-configuration-if-network-discovery-is-not-enabled]]
 === Opción 2: Completar la configuración y la configuración del sistema si la detección de red no está activada
 
 Si el descubrimiento de red no está activado en el portátil, debe completar la configuración y la configuración mediante esta tarea.

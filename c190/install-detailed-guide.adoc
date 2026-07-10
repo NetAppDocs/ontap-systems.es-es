@@ -15,6 +15,7 @@ En esta sección se ofrecen instrucciones detalladas paso a paso para la instala
 
 
 
+[[step-1-prepare-for-installation]]
 == Paso 1: Preparar la instalación
 
 Para instalar su sistema AFF C190, cree una cuenta y registre el sistema. También es necesario realizar el inventario del número y tipo de cables adecuados para el sistema y recopilar información específica de la red.
@@ -135,6 +136,7 @@ Encendido del sistema
 
 
 
+[[step-2-install-the-hardware]]
 == Paso 2: Instale el hardware
 
 Instale el sistema en un rack de 4 parantes o armario de sistema de NetApp según corresponda.
@@ -158,6 +160,7 @@ image::../media/drw_cable_management_arm_install.png[Conexión de dispositivos d
 
 
 
+[[step-3-cable-controllers-to-your-network]]
 == Paso 3: Conecte los controladores a la red
 
 Conecte las controladoras a la red mediante el método de clúster sin switch de dos nodos o el método de red de interconexión del clúster.
@@ -327,6 +330,7 @@ IMPORTANT: NO enchufe los cables de alimentación en este momento.
 ====
 
 
+[[step-4-complete-system-setup]]
 == Paso 4: Complete la configuración del sistema
 
 Complete la instalación y la configuración del sistema mediante la detección de clústeres que solo tiene una conexión al switch y al portátil, o bien se puede conectar directamente a una controladora del sistema y, a continuación, conectarse al switch de gestión.

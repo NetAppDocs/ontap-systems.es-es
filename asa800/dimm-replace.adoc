@@ -20,6 +20,7 @@ Reemplace un DIMM en su sistema ASA A800 si se detectan errores de memoria exces
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control del controlador dañado
@@ -92,6 +93,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-the-controller-module]]
 == Paso 2: Extraiga el módulo del controlador
 
 Debe quitar el módulo de la controladora del chasis cuando sustituya el módulo de la controladora o sustituya un componente dentro del módulo de la controladora.
@@ -180,6 +182,7 @@ Sostenga la parte inferior del módulo del controlador mientras lo desliza fuera
 
 
 
+[[step-3-replace-the-dimm]]
 == Paso 3: Reemplace la DIMM
 
 Reemplace el DIMM en el controlador.
@@ -249,6 +252,7 @@ NOTE: Inspeccione visualmente el módulo DIMM para comprobar que está alineado 
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador y reinícielo.
@@ -297,6 +301,7 @@ El módulo del controlador comienza a arrancar tan pronto como se restaura la al
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

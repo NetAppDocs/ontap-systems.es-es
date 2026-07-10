@@ -30,6 +30,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+[[step-1-shut-down-the-target-controller-module]]
 == Paso 1: apaga el módulo controlador de destino
 
 Toma el control y apaga el módulo controlador de destino para que su pareja de HA siga sirviendo datos mientras añades el módulo de E/S. Los pasos enlazados se refieren al controlador que se está apagando como el controlador "deteriorado"; los mismos pasos se aplican tanto si tomas el control de un controlador operativo para una adición planificada como si apagas un controlador que ya está deteriorado.
@@ -176,6 +177,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 ====
 
 
+[[step-2-add-the-new-io-module]]
 == Paso 2: Agregue el nuevo módulo de E/S.
 
 Si el sistema de almacenamiento tiene ranuras disponibles, instale el nuevo módulo de I/O en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.

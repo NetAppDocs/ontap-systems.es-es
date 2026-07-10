@@ -15,6 +15,7 @@ Continuar con el procedimiento de sustitución presentando las instalaciones de 
 
 
 
+[[step-1-recable-the-system]]
 == Paso 1: Recuperar el sistema
 
 Debe volver a conectar los cables de las conexiones de red y almacenamiento del módulo de la controladora.
@@ -36,6 +37,7 @@ NOTE: La información de ID del sistema y de asignación de discos se encuentra 
 
 
 
+[[step-2-reassign-disks]]
 == Paso 2: Reasignar discos
 
 Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el controlador _reboot_ y, a continuación, comprobar que se ha implementado el cambio.

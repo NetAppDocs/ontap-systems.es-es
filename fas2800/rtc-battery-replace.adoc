@@ -19,6 +19,7 @@ Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del con
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
@@ -89,6 +90,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-remove-controller-module]]
 == Paso 2: Extraiga el módulo de controlador
 
 Retire el módulo del controlador del sistema y, a continuación, retire la cubierta del módulo del controlador.
@@ -112,6 +114,7 @@ image::../media/drw_2850_open_controller_module_cover_IEOPS-695.svg[Retire la cu
 
 
 
+[[step-3-replace-the-rtc-battery]]
 == Paso 3: Sustituya la batería RTC
 
 Sustituya la batería de RTC situándola dentro del controlador y siga la secuencia específica de pasos.
@@ -136,6 +139,7 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 
 
+[[step-4-reinstall-the-controller-module]]
 == Paso 4: Vuelva a instalar el módulo del controlador
 
 Vuelva a instalar el módulo del controlador y arranque en el aviso del CARGADOR.
@@ -171,6 +175,7 @@ La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
 
 
 
+[[step-5-set-timedate-after-rtc-battery-replacement]]
 == Paso 5: Ajuste la hora / fecha después de la sustitución de la batería RTC
 
 . Restablezca la hora y la fecha en la controladora:
@@ -190,6 +195,7 @@ La controladora comienza a arrancar tan pronto como se encuentra en el chasis.
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

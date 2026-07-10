@@ -24,12 +24,14 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
+[[option-1-add-io-modules-to-a-storage-system-with-available-slots]]
 == Opción 1: Agregue módulos de I/O a un sistema de almacenamiento con ranuras disponibles
 
 Puede agregar un módulo de E/S a una ranura disponible en cada controladora.
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 === Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -161,6 +163,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
+[[step-2-add-io-modules-to-available-slots]]
 === Paso 2: Añada módulos I/O a las ranuras disponibles
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -215,6 +218,7 @@ De esta forma, se reinicializan los dispositivos PCIe y otros componentes y se r
 
 
 
+[[option-2-add-io-modules-in-a-storage-system-with-unavailable-slots]]
 == Opción 2: Agregue módulos de I/O en un sistema de almacenamiento con ranuras no disponibles
 
 Puede añadir módulos I/O a un sistema de almacenamiento completo eliminando los módulos de I/O existentes y sustituyéndolos por módulos de I/O diferentes.
@@ -250,6 +254,7 @@ Utilice System Manager para migrar de forma permanente las LIF a distintos puert
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 === Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -381,6 +386,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
+[[step-2-add-io-modules-to-unavailable-slots]]
 === Paso 2: Añada módulos I/O a las ranuras no disponibles
 
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.

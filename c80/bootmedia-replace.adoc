@@ -17,6 +17,7 @@ Si su sistema se ejecuta en ONTAP 9.17.1 y posterior, utilice el link:bootmedia-
 
 
 
+[[step-1-replace-the-boot-media]]
 == Paso 1: Sustituya el soporte de arranque
 
 El soporte de arranque se encuentra dentro del módulo de gestión del sistema y se accede a él quitando el módulo del sistema.
@@ -90,6 +91,7 @@ Soporte de arranque
 
 
 
+[[step-2-transfer-the-boot-image-to-the-boot-media]]
 == Paso 2: Transfiera la imagen de arranque al soporte de arranque
 
 El medio de arranque de reemplazo que instaló se encuentra sin una imagen ONTAP. Puede transferir la imagen ONTAP al soporte de arranque de reemplazo descargando la imagen de servicio ONTAP adecuada de https://mysupport.netapp.com/["Sitio de soporte de NetApp"] a una unidad flash USB y, a continuación, al soporte de arranque de reemplazo.

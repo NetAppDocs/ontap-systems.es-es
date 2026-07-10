@@ -17,6 +17,7 @@ El sistema AFF C190 solo admite procedimientos de recuperación de medios de arr
 
 
 
+[[step-1-remove-the-controller]]
 == Paso 1: Quite la controladora
 
 Para acceder a los componentes del módulo del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -44,6 +45,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Apertura o cierre del módulo del
 
 
 
+[[step-2-replace-the-boot-media]]
 == Paso 2: Sustituya el soporte de arranque
 
 Debe localizar el medio de arranque en el módulo de la controladora y, a continuación, seguir las instrucciones para reemplazarlo.
@@ -65,6 +67,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 
+[[step-3-transfer-the-boot-image-to-the-boot-media]]
 == Paso 3: Transfiera la imagen de arranque al soporte de arranque
 
 Puede instalar la imagen del sistema en el soporte de arranque de repuesto mediante una unidad flash USB con la imagen instalada en ella. Sin embargo, debe restaurar el `var` sistema de archivos durante este procedimiento.

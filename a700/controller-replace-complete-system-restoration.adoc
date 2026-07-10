@@ -15,6 +15,7 @@ Para completar el procedimiento de sustitución y restaurar el sistema a pleno f
 
 
 
+[[step-1-install-licenses-for-the-replacement-node-in-ontap]]
 == Paso 1: Instalar licencias para el nodo de repuesto en ONTAP
 
 Debe instalar licencias nuevas para el nodo _retor_ si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo de nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
@@ -49,6 +50,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 
 
+[[step-2-verifying-lifs-and-registering-the-serial-number]]
 == Paso 2: Verificación de las LIF y registro del número de serie
 
 Antes de devolver el nodo _replacement_ al servicio, debes verificar que los LIFs están en sus puertos de origen, y registrar el número de serie del nodo _replacement_ si AutoSupport está habilitado, comprobar la salud de tu clúster, cerrar cualquier ventana de mantenimiento y restablecer el giveback automático.
@@ -71,6 +73,7 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 
 
 
+[[step-3-metrocluster-only-switching-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 3: (Solo MetroCluster): Cambio de agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -127,6 +130,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Paso 4: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

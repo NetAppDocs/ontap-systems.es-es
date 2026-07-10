@@ -17,6 +17,7 @@ link:https://youtu.be/2_uWRt_iJqk["Vídeo de sustitución de la controladora FAS
 
 
 
+[[step-1-remove-controller-module]]
 == Paso 1: Retire el módulo de controlador
 
 Para sustituir el módulo de controlador, primero debe extraer el módulo de controlador antiguo del chasis.
@@ -45,6 +46,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Apertura o cierre del módulo del
 
 
 
+[[step-2-move-the-boot-media]]
 == Paso 2: Mueva el soporte de arranque
 
 Debe localizar el soporte de arranque y seguir las instrucciones para quitarlo del módulo de la controladora anterior e insertarlo en el nuevo módulo de la controladora.
@@ -69,6 +71,7 @@ Si es necesario, extraiga el soporte de arranque y vuelva a colocarlo en la toma
 
 
 
+[[step-3-move-the-nvmem-battery]]
 == Paso 3: Mueva la batería de NVMEM
 
 Para mover la batería de NVMEM del módulo de controladora antiguo al nuevo módulo de controladora, debe realizar una secuencia específica de pasos.
@@ -109,6 +112,7 @@ image::../media/drw_2600_nvmem_battery_move_animated_gif.png[Reemplace la bater�
 
 
 
+[[step-4-move-the-dimms]]
 == Paso 4: Mueva los DIMM
 
 Para mover los módulos DIMM, debe seguir las instrucciones para ubicarlos y moverlos desde el módulo de controlador antiguo al módulo de controlador de reemplazo.
@@ -152,6 +156,7 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 
 
+[[step-5-move-the-caching-module]]
 == Paso 5: Mueva el módulo de almacenamiento en caché
 
 Para mover un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, búsquelo y muévalos de la controladora antigua a la controladora de sustitución y siga la secuencia específica de pasos.
@@ -180,6 +185,7 @@ Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócal
 
 
 
+[[step-6-install-the-controller]]
 == Paso 6: Instale la controladora
 
 Después de instalar los componentes del módulo de controlador antiguo en el nuevo módulo de controlador, debe instalar el nuevo módulo de controlador en el chasis del sistema e iniciar el sistema operativo.

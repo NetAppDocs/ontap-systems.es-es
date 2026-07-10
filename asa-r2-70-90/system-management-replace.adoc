@@ -30,6 +30,7 @@ El módulo de gestión del sistema, ubicado en la parte posterior de la controla
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o tome el control de la controladora dañada.
@@ -102,9 +103,13 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 
+[[step-2-replace-the-system-management-module]]
 == Paso 2: Reemplace el módulo de administración del sistema
 
 Sustituya el módulo de gestión del sistema defectuoso.
+
+
+WARNING: El módulo de administración de sistemas no es intercambiable en caliente. Antes de sustituirlo, vuelve a colocar las unidades, apaga el nodo, desconecta la alimentación del controlador y saca el controlador unas pulgadas del chasis.
 
 .Pasos
 . Asegúrese de que la separación de NVRAM se haya completado antes de continuar. Cuando el LED del módulo NV está apagado, NVRAM se separa. Si el LED parpadea, espere a que se detenga el parpadeo. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
@@ -235,6 +240,7 @@ NOTE: Si tiene fuentes de alimentación de CC, vuelva a conectar el bloque de al
 
 
 
+[[step-3-reboot-the-controller]]
 == Paso 3: Reinicie el controlador
 
 Reinicie el módulo del controlador.
@@ -257,6 +263,7 @@ Reinicie el módulo del controlador.
 
 
 
+[[step-4-install-licenses-and-register-serial-number]]
 == Paso 4: Instale licencias y registre el número de serie
 
 Debe instalar licencias nuevas para el nodo si el nodo dañado utilizaba funciones de ONTAP que requieren una licencia estándar (bloqueo por nodo). Para funciones con licencias estándar, cada nodo del clúster debe tener su propia clave para la función.
@@ -295,6 +302,7 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 
 
+[[step-5-return-the-failed-part-to-netapp]]
 == Paso 5: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

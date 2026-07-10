@@ -4,6 +4,7 @@
 
 
 
+[[step-1-gather-cluster-information]]
 == Paso 1: Recopilar información del clúster
 
 Si todavía no lo ha hecho, recopile la información que necesitará para configurar el clúster, como el puerto de la interfaz de gestión del clúster y la dirección IP.
@@ -12,6 +13,7 @@ Utilice el https://docs.netapp.com/us-en/ontap/software_setup/index.html["hoja d
 
 
 
+[[step-2-discover-your-cluster-network]]
 == Paso 2: Detecte la red del clúster
 
 El proceso de detección le permite detectar las controladoras del sistema de almacenamiento en la red.
@@ -86,6 +88,7 @@ El nodo arranca y, a continuación, se inicia el Asistente de configuración de 
 ====
 
 
+[[step-3-configure-your-cluster]]
 == Paso 3: Configure el clúster
 
 NetApp recomienda usar System Manager para configurar clústeres nuevos. Consulte https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Configure ONTAP en un nuevo clúster con System Manager"^] para obtener instrucciones de configuración.

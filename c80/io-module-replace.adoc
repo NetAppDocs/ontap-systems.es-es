@@ -20,6 +20,7 @@ Reemplace un módulo de E/S en su sistema AFF C80 cuando el módulo falle o requ
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
@@ -156,6 +157,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 ====
 
 
+[[step-2-replace-a-failed-io-module]]
 == Paso 2: Sustituya un módulo I/O fallido
 
 Para sustituir un módulo de E/S, búsquelo dentro del módulo del controlador y siga la secuencia específica de pasos.
@@ -207,6 +209,7 @@ Lleva un registro de en qué ranura estaba el módulo de E/S.
 
 
 
+[[step-3-reboot-the-controller]]
 == Paso 3: Reinicie el controlador
 
 Después de sustituir un módulo de I/O, debe reiniciar la controladora.
@@ -236,6 +239,7 @@ NOTE: Al reiniciar la controladora afectada, también se reinician los módulos 
 
 
 
+[[step-4-return-the-failed-part-to-netapp]]
 == Paso 4: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

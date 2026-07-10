@@ -30,6 +30,7 @@ NOTE: Ejecute `system controller flash-cache show` el comando si no conoce el id
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -202,6 +203,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-open-the-controller-module]]
 == Paso 2: Abra el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -245,6 +247,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-or-add-a-caching-module]]
 == Paso 3: Sustituya o añada un módulo de almacenamiento en caché
 
 Para sustituir o añadir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice las ranuras del interior de la controladora y siga la secuencia específica de pasos.
@@ -281,6 +284,7 @@ Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócal
 
 
 
+[[step-4-reinstall-the-controller]]
 == Paso 4: Vuelva a instalar el controlador
 
 Después de reemplazar un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema.
@@ -313,6 +317,7 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 
 
+[[step-5-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
 == Paso 5: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -369,6 +374,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-complete-the-replacement-process]]
 == Paso 6: Complete el proceso de reemplazo
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

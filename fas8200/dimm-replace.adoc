@@ -19,6 +19,7 @@ Debe sustituir el componente con errores por un componente FRU de repuesto que h
 
 
 
+[[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
 
 Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento.
@@ -191,6 +192,7 @@ mcc1A::> metrocluster operation show
 ====
 
 
+[[step-2-open-the-controller-module]]
 == Paso 2: Abra el módulo del controlador
 
 Para acceder a los componentes del interior del controlador, primero debe extraer el módulo del controlador del sistema y, a continuación, retirar la cubierta del módulo del controlador.
@@ -231,6 +233,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 
 
 
+[[step-3-replace-the-dimms]]
 == Paso 3: Sustituya los módulos DIMM
 
 Para sustituir los DIMM, búsquelos dentro del controlador y siga la secuencia específica de pasos.
@@ -319,6 +322,7 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 
 
 
+[[step-4-reinstall-the-controller]]
 == Paso 4: Vuelva a instalar el controlador
 
 Después de reemplazar un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema.
@@ -351,6 +355,7 @@ NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia
 
 
 
+[[step-5-two-node-metrocluster-only-switch-back-aggregates]]
 == Paso 5 (solo MetroCluster de dos nodos): Vuelva a cambiar los agregados
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
@@ -407,6 +412,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
+[[step-6-return-the-failed-part-to-netapp]]
 == Paso 6: Devuelva la pieza que falló a NetApp
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

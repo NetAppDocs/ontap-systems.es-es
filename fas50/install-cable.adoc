@@ -29,6 +29,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Dirección de la len
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Paso 1: Conecte los cables de las conexiones del clúster/alta disponibilidad
 
 Cree las conexiones del clúster de ONTAP. En el caso de clústeres sin switch, conecte las controladoras entre sí. En el caso de los clústeres con switches, conecte las controladoras a los switches de red de clúster.
@@ -94,6 +95,7 @@ image:../media/drw_isi_fas50_2p_100gbe_switched_cluster_cabling_ieops-1936.svg["
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Paso 2: Conecte los cables de las conexiones de red host
 
 Conecte las controladoras a la red host Ethernet o FC.
@@ -138,6 +140,7 @@ image::../media/drw_isi_fas50_4p_64gb_fc_optional_cabling_ieops-1935.svg[Cable a
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Paso 3: Conecte los cables de las conexiones de red de gestión
 
 Conecte los puertos de gestión (llave inglesa) de cada controladora a los switches de red de gestión.
@@ -153,6 +156,7 @@ IMPORTANT: No enchufe los cables de alimentación todavía.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Paso 4: Conecte los cables de las conexiones de la bandeja
 
 Los siguientes procedimientos muestran cómo cablear las controladoras a una o dos bandejas DS460C.
@@ -175,6 +179,7 @@ image::../media/oie_cable_mini_sas_hd_to_mini_sas_hd.svg[Cable HD Mini-SAS]
 
 
 
+[[one-ds460c-shelf]]
 === Un estante DS460C
 
 Conecte mediante cable cada controladora a cada módulo de IOM12 de la bandeja DS460C.
@@ -194,6 +199,7 @@ image:../media/drw_isi_fas50_1_ds460c_controller_b_cabling_ieops-2169.svg["Contr
 
 
 
+[[two-ds460c-shelves]]
 === Dos estantes DS460C
 
 Conecte cada controladora a los módulos IOM12 en ambas bandejas DS460C.

@@ -30,6 +30,7 @@ Debe evitar desviarse de las reglas; las desviaciones pueden reducir la confiabi
 
 
 
+[[configuration-rules]]
 == Reglas de configuración
 
 Las estanterías de discos con módulos IOM12, IOM12B o IOM12C son compatibles con determinados tipos de configuraciones de pares de alta disponibilidad y de controlador único.
@@ -71,6 +72,7 @@ Dado que el almacenamiento interno utiliza la conectividad de ruta única, ONTAP
 
 
 
+[[controller-slot-numbering-rules]]
 == Reglas de numeración de las ranuras de la controladora
 
 Con el fin de aplicar reglas de cableado en todos los pares de alta disponibilidad y las configuraciones de controladora única compatibles, se utiliza una convención para la numeración de ranuras de la controladora.
@@ -95,12 +97,14 @@ image::../media/slot0_rules.png[ranura y ranura [convenciones de puerto]
 
 
 
+[[shelf-to-shelf-connection-rules]]
 == Reglas de conexión entre bandejas
 
 Cuando dispone de más de una bandeja de discos en una pila de bandejas de discos, se conectan entre sí por cada dominio SAS (IOM A e IOM B) mediante el cableado correspondiente de bandeja a bandeja. El uso del cableado de «estándar» o «doble ancho» depende de la configuración que tenga.
 
 
 
+[[standard-shelf-to-shelf-connectivity]]
 === Conectividad estándar entre bandejas
 
 * La conectividad estándar de bandeja a bandeja se utiliza en cualquier pila de bandejas de discos con más de una bandeja de discos.
@@ -117,6 +121,7 @@ image::../media/drw_shelf_to_shelf_standard.gif[conectividad estándar de bandej
 
 
 
+[[double-wide-shelf-to-shelf-connectivity]]
 === Conectividad doble de bandeja a bandeja
 
 * La conectividad de bandeja a bandeja en toda la bandeja se utiliza en configuraciones de cuatro rutas (alta disponibilidad de ruta cuádruple y ruta cuádruple).
@@ -133,12 +138,14 @@ image::../media/drw_shelf_to_shelf_double_wide.gif[conectividad doble amplia de 
 
 
 
+[[controller-to-stack-connection-rules]]
 == Reglas de conexión de la controladora a la pila
 
 Puede conectar correctamente las conexiones SAS de cada controladora a cada pila en un par de alta disponibilidad o en una configuración de controladora individual entendiendo que las bandejas de discos SAS utilizan propiedad de disco basada en software y de qué manera los puertos de controladora A/C y B/D están conectados a pilas. cómo se organizan los puertos A/C y B/D de las controladoras en pares de puertos y cómo las plataformas con almacenamiento interno disponen de sus puertos de controladora conectados a pilas.
 
 
 
+[[sas-disk-shelf-software-based-disk-ownership-rule]]
 === Regla de propiedad de disco basada en software de bandeja de discos SAS
 
 Las bandejas de discos SAS utilizan propiedad de disco basada en software (no propiedad de disco basada en hardware). Esto significa que la propiedad de la unidad de disco se almacena en la unidad de disco en lugar de estar determinada por la topología de las conexiones físicas del sistema de almacenamiento (como lo es para la propiedad de disco basada en hardware). Específicamente, la propiedad de la unidad de disco es asignada por ONTAP (automáticamente o por comandos de la CLI), no por cómo se cablean las conexiones de la controladora a la pila.
@@ -147,6 +154,7 @@ Las bandejas de discos SAS nunca se deben cablear mediante el esquema de propied
 
 
 
+[[controller-a-and-c-port-connection-rules-for-platforms-without-internal-storage]]
 === Reglas de conexión de puertos De las controladoras A y C (para plataformas sin almacenamiento interno)
 
 * Los puertos a y C siempre son las rutas principales de una pila.
@@ -165,6 +173,7 @@ image::../media/drw_controller_to_stack_rules_ports_a_and_c_example.gif[Reglas d
 
 
 
+[[controller-b-and-d-port-connection-rules-for-platforms-without-internal-storage]]
 === Reglas de conexión de puertos B y D de la controladora (para plataformas sin almacenamiento interno)
 
 * Los puertos B y D siempre son las rutas secundarias a la pila.
@@ -184,6 +193,7 @@ image::../media/drw_controller_to_stack_rules_ports_b_and_d_example.gif[Reglas d
 
 
 
+[[port-pair-connection-rules-for-platforms-without-internal-storage]]
 === Reglas de conexión de pareja de puertos (para plataformas sin almacenamiento interno)
 
 Los puertos a, B, C y D de SAS de la controladora se organizan en pares de puertos mediante un método que aprovecha todos los puertos SAS para la resiliencia y la consistencia del sistema al cablear las conexiones de controladora a pila en configuraciones de par de alta disponibilidad y controladora única.
@@ -255,6 +265,7 @@ link:install-cabling-worksheet-template-quadpath.html["Plantilla de hoja de trab
 
 
 
+[[controller-0b0b1-and-0a-port-connection-rules-for-platforms-with-internal-storage]]
 === Reglas de conexión de puertos 0b/0b1 y 0A de la controladora para plataformas con almacenamiento interno
 
 Las plataformas con almacenamiento interno tienen un conjunto único de reglas de conexión, ya que cada controladora debe mantener la misma conectividad de dominio entre el almacenamiento interno (puerto 0b/0b1) y la pila. Esto significa que cuando una controladora se encuentra en la ranura A del chasis (controladora 1), se encuentra en el dominio A (IOM A) y, por lo tanto, el puerto 0b/0b1 debe conectarse a IOM A en la pila. Cuando una controladora se encuentra en la ranura B del chasis (controladora 2), se encuentra en el dominio B (IOM B) y, por lo tanto, el puerto 0b/0b1 debe conectarse al IOM B en la pila.
@@ -291,6 +302,7 @@ image::../media/drw_fas2600_mpha_domain_example_IEOPS-1172.svg[Conectividad de d
 
 
 
+[[tri-path-ha-connectivity]]
 === Conectividad de alta disponibilidad trirruta
 
 La conectividad de alta disponibilidad de triple vía está disponible en pares de alta disponibilidad FAS2820. La conectividad de alta disponibilidad de triple ruta tiene tres rutas entre cada controlador y bandejas internas (IOM12G) y externas:
@@ -319,6 +331,7 @@ En la  sección se pueden encontrar ejemplos de cableado de pares de alta dispon
 
 
 
+[[mini-sas-hd-sas-optical-cable-rules]]
 == Reglas de cable óptico SAS HD Mini-SAS
 
 Puede utilizar cables ópticos SAS HD Mini-SAS - cables de cable óptico activo multimodo (AOC) con conectores HD Mini-SAS-a-mini-SAS y cables de conexión multimodo (OM4) con conectores HD-a-LC Mini-SAS - para lograr conectividad SAS de larga distancia para determinadas configuraciones que tienen bandejas de discos con módulos IOM12.
