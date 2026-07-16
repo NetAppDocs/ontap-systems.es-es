@@ -1,7 +1,7 @@
 ---
 permalink: c80/install-cable.html 
 sidebar: sidebar 
-keywords: aff c80, prepare installation 
+keywords: aff c80, prepare installation, cable the hardware 
 summary: Los puertos de red de gestión de las controladoras están conectados a los switches. Los puertos de interconexión de clúster y de alta disponibilidad se cablean en ambas controladoras. Los módulos del controlador están conectados al almacenamiento externo, si se solicita. 
 ---
 = Conecte el cable de la tornillería: AFF C80
@@ -58,7 +58,7 @@ Use el cable de interconexión de clúster/alta disponibilidad para conectar los
 image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cable de alta disponibilidad de clúster]
 
 +
-image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Diagrama de cableado de clústeres de dos nodos sin switches]
+image::../media/drw_70-90_tnsc_cluster_cabling_ieops-1653.svg[Diagrama de cableado de clústeres de dos nodos sin switches]
 
 
 
@@ -73,9 +73,10 @@ Utilice el cable 100 GbE para conectar los puertos e1a y e7a de los controladore
 +
 *Cable de 100 GbE*
 
-
-
++
 image::../media/oie_cable100_gbe_qsfp28.png[Cable de 100 GB]
+
+
 
 image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Cablear las conexiones del clúster a la red del clúster]
 
@@ -88,13 +89,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Cablear las co
 
 Conecte los puertos del módulo Ethernet a la red host.
 
-A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para obtener información sobre la configuración específica del sistema.
+A continuación se muestran algunos ejemplos típicos de cableado de red host. Consulta link:https://hwu.netapp.com["Hardware Universe de NetApp"^] para tu configuración específica del sistema.
 
 .Pasos
 . Conecte los puertos e9a y e9b al switch de red de datos Ethernet.
 +
 
-NOTE: No utilice los puertos e1b y e7b para conexiones de red del host. Utilice una tarjeta host independiente.
+NOTE: No utilices los puertos e1b y e7b para las conexiones de red del host. Utiliza una tarjeta de host independiente.
 
 +
 *Cable de 100 GbE*
@@ -105,7 +106,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[100GB Cable Ethernet]
 +
 image::../media/drw_70-90_network_cabling1_ieops-1654.svg[Cable a red Ethernet 100GB]
 
-. Conecte los switches de red host de 10/25 GbE.
+. Conecta tus tarjetas de 10/25 GbE a los switches de red del host.
 +
 *4 puertos, 10/25 GbE Host*
 
@@ -142,6 +143,15 @@ Los siguientes procedimientos de cableado muestran cómo conectar las controlado
 
 Para conocer la cantidad máxima de bandejas compatibles con el sistema de almacenamiento y todas las opciones de cableado, consulte link:https://hwu.netapp.com["Hardware Universe de NetApp"^].
 
+.Acerca de esta tarea
+El sistema de almacenamiento AFF C80 es compatible con las unidades NS224 que incorporen el módulo NSM100 o el NSM100B. Las principales diferencias entre ambos módulos son:
+
+* Los módulos de estante NSM100 utilizan puertos integrados e0a y e0b.
+* Los módulos de estante NSM100B utilizan los puertos e1a y e1b en la ranura 1.
+
+
+El siguiente ejemplo de cableado muestra los módulos NSM100 en los estantes NS224 cuando se hace referencia a los puertos del módulo de estante.
+
 [role="tabbed-block"]
 ====
 .Opción 1: Una bandeja de almacenamiento NS224
@@ -154,7 +164,7 @@ image::../media/oie_cable100_gbe_qsfp28.png[Cable de cobre QSFP28 de 100 GbE]
 
 .Pasos
 . Conecte el puerto e11a de la controladora A al puerto NSM A e0a.
-. Conecte la controladora A del puerto e11b al puerto NSM B e0b.
+. Conecta el puerto e11b del controlador A al puerto e0b del NSM B.
 +
 image:../media/drw_a70-90_1shelf_cabling_a_ieops-1731.svg["Controladora A e11a y e11b a una única bandeja NS224"]
 
@@ -178,9 +188,9 @@ image::../media/oie_cable100_gbe_qsfp28.png[Cable de cobre QSFP28 de 100 GbE]
 . En la controladora A, conecte los siguientes puertos:
 +
 .. Conecte el puerto e11a a la bandeja 1, NSM A, puerto e0a.
-.. Conecte el puerto e11b a la bandeja 2, puerto NSM B e0b.
-.. Conecte el puerto E8a a la bandeja 2, NSM A, puerto e0a.
 .. Conecte el puerto e8b a la bandeja 1, puerto NSM B e0b.
+.. Conecte el puerto E8a a la bandeja 2, NSM A, puerto e0a.
+.. Conecte el puerto e11b a la bandeja 2, puerto NSM B e0b.
 +
 image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Conexiones de controladora a bandeja para la controladora A"]
 
@@ -189,9 +199,9 @@ image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Conexiones de control
 . En la controladora B, conecte los siguientes puertos:
 +
 .. Conecte el puerto e11a a la bandeja 1, puerto NSM B e0a.
-.. Conecte el puerto e11b a la bandeja 2, NSM A, puerto e0b.
-.. Conecte el puerto E8a a la bandeja 2, puerto NSM B e0a.
 .. Conecte el puerto e8b a la bandeja 1, NSM A, puerto e0b.
+.. Conecte el puerto E8a a la bandeja 2, puerto NSM B e0a.
+.. Conecta el puerto e11b al shelf 2, puerto e0b del NSM A.
 +
 image:../media/drw_a70-90_2shelf_cabling_b_ieops-1734.svg["Conexiones de controladora a bandeja para la controladora B"]
 

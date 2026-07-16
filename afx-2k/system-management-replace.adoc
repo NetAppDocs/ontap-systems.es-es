@@ -13,7 +13,7 @@ summary: Sustituye el módulo de administración de sistemas de tu sistema de al
 [role="lead"]
 Sustituye el módulo de administración de sistemas de tu sistema de almacenamiento AFX 2K cuando presente un fallo o su firmware esté dañado. El proceso de sustitución consiste en apagar el controlador, sustituir el módulo de administración de sistemas averiado, reiniciar el controlador, actualizar las claves de licencia y devolver la pieza averiada a NetApp.
 
-El módulo de administración del sistema, ubicado en la parte posterior del controlador a la izquierda de la ranura 8, contiene componentes integrados para la administración del sistema, así como puertos para la administración externa.  El controlador de destino debe apagarse y desconectarse para reemplazar un módulo de administración del sistema dañado o reemplazar el medio de arranque.
+El módulo de administración de sistemas, situado en la parte trasera del controlador, a la izquierda de la ranura 8, contiene componentes integrados para la administración de sistemas, así como puertos para la administración externa. El controlador de destino debe estar apagado y desconectado de la alimentación para reemplazar un módulo de administración de sistemas defectuoso o reemplazar el soporte de arranque.
 
 El módulo Gestión del sistema tiene los siguientes componentes integrados:
 
@@ -47,8 +47,6 @@ Este procedimiento usa la siguiente terminología:
 
 [[step-1-shut-down-the-impaired-controller]]
 == Paso 1: Apague el controlador dañado
-
-Apague o tome el control de la controladora dañada.
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
@@ -106,12 +104,13 @@ El parámetro _-halt true_ lleva el nodo dañado al indicador LOADER.
 [[step-2-replace-the-impaired-system-management-module]]
 == Paso 2: Reemplace el módulo de gestión del sistema dañado
 
-Sustituya el módulo de gestión del sistema defectuoso.
+El módulo de administración de sistemas contiene el soporte de arranque y proporciona funciones de administración de sistemas. Debes retirar el módulo de administración de sistemas defectuoso, transferir el soporte de arranque al módulo de recambio y volver a instalar el módulo de recambio en el chasis.
 
+.Pasos
 . Retire el módulo Gestión del sistema:
 +
 
-NOTE: Asegúrese de que la separación de NVRAM se haya completado antes de continuar. Cuando el LED del módulo NV está apagado, NVRAM se separa. Si el LED parpadea, espere a que se detenga el parpadeo. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
+NOTE: Asegúrate de que se haya completado el proceso de vaciado de la NVRAM antes de continuar. Cuando el LED del módulo NV esté apagado, la NVRAM se habrá vaciado. Si el LED parpadea, espera a que deje de hacerlo. Si el parpadeo continúa durante más de 5 minutos, ponte en contacto con Technical Support para obtener ayuda.
 
 +
 image::../media/drw_afx_2k_sys_mgmt_remove_replace_ieops-2880.svg[Sustituya el módulo Gestión del sistema]
@@ -194,8 +193,9 @@ Soporte de arranque
 [[step-3-reboot-the-controller-module]]
 == Paso 3: Reinicie el módulo del controlador
 
-Reinicie el módulo del controlador.
+Tras sustituir el módulo de administración de sistemas, reinicia el controlador para restablecer el funcionamiento normal del par de alta disponibilidad. Debes encender el controlador, realizar una giveback parcial para activar el agregado raíz y luego completar la giveback total para que el controlador afectado vuelva a estar operativo.
 
+.Pasos
 . Vuelva a enchufar los cables de alimentación a la fuente de alimentación.
 +
 El sistema se reinicia, normalmente en el mensaje LOADER.
