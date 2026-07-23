@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: AFF A900, replace, boot, media, controller, directions, replace boot media, transfer image 
 summary: Debe quitar y abrir el módulo de la controladora, localizar y sustituir los medios de arranque en la controladora y, a continuación, transferir la imagen al medio de arranque de reemplazo. 
 ---
-= Reemplace el medio de arranque y prepárese para la recuperación de arranque manual - AFF A900
+= Sustituye el soporte de arranque en tu sistema AFF A900 usando el proceso de recuperación de arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe desconectar el módulo del controlador, extraer y abrir el módulo del controlador, localizar y sustituir el soporte de arranque en el controlador y, a continuación, transferir la imagen al soporte de arranque de reemplazo.
+El soporte de arranque de tu sistema AFF A900 almacena datos esenciales de firmware y configuración. El proceso de sustitución consiste en quitar el módulo controlador, retirar el soporte de arranque dañado, instalar el soporte de arranque de repuesto y luego transferir la imagen de ONTAP al soporte de arranque de repuesto usando una memoria USB.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 

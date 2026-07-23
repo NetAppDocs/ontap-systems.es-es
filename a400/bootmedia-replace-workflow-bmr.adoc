@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: a400, replace the boot media 
 summary: Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A400 revisando los requisitos de reemplazo, apagando el controlador, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema. 
 ---
-= Flujo de trabajo de recuperación automatizada de medios de arranque - AFF A400
+= Flujo de trabajo de reemplazo del soporte de arranque del AFF A400 usando el proceso automatizado de recuperación del arranque
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Comience a reemplazar el medio de arranque en su sistema de almacenamiento AFF A400 revisando los requisitos de reemplazo, apagando el controlador, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema.
+La recuperación automática de la imagen de arranque implica que el sistema identifique y seleccione automáticamente la opción de arranque adecuada. Utiliza la imagen de arranque en el nodo asociado para reinstalar ONTAP en el medio de arranque de reemplazo en su sistema de almacenamiento AFF A400 .
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

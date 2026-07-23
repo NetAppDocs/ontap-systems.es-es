@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: aff a250, replace a dimm 
 summary: Sustituye un módulo DIMM de tu controlador AFF A250 cuando el sistema detecte un exceso de errores CECC según las alertas de Health Monitor o errores ECC no corregibles que impidan que el sistema de almacenamiento arranque ONTAP. 
 ---
-= Sustituya un DIMM - AFF A250
+= Sustituye un módulo DIMM en tu sistema AFF A250 para solucionar errores de memoria
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Sustituye un módulo DIMM en tu sistema AFF A250 cuando el sistema de almacenamiento detecte un número excesivo de errores de memoria corregibles (CECC) o no corregibles. Estos errores pueden impedir que el sistema de almacenamiento arranque ONTAP.
+
 Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 
 .Acerca de esta tarea

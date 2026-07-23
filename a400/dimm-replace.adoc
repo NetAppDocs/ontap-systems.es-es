@@ -4,13 +4,15 @@ sidebar: sidebar
 keywords: aff a400, aff, a400, replace, dimm, controller, module, system, register, correctable, error, correction, code, ecc, system, panic, shut, down, impair, remove, controller, module, system, module, aggregate, two-node, metrocluster, configuration, replace a dimm, shut down the impaired controller, remove the controller module, replace system dimms, install the controller module, restore the controller module to operation, switch back aggregates in a two-node metrocluster configuration 
 summary: Sustituye un DIMM en tu módulo controlador AFF A400 cuando el sistema registre un número creciente de códigos de corrección de errores corregibles o errores ECC no corregibles. No reemplazar un DIMM defectuoso puede causar un pánico en el sistema. 
 ---
-= Sustituya un DIMM - AFF A400
+= Sustituye un módulo DIMM en tu sistema AFF A400 para solucionar errores de memoria
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Sustituye un módulo DIMM en tu sistema AFF A400 cuando el sistema de almacenamiento detecte un número excesivo de errores de memoria corregibles (CECC) o no corregibles. Estos errores pueden impedir que el sistema de almacenamiento arranque ONTAP.
+
 Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 
 Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
