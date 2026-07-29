@@ -2,16 +2,16 @@
 permalink: c30-60/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, boot the recovery image 
-summary: Tras instalar el nuevo dispositivo de arranque en su sistema de almacenamiento AFF C30 y AFF C80, puede iniciar el proceso de recuperación automática del dispositivo de arranque para restaurar la configuración desde el nodo asociado. Durante el proceso de recuperación, el sistema comprueba si el cifrado está habilitado y determina el tipo de cifrado de clave utilizado. Si el cifrado de clave está habilitado, el sistema le guiará por los pasos necesarios para restaurarlo. 
+summary: Después de instalar el nuevo dispositivo de arranque en tu sistema de almacenamiento AFF C30 o AFF C60, puedes iniciar el proceso automatizado de recuperación del dispositivo de arranque para restaurar la configuración desde el nodo asociado. Durante el proceso de recuperación, el sistema comprueba si el cifrado está activado y determina el tipo de cifrado de claves que se está usando. Si el cifrado de claves está activado, el sistema te guía por los pasos adecuados para restaurarlo. 
 ---
-= Recuperación automatizada de medios de arranque desde el nodo asociado: AFF C30 y AFF C80
+= Restaura la imagen de arranque en tu sistema de almacenamiento AFF C30 o AFF C60 usando el proceso automatizado de recuperación del arranque
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Tras instalar el nuevo dispositivo de arranque en su sistema de almacenamiento AFF C30 y AFF C80, puede iniciar el proceso de recuperación automática del dispositivo de arranque para restaurar la configuración desde el nodo asociado. Durante el proceso de recuperación, el sistema comprueba si el cifrado está habilitado y determina el tipo de cifrado de clave utilizado. Si el cifrado de clave está habilitado, el sistema le guiará por los pasos necesarios para restaurarlo.
+Después de instalar el nuevo dispositivo de arranque en tu sistema de almacenamiento AFF C30 o AFF C60, puedes iniciar el proceso automatizado de recuperación del dispositivo de arranque para restaurar la configuración desde el nodo asociado. Durante el proceso de recuperación, el sistema comprueba si el cifrado está activado y determina el tipo de cifrado de claves que se está usando. Si el cifrado de claves está activado, el sistema te guía por los pasos adecuados para restaurarlo.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

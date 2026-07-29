@@ -4,16 +4,16 @@ sidebar: sidebar
 keywords: aff c400, aff, c400, shut, down, impair, controller, check, status, onboard, encryption, keys, status, disable, automatic, giveback, version, ontap, system, run, pre-shutdown, check, pre-shutdown checks for onboard encryption keys 
 summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado: AFF C400
+= Comprueba el soporte de cifrado en el soporte de arranque de tu sistema de almacenamiento AFF C400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en el sistema de almacenamiento, debe verificar el estado y la compatibilidad de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Comprueba el soporte de cifrado en el soporte de arranque de tu sistema de almacenamiento AFF C400 antes de apagar el controlador afectado. Esto incluye verificar la compatibilidad de la versión de ONTAP con NetApp Volume Encryption (NVE) y confirmar la configuración del gestor de claves.
 
-Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"]
+Si tu sistema de almacenamiento está ejecutando ONTAP 9.17.1 o una versión posterior, usa el link:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"].
 
 
 
