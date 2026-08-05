@@ -31,12 +31,16 @@ Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink
 La imagen de recuperación se descarga desde la unidad flash USB.
 
 . Cuando se le solicite, ingrese el nombre de la imagen o presione *Enter* para aceptar la imagen predeterminada que se muestra entre corchetes.
-. Restaure el sistema de archivos var siguiendo el procedimiento correspondiente a su versión de ONTAP :
+. Restaure el sistema de archivos var:
 +
-[role="tabbed-block"]
-====
-.ONTAP 9.16.0 o anterior
---
+[cols="1,2"]
+|===
+| Si el sistema tiene... | Realice lo siguiente... 
+
+
+ a| 
+Una conexión de red y ejecuta ONTAP 9.16.0 o una versión anterior
+ a| 
 Complete los siguientes pasos en el controlador averiado y en el controlador asociado:
 
 .. *En el controlador averiado:* Pulse `Y` cuando ves `Do you want to restore the backup configuration now?`
@@ -68,9 +72,11 @@ NOTE: Si ve algún mensaje que no sea el de una restauración exitosa, póngase 
 
 
 
---
-.ONTAP 9.16.1 o posterior
---
+
+
+ a| 
+Una conexión de red y que esté ejecutando ONTAP 9.16.1 o una versión posterior
+ a| 
 Complete los siguientes pasos en el controlador averiado:
 
 .. Pulse `Y` cuando se le solicite restaurar la configuración de copia de seguridad.
@@ -89,8 +95,59 @@ Una vez finalizado correctamente el proceso de restauración, aparece el siguien
 
 
 
---
-====
+
+
+ a| 
+No hay conexión de red
+ a| 
+.. Pulsa  `N` cuando se te solicite para restaurar la configuración de backup.
+.. Reinicie el sistema cuando el sistema lo solicite.
+.. Seleccione la opción *Actualizar flash desde la configuración de copia de seguridad* (flash de sincronización) en el menú que se muestra.
++
+Si se te pide que continúes con la actualización, pulsa  `Y`.
+
+.. Pulsa  `Ctrl-C` cuando veas el menú de arranque.
+.. Debe realizar una de las siguientes acciones:
++
+*** Si el sistema no utiliza cifrado, seleccione _Opción 1 Arranque normal_ del menú de arranque.
+*** Si el sistema utiliza cifrado, vaya alink:bootmedia-encryption-restore.html["Restaure el cifrado"] .
+
+
+
+
+
+
+ a| 
+No hay conexión de red y está en una configuración de IP de MetroCluster
+ a| 
+.. Pulsa  `N` cuando se te solicite para restaurar la configuración de backup.
+.. Reinicie el sistema cuando el sistema lo solicite.
+.. Espere a que se conecten las conexiones de almacenamiento iSCSI.
++
+Puede continuar después de ver los siguientes mensajes:
+
++
+[listing]
+----
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_auxiliary, address: ip-address).
+date-and-time [node-name:iscsi.session.stateChanged:notice]: iSCSI session state is changed to Connected for the target iSCSI-target (type: dr_partner, address: ip-address).
+----
+.. Seleccione la opción *Actualizar flash desde la configuración de copia de seguridad* (flash de sincronización) en el menú que se muestra.
++
+Si se te pide que continúes con la actualización, pulsa  `Y`.
+
+.. Pulsa  `Ctrl-C` cuando veas el menú de arranque.
+.. Debe realizar una de las siguientes acciones:
++
+*** Si el sistema no utiliza cifrado, seleccione _Opción 1 Arranque normal_ del menú de arranque.
+*** Si el sistema utiliza cifrado, vaya alink:bootmedia-encryption-restore.html["Restaure el cifrado"] .
+
+
+
+
+|===
 . Conecte el cable de la consola al controlador asociado.
 . Devuelva el funcionamiento normal de la controladora y devuelva su almacenamiento:
 +
