@@ -2,16 +2,16 @@
 permalink: fas2600/caching-module-replace.html 
 sidebar: sidebar 
 keywords: fas2600, replace the caching module 
-summary: Debes sustituir el módulo de almacenamiento en caché del módulo controlador cuando tu sistema registre un único mensaje AutoSupport que indique que el módulo se ha desconectado. Si no lo haces, se produce una degradación del rendimiento. 
+summary: Sustituye el módulo de almacenamiento en caché de tu sistema FAS2600 cuando tu sistema registre un solo mensaje de AutoSupport indicando que el módulo se ha desconectado. Si no lo haces, el rendimiento disminuirá. 
 ---
-= Sustituya el módulo de almacenamiento en caché - FAS2600
+= Sustituye el módulo de almacenamiento en caché de tu sistema FAS2600
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.
+Sustituye el módulo de almacenamiento en caché de tu sistema FAS2600 cuando tu sistema registre un solo mensaje AutoSupport (ASUP) que indique que el módulo se ha desconectado. Si no lo haces, el rendimiento disminuirá.
 
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
@@ -29,8 +29,6 @@ Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes pro
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir y ser el estado, es necesario corregir el problema antes de apagar la controladora con deterioro.
 
 link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^]
-
-Tal vez desee borrar el contenido del módulo de almacenamiento en caché antes de reemplazarlo.
 
 . Aunque los datos del módulo de almacenamiento en caché están cifrados, es posible que desee borrar los datos del módulo de almacenamiento en caché dañado y verificar que el módulo de almacenamiento en caché no tiene datos:
 +
@@ -112,7 +110,7 @@ image::../media/drw_2600_opening_pcm_cover.png[Apertura o cierre del módulo del
 [[step-3-replace-a-caching-module]]
 == Paso 3: Sustituya un módulo de almacenamiento en caché
 
-Para sustituir un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos.
+El módulo de almacenamiento en caché aparece indicado como "tarjeta PCIe M.2" en la etiqueta del controlador. Localiza la ranura en el interior del controlador y sigue esta secuencia de pasos.
 
 Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
 

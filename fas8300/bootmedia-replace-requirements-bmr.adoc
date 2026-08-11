@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas8300, replace the boot media 
 summary: Antes de reemplazar el medio de arranque en su sistema FAS8300 o FAS8700 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. 
 ---
-= Requisitos para la recuperación automatizada de medios de arranque: FAS8300 y FAS8700
+= Revisa los requisitos para la recuperación automática del soporte de arranque en tu sistema FAS8300 o FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque en su FAS8300 o FAS8700, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso.  Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) en el controlador dañado no esté defectuoso y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
+Antes de sustituir el soporte de arranque en tu sistema FAS8300 o FAS8700, verifica que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador afectado no presenta fallos y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

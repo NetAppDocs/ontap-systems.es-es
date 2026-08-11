@@ -4,16 +4,18 @@ sidebar: sidebar
 keywords: fas9500, replace nvram 
 summary: 'El módulo NVRAM consta de NVRAM11 y DIMM, y hasta dos módulos Flash Cache SSD NVMe (Flash Cache o módulos de almacenamiento en caché) por módulo NVRAM.' 
 ---
-= Sustituya el módulo NVRAM y/o los módulos DIMM NVRAM - FAS9500
+= Sustituye el módulo NVRAM o el DIMM NVRAM de tu sistema FAS9500
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-El módulo NVRAM consta de NVRAM11 y DIMM. Puede sustituir un módulo NVRAM con fallos o los DIMM dentro del módulo NVRAM. Para sustituir un módulo NVRAM con fallos, debe quitarlo del chasis, mover los DIMM al módulo de reemplazo e instalar el módulo NVRAM de reemplazo en el chasis.
+El módulo de NVRAM de tu sistema FAS9500 está compuesto por el NVRAM11 y los DIMM. Puedes reemplazar un módulo de NVRAM defectuoso o un DIMM de NVRAM para que tu sistema siga funcionando normalmente.
 
-Para sustituir y el DIMM de NVRAM, debe extraer el módulo NVRAM del chasis, sustituir el DIMM con errores en el módulo y, a continuación, volver a instalar el módulo NVRAM.
+Para sustituir un módulo de NVRAM averiado, debes extraerlo del chasis, trasladar los módulos DIMM al módulo de recambio e instalar el módulo de NVRAM de recambio en el chasis.
+
+Para sustituir un DIMM de NVRAM, debes extraer el módulo de NVRAM del chasis, reemplazar el DIMM defectuoso en el módulo y luego volver a instalar el módulo de NVRAM.
 
 .Acerca de esta tarea
 Debido a que el ID del sistema se deriva del módulo NVRAM, si se reemplaza el módulo, los discos que pertenecen al sistema se reasignan a un nuevo ID del sistema.
@@ -103,7 +105,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 [[step-2-replace-the-nvram-module]]
 == Paso 2: Sustituya el módulo NVRAM
 
-Para sustituir el módulo NVRAM, localizarlo en la ranura 6 del chasis y seguir la secuencia específica de pasos.
+Para sustituir el módulo NVRAM, búsquelo en la ranura 6 del chasis y siga la secuencia específica de pasos.
 
 .Pasos
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
@@ -266,10 +268,10 @@ Para arrancar ONTAP desde el aviso del CARGADOR, introduzca `bye`.
 
 
 
-[[step-5-reassigning-disks]]
+[[step-5-reassign-disks]]
 == Paso 5: Reasignar discos
 
-Deberá confirmar el cambio de ID del sistema cuando arranque la controladora de reemplazo y, a continuación, compruebe que se ha implementado el cambio.
+Debes confirmar el cambio de ID del sistema al arrancar el controlador de sustitución y luego verificar que el cambio es correcto.
 
 
 CAUTION: La reasignación de discos solo se necesita al sustituir el módulo NVRAM y no se aplica al reemplazo de DIMM de NVRAM.
@@ -333,7 +335,7 @@ Disk  Aggregate Home  Owner  DR Home  Home ID    Owner ID  DR Home ID Reserver  
 ----
 . Si el sistema está en una configuración MetroCluster, supervise el estado de la controladora: `metrocluster node show`
 +
-La configuración de MetroCluster tarda unos minutos después del reemplazo y vuelve a su estado normal, momento en el que cada controladora mostrará un estado configurado, con mirroring de DR habilitado y un modo normal. La `metrocluster node show -fields node-systemid` El resultado del comando muestra el ID del sistema antiguo hasta que la configuración de MetroCluster vuelve a ser un estado normal.
+La configuración de MetroCluster tarda unos minutos en volver al estado normal tras la sustitución, momento en el que cada controlador muestra un estado configurado, con DR Mirroring activado y un modo normal. La salida del comando  `metrocluster node show -fields node-systemid` muestra el antiguo ID del sistema hasta que la configuración de MetroCluster vuelve al estado normal.
 
 . Si la controladora está en una configuración MetroCluster, según el estado del MetroCluster, compruebe que el campo ID de inicio de recuperación ante desastres muestra el propietario original del disco si el propietario original es una controladora del sitio de recuperación ante desastres.
 +

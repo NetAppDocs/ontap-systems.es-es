@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8300, fas8700, replace, pcie, mezzanine, card, controller, metrocluster, reinstall, controller, aggregate, reinstall, controller 
 summary: Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cualquier módulo SFP y QSFP de las tarjetas, sustituir el PCIe o la tarjeta intermedia con error y volver a conectar las tarjetas. 
 ---
-= Sustituya una tarjeta PCIe o intermedia - FAS8300 y FAS8700
+= Sustituye una tarjeta PCIe o mezzanine en tu sistema FAS8300 o FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cabl
 Para sustituir una tarjeta PCIe o intermedia, debe desconectar los cables y cualquier módulo SFP y QSFP de las tarjetas, sustituir el PCIe o la tarjeta intermedia con error y volver a conectar las tarjetas.
 
 * Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
-* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+* El resto de componentes del sistema deben funcionar correctamente. Si no es así, debes ponerte en contacto con soporte técnico.
 
 
 
@@ -244,7 +244,7 @@ image:../media/drw_A400_Replace-PCIe-cards.png["Extracción de las tarjetas PCIe
 +
 La tarjeta vertical se eleva ligeramente del módulo del controlador.
 
-.. Levante la tarjeta vertical y déjela a un lado en una superficie plana estable,
+.. Levanta el tubo de elevación en línea recta y colócalo a un lado sobre una superficie estable y plana.
 
 
 . Extraiga la tarjeta PCIe de la tarjeta vertical:
@@ -255,7 +255,7 @@ La tarjeta vertical se eleva ligeramente del módulo del controlador.
 .. Extraiga la tarjeta PCIe de la tarjeta vertical empujando suavemente el soporte y extráigala del zócalo.
 
 
-. Instale la tarjeta PCIe de repuesto en la tarjeta vertical alineando la tarjeta con la toma, presione la tarjeta en la toma y, a continuación, cierre el panel lateral de la tarjeta vertical, si existe.
+. Instala la tarjeta PCIe de recambio en el riser alineando la tarjeta con el zócalo, presionando la tarjeta en el zócalo y luego cerrando el panel lateral del riser, si está presente.
 +
 Asegúrese de alinear correctamente la tarjeta en la ranura y ejercer una presión uniforme en la tarjeta cuando la asiente en la toma. La tarjeta PCIe debe estar colocada de forma completa y uniforme en la ranura.
 

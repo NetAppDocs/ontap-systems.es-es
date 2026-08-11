@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8300, fas8700, shut, chassis, controller, replace, remove, swap, verify, install, power, supply, metrocluster, aggregates, replacement, process, equipment, rack, ha, state, system 
 summary: Mueva los ventiladores, las unidades de disco duro y el módulo o los módulos del controlador del chasis dañado al nuevo chasis, y cambie el chasis dañado del bastidor del equipo o del armario del sistema con el nuevo chasis del mismo modelo que el chasis dañado. 
 ---
-= Mueva y sustituya hardware - FAS8300 y FAS8700
+= Sustituye el chasis en tu sistema FAS8300 o FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -80,7 +80,7 @@ Debe quitar el chasis existente del rack del equipo o armario del sistema antes 
 . Quite los tornillos de los puntos de montaje del chasis.
 . Con dos personas, deslice el chasis antiguo fuera de los rieles del rack en un armario del sistema o rack del equipo y, a continuación, colóquelo aparte.
 . Si usted no está ya conectado a tierra, correctamente tierra usted mismo.
-. Con dos personas, instale el chasis de reemplazo en el rack o armario del sistema de equipamiento guiando el chasis hacia los rieles para rack en un armario del sistema o rack del equipo.
+. Entre dos personas, instala el chasis de recambio en el bastidor de equipos o en el armario del sistema guiando el chasis sobre los rieles del bastidor dentro del armario del sistema o del bastidor de equipos.
 . Deslice el chasis completamente en el bastidor del equipo o en el armario del sistema.
 . Fije la parte frontal del chasis al rack del equipo o al armario del sistema con los tornillos que quitó del chasis antiguo.
 . Si todavía no lo ha hecho, instale el panel frontal.
@@ -93,7 +93,7 @@ Debe quitar el chasis existente del rack del equipo o armario del sistema antes 
 
 Después de instalar los módulos del controlador en el nuevo chasis, debe arrancarlo.
 
-Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+En el caso de los pares de alta disponibilidad (HA) con dos módulos controladores en el mismo chasis, instala los módulos controladores en el orden correcto. Cada controlador intenta reiniciarse tan pronto como queda completamente encajado en el chasis.
 
 .Pasos
 . Alinee el extremo del módulo del controlador con la abertura del chasis y, a continuación, empuje suavemente el módulo del controlador hasta la mitad del sistema.

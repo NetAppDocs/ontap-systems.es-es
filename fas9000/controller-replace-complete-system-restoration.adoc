@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a700, fas9000, storage encryption, licenses, storage encryption, volume encryption, serial number, metrocluster, switchback 
 summary: Para completar el procedimiento de sustitución y restablecer el funcionamiento completo del sistema, debes volver a cablear el almacenamiento, restaurar la configuración de NetApp Storage Encryption si es necesario e instalar licencias para el nuevo controlador. 
 ---
-= Restauración completa del sistema - FAS9000
+= Realiza la sustitución del controlador de tu sistema FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para completar el procedimiento de sustitución y restaurar el sistema a pleno funcionamiento, debe recuperar el almacenamiento, restaurar la configuración de cifrado del almacenamiento de NetApp (si fuera necesario) e instalar licencias para la nueva controladora. Debe completar una serie de tareas antes de restaurar el sistema a pleno funcionamiento.
+Para completar la sustitución del controlador de tu sistema FAS9000, vuelve a cablear el almacenamiento, restaura la configuración de NetApp Storage Encryption si es necesario e instala las licencias para el nuevo controlador.
 
 
 
@@ -50,8 +50,8 @@ NOTE: Las claves de licencia nuevas que necesita se generan automáticamente y s
 
 
 
-[[step-2-verifying-lifs-and-registering-the-serial-number]]
-== Paso 2: Verificación de las LIF y registro del número de serie
+[[step-2-verify-lifs-and-register-the-serial-number]]
+== Paso 2: Verifique las LIF y registre el número de serie
 
 Antes de devolver el nodo _replacement_ al servicio, debes verificar que los LIFs están en sus puertos de origen, y registrar el número de serie del nodo _replacement_ si AutoSupport está habilitado, comprobar la salud de tu clúster, cerrar cualquier ventana de mantenimiento y restablecer el giveback automático.
 
@@ -73,8 +73,8 @@ Si alguno de los LIF se muestra como false, este se revierte a sus puertos princ
 
 
 
-[[step-3-metrocluster-only-switching-back-aggregates-in-a-two-node-metrocluster-configuration]]
-== Paso 3: (Solo MetroCluster): Cambio de agregados en una configuración MetroCluster de dos nodos
+[[step-3-metrocluster-only-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
+== Paso 3 (solo para MetroCluster): Cambia de nuevo los agregados en una configuración de MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
 

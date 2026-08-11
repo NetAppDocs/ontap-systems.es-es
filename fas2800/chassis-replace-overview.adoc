@@ -1,21 +1,21 @@
 ---
 permalink: fas2800/chassis-replace-overview.html 
 sidebar: sidebar 
-keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
-summary: Reemplace un chasis dañado el nuevo chasis del mismo modelo que el chasis dañado. 
+keywords: fas2820, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: Para sustituir el chasis de tu sistema FAS2820, debes trasladar las fuentes de alimentación, los discos duros y el módulo o los módulos controladores del chasis averiado al nuevo chasis del mismo modelo. 
 ---
-= Descripción general de la sustitución del chasis - FAS2820
+= Revisa los requisitos antes de sustituir el chasis de tu sistema FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para sustituir el chasis, debe mover las fuentes de alimentación, las unidades de disco duro y el módulo o los módulos de la controladora del chasis dañado al nuevo chasis, y cambiar el chasis dañado del bastidor del equipo o del armario del sistema por el nuevo chasis del mismo modelo que el chasis dañado.
+Para sustituir el chasis de tu sistema FAS2820, mueve las fuentes de alimentación, los discos duros y los módulos controladores del chasis con fallo al nuevo chasis. Luego, retira el chasis con fallo del bastidor o del armario del sistema e instala en su lugar el nuevo chasis del mismo modelo.
 
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+El resto de componentes del sistema deben funcionar correctamente. Si no es así, ponte en contacto con soporte técnico.
 
 * Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema.
 * Este procedimiento se escribe con la suposición de que va a mover todas las unidades y módulos o módulos de controladora al nuevo chasis, y que el chasis es un nuevo componente de NetApp.
-* Este procedimiento es disruptivo. En el caso de un clúster de dos controladoras, tendrá una interrupción del servicio completa y una interrupción parcial en un clúster de varios nodos.
+* Este procedimiento provoca interrupciones. En un clúster con dos controladores, este procedimiento provoca una interrupción total del servicio y, en un clúster con varios nodos, provoca una interrupción parcial.
 

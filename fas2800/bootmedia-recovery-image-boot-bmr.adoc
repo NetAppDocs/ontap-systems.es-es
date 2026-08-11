@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-recovery-image-boot-bmr.html 
 sidebar: sidebar 
-keywords: fas2800, boot the recovery image 
-summary: Restaure la imagen ONTAP en el medio de arranque de reemplazo en su sistema fas2800.  El proceso implica iniciar el proceso de recuperación de arranque desde el indicador LOADER y supervisar el proceso de recuperación hasta que se complete y el nodo se reinicie. 
+keywords: fas2820, boot the recovery image 
+summary: Restaura la imagen de ONTAP en el soporte de arranque de repuesto de tu sistema FAS2820. El proceso consiste en iniciar el proceso de recuperación del arranque desde el indicador LOADER y supervisar dicho proceso hasta que finalice y el nodo se reinicie. 
 ---
-= Recuperación automatizada de medios de arranque desde el nodo asociado - FAS2800
+= Restaura la imagen de arranque en tu sistema FAS2820 usando el proceso automatizado de recuperación del arranque
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Después de instalar el nuevo dispositivo de medio de arranque en su sistema FAS2800, puede iniciar el proceso de recuperación automática del medio de arranque para restaurar la configuración desde el nodo asociado. Durante la recuperación, el sistema comprueba si el cifrado está habilitado y determina el tipo de cifrado de clave utilizado. Si el cifrado de clave está habilitado, el sistema le guiará por los pasos necesarios para restaurarlo.
+Después de instalar el nuevo dispositivo de arranque en tu sistema FAS2820, puedes iniciar el proceso automatizado de recuperación del dispositivo de arranque para restaurar la configuración desde el nodo asociado. Durante el proceso de recuperación, el sistema comprueba si el cifrado está activado y determina el tipo de cifrado de claves que se está usando. Si el cifrado de claves está activado, el sistema te guía por los pasos adecuados para restaurarlo.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

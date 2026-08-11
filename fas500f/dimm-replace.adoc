@@ -4,16 +4,16 @@ sidebar: sidebar
 keywords: fas500f, replace dimms 
 summary: Debes sustituir un módulo DIMM en el módulo controlador cuando tu sistema registre un número creciente de códigos de corrección de errores corregibles. Si no lo haces, se produce un pánico en el sistema. 
 ---
-= Sustituya un módulo DIMM - FAS500f
+= Sustituye un módulo DIMM en tu sistema FAS500f para solucionar errores de memoria
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
+Debes sustituir un módulo DIMM del controlador cuando tu sistema de almacenamiento detecte errores, como un número excesivo de errores CECC (códigos de corrección de errores corregibles) según las alertas del Health Monitor, o errores ECC no corregibles. Estos errores suelen deberse a un fallo en un único módulo DIMM que impide que el sistema de almacenamiento arranque ONTAP.
 
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+Si algún otro componente del sistema no funciona correctamente, ponte en contacto con soporte técnico.
 
 Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
@@ -123,7 +123,7 @@ image:../media/icon_round_2.png["Número de llamada 2"]
 Mecanismo de cierre
 
 |===
-. Con ambas manos, sujete los lados del módulo del controlador y extráigalo suavemente del chasis y configúrelo sobre una superficie plana y estable.
+. Sujeta el módulo del controlador con ambas manos y sácalo con cuidado del chasis, luego colócalo sobre una superficie plana y estable.
 . Gire el tornillo de mano de la parte frontal del módulo del controlador hacia la izquierda y abra la cubierta del módulo del controlador.
 +
 image::../media/drw_a250_open_controller_module_cover.png[Apertura de la cubierta del módulo del controlador]
@@ -177,7 +177,7 @@ NOTE: Sujete el módulo DIMM por los bordes para evitar la presión sobre los co
 
 . Inserte el módulo DIMM de repuesto directamente en la ranura.
 +
-Los módulos DIMM se ajustan firmemente al zócalo. Si no es así, vuelva a insertar el DIMM para alinearlo con el zócalo.
+Los módulos DIMM deben encajar perfectamente en el zócalo. Si un módulo DIMM no encaja bien, vuelve a insertarlo para alinearlo con el zócalo.
 
 . Inspeccione visualmente el módulo DIMM para comprobar que está alineado de forma uniforme y completamente insertado en el zócalo.
 
@@ -216,8 +216,8 @@ Tornillo de apriete manual
 |===
 . Inserte el módulo de la controladora en el chasis:
 +
-.. Asegúrese de que los brazos del mecanismo de bloqueo están bloqueados en la posición completamente extendida.
-.. Con ambas manos, alinee y deslice suavemente el módulo del controlador en los brazos del mecanismo de bloqueo hasta que se detenga.
+.. Comprueba que los brazos del mecanismo de bloqueo estén bloqueados en la posición totalmente extendida.
+.. Con ambas manos, alinea y desliza suavemente el módulo del mando en los brazos del mecanismo de enclavamiento hasta que se detenga.
 .. Coloque los dedos de índice a través de los orificios de los dedos desde el interior del mecanismo de bloqueo.
 .. Presione los pulgares hacia abajo en las lengüetas naranjas situadas en la parte superior del mecanismo de bloqueo y empuje suavemente el módulo del controlador sobre el tope.
 .. Suelte los pulgares de la parte superior de los mecanismos de bloqueo y siga presionando hasta que los mecanismos de bloqueo encajen en su lugar.
@@ -232,7 +232,7 @@ El módulo del controlador debe estar completamente insertado y alineado con los
 . Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
 +
 
-NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+NOTE: Conectas el resto de los cables al módulo controlador más adelante en este procedimiento.
 
 
 

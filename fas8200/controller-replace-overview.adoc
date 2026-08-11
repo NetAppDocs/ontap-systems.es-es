@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8200, prerequisite, replace the controller module 
 summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
 ---
-= Descripción general de la sustitución del módulo del controlador - FAS8200
+= Revisa los requisitos antes de sustituir el controlador de tu sistema FAS8200
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -34,9 +34,9 @@ Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimie
 Debe realizar la reasignación de las unidades de acuerdo con las instrucciones del procedimiento.
 
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
-* Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
+* Debe sustituir un módulo de controladora por un módulo de controladora del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
 * No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
-* En este procedimiento, el dispositivo de arranque pasa del controlador dañado al controlador _regrel_ de modo que el controlador _regrel_ se arranque en la misma versión de ONTAP que el módulo de controlador antiguo.
+* En este procedimiento, el dispositivo de arranque se traslada del controlador defectuoso al controlador _de sustitución_ para que el controlador _de sustitución_ se inicie con la misma versión de ONTAP que el módulo del controlador antiguo.
 * Todas las tarjetas PCIe que se hayan movido del módulo de controladora antiguo al módulo de controladora nuevo o se hayan añadido del inventario de las instalaciones del cliente existente deben contar con la compatibilidad del módulo de controladora de reemplazo.
 +
 https://hwu.netapp.com["Hardware Universe de NetApp"]

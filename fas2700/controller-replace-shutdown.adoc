@@ -1,16 +1,18 @@
 ---
 permalink: fas2700/controller-replace-shutdown.html 
 sidebar: sidebar 
-keywords: fas2700, aff a220, shut down the impaired controller 
-summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+keywords: fas2700, shut down the impaired controller 
+summary: Apaga el controlador defectuoso de tu sistema FAS2700 antes de reemplazarlo, tomándolo y deteniéndolo hasta el prompt LOADER. 
 ---
-= Apague el controlador averiado - FAS2700
+= Apaga el controlador defectuoso de tu sistema FAS2700 antes de reemplazarlo
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Apaga el controlador defectuoso de tu sistema FAS2700 antes de reemplazarlo, tomándolo y deteniéndolo hasta el prompt LOADER.
+
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
 .Acerca de esta tarea

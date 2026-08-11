@@ -2,24 +2,24 @@
 permalink: fas2600/power-supply-swap-out.html 
 sidebar: sidebar 
 keywords: fas2600, power supply replacement 
-summary: El intercambio de una fuente de alimentación implica apagar, desconectar y retirar la fuente de alimentación antigua e instalar, conectar y encender la fuente de alimentación de repuesto. 
+summary: Realiza un intercambio en caliente de una fuente de alimentación en tu sistema FAS2600 apagando, desconectando y retirando la unidad con error, luego instala y vuelve a conectar la de reemplazo. 
 ---
-= Cambie un suministro de alimentación: FAS2600
+= Intercambia en caliente una fuente de alimentación en tu sistema FAS2600
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-El intercambio de una fuente de alimentación implica apagar, desconectar y retirar la fuente de alimentación antigua e instalar, conectar y encender la fuente de alimentación de repuesto.
+Cambia en caliente una fuente de alimentación en tu sistema FAS2600 apagando, desconectando y retirando la fuente de alimentación antigua, luego instala, conecta y enciende la fuente de alimentación de reemplazo.
 
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+Si algún otro componente del sistema no funciona correctamente, ponte en contacto con el soporte técnico.
 
 * Los sistemas de alimentación son redundantes y intercambiables en caliente.
 * Este procedimiento se escribe para sustituir una fuente de alimentación a la vez.
 +
 
-NOTE: La refrigeración está integrada con la fuente de alimentación, por lo que debe sustituir la fuente de alimentación en un plazo de dos minutos tras la extracción para evitar el sobrecalentamiento debido a la reducción del flujo de aire. Como el chasis proporciona una configuración de refrigeración compartida para los dos nodos de alta disponibilidad, una demora más de dos minutos apagará todos los módulos de la controladora del chasis. Si ambos módulos de controlador se apagan, asegúrese de insertar ambas fuentes de alimentación, apáguela durante 30 segundos y, a continuación, encienda ambos.
+NOTE: La refrigeración está integrada en la fuente de alimentación, así que debes volver a colocar la fuente de alimentación en un plazo de dos minutos tras retirarla para evitar el sobrecalentamiento por la reducción del flujo de aire. Como el chasis proporciona una configuración de refrigeración compartida para los dos nodos HA, un retraso de más de dos minutos apaga todos los módulos controladores del chasis. Si ambos módulos controladores se apagan, asegúrate de que ambas fuentes de alimentación estén insertadas, apágalas ambas durante 30 segundos y luego enciéndelas de nuevo.
 
 * El número de suministros de alimentación en el sistema depende del modelo.
 * Las fuentes de alimentación están de alcance automático.
@@ -62,7 +62,7 @@ NOTE: No ejerza demasiada fuerza al deslizar la fuente de alimentación en el si
 
 
 +
-Una vez restaurada la alimentación de la fuente de alimentación, el LED de estado debería ser verde.
+Después de que se restablezca la alimentación eléctrica a la fuente de alimentación, el LED de estado debería estar en verde.
 
 . Encienda la fuente de alimentación nueva y, a continuación, compruebe el funcionamiento de los LED de actividad del suministro de alimentación.
 +

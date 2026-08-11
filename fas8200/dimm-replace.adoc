@@ -2,18 +2,18 @@
 permalink: fas8200/dimm-replace.html 
 sidebar: sidebar 
 keywords: fas8200, replace a dimm 
-summary: Debes sustituir un módulo DIMM en el módulo controlador cuando tu sistema registre un número creciente de códigos de corrección de errores corregibles. Si no lo haces, se produce un pánico en el sistema. 
+summary: 'Debes sustituir un DIMM en el módulo controlador cuando tu sistema de almacenamiento informe de un número excesivo de errores corregibles de código de corrección de errores (CECC) identificados por alertas de Health Monitor, o errores ECC no corregibles provocados por el fallo de un solo DIMM que impida que el sistema de almacenamiento arranque ONTAP.' 
 ---
-= Sustituya un DIMM - FAS8200
+= Sustituye un módulo DIMM en tu sistema FAS8200 para solucionar los errores de memoria
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe sustituir un DIMM en la controladora cuando el sistema de almacenamiento encuentra errores como, por ejemplo, errores excesivos de CECC (códigos de corrección de errores corregibles) basados en alertas de supervisión de estado o errores de ECC no corregibles, normalmente causados por un único fallo de DIMM que impide que el sistema de almacenamiento arranque ONTAP.
+Debes sustituir un DIMM en el módulo controlador cuando tu sistema de almacenamiento informe de un número excesivo de errores corregibles de código de corrección de errores (CECC) identificados por alertas de Health Monitor, o errores ECC no corregibles provocados por el fallo de un solo DIMM que impida que el sistema de almacenamiento arranque ONTAP.
 
-Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+El resto de componentes del sistema deben funcionar correctamente. Si no es así, ponte en contacto con soporte técnico.
 
 Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
@@ -306,7 +306,7 @@ La muesca entre las patillas del DIMM debe alinearse con la lengüeta del zócal
 
 . Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
 +
-El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+El DIMM encaja perfectamente en la ranura, pero debería introducirse con facilidad. Si no es así, vuelve a alinear el DIMM con la ranura y vuelve a insertarlo.
 
 +
 

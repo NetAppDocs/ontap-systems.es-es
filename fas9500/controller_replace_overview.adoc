@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: FAS9500 
 summary: Debe revisar los requisitos previos del procedimiento de reemplazo y seleccionar el correcto para su versión del sistema operativo ONTAP. 
 ---
-= Sustituya el módulo del controlador - FAS9500
+= Revisa los requisitos antes de sustituir el controlador de tu sistema FAS9500
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -35,7 +35,7 @@ Si este es el procedimiento que debe utilizar, tenga en cuenta que el procedimie
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 * Debe sustituir un módulo de controlador por un módulo de controlador del mismo tipo de modelo. No puede actualizar su sistema simplemente reemplazando el módulo del controlador.
 * No es posible cambiar ninguna unidad o bandeja de unidades como parte de este procedimiento.
-* En este procedimiento, el dispositivo de arranque pasa del nodo dañado al nodo de sustitución de modo que el nodo de sustitución se arranque en la misma versión de ONTAP que el módulo de la controladora anterior.
+* En este procedimiento, el dispositivo de arranque se traslada del nodo averiado al nodo de sustitución, de modo que el nodo de sustitución se inicie con la misma versión de ONTAP que el módulo controlador antiguo.
 * Es importante que aplique los comandos de estos pasos en los sistemas correctos:
 +
 ** El nodo dañado es el nodo que se va a reemplazar.

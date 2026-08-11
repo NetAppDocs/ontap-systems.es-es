@@ -2,18 +2,17 @@
 permalink: fas9500/chassis_replace_shutdown.html 
 sidebar: sidebar 
 keywords: aff fas9500, shutdown the controllers 
-summary: Para sustituir el chasis, debe apagar las controladoras. 
+summary: Antes de poder sustituir el chasis, debes apagar el controlador averiado de tu sistema FAS9500. 
 ---
-= Apague el controlador dañado - FAS9500
+= Apaga el controlador FAS9500 para sustituir el chasis
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
-
-
-
-[[shutdown-the-impaired-controller-fas9500]]
-== Apague el controlador dañado - FAS9500
 
 [role="lead"]
+Antes de poder sustituir el chasis, debes apagar el controlador averiado de tu sistema FAS9500.
+
 Este procedimiento es para sistemas con configuraciones de dos nodos. Para obtener más información sobre el cierre correcto al realizar el mantenimiento de un cluster, consulte https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_is_the_procedure_for_graceful_shutdown_and_power_up_of_a_storage_system_during_scheduled_power_outage["Apagar y encender sin problemas la Guía de resolución del sistema de almacenamiento: Base de conocimientos de NetApp"].
 
 .Antes de empezar

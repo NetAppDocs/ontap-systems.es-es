@@ -1,16 +1,17 @@
 ---
 permalink: fas2800/chassis-replace-complete-system-restore-rma.html 
 sidebar: sidebar 
-keywords: fas2800, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
-summary: Debe comprobar el estado HA del chasis, conmutar los agregados y devolver la pieza fallida a NetApp, tal y como se describe en las instrucciones de la RMA que se suministran con el kit. 
+keywords: fas2820, replace, chassis, shut down, controller, metrocluster, power, supply, ha, state, controller, configuration, switch, aggregates, replace, move, remove, swap 
+summary: 'Debes comprobar el estado de alta disponibilidad (HA) del chasis, restablecer los agregados de conmutación y devolver la pieza defectuosa a NetApp para completar la sustitución del chasis de tu sistema FAS2820, como se describe en las instrucciones de RMA incluidas con el kit.' 
 ---
-= Restaurar y verificar la configuración - FAS2820
+= Realiza la sustitución del chasis de tu sistema FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
-Compruebe que el estado de alta disponibilidad del chasis ponga en marcha el sistema y devuelva la pieza fallida a la NetApp tal y como se describe en las instrucciones de la RMA que se suministran con el kit.
+[role="lead"]
+Verifica el estado de alta disponibilidad (HA) del chasis, vuelve a conectar los agregados y devuelve la pieza con error a NetApp para completar el reemplazo del chasis de tu sistema FAS2820, como se describe en las instrucciones de RMA incluidas con el kit.
 
 
 
@@ -48,9 +49,9 @@ El valor de la condición de alta disponibilidad puede ser uno de los siguientes
 == Paso 2: Abra el sistema
 
 . Si no lo ha hecho, vuelva a conectar los cables de alimentación a las PSU.
-. Encienda las fuentes de alimentación cambiando el interruptor de balancín a *ON* y espere a que los controladores se enciendan por completo.
+. Enciende las fuentes de alimentación colocando el interruptor basculante en la posición *ON* y espera a que los controladores se enciendan por completo.
 . Compruebe si hay alguna luz de fallo en la parte delantera y trasera del chasis y las controladoras después del encendido.
-. Conéctese a la dirección IP de SP o BMC de los nodos a través de SSH. Esta será la misma dirección utilizada para apagar los nodos.
+. Conéctate a la dirección IP del SP o del BMC de los nodos a través de SSH. Esta es la misma dirección que se utiliza para apagar los nodos.
 . Realice comprobaciones de estado adicionales, como se describe en https://kb.netapp.com/onprem/ontap/os/How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP["How_to_perform_a_cluster_health_check_with_a_script_in_ONTAP"^]
 . Si se activó una ventana de mantenimiento de AutoSupport, finalice mediante el `system node autosupport invoke -node * -type all -message MAINT=END` comando.
 

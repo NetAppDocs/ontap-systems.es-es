@@ -2,16 +2,16 @@
 permalink: fas50/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: fas50, replace the boot media 
-summary: 'Antes de reemplazar el medio de arranque en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.' 
+summary: 'Antes de sustituir el soporte de arranque en tu sistema de almacenamiento FAS50, asegúrate de que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de repuesto correcto, confirmar que el puerto e0M (llave inglesa) del controlador afectado funciona bien y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).' 
 ---
-= Requisitos para la recuperación automatizada de medios de arranque - FAS50
+= Revisa los requisitos para la recuperación automática del soporte de arranque en tu sistema FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque en su sistema de almacenamiento FAS50, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
+Antes de sustituir el soporte de arranque en tu sistema de almacenamiento FAS50, asegúrate de que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de repuesto correcto, confirmar que el puerto e0M (llave inglesa) del controlador afectado funciona bien y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

@@ -2,22 +2,22 @@
 permalink: fas-70-90/io-module-hotswap.html 
 sidebar: sidebar 
 keywords: fas70, fas90, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
-summary: Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento FAS 70 o FAS 90 si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP. 
+summary: Puedes realizar un intercambio en caliente de un módulo de E/S Ethernet en tu sistema de almacenamiento FAS70 o FAS90 si un módulo falla y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP. 
 ---
-= Intercambia en caliente un módulo de E/S - FAS 70 y FAS 90
+= Realiza un intercambio en caliente de un módulo de E/S en tu sistema FAS70 o FAS90 sin necesidad de apagarlo
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento FAS 70 o FAS 90 si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.
+Puedes realizar un intercambio en caliente de un módulo de E/S Ethernet en tu sistema de almacenamiento FAS70 o FAS90 si un módulo falla y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.
 
 Para intercambiar en caliente un módulo de E/S, asegúrate de que tu sistema de almacenamiento esté ejecutando ONTAP 9.18.1 GA o una versión posterior, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
 
 .Acerca de esta tarea
 * No necesitas realizar una toma de control manual antes de reemplazar el módulo de E/S averiado.
-* Aplica los comandos al controlador y a la ranura de E/S correctos durante el intercambio en caliente:
+* Asegúrate de aplicar los comandos al controlador y a la ranura de E/S correctos durante el intercambio en caliente:
 +
 ** El _controlador dañado_ es el controlador donde estás reemplazando el módulo de E/S.
 ** El _controlador saludable_ es el socio HA del controlador dañado.

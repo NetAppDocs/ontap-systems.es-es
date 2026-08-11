@@ -2,16 +2,16 @@
 permalink: fas8300/bootmedia-replace-requirements.html 
 sidebar: sidebar 
 keywords: fas8300, fas8700, replace the boot media 
-summary: Antes de reemplazar el medio de arranque en su sistema FAS8300 y FAS8700 , asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye asegurarse de tener una unidad flash USB con la capacidad de almacenamiento adecuada y verificar que tenga el dispositivo de arranque de reemplazo correcto. 
+summary: Antes de sustituir el soporte de arranque en tu sistema FAS8300 o FAS8700, verifica que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye asegurarte de que tienes una memoria USB con la capacidad de almacenamiento adecuada y comprobar que cuentas con el dispositivo de arranque de reemplazo correcto. 
 ---
-= Requisitos para la recuperación manual de medios de arranque: FAS8300 y FAS8700
+= Revisa los requisitos para la recuperación mediante un soporte de arranque manual en tu sistema FAS8300 o FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Antes de sustituir el medio de arranque de tu sistema FAS8300 o FAS8700, asegúrate de cumplir los requisitos necesarios para que la sustitución sea exitosa. Esto incluye verificar que tienes el medio de arranque de reemplazo correcto, confirmar que el puerto e0S (e0M wrench) del controlador con problemas no está defectuoso y determinar si Onboard Key Manager (OKM) o External Key Manager (EKM) están habilitados.
+Antes de sustituir el soporte de arranque en tu sistema FAS8300 o FAS8700, verifica que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de reemplazo correcto, confirmar que el puerto e0S (llave e0M) del controlador afectado no presenta fallos y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 

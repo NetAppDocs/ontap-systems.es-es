@@ -4,18 +4,18 @@ sidebar: sidebar
 keywords: fas9500, add io module 
 summary: Puede agregar un módulo de E/S al sistema, ya sea reemplazando un módulo de E/S existente por un módulo de E/S nuevo en un sistema completamente cargado o agregando un módulo de E/S nuevo en una ranura vacía del chasis. 
 ---
-= Agregar un módulo de E/S - FAS9500
+= Agrega un módulo de I/O a tu sistema FAS9500
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puede agregar un módulo de E/S al sistema sustituyendo una NIC o un adaptador de almacenamiento por uno nuevo en un sistema completamente cargado, o agregando un nuevo NIC o adaptador de almacenamiento en una ranura de chasis vacía en el sistema.
+Puedes añadir un módulo de E/S a tu sistema FAS9500, ya sea sustituyendo una NIC o un adaptador de almacenamiento por uno nuevo en un sistema con todas las ranuras ocupadas, o bien añadiendo una nueva NIC o un nuevo adaptador de almacenamiento en una ranura vacía del chasis.
 
 .Antes de empezar
 * Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
-* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"] Y utilice el mejor disponible para su módulo de E/S.
+* Si hay varias ranuras disponibles, consulta las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"] y utiliza la mejor de las disponibles para tu módulo de E/S.
 * Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.
 * Asegúrese de que todos los demás componentes funcionan correctamente.
 
@@ -184,7 +184,7 @@ Puede agregar un nuevo módulo de I/O a un sistema de almacenamiento con ranuras
 . Si el módulo de E/S de repuesto es un NIC, conecte el módulo a los conmutadores de datos.
 +
 
-NOTE: Asegúrese de que las ranuras de E/S no utilizadas tengan espacios en blanco instalados para evitar posibles problemas térmicos.
+NOTE: Asegúrate de instalar tapones en todas las ranuras de E/S que no se utilicen para evitar posibles problemas térmicos.
 
 . Reinicie la controladora desde el aviso del CARGADOR: _Bye_
 +
@@ -193,7 +193,7 @@ NOTE: Esto reinicializa las tarjetas PCIe y otros componentes y reinicia el nodo
 
 . Proporcione el nodo atrás del nodo del partner. `storage failover giveback -ofnode target_node_name`
 . Habilitar devolución automática si estaba deshabilitada: `storage failover modify -node local -auto-giveback true`
-. Si utiliza las ranuras 3 y/o 7 para las redes, utilice `storage port modify -node __<node name>__ -port __<port name>__ -mode network` comando para convertir la ranura para su uso en la red.
+. Si estás utilizando la ranura 3 o 7 para la red, utiliza el comando  `storage port modify -node __<node name>__ -port __<port name>__ -mode network` para convertir la ranura para uso de red.
 . Repita estos pasos para la controladora B.
 . Si instaló un módulo de I/O de almacenamiento, instale las bandejas SAS y conecte los cables de las mismas, tal como se describe en link:../sas3/install-hot-add-shelf.html["Adición en caliente de una bandeja SAS"].
 
@@ -214,7 +214,7 @@ Asegúrese de comprender las siguientes situaciones para agregar un nuevo módul
  a| 
 NIC a NIC (el mismo número de puertos)
  a| 
-Los LIF migrarán automáticamente cuando se apaga su módulo de controladora.
+Las LIFs migran automáticamente cuando se apaga el módulo controlador.
 
 
 

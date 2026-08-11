@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-replace.html 
 sidebar: sidebar 
-keywords: fas2800, replace, boot, media, controller, module, fru map 
-summary: Debe localizar el soporte de arranque en la controladora y seguir las instrucciones para su reemplazo. 
+keywords: fas2820, replace, boot, media, controller, module, fru map 
+summary: El soporte de arranque de tu sistema FAS2820 almacena datos esenciales de firmware y configuración. Para reemplazarlo, tienes que quitar y abrir el módulo de controlador con problemas, localizar y reemplazar el soporte de arranque, transferir la imagen de arranque a una unidad USB y luego arrancar el controlador. 
 ---
-= Reemplace el medio de arranque y prepárese para la recuperación de arranque manual - FAS2820
+= Sustituye el soporte de arranque de tu sistema FAS2820 usando el proceso de recuperación de arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe quitar y abrir el módulo del controlador dañado, ubicar y reemplazar el medio de arranque en el controlador, transferir la imagen de arranque a una unidad USB, insertar la unidad USB en el controlador y luego arrancar el controlador.
+El soporte de arranque de tu sistema FAS2820 almacena datos esenciales de firmware y configuración. Para reemplazarlo, tienes que quitar y abrir el módulo de controlador con fallo, localizar y reemplazar el soporte de arranque, transferir la imagen de arranque a una unidad USB, insertar la unidad USB en el controlador y luego arrancar el controlador.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
@@ -51,7 +51,7 @@ Botón de liberación de la cubierta del módulo del controlador
 [[step-2-replace-the-boot-media]]
 == Paso 2: Sustituya el soporte de arranque
 
-Localice el medio de arranque en el módulo del controlador, que se encuentra debajo de la tarjeta intermedia y siga las instrucciones para reemplazarlo.
+Localiza el soporte de arranque, que está debajo de la tarjeta mezzanine en el módulo del controlador, y sigue las instrucciones para reemplazarlo.
 
 image:../media/drw_2850_replace_boot_media_IEOPS-696.svg["Sustituya el soporte de arranque"]
 

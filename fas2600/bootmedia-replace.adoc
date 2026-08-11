@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas2600, locate, boot, media, controller, direction, replace, manual, manual boot recovery 
 summary: Reemplace el medio de arranque fallido en un módulo controlador FAS2600. El sistema FAS2600 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
 ---
-= Sustituya el medio de arranque - FAS2600
+= Sustituye el soporte de arranque de tu sistema FAS2600
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -81,7 +81,7 @@ Puede instalar la imagen del sistema en el soporte de arranque de repuesto media
 
 
 * Si el sistema es un par de alta disponibilidad, debe tener una conexión de red.
-* Si el sistema es independiente, no necesita una conexión de red, pero debe realizar un reinicio adicional al restaurar el sistema de archivos var.
+* Si tu sistema es autónomo, no necesitas una conexión de red, pero debes realizar un reinicio adicional al restaurar el sistema de archivos var.
 
 
 .Pasos
@@ -111,7 +111,7 @@ El sistema empieza a arrancar y se detiene en el aviso del CARGADOR.
 ** Si va a configurar DHCP: `ifconfig e0a -auto`
 +
 
-NOTE: El puerto de destino que configure es el puerto de destino que utiliza para comunicarse con la controladora con la controladora con deterioro de la controladora en buen estado durante la restauración del sistema de archivos var con una conexión de red. También puede utilizar el puerto e0M en este comando.
+NOTE: El puerto de destino que configures es el que usas para comunicarte con el controlador afectado desde el controlador en buen estado durante la restauración del sistema de archivos var a través de una conexión de red. También puedes usar el puerto e0M en este comando.
 
 ** Si está configurando conexiones manuales: `ifconfig e0a -addr=filer_addr -mask=netmask -gw=gateway-dns=dns_addr-domain=dns_domain`
 +

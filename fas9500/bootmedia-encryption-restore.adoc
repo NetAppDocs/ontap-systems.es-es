@@ -2,16 +2,16 @@
 permalink: fas9500/bootmedia-encryption-restore.html 
 sidebar: sidebar 
 keywords: fas9500, post boot media replacement steps for okm, nse, and nve 
-summary: Una vez comprobadas las variables de entorno, debes completar los pasos específicos para los sistemas que tengan activado Onboard Key Manager OKM, NetApp Storage Encryption NSE o NetApp Volume Encryption NVE. 
+summary: Después de comprobar las variables de entorno, debes completar los pasos específicos para los sistemas que tienen habilitado Onboard Key Manager OKM, NetApp Storage Encryption NSE o NetApp Volume Encryption NVE. 
 ---
-= Restaurar cifrado - FAS9500
+= Restablece el cifrado en el soporte de arranque de tu sistema FAS9500 después del proceso de recuperación de arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Restaure el cifrado en el soporte de arranque de reemplazo.
+Después de que reemplaces el soporte de arranque en tu sistema FAS9500, restaura el cifrado siguiendo los pasos para tu tipo de gestor de claves, como el Onboard Key Manager (OKM).
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 

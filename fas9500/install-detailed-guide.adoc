@@ -2,16 +2,16 @@
 permalink: fas9500/install-detailed-guide.html 
 sidebar: sidebar 
 keywords: FAS9500 
-summary: Esto proporciona instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. 
+summary: En esta página encontrarás instrucciones detalladas paso a paso para instalar tu sistema FAS9500. 
 ---
-= Pasos detallados - FAS9500
+= Instala tu sistema FAS9500 siguiendo las instrucciones detalladas
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Este artículo ofrece instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. Utilice este artículo si desea instrucciones de instalación más detalladas.
+Esta página ofrece instrucciones detalladas paso a paso para instalar tu sistema FAS9500. Usa estas instrucciones si quieres instrucciones de instalación más detalladas.
 
 
 
@@ -279,7 +279,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[Conector de cobre SFP GbE]
 
 Switches de red de host de 40 GbE:
 
-Conecte los puertos b del host‐en las ranuras A4 y B4 (e4b) y la ranura A8 y B8 (e8b) al conmutador host.
+Conecta los puertos b del lado del host en las ranuras A4 y B4 (e4b) y en las ranuras A8 y B8 (e8b) al conmutador del host.
 
 image::../media/oie_cable100_gbe_qsfp28.png[Conector QSFP de 100 GbE]
 
@@ -300,7 +300,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[Conector de cobre SFP GbE]
 image::../media/icon_square_5_grey.png[Icono de llamada 4]
  a| 
 ** Sujete los cables a los brazos organizadores de cables (no se muestran).
-** Conecte los cables de alimentación a las PSU y conéctelos a distintas fuentes de alimentación (no se muestran). Los PSU 1 y 3 proporcionan alimentación a todos los componentes del lado A, mientras que PSU2 y PSU4 proporcionan alimentación a todos los componentes del lado B.
+** Conecta los cables de alimentación a las PSUs y conéctalos a diferentes fuentes de alimentación (no se muestran). PSU1 y PSU3 suministran energía a todos los componentes del lado A, mientras que PSU2 y PSU4 suministran energía a todos los componentes del lado B.
 
 
 image::../media/oie_cable_power.png[Cables de alimentación]
@@ -372,7 +372,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[Conector de cobre SFP GbE]
 
 Switches de red de host de 40 GbE:
 
-Conecte los puertos b del host‐en las ranuras A4 y B4 (e4b) y la ranura A8 y B8 (e8b) al conmutador host.
+Conecta los puertos b del lado del host en las ranuras A4 y B4 (e4b) y en las ranuras A8 y B8 (e8b) al conmutador del host.
 
 image::../media/oie_cable100_gbe_qsfp28.png[Conector QSFP de 100 GbE]
 
@@ -393,7 +393,7 @@ image::../media/oie_cable_sfp_gbe_copper.png[Conector de cobre 100 GbE]
 image::../media/icon_square_4_red.png[Icono de llamada 4]
  a| 
 ** Sujete los cables a los brazos organizadores de cables (no se muestran).
-** Conecte los cables de alimentación a las PSU y conéctelos a distintas fuentes de alimentación (no se muestran). Los PSU 1 y 3 proporcionan alimentación a todos los componentes del lado A, mientras que PSU2 y PSU4 proporcionan alimentación a todos los componentes del lado B.
+** Conecta los cables de alimentación a las PSUs y conéctalos a diferentes fuentes de alimentación (no se muestran). PSU1 y PSU3 suministran energía a todos los componentes del lado A, mientras que PSU2 y PSU4 suministran energía a todos los componentes del lado B.
 
 
 image::../media/oie_cable_power.png[Cables de alimentación]
@@ -417,7 +417,7 @@ NOTE: Para obtener más información sobre el cableado SAS y hojas de cálculo, 
 
 .Antes de empezar
 * Rellene la hoja de datos del cableado SAS para el sistema. Consulte link:../sas3/overview-cabling-rules-examples.html["Información general sobre las reglas, hojas de trabajo y ejemplos de cableado SAS: Bandejas con módulos IOM12"].
-* Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
+* Asegúrate de consultar la flecha de la ilustración para ver la orientación correcta de la lengüeta de extracción del conector del cable. La lengüeta de extracción del cable de los módulos de almacenamiento está hacia arriba, mientras que las de los estantes están hacia abajo.
 
 
 image::../media/oie_cable_pull_tab_up.png[Dirección de la lengüeta de tracción del cable]
@@ -428,7 +428,7 @@ image::../media/oie_cable_pull_tab_down.png[Dirección de la lengüeta de tracci
 NOTE: Al insertar el conector, debería sentir que hace clic en su lugar; si no cree que hace clic, quítelo, vuelva a convertirlo y vuelva a intentarlo.
 
 .Pasos
-. Utilice la siguiente animación o dibujos para cablear las controladoras a tres (una pila de una bandeja de unidades y una pila de dos bandejas de unidades) bandejas de unidades DS224C.
+. Utiliza la siguiente animación o los dibujos para conectar tus controladores a tres (una pila de un bastidor de unidades y una pila de dos bastidores de unidades) estantes de unidades DS224C.
 +
 .Animación Conecte los estantes de sus unidades
 video::c958aae6-9d08-4d3d-a213-ae7c017040cd[panopto]

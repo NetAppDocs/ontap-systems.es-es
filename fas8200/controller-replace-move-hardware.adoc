@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8200, move the controller module hardware 
 summary: Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
 ---
-= Sustituya el hardware del módulo de la controladora - FAS8200
+= Sustituye el controlador de tu sistema FAS8200
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -162,7 +162,7 @@ image::../media/drw_rxl_dimms.png[Sustitución de DIMM]
 . Localice la ranura en la que está instalando el DIMM.
 . Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
 +
-El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+El módulo DIMM encaja perfectamente en la ranura, pero debería introducirse con facilidad. Si no es así, alinea de nuevo el módulo DIMM con la ranura y vuelve a insertarlo.
 
 +
 
@@ -233,7 +233,7 @@ Al sustituir un módulo de controlador, debe mover los módulos de almacenamient
 El sistema de almacenamiento viene con dos ranuras disponibles para el módulo de almacenamiento en caché y sólo una ranura está ocupada, de forma predeterminada.
 
 +
-image::../media/drw_rxl_fcache.png[Extraiga y rellene el módulo de almacenamiento en caché]
+image::../media/drw_rxl_fcache.png[Retire y sustituya el módulo de almacenamiento en caché]
 
 
 
@@ -265,7 +265,7 @@ NOTE: No inserte completamente el módulo de la controladora en el chasis hasta 
 . Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
 +
 
-NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+NOTE: Conectas el resto de los cables al módulo controlador más adelante en este procedimiento.
 
 . Complete la reinstalación del módulo del controlador:
 +
@@ -278,7 +278,7 @@ NOTE: Conectará el resto de los cables al módulo del controlador más adelante
 Un par de alta disponibilidad
  a| 
  The controller module begins to boot as soon as it is fully seated in the chassis. Be prepared to interrupt the boot process.
-.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo. Apriete el tornillo de mano de la palanca de leva en la parte posterior del módulo del controlador.
+.. Con la palanca de leva en posición abierta, empuja con firmeza el módulo controlador hasta que encaje en el plano central y quede completamente asentado, y luego cierra la palanca de leva hasta la posición de bloqueo. Aprieta el tornillo de mariposa de la palanca de leva en la parte trasera del módulo controlador.
 +
 
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.
@@ -301,7 +301,7 @@ NOTE: Si se pierde el aviso y el módulo de la controladora arranca en ONTAP, in
  a| 
 Una configuración independiente
  a| 
-.. Con la palanca de leva en la posición abierta, empuje firmemente el módulo del controlador hasta que se ajuste al plano medio y esté completamente asentado y, a continuación, cierre la palanca de leva a la posición de bloqueo. Apriete el tornillo de mano de la palanca de leva en la parte posterior del módulo del controlador.
+.. Con la palanca de leva en posición abierta, empuja con firmeza el módulo controlador hasta que encaje en el plano central y quede completamente asentado, y luego cierra la palanca de leva hasta la posición de bloqueo. Aprieta el tornillo de mariposa de la palanca de leva en la parte trasera del módulo controlador.
 +
 
 NOTE: No ejerza una fuerza excesiva al deslizar el módulo del controlador hacia el chasis para evitar dañar los conectores.

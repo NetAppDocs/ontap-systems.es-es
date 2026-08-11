@@ -2,16 +2,16 @@
 permalink: fas500f/bootmedia-encryption-restore.html 
 sidebar: sidebar 
 keywords: fas500f, post boot media replacement steps for okm, nse, and nve 
-summary: Una vez comprobadas las variables de entorno, debes completar los pasos específicos para los sistemas que tengan activado Onboard Key Manager OKM, NetApp Storage Encryption NSE o NetApp Volume Encryption NVE. 
+summary: Después de comprobar las variables de entorno, debes completar los pasos específicos para los sistemas que tienen habilitado Onboard Key Manager OKM, NetApp Storage Encryption NSE o NetApp Volume Encryption NVE. 
 ---
-= Restaurar cifrado - FAS500f
+= Restablece el cifrado en el soporte de arranque de tu sistema FAS500f tras el proceso de recuperación mediante arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Restaure el cifrado en el soporte de arranque de reemplazo.
+Después de sustituir el soporte de arranque, restaura el cifrado si tu sistema FAS500f usa Onboard Key Manager, NetApp Storage Encryption o NetApp Volume Encryption para proteger tus datos.
 
 Complete los pasos adecuados para restaurar el cifrado en su sistema según el tipo de administrador de claves que utilice.  Si no está seguro de qué administrador de claves utiliza su sistema, revise la configuración que capturó al inicio del procedimiento de reemplazo del medio de arranque.
 

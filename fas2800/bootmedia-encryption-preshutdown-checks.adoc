@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
-keywords: fas2800, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback 
-summary: Antes de apagar la controladora con deterioro y comprobar el estado de las claves de cifrado integradas, debe comprobar el estado de la controladora con deterioro, deshabilitar la devolución automática del control y comprobar la versión de ONTAP que el sistema está ejecutando. 
+keywords: fas2820, shutdown, checks, onboard, encryption, keys, impaired controller, disable, automatic, feedback 
+summary: Para garantizar la seguridad de los datos en tu sistema de almacenamiento FAS2820, debes verificar la compatibilidad y el estado de las claves de cifrado en tu medio de arranque. Comprueba si tu versión de ONTAP es compatible con NetApp Volume Encryption y, antes de apagar la controladora, comprueba si el gestor de claves está activo. 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado - FAS2820
+= Comprueba el soporte de cifrado en el soporte de arranque de tu sistema FAS2820
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en el sistema de almacenamiento, debe verificar el estado y la compatibilidad de la clave de cifrado en el soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Para garantizar la seguridad de los datos en tu sistema de almacenamiento FAS2820, verifica la compatibilidad y el estado de la clave de cifrado en tu soporte de arranque. Verifica si tu versión de ONTAP es compatible con NetApp Volume Encryption (NVE). Antes de apagar el controlador, verifica si el gestor de claves está activo.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el proceso de recuperación de arranque manual.
 

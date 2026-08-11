@@ -2,9 +2,9 @@
 permalink: fas8200/rtc-battery-replace.html 
 sidebar: sidebar 
 keywords: fas8200, replace the rtc battery 
-summary: Sustituyes la batería del reloj en tiempo real del módulo controlador para que los servicios y aplicaciones del sistema que dependen de una sincronización horaria precisa sigan funcionando. 
+summary: Debes cambiar la batería del reloj en tiempo real del módulo controlador para que tus servicios y aplicaciones que dependen de una sincronización horaria precisa sigan funcionando. 
 ---
-= Sustituya la batería del reloj en tiempo real FAS8200
+= Sustituye la batería del reloj en tiempo real de tu sistema FAS8200
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Sustituyes la batería del reloj en tiempo real del módulo controlador
 Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.
 
 * Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
-* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+* El resto de componentes del sistema deben funcionar correctamente; si no es así, debes ponerte en contacto con soporte técnico.
 
 
 
@@ -259,8 +259,8 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 
 
 
-[[step-4-reinstall-the-controller-module-and-setting-timedate-after-rtc-battery-replacement]]
-== Paso 4: Vuelva a instalar el módulo del controlador y ajuste la fecha y hora después de la sustitución de la batería RTC
+[[step-4-reinstall-the-controller-module-and-reset-the-time-and-date-after-rtc-battery-replacement]]
+== Paso 4: Vuelve a instalar el módulo controlador y restablece la hora y la fecha tras cambiar la batería del RTC
 
 Después de sustituir un componente dentro del módulo del controlador, debe volver a instalar el módulo del controlador en el chasis del sistema, restablecer la fecha y la hora en el controlador y, a continuación, reiniciarlo.
 

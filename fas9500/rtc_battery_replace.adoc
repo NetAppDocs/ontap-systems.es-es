@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas9500, replace the real-time clock battery 
 summary: Sustituye la batería del reloj en tiempo real en el módulo controlador. 
 ---
-= Sustituya la batería del reloj en tiempo real - FAS9500
+= Cambia la batería del reloj en tiempo real de tu sistema FAS9500
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Sustituye la batería del reloj en tiempo real en el módulo controlado
 Puede sustituir la batería del reloj en tiempo real (RTC) en el módulo del controlador de manera que los servicios y aplicaciones del sistema que dependen de la sincronización precisa del tiempo sigan funcionando.
 
 * Puede utilizar este procedimiento con todas las versiones de ONTAP admitidas por el sistema
-* Todos los demás componentes del sistema deben funcionar correctamente; si no es así, debe ponerse en contacto con el soporte técnico.
+* El resto de componentes del sistema deben funcionar correctamente; si no es así, debes ponerte en contacto con soporte técnico.
 
 
 
@@ -196,7 +196,7 @@ NOTE: Tenga en cuenta la polaridad de la batería mientras la retira del soporte
 [[step-4-reinstall-the-controller-module-and-set-timedate]]
 == Paso 4: Vuelva a instalar el módulo del controlador y establezca la fecha y hora
 
-Después de sustituir la batería RTC, debe volver a instalar el módulo del controlador. Si la batería RTC se ha dejado fuera del módulo del controlador durante más de 10 minutos, es posible que tenga que restablecer la hora y la fecha.
+Una vez sustituida la batería del RTC, debes volver a instalar el módulo controlador. Si la batería del RTC ha estado fuera del módulo controlador durante más de 10 minutos, es posible que tengas que volver a ajustar la hora y la fecha.
 
 .Pasos
 . Si aún no lo ha hecho, cierre la cubierta del conducto de aire o del módulo del controlador.

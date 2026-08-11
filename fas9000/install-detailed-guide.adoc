@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: aff a700, fas9000, detailed, guide, prepare, install, hardware, two, node, switchless, cluster, cable, controller, ds212c, ds224c, ns224, drive, shelf, complete, system, setup, configuration, network, discovery 
 summary: Esta guía ofrece instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. 
 ---
-= Guía detallada - FAS9000
+= Instala tu sistema FAS9000 siguiendo las instrucciones detalladas
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Esta guía ofrece instrucciones detalladas paso a paso para la instalación de un sistema típico de NetApp. Utilice esta guía si desea instrucciones de instalación más detalladas.
+Estas instrucciones detalladas, paso a paso, te guían a lo largo del proceso de instalación de tu sistema FAS9000, desde el montaje en bastidor y el cableado hasta la configuración inicial. Sigue estos pasos si quieres una guía de instalación más detallada que la que ofrecen los pasos rápidos.
 
 
 
@@ -171,7 +171,7 @@ image:../media/oie_cable_power.png["Cables de alimentación"]
 Encendido del sistema
 
 |===
-. Consulte la _Guía de saturación de ONTAP de NetApp_ y recopile la información necesaria que aparece en la guía.
+. Consulte la _Guía de configuración de ONTAP de NetApp_ y recopile la información necesaria que se indica en esta guía.
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMLP2862613["Guía de configuración de ONTAP"]
 
@@ -219,7 +219,7 @@ Puede conectar las controladoras a la red mediante el método de clúster sin sw
 
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster se cablean en ambas controladoras.
 
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
 
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas de cable están hacia arriba para todos los puertos del módulo de red.
 
@@ -246,7 +246,7 @@ image::../media/drw_9000_TNSC_composite_cabling.png[Diagrama de cableado compues
 
 Los puertos de red de gestión, red de datos y gestión de las controladoras se conectan a los switches. Los puertos de interconexión de clúster y alta disponibilidad están conectados mediante cable al switch de clúster/alta disponibilidad.
 
-Debe haberse puesto en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
+Póngase en contacto con el administrador de red para obtener información sobre la conexión del sistema a los switches.
 
 Asegúrese de comprobar la dirección de las pestañas de contacto del cable al insertar los cables en los puertos. Las pestañas de cable están hacia arriba para todos los puertos del módulo de red.
 
@@ -271,7 +271,7 @@ image:../media/drw_9000_switched_cluster_cabling.png["Diagrama de cableado compu
 [[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
-Puede cablear el nuevo sistema a las bandejas DS212C, DS224C o NS224, según sea un sistema AFF o FAS.
+Puedes conectar tu nuevo sistema a los shelves DS212C, DS224C o NS224, dependiendo de si es un sistema AFF o FAS.
 
 
 
@@ -330,10 +330,10 @@ image:../media/Cable_shelves_new_system_IOM12_shelves.png["Cableado del sistema 
 [[option-2-cable-the-controllers-to-a-single-ns224-drive-shelf-in-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Opción 2: Conecte las controladoras a una sola bandeja de unidades NS224 en sistemas ASA AFF A700 que ejecutan ONTAP 9,8 y versiones posteriores
 
-Debe conectar cada controladora a los módulos NSM de la bandeja de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
+Debes conectar cada controlador a los módulos NSM del bastidor de unidades NS224 en un sistema AFF A700 o ASA AFF A700 que ejecute ONTAP 9.8 o una versión posterior.
 
 * Esta tarea se aplica solo a ASA AFF A700 que ejecuta ONTAP 9,8 o posterior.
-* Los sistemas deben tener al menos un módulo X91148A instalado en las ranuras 3 y/o 7 para cada controlador. La animación o las ilustraciones muestran este módulo instalado en las ranuras 3 y 7.
+* Los sistemas deben tener al menos un módulo X91148A instalado en la ranura 3 o 7 de cada controlador. La animación o las ilustraciones muestran este módulo instalado tanto en la ranura 3 como en la 7.
 * Asegúrese de comprobar que la flecha de la ilustración tenga la orientación correcta de la lengüeta de extracción del conector del cable. La pestaña desplegable del cable de los módulos de almacenamiento está hacia arriba, mientras que las pestañas de las bandejas están hacia abajo.
 +
 image::../media/oie_cable_pull_tab_up.png[Conector de cable con lengüeta en la parte superior]
@@ -366,7 +366,7 @@ image::../media/single_NS224_shelf.png[Cableado de bandeja única]
 [[option-3-cable-the-controllers-to-two-ns224-drive-shelves-in-asa-aff-a700-systems-running-ontap-9-8-and-later-only]]
 === Opción 3: Conecte las controladoras a dos bandejas de unidades NS224 en sistemas ASA AFF A700 que ejecutan ONTAP 9,8 y versiones posteriores solo
 
-Debe conectar cada controladora a los módulos NSM de las bandejas de unidades NS224 en un sistema A700 o ASA AFF A700 de AFF que ejecute ONTAP 9.8 o posterior.
+Debes conectar cada controlador a los módulos NSM de los bastidores de unidades NS224 en un sistema AFF A700 o ASA AFF A700 que ejecute ONTAP 9.8 o una versión posterior.
 
 * Esta tarea se aplica solo a ASA AFF A700 que ejecuta ONTAP 9,8 o posterior.
 * Los sistemas deben tener dos módulos X91148A, por controlador, instalados en las ranuras 3 y 7.
@@ -414,7 +414,7 @@ Si tiene la detección de red habilitada en el portátil, puede completar la con
 .Pasos
 . Utilice la animación siguiente para establecer uno o varios ID de bandeja de unidades:
 +
-Si el sistema tiene bandejas de unidades NS224, las bandejas se preconfigurados a los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el taladro donde se encuentra el botón.
+Si tu sistema cuenta con bastidores de unidades NS224, estos vienen preconfigurados con los ID de bastidor 00 y 01. Si deseas cambiar los ID de los bastidores, debes crear una herramienta para insertarla en el orificio donde se encuentra el botón.
 
 +
 .Animación: Configure los ID de bandeja de unidades SAS o NVMe
@@ -442,11 +442,11 @@ image::../media/drw_autodiscovery_controler_select.png[Seleccione un icono de ON
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
+.. Selecciona *Red* en el panel izquierdo, haz clic con el botón derecho del ratón en *Red* y luego selecciona *Actualizar*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 
-NOTE: XXXXX es el número de serie del sistema para el nodo de destino.
+NOTE: El valor que se muestra es el número de serie del sistema del nodo de destino.
 
 +
 Se abrirá System Manager.
@@ -501,7 +501,7 @@ image::../media/drw_9000_cable_console_switch_controller.png[Cableado de la cons
 
 . Utilice la animación siguiente para establecer uno o varios ID de bandeja de unidades:
 +
-Si el sistema tiene bandejas de unidades NS224, las bandejas se preconfigurados a los ID de bandeja 00 y 01. Si desea cambiar los ID de las bandejas, debe crear una herramienta para insertarla en el taladro donde se encuentra el botón.
+Si tu sistema cuenta con bastidores de unidades NS224, estos vienen preconfigurados con los ID de bastidor 00 y 01. Si deseas cambiar los ID de los bastidores, debes crear una herramienta para insertarla en el orificio donde se encuentra el botón.
 
 +
 .Animación: Configure los ID de bandeja de unidades SAS o NVMe

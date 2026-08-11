@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas9500, recable the system, reassign disks 
 summary: Vuelve a cablear el sistema y reasigna los discos. 
 ---
-= Recuperar el sistema - FAS9500
+= Devuelve el controlador en tu sistema FAS9500 para reanudar el funcionamiento normal
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Continuar con el procedimiento de sustitución presentando las instalaciones de almacenamiento y de red.
+Devuelve el control de los recursos de almacenamiento al controlador de sustitución para que tu sistema FAS9500 pueda reanudar su funcionamiento normal.
 
 
 
@@ -25,27 +25,27 @@ Debe volver a conectar los cables de las conexiones de red y almacenamiento del 
 . Compruebe que el cableado sea correcto mediante el https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"^].
 +
 .. Descargue e instale Config Advisor.
-.. Introduzca la información del sistema de destino y haga clic en Collect Data.
-.. Haga clic en la ficha cableado y, a continuación, examine la salida. Asegúrese de que se muestren todas las bandejas de discos y todos los discos aparecen en el resultado, corrigiendo los problemas de cableado que encuentre.
-.. Compruebe otro cableado haciendo clic en la ficha correspondiente y, a continuación, examinando el resultado de Config Advisor.
+.. Introduce la información del sistema de destino y luego selecciona Recopilar datos.
+.. Selecciona la pestaña «Cableado» y, a continuación, revisa la salida. Asegúrate de que se muestren todas las bandejas de discos y de que todos los discos aparezcan en la salida, corrigiendo cualquier problema de cableado que encuentres.
+.. Comprueba el resto del cableado seleccionando la pestaña correspondiente y luego revisando la salida de Config Advisor.
 
 
 
 
 
-NOTE: La información de ID del sistema y de asignación de discos se encuentra en el módulo NVRAM, que se encuentra en un módulo independiente del módulo de la controladora y no se ve afectada por la sustitución del módulo de la controladora.
+NOTE: La identificación del sistema y la información sobre la asignación de discos se almacenan en el módulo NVRAM, que se encuentra en un módulo independiente del módulo controlador y no se ve afectado por la sustitución del módulo controlador.
 
 
 
 [[step-2-reassign-disks]]
 == Paso 2: Reasignar discos
 
-Si el sistema de almacenamiento está en un par de alta disponibilidad, el ID del sistema del nuevo módulo de controladora se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debe confirmar el cambio de ID del sistema al arrancar el nodo _reboot_ y, a continuación, comprobar que se ha implementado el cambio.
+Si el sistema de almacenamiento está en un par HA, el ID del sistema del nuevo módulo de controlador se asigna automáticamente a los discos cuando se produce la devolución al final del procedimiento. Debes confirmar el cambio de ID del sistema al arrancar el nodo _de sustitución_ y luego verificar que el cambio es correcto.
 
 Este procedimiento solo se aplica a sistemas que ejecutan ONTAP en una pareja de ha.
 
 . Si el nodo _reader_ está en modo de mantenimiento (mostrando la `*>` Prompt), salga del modo de mantenimiento y vaya al símbolo del sistema del CARGADOR: `halt`
-. Desde el símbolo del sistema DEL CARGADOR en el nodo _reboot_, arranque el nodo, introduzca `y` Si se le solicita que anule el ID del sistema debido a que el ID del sistema no coincide.``boot_ontap``
+. Desde el indicador LOADER del nodo _replacement_, arranca el nodo e introduce  `y` si se te solicita que sobrescribas el ID del sistema debido a una discrepancia en el ID del sistema: `boot_ontap`
 . Espere hasta la `Waiting for giveback...` El mensaje se muestra en la consola del nodo _reassigned_ y, a continuación, en el nodo en buen estado, compruebe que el nuevo ID de sistema asociado se ha asignado automáticamente: Storage Failover show
 +
 En el resultado del comando, debería ver un mensaje que indica que el ID del sistema ha cambiado en el nodo dañado, mostrando los ID anteriores y los nuevos correctos. En el ejemplo siguiente, el nodo 2 debe ser sustituido y tiene un ID de sistema nuevo de 151759706.

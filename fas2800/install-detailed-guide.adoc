@@ -1,17 +1,17 @@
 ---
 permalink: fas2800/install-detailed-guide.html 
 sidebar: sidebar 
-keywords: fas2800, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
-summary: Este procesador ofrece instrucciones detalladas paso a paso para la instalación de un sistema de almacenamiento típico de NetApp. 
+keywords: fas2820, detailed, guide, prepare, install, hardware, cable, controllers, node, switchless, cluster, network, configuration, system, storage system, setup, discovery 
+summary: Este procedimiento ofrece instrucciones detalladas y paso a paso para instalar tu sistema de almacenamiento FAS2820. 
 ---
-= Pasos detallados - FAS2820
+= Instala tu sistema FAS2820 siguiendo las instrucciones detalladas
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Este procedimiento ofrece instrucciones detalladas paso a paso para la instalación de un sistema de almacenamiento NetApp típico. Utilice este procedimiento si desea instrucciones de instalación más detalladas.
+Este procedimiento ofrece instrucciones detalladas, paso a paso, para preparar, instalar, cablear y encender tu sistema de almacenamiento FAS2820. Usa estos pasos si prefieres explicaciones completas en vez de la guía rápida abreviada.
 
 
 
@@ -45,8 +45,8 @@ IMPORTANT: Los clientes con requisitos de alimentación específicos deben verif
 
 . Acceda a https://docs.netapp.com/us-en/ontap/task_configure_ontap.html#assign-a-node-management-ip-address["Configure ONTAP en un nuevo clúster con System Manager"^]
 +
-.. Revise los pasos del procedimiento de amd de requisitos.
-.. Recopile información sobre su sistema de almacenamiento; para ello, complete el https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["setup worksheet^ (Se necesita la URL de la hoja de trabajo)"].
+.. Revisa los requisitos y los pasos del procedimiento.
+.. Recopila información sobre tu sistema de almacenamiento rellenando la hoja de configuración.
 .. Registre el número de serie del sistema de almacenamiento de las controladoras.
 +
 image::../media/drw_ssn_label.svg[Ejemplo del número de serie del sistema]
@@ -478,7 +478,7 @@ image::../media/dwr-2800_controller2-to shelves_IEOPS-897.svg[Conexión del cont
 [[step-5-complete-storage-system-setup-and-configuration]]
 == Paso 5: Complete la instalación y configuración del sistema de almacenamiento
 
-Complete la instalación y la configuración del sistema de almacenamiento mediante la opción 1: Si la detección de red está habilitada o la opción 2: Si la detección de red no está habilitada.
+Completa la configuración e instalación de tu sistema de almacenamiento usando la opción 1: si la detección de red está activada, o la opción 2: si la detección de red no está activada.
 
 Utilice la siguiente animación en cualquier opción donde se requiera configurar el ID del estante:
 
@@ -488,10 +488,10 @@ video::c600f366-4d30-481a-89d9-ab1b0066589b[panopto]
 ====
 .Opción 1: Si la detección de red está activada
 --
-Si la detección de red está activada en el portátil, complete la configuración y la instalación del sistema de almacenamiento mediante la detección automática de clústeres.
+Si la detección de redes está activada en tu portátil, completa la configuración e instalación del sistema de almacenamiento usando la detección automática de clústeres.
 
 .Pasos
-. Encienda el estante y configure los identificadores del estante utilizando la animación al comienzo de este paso.
+. Enciende la alimentación de las estanterías y configura los IDs de las estanterías usando la animación al principio de este paso.
 . Encienda las controladoras
 +
 .. Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
@@ -510,13 +510,13 @@ image::../media/dwr_2800_turn_on_power_IEOPS-898.svg[Encienda la alimentación]
 Consulte la ayuda en línea de su portátil para obtener más información.
 
 . Conecte el portátil al conmutador de administración.
-. Use el gráfico o los pasos para detectar el nodo del sistema de almacenamiento para configurar:
+. Utiliza el gráfico o los pasos para descubrir el nodo del sistema de almacenamiento que vas a configurar:
 +
 image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Sistema de detección automática]
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
+.. Haz clic con el botón derecho en *Network* en el panel izquierdo y selecciona *refresh*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 
@@ -530,8 +530,8 @@ Se abrirá System Manager.
 . Use la configuración guiada de System Manager para configurar el sistema de almacenamiento con los datos recogidos en <<Paso 1: Preparar la instalación>>.
 . Crea una cuenta o inicia sesión en tu cuenta.
 +
-.. Haga clic en https://mysupport.netapp.com["mysupport.netapp.com"]
-.. Haga clic en _Crear cuenta_ si necesita crear una cuenta o iniciar sesión en su cuenta.
+.. Selecciona https://mysupport.netapp.com["mysupport.netapp.com"]
+.. Selecciona _Crear cuenta_ si necesitas crear una cuenta o iniciar sesión en tu cuenta.
 
 
 . Descargue e instale https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]
@@ -606,13 +606,13 @@ NOTE: Si no sabe cómo configurar PuTTY, compruebe la ayuda en línea del ordena
 
 NOTE: El formato de la dirección es +https://x.x.x.x.+
 
-.. Configure el sistema de almacenamiento con los datos recogidos en <<Paso 1: Preparar la instalación>>..
+.. Configura el sistema de almacenamiento utilizando los datos que has recopilado en <<Paso 1: Preparar la instalación>>.
 
 
 . Crea una cuenta o inicia sesión en tu cuenta.
 +
-.. Haga clic en https://mysupport.netapp.com["mysupport.netapp.com"]
-.. Haga clic en _Crear cuenta_ si necesita crear una cuenta o iniciar sesión en su cuenta.
+.. Selecciona https://mysupport.netapp.com["mysupport.netapp.com"]
+.. Selecciona _Crear cuenta_ si necesitas crear una cuenta o iniciar sesión en tu cuenta.
 
 
 . Descargue e instale https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"]

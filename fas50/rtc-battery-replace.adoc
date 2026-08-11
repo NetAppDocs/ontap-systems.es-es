@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas50, replace the real-time clock battery 
 summary: Sustituye la batería del reloj en tiempo real, comúnmente conocida como batería de celda tipo moneda, en tu sistema de almacenamiento FAS50 para garantizar que los servicios y aplicaciones que dependen de una sincronización horaria precisa sigan funcionando. 
 ---
-= Sustituya la batería del reloj en tiempo real - FAS50
+= Sustituye la batería del reloj en tiempo real de tu sistema FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -283,7 +283,7 @@ image::../media/icon_round_3.png[Número de llamada 3]
 Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
 
 |===
-. Abra la cubierta del controlador girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+. Gira el tornillo de mariposa en sentido antihorario para aflojarlo y, a continuación, abre la tapa del controlador.
 
 
 
@@ -445,9 +445,9 @@ FUENTE DE ALIMENTACIÓN DE CC
 == Paso 5: Restablezca la hora y la fecha del controlador
 
 
-NOTE: Después de reemplazar la batería de RTC, insertar la controladora y encender el primer restablecimiento del BIOS, verá los siguientes mensajes de error:
+NOTE: Después de cambiar la batería del RTC, insertar el controlador y encenderlo para realizar el primer reinicio de la BIOS, verás los siguientes mensajes de error:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Estos mensajes son esperados y puede continuar con este procedimiento.
+`RTC power failure error` Estos mensajes son normales y puedes continuar con este procedimiento.
 
 . En el controlador en buen estado, verifique la fecha y la hora:
 +
@@ -455,7 +455,7 @@ NOTE: Después de reemplazar la batería de RTC, insertar la controladora y ence
 
 +
 
-NOTE: Si el sistema de almacenamiento se detiene en el menú de arranque, seleccione la opción  `Reboot node`y responda _y_ cuando se le solicite, a continuación, arranque en Loader pulsando _Ctrl-C_.
+NOTE: Si tu sistema de almacenamiento se queda bloqueado en el menú de arranque, selecciona la opción  `Reboot node` y responde _y_ cuando se te solicite, luego arranca en LOADER pulsando _Ctrl-C_.
 
 . En el controlador dañado, en el indicador LOADER, verifique la hora y la fecha:
 +

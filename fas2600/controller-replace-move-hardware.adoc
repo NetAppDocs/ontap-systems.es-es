@@ -2,16 +2,16 @@
 permalink: fas2600/controller-replace-move-hardware.html 
 sidebar: sidebar 
 keywords: fas2600, move the components 
-summary: Para sustituir el hardware del módulo de la controladora, debe retirar la controladora dañada, mover los componentes de FRU al módulo de la controladora de reemplazo, instalar el módulo de la controladora de reemplazo en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento. 
+summary: Sustituye el controlador de tu sistema FAS2600 retirando el controlador averiado, trasladando los componentes FRU al módulo controlador de recambio, instalándolo en el chasis e iniciando el sistema en modo de mantenimiento. 
 ---
-= Sustituya el hardware del módulo de la controladora - FAS2600
+= Sustituye el controlador de tu sistema FAS2600
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para sustituir el módulo de la controladora, debe extraer la controladora con deterioro, mover los componentes de FRU al módulo de la controladora de sustitución, instalar el módulo de la controladora de sustitución en el chasis y, a continuación, arrancar el sistema en modo de mantenimiento.
+Sustituye el controlador de tu sistema FAS2600 retirando el controlador con fallo, moviendo los componentes FRU al módulo de controlador de reemplazo, instalando el módulo de controlador de reemplazo en el chasis y luego arrancando el sistema en modo de mantenimiento.
 
 link:https://youtu.be/2_uWRt_iJqk["Vídeo de sustitución de la controladora FAS2600 AFF"]
 
@@ -141,7 +141,7 @@ image::../media/drw_2600_dimms.png[Ubicación de los DIMM del sistema]
 . Localice la ranura en la que está instalando el DIMM.
 . Asegúrese de que las lengüetas del expulsor DIMM del conector están en posición abierta y, a continuación, inserte el DIMM directamente en la ranura.
 +
-El módulo DIMM encaja firmemente en la ranura, pero debe entrar fácilmente. Si no es así, realinee el DIMM con la ranura y vuelva a insertarlo.
+El DIMM encaja perfectamente en la ranura, pero debería introducirse con facilidad. Si no es así, vuelve a alinear el DIMM con la ranura y vuelve a insertarlo.
 
 +
 
@@ -159,9 +159,9 @@ Asegúrese de que el tapón se bloquea en el módulo del controlador.
 [[step-5-move-the-caching-module]]
 == Paso 5: Mueva el módulo de almacenamiento en caché
 
-Para mover un módulo de almacenamiento en caché denominado tarjeta PCIe M.2 de la etiqueta de la controladora, búsquelo y muévalos de la controladora antigua a la controladora de sustitución y siga la secuencia específica de pasos.
+Para trasladar el módulo de almacenamiento en caché, denominado como la tarjeta M.2 PCIe en la etiqueta del controlador, del módulo controlador antiguo al módulo controlador de recambio, sigue esta secuencia de pasos.
 
-Debe tener el nuevo módulo de controlador preparado para poder mover el módulo de almacenamiento en caché directamente desde el módulo de controlador anterior a la ranura correspondiente en el nuevo. Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+Debes tener preparado el nuevo módulo controlador para poder trasladar el módulo de almacenamiento en caché directamente desde el módulo controlador antiguo a la ranura correspondiente del nuevo. El resto de componentes del sistema de almacenamiento deben funcionar correctamente. Si no es así, ponte en contacto con el soporte técnico.
 
 .Pasos
 . Localice el módulo de almacenamiento en caché que se encuentra en la parte posterior del módulo de la controladora y extráigalo.
@@ -190,7 +190,7 @@ Si es necesario, extraiga el módulo de caché y vuelva a colocarlo en el zócal
 
 Después de instalar los componentes del módulo de controlador antiguo en el nuevo módulo de controlador, debe instalar el nuevo módulo de controlador en el chasis del sistema e iniciar el sistema operativo.
 
-Para los pares de alta disponibilidad con dos módulos de controladora en el mismo chasis, la secuencia en la que se instala el módulo de controladora es especialmente importante porque intenta reiniciarse tan pronto como lo coloca por completo en el chasis.
+En el caso de los pares de alta disponibilidad (HA) con dos módulos controladores en el mismo chasis, el orden en el que instalas los módulos controladores es especialmente importante porque un módulo controlador intenta reiniciarse tan pronto como queda completamente encajado en el chasis.
 
 
 NOTE: El sistema puede actualizar el firmware del sistema cuando arranca. No cancele este proceso. El procedimiento le obliga a interrumpir el proceso de arranque, que normalmente puede hacer en cualquier momento después de que se le solicite que lo haga. Sin embargo, si el sistema actualiza el firmware del sistema cuando arranca, debe esperar hasta que se haya completado la actualización antes de interrumpir el proceso de arranque.
@@ -206,7 +206,7 @@ NOTE: No inserte completamente el módulo de la controladora en el chasis hasta 
 . Cablee los puertos de gestión y consola de manera que pueda acceder al sistema para realizar las tareas en las secciones siguientes.
 +
 
-NOTE: Conectará el resto de los cables al módulo del controlador más adelante en este procedimiento.
+NOTE: Conectas el resto de los cables al módulo controlador más adelante en este procedimiento.
 
 . Complete la reinstalación del módulo del controlador:
 +

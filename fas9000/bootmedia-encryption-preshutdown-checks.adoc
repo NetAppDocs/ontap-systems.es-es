@@ -2,16 +2,16 @@
 permalink: fas9000/bootmedia-encryption-preshutdown-checks.html 
 sidebar: sidebar 
 keywords: aff a700, fas9000, shutdown, check, onboard, encryption, key, manual, manual boot recovery 
-summary: Antes de apagar el nodo dañado y verificar el estado de las claves de cifrado integradas, debe verificar el estado del nodo dañado, deshabilitar la devolución automática y verificar qué versión de ONTAP está ejecutando el sistema. El sistema FAS9000 solo admite procedimientos de recuperación de medios de arranque manuales. 
+summary: Antes de apagar el controlador afectado y comprobar el estado de las claves de cifrado integradas, debes comprobar el estado del controlador afectado, desactivar la función de recuperación automática y comprobar qué versión de ONTAP está ejecutando el sistema. El sistema FAS9000 solo admite procedimientos manuales de recuperación del soporte de arranque. 
 ---
-= Compruebe la compatibilidad y el estado de la clave de cifrado
+= Comprueba la compatibilidad con cifrado en el soporte de arranque de tu sistema FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en su sistema de almacenamiento, debe verificar la compatibilidad y el estado de la clave de cifrado en su medio de arranque. Verifique si su versión de ONTAP admite NetApp Volume Encryption (NVE) y, antes de apagar el controlador, verifique si el administrador de claves está activo. El sistema FAS9000 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
+Para garantizar la seguridad de los datos en tu sistema de almacenamiento, verifica la compatibilidad y el estado de la clave de cifrado en tu medio de arranque. Comprueba si tu versión de ONTAP es compatible con NetApp Volume Encryption (NVE), y antes de apagar el controlador, revisa si el gestor de claves está activo. El sistema FAS9000 solo admite procedimientos manuales de recuperación del medio de arranque.
 
 
 

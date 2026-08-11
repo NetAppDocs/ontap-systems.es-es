@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas8300, fas8700, fas8200, replace, caching, module, shut, down, impaired, controller, fru, metrocluster, add, aggregates, switch, reinstall 
 summary: Debes sustituir el módulo de almacenamiento en caché del módulo controlador cuando tu sistema registre un único mensaje AutoSupport que indique que el módulo se ha desconectado. 
 ---
-= Sustituya el módulo de almacenamiento en caché: FAS8300 y FAS8700
+= Sustituye el módulo de almacenamiento en caché de tu sistema FAS8300 o FAS8700
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,7 +14,7 @@ summary: Debes sustituir el módulo de almacenamiento en caché del módulo cont
 Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará.
 
 
-NOTE: El módulo del controlador ver2 sólo tiene un socket de módulo de almacenamiento en caché en el FAS8300. FAS8700 no tiene un módulo de controlador ver2. La funcionalidad del módulo de almacenamiento en caché no se ve afectada por la eliminación del socket.
+NOTE: El módulo controlador VER2 solo cuenta con un zócalo para módulos de caché en el FAS8300. FAS8700 no tiene un módulo controlador VER2. La funcionalidad del módulo de caché no se ve afectada por la eliminación del zócalo.
 
 * Debe sustituir el componente con errores por un componente FRU de repuesto que haya recibido de su proveedor.
 
@@ -32,7 +32,7 @@ Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes pro
 --
 Para apagar el controlador dañado, debe determinar el estado del controlador y, si es necesario, tomar el control para que el controlador sano siga sirviendo datos del almacenamiento del controlador dañado.
 
-.Acerca de estas tareas
+.Acerca de esta tarea
 Si tiene un clúster con más de dos nodos, debe estar en quórum. Si el clúster no tiene quórum o si una controladora en buen estado muestra FALSE para tener derecho a recibir y ser el estado, es necesario corregir el problema antes de apagar la controladora con deterioro.
 
 link:https://docs.netapp.com/us-en/ontap/system-admin/synchronize-node-cluster-task.html?q=Quorum["Sincronice un nodo con el clúster"^]
@@ -220,18 +220,18 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 Para sustituir un módulo de almacenamiento en caché, denominado Flash Cache en la etiqueta de la controladora, localice la ranura dentro de la controladora y siga la secuencia específica de pasos. Consulte el mapa de FRU en el módulo de la controladora para conocer la ubicación de Flash Cache.
 
 
-NOTE: La ranura 6 solo está disponible en la controladora FAS8300 ver2.
+NOTE: La ranura 6 solo está disponible en el controlador FAS8300 VER2.
 
 Su sistema de almacenamiento debe cumplir ciertos criterios según su situación:
 
 * Debe tener el sistema operativo adecuado para el módulo de almacenamiento en caché que está instalando.
 * Debe admitir la capacidad de almacenamiento en caché.
-* Aunque el contenido del módulo de almacenamiento en caché está cifrado, se recomienda borrar el contenido del módulo antes de reemplazarlo. Para obtener más información, consulte https://mysupport.netapp.com/info/web/ECMP1132988.html["Declaración de volatilidad"] De su sistema en el sitio de soporte de NetApp.
+* Aunque el contenido del módulo de almacenamiento en caché está cifrado, se recomienda borrar dicho contenido antes de sustituirlo. Para obtener más información, consulta la  https://mysupport.netapp.com/info/web/ECMP1132988.html["Declaración de volatilidad"] para tu sistema en el sitio de soporte de NetApp.
 +
 
 NOTE: Debe iniciar sesión en el sitio de soporte de NetApp para mostrar el _Statement of volatile_ de su sistema.
 
-* Todos los demás componentes del sistema de almacenamiento deben funcionar correctamente; de lo contrario, debe comunicarse con el soporte técnico.
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. Si no es así, ponte en contacto con soporte técnico.
 
 
 Puede utilizar la animación, ilustración o los pasos escritos siguientes para reemplazar un módulo de almacenamiento en caché.
@@ -248,9 +248,9 @@ image::../media/drw_8300_Replace-flashcache.png[Retire y sustituya el módulo de
 .. Deslice el conducto de aire hacia la parte posterior del módulo del controlador y gírelo hacia arriba hasta su posición completamente abierta.
 
 
-. Utilice el mapa FRU del módulo de la controladora para localizar el módulo de almacenamiento en caché con fallos y quitarlo:
+. Localiza el módulo de almacenamiento en caché defectuoso usando el mapa de FRU en el módulo controlador y retíralo:
 +
-Según la configuración existente, es posible que haya cero, uno o dos módulos de almacenamiento en caché en el módulo de la controladora. Utilice el mapa de FRU dentro del módulo de la controladora para ayudarle a localizar el módulo de almacenamiento en caché.
+Dependiendo de tu configuración, puede haber cero, uno o dos módulos de almacenamiento en caché en el módulo controlador. Utiliza el mapa FRU dentro del módulo controlador para ayudarte a localizar el módulo de almacenamiento en caché.
 
 +
 .. Pulse la pestaña azul de liberación.
@@ -341,8 +341,8 @@ Si ha quitado los convertidores de medios (QSFP o SFP), recuerde volver a instal
 
 
 
-[[step-7-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
-== Paso 7: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
+[[step-6-switch-back-aggregates-in-a-two-node-metrocluster-configuration]]
+== Paso 6: Vuelva a cambiar los agregados en una configuración MetroCluster de dos nodos
 
 Esta tarea solo se aplica a configuraciones MetroCluster de dos nodos.
 
@@ -398,7 +398,7 @@ Si una conmutación de regreso tarda mucho tiempo en terminar, puede comprobar e
 
 
 
-[[step-8-complete-the-replacement-process]]
-== Paso 8: Complete el proceso de reemplazo
+[[step-7-complete-the-replacement-process]]
+== Paso 7: finaliza el proceso de sustitución
 
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Devolución de piezas y sustituciones"] la página para obtener más información.

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: fas9500, shut down the controller 
 summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
 ---
-= Apague el controlador para la recuperación manual del medio de arranque - FAS9500
+= Apaga el controlador defectuoso de tu sistema FAS9500 durante el proceso de recuperación mediante arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 [role="lead"]
 Apague o retome el controlador dañado utilizando una de las siguientes opciones.
 
-Después de completar las tareas de NVE o NSE, necesita completar el apagado del nodo dañado.
+Una vez completadas las tareas de NVE o NSE, apaga el nodo afectado.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 

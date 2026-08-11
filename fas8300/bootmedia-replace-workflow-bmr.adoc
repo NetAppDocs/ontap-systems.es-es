@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: fas8300, replace the boot media 
 summary: Comience a reemplazar el medio de arranque en su sistema de almacenamiento FAS8300 o FAS8700 revisando los requisitos de reemplazo, apagando el controlador, reemplazando el medio de arranque, restaurando la imagen en el medio de arranque y verificando la funcionalidad del sistema. 
 ---
-= Flujo de trabajo de recuperación automatizada de medios de arranque: FAS8300 y FAS8700
+= Flujo de trabajo para la sustitución del medio de arranque en FAS8300 y FAS8700 usando el proceso automatizado de recuperación de arranque
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-La recuperación automática de la imagen de arranque implica que el sistema identifique y seleccione automáticamente la opción de arranque adecuada. Utiliza la imagen de arranque en el nodo asociado para reinstalar ONTAP en el medio de arranque de reemplazo en su sistema de almacenamiento FAS8300 o FAS8700 .
+Empieza a sustituir el soporte de arranque de tu sistema de almacenamiento FAS8300 o FAS8700 mediante el proceso automatizado de recuperación del arranque. El sistema identifica y selecciona automáticamente la opción adecuada del menú de arranque y luego utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el soporte de arranque de recambio. Para completar la sustitución, revisa los requisitos, apaga el controlador, sustituye el soporte de arranque, deja que el sistema restaure la imagen y verifica el funcionamiento del sistema.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
@@ -23,7 +23,7 @@ Revise los requisitos para la sustitución de medios de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-shutdown-bmr.html["Apague la controladora"]
 [role="quick-margin-para"]
-Apague la controladora en el sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
+Apague el controlador en su sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-replace-bmr.html["Sustituya el soporte de arranque"]
 [role="quick-margin-para"]
