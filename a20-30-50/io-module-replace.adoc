@@ -16,7 +16,7 @@ Sustituye un módulo de E/S en tu sistema de almacenamiento AFF A20, AFF A30 o A
 El proceso de sustitución implica apagar el controlador, reemplazar el módulo de E/S averiado, reiniciar el controlador y devolver la pieza averiada a NetApp.
 
 .Antes de empezar
-El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+El resto de componentes del sistema de almacenamiento deben funcionar correctamente. Si no es así, ponte en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 
 .Acerca de esta tarea
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.

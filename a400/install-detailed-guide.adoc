@@ -197,7 +197,7 @@ image::../media/drw_a320_cable_management_arms.png[Desmontaje o instalación de 
 Puede conectar las controladoras a la red mediante el método de clúster sin switch de dos nodos o mediante la red de interconexión de clúster.
 
 
-NOTE: Si las etiquetas de puerto de la tarjeta no son visibles, compruebe la orientación de instalación de la tarjeta (el conector hembra PCIe está en el lado izquierdo de la ranura de tarjeta en el A400 y FAS8300/8700) y, a continuación, busque la tarjeta, por número de pieza, en el https://hwu.netapp.com["Hardware Universe de NetApp"^] para un gráfico del bisel que muestra las etiquetas de puerto. El número de referencia de la tarjeta se puede encontrar mediante la `sysconfig -a` o en la lista de embalaje del sistema.
+NOTE: Si las etiquetas de los puertos de la tarjeta no son visibles, comprueba la orientación de instalación de la tarjeta. El conector PCIe se encuentra en el lado izquierdo de la ranura de la tarjeta en los modelos A400 y FAS8300/8700. Luego busca la tarjeta por número de pieza en el  https://hwu.netapp.com["Hardware Universe de NetApp"^] para ver un gráfico del frontal que muestra las etiquetas de los puertos. Puedes encontrar el número de pieza de la tarjeta usando el comando  `sysconfig -a` o en la lista de embalaje del sistema.
 
 
 NOTE: Si va a cablear una configuración IP de MetroCluster, los puertos e0a/e0b están disponibles para alojar LIF de datos (normalmente en el espacio IP predeterminado).
@@ -265,7 +265,7 @@ image::../media/drw_a400_switched_network_cabling.png[Cableado de red de clúste
 [[step-4-cable-controllers-to-drive-shelves]]
 == Paso 4: Conecte las controladoras a las bandejas de unidades
 
-Puede conectar las bandejas NSS224 o SAS al sistema.
+Puedes conectar tanto los módulos NS224 como los SAS a tu sistema.
 
 
 
@@ -378,7 +378,7 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Seleccione un 
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
+.. Selecciona *Red* en el panel de la izquierda, haz clic con el botón derecho y selecciona *refresh*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 

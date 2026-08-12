@@ -2,7 +2,7 @@
 permalink: asa-r2-c30/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: asa c30, shut down the controller 
-summary: Apague la controladora deteriorada en su sistema de almacenamiento ASA C30 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir los medios de arranque. 
+summary: Apaga el controlador de tu sistema de almacenamiento ASA C30 para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el medio de arranque. 
 ---
 = Apaga el controlador de tu sistema ASA C30 durante el proceso de recuperación automática del arranque
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Apague la controladora deteriorada en su sistema de almacenamiento ASA 
 
 
 [role="lead"]
-Apague la controladora deteriorada en su sistema de almacenamiento ASA C30 para evitar la pérdida de datos y garantizar la estabilidad del sistema al sustituir los medios de arranque.
+Apaga el controlador de tu sistema de almacenamiento ASA C30 para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el medio de arranque.
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
@@ -80,4 +80,4 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 .El futuro
-Después de apagar el controlador defectuoso, usted link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].
+Después de apagar el controlador, link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].

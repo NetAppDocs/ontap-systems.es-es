@@ -2,7 +2,7 @@
 permalink: asa250/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: asa a250, shutdown 
-summary: Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada. 
+summary: Apaga el controlador de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del medio de arranque. 
 ---
 = Apaga el controlador de tu sistema ASA A250 antes de sustituir el soporte de arranque
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Después de completar las tareas de NVE o NSE, deberá completar el apa
 
 
 [role="lead"]
-Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apaga el controlador de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del medio de arranque.
 
 
 
@@ -62,7 +62,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 [[option-2-systems-in-a-metrocluster]]
 == Opción 2: Sistemas en una MetroCluster
 
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Después de completar las tareas NVE o NSE, debes finalizar el apagado del controlador.
 
 
 NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.

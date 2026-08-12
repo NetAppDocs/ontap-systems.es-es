@@ -14,7 +14,7 @@ summary: Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasi
 Reemplace un DIMM en su sistema AFF A70 o AFF A90 si se detectan demasiados errores de memoria corregibles o que no se pueden corregir. Estos errores pueden impedir que el sistema de almacenamiento arranque la ONTAP. El proceso de sustitución implica apagar la controladora deteriorada, extraerla, sustituir el DIMM, volver a instalar la controladora y, a continuación, devolver la pieza averiada a NetApp.
 
 .Antes de empezar
-* Asegúrese de que todos los demás componentes del sistema funcionan correctamente; de lo contrario, debe ponerse en contacto con el soporte técnico.
+* Asegúrate de que el resto de componentes del sistema funcionen correctamente. Si no es así, ponte en contacto con el soporte técnico.
 * Asegúrese de sustituir el componente defectuoso por un componente de reemplazo que ha recibido de NetApp.
 
 
@@ -291,7 +291,7 @@ Asegúrese de que admite la parte inferior del módulo de la controladora cuando
 [[step-3-replace-the-dimm]]
 == Paso 3: Reemplace la DIMM
 
-Para sustituir el DIMM, búsquelos dentro de la controladora y siga la secuencia específica de pasos.
+Para sustituir el módulo DIMM, localízalo dentro del controlador y sigue la secuencia específica de pasos.
 
 
 CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.

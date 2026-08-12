@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a20, aff a30, aff a50, add IO module 
 summary: Añada un módulo I/O a su sistema AFF A20, AFF A30 o AFF A50 para mejorar la conectividad de la red y ampliar la capacidad de su sistema para manejar el tráfico de datos. 
 ---
-= Agrega un módulo de I/O a tu sistema AFF A20, AFF A30 o AFF A50 para mejorar la conectividad de red
+= Agrega un módulo de I/O a tu sistema AFF A20, AFF A30 o AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Añada un módulo I/O a su sistema AFF A20, AFF A30 o AFF A50 para mejo
 [role="lead"]
 Agregue un módulo de E/S a su sistema de almacenamiento AFF A20, AFF A30 o AFF A50 para mejorar la conectividad de red y ampliar la capacidad de su sistema para manejar el tráfico de datos.
 
-El proceso de adición implica apagar un controlador, añadir el nuevo módulo de E/S, reiniciar el controlador, apagar el otro controlador, añadir el nuevo módulo de E/S y reiniciar el controlador.
+Para añadir el módulo de E/S tienes que apagar un controlador, instalar el módulo y reiniciarlo, y luego repetir estos pasos con el otro controlador.
 
 .Acerca de esta tarea
 * Puedes añadir un módulo de I/O a tus sistemas de almacenamiento cuando haya ranuras disponibles o cuando todas las ranuras estén completamente ocupadas.
@@ -22,7 +22,7 @@ El proceso de adición implica apagar un controlador, añadir el nuevo módulo d
 Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
 
 +
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+Puedes desactivarlos introduciendo el comando  `system location-led _off_`. Si no estás seguro de si los LED están encendidos o apagados, puedes comprobar su estado introduciendo el comando  `system location-led show`.
 
 
 

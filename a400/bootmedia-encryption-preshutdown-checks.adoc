@@ -11,7 +11,7 @@ summary: Antes de apagar la controladora con deterioro y comprobar el estado de 
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en tu sistema de almacenamiento AFF A400, necesitas verificar la compatibilidad y el estado de la clave de cifrado en tu medio de arranque. Revisa si tu versión de ONTAP es compatible con NetApp Volume Encryption (NVE), y antes de apagar el controlador, revisa si el gestor de claves está activo.
+Para garantizar la seguridad de los datos en tu sistema de almacenamiento AFF A400, verifica la compatibilidad y el estado de la clave de cifrado en tu medio de arranque antes de apagar el controlador. Verifica si tu versión de ONTAP es compatible con NetApp Volume Encryption (NVE) y confirma que el gestor de claves está activo.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el proceso de recuperación de arranque manual.
 

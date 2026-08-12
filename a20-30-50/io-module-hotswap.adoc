@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: aff a20, aff a30, aff a50, hot swap a cluster ha card, hot swap ethernet client io module, hotswap io module, hot swap io module 
 summary: Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFF A20, AFF A30 o AFF A50 si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP. 
 ---
-= Realiza un intercambio en caliente de un módulo de E/S en tu sistema AFF A20, AFF A30 o AFF A50 sin necesidad de apagarlo
+= Intercambia en caliente un módulo de E/S en tu sistema AFF A20, AFF A30 o AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistem
 [role="lead"]
 Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFF A20, AFF A30 o AFF A50 si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.
 
-Para intercambiar en caliente un módulo de E/S, asegúrate de que tu sistema de almacenamiento cumple los requisitos de la versión de ONTAP, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
+Para realizar un intercambio en caliente de un módulo de E/S, verifica que tu sistema de almacenamiento cumpla los requisitos de versión de ONTAP, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
 
 .Acerca de esta tarea
 * El intercambio en caliente del módulo de E/S significa que no tienes que realizar una toma de control manual antes de reemplazar el módulo de E/S averiado.
@@ -28,7 +28,7 @@ Para intercambiar en caliente un módulo de E/S, asegúrate de que tu sistema de
 Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
 
 +
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+Puedes desactivarlos introduciendo el comando  `system location-led _off_`. Si no estás seguro de si los LED están encendidos o apagados, puedes comprobar su estado introduciendo el comando  `system location-led show`.
 
 
 

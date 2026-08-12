@@ -2,7 +2,7 @@
 permalink: a1k/bootmedia-replace-workflow-bmr.html 
 sidebar: sidebar 
 keywords: aff a1k, replace the boot media 
-summary: La recuperación automática de la imagen de arranque implica que el sistema identifique y seleccione automáticamente la opción de arranque adecuada. Utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el medio de arranque de reemplazo de su sistema AFF A1K . 
+summary: La recuperación automática de la imagen de arranque consiste en que el sistema identifique y seleccione automáticamente la opción adecuada del menú de arranque. Utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el soporte de arranque de sustitución de tu sistema AFF A1K. 
 ---
 = Flujo de trabajo de sustitución del soporte de arranque de AFF A1K mediante el proceso automatizado de recuperación del arranque
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: La recuperación automática de la imagen de arranque implica que el si
 
 
 [role="lead"]
-La recuperación automática de la imagen de arranque implica que el sistema identifique y seleccione automáticamente la opción de arranque adecuada. Utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el medio de arranque de reemplazo de su sistema de almacenamiento AFF A1K.
+La recuperación automática de la imagen de arranque consiste en que el sistema identifique y seleccione automáticamente la opción adecuada del menú de arranque. Utiliza la imagen de arranque del nodo asociado para reinstalar ONTAP en el soporte de arranque de sustitución de tu sistema de almacenamiento AFF A1K.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
@@ -23,7 +23,7 @@ Revise los requisitos para la sustitución de medios de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-shutdown-bmr.html["Apague la controladora"]
 [role="quick-margin-para"]
-Apague la controladora en el sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
+Apague el controlador en su sistema de almacenamiento cuando necesite reemplazar el medio de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-replace-bmr.html["Sustituya el soporte de arranque"]
 [role="quick-margin-para"]

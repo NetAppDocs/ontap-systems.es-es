@@ -2,7 +2,7 @@
 permalink: asa250/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: asa a250, shut down the controller 
-summary: Apaga el controlador dañado de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y asegurar la estabilidad del sistema cuando reemplaces el boot media. 
+summary: Apaga el controlador de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y asegurar la estabilidad del sistema al reemplazar el medio de arranque. 
 ---
 = Apaga el controlador de tu sistema ASA A250 durante el proceso de recuperación automática del arranque
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Apaga el controlador dañado de tu sistema de almacenamiento ASA A250 p
 
 
 [role="lead"]
-Apaga el controlador deteriorado de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso automatizado de recuperación de medios de arranque.
+Apaga el controlador de tu sistema de almacenamiento ASA A250 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso automatizado de recuperación del medio de arranque.
 
 El proceso automatizado de recuperación de medios de arranque solo se admite en ONTAP 9.18.1 y versiones posteriores. Si tu sistema de almacenamiento está ejecutando una versión anterior de ONTAP, usa el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"].
 
@@ -82,4 +82,4 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 .El futuro
-Después de apagar el controlador defectuoso, usted link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].
+Después de apagar el controlador, link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].

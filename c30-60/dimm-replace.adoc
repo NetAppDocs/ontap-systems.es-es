@@ -14,7 +14,7 @@ summary: Reemplace un DIMM en su sistema de almacenamiento AFF C30 o AFF C60 si 
 Reemplace un DIMM en su sistema de almacenamiento AFF C30 o AFF C60 si se detectan errores de memoria excesivos corregibles o incorregibles.  Estos errores pueden impedir que el sistema de almacenamiento inicie ONTAP.  El proceso de reemplazo implica apagar el controlador dañado, quitarlo, reemplazar el DIMM, reinstalar el controlador y luego devolver la pieza defectuosa a NetApp.
 
 .Antes de empezar
-* El resto de los componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar.
+* El resto de componentes del sistema de almacenamiento deben funcionar correctamente. Si no es así, ponte en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar.
 * Debe sustituir el componente FRU con errores por un componente FRU de reemplazo que haya recibido de su proveedor.
 
 
@@ -281,7 +281,7 @@ image::../media/icon_round_3.png[Número de llamada 3]
 Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
 
 |===
-. Abra la cubierta del controlador girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+. Abre la tapa del controlador girando el tornillo de mariposa en sentido antihorario.
 
 
 
@@ -289,7 +289,7 @@ Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarl
 [[step-3-replace-a-dimm]]
 == Paso 3: Sustituya un DIMM
 
-Para sustituir un DIMM, localice el DIMM defectuoso dentro de la controladora y siga la secuencia específica de pasos.
+Para sustituir un módulo DIMM, localiza el módulo DIMM defectuoso dentro del controlador.
 
 
 CAUTION: Lleva siempre una muñequera con toma de tierra conectada a un punto de tierra verificado durante los procedimientos de instalación y mantenimiento. No seguir las precauciones ESD adecuadas puede causar daños permanentes a los nodos controladores, las estanterías de almacenamiento y los switches de red.

@@ -11,11 +11,11 @@ summary: Sustituye el NVDIMM de tu módulo controlador AFF A800 cuando el sistem
 
 
 [role="lead"]
-Reemplace el NVDIMM en su sistema AFF A800 cuando su sistema registre que la vida útil del flash está casi llegando a su fin o que el NVDIMM identificado no está en buen estado en general; no hacerlo provoca un pánico en el sistema.
+Sustituye el NVDIMM de tu sistema AFF A800 cuando tu sistema registre que la vida útil de la flash está casi al final o que el NVDIMM identificado no está en buen estado. Si no reemplazas un NVDIMM defectuoso, el sistema entrará en pánico.
 
 .Antes de empezar
-* Asegúrese de tener el NVDIMM de reemplazo que recibió de NetApp y que sea compatible con su sistema AFF A800 .
-* Asegúrese de que todos los demás componentes del sistema de almacenamiento funcionen correctamente; de ​​lo contrario, comuníquese con el soporte técnico de NetApp .
+* Asegúrate de que dispones del módulo NVDIMM de recambio que has recibido de NetApp y de que es compatible con tu sistema AFF A800.
+* Asegúrate de que el resto de componentes del sistema de almacenamiento funcionen correctamente. Si no es así, ponte en contacto con el soporte técnico de NetApp.
 
 
 
@@ -243,7 +243,7 @@ NOTE: Inspeccione visualmente el NVDIMM para comprobar que está alineado de for
 
 
 
-[[step-4-reinstall-the-controller-module-and-booting-the-system]]
+[[step-4-reinstall-the-controller-module-and-boot-the-system]]
 == Paso 4: Vuelva a instalar el módulo del controlador e inicie el sistema
 
 Vuelva a instalar el módulo del controlador y reinícielo.

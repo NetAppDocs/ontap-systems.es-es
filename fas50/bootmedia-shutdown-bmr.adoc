@@ -2,16 +2,16 @@
 permalink: fas50/bootmedia-shutdown-bmr.html 
 sidebar: sidebar 
 keywords: fas50, shut down the controller 
-summary: Apague el controlador dañado en su sistema de almacenamiento FAS50 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso de recuperación automática del medio de arranque. 
+summary: Apaga el controlador de tu sistema de almacenamiento FAS50 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso automático de recuperación del soporte de arranque. 
 ---
-= Apaga el controlador defectuoso de tu sistema FAS50 durante el proceso de recuperación automática del arranque
+= Apaga el controlador de tu sistema FAS50 durante el proceso de recuperación automática del arranque
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Apague el controlador dañado en su sistema de almacenamiento FAS50 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso de recuperación automática del medio de arranque.
+Apaga el controlador de tu sistema de almacenamiento FAS50 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso automático de recuperación del soporte de arranque.
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 
@@ -82,4 +82,4 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 
 .El futuro
-Después de apagar el controlador defectuoso, usted link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].
+Después de apagar el controlador, link:bootmedia-replace-bmr.html["sustituya el soporte de arranque"].

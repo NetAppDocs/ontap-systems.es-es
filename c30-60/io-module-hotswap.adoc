@@ -13,14 +13,14 @@ summary: Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistem
 [role="lead"]
 Puedes intercambiar en caliente un módulo de E/S Ethernet en tu sistema de almacenamiento AFF C30 o AFF C60 si falla un módulo y tu sistema de almacenamiento cumple todos los requisitos de versión de ONTAP.
 
-Para intercambiar en caliente un módulo de E/S, asegúrate de que tu sistema de almacenamiento cumple los requisitos de la versión de ONTAP, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
+Para realizar un intercambio en caliente de un módulo de E/S, verifica que tu sistema de almacenamiento cumpla los requisitos de versión de ONTAP, prepara tu sistema de almacenamiento y el módulo de E/S, intercambia en caliente el módulo averiado, pon en línea el módulo de reemplazo, restaura el sistema de almacenamiento a su funcionamiento normal y devuelve el módulo averiado a NetApp.
 
 .Acerca de esta tarea
 * El intercambio en caliente del módulo de E/S significa que no tienes que realizar una toma de control manual antes de reemplazar el módulo de E/S averiado.
 * Aplica los comandos al controlador y a la ranura de E/S correctos cuando estés haciendo el intercambio en caliente del módulo de E/S:
 +
-** El _controlador deteriorado_ es el controlador en el que estás intercambiando en caliente el módulo de E/S.
-** El _controlador saludable_ es el socio HA del controlador dañado.
+** El _controlador con el módulo de E/S defectuoso_ es el controlador en el que estás realizando el intercambio en caliente del módulo de E/S.
+** El «controlador en buen estado» es el socio de alta disponibilidad (HA) del controlador cuyo módulo de E/S presenta un fallo.
 
 
 * Puedes encender los LED de ubicación (azules) del sistema de almacenamiento para ayudarte a localizar físicamente el sistema de almacenamiento afectado. Inicia sesión en el BMC usando SSH y escribe el comando `system location-led _on_`.
@@ -34,8 +34,8 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 
 
 
-[[step-1-ensure-the-storage-system-meets-the-procedure-requirements]]
-== Paso 1: Asegúrese de que el sistema de almacenamiento cumpla con los requisitos del procedimiento
+[[step-1-verify-the-storage-system-meets-the-procedure-requirements]]
+== Paso 1: Comprueba que el sistema de almacenamiento cumple los requisitos del procedimiento
 
 Para usar este procedimiento, tu sistema de almacenamiento debe estar ejecutando ONTAP 9.17.1 o una versión posterior, y tu sistema de almacenamiento debe cumplir todos los requisitos para la versión de ONTAP que esté ejecutando.
 

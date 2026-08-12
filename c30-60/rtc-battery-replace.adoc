@@ -14,7 +14,7 @@ summary: Sustituye la batería del reloj en tiempo real, comúnmente conocida co
 Reemplace la batería del reloj de tiempo real (RTC), comúnmente conocida como batería de tipo botón, en su sistema de almacenamiento AFF C30 o AFF C60 para garantizar que los servicios y las aplicaciones que dependen de una sincronización horaria precisa sigan funcionando.
 
 .Antes de empezar
-El resto de componentes del sistema de almacenamiento deben funcionar correctamente. De lo contrario, póngase en contacto https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
+El resto de componentes del sistema de almacenamiento deben funcionar correctamente. Si no es así, ponte en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"] antes de continuar con este procedimiento.
 
 .Acerca de esta tarea
 * Puede usar este procedimiento con todas las versiones de ONTAP compatibles con el sistema de almacenamiento.
@@ -23,7 +23,7 @@ El resto de componentes del sistema de almacenamiento deben funcionar correctame
 Un sistema de almacenamiento tiene tres LED de ubicación: Uno en el panel de visualización del operador y otro en cada controlador. Los LED de ubicación permanecen encendidos durante 30 minutos.
 
 +
-Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no está seguro de si los LED están encendidos o apagados, puede comprobar su estado introduciendo `system location-led show` el comando.
+Puedes apagarlos introduciendo el comando  `system location-led _off_`. Si no estás seguro de si los LED están encendidos o apagados, comprueba su estado introduciendo el comando  `system location-led show`.
 
 
 
@@ -283,7 +283,7 @@ image::../media/icon_round_3.png[Número de llamada 3]
 Si es necesario, gire las asas hacia arriba (junto a las pestañas) para alejarlas.
 
 |===
-. Abra la cubierta del controlador girando el tornillo de mariposa hacia la izquierda para aflojarla y, a continuación, abra la cubierta.
+. Abre la tapa del controlador girando el tornillo de mariposa en sentido antihorario.
 
 
 
@@ -445,9 +445,9 @@ FUENTE DE ALIMENTACIÓN DE CC
 == Paso 5: Restablezca la hora y la fecha del controlador
 
 
-NOTE: Después de reemplazar la batería de RTC, insertar la controladora y encender el primer restablecimiento del BIOS, verá los siguientes mensajes de error:
+NOTE: Tras cambiar la batería del RTC, insertar el controlador y encender el equipo, es posible que, durante el primer reinicio de la BIOS, veas los siguientes mensajes de error:
 `RTC date/time error. Reset date/time to default`
-`RTC power failure error` Estos mensajes son esperados y puede continuar con este procedimiento.
+`RTC power failure error` Estos mensajes son normales y puedes continuar con este procedimiento.
 
 . En el controlador en buen estado, verifique la fecha y la hora:
 +

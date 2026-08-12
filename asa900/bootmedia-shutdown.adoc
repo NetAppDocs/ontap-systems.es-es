@@ -2,7 +2,7 @@
 permalink: asa900/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: asa a900, shut down the controller 
-summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo diferentes procedimientos, en función de la configuración del hardware del sistema de almacenamiento. 
+summary: Apaga el controlador de tu sistema de almacenamiento ASA A900 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del medio de arranque. 
 ---
 = Apaga el controlador de tu sistema ASA A900 durante el proceso de recuperación de arranque manual
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Puede apagar o hacerse cargo de la controladora dañada siguiendo difer
 
 
 [role="lead"]
-Apague o retome el controlador dañado siguiendo el procedimiento adecuado para su configuración.
+Apaga el controlador de tu sistema de almacenamiento ASA A900 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del medio de arranque.
 
 Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automatizado"] .  Si su sistema está ejecutando una versión anterior de ONTAP, debe utilizar el procedimiento de recuperación de arranque manual.
 
@@ -19,7 +19,7 @@ Si su sistema de almacenamiento ejecuta ONTAP 9.17.1 o posterior, utilice ellink
 ====
 .Mayoría de configuraciones
 --
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Después de completar las tareas NVE o NSE, debes finalizar el apagado del controlador.
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
@@ -90,7 +90,7 @@ El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 --
 .La controladora se encuentra en un MetroCluster
 --
-Después de completar las tareas de NVE o NSE, deberá completar el apagado de la controladora dañada.
+Después de completar las tareas NVE o NSE, debes finalizar el apagado del controlador.
 
 
 NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.

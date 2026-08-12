@@ -196,7 +196,7 @@ image::../media/drw_affa800_install_cable_mgmt.png[Conexión del dispositivo de 
 [[step-3-cable-controllers]]
 == Paso 3: Controladores de cables
 
-Se requiere un cableado para el clúster de la plataforma mediante el método de clúster sin switch de dos nodos o el método de red de interconexión de clúster. Existe un cableado opcional para las redes host Fibre Channel o iSCSI o almacenamiento de conexión directa. Este cableado no es exclusivo; puede tener cables para una red host y almacenamiento.
+Es necesario realizar un cableado para el clúster de tu plataforma utilizando el método de clúster sin switches de dos nodos o el método de red de interconexión de clúster. Hay un cableado opcional hacia las redes de host Fibre Channel o iSCSI, o hacia el almacenamiento de conexión directa. Este cableado no es exclusivo; puedes tener cableado tanto hacia una red de host como hacia el almacenamiento.
 
 
 
@@ -549,7 +549,7 @@ Si tiene la detección de red habilitada en el portátil, puede completar la con
 .Pasos
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 +
-El sistema comienza a iniciarse. El arranque inicial puede tardar hasta ocho minutos.
+El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
 
 . Asegúrese de que el ordenador portátil tiene activado el descubrimiento de red.
 +
@@ -565,7 +565,7 @@ image::../media/drw_autodiscovery_controler_select_ieops-1849.svg[Seleccione un 
 
 +
 .. Abra el Explorador de archivos.
-.. Haga clic en *Red* en el panel izquierdo y haga clic con el botón derecho y seleccione *actualizar*.
+.. Selecciona *Red* en el panel de la izquierda, haz clic con el botón derecho y selecciona *refresh*.
 .. Haga doble clic en el icono de ONTAP y acepte los certificados que aparecen en la pantalla.
 +
 
@@ -609,7 +609,7 @@ image::../media/drw_client_mgmt_subnet_affa800.png[Conexión del portátil o la 
 
 . Enchufe los cables de alimentación a las fuentes de alimentación de la controladora y luego conéctelos a fuentes de alimentación de diferentes circuitos.
 +
-El sistema comienza a iniciarse. El arranque inicial puede tardar hasta ocho minutos.
+El sistema comienza a iniciarse. El arranque inicial puede llevar hasta ocho minutos.
 
 . Asigne una dirección IP de gestión de nodos inicial a uno de los nodos.
 +

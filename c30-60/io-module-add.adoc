@@ -4,22 +4,22 @@ sidebar: sidebar
 keywords: aff c30, aff c60, add IO module 
 summary: Agrega un módulo de I/O a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de tu sistema para manejar el tráfico de datos. 
 ---
-= Añade un módulo de E/S a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red
+= Agrega un módulo de I/O a tu sistema de almacenamiento AFF C30 o AFF C60
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Agrega un módulo de E/S a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de tu sistema para manejar el tráfico de datos. Puedes usar este procedimiento para añadir un módulo de E/S a un controlador operativo como una actualización planificada o a un controlador con fallas durante la ventana de mantenimiento.
+Añade un módulo de E/S a tu sistema de almacenamiento AFF C30 o AFF C60 para mejorar la conectividad de red y ampliar la capacidad de tu sistema para gestionar el tráfico de datos. Puedes usar este procedimiento para añadir un módulo de E/S tanto a un controlador en funcionamiento como parte de una actualización planificada, o a un controlador con un módulo de E/S averiado durante el mantenimiento.
 
 Puede añadir un módulo de I/O a los sistemas de almacenamiento AFF C30 y AFF C60 cuando haya ranuras disponibles o cuando todas estén completamente ocupadas.
 
 .Acerca de esta tarea
-Puedes realizar este procedimiento en cualquiera de los controladores del par de HA, sin importar si el controlador está actualmente operativo o averiado. Como no se puede añadir un módulo de E/S a un controlador en funcionamiento, el controlador de destino debe apagarse antes de instalar el módulo. El partner de HA se encarga de las operaciones de almacenamiento durante el procedimiento para que los datos sigan estando disponibles para los clientes.
+Puedes realizar este procedimiento en cualquiera de los controladores del par de alta disponibilidad (HA), sin importar si el módulo de E/S del controlador está operativo o averiado en ese momento. Como no se puede añadir un módulo de E/S a un controlador en funcionamiento, tienes que apagar el controlador de destino antes de instalar el módulo. El partner de alta disponibilidad se encarga de las operaciones de almacenamiento durante el procedimiento para que los datos sigan estando disponibles para los clientes.
 
-* Si el controlador de destino es *operativo* (adición prevista), sigue los pasos de apagado tal como están escritos, tratando al controlador de destino como el controlador "perjudicado" en ese contenido.
-* Si el controlador de destino está *perjudicado*, sigue los pasos de apagado tal y como están escritos.
+* Si el controlador de destino está *en funcionamiento* (incorporación prevista), sigue los pasos de apagado tal y como se indican, considerando en dicho procedimiento que el controlador de destino tiene un módulo de E/S averiado.
+* Si el controlador de destino tiene un módulo de E/S defectuoso, sigue los pasos de apagado tal y como se indican.
 
 
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.
@@ -33,7 +33,7 @@ Puede desactivarlos introduciendo `system location-led _off_` el comando. Si no 
 [[step-1-shut-down-the-target-controller-module]]
 == Paso 1: apaga el módulo controlador de destino
 
-Toma el control y apaga el módulo controlador de destino para que su pareja de HA siga sirviendo datos mientras añades el módulo de E/S. Los pasos enlazados se refieren al controlador que se está apagando como el controlador "deteriorado"; los mismos pasos se aplican tanto si tomas el control de un controlador operativo para una adición planificada como si apagas un controlador que ya está deteriorado.
+Toma el control y apaga el controlador de destino para que su socio de alta disponibilidad (HA) siga proporcionando datos mientras añades el módulo de E/S. Los pasos enlazados se refieren al controlador que se va a apagar como el que aloja el módulo de E/S defectuoso. Estos pasos se aplican tanto si vas a tomar el control de un controlador para una incorporación planificada como si vas a apagar un controlador que ya tiene un módulo de E/S defectuoso.
 
 [role="tabbed-block"]
 ====

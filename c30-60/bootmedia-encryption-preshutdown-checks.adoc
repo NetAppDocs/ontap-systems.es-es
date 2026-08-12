@@ -11,7 +11,7 @@ summary: Para garantizar la seguridad de los datos en su sistema de almacenamien
 
 
 [role="lead"]
-Para garantizar la seguridad de los datos en su sistema de almacenamiento AFF C30 o AFF C60, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes de NetApp (NVE) y antes de apagar la controladora compruebe si el gestor de claves está activo.
+Para garantizar la seguridad de los datos en tu sistema de almacenamiento AFF C30 o AFF C60, necesitas verificar la compatibilidad y el estado de la clave de cifrado en tu medio de arranque. Verifica si tu versión de ONTAP es compatible con NetApp Volume Encryption (NVE). Antes de apagar el controlador, revisa si el gestor de claves está activo.
 
 
 
@@ -45,7 +45,7 @@ NOTE: Descargue la imagen ONTAP desde el sitio de soporte de NetApp a su servido
 [[step-2-verify-key-manager-status-and-back-up-configuration]]
 == Paso 2: Verifique el estado del administrador de claves y la configuración de copia de seguridad.
 
-Antes de apagar el controlador averiado, verifique la configuración del administrador de claves y haga una copia de seguridad de la información necesaria.
+Antes de apagar el controlador con el soporte de arranque dañado, verifica la configuración del gestor de claves y haz una copia de seguridad de la información necesaria.
 
 .Pasos
 . Determine qué gestor de claves está activado en el sistema:

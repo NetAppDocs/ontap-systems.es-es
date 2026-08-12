@@ -2,16 +2,16 @@
 permalink: a700/bootmedia-shutdown.html 
 sidebar: sidebar 
 keywords: aff a700, shut, down, impaired, controller, take, over, manual, manual boot recovery 
-summary: Apague el controlador dañado en un sistema AFF A700 después de completar las comprobaciones de cifrado. El sistema AFF A700 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque. 
+summary: Apaga el controlador de tu sistema de almacenamiento AFF A700 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del boot media. 
 ---
-= Apaga el controlador defectuoso de tu sistema AFF A700 durante el proceso de recuperación del arranque manual
+= Apaga el controlador de tu sistema AFF A700 durante el proceso de recuperación de arranque manual
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Apague el controlador dañado en un sistema AFF A700 después de completar las comprobaciones de cifrado. Este procedimiento incluye llevar el controlador al indicador LOADER, capturar variables ambientales de arranque como referencia y preparar el controlador para el reemplazo del medio de arranque, con pasos específicos que varían según la configuración del sistema.
+Apaga el controlador de tu sistema de almacenamiento AFF A700 para evitar la pérdida de datos y mantener la estabilidad del sistema durante el proceso manual de recuperación del boot media.
 
 El sistema AFF A700 solo admite procedimientos de recuperación de medios de arranque manuales. No se admite la recuperación automática de medios de arranque.
 
@@ -64,7 +64,7 @@ NOTE: Es posible que este comando no funcione si el dispositivo de inicio está 
 [[option-2-controller-is-in-a-metrocluster]]
 === Opción 2: La controladora se encuentra en un MetroCluster
 
-Después de completar las tareas de NVE o NSE, necesita completar el apagado del nodo dañado. NOTA: No utilice este procedimiento si el sistema está en una configuración MetroCluster de dos nodos.
+Una vez completadas las tareas NVE o NSE, debes finalizar el apagado del nodo. Nota: No utilices este procedimiento si tu sistema se encuentra en una configuración de dos nodos MetroCluster.
 
 Toma el control y detén el controlador dañado para que el controlador sano continúe sirviendo datos desde el almacenamiento del controlador dañado. Para hacer esto, suprimes la creación automática de casos en AutoSupport, deshabilitas la devolución automática y llevas el controlador dañado al prompt LOADER. El prompt LOADER es el estado detenido seguro desde el cual puedes reemplazar la FRU.
 
@@ -123,7 +123,7 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 [[option-3-controller-is-in-a-two-node-metrocluster]]
 == Opción 3: La controladora se encuentra en un MetroCluster de dos nodos
 
-Después de completar las tareas de NVE o NSE, necesita completar el apagado del nodo dañado.
+Después de completar las tareas de NVE o NSE, debes finalizar el apagado del nodo.
 
 
 NOTE: No use este procedimiento si el sistema está en una configuración de MetroCluster de dos nodos.

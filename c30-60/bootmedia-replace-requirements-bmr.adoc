@@ -2,7 +2,7 @@
 permalink: c30-60/bootmedia-replace-requirements-bmr.html 
 sidebar: sidebar 
 keywords: aff c30, aff c60, replace the boot media 
-summary: Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF C30 o AFF C60, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto de llave e0M en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado OKM o el Administrador de claves externo EKM está habilitado. 
+summary: 'Antes de sustituir el soporte de arranque en tu sistema de almacenamiento AFF C30 o AFF C60, verifica que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de reemplazo correcto, confirmar que el puerto e0M wrench en el controlador con el soporte de arranque dañado funciona correctamente y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).' 
 ---
 = Revisa los requisitos para la recuperación automática de medios de arranque en tu sistema de almacenamiento AFF C30 o AFF C60
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Antes de reemplazar el medio de arranque en su sistema de almacenamient
 
 
 [role="lead"]
-Antes de reemplazar el medio de arranque en su sistema de almacenamiento AFF C30 o AFF C60, asegúrese de cumplir con los requisitos necesarios para un reemplazo exitoso. Esto incluye verificar que tiene el medio de arranque de reemplazo correcto, confirmar que el puerto e0M (llave) en el controlador dañado está funcionando correctamente y determinar si el Administrador de claves integrado (OKM) o el Administrador de claves externo (EKM) está habilitado.
+Antes de sustituir el soporte de arranque en tu sistema de almacenamiento AFF C30 o AFF C60, verifica que cumples los requisitos necesarios para que la sustitución sea exitosa. Esto incluye comprobar que tienes el soporte de arranque de reemplazo correcto, confirmar que el puerto e0M (llave inglesa) del controlador con el soporte de arranque dañado funciona correctamente y determinar si está habilitado Onboard Key Manager (OKM) o External Key Manager (EKM).
 
 El proceso de recuperación automática del medio de arranque solo es compatible con ONTAP 9.17.1 y versiones posteriores. Si su sistema de almacenamiento ejecuta una versión anterior de ONTAP, utilice el link:bootmedia-replace-workflow.html["procedimiento de recuperación de arranque manual"] .
 

@@ -13,7 +13,7 @@ summary: La recuperación manual de la imagen de arranque implica el uso de una 
 [role="lead"]
 La recuperación manual de la imagen de arranque implica el uso de una unidad USB para reinstalar ONTAP en el medio de arranque de reemplazo del sistema de almacenamiento AFF A20, AFF A30 o AFF A50. Debe descargar la imagen de recuperación de ONTAP correspondiente del sitio web de soporte de NetApp y copiarla a una unidad USB. Esta unidad USB preparada se utiliza para realizar la recuperación y restaurar el sistema a su estado operativo.
 
-Si su sistema se ejecuta en ONTAP 9.17.1 y posterior, utilice el link:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automático"] .
+Si tu sistema ejecuta ONTAP 9.17.1 o una versión posterior, utiliza la link:bootmedia-replace-workflow-bmr.html["procedimiento de recuperación de arranque automático"].
 
 Para comenzar, revise los requisitos de recuperación, apague el controlador, reemplace el medio de arranque, use la unidad USB para restaurar la imagen y vuelva a aplicar la configuración de cifrado si es necesario.
 
@@ -27,7 +27,7 @@ Determine si el sistema tiene discos cifrados o habilitados para el gestor de cl
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Dos"]link:bootmedia-shutdown.html["Apague la controladora"]
 [role="quick-margin-para"]
-Apague la controladora cuando necesite sustituir el soporte de arranque.
+Apague el controlador cuando necesite reemplazar el medio de arranque.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Tres"]link:bootmedia-replace.html["Sustituya el soporte de arranque"]
 [role="quick-margin-para"]
