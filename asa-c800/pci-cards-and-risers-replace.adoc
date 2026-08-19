@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: asa c800, replace a pcie card 
 summary: Para sustituir una tarjeta PCIe, debe desconectar los cables de las tarjetas, quitar los módulos SFP y QSFP de las tarjetas antes de quitar la tarjeta vertical, volver a instalar la tarjeta vertical y, a continuación, volver a instalar los módulos SFP y QSFP antes de cablear las tarjetas. 
 ---
-= Sustituir una tarjeta PCIe en tu sistema ASA C800
+= Sustituir o añadir una tarjeta PCIe en un sistema ASA C800
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Reemplace o agregue un módulo de E/S en su sistema ASA C800 cuando el módulo falla, requiere una actualización para soportar un mayor rendimiento o funciones adicionales. El proceso de reemplazo implica apagar la controladora, reemplazar el módulo de E/S defectuoso, reiniciar la controladora y devolver la pieza defectuosa a NetApp.
+Sustituye una tarjeta PCIe de tu sistema ASA C800 cuando falle, o añade o actualiza una tarjeta para obtener mayor rendimiento o funciones adicionales. El proceso de sustitución consiste en apagar el controlador, sustituir la tarjeta PCIe defectuosa, reiniciar el controlador y devolver la pieza defectuosa a NetApp.
 
 .Antes de empezar
 * Debe tener disponible la pieza nueva o de repuesto de NetApp .
