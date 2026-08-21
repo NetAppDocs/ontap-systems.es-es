@@ -153,8 +153,8 @@ Cuando el controlador dañado muestre esperando devolución..., pulse Ctrl-C y, 
 Si el sistema de almacenamiento tiene ranuras vacías, instale el nuevo módulo de E/S en una de las ranuras disponibles. Si todas las ranuras están ocupadas, retire un módulo de E/S existente para hacer espacio e instale el nuevo.
 
 .Antes de empezar
-* Compruebe la https://hwu.netapp.com/["Hardware Universe de NetApp"^] Para asegurarse de que el nuevo módulo de E/S es compatible con el sistema y la versión de ONTAP que está ejecutando.
-* Si hay varias ranuras disponibles, compruebe las prioridades de las ranuras en https://hwu.netapp.com/["Hardware Universe de NetApp"^] Y utilice el mejor disponible para su módulo de E/S.
+* Consulta la  https://hwu.netapp.com["Hardware Universe de NetApp"^] para asegurarte de que el nuevo módulo de E/S es compatible con tu sistema y con la versión de ONTAP que estás usando.
+* Si hay varias ranuras disponibles, consulta las prioridades de las ranuras en https://hwu.netapp.com["Hardware Universe de NetApp"^] y utiliza la mejor de las disponibles para tu módulo de E/S.
 * Para agregar sin interrupciones un módulo de E/S, debe tomar el control del controlador de destino, quitar la tapa de relleno de la ranura de la ranura de destino o extraer un módulo de E/S existente, agregar el módulo de E/S nuevo o de repuesto y, a continuación, retirar el controlador de destino.
 * Asegúrese de que todos los demás componentes funcionan correctamente.
 

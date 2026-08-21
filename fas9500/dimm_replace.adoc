@@ -2,16 +2,16 @@
 permalink: fas9500/dimm_replace.html 
 sidebar: sidebar 
 keywords: fas9500, replace a dimm 
-summary: Debes sustituir un módulo DIMM en el controlador cuando tu sistema de almacenamiento encuentre errores como errores CECC excesivos basados en alertas de Health Monitor o errores ECC no corregibles, normalmente causados por una falla de un solo módulo DIMM que impide que el sistema de almacenamiento arranque ONTAP. 
+summary: Sustituye el DIMM en un sistema FAS9500 cuando el sistema notifique un número excesivo de errores de memoria ECC corregibles a través de alertas de Health Monitor, o errores ECC no corregibles. Un DIMM defectuoso puede impedir que el sistema de almacenamiento arranque ONTAP, así que al reemplazarlo se restablece el funcionamiento estable. 
 ---
-= Sustituye un módulo DIMM en tu sistema FAS9500 para solucionar errores de memoria
+= Sustituye un módulo DIMM en un sistema FAS9500 para solucionar errores de memoria
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debes sustituir un módulo DIMM del controlador cuando tu sistema de almacenamiento detecte errores como un número excesivo de errores CECC (códigos de corrección de errores corregibles) basados en alertas del Health Monitor, o errores ECC incorregibles. Estos errores suelen deberse a un fallo en un único módulo DIMM que impide que el sistema de almacenamiento arranque ONTAP.
+Sustituye el DIMM en un sistema FAS9500 cuando el sistema notifique un número excesivo de errores de memoria ECC corregibles a través de alertas de Health Monitor, o errores ECC no corregibles. Un DIMM defectuoso puede impedir que el sistema de almacenamiento arranque ONTAP, así que al reemplazarlo se restablece el funcionamiento estable.
 
 .Antes de empezar
 El resto de componentes del sistema deben funcionar correctamente; si algún componente no funciona correctamente, tienes que ponerte en contacto con soporte técnico.

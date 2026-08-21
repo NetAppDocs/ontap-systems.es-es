@@ -2,16 +2,16 @@
 permalink: fas50/fan-replace.html 
 sidebar: sidebar 
 keywords: fas50, aff, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
-summary: Reemplace un módulo de ventilador en su sistema FAS50 cuando un ventilador falla o no está funcionando eficientemente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp. 
+summary: Sustituye el módulo del ventilador de tu sistema FAS50 cuando un ventilador falle o no funcione de forma eficiente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general. El proceso de sustitución consiste en apagar el controlador, extraer el controlador, sustituir el ventilador, volver a instalar el controlador y devolver la pieza defectuosa a NetApp. 
 ---
-= Sustituye un ventilador en tu sistema FAS50
+= Sustituye el módulo del ventilador en un sistema FAS50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Reemplace un módulo de ventilador en su sistema FAS50 cuando un ventilador falla o no está funcionando eficientemente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general. El proceso de reemplazo implica que se apague la controladora, se retire la controladora, se sustituya el ventilador, se reinstale la controladora y se devuelva la parte fallida a NetApp.
+Sustituye el módulo del ventilador de tu sistema FAS50 cuando un ventilador falle o no funcione de forma eficiente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general. El proceso de sustitución consiste en apagar el controlador, extraer el controlador, sustituir el ventilador, volver a instalar el controlador y devolver la pieza defectuosa a NetApp.
 
 .Acerca de esta tarea
 Si es necesario, puede encender los LED de ubicación del sistema de almacenamiento (azul) para ayudar a localizar físicamente el sistema de almacenamiento afectado. Inicie sesión en BMC mediante SSH e introduzca `system location-led _on_` el comando.

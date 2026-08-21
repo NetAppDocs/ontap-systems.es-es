@@ -2,15 +2,17 @@
 permalink: fas9000/caching-module-and-core-dump-module-replace.html 
 sidebar: sidebar 
 keywords: aff a700, fas9000, replace caching module 
-summary: Debes sustituir el módulo de almacenamiento en caché del módulo controlador cuando tu sistema registre un único mensaje ASUP AutoSupport que indique que el módulo se ha desconectado. Si no lo haces, se produce una degradación del rendimiento. 
+summary: 'Sustituye el módulo de almacenamiento en caché o el módulo de volcado de memoria en un sistema FAS9000 cuando el sistema registre un único mensaje AutoSupport (ASUP) que informe que el módulo se ha desconectado. Si no lo sustituyes, el rendimiento disminuirá.' 
 ---
-= Sustituye el módulo de almacenamiento en caché o el módulo de volcado de memoria en tu sistema FAS9000
+= Sustituye el módulo de almacenamiento en caché o el módulo de volcado de memoria en un sistema FAS9000
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Sustituye el módulo de almacenamiento en caché o el módulo de volcado de memoria en un sistema FAS9000 cuando el sistema registre un único mensaje AutoSupport (ASUP) que informe que el módulo se ha desconectado. Si no lo sustituyes, el rendimiento disminuirá.
+
 Debe sustituir el módulo de almacenamiento en caché en el módulo de la controladora cuando el sistema registre un único mensaje de AutoSupport (ASUP) que el módulo se haya desconectado; de lo contrario, el rendimiento se degradará. Si AutoSupport no está habilitado, puede localizar el módulo de almacenamiento en caché con fallos mediante el LED de fallo situado en la parte frontal del módulo. También puede añadir o sustituir el módulo de volcado principal X9170A de 1 TB, que es necesario si instala bandejas de unidades NS224 en un sistema A700 de AFF.
 
 .Antes de empezar
