@@ -53,6 +53,60 @@ NOTE: Los cables deben haber sido etiquetados al principio de este procedimiento
 [[step-2-remove-the-io-cards-nvram12-nvram12-ex-and-system-management-module]]
 == Paso 2: retira las tarjetas de E/S, NVRAM12, NVRAM12-EX y el módulo de administración de sistemas
 
+. Comprueba el LED de estado de la NVRAM situado en la ranura 4/5 y el de la NVRAM12-EX en la ranura 6/7 del sistema. También hay un LED de la NVRAM en el panel frontal del módulo controlador. Busca el icono NV:
++
+image::../media/drw_a1K-70-90_nvram-led_ieops-1463.svg[Gráfico de ubicación del LED de estado y atención de NVRAM]
+
++
+[cols="1,4"]
+|===
+
+
+2+| *NVRAM* 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+LED de estado de NVRAM
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+LED de alerta de NVRAM
+
+|===
++
+image::../media/drw_afx_emr_nvram-led_ieops-2962.svg[Gráfico de la ubicación de los LED de atención y estado del NVRAM12-EX]
+
++
+[cols="1,4"]
+|===
+
+
+2+| *NVRAM12-EX* 
+
+
+ a| 
+image:../media/icon_round_1.png["Número de llamada 1"]
+ a| 
+LED de estado de NVRAM12-EX
+
+
+
+ a| 
+image:../media/icon_round_2.png["Número de llamada 2"]
+ a| 
+LED de atención de NVRAM12-EX
+
+|===
++
+** Si el LED NV está apagado, vaya al siguiente paso.
+** Si el LED NV parpadea, espere a que el parpadeo se detenga. Si el parpadeo continúa durante más de 5 minutos, póngase en contacto con el servicio de asistencia técnica para obtener ayuda.
+
+
 . Extraiga el módulo de I/o de destino del chasis:
 +
 image:../media/drw_afx_2k_io_remove_replace_ieops-2878.svg["Retire el módulo de E/S."]
@@ -73,7 +127,8 @@ Bloqueo de leva de E/S.
 .. Gire el pestillo de leva hacia fuera del módulo hasta el tope.
 .. Retire el módulo del chasis enganchando el dedo en la abertura de la palanca de leva y tirando del módulo hacia afuera del chasis.
 +
-Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
+
+NOTE: Asegúrese de realizar un seguimiento de la ranura en la que se encontraba el módulo de E/S.
 
 .. Deje el módulo de E/S a un lado y repita estos pasos para cualquier otro módulo de E/S.
 
@@ -210,6 +265,10 @@ Una vez instalado el chasis de reemplazo, deberá instalar el módulo del contro
 . Instale las tarjetas de E/S en la parte trasera del chasis:
 +
 .. Alinee el extremo del módulo de E/S con la misma ranura en el chasis de reemplazo que en el chasis dañado y luego empuje suavemente el módulo hasta el fondo del chasis.
++
+
+NOTE: Asegúrate de instalar los módulos de E/S en las mismas ranuras en las que se encontraban en el chasis averiado.
+
 .. Gire el pestillo de leva hacia arriba a la posición de bloqueo.
 .. Repita estos pasos para cualquier otro módulo de E/S.
 
@@ -231,6 +290,12 @@ Asegúrese de que los cables estén conectados de acuerdo con las etiquetas de l
 . Instale el módulo NVRAM12 en la parte posterior del chasis en la parte trasera del chasis:
 +
 .. Alinee el extremo del módulo NVRAM12 con la abertura en el chasis y luego empuje suavemente el módulo hasta el fondo del chasis.
+.. Gire el pestillo de leva hacia arriba a la posición de bloqueo.
+
+
+. Instala el NVRAM12-EX en la parte trasera del chasis:
++
+.. Alinea el extremo del módulo NVRAM12-EX con la abertura del chasis y, luego, empuja suavemente el módulo hasta que quede completamente encajado en el chasis.
 .. Gire el pestillo de leva hacia arriba a la posición de bloqueo.
 
 
