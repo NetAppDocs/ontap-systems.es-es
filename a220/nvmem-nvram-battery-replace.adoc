@@ -50,7 +50,7 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 +
 .. Ingrese el siguiente comando desde la consola del controlador en buen estado:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
 
@@ -86,6 +86,8 @@ Retome o detenga el controlador dañado del controlador en buen estado:
 El parámetro _-halt true_ lleva al símbolo del sistema de Loader.
 
 |===
+
+
 . Si el sistema solo tiene un módulo de controlador en el chasis, apague las fuentes de alimentación y, a continuación, desenchufe los cables de alimentación de la controladora dañada de la fuente de alimentación.
 
 

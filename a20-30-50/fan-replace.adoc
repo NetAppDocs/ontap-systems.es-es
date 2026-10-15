@@ -1,10 +1,10 @@
 ---
 permalink: a20-30-50/fan-replace.html 
 sidebar: sidebar 
-keywords: aff a20, aff a30, aff a50, aff, swap, out, fan, module, interrupt, service, sequence, task, hot-swap, hot-swap a fan module 
+keywords: aff a20, aff a30, aff a50, replace a fan module 
 summary: Reemplace un módulo de ventilador en su sistema de almacenamiento AFF A20, AFF A30 o AFF A50 cuando un ventilador falla o no funciona de manera eficiente, ya que esto puede afectar la refrigeración del sistema y el rendimiento general.  El proceso de reemplazo implica apagar el controlador, quitarlo, reemplazar el ventilador, reinstalar el controlador y devolver la pieza defectuosa a NetApp. 
 ---
-= Sustituye en caliente un módulo de ventilador en un sistema AFF A20, AFF A30 o AFF A50
+= Sustituir un módulo de ventilador en un sistema AFF A20, AFF A30 o AFF A50
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -59,7 +59,7 @@ El siguiente mensaje de AutoSupport suprime la creación automática de casos du
 +
 .. Ingrese el siguiente comando desde la consola del controlador en buen estado:
 +
-`storage failover modify -node _impaired_node_name_ -auto-giveback false`
+`storage failover modify -node local -auto-giveback false`
 
 .. Ingresar `y` cuando vea el mensaje "¿Desea desactivar la devolución automática?"
 
