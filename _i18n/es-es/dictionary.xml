@@ -7070,10 +7070,8 @@ SFP+ (destino/iniciador)</block>
   <block id="40d27fa6094c4326547f3923c7cee14d" category="paragraph"><block ref="40d27fa6094c4326547f3923c7cee14d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="50852571c17718fd36dbe6f392f78fc5" category="paragraph"><block ref="50852571c17718fd36dbe6f392f78fc5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fd55ca97a838d20a44630f5fc8563412" category="paragraph"><block ref="fd55ca97a838d20a44630f5fc8563412" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2fbf4b96b341ff3cf1fd1fb73e8899c8" category="paragraph"><block ref="2fbf4b96b341ff3cf1fd1fb73e8899c8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="feb4f24fd90c865c8c1692c9529598c6" category="paragraph">Imagen:[Número de llamada 1] drw_A900_power-on_IEOPS-941.svg[width=500px]</block>
   <block id="cbb5640a4c423d549c9eb57b27dbd4ea" category="image-alt">icono cuadrado 1 verde</block>
-  <block id="96a5f900d6bd8337209c17fce1a47ae5" category="image-alt">Número de llamada 3]</block>
   <block id="cd5ec5f3586869573f3f0b3112426052" category="sidebar">TR-4290: SAP HANA en sistemas NetApp FAS con NFS</block>
   <block id="1e4893fc6c634f02ace3ba7beb78d669" category="inline-link-macro">estado del quórum</block>
   <block id="8df1727c16aa446d0622abe8cab177ae" category="list-text">Si dispone de un sistema SAN, debe haber comprobado los mensajes de evento <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix="(" category="inline-code"></block>) para el blade SCSI de la controladora dañada. <block ref="090678c8ba0a25df800d3d4eeaf19522" prefix=" " category="inline-code"></block>El comando (desde el modo avanzado priv) muestra el nombre del nodo, <block ref="8650efa63daff32c831511388978454c" category="inline-link-macro-rx"></block> de ese nodo, el estado de disponibilidad de ese nodo y el estado operativo de ese nodo.</block>
@@ -7686,12 +7684,6 @@ SFP+ (destino/iniciador)</block>
   <block id="cf3f28797bb88ae9f14057ba85eb97b9" category="list-text">Deslice el NSM hacia fuera del estante y colóquelo en una superficie plana y estable.</block>
   <block id="bb20d77f45b4cc0d8fb7e2ceeb73a6e8" category="paragraph">Asegúrese de apoyar la parte inferior del NSM a medida que lo desliza fuera de la bandeja.</block>
   <block id="badfffbcf4c415d2d54e8598e4f36a66" category="paragraph">Gire las asas en posición vertical (junto a las pestañas) para alejarlas.</block>
-  <block id="56b8cde3b1f3e08c4473d9b2684dcde7" category="paragraph-title"><block ref="444c1bf2e877f5617e8ce0a2ded57f4f" category="inline-image-macro-rx" type="image"></block><block ref="0caeda8d60cf80f7a042375ba653d60a" category="inline-link-macro-rx"></block></block>
-  <block id="3d380bb3e10695f0ff14d7bd2503d30a" category="paragraph-title"><block ref="4f954e3aac01b1dc982b61d245b37a02" category="inline-image-macro-rx" type="image"></block><block ref="7444ce336f5cb99437679b1ac8b6aefb" category="inline-link-macro-rx"></block></block>
-  <block id="4cb467fae72dd386afc8ef7522d342e3" category="paragraph-title"><block ref="d5b760e3b486da6aca46a9bd83d66c13" category="inline-image-macro-rx" type="image"></block><block ref="d5411bd0189d789655f8f33f07ceef1c" category="inline-link-macro-rx"></block></block>
-  <block id="68e401335e776f9115f19dc83fbb1ab4" category="paragraph-title"><block ref="91d7076df3f3bfcf6ace71bd0aa6cf68" category="inline-image-macro-rx" type="image"></block><block ref="68895f240ebc6c043e757f74f16ee4e8" category="inline-link-macro-rx"></block></block>
-  <block id="a782e599865f4a63ae7329f3a1de025e" category="paragraph-title"><block ref="6e12d70052c23b4d8ac555d298c6cb54" category="inline-image-macro-rx" type="image"></block><block ref="d767082d20397ebb99e586749eda3a08" category="inline-link-macro-rx"></block></block>
-  <block id="8e603f1c8e32c3de27ddc5fdfede052e" category="paragraph-title"><block ref="494807d2e8b0949d4144c33cc51d4984" category="inline-image-macro-rx" type="image"></block><block ref="ad27444622868149ebc13d5b01cf807a" category="inline-link-macro-rx"></block></block>
   <block id="78d32111d8a03b9d50893ee837ca8569" category="paragraph">Para sustituir la controladora, debe cumplir ciertos requisitos.</block>
   <block id="56316a8ca0d4ea8218ff785f2fe8fc7d" category="paragraph">Al sustituir la controladora, se quita la controladora dañada, se mueven los componentes de FRU a la controladora de reemplazo, se instala la controladora de reemplazo en el chasis, se establece la hora y la fecha, y luego se vuelve a cablear.</block>
   <block id="3fe8767a939feff2cd12159441aec4ee" category="paragraph">Verifique las LIF, compruebe el estado del clúster y devuelva la parte fallida a NetApp.</block>
@@ -8231,7 +8223,6 @@ SFP+ (destino/iniciador)</block>
   <block id="43d776718c1fd733b854e3b84bdffa63" category="summary">Compruebe que la configuración de alta disponibilidad de la controladora esté activa y funcione correctamente en el sistema de almacenamiento AFF C80 y confirme que los adaptadores del sistema enumeran todas las rutas a los discos.</block>
   <block id="cd8d2c9f06c5661e2266f9927427382e" category="summary">Puede sustituir un módulo de I/O con fallo en el sistema de almacenamiento AFF C80 por el mismo tipo de módulo de I/O o por otro tipo de módulo de I/O diferente. También puede agregar un módulo de E/S a un sistema con ranuras vacías.</block>
   <block id="c52f1e3ee9e9664930223aa9ebbd84dc" category="summary">Mantener el hardware de su sistema de almacenamiento C80 de AFF para garantizar la fiabilidad a largo plazo y un rendimiento óptimo. Lleve a cabo tareas de mantenimiento periódicas, como la sustitución de componentes defectuosos, ya que esto ayuda a evitar el tiempo de inactividad y la pérdida de datos.</block>
-  <block id="a70eaca09b18d4d2941af3eb0f7325cd" category="paragraph-title"><block ref="a65152a941ce25485720d5bcfae86492" category="inline-image-macro-rx" type="image"></block> Configure su clúster de ONTAP</block>
   <block id="6cc5c9e930ea3d3b8bff4367c60ceea4" category="section-title">Febrero de 2025</block>
   <block id="9836617ae3e38bf714267c53aac7a422" category="section-title">ASA A20, ASA A30 y ASA A50</block>
   <block id="4033d90a7ea8ab4b3276a0c26f0cc860" category="paragraph">Los sistemas de gama básica ASA A20 y ASA A30 y A50 de gama media hacen que el almacenamiento basado en bloques esté disponible para empresas de cualquier tamaño para aplicaciones de misión crítica, como bases de datos y máquinas virtuales.</block>
@@ -8483,7 +8474,6 @@ SFP+ (destino/iniciador)</block>
   <block id="6fcbff1d86e0024267f15e8f99c3a674" category="image-alt">Numeración de ranuras en una controladora AFF A1K</block>
   <block id="1c0352693ded19ccdeb0fec11d3c385c" category="paragraph-title">Numeración de ranuras de E/S.</block>
   <block id="49b9f31bb4801b746ad0f04e6c8fe614" category="summary">Para garantizar la seguridad de los datos en el sistema de almacenamiento A20, AFF A30 o AFF A50, debe verificar la compatibilidad y el estado de la clave de cifrado del soporte de arranque. Compruebe si la versión de ONTAP es compatible con el cifrado de volúmenes NetApp y antes de apagar la controladora, compruebe si el gestor de claves está activo.</block>
-  <block id="ad5b6cd72397448815f30afe8edf14bb" category="paragraph-title"><block ref="4f954e3aac01b1dc982b61d245b37a02" category="inline-image-macro-rx" type="image"></block><block ref="f09c415cff110572b095b0b47b53909d" category="inline-link-macro-rx"></block></block>
   <block id="9fae3d417e2d3ebd88166f9029869c43" category="paragraph">Compruebe el estado de alta disponibilidad del chasis y, a continuación, devuelva la pieza con error a NetApp para completar el paso final del procedimiento de sustitución del chasis AFF A20, AFF A30 y AFF A50.</block>
   <block id="a67af8037fff1bcc2d313723431a1370" category="paragraph">Después de revisar los requisitos para reemplazar el chasis, debe hacerlo <block ref="5ad1268d806d8db9e0e59370c95dfac1" category="inline-link-macro-rx"></block></block>
   <block id="c4bc88aac3ca3e3334c364fc02c4ddd6" category="summary">Apague las controladoras del sistema de almacenamiento AFF A20, AFF A30 o AFF A50 para evitar la pérdida de datos y garantizar la estabilidad del sistema al reemplazar el chasis.</block>
@@ -8742,7 +8732,6 @@ SFP+ (destino/iniciador)</block>
   <block id="83bff0d5c34d578fa839ac49404c9392" category="list-text">Desconecte los cables de E/S del módulo del controlador.</block>
   <block id="d86f5a7ed8b3122487d6d2983a3d95f1" category="list-text">Vuelva a conectar los cables de E/S del módulo del controlador.</block>
   <block id="db424e93139f05b40145c02ca1496dab" category="image-alt">Reemplace la batería NVDIMM</block>
-  <block id="f01c12d2b181f3fa692e46f31483240d" category="list-text">Asegúrese de que las clavijas guía del armario o del bastidor de telecomunicaciones estén aisladas en las ranuras de guía del chasis.</block>
   <block id="0ce45b8799d32fa93b50aed5301e827b" category="list-text">Controladora 2: Puerto 0b al puerto IOM B 3 en la última bandeja de unidades de la pila. + <block ref="065babb6c425d208f17452adf684f6f8" category="inline-image-macro-rx" type="image"></block> MINI-SAS HD a mini-SAS HD cables</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">Si no se muestra aquí la configuración, vaya a <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> para obtener información completa de prioridad de ranura y configuración para cablear el sistema de almacenamiento.</block>
   <block id="2e169c8e6f4cc1f6315545b46d7284a2" category="inline-image-macro">Cable fc de 64 GB</block>
@@ -15685,4 +15674,7 @@ SFP+ (destino/iniciador)</block>
   <block id="ed3a1c751fa8ade111c8b6d1be8b8c5f" category="doc">Sustituir un ventilador en un sistema AFF A250</block>
   <block id="2784a8192eaeb23d47dae9485279e807" category="summary">Sustituye un módulo de ventilador en tu sistema FAS70 o FAS90 cuando un ventilador falle o no funcione de forma eficiente, ya que esto puede afectar a la refrigeración del sistema y al rendimiento general. Los módulos de ventilador de los sistemas FAS70 y FAS90 son intercambiables en caliente. El proceso de sustitución consiste en identificar el módulo de ventilador averiado, retirarlo, instalar el módulo de ventilador de repuesto y devolver la pieza averiada a NetApp.</block>
   <block id="cedf051c7874b86bf8685dbb501a4e9a" category="sidebar">Especificaciones clave de AFF A20, AFF A30 y AFF A50</block>
+  <block id="c028c85efb1d1fc04746118670c19cf2" category="list-text">Asegúrate de que los pasadores de guía del armario o del rack de telecomunicaciones estén bien encajados en las ranuras de guía del chasis.</block>
+  <block id="c0fcb1e09e77924fe85a8b205bead3af" category="image-alt">Icono de llamada 5</block>
+  <block id="7085927fbb8bc7e7f08b2e783854d864" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Configura tu clúster de ONTAP</block>
 </blocks>

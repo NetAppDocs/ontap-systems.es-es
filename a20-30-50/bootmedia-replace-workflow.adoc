@@ -21,26 +21,26 @@ Para comenzar, revise los requisitos de recuperación, apague el controlador, re
 [role="quick-margin-para"]
 Revise los requisitos para sustituir el soporte de arranque.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Uno"]link:bootmedia-encryption-preshutdown-checks.html["Compruebe las claves de cifrado incorporadas"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]link:bootmedia-encryption-preshutdown-checks.html["Compruebe las claves de cifrado incorporadas"]
 [role="quick-margin-para"]
 Determine si el sistema tiene discos cifrados o habilitados para el gestor de claves de seguridad.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Dos"]link:bootmedia-shutdown.html["Apague la controladora"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]link:bootmedia-shutdown.html["Apague la controladora"]
 [role="quick-margin-para"]
 Apague el controlador cuando necesite reemplazar el medio de arranque.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Tres"]link:bootmedia-replace.html["Sustituya el soporte de arranque"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"]link:bootmedia-replace.html["Sustituya el soporte de arranque"]
 [role="quick-margin-para"]
 Retire el medio de arranque fallido del controlador dañado e instale el medio de arranque de reemplazo y luego transfiera una imagen ONTAP usando una unidad flash USB.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cuatro"]link:bootmedia-recovery-image-boot.html["Arranque la imagen de recuperación"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]link:bootmedia-recovery-image-boot.html["Arranque la imagen de recuperación"]
 [role="quick-margin-para"]
 Inicie la imagen ONTAP desde la unidad USB, restaure el sistema de archivos y verifique las variables de entorno.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Cinco"]link:bootmedia-encryption-restore.html["Restaure el cifrado"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]link:bootmedia-encryption-restore.html["Restaure el cifrado"]
 [role="quick-margin-para"]
 Restaure la configuración del administrador de claves integrado o del administrador de claves externo desde el menú de arranque de ONTAP .
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Seis"]link:bootmedia-complete-rma.html["Devuelve la pieza que ha fallado a NetApp"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Siete"]link:bootmedia-complete-rma.html["Devuelve la pieza que ha fallado a NetApp"]
 [role="quick-margin-para"]
 Devuelva la pieza que ha fallado a NetApp, como se describe en las instrucciones de RMA que se suministran con el kit.
